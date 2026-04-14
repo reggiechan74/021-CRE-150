@@ -73,3 +73,19 @@ errors: none
 ### Rule of thumb
 
 If a skill reads files totalling more than ~5 pages, processes vision content, or produces intermediate JSON/data structures before its final step — it needs subagent dispatch in Cowork.
+
+**Secondary trigger — reference files + source doc:**
+Page count is necessary but not sufficient. Two or more reference files loaded before the source document is processed creates the same context pressure, even when the source document is short. The pattern to watch for:
+
+1. Read reference file A (~N tokens)
+2. Read reference file B (~M tokens)
+3. Read source document
+4. Extract / transform / format
+
+Steps 1–2 burn context that was already partially consumed by orchestration overhead. By Step 4 the remaining coherent window may be insufficient regardless of the source document's length.
+
+**Trigger checklist** — dispatch a subagent if ANY of these are true:
+- Source document > ~5 pages (existing rule)
+- Vision content / PDF reads involved (existing rule)
+- Two or more reference files are loaded before the source document
+- Intermediate JSON or data structures are produced mid-pipeline

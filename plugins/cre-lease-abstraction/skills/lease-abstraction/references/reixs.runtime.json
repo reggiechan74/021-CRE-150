@@ -29,7 +29,8 @@
       "Parties (landlord/tenant) misidentified or swapped",
       "Commencement or expiry date extracted without provenance",
       "Financial term assigned wrong currency",
-      "Template placeholder left in output (e.g., \"[Insert value]\")"
+      "Template placeholder left in output (e.g., \"[Insert value]\")",
+      "MISSING field rate exceeds 30% of DDD-defined fields — escalate for human review"
     ],
     "optimization_priority_order": [
       "Factual correctness \u2014 no fabricated or hallucinated values",
@@ -84,11 +85,7 @@
   },
   "references": {
     "ddd_reference": "re-ddd:lease_abstraction_commercial_na@1.0.0",
-    "adr_references": [
-      "ADR-001",
-      "ADR-003",
-      "ADR-004"
-    ]
+    "adr_references": []
   },
   "validation_status": "warn"
 }
