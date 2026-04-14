@@ -47,7 +47,6 @@ Create `Reports/` under it if absent.
 
 From the resolved plugin root, construct:
 - `FIELD_MAP` = `<plugin_root>/skills/mls-extraction/references/field_mapping.md`
-- `PRODUCT_SPEC` = `<plugin_root>/skills/mls-extraction/references/PRODUCT_SPEC.md`
 - `FORMATTER` = `<plugin_root>/skills/mls-extraction/scripts/excel_formatter.py`
 
 Verify all three exist. If any are missing, report the error and stop.
@@ -78,16 +77,14 @@ below and return a structured summary. Do not ask questions — execute all step
 - Timestamp: {{ TIMESTAMP }}
 - Formatter: {{ FORMATTER }}
 - Field map reference: {{ FIELD_MAP }}
-- Product spec reference: {{ PRODUCT_SPEC }}
 
 ## Step A — Read reference files
 
-Read both reference files now using the Read tool:
+Read the field map reference now using the Read tool:
 - Read(file_path="{{ FIELD_MAP }}")
-- Read(file_path="{{ PRODUCT_SPEC }}")
 
-These define the exact 34-field schema, parsing rules, and Excel formatting requirements.
-Apply them throughout. Do not proceed without reading them.
+This defines the exact 34-field schema, parsing rules, column order, and number formats.
+Apply it throughout. Do not proceed without reading it.
 
 ## Step B — Read the PDF
 
