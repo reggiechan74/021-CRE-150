@@ -2,9 +2,11 @@
 
 ![Workshop](https://img.shields.io/badge/021_Events-CRE--150-0066cc?style=flat-square)
 ![Platform](https://img.shields.io/badge/platform-Claude_Cowork-5436DA?style=flat-square)
-![Plugins](https://img.shields.io/badge/plugins-2-brightgreen?style=flat-square)
+![Plugins](https://img.shields.io/badge/plugins-4-brightgreen?style=flat-square)
 ![cre-lease-abstraction](https://img.shields.io/badge/cre--lease--abstraction-v0.3.0-blue?style=flat-square)
 ![mls-extractor](https://img.shields.io/badge/mls--extractor-v0.5.1-blue?style=flat-square)
+![mcda-sales-comparison](https://img.shields.io/badge/mcda--sales--comparison-v1.0.0-blue?style=flat-square)
+![mcda-lease-comparison](https://img.shields.io/badge/mcda--lease--comparison-v1.0.0-blue?style=flat-square)
 
 Plugin repository for the **CRE-150** training workshop in the **021 Events** series.
 
@@ -51,9 +53,41 @@ Extract MLS data from report.pdf --subject="2550 Stanfield"
 
 ---
 
+### `mcda-sales-comparison` — v1.0.0
+
+MCDA ordinal ranking for fee simple sales comparison valuation. Ranks a subject property and comparables on weighted characteristics, maps composite scores to value via interpolation and regression.
+
+**Trigger:** "Run MCDA sales comparison" + point to a PDF or JSON
+
+Accepts CoStar or broker comparable sale reports, extracts property attributes, calculates a composite MCDA score for each sale, and interpolates a value opinion for the subject property. Supports up to 25 weighted variables with dynamic weight redistribution when data is sparse.
+
+```
+Run MCDA sales comparison /path/to/comparables.pdf
+Run MCDA sales comparison /path/to/input.json --stats
+```
+
+---
+
+### `mcda-lease-comparison` — v1.0.0
+
+MCDA competitive positioning analysis for commercial real estate leasing. Ranks a subject property against market comparables on up to 25 weighted variables and provides strategic pricing recommendations to achieve Top 3 market positioning.
+
+**Trigger:** "Relative valuation" / "competitive positioning" / "rank this property" + point to a PDF or JSON
+
+Extracts property data from CoStar or broker market reports, calculates driving distances (optional, requires Distancematrix.ai API key), runs the MCDA ranking engine, and produces a sensitivity analysis showing exactly what it would take to reach the Top 3 competitive tier.
+
+Supports four tenant personas — Default, 3PL/Distribution, Manufacturing, Office/Flex — each with pre-tuned variable weights.
+
+```
+/mcda-lease-comparison /path/to/market_report.pdf
+/mcda-lease-comparison /path/to/input.json --persona 3pl --full --stats
+```
+
+---
+
 ## Cowork Optimization
 
-Both plugins are designed specifically for Claude Cowork's context architecture. Each skill follows a three-step dispatch pattern:
+All four plugins are designed specifically for Claude Cowork's context architecture. Each skill follows a three-step dispatch pattern:
 
 1. **Primary context (thin)** — resolves file paths and environment variables, dispatches a subagent
 2. **Extraction subagent (full 200k window)** — handles all document reads, extraction, and file writes
@@ -65,7 +99,10 @@ This keeps the primary context from being exhausted by large document reads, whi
 
 ## Installation
 
-Load both plugins into your Claude Cowork workspace by pointing to this repository in your plugin settings. No API keys or external services required — everything runs on Claude with access to your workspace folder.
+Load all plugins into your Claude Cowork workspace by pointing to this repository in your plugin settings.
+
+- `cre-lease-abstraction`, `mls-extractor`, `mcda-sales-comparison`, `mcda-lease-comparison` — no API keys required
+- `mcda-lease-comparison` — optional: set `DISTANCEMATRIX_API_KEY` for automatic driving distance calculation (free tier: 1,000 elements/month at distancematrix.ai)
 
 ---
 
