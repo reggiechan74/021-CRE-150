@@ -200,7 +200,19 @@ def extract_properties(pdf_path: str) -> list[dict]:
     full_text = "\n==PAGE==\n".join(r["text"] for r in page_records)
     mls_hits = [(m.group(1), m.start()) for m in MLS_RE.finditer(full_text)]
     if not mls_hits:
-        return []
+        # Fallback — sanitized/redacted PDFs often strip MLS#. Each page
+        # carries one property's `Prepared By:` header, so treat each page
+        # with a `List:` or `Total Area:` anchor as its own property.
+        properties: list[dict] = []
+        for pi, rec in enumerate(page_records):
+            if re.search(r"\bList\s*:\s*\$", rec["text"]) or \
+               re.search(r"\bTotal\s+Area\s*:", rec["text"]):
+                properties.append({
+                    "mls_number": f"P{pi+1:03d}",  # synthetic placeholder
+                    "pairs": rec["pairs"],
+                    "raw_text": rec["text"],
+                })
+        return properties
 
     # Determine which page each MLS# starts on
     # We'll accumulate pairs per property by walking pages and switching on MLS# change.
@@ -405,6 +417,15 @@ ADDRESS_TREB_RE = re.compile(
 ADDRESS_SANITIZED_RE = re.compile(
     r"Location:\s*-\s*([^\-\n]+?)\s*-\s*([A-Z][a-z]+\s+Ontario\s+[A-Z]\d[A-Z]\s?\d[A-Z]\d)",
 )
+# Sanitized TREB re-layout: "Total Area: XXX Sq Ft <street> List:$X"
+ADDRESS_SANITIZED_INLINE_RE = re.compile(
+    r"Sq\s*Ft\s+(\d[\w\s.,#-]{4,80}?)\s+List\s*:\s*\$",
+)
+# City+postal often runs together in sanitized output:
+# "MississaugaOntarioL5J 2Z6 Per Sq Ft"
+CITY_POSTAL_RE = re.compile(
+    r"([A-Z][a-z]+)(Ontario)([A-Z]\d[A-Z]\s?\d[A-Z]\d)",
+)
 PROPERTY_HEADER_RE = re.compile(r"Property\s+\d+:\s*([^\n]+)")
 
 
@@ -416,6 +437,15 @@ def extract_address(raw_text: str) -> str:
     if m:
         street = re.sub(r"\s+", " ", m.group(1)).strip()
         return f"{street}, {m.group(2).strip()}, Canada"
+    # Sanitized redacted format: "<area> Sq Ft <street> List:$" on one line,
+    # with city/province/postal collapsed on the next. Glue them back.
+    m = ADDRESS_SANITIZED_INLINE_RE.search(raw_text)
+    if m:
+        street = re.sub(r"\s+", " ", m.group(1)).strip().rstrip(",")
+        cm = CITY_POSTAL_RE.search(raw_text)
+        if cm:
+            return f"{street}, {cm.group(1)} {cm.group(2)} {cm.group(3)}, Canada"
+        return street
     m = PROPERTY_HEADER_RE.search(raw_text)
     return m.group(1).strip() if m else ""
 
@@ -432,10 +462,16 @@ REMARKS_RE = re.compile(
 
 
 def extract_remarks(raw_text: str) -> str:
+    """Extract `Client Remks:` prose.
+
+    Returns "" for PDFs where two text layers have been character-interleaved
+    (e.g., sanitized teaching copies where "Client" + "Maint:" zipped produces
+    "CMliaeinntt :R emks:"). The LLM review pass handles recovery there.
+    """
     m = REMARKS_RE.search(raw_text)
-    if not m:
-        return ""
-    return _norm(m.group(1))[:500]
+    if m:
+        return _norm(m.group(1))[:500]
+    return ""
 
 
 BROKER_RE = re.compile(
