@@ -1,5 +1,11 @@
 # 021 — Claude Cowork for Real Estate (CRE-150)
 
+![Workshop](https://img.shields.io/badge/021_Events-CRE--150-0066cc?style=flat-square)
+![Platform](https://img.shields.io/badge/platform-Claude_Cowork-5436DA?style=flat-square)
+![Plugins](https://img.shields.io/badge/plugins-2-brightgreen?style=flat-square)
+![cre-lease-abstraction](https://img.shields.io/badge/cre--lease--abstraction-v0.3.0-blue?style=flat-square)
+![mls-extractor](https://img.shields.io/badge/mls--extractor-v0.5.1-blue?style=flat-square)
+
 Plugin repository for the **CRE-150** training workshop in the **021 Events** series.
 
 CRE-150 covers applied AI workflows for commercial real estate professionals using Claude Cowork. These plugins are the hands-on toolkit for the session — participants install them into their Cowork workspace and run the live extraction exercises against real lease documents and MLS reports.

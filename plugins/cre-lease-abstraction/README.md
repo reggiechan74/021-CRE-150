@@ -1,5 +1,11 @@
 # CRE Lease Abstraction Plugin
 
+![Version](https://img.shields.io/badge/version-0.3.0-blue?style=flat-square)
+![Platform](https://img.shields.io/badge/platform-Claude_Cowork-5436DA?style=flat-square)
+![Workshop](https://img.shields.io/badge/021_Events-CRE--150-0066cc?style=flat-square)
+![Standard](https://img.shields.io/badge/standard-REIXS--LA--NA--001-orange?style=flat-square)
+![Fields](https://img.shields.io/badge/DDD_fields-258-lightgrey?style=flat-square)
+
 Commercial real estate lease abstraction for North American office and industrial leases. Uses the REIXS-LA-NA-001 extraction standard and a 258-field Domain Data Dictionary (DDD) to produce structured, provenance-tracked lease abstracts and critical dates calendars.
 
 ---

@@ -1,5 +1,11 @@
 # MLS Extractor Plugin
 
+![Version](https://img.shields.io/badge/version-0.5.1-blue?style=flat-square)
+![Platform](https://img.shields.io/badge/platform-Claude_Cowork-5436DA?style=flat-square)
+![Workshop](https://img.shields.io/badge/021_Events-CRE--150-0066cc?style=flat-square)
+![Fields](https://img.shields.io/badge/schema-34_fields-lightgrey?style=flat-square)
+![Output](https://img.shields.io/badge/output-Excel_%2B_JSON-brightgreen?style=flat-square)
+
 Extract commercial real estate property listings from MLS PDF reports into professionally formatted Excel spreadsheets. One skill. Zero configuration. Perfect output.
 
 ---
