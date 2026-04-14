@@ -22,7 +22,7 @@
       "name": "mls-extractor",
       "source": "./plugins/mls-extractor",
       "description": "Extract MLS property listings from PDF reports into professionally formatted Excel spreadsheets with subject property highlighting",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "author": {
         "name": "Reggie Chan"
       }

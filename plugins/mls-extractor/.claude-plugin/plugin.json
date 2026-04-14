@@ -1,6 +1,6 @@
 {
   "name": "mls-extractor",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Extract MLS property data from PDF reports into professionally formatted Excel spreadsheets with subject property highlighting and perfect column ordering",
   "author": {
     "name": "Reggie Chan"
