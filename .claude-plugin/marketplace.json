@@ -1,0 +1,22 @@
+{
+  "name": "021-cre-150",
+  "owner": {
+    "name": "Reggie Chan",
+    "email": "reggie.chan@gmail.com"
+  },
+  "metadata": {
+    "description": "Commercial real estate lease abstraction tools for North American office and industrial leases",
+    "version": "0.2.0"
+  },
+  "plugins": [
+    {
+      "name": "cre-lease-abstraction",
+      "source": "./plugins/cre-lease-abstraction",
+      "description": "Commercial real estate lease abstraction using REIXS-LA-NA-001 methodology and 258-field Domain Data Dictionary",
+      "version": "0.2.0",
+      "author": {
+        "name": "Reggie Chan"
+      }
+    }
+  ]
+}
