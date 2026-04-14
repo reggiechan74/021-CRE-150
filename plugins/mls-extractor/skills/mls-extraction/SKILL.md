@@ -11,175 +11,112 @@ description: >
 
 Perfect is the only acceptable standard. The output Excel file must be something the user would be proud to send to their CEO immediately — zero cleanup, zero formatting fixes.
 
-For design specification and quality bar, read `${CLAUDE_PLUGIN_ROOT}/skills/mls-extraction/references/PRODUCT_SPEC.md`.
-For the complete 34-field mapping reference, read `${CLAUDE_PLUGIN_ROOT}/skills/mls-extraction/references/field_mapping.md`.
+For design spec, read `${CLAUDE_PLUGIN_ROOT}/skills/mls-extraction/references/PRODUCT_SPEC.md`.
+For the complete 34-field mapping, read `${CLAUDE_PLUGIN_ROOT}/skills/mls-extraction/references/field_mapping.md`.
 
 ---
 
 ## Invocation
 
-Triggered by a user message such as:
+Triggered by messages such as:
 - "Extract MLS data from Mississauga_industrial.pdf"
 - "Extract this MLS report --subject='2550 Stanfield'"
 
 Parse the user's message for:
-- A PDF file path or uploaded file reference
-- An optional `--subject="partial address"` to identify the subject property
-- If no path is given, scan the workspace folder for PDF files and ask the user which one to process
+- A PDF file path
+- An optional `--subject="partial address"` flag
+- If no path is given, scan the workspace for PDFs and ask which one
 
 ---
 
-## Step 1 — Read the PDF
+## Pipeline
 
-Use the `Read` tool on the PDF file path. This returns the full text content. If the file is large, read in sections and hold all content in context before proceeding.
-
----
-
-## Step 2 — Extract All 34 Fields Per Property
-
-Identify every property listing in the PDF. For each one, extract these fields:
-
-### Critical Fields (always extract)
-| Field | Type | Notes |
-|-------|------|-------|
-| `address` | string | Full geocodable address: "123 Main St, Mississauga, ON L4Y 1S2, Canada" |
-| `unit` | string | Unit/suite number; empty string if not applicable |
-| `available_sf` | integer | Rentable square footage |
-| `net_asking_rent` | float | Net asking rent $/SF/year (e.g., 13.95) |
-| `tmi` | float | TMI/operating costs $/SF/year |
-| `year_built` | integer | Year constructed |
-| `clear_height_ft` | float | Clear ceiling height in feet |
-| `pct_office_space` | float | 0–1 decimal (e.g., 0.03 = 3%) |
-| `parking_ratio` | float | Spaces per 1,000 SF |
-| `class` | integer | A=1, B=2, C=3 |
-
-### Optional Fields (extract if present)
-| Field | Type | Parsing Rule |
-|-------|------|-------------|
-| `shipping_doors_tl` | integer | Truck-level doors |
-| `shipping_doors_di` | integer | Drive-in doors |
-| `power_amps` | integer | Electrical service in amps |
-| `bay_depth_ft` | float | Parse "Bay Size: 55 x 52" → 55.0 (first number) |
-| `lot_size_acres` | float | Convert sq ft to acres (÷ 43,560) if needed |
-| `hvac_coverage` | integer | Y=1, Partial=2, N=3 |
-| `sprinkler_type` | integer | ESFR=1, Standard=2, None=3 — check Client Remarks for "ESFR" |
-| `rail_access` | boolean | Y/N |
-| `crane` | boolean | Y/N |
-| `occupancy_status` | integer | Vacant=1, Occupied=2 |
-| `trailer_parking` | boolean | Y/N |
-| `secure_shipping` | boolean | Y/N |
-| `excess_land` | boolean | Y/N |
-| `grade_level_doors` | integer | Count |
-| `days_on_market` | integer | DOM field |
-| `zoning` | string | e.g., "M2", "I2" |
-
-### Metadata Fields
-| Field | Type | Source |
-|-------|------|--------|
-| `availability_date` | string | e.g., "Immediate", "Q3 2025" |
-| `mls_number` | string | MLS# or ML# |
-| `broker_name` | string | Listing broker |
-| `client_remarks` | string | Truncate to 500 chars |
-| `is_subject` | boolean | See Step 3 |
-| `reported_market` | string | Auto-detect from PDF content |
-| `report_generated_at` | string | Today's date from environment |
-| `source_pdf` | string | PDF filename |
-
----
-
-## Step 3 — Auto-Detect Subject Property
-
-Apply this logic in order:
-1. Check `client_remarks` for the word "Subject" — if found, mark that property
-2. If `--subject` flag provided, fuzzy match (case-insensitive partial) against `address`
-3. Default: mark the first property if no subject found
-
-Set `is_subject: true` for exactly **one** property.
-
----
-
-## Step 4 — Calculate Derived Fields
-
-For every property:
-- `gross_rent` = `net_asking_rent` + `tmi`
-- `building_age_years` = current year (from environment) − `year_built`
-
----
-
-## Step 5 — Write JSON Output
-
-Locate the workspace folder (`ls /sessions/*/mnt/` in Bash). Create a `Reports/` subdirectory if it does not exist. Write the extracted data as:
-
-`<workspace-folder>/Reports/YYYY-MM-DD_HHMMSS_mls_extraction_<market>.json`
-
-Use Eastern Time for the timestamp. Derive `<market>` from the PDF content (e.g., "mississauga"). Get the current time via Bash: `date -u +%Y-%m-%dT%H:%M:%SZ` converted to ET.
-
-**JSON structure:**
-```json
-{
-  "extraction_date": "YYYY-MM-DD",
-  "source_pdf": "filename.pdf",
-  "market": "Mississauga - Industrial",
-  "total_properties": 23,
-  "properties": [ ... ]
-}
+```
+PDF  →  [1] pdf_extractor.py  →  raw.json  →  [2] LLM review  →  cleaned.json  →  [3] excel_formatter.py  →  .xlsx
 ```
 
+**Do NOT use the `Read` tool on the PDF.** The deterministic extractor is faster and more accurate for structured fields.
+
 ---
 
-## Step 6 — Create the Excel File
-
-Install the dependency and run the bundled formatter:
+## Step 1 — Deterministic extraction
 
 ```bash
-pip install openpyxl --break-system-packages -q
+pip install pdfplumber openpyxl --break-system-packages -q
+python3 "${CLAUDE_PLUGIN_ROOT}/skills/mls-extraction/scripts/pdf_extractor.py" \
+  "<pdf-path>" /tmp/mls_raw.json
+```
+
+The script uses `pdfplumber.extract_tables()` to parse both column-aligned and vertical `Field | Value` layouts. Output JSON, per property:
+- All 34 canonical fields populated where pdfplumber found them
+- `_raw_text` — the full text block for that property (Stage 2 input)
+- `_gaps` — fields the extractor couldn't fill or flagged suspicious (e.g. `net_asking_rent_suspicious` when value is $0 or $1 placeholder)
+
+---
+
+## Step 2 — LLM review pass
+
+Read `/tmp/mls_raw.json`. For each property, validate against its `_raw_text`:
+
+### Fill gaps
+- `net_asking_rent_suspicious` → $0/$1 usually means "Contact LA" or unpublished; leave as-is unless a real number appears in remarks
+- `year_built` missing → check for "Apx Age" band or phrases like "new construction"
+- `pct_office_space` missing → scan remarks for "X,XXX sf of office"
+- Any critical field with obvious extraction error (e.g. `pct_office > 1`, truncated address) → correct from `_raw_text`
+
+### Subject property
+1. Scan `client_remarks` for "Subject" → mark that one
+2. Else if `--subject="..."` given → fuzzy match against `address`
+3. Else → mark the first property
+
+Exactly one property has `is_subject: true`.
+
+### Market + derived
+- Set `reported_market` on every property (e.g. "Mississauga - Industrial") from PDF content
+- Recompute: `gross_rent = net_asking_rent + tmi`; `building_age_years = current_year - year_built`
+
+### Strip scaffolding
+Remove `_raw_text` and `_gaps` from each property before Step 3.
+
+---
+
+## Step 3 — Write outputs
+
+Workspace folder: current working directory, or `ls /sessions/*/mnt/` if running in a sandbox. Create `Reports/` if absent.
+
+Timestamp: `TZ=America/Toronto date +%Y-%m-%d_%H%M%S`
+
+```bash
 python3 "${CLAUDE_PLUGIN_ROOT}/skills/mls-extraction/scripts/excel_formatter.py" \
-  "<json-output-path>" \
-  "<workspace-folder>/Reports/YYYY-MM-DD_HHMMSS_mls_extraction_<market>.xlsx"
+  <cleaned-json-path> \
+  <workspace>/Reports/<timestamp>_mls_extraction_<market>.xlsx
 ```
 
-The formatter applies:
-- Dark blue header row (#2C3E50), white bold text, frozen, auto-filter
-- Subject property row highlighted bright yellow (#FFFF00), bold
-- Alternating white / light gray (#F8F9FA) data rows
-- Columns ordered by decision importance (see PRODUCT_SPEC.md)
-- Perfect number formatting: `$#,##0.00` for rent/TMI, `#,##0` for SF, `0.0` for heights
-- Auto-sized column widths (10–50 char range)
-
-If the formatter fails for any reason, write a fallback `.csv` file instead and notify the user.
+The formatter handles all visual design (header styling, subject-row highlight, column order, number formats). See `PRODUCT_SPEC.md`.
 
 ---
 
-## Step 7 — Quality Check
+## Step 4 — Verify + report
 
-Before reporting success, verify:
-- [ ] At least 90% of critical fields extracted per property (9 of 10 minimum)
-- [ ] Exactly one property marked `is_subject: true`
-- [ ] `gross_rent` calculated for all properties
-- [ ] Excel file opens without error (check file size > 0)
-- [ ] Output filename uses correct timestamp format
+Before reporting success:
+- `total_properties` unchanged from Stage 1
+- Exactly one `is_subject: true`
+- No `_raw_text` or `_gaps` in final JSON
+- Excel file size > 0
 
-If quality check fails, warn the user but still deliver the file.
+Report:
+
+```
+✅ Extracted {N} properties from {PDF filename} in {elapsed}s
+🎯 Subject: {address}
+📊 Excel: Reports/{filename}.xlsx
+📄 JSON:  Reports/{filename}.json
+```
 
 ---
 
-## Step 8 — Report to User
+## Error handling
 
-```
-✅ Extracted {N} properties from {PDF filename}
-🎯 Subject property: {address}
-📊 Excel file: Reports/{filename}.xlsx
-📄 JSON data: Reports/{filename}.json
-```
-
-Ask: "Would you be proud to send this Excel file to your CEO?" — if not, iterate.
-
----
-
-## Error Handling
-
-- Missing numeric field → use `0`
-- Missing boolean field → use `false`
-- Missing string field → use `""`
-- Never crash on a single bad field — log warning and continue
-- If 0 properties found, report the error and ask the user to verify the PDF is an MLS report
+- **0 properties segmented** → the PDF may not use `MLS#:` anchors. Inspect with `pdftotext -layout <pdf> -` or `pdfplumber` and either extend `MLS_RE` in `pdf_extractor.py` or fall back to vision `Read`.
+- **Most fields empty across all properties** → unknown broker format; extend `LABEL_MAP` aliases in `pdf_extractor.py` with the labels you see in the raw text.
+- Single bad field → log, use type default (`0`, `false`, `""`), continue.
