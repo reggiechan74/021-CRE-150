@@ -127,7 +127,60 @@ Write the result to /tmp/mls_cleaned.json using the Write tool:
 }
 ```
 
-## Step D — Generate Excel
+## Step D — Verify extraction against source PDF
+
+Dispatch a verification subagent using the Agent tool with
+`description: "MLS extraction verification"`. If the Agent tool is unavailable, perform
+the verification checks directly before proceeding.
+
+Substitute the resolved PDF path, then call the Agent tool with the prompt below:
+
+=== BEGIN VERIFIER PROMPT ===
+
+You are an MLS extraction verifier. Your sole job is to cross-check the extracted JSON
+against the source PDF and return a structured result. Do not ask questions.
+
+## Parameters
+
+- PDF path: {{ PDF_FILE_PATH }}
+- Extracted JSON: /tmp/mls_cleaned.json
+
+## Task
+
+1. Read the JSON: Read(file_path="/tmp/mls_cleaned.json")
+2. Read the entire PDF in batches of 20 pages.
+3. Count distinct property listings in the PDF. Each listing typically begins with an MLS
+   number and address header.
+4. For each property in the JSON, verify against the corresponding PDF listing:
+   - Address matches the PDF header
+   - size_sf is within ±5% of the value stated in the PDF
+   - net_asking_rent matches the PDF (or is 0.0 if the PDF shows "$1", "$0", or "Contact LA")
+   - clear_height_ft is consistent with the PDF value
+   - year_built / age band is consistent with the PDF
+5. Confirm exactly one property has is_subject: true.
+6. Flag any JSON value that cannot be traced to the PDF source text.
+
+## Return format
+
+Return ONLY this block — no other commentary:
+
+VERIFICATION_RESULT
+status: PASS or FAIL
+property_count_pdf: N
+property_count_json: N
+subject_address: <address of is_subject property, or "MISSING">
+discrepancies: <none, or bullet list of specific property/field mismatches>
+
+=== END VERIFIER PROMPT ===
+
+**On FAIL:** Re-run Step C from scratch, using the `discrepancies` list from
+`VERIFICATION_RESULT` as targeted correction hints. Then re-run Step D once more.
+After the second verification attempt, proceed to Step E regardless of outcome —
+if it still fails, record the discrepancies in the `errors` field of the final return block.
+
+**On PASS:** Proceed directly to Step E.
+
+## Step E — Generate Excel
 
 Derive the market slug from the PDF filename or reported_market: lowercase, underscores,
 alphanumeric only. Example: "mississauga_industrial".
@@ -147,7 +200,7 @@ cp /tmp/mls_cleaned.json \
    "{{ WORKSPACE_PATH }}/Reports/{{ TIMESTAMP }}_mls_extraction_<market>.json"
 ```
 
-## Step E — Verify
+## Step F — Verify
 
 Check all of the following before returning:
 - total_properties matches the number of listings seen in the PDF
