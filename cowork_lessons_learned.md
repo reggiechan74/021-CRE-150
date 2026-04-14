@@ -89,3 +89,68 @@ Steps 1–2 burn context that was already partially consumed by orchestration ov
 - Vision content / PDF reads involved (existing rule)
 - Two or more reference files are loaded before the source document
 - Intermediate JSON or data structures are produced mid-pipeline
+
+---
+
+## Lesson 2 — Nested subagents require distinct prompt delimiters
+
+**Date**: 2026-04-14
+**Plugin affected**: `mls-extractor` → `mls-extraction` skill (verification step)
+
+### What happened
+
+The mls-extraction skill's extraction subagent was extended to dispatch its own verification subagent — a sub-subagent that cross-checks the extracted JSON against the source PDF before the Excel formatter runs.
+
+### The problem
+
+The outer subagent prompt already uses `--- BEGIN SUBAGENT PROMPT ---` / `--- END SUBAGENT PROMPT ---` as its boundary. If the inner verifier prompt uses the same delimiter, the boundary is ambiguous — either the agent or the skill parser sees `--- END SUBAGENT PROMPT ---` inside the verifier block and treats it as the end of the outer prompt.
+
+### The fix
+
+Use distinct delimiters at each nesting level:
+
+| Level | Delimiter |
+|---|---|
+| Primary → Extraction subagent | `--- BEGIN SUBAGENT PROMPT ---` / `--- END SUBAGENT PROMPT ---` |
+| Extraction subagent → Verifier subagent | `=== BEGIN VERIFIER PROMPT ===` / `=== END VERIFIER PROMPT ===` |
+
+Any non-colliding delimiter works. The key is that no delimiter at level N appears verbatim inside any prompt at level N+1.
+
+### Rule of thumb
+
+Each nesting level needs its own delimiter style. Three dashes (`---`) for the outermost, three equals (`===`) for one level in, some other marker for deeper nesting (unlikely to be needed in practice).
+
+---
+
+## Lesson 3 — Verify intermediate artifacts before generating downstream outputs
+
+**Date**: 2026-04-14
+**Plugin affected**: `mls-extractor` → `mls-extraction` skill
+
+### What happened
+
+The mls-extraction pipeline originally ordered its steps as:
+
+1. Extract JSON
+2. Generate Excel from JSON
+3. Verify output (file size, field count)
+
+The final verify step checked the Excel file but couldn't efficiently fix the JSON it was derived from — by that point both files existed and a correction required regenerating both.
+
+### The insight
+
+Excel is generated deterministically from JSON. JSON is the single source of truth. If the JSON is wrong, the Excel is wrong. The cheapest fix is to catch JSON errors before the formatter runs, not after.
+
+### The fix
+
+Reorder the pipeline: verify the intermediate artifact immediately after it is produced, before any downstream outputs are generated:
+
+1. Extract JSON → `/tmp/mls_cleaned.json`
+2. **Verify JSON against source PDF** (dispatch verifier subagent)
+   - On FAIL: re-extract JSON with correction hints, re-verify once
+3. Generate Excel from verified JSON
+4. Final file-level checks (size, existence)
+
+### Rule of thumb
+
+For any pipeline where one artifact is derived deterministically from another, verify the source artifact before deriving. A single fix at the source is always cheaper than regenerating all downstream outputs. This applies any time the pipeline shape is: **extract → transform → format**.
