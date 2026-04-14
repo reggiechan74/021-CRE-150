@@ -1,0 +1,8 @@
+{
+  "name": "mcda-sales-comparison",
+  "version": "1.0.0",
+  "description": "MCDA ordinal ranking for fee simple valuation — ranks subject and comparables on weighted characteristics, maps composite scores to value via interpolation and regression",
+  "author": {
+    "name": "Reggie Chan"
+  }
+}

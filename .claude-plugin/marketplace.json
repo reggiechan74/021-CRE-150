@@ -5,8 +5,8 @@
     "email": "reggie.chan@gmail.com"
   },
   "metadata": {
-    "description": "Commercial real estate tools — lease abstraction and MLS data extraction",
-    "version": "0.3.0"
+    "description": "Commercial real estate tools — lease abstraction, MLS data extraction, and MCDA sales comparison valuation",
+    "version": "0.4.0"
   },
   "plugins": [
     {
@@ -23,6 +23,15 @@
       "source": "./plugins/mls-extractor",
       "description": "Extract MLS property listings from PDF reports into professionally formatted Excel spreadsheets with subject property highlighting",
       "version": "0.5.1",
+      "author": {
+        "name": "Reggie Chan"
+      }
+    },
+    {
+      "name": "mcda-sales-comparison",
+      "source": "./plugins/mcda-sales-comparison",
+      "description": "MCDA ordinal ranking for fee simple valuation — ranks subject and comparables on weighted characteristics, maps composite scores to value via interpolation and regression",
+      "version": "1.0.0",
       "author": {
         "name": "Reggie Chan"
       }
