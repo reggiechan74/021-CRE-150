@@ -1,0 +1,8 @@
+{
+  "name": "mcda-lease-comparison",
+  "version": "1.0.0",
+  "description": "MCDA competitive positioning analysis — ranks subject property against comparables on up to 25 weighted variables, calculates sensitivity analysis to achieve Top 3 positioning, and generates a strategic pricing report with landscape PDF output",
+  "author": {
+    "name": "Reggie Chan"
+  }
+}

@@ -154,3 +154,56 @@ Reorder the pipeline: verify the intermediate artifact immediately after it is p
 ### Rule of thumb
 
 For any pipeline where one artifact is derived deterministically from another, verify the source artifact before deriving. A single fix at the source is always cheaper than regenerating all downstream outputs. This applies any time the pipeline shape is: **extract → transform → format**.
+
+---
+
+## Lesson 4 — Embed operational lookup tables in subagent prompts; keep narrative methodology in the primary SKILL.md
+
+**Date**: 2026-04-14
+**Plugin affected**: `relative-valuation` skill
+
+### What happened
+
+The `relative-valuation` skill has substantial domain knowledge: 25 variables with weights, encoding rules, ranking direction (higher-is-better vs lower-is-better), persona profiles, competitive tier definitions, sensitivity analysis methodology, communication language, and red flags. This content is ~700 lines in the primary SKILL.md.
+
+When writing the subagent dispatch prompt, the question arose: how much of this domain knowledge belongs in the subagent prompt vs. the primary SKILL.md?
+
+### The insight
+
+The subagent and the primary agent serve different roles. The primary agent reads the SKILL.md and understands the full methodology — strategy, communication, what it all means. The subagent never reads the SKILL.md; it only sees the dispatch prompt. It needs to *execute* correctly, not to *understand* the strategy.
+
+Two categories of content emerged:
+
+**Operational lookup tables** — the subagent needs these to execute without hallucination:
+- Variable encoding rules (e.g., "Class A = 5, B = 4, C = 3")
+- Ranking direction flags (higher = better vs. lower = better)
+- Required field names and JSON schema
+- Variable inclusion logic (which fields trigger inclusion of optional variables)
+- Persona weight overrides
+
+**Narrative methodology** — the primary agent needs this; the subagent does not:
+- Strategy frameworks (what competitive tiers mean, how to interpret positioning)
+- Communication language ("Top 3", "Competitive", "Disadvantaged")
+- Examples and analogues explaining the algorithm
+- Red flags and edge case commentary
+- Sensitivity analysis interpretation guidance
+
+Putting the full 700 lines into the subagent prompt wastes context and risks confusing the subagent — it may try to follow strategy guidance that contradicts the mechanical execution steps. Omitting the lookup tables causes hallucination on encoding rules.
+
+### The fix
+
+Embed only the operational lookup tables (~150 lines) in the subagent prompt as compact reference tables. Keep the narrative methodology in the primary SKILL.md where the orchestrating agent can use it.
+
+The boundary to draw:
+
+| Goes in the subagent prompt | Stays in primary SKILL.md |
+|---|---|
+| Variable names, weights, encoding rules | Tier definitions and what they mean |
+| Ranking direction for each variable | Communication language and tone |
+| JSON field names and required structure | Sensitivity analysis interpretation |
+| Optional variable inclusion thresholds | Red flags and edge case guidance |
+| Persona weight overrides | Examples and methodology rationale |
+
+### Rule of thumb
+
+When a skill's domain knowledge exceeds ~150 lines, split it by role: embed only the compact reference tables the subagent needs to execute correctly (variables, encodings, schemas), and keep the strategy, language, and interpretation narrative in the primary SKILL.md. The subagent executes; the primary agent understands.

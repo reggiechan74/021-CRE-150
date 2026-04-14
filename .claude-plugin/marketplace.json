@@ -5,8 +5,8 @@
     "email": "reggie.chan@gmail.com"
   },
   "metadata": {
-    "description": "Commercial real estate tools — lease abstraction, MLS data extraction, and MCDA sales comparison valuation",
-    "version": "0.4.0"
+    "description": "Commercial real estate tools — lease abstraction, MLS data extraction, MCDA sales comparison valuation, and relative valuation competitive positioning",
+    "version": "0.5.0"
   },
   "plugins": [
     {
@@ -31,6 +31,15 @@
       "name": "mcda-sales-comparison",
       "source": "./plugins/mcda-sales-comparison",
       "description": "MCDA ordinal ranking for fee simple valuation — ranks subject and comparables on weighted characteristics, maps composite scores to value via interpolation and regression",
+      "version": "1.0.0",
+      "author": {
+        "name": "Reggie Chan"
+      }
+    },
+    {
+      "name": "mcda-lease-comparison",
+      "source": "./plugins/mcda-lease-comparison",
+      "description": "MCDA competitive positioning analysis — ranks subject property against comparables on up to 25 weighted variables, calculates sensitivity analysis to achieve Top 3 positioning, and generates a strategic pricing report with landscape PDF output",
       "version": "1.0.0",
       "author": {
         "name": "Reggie Chan"
