@@ -45,12 +45,16 @@ CURRENT_YEAR = datetime.now().year
 # Keys are canonical field names; values are lists of label aliases (lowercase).
 LABEL_MAP: dict[str, list[str]] = {
     "available_sf":       ["total area", "available sf", "available", "area"],
-    "net_asking_rent":    ["list price", "net rent", "net asking rent", "list"],
+    "net_asking_rent":    ["list price", "net rent", "net asking rent"],
     "price_unit":         ["price unit"],
     "tmi_raw":            ["taxes"],  # parse $X/YYYY/T.M.I.
     "clear_height_raw":   ["clear height"],
     "apx_age":            ["apx age", "year built", "age"],
-    "pct_office_raw":     ["ofc/apt area", "% office", "office area"],
+    # Office area appears in two forms depending on broker template:
+    #   "Ofc/Apt Area: 3 %"     → direct percentage
+    #   "Ofc/Apt Area: 5674 Sq Ft" → absolute sqft; must divide by available_sf
+    # Both route to office_area_raw; parse_pct_office disambiguates.
+    "office_area_raw":    ["ofc/apt area", "% office", "office area"],
     "shipping_doors_tl":  ["truck level", "truck level doors", "tl doors"],
     "shipping_doors_di":  ["drive-in", "drive in", "drive-in doors", "di doors"],
     "grade_level_doors":  ["grade level", "grade level doors"],
@@ -170,6 +174,11 @@ def pairs_from_row(row: list) -> list[tuple[str, str]]:
 MLS_RE = re.compile(r"MLS#[:\s]+([A-Z]\d{6,})", re.IGNORECASE)
 DOM_RE = re.compile(r"DOM[:\s|]+(\d+)", re.IGNORECASE)
 
+# TREB headers glue the list price onto the same line as the address, e.g.
+# "795 Hazelhurst Rd List: $1". The generic pairs_from_cell regex captures
+# the whole address as the label, so we extract list price directly from text.
+LIST_PRICE_RE = re.compile(r"\bList:\s*\$([\d.,]+)")
+
 
 def extract_properties(pdf_path: str) -> list[dict]:
     """Walk all pages, collect (label, value) pairs + prose, segment by MLS#."""
@@ -287,10 +296,25 @@ def parse_tmi(raw: str) -> float:
     return _to_float(raw)
 
 
-def parse_pct_office(raw: str) -> float:
-    """`3 %` or `3%` → 0.03."""
+def parse_pct_office(raw: str, available_sf: int = 0) -> float:
+    """Parse office area in either form:
+      `3 %` / `3%`  → 0.03 (direct percent)
+      `5,674 Sq Ft` → 5674 / available_sf (fraction of building)
+    Ambiguous small integers without a suffix are treated as percent for
+    backwards compatibility with templates that omit the `%` sign.
+    """
+    if not raw:
+        return 0.0
     v = _to_float(raw)
-    return round(v / 100.0, 4) if v else 0.0
+    if v <= 0:
+        return 0.0
+    s = raw.lower()
+    is_sqft = "sq" in s or "sf" in s or (v > 100 and "%" not in s)
+    if is_sqft:
+        if available_sf and available_sf > 0:
+            return round(v / available_sf, 4)
+        return 0.0  # can't compute without denominator
+    return round(v / 100.0, 4)
 
 
 def parse_lot_acres(raw: str) -> float:
@@ -397,8 +421,12 @@ def extract_address(raw_text: str) -> str:
 
 
 REMARKS_RE = re.compile(
-    r"Client\s+Remarks?:?\s*\n?(.+?)(?=(?:Extras:|Brokerage\s+Remarks?:|Brkage\s+Remks?:|"
-    r"Inclusions:|Showing\s+Requirements:|Listing\s+Brokerage:|Page\s+\d+|$))",
+    # TREB abbreviates "Remarks" as "Remks" in the data section; accept both
+    # in the opening anchor and in every terminator.
+    r"Client\s+(?:Remarks?|Remks):?\s*\n?(.+?)"
+    r"(?=(?:Extras:|Brokerage\s+(?:Remarks?|Remks):|Brkage\s+(?:Remarks?|Remks):|"
+    r"Inclusions:|Exclusions:|Rental\s+Items:|Showing\s+Requirements:|"
+    r"Listing\s+Brokerage:|Page\s+\d+|$))",
     re.DOTALL | re.IGNORECASE,
 )
 
@@ -428,6 +456,49 @@ def extract_unit(raw_text: str, address: str) -> str:
 
 DOM_HEADER_RE = re.compile(r"DOM[:\s|]+(\d+)", re.IGNORECASE)
 
+# Possession values arrive glued together because the PDF column layout puts
+# "Possession: <type>" and a neighbouring "Remarks: <date>" on the same line.
+# Example raw values: "OtherRemarks: Q2 2026", "ImmediateRemarks: Immediate",
+# "Remarks: Q4 2023". Normalize to a single human date/phrase.
+POSSESSION_TYPES = (
+    "Immediate", "Flexible", "TBA", "TBD", "Other", "Vacant",
+    r"30\s*Days?", r"60\s*Days?", r"90\s*Days?", r"120\s*Days?",
+    r"30-59\s*days?", r"60-89\s*days?", r"90\+?\s*days?",
+)
+AVAIL_TYPE_RE = re.compile(rf"^\s*({'|'.join(POSSESSION_TYPES)})\s*", re.IGNORECASE)
+# After type token, strip any of: "Remarks:", "Remks:", or "Date:" sub-labels
+AVAIL_SUBLABEL_RE = re.compile(r"^\s*(?:Remarks?:|Remks:|Date:)\s*", re.IGNORECASE)
+
+
+def clean_availability(raw: str) -> str:
+    """Normalize `Possession:` values that the PDF layout concatenates with a
+    neighbouring `Remarks:` or `Date:` sub-label.
+
+    Examples:
+      "OtherRemarks: Q2 2026"        → "Other — Q2 2026"
+      "ImmediateRemarks: Immediate"  → "Immediate"
+      "Remarks: Q4 2023"             → "Q4 2023"
+      "90+ daysDate: 03/01/2026"     → "90+ days — 03/01/2026"
+      "60-89 daysRemarks: 60 - 89 days" → "60-89 days"
+    """
+    if not raw:
+        return ""
+    s = _norm(raw)
+    m = AVAIL_TYPE_RE.match(s)
+    type_tok = m.group(1).strip() if m else ""
+    rest = s[m.end():] if m else s
+    rest = AVAIL_SUBLABEL_RE.sub("", rest).strip()
+    # Some rows double-dip: "03/01/2026Remarks: March 1, 2026". Keep the first
+    # date-like token and drop any trailing "Remarks:|Remks:|Date:" tail.
+    rest = re.split(r"\s*(?:Remarks?:|Remks:|Date:)\s*", rest, maxsplit=1)[0].strip()
+    # If rest is just an echo of type (common), drop it
+    if rest and type_tok and rest.lower().rstrip(".").replace(" ", "") \
+            == type_tok.lower().rstrip(".").replace(" ", ""):
+        rest = ""
+    if type_tok and rest:
+        return f"{type_tok} — {rest}"
+    return type_tok or rest
+
 
 # ---------------------------------------------------------------------------
 # Assembly
@@ -447,11 +518,20 @@ def build_property(rec: dict, source_pdf: str) -> dict:
     remarks = extract_remarks(raw_text)
     broker = extract_broker(raw_text)
 
+    # List price lives on the address line in TREB format — label-based
+    # extraction sees the whole "<street> List" as one label and misses it.
+    # Fall back to a text-level scan when the dict yields nothing usable.
     net_rent = _to_float(d.get("net_asking_rent", ""))
+    if net_rent <= 0:
+        m = LIST_PRICE_RE.search(raw_text)
+        if m:
+            net_rent = _to_float(m.group(1))
+
     tmi = parse_tmi(d.get("tmi_raw", ""))
     clear_ft = parse_clear_height(d.get("clear_height_raw", ""))
     year_built = parse_year_built(d.get("apx_age", ""))
-    pct_office = parse_pct_office(d.get("pct_office_raw", ""))
+    available_sf = _to_int(d.get("available_sf", ""))
+    pct_office = parse_pct_office(d.get("office_area_raw", ""), available_sf)
     sprinkler = parse_sprinkler(d.get("sprinkler_raw", ""), remarks + " " + raw_text)
 
     dom_m = DOM_HEADER_RE.search(raw_text)
@@ -460,7 +540,7 @@ def build_property(rec: dict, source_pdf: str) -> dict:
     f = {
         "address": address,
         "unit": extract_unit(raw_text, address),
-        "available_sf": _to_int(d.get("available_sf", "")),
+        "available_sf": available_sf,
         "net_asking_rent": net_rent,
         "tmi": tmi,
         "year_built": year_built,
@@ -485,7 +565,7 @@ def build_property(rec: dict, source_pdf: str) -> dict:
         "grade_level_doors": _to_int(d.get("grade_level_doors", "")),
         "days_on_market": dom,
         "zoning": _norm(d.get("zoning", "")),
-        "availability_date": _norm(d.get("availability_raw", "")).replace("Other Remarks: ", "").replace("Remarks: ", ""),
+        "availability_date": clean_availability(d.get("availability_raw", "")),
         "mls_number": rec["mls_number"],
         "broker_name": broker,
         "client_remarks": remarks,
