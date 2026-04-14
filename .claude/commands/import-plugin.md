@@ -31,7 +31,7 @@ If `source` is a local path: read the file or directory with Read/Glob. Identify
 Present a plan to the user:
 - Plugin name, version, source
 - Files to be created
-- Whether the SKILL.md requires subagent dispatch — apply the trigger checklist from `cowork_lessons_learned.md`
+- Whether the SKILL.md requires subagent dispatch — use the trigger checklist in `cowork_lessons_learned.md`
 - Scripts that need `cd "${SCRIPTS_DIR}"` before execution (sibling imports)
 - Any hardcoded paths in scripts that need replacing with `Path(__file__).parent / "filename"`
 
@@ -42,11 +42,7 @@ Wait for user confirmation before proceeding.
 Use `plugins/mcda-lease-comparison/` as the reference for all structure and formatting:
 - Directory layout, `plugin.json`, `SKILL.md`, `README.md`, `CHANGELOG.md`
 
-Read `cowork_lessons_learned.md` and apply **all four lessons** to the new SKILL.md:
-- Lesson 1: subagent dispatch if the pipeline is context-heavy
-- Lesson 2: distinct delimiters at each nesting level (`---` outer, `===` inner)
-- Lesson 3: validate the intermediate artifact before running downstream steps
-- Lesson 4: embed only operational lookup tables (~150 lines) in the subagent prompt; keep strategy, communication language, and interpretation narrative in the primary SKILL.md
+Read `cowork_lessons_learned.md` and apply **every lesson it contains** to the new SKILL.md.
 
 Copy scripts to `${PLUGIN_ROOT}/skills/${PLUGIN_NAME}/scripts/` without renaming — preserve import chains.
 
