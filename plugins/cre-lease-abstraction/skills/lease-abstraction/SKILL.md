@@ -7,7 +7,6 @@ description: >
   calendar", "create an ICS file from a lease", "export lease dates to CSV", or needs to
   apply REIXS methodology, the 258-field Domain Data Dictionary, or REIXS-LA-NA-001
   extraction standards to a commercial real estate lease document.
-version: 0.2.0
 ---
 
 ## Mode Detection

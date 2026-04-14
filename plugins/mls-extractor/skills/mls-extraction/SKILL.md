@@ -5,7 +5,6 @@ description: >
   "extract properties from an MLS PDF", "create an MLS Excel spreadsheet", "extract MLS listings",
   "process an MLS PDF", "get property data from MLS", or any request to extract commercial real
   estate property listings from a PDF report into a structured Excel or JSON format.
-version: 0.1.0
 ---
 
 ## Philosophy
