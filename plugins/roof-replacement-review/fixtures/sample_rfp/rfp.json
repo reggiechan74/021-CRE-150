@@ -1,0 +1,81 @@
+{
+  "project": {
+    "owner": "Mississauga Industrial Holdings Inc.",
+    "owner_type": "private_commercial",
+    "property": "2550 Stanfield Road, Mississauga, ON",
+    "building_classification": "obc_part_3",
+    "roof_type": "low_slope_commercial",
+    "roof_area_sqft": 48500,
+    "jurisdiction": "Ontario, Canada",
+    "building_year_built": 1988,
+    "existing_roof_age_years": 22,
+    "occupied_during_work": true,
+    "designated_substances_assessment_required": true
+  },
+  "rfp": {
+    "rfp_id": "MIH-2026-ROOF-01",
+    "issued_date": "2026-03-10",
+    "submission_deadline": "2026-04-14T14:00:00-04:00",
+    "site_meeting_mandatory": true,
+    "contract_form": "ccdc_2",
+    "scope_of_work": {
+      "work_description": "Full tear-off and replacement of existing 4-ply BUR on 48,500 sq ft single-storey industrial building. Work to be completed during occupied tenant operations. Retrofit insulation to SB-10 compliance.",
+      "tear_off_required": true,
+      "deck_replacement_allowance_bf": 500,
+      "insulation_upgrade_to_code": true,
+      "membrane_system_specified": {
+        "category": "sbs_2ply",
+        "thickness_spec": "2-ply SBS modified bitumen, cap sheet 4.5mm granulated, base sheet 3mm minimum",
+        "manufacturer_acceptable_list": ["Soprema", "IKO Commercial", "Johns Manville"],
+        "attachment_method": "self_adhered"
+      },
+      "included_items": [
+        "Complete tear-off of existing BUR to steel deck",
+        "Wood blocking at perimeter and curbs",
+        "New polyiso insulation R-30ci minimum",
+        "High-density cover board",
+        "New 2-ply SBS system per spec",
+        "All flashings, counterflashings, termination bars",
+        "Roof drain reconditioning or replacement as required",
+        "HVAC curb raising as required for new assembly height"
+      ],
+      "excluded_items": [],
+      "alternates_requested": [
+        "Alternate A: TPO single-ply (60 mil min) in lieu of SBS 2-ply",
+        "Alternate B: 3-year extended workmanship warranty (add to base)"
+      ]
+    },
+    "warranty_requirements": {
+      "minimum_manufacturer_years": 20,
+      "warranty_type_required": "total_system_ndl",
+      "minimum_workmanship_years": 5,
+      "manufacturer_certification_required": true
+    },
+    "mandatory_requirements": {
+      "wsib_clearance_required": true,
+      "cgl_minimum_cad": 5000000,
+      "owner_named_additional_insured": true,
+      "completed_operations_years": 2,
+      "bid_bond_percent": 10,
+      "performance_bond_percent": 50,
+      "labour_material_bond_percent": 50,
+      "working_at_heights_training_required": true,
+      "addenda_acknowledgment_required": true,
+      "non_collusion_declaration_required": true,
+      "site_visit_required": true,
+      "minimum_years_in_business": 5,
+      "minimum_similar_projects": 3
+    },
+    "evaluation_criteria": {
+      "weighting": {
+        "price": 40,
+        "technical_approach": 20,
+        "experience_references": 15,
+        "warranty_materials": 10,
+        "schedule": 5,
+        "qualifications_certifications": 10
+      },
+      "price_scoring_method": "formula_lowest_ratio"
+    }
+  }
+}

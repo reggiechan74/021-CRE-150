@@ -1,0 +1,357 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RoofReplacementTenderManifest",
+  "description": "Normalized schema for an Ontario roof replacement tender: one RFP + N bidder submissions. Designed for commercial (OBC Part 3) and residential (OBC Part 9) roofing.",
+  "type": "object",
+  "required": ["manifest_version", "project", "rfp", "bids"],
+  "properties": {
+    "manifest_version": { "const": "1.0.0" },
+    "generated_at": { "type": "string", "format": "date-time" },
+
+    "project": {
+      "type": "object",
+      "required": ["owner", "property", "roof_type", "jurisdiction"],
+      "properties": {
+        "owner": { "type": "string", "description": "Legal name of building owner / tendering party" },
+        "owner_type": {
+          "type": "string",
+          "enum": ["private_commercial", "condo_corp", "private_residential", "municipal", "school_board", "hospital", "other_bps"],
+          "description": "Drives BPS Procurement Directive applicability and AODA/French-language requirements"
+        },
+        "property": { "type": "string", "description": "Property address" },
+        "building_classification": {
+          "type": "string",
+          "enum": ["obc_part_3", "obc_part_9"],
+          "description": "obc_part_3 = >3 storeys or >600m² (commercial/institutional). obc_part_9 = houses & small buildings"
+        },
+        "roof_type": {
+          "type": "string",
+          "enum": ["low_slope_commercial", "steep_slope_residential", "steep_slope_commercial", "mixed"]
+        },
+        "roof_area_sqft": { "type": "number" },
+        "jurisdiction": { "type": "string", "default": "Ontario, Canada" },
+        "building_year_built": { "type": "integer" },
+        "existing_roof_age_years": { "type": "integer" },
+        "occupied_during_work": { "type": "boolean", "description": "Occupied buildings weight schedule + technical approach higher" },
+        "designated_substances_assessment_required": { "type": "boolean", "description": "OHSA s.30 — required for pre-1980 buildings" }
+      }
+    },
+
+    "rfp": {
+      "type": "object",
+      "description": "Owner's tender document — defines scope, specs, mandatories, and evaluation criteria",
+      "required": ["scope_of_work", "evaluation_criteria", "mandatory_requirements", "submission_deadline"],
+      "properties": {
+        "rfp_id": { "type": "string" },
+        "issued_date": { "type": "string", "format": "date" },
+        "submission_deadline": { "type": "string", "format": "date-time" },
+        "site_meeting_mandatory": { "type": "boolean" },
+        "contract_form": {
+          "type": "string",
+          "enum": ["ccdc_2", "cca_1_stipulated", "owner_custom", "simple_contract"]
+        },
+
+        "scope_of_work": {
+          "type": "object",
+          "properties": {
+            "work_description": { "type": "string" },
+            "tear_off_required": { "type": "boolean" },
+            "deck_replacement_allowance_bf": { "type": "number", "description": "Board feet allowance for wood deck replacement" },
+            "insulation_upgrade_to_code": { "type": "boolean", "description": "SB-10/SB-12 compliance required on retrofit" },
+            "membrane_system_specified": {
+              "type": "object",
+              "properties": {
+                "category": {
+                  "type": "string",
+                  "enum": ["sbs_2ply", "sbs_3ply", "bur_4ply", "tpo", "epdm", "pvc", "kee", "asphalt_shingles", "metal_standing_seam", "metal_exposed_fastener", "cedar", "synthetic", "other"]
+                },
+                "thickness_spec": { "type": "string", "description": "e.g., '60 mil minimum' or '30-year architectural laminate'" },
+                "manufacturer_acceptable_list": { "type": "array", "items": { "type": "string" } },
+                "attachment_method": {
+                  "type": "string",
+                  "enum": ["mechanically_fastened", "fully_adhered", "ballasted", "induction_welded", "torch_applied", "self_adhered", "n_a"]
+                }
+              }
+            },
+            "included_items": { "type": "array", "items": { "type": "string" } },
+            "excluded_items": { "type": "array", "items": { "type": "string" } },
+            "alternates_requested": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+
+        "warranty_requirements": {
+          "type": "object",
+          "properties": {
+            "minimum_manufacturer_years": { "type": "integer" },
+            "warranty_type_required": {
+              "type": "string",
+              "enum": ["material_only", "labour_and_material", "total_system_ndl", "ndl"],
+              "description": "NDL = No Dollar Limit, the gold standard for commercial"
+            },
+            "minimum_workmanship_years": { "type": "integer", "description": "Contractor workmanship warranty, typically 2-10 years" },
+            "manufacturer_certification_required": { "type": "boolean", "description": "e.g., GAF Master Elite, Soprema Select" }
+          }
+        },
+
+        "mandatory_requirements": {
+          "type": "object",
+          "description": "Pass/fail gates. Any failure = bid non-compliant.",
+          "properties": {
+            "wsib_clearance_required": { "type": "boolean", "default": true },
+            "cgl_minimum_cad": { "type": "number", "default": 5000000 },
+            "owner_named_additional_insured": { "type": "boolean", "default": true },
+            "completed_operations_years": { "type": "integer", "default": 2 },
+            "bid_bond_percent": { "type": "number", "description": "Typically 10% for larger projects" },
+            "performance_bond_percent": { "type": "number", "description": "Typically 50%" },
+            "labour_material_bond_percent": { "type": "number", "description": "Typically 50%" },
+            "working_at_heights_training_required": { "type": "boolean", "default": true },
+            "addenda_acknowledgment_required": { "type": "boolean", "default": true },
+            "non_collusion_declaration_required": { "type": "boolean", "default": true },
+            "site_visit_required": { "type": "boolean" },
+            "minimum_years_in_business": { "type": "integer" },
+            "minimum_similar_projects": { "type": "integer", "description": "References of similar scope completed" }
+          }
+        },
+
+        "evaluation_criteria": {
+          "type": "object",
+          "description": "Weighted rated criteria (after mandatories pass). Weights must sum to 100.",
+          "properties": {
+            "weighting": {
+              "type": "object",
+              "properties": {
+                "price": { "type": "number", "default": 45 },
+                "technical_approach": { "type": "number", "default": 15 },
+                "experience_references": { "type": "number", "default": 15 },
+                "warranty_materials": { "type": "number", "default": 10 },
+                "schedule": { "type": "number", "default": 5 },
+                "qualifications_certifications": { "type": "number", "default": 10 }
+              }
+            },
+            "price_scoring_method": {
+              "type": "string",
+              "enum": ["formula_lowest_ratio", "linear_interpolation", "lowest_compliant"],
+              "default": "formula_lowest_ratio",
+              "description": "formula_lowest_ratio: score = (lowest/this) × weight"
+            }
+          }
+        }
+      }
+    },
+
+    "bids": {
+      "type": "array",
+      "description": "One entry per contractor submission",
+      "items": {
+        "type": "object",
+        "required": ["bidder_id", "bidder_name", "submission"],
+        "properties": {
+          "bidder_id": { "type": "string" },
+          "bidder_name": { "type": "string" },
+          "source_pdf": { "type": "string", "description": "Filename of the bid PDF" },
+
+          "pricing": {
+            "type": "object",
+            "properties": {
+              "base_bid_cad": { "type": "number" },
+              "hst_included": { "type": "boolean" },
+              "alternates": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "description": { "type": "string" },
+                    "price_cad": { "type": "number" }
+                  }
+                }
+              },
+              "unit_prices": {
+                "type": "object",
+                "description": "For extra/deducts over allowances",
+                "properties": {
+                  "deck_replacement_per_bf": { "type": "number" },
+                  "insulation_per_sqft_per_rvalue": { "type": "number" },
+                  "flashing_per_lf": { "type": "number" }
+                }
+              },
+              "allowances_carried": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "item": { "type": "string" },
+                    "amount_cad": { "type": "number" }
+                  }
+                }
+              }
+            }
+          },
+
+          "scope_response": {
+            "type": "object",
+            "properties": {
+              "full_compliance_claimed": { "type": "boolean" },
+              "exclusions_declared": { "type": "array", "items": { "type": "string" } },
+              "clarifications": { "type": "array", "items": { "type": "string" } },
+              "substitutions_proposed": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "spec_item": { "type": "string" },
+                    "substitute_offered": { "type": "string" },
+                    "equivalence_justification": { "type": "string" }
+                  }
+                }
+              }
+            }
+          },
+
+          "materials_system": {
+            "type": "object",
+            "properties": {
+              "manufacturer": { "type": "string" },
+              "system_name": { "type": "string" },
+              "membrane_thickness_actual": { "type": "string" },
+              "insulation_spec": { "type": "string" },
+              "cover_board_included": { "type": "boolean" },
+              "product_data_sheets_attached": { "type": "boolean" }
+            }
+          },
+
+          "warranty_offered": {
+            "type": "object",
+            "properties": {
+              "manufacturer_years": { "type": "integer" },
+              "warranty_type": {
+                "type": "string",
+                "enum": ["material_only", "labour_and_material", "total_system_ndl", "ndl", "prorated", "unclear"]
+              },
+              "workmanship_years": { "type": "integer" },
+              "wind_uplift_coverage_mph": { "type": "integer" },
+              "manufacturer_certified_installer": { "type": "boolean" },
+              "certification_program": { "type": "string", "description": "e.g., GAF Master Elite, Soprema Select" },
+              "evidence_page": { "type": "string", "description": "Page reference in the bid PDF" }
+            }
+          },
+
+          "qualifications": {
+            "type": "object",
+            "properties": {
+              "years_in_business": { "type": "integer" },
+              "wsib_clearance_attached": { "type": "boolean" },
+              "wsib_clearance_date": { "type": "string", "format": "date" },
+              "wsib_in_good_standing": { "type": "boolean" },
+              "cgl_limit_cad": { "type": "number" },
+              "cgl_completed_operations_years": { "type": "integer" },
+              "owner_named_as_additional_insured": { "type": "boolean" },
+              "coi_attached": { "type": "boolean" },
+              "bid_bond_attached": { "type": "boolean" },
+              "bonding_capacity_cad": { "type": "number" },
+              "working_at_heights_training_confirmed": { "type": "boolean" },
+              "crca_member": { "type": "boolean" },
+              "certificate_of_qualification_roofers_count": { "type": "integer", "description": "Skilled Trades Ontario C of Q holders on crew" },
+              "references_provided": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "project_name": { "type": "string" },
+                    "owner_contact": { "type": "string" },
+                    "value_cad": { "type": "number" },
+                    "completion_year": { "type": "integer" },
+                    "similar_scope": { "type": "boolean" }
+                  }
+                }
+              },
+              "subcontracting_declared": { "type": "boolean" },
+              "subcontractors_named": { "type": "array", "items": { "type": "string" } }
+            }
+          },
+
+          "schedule": {
+            "type": "object",
+            "properties": {
+              "mobilization_days_after_award": { "type": "integer" },
+              "work_duration_days": { "type": "integer" },
+              "substantial_completion_date": { "type": "string", "format": "date" },
+              "crew_size": { "type": "integer" },
+              "accommodates_occupied_building": { "type": "boolean" }
+            }
+          },
+
+          "technical_approach": {
+            "type": "object",
+            "properties": {
+              "narrative": { "type": "string" },
+              "tear_off_staging_plan": { "type": "string" },
+              "weather_protection_plan": { "type": "string" },
+              "fall_protection_plan": { "type": "string" },
+              "waste_disposal_plan": { "type": "string" },
+              "site_safety_plan_attached": { "type": "boolean" }
+            }
+          },
+
+          "mandatory_gates": {
+            "type": "object",
+            "description": "Computed by roof-qualification-check skill. Each gate: pass | fail | needs_clarification",
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "result": { "enum": ["pass", "fail", "needs_clarification"] },
+                "evidence": { "type": "string" },
+                "notes": { "type": "string" }
+              }
+            }
+          },
+
+          "red_flags": {
+            "type": "array",
+            "description": "Computed by technical/qualification review skills",
+            "items": {
+              "type": "object",
+              "properties": {
+                "severity": { "enum": ["critical", "high", "medium", "low"] },
+                "category": {
+                  "enum": ["pricing", "scope", "warranty", "materials", "qualifications", "schedule", "insurance", "safety", "subcontracting", "references"]
+                },
+                "description": { "type": "string" },
+                "citation": { "type": "string", "description": "Source authority: OBC section, CRCA bulletin, CCDC-23, etc." },
+                "evidence": { "type": "string" },
+                "recommendation": { "type": "string", "description": "Suggested owner action: clarify, reject, negotiate, accept-with-condition" }
+              }
+            }
+          },
+
+          "scores": {
+            "type": "object",
+            "description": "Computed by roof-score-matrix skill. Raw sub-scores (0-100) and weighted contribution.",
+            "properties": {
+              "price": { "type": "number" },
+              "technical_approach": { "type": "number" },
+              "experience_references": { "type": "number" },
+              "warranty_materials": { "type": "number" },
+              "schedule": { "type": "number" },
+              "qualifications_certifications": { "type": "number" },
+              "weighted_total": { "type": "number" },
+              "rank": { "type": "integer" }
+            }
+          }
+        }
+      }
+    },
+
+    "comparison": {
+      "type": "object",
+      "description": "Cross-bid summary produced by scoring engine",
+      "properties": {
+        "price_low_cad": { "type": "number" },
+        "price_high_cad": { "type": "number" },
+        "price_spread_percent": { "type": "number", "description": ">15% spread may indicate scope divergence or low-bid risk" },
+        "compliant_bidders_count": { "type": "integer" },
+        "recommended_bidder_id": { "type": "string" },
+        "award_conditions": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}

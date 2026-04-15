@@ -1,0 +1,117 @@
+{
+  "bidder_id": "meridian",
+  "bidder_name": "Meridian Roofing Contractors Inc.",
+  "source_pdf": "meridian_roofing_bid.pdf",
+  "pricing": {
+    "base_bid_cad": 412000,
+    "hst_included": false,
+    "alternates": [
+      { "description": "Alternate A: TPO 45 mil single-ply", "price_cad": -35000 }
+    ],
+    "unit_prices": {
+      "deck_replacement_per_bf": 18.00,
+      "insulation_per_sqft_per_rvalue": 0.52,
+      "flashing_per_lf": 45.00
+    },
+    "allowances_carried": [
+      { "item": "Wood deck replacement", "amount_cad": 3000 }
+    ]
+  },
+  "scope_response": {
+    "full_compliance_claimed": false,
+    "exclusions_declared": [
+      "Cover board over insulation — not required per contractor's experience",
+      "Interior protection",
+      "Any work outside 6:00 AM - 4:00 PM weekdays",
+      "HVAC curb modification",
+      "Wind uplift design engineering"
+    ],
+    "clarifications": [
+      "25-year warranty offered"
+    ],
+    "substitutions_proposed": [
+      { "spec_item": "Soprema 2-ply SBS", "substitute_offered": "Generic SBS cap sheet single-ply, manufacturer TBD at award", "equivalence_justification": "Cost savings to owner" }
+    ]
+  },
+  "materials_system": {
+    "manufacturer": "TBD at award",
+    "system_name": "SBS cap sheet single-ply",
+    "membrane_thickness_actual": "4mm",
+    "insulation_spec": "2in polyiso, R-12",
+    "cover_board_included": false,
+    "product_data_sheets_attached": false
+  },
+  "warranty_offered": {
+    "manufacturer_years": 25,
+    "warranty_type": "unclear",
+    "workmanship_years": 2,
+    "wind_uplift_coverage_mph": null,
+    "manufacturer_certified_installer": false,
+    "certification_program": "",
+    "evidence_page": "Cover letter, page 1"
+  },
+  "qualifications": {
+    "years_in_business": 4,
+    "wsib_clearance_attached": true,
+    "wsib_clearance_date": "2025-10-15",
+    "wsib_in_good_standing": true,
+    "cgl_limit_cad": 2000000,
+    "cgl_completed_operations_years": 1,
+    "owner_named_as_additional_insured": false,
+    "coi_attached": true,
+    "bid_bond_attached": false,
+    "bonding_capacity_cad": 500000,
+    "working_at_heights_training_confirmed": true,
+    "crca_member": false,
+    "certificate_of_qualification_roofers_count": 1,
+    "references_provided": [
+      { "project_name": "Small office re-roof (3,200 sf)", "owner_contact": "D. Kumar", "value_cad": 85000, "completion_year": 2024, "similar_scope": false },
+      { "project_name": "Residential duplex", "owner_contact": "J. Wong", "value_cad": 18000, "completion_year": 2023, "similar_scope": false }
+    ],
+    "subcontracting_declared": true,
+    "subcontractors_named": []
+  },
+  "schedule": {
+    "mobilization_days_after_award": 45,
+    "work_duration_days": 30,
+    "substantial_completion_date": "2026-07-01",
+    "crew_size": 4,
+    "accommodates_occupied_building": false
+  },
+  "technical_approach": {
+    "narrative": "Standard tear-off and replacement.",
+    "tear_off_staging_plan": "",
+    "weather_protection_plan": "",
+    "fall_protection_plan": "Harnesses provided",
+    "waste_disposal_plan": "",
+    "site_safety_plan_attached": false
+  },
+  "mandatory_gates": {
+    "wsib": { "result": "needs_clarification", "evidence": "Clearance dated 2025-10-15 — outside standard 90-day validity; bidder must provide current clearance before award" },
+    "cgl": { "result": "fail", "evidence": "$2M limit — below $5M RFP minimum" },
+    "additional_insured": { "result": "fail", "evidence": "Owner not named on COI" },
+    "completed_ops": { "result": "fail", "evidence": "1-year coverage below 2-year minimum" },
+    "bid_bond": { "result": "fail", "evidence": "No bid bond attached" },
+    "wah_training": { "result": "pass", "evidence": "Confirmed in cover letter" },
+    "addenda": { "result": "needs_clarification", "evidence": "Addendum 3 not acknowledged" },
+    "non_collusion": { "result": "pass", "evidence": "Signed" },
+    "site_visit": { "result": "fail", "evidence": "Did not attend mandatory March 20 site meeting" },
+    "years_in_business": { "result": "fail", "evidence": "4 years, below 5-year minimum" },
+    "references": { "result": "fail", "evidence": "2 references, neither comparable to 48,500 sq ft industrial re-roof" }
+  },
+  "red_flags": [
+    { "severity": "critical", "category": "qualifications", "description": "Does not meet mandatory gates on CGL limit, bonding, AOI, years in business, site visit, references", "citation": "RFP §4 Mandatory Requirements", "evidence": "See mandatory_gates", "recommendation": "reject" },
+    { "severity": "critical", "category": "materials", "description": "No cover board specified over polyiso; voids most NDL warranty programs", "citation": "fixture 02 §4 — mis-matched components / missing cover board", "evidence": "Bid page 4: 'cover board not required'", "recommendation": "reject" },
+    { "severity": "critical", "category": "warranty", "description": "25-year warranty type unspecified; no certified installer", "citation": "fixture 02 §1.1 — Soprema NDL requires PAQ+S contractor", "evidence": "Cover letter, page 1", "recommendation": "reject" },
+    { "severity": "high", "category": "scope", "description": "Excludes cover board, wind uplift design, HVAC curb work — material scope divergence from RFP", "citation": "RFP §3 scope of work", "evidence": "Bid exclusions list, page 2", "recommendation": "reject" },
+    { "severity": "high", "category": "pricing", "description": "Low bid 15% below next bid combined with excluded scope items suggests unbalanced pricing or scope cuts", "citation": "fixture 03 §4 — 15% low-bid trap", "evidence": "Base bid $412,000 vs Apex $485,000 vs Keystone $498,500", "recommendation": "reject" },
+    { "severity": "high", "category": "subcontracting", "description": "Subcontracting declared but subs not named — actual crew unknown", "citation": "fixture 04 §5", "evidence": "Qualifications page 3", "recommendation": "clarify" }
+  ],
+  "scores": {
+    "technical_approach": 30,
+    "experience_references": 20,
+    "warranty_materials": 25,
+    "schedule": 40,
+    "qualifications_certifications": 25
+  }
+}

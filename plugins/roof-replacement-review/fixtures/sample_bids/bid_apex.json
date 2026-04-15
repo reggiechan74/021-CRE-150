@@ -1,0 +1,108 @@
+{
+  "bidder_id": "apex",
+  "bidder_name": "Apex Commercial Roofing Ltd.",
+  "source_pdf": "apex_roofing_bid.pdf",
+  "pricing": {
+    "base_bid_cad": 485000,
+    "hst_included": false,
+    "alternates": [
+      { "description": "Alternate A: TPO 60 mil single-ply", "price_cad": -22000 },
+      { "description": "Alternate B: 3-yr extended workmanship warranty", "price_cad": 8500 }
+    ],
+    "unit_prices": {
+      "deck_replacement_per_bf": 12.50,
+      "insulation_per_sqft_per_rvalue": 0.38,
+      "flashing_per_lf": 32.00
+    },
+    "allowances_carried": [
+      { "item": "Wood deck replacement", "amount_cad": 6250 }
+    ]
+  },
+  "scope_response": {
+    "full_compliance_claimed": true,
+    "exclusions_declared": [
+      "Interior ceiling tile replacement from leaks during work",
+      "Removal or handling of any hazardous materials — owner's DSA to govern"
+    ],
+    "clarifications": [
+      "Pricing based on 500 bf deck replacement allowance; exceedances at unit price"
+    ],
+    "substitutions_proposed": []
+  },
+  "materials_system": {
+    "manufacturer": "Soprema",
+    "system_name": "Sopralene Flam Stick + Sopraboard HD cover board + Sopra-ISO polyiso",
+    "membrane_thickness_actual": "7.5mm combined (base 3mm + cap 4.5mm)",
+    "insulation_spec": "2 layers Sopra-ISO polyiso, 2.5in + 2in staggered, R-31 aged LTTR",
+    "cover_board_included": true,
+    "product_data_sheets_attached": true
+  },
+  "warranty_offered": {
+    "manufacturer_years": 20,
+    "warranty_type": "total_system_ndl",
+    "workmanship_years": 5,
+    "wind_uplift_coverage_mph": 120,
+    "manufacturer_certified_installer": true,
+    "certification_program": "Soprema PAQ+S",
+    "evidence_page": "Schedule C, page 14"
+  },
+  "qualifications": {
+    "years_in_business": 18,
+    "wsib_clearance_attached": true,
+    "wsib_clearance_date": "2026-03-28",
+    "wsib_in_good_standing": true,
+    "cgl_limit_cad": 10000000,
+    "cgl_completed_operations_years": 3,
+    "owner_named_as_additional_insured": true,
+    "coi_attached": true,
+    "bid_bond_attached": true,
+    "bonding_capacity_cad": 5000000,
+    "working_at_heights_training_confirmed": true,
+    "crca_member": true,
+    "certificate_of_qualification_roofers_count": 6,
+    "references_provided": [
+      { "project_name": "Heartland Business Park Bldg 12", "owner_contact": "M. Singh", "value_cad": 520000, "completion_year": 2024, "similar_scope": true },
+      { "project_name": "Airport Rd Industrial Complex", "owner_contact": "L. Tremblay", "value_cad": 610000, "completion_year": 2023, "similar_scope": true },
+      { "project_name": "Etobicoke Logistics Centre", "owner_contact": "R. Chen", "value_cad": 445000, "completion_year": 2025, "similar_scope": true },
+      { "project_name": "Brampton Distribution Hub", "owner_contact": "P. Martin", "value_cad": 380000, "completion_year": 2024, "similar_scope": true }
+    ],
+    "subcontracting_declared": false,
+    "subcontractors_named": []
+  },
+  "schedule": {
+    "mobilization_days_after_award": 21,
+    "work_duration_days": 45,
+    "substantial_completion_date": "2026-07-15",
+    "crew_size": 8,
+    "accommodates_occupied_building": true
+  },
+  "technical_approach": {
+    "narrative": "Phased tear-off in 8,000 sq ft sections with daily waterproof tie-ins and night seals. Operations continue beneath unaffected roof areas.",
+    "tear_off_staging_plan": "Phase map attached (Appendix D), 6 phases over 45 days",
+    "weather_protection_plan": "Tarping protocol with 24-hr weather monitoring, 15mm poly night seals",
+    "fall_protection_plan": "Perimeter warning line + safety monitors; personal fall arrest at all edge work per CSA Z259",
+    "waste_disposal_plan": "Roll-off disposal to Peel Region Integrated Waste, asbestos-free certification required from DSA before tear-off",
+    "site_safety_plan_attached": true
+  },
+  "mandatory_gates": {
+    "wsib": { "result": "pass", "evidence": "Clearance attached, dated 2026-03-28, in good standing" },
+    "cgl": { "result": "pass", "evidence": "$10M limit, exceeds $5M minimum" },
+    "additional_insured": { "result": "pass", "evidence": "COI lists Mississauga Industrial Holdings Inc. as additional insured" },
+    "completed_ops": { "result": "pass", "evidence": "3-year completed ops coverage, exceeds 2-year minimum" },
+    "bid_bond": { "result": "pass", "evidence": "10% bid bond, Travelers Canada surety" },
+    "wah_training": { "result": "pass", "evidence": "Form of Tender §8 confirms all on-site workers O. Reg. 297/13 current" },
+    "addenda": { "result": "pass", "evidence": "Addenda 1, 2, 3 acknowledged on Form of Tender page 2" },
+    "non_collusion": { "result": "pass", "evidence": "Signed by G. Patel, President" },
+    "site_visit": { "result": "pass", "evidence": "Attended March 20 site meeting" },
+    "years_in_business": { "result": "pass", "evidence": "18 years, exceeds 5-year minimum" },
+    "references": { "result": "pass", "evidence": "4 comparable industrial re-roofs in past 3 years" }
+  },
+  "red_flags": [],
+  "scores": {
+    "technical_approach": 92,
+    "experience_references": 95,
+    "warranty_materials": 95,
+    "schedule": 88,
+    "qualifications_certifications": 92
+  }
+}

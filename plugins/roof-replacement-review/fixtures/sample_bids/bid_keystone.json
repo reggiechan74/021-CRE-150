@@ -1,0 +1,108 @@
+{
+  "bidder_id": "keystone",
+  "bidder_name": "Keystone Roofing & Waterproofing Inc.",
+  "source_pdf": "keystone_roofing_bid.pdf",
+  "pricing": {
+    "base_bid_cad": 498500,
+    "hst_included": false,
+    "alternates": [
+      { "description": "Alternate A: TPO 60 mil single-ply", "price_cad": -18000 },
+      { "description": "Alternate B: 3-yr extended workmanship warranty", "price_cad": 11000 }
+    ],
+    "unit_prices": {
+      "deck_replacement_per_bf": 14.00,
+      "insulation_per_sqft_per_rvalue": 0.42,
+      "flashing_per_lf": 36.00
+    },
+    "allowances_carried": [
+      { "item": "Wood deck replacement", "amount_cad": 7000 }
+    ]
+  },
+  "scope_response": {
+    "full_compliance_claimed": true,
+    "exclusions_declared": [
+      "Removal/disposal of asbestos materials if encountered — owner's DSA to govern",
+      "Structural deck reinforcement beyond 500 bf allowance (unit price applies)"
+    ],
+    "clarifications": [],
+    "substitutions_proposed": []
+  },
+  "materials_system": {
+    "manufacturer": "IKO Commercial",
+    "system_name": "Torchflex base + Torchflex cap + IKO Gold polyiso + IKO HD cover board",
+    "membrane_thickness_actual": "8mm combined (3mm base + 4.5mm cap with granulated surfacing)",
+    "insulation_spec": "2 layers IKO Gold polyiso, total R-32 aged LTTR",
+    "cover_board_included": true,
+    "product_data_sheets_attached": true
+  },
+  "warranty_offered": {
+    "manufacturer_years": 20,
+    "warranty_type": "total_system_ndl",
+    "workmanship_years": 5,
+    "wind_uplift_coverage_mph": 110,
+    "manufacturer_certified_installer": true,
+    "certification_program": "IKO Shield Agent",
+    "evidence_page": "Appendix B, warranty sample attached"
+  },
+  "qualifications": {
+    "years_in_business": 11,
+    "wsib_clearance_attached": true,
+    "wsib_clearance_date": "2026-03-20",
+    "wsib_in_good_standing": true,
+    "cgl_limit_cad": 5000000,
+    "cgl_completed_operations_years": 2,
+    "owner_named_as_additional_insured": true,
+    "coi_attached": true,
+    "bid_bond_attached": true,
+    "bonding_capacity_cad": 3000000,
+    "working_at_heights_training_confirmed": true,
+    "crca_member": true,
+    "certificate_of_qualification_roofers_count": 3,
+    "references_provided": [
+      { "project_name": "Meadowvale Industrial Park 205", "owner_contact": "S. O'Brien", "value_cad": 390000, "completion_year": 2024, "similar_scope": true },
+      { "project_name": "Oakville Logistics Hub", "owner_contact": "A. Rossi", "value_cad": 425000, "completion_year": 2023, "similar_scope": true },
+      { "project_name": "Downsview Manufacturing Facility", "owner_contact": "K. Ahmed", "value_cad": 560000, "completion_year": 2022, "similar_scope": true }
+    ],
+    "subcontracting_declared": false,
+    "subcontractors_named": []
+  },
+  "schedule": {
+    "mobilization_days_after_award": 30,
+    "work_duration_days": 52,
+    "substantial_completion_date": "2026-07-30",
+    "crew_size": 6,
+    "accommodates_occupied_building": true
+  },
+  "technical_approach": {
+    "narrative": "Phased tear-off in 10,000 sq ft sections with night tie-ins.",
+    "tear_off_staging_plan": "4-phase plan, tarping between phases",
+    "weather_protection_plan": "Standard tarping, daily weather review",
+    "fall_protection_plan": "Perimeter warning line + PFAS at edges per CSA Z259",
+    "waste_disposal_plan": "Roll-off disposal; asbestos handling per DSA",
+    "site_safety_plan_attached": true
+  },
+  "mandatory_gates": {
+    "wsib": { "result": "pass", "evidence": "Clearance dated 2026-03-20, in good standing" },
+    "cgl": { "result": "pass", "evidence": "$5M limit, meets minimum" },
+    "additional_insured": { "result": "pass", "evidence": "Owner named on COI" },
+    "completed_ops": { "result": "pass", "evidence": "2-year coverage" },
+    "bid_bond": { "result": "pass", "evidence": "10% bid bond attached" },
+    "wah_training": { "result": "pass", "evidence": "Confirmed" },
+    "addenda": { "result": "pass", "evidence": "Addenda 1, 2, 3 acknowledged" },
+    "non_collusion": { "result": "pass", "evidence": "Signed" },
+    "site_visit": { "result": "pass", "evidence": "Attended March 20 site meeting" },
+    "years_in_business": { "result": "pass", "evidence": "11 years" },
+    "references": { "result": "pass", "evidence": "3 comparable industrial re-roofs in past 4 years" }
+  },
+  "red_flags": [
+    { "severity": "medium", "category": "schedule", "description": "52-day duration extends into peak summer tenant operations; 7 days longer than Apex", "citation": "RFP §2 occupied during work", "evidence": "Schedule page 6", "recommendation": "clarify" },
+    { "severity": "low", "category": "schedule", "description": "Weather protection narrative is boilerplate; no wind/rain threshold trigger stated", "citation": "fixture 02 §4", "evidence": "Technical approach, page 9", "recommendation": "clarify" }
+  ],
+  "scores": {
+    "technical_approach": 80,
+    "experience_references": 85,
+    "warranty_materials": 88,
+    "schedule": 72,
+    "qualifications_certifications": 82
+  }
+}
