@@ -17,17 +17,19 @@ def _load_archetype(plugin_root, name: str):
 
 def test_balance_invariant(allocated_matheson_manifest):
     tenant_total = sum(charge.final_charge for charge in allocated_matheson_manifest.tenant_charges)
+    direct_billed_total = sum(charge.direct_bill_total for charge in allocated_matheson_manifest.tenant_charges)
     recoverable_total = sum(
         line.classification.recoverable_amount or Decimal("0")
         for line in allocated_matheson_manifest.gl_lines
         if line.classification and line.classification.recoverable
     )
-    assert tenant_total + allocated_matheson_manifest.landlord_absorbed_total == recoverable_total
+    assert tenant_total + direct_billed_total + allocated_matheson_manifest.landlord_absorbed_total == recoverable_total
     assert recoverable_total == Decimal("1150292.00")
 
 
 def test_landlord_absorbed_total_matches_expected(allocated_matheson_manifest):
     assert allocated_matheson_manifest.landlord_absorbed_total == Decimal("131149.03")
+    assert allocated_matheson_manifest.direct_billed_total == Decimal("4500.00")
 
 
 def test_modified_gross_exclusions(plugin_root, allocated_matheson_manifest):
@@ -43,8 +45,10 @@ def test_pronto_grease_trap_exclusion(plugin_root, allocated_matheson_manifest):
     fx = _load_archetype(plugin_root, "unit_105_restaurant_exclusions")
     charge = _charge(allocated_matheson_manifest, fx["tenant_id"])
     assert charge.final_charge == Decimal(fx["expected_final_charge"])
-    exclusion = charge.exclusions_applied[0]
-    assert exclusion.amount_removed == Decimal(fx["expected_exclusions"]["repairs_maintenance"])
+    assert charge.direct_bill_total == Decimal(fx["expected_direct_bill_total"])
+    direct_bill = charge.direct_bills_applied[0]
+    assert direct_bill.amount_billed == Decimal(fx["expected_direct_bill_total"])
+    assert direct_bill.category == "repairs_maintenance"
 
 
 def test_base_year_tenants(plugin_root, allocated_matheson_manifest):

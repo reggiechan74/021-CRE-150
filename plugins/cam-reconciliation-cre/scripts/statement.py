@@ -65,6 +65,12 @@ def corrections_summary(manifest: Manifest) -> dict[str, object]:
 
 def lease_narrative(manifest: Manifest, charge) -> str:
     lease = next(lease for lease in manifest.leases if lease.tenant_id == charge.tenant_id)
+    if money(charge.direct_bill_total or 0) > 0:
+        return (
+            f"Your FY2025 pooled CAM charge is ${money(charge.final_charge):,.2f}. "
+            f"Lease-specific direct-bill items total ${money(charge.direct_bill_total):,.2f}, "
+            f"bringing your total due to ${money(charge.total_due):,.2f}."
+        )
     if lease.lease_type.value == "modified_gross":
         items = ", ".join(
             f"{item.category} (${money(item.amount_removed):,.2f})" for item in charge.exclusions_applied
@@ -115,9 +121,11 @@ def render_tenant_pdf(manifest: Manifest, charge, output_path: Path) -> None:
 
     summary_rows = [
         ["Gross Share Before Exclusions", f"${money(charge.gross_share_before_exclusions):,.2f}"],
-        ["Final Charge", f"${money(charge.final_charge):,.2f}"],
+        ["Final CAM Charge", f"${money(charge.final_charge):,.2f}"],
+        ["Direct-Billed Items", f"${money(charge.direct_bill_total):,.2f}"],
+        ["Total Due", f"${money(charge.total_due):,.2f}"],
         ["Pre-billed", f"${money(charge.annual_prebilled or 0):,.2f}"],
-        ["True-Up", f"${money(charge.vs_prebilled or 0):,.2f}"],
+        ["CAM True-Up", f"${money(charge.vs_prebilled or 0):,.2f}"],
     ]
     table = Table(summary_rows, colWidths=[260, 140])
     table.setStyle(
@@ -139,6 +147,19 @@ def render_tenant_pdf(manifest: Manifest, charge, output_path: Path) -> None:
                 Paragraph(
                     f"{exclusion.category}: -${money(exclusion.amount_removed):,.2f} "
                     f"({exclusion.citation_ref.section if exclusion.citation_ref else 'lease exclusion'})",
+                    styles["BodyText"],
+                )
+            )
+
+    if charge.direct_bills_applied:
+        story.append(Spacer(1, 12))
+        story.append(Paragraph("Lease-Specific Direct Bills", styles["Heading3"]))
+        for item in charge.direct_bills_applied:
+            source_ids = ", ".join(item.source_gl_ids)
+            story.append(
+                Paragraph(
+                    f"{item.category}: +${money(item.amount_billed):,.2f} "
+                    f"({item.citation_ref.section if item.citation_ref else 'lease direct bill'}; GL {source_ids})",
                     styles["BodyText"],
                 )
             )
@@ -204,9 +225,11 @@ def render_workpaper(manifest: Manifest, output_path: Path) -> None:
         "Tenant ID",
         "Tenant",
         "Gross Before Exclusions",
-        "Final Charge",
+        "Final CAM Charge",
+        "Direct Bills",
+        "Total Due",
         "Pre-billed",
-        "True-Up",
+        "CAM True-Up",
     ]
     for col, header in enumerate(headers, start=1):
         cell = ws.cell(row=1, column=col, value=header)
@@ -221,8 +244,10 @@ def render_workpaper(manifest: Manifest, output_path: Path) -> None:
         ws.cell(row=row, column=2, value=lease.tenant_name)
         ws.cell(row=row, column=3, value=float(money(charge.gross_share_before_exclusions)))
         ws.cell(row=row, column=4, value=float(money(charge.final_charge)))
-        ws.cell(row=row, column=5, value=float(money(charge.annual_prebilled or 0)))
-        ws.cell(row=row, column=6, value=float(money(charge.vs_prebilled or 0)))
+        ws.cell(row=row, column=5, value=float(money(charge.direct_bill_total)))
+        ws.cell(row=row, column=6, value=float(money(charge.total_due)))
+        ws.cell(row=row, column=7, value=float(money(charge.annual_prebilled or 0)))
+        ws.cell(row=row, column=8, value=float(money(charge.vs_prebilled or 0)))
 
     summary = wb.create_sheet("Summary")
     summary["A1"] = "Corrected Recoverable Totals"
@@ -274,6 +299,7 @@ def render_audit_log(manifest: Manifest, output_path: Path) -> None:
         "## Landlord Absorption",
         "",
         f"- Total absorbed after lease structures: ${money(manifest.landlord_absorbed_total):,.2f}",
+        f"- Total billed directly outside pooled CAM: ${money(manifest.direct_billed_total):,.2f}",
     ]
     output_path.write_text("\n".join(content) + "\n", encoding="utf-8")
 

@@ -18,6 +18,7 @@ from scripts.manifest import (
     BASE_YEAR_CITATION,
     CANADAFIRST_CAP,
     CANADAFIRST_UNCONTROLLABLE,
+    DirectBillApplied,
     ExclusionApplied,
     Lease,
     LeaseCitation,
@@ -94,6 +95,25 @@ def _specific_exclusion_match(rule: dict[str, Any], line_category_key: str, raw_
     return True
 
 
+def _specific_exclusion_treatment(rule: dict[str, Any]) -> str:
+    return str(rule.get("treatment", "exclude_share"))
+
+
+def direct_bill_for_line(lease: Lease, line_category_key: str, raw_category: str, memo: str) -> tuple[bool, str | None, LeaseCitation | None]:
+    if lease.is_vacant:
+        return False, None, None
+
+    for rule in lease.specific_exclusions:
+        if not _specific_exclusion_match(rule, line_category_key, raw_category, memo):
+            continue
+        if _specific_exclusion_treatment(rule) != "direct_bill_to_matching_tenant":
+            continue
+        citation = LeaseCitation.model_validate(rule["citation"]) if "citation" in rule else lease.clause_refs.get("restaurant_exclusion", PRONTO_GREASE_TRAP_CITATION)
+        return True, rule.get("reason", "specific_exclusion"), citation
+
+    return False, None, None
+
+
 def exclusion_for_line(lease: Lease, line_category_key: str, raw_category: str, memo: str) -> tuple[bool, str | None, LeaseCitation | None]:
     if lease.is_vacant:
         return False, None, None
@@ -105,9 +125,12 @@ def exclusion_for_line(lease: Lease, line_category_key: str, raw_category: str, 
             return True, "modified_gross_repairs_maintenance", lease.clause_refs.get("modified_gross_repairs_maintenance", PEAK_RM_CITATION)
 
     for rule in lease.specific_exclusions:
-        if _specific_exclusion_match(rule, line_category_key, raw_category, memo):
-            citation = LeaseCitation.model_validate(rule["citation"]) if "citation" in rule else lease.clause_refs.get("restaurant_exclusion", PRONTO_GREASE_TRAP_CITATION)
-            return True, rule.get("reason", "specific_exclusion"), citation
+        if not _specific_exclusion_match(rule, line_category_key, raw_category, memo):
+            continue
+        if _specific_exclusion_treatment(rule) == "direct_bill_to_matching_tenant":
+            continue
+        citation = LeaseCitation.model_validate(rule["citation"]) if "citation" in rule else lease.clause_refs.get("restaurant_exclusion", PRONTO_GREASE_TRAP_CITATION)
+        return True, rule.get("reason", "specific_exclusion"), citation
 
     return False, None, None
 
@@ -137,6 +160,31 @@ def _aggregate_exclusion(
     existing.reallocated_to = sorted(set(existing.reallocated_to + reallocated_to))
 
 
+def _aggregate_direct_bill(
+    tracker: dict[str, dict[tuple[str, str], DirectBillApplied]],
+    tenant_id: str,
+    category: str,
+    reason: str,
+    amount: Decimal,
+    citation: LeaseCitation | None,
+    line_id: str,
+) -> None:
+    bucket = tracker.setdefault(tenant_id, {})
+    key = (category, reason)
+    if key not in bucket:
+        bucket[key] = DirectBillApplied(
+            category=category,
+            amount_billed=money(amount),
+            reason=reason,
+            citation_ref=citation,
+            source_gl_ids=[line_id],
+        )
+        return
+    existing = bucket[key]
+    existing.amount_billed = money(existing.amount_billed + amount)
+    existing.source_gl_ids = sorted(set(existing.source_gl_ids + [line_id]))
+
+
 def _lease_weights(leases: list[Lease]) -> list[tuple[str, Decimal]]:
     return [(lease.tenant_id, Decimal(lease.rsf)) for lease in leases]
 
@@ -162,6 +210,8 @@ def allocate_manifest(manifest: Manifest) -> Manifest:
     category_totals: dict[str, dict[str, Decimal]] = defaultdict(lambda: defaultdict(lambda: Decimal("0.00")))
     line_totals: dict[str, dict[str, Decimal]] = defaultdict(lambda: defaultdict(lambda: Decimal("0.00")))
     exclusion_tracker: dict[str, dict[tuple[str, str], ExclusionApplied]] = {}
+    direct_bill_tracker: dict[str, dict[tuple[str, str], DirectBillApplied]] = {}
+    direct_bill_totals: dict[str, Decimal] = defaultdict(lambda: Decimal("0.00"))
     landlord_absorbed_total = Decimal("0.00")
     landlord_breakdown: dict[str, Decimal] = defaultdict(lambda: Decimal("0.00"))
     recoverable_total = Decimal("0.00")
@@ -182,6 +232,37 @@ def allocate_manifest(manifest: Manifest) -> Manifest:
         for pool_name, pool_amount in pool_portions(manifest, line_recoverable, line_pool).items():
             pool_leases = all_by_pool[pool_name]
             pool_active = active_by_pool[pool_name]
+
+            direct_bill_leases: list[tuple[Lease, str, LeaseCitation | None]] = []
+            for lease in pool_active:
+                direct_bill, reason, citation = direct_bill_for_line(lease, line_category_key, line.category_raw, line.memo)
+                if direct_bill:
+                    direct_bill_leases.append((lease, reason or "specific_exclusion", citation))
+
+            if direct_bill_leases:
+                if len(direct_bill_leases) != 1:
+                    raise ValueError(
+                        f"Expected at most one direct-bill target for {line.line_id}, got {[lease.tenant_id for lease, _, _ in direct_bill_leases]}"
+                    )
+                direct_bill_lease, reason, citation = direct_bill_leases[0]
+                billed_amount = money(pool_amount)
+                direct_bill_totals[direct_bill_lease.tenant_id] = money(
+                    direct_bill_totals[direct_bill_lease.tenant_id] + billed_amount
+                )
+                line_allocation[direct_bill_lease.tenant_id] = money(
+                    line_allocation.get(direct_bill_lease.tenant_id, Decimal("0.00")) + billed_amount
+                )
+                _aggregate_direct_bill(
+                    tracker=direct_bill_tracker,
+                    tenant_id=direct_bill_lease.tenant_id,
+                    category=line_category_key,
+                    reason=reason,
+                    amount=billed_amount,
+                    citation=citation,
+                    line_id=line.line_id,
+                )
+                continue
+
             base_shares = split_amount(pool_amount, _lease_weights(pool_leases))
 
             for lease in pool_active:
@@ -243,6 +324,7 @@ def allocate_manifest(manifest: Manifest) -> Manifest:
 
     tenant_charges: list[TenantCharge] = []
     total_final = Decimal("0.00")
+    total_direct_billed = Decimal("0.00")
 
     for lease in sorted(active_leases, key=lambda item: item.tenant_id):
         preliminary = money(running_totals[lease.tenant_id])
@@ -253,6 +335,13 @@ def allocate_manifest(manifest: Manifest) -> Manifest:
             steps.append(
                 f"Excluded {exclusion.category} under {exclusion.reason}: -${exclusion.amount_removed:,.2f}."
             )
+
+        direct_bills = list(direct_bill_tracker.get(lease.tenant_id, {}).values())
+        direct_bill_total = money(
+            sum(item.amount_billed for item in direct_bills) if direct_bills else Decimal("0.00")
+        )
+        if direct_bill_total:
+            steps.append(f"Direct-billed lease-specific items: +${direct_bill_total:,.2f}.")
 
         base_adjustment: dict[str, Any] | None = None
         if lease.base_year:
@@ -299,6 +388,8 @@ def allocate_manifest(manifest: Manifest) -> Manifest:
         annual_prebilled = money(lease.annual_prebilled or Decimal("0.00"))
         vs_prebilled = money(preliminary - annual_prebilled)
         total_final = money(total_final + preliminary)
+        total_direct_billed = money(total_direct_billed + direct_bill_total)
+        total_due = money(preliminary + direct_bill_total)
 
         citations = []
         for line_id, contribution in sorted(line_totals[lease.tenant_id].items()):
@@ -318,9 +409,12 @@ def allocate_manifest(manifest: Manifest) -> Manifest:
                 tenant_id=lease.tenant_id,
                 gross_share_before_exclusions=money(gross_before_exclusions[lease.tenant_id]),
                 exclusions_applied=exclusions,
+                direct_bills_applied=direct_bills,
                 base_year_adjustment=base_adjustment,
                 cap_adjustment=cap_adjustment,
                 final_charge=preliminary,
+                direct_bill_total=direct_bill_total,
+                total_due=total_due,
                 annual_prebilled=annual_prebilled,
                 vs_prebilled=vs_prebilled,
                 citations=citations,
@@ -328,15 +422,19 @@ def allocate_manifest(manifest: Manifest) -> Manifest:
                     "category_totals_before_base_or_cap": {
                         key: money(value) for key, value in sorted(category_totals[lease.tenant_id].items())
                     },
+                    "direct_bill_total": direct_bill_total,
                     "steps": steps,
                 },
             )
         )
 
     landlord_absorbed_total = money(landlord_absorbed_total)
-    if money(total_final + landlord_absorbed_total) != money(recoverable_total):
+    total_direct_billed = money(total_direct_billed)
+    if money(total_final + total_direct_billed + landlord_absorbed_total) != money(recoverable_total):
         raise AssertionError(
-            f"Balance invariant failed: tenants {total_final} + landlord {landlord_absorbed_total} != recoverable {recoverable_total}"
+            "Balance invariant failed: "
+            f"tenants {total_final} + direct billed {total_direct_billed} + landlord {landlord_absorbed_total} "
+            f"!= recoverable {recoverable_total}"
         )
 
     return manifest.model_copy(
@@ -344,6 +442,7 @@ def allocate_manifest(manifest: Manifest) -> Manifest:
             "gl_lines": manifest.gl_lines,
             "tenant_charges": tenant_charges,
             "landlord_absorbed_total": landlord_absorbed_total,
+            "direct_billed_total": total_direct_billed,
         }
     )
 

@@ -20,3 +20,7 @@ Optional lease structures:
 - `clause_refs`
 
 Use `specific_exclusions` when an exclusion applies only to a specific raw GL category or invoice pattern. Use `excluded_categories` when the lease excludes an entire normalized category such as `utilities` or `repairs_maintenance`.
+
+For `specific_exclusions`, set `treatment` to:
+- `exclude_share` to remove only that tenant's pooled share and reallocate it across the remaining eligible tenants.
+- `direct_bill_to_matching_tenant` to bypass pooled CAM entirely and bill the matched line 100% to the tenant outside the shared pool.

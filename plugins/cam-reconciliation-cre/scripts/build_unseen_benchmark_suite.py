@@ -319,6 +319,7 @@ def build_tenants(case: CaseDefinition, budget_total: Decimal) -> list[dict[str,
                 {
                     "category": "repairs_maintenance",
                     "match_category_raw": "R&M - Grease Trap",
+                    "treatment": "direct_bill_to_matching_tenant",
                     "reason": "schedule_c_grease_trap",
                     "citation": {
                         "doc": "Restaurant Exclusion Schedule",
@@ -801,6 +802,16 @@ def corrected_total(actual: dict[str, Decimal], case: CaseDefinition) -> Decimal
     return money(raw_total - case.duplicate_amount - case.turnover_amount - case.management_fee_excess)
 
 
+def direct_bill_total(actual: dict[str, Decimal], case: CaseDefinition) -> Decimal:
+    if not case.include_restaurant_exclusion:
+        return Decimal("0.00")
+    return money(actual["repairs_maintenance"] * Decimal("0.04"))
+
+
+def pooled_cam_total(actual: dict[str, Decimal], case: CaseDefinition) -> Decimal:
+    return money(corrected_total(actual, case) - direct_bill_total(actual, case))
+
+
 def issue_metadata(case: CaseDefinition) -> dict[str, Any]:
     duplicate_meta = None
     if case.duplicate_kind == "gas":
@@ -920,12 +931,17 @@ def build_case(case: CaseDefinition) -> dict[str, Any]:
 
     raw_total = money(sum(actual[key] for key in ("realty_tax", "utilities", "repairs_maintenance", "management_fee", "janitorial", "insurance", "security", "landscaping", "snow")))
     corrected = corrected_total(actual, case)
+    direct_bill = direct_bill_total(actual, case)
+    pooled_total = pooled_cam_total(actual, case)
     gold_payload = {
         "case_id": case.case_id,
         "property_name": case.property_name,
         "budget_total": str(money(budget_total)),
         "raw_actual_total": str(raw_total),
+        "property_level_recoverable_total": str(corrected),
         "corrected_recoverable_total": str(corrected),
+        "direct_bill_total": str(direct_bill),
+        "pooled_cam_total_after_direct_bills": str(pooled_total),
         "duplicate_amount": str(case.duplicate_amount),
         "turnover_amount": str(case.turnover_amount),
         "management_fee_excess": str(case.management_fee_excess),
@@ -957,6 +973,12 @@ def write_suite_readme(manifest: list[dict[str, Any]]) -> None:
         "- `gold/<case_id>.json` contains hidden expected totals and scenario metadata.",
         "- `results/ours/` is populated by the local benchmark harness.",
         "- `results/anthropic/` is where you should place Claude Code finance-plugin outputs for scoring.",
+        "",
+        "## Totals Tracked",
+        "",
+        "- `property_level_recoverable_total`: corrected building-level recoverable OpEx after property-level removals such as duplicates, turnover, and management-fee corrections.",
+        "- `pooled_cam_total_after_direct_bills`: the shared CAM pool after removing lease-specific direct-bill items such as restaurant grease-trap costs.",
+        "- `direct_bill_total`: lease-specific items billed outside the shared CAM pool.",
         "",
         "## Manual Anthropic Procedure",
         "",

@@ -27,13 +27,15 @@ def run_case(case_dir: Path) -> dict[str, object]:
     classified = apply_decisions(manifest, generate_default_decisions(manifest))
     allocated = allocate_manifest(classified)
 
-    recoverable_total = money(
+    property_level_recoverable_total = money(
         sum(
             line.classification.recoverable_amount or 0
             for line in allocated.gl_lines
             if line.classification and line.classification.recoverable
         )
     )
+    direct_bill_total = money(allocated.direct_billed_total)
+    pooled_cam_total_after_direct_bills = money(property_level_recoverable_total - direct_bill_total)
     tenant_charges = [
         {
             "tenant_id": charge.tenant_id,
@@ -43,7 +45,10 @@ def run_case(case_dir: Path) -> dict[str, object]:
     ]
     summary = {
         "case_id": case_dir.name,
-        "corrected_recoverable_total": str(recoverable_total),
+        "property_level_recoverable_total": str(property_level_recoverable_total),
+        "corrected_recoverable_total": str(property_level_recoverable_total),
+        "direct_bill_total": str(direct_bill_total),
+        "pooled_cam_total_after_direct_bills": str(pooled_cam_total_after_direct_bills),
         "landlord_absorbed_total": str(money(allocated.landlord_absorbed_total)),
         "tenant_charges": tenant_charges,
     }
@@ -63,13 +68,23 @@ def main() -> None:
     for case_dir in cases:
         summary = run_case(case_dir)
         gold = json.loads((GOLD_ROOT / f"{case_dir.name}.json").read_text(encoding="utf-8"))
-        summary["gold_corrected_recoverable_total"] = gold["corrected_recoverable_total"]
-        summary["property_total_match"] = summary["corrected_recoverable_total"] == gold["corrected_recoverable_total"]
+        gold_property_total = str(gold.get("property_level_recoverable_total", gold["corrected_recoverable_total"]))
+        gold_pooled_total = str(
+            gold.get(
+                "pooled_cam_total_after_direct_bills",
+                money(money(gold_property_total) - money(gold.get("direct_bill_total", "0.00"))),
+            )
+        )
+        summary["gold_property_level_recoverable_total"] = gold_property_total
+        summary["gold_pooled_cam_total_after_direct_bills"] = gold_pooled_total
+        summary["property_total_match"] = summary["property_level_recoverable_total"] == gold_property_total
+        summary["pooled_cam_total_match"] = summary["pooled_cam_total_after_direct_bills"] == gold_pooled_total
         rows.append(summary)
 
     aggregate = {
         "cases_run": len(rows),
         "property_total_exact_matches": sum(1 for row in rows if row["property_total_match"]),
+        "pooled_cam_total_exact_matches": sum(1 for row in rows if row["pooled_cam_total_match"]),
         "results_dir": str(OURS_ROOT),
         "cases": rows,
     }

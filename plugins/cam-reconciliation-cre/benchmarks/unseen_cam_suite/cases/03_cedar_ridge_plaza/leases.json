@@ -121,6 +121,7 @@
       {
         "category": "repairs_maintenance",
         "match_category_raw": "R&M - Grease Trap",
+        "treatment": "direct_bill_to_matching_tenant",
         "reason": "schedule_c_grease_trap",
         "citation": {
           "doc": "Restaurant Exclusion Schedule",

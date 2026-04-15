@@ -145,13 +145,24 @@ class ExclusionApplied(BaseModel):
     reallocated_to: list[str] = Field(default_factory=list)
 
 
+class DirectBillApplied(BaseModel):
+    category: str
+    amount_billed: Decimal
+    reason: str
+    citation_ref: Optional[LeaseCitation] = None
+    source_gl_ids: list[str] = Field(default_factory=list)
+
+
 class TenantCharge(BaseModel):
     tenant_id: str
     gross_share_before_exclusions: Decimal
     exclusions_applied: list[ExclusionApplied] = Field(default_factory=list)
+    direct_bills_applied: list[DirectBillApplied] = Field(default_factory=list)
     base_year_adjustment: Optional[dict[str, Any]] = None
     cap_adjustment: Optional[dict[str, Any]] = None
     final_charge: Decimal
+    direct_bill_total: Decimal = Decimal("0")
+    total_due: Decimal = Decimal("0")
     annual_prebilled: Optional[Decimal] = None
     vs_prebilled: Optional[Decimal] = None
     citations: list[dict[str, Any]] = Field(default_factory=list)
@@ -175,6 +186,7 @@ class Manifest(BaseModel):
     gl_lines: list[GLLine]
     tenant_charges: list[TenantCharge] = Field(default_factory=list)
     landlord_absorbed_total: Decimal = Decimal("0")
+    direct_billed_total: Decimal = Decimal("0")
     provenance: Provenance
 
     def save(self, path: str | Path) -> None:

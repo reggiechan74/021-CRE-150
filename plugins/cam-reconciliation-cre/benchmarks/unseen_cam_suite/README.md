@@ -10,6 +10,12 @@ Ten unseen benchmark properties for comparing Anthropic's finance plugin workflo
 - `results/ours/` is populated by the local benchmark harness.
 - `results/anthropic/` is where you should place Claude Code finance-plugin outputs for scoring.
 
+## Totals Tracked
+
+- `property_level_recoverable_total`: corrected building-level recoverable OpEx after property-level removals such as duplicates, turnover, and management-fee corrections.
+- `pooled_cam_total_after_direct_bills`: the shared CAM pool after removing lease-specific direct-bill items such as restaurant grease-trap costs.
+- `direct_bill_total`: lease-specific items billed outside the shared CAM pool.
+
 ## Manual Anthropic Procedure
 
 For each packet directory, open Claude Code in `anthropic_packets/<case_id>/` and run:

@@ -182,6 +182,7 @@
         {
           "category": "repairs_maintenance",
           "match_category_raw": "R&M - Grease Trap",
+          "treatment": "direct_bill_to_matching_tenant",
           "reason": "schedule_c_grease_trap",
           "citation": {
             "doc": "Pronto Italian Kitchen Lease",
@@ -1450,9 +1451,7 @@
         "recoverable_amount": "1125"
       },
       "allocation": {
-        "unit_101": "575.29",
-        "unit_102": "230.11",
-        "unit_103": "319.60"
+        "unit_105": "1125.00"
       }
     },
     {
@@ -3146,9 +3145,7 @@
         "recoverable_amount": "1125"
       },
       "allocation": {
-        "unit_101": "575.29",
-        "unit_102": "230.11",
-        "unit_103": "319.60"
+        "unit_105": "1125.00"
       }
     },
     {
@@ -4612,9 +4609,7 @@
         "recoverable_amount": "1125"
       },
       "allocation": {
-        "unit_101": "575.29",
-        "unit_102": "230.11",
-        "unit_103": "319.60"
+        "unit_105": "1125.00"
       }
     },
     {
@@ -6298,9 +6293,7 @@
         "recoverable_amount": "1125"
       },
       "allocation": {
-        "unit_101": "575.29",
-        "unit_102": "230.11",
-        "unit_103": "319.60"
+        "unit_105": "1125.00"
       }
     },
     {
@@ -6675,9 +6668,12 @@
       "tenant_id": "suite_200",
       "gross_share_before_exclusions": "254093.43",
       "exclusions_applied": [],
+      "direct_bills_applied": [],
       "base_year_adjustment": null,
       "cap_adjustment": null,
       "final_charge": "254093.43",
+      "direct_bill_total": "0.00",
+      "total_due": "254093.43",
       "annual_prebilled": "251496.00",
       "vs_prebilled": "2597.43",
       "citations": [
@@ -8035,6 +8031,7 @@
           "snow": "5419.36",
           "utilities": "44032.26"
         },
+        "direct_bill_total": "0.00",
         "steps": [
           "Gross share before exclusions: $254,093.43."
         ]
@@ -8044,9 +8041,12 @@
       "tenant_id": "suite_300",
       "gross_share_before_exclusions": "154270.72",
       "exclusions_applied": [],
+      "direct_bills_applied": [],
       "base_year_adjustment": null,
       "cap_adjustment": null,
       "final_charge": "154270.72",
+      "direct_bill_total": "0.00",
+      "total_due": "154270.72",
       "annual_prebilled": "152703.00",
       "vs_prebilled": "1567.72",
       "citations": [
@@ -9404,6 +9404,7 @@
           "snow": "3290.31",
           "utilities": "26733.89"
         },
+        "direct_bill_total": "0.00",
         "steps": [
           "Gross share before exclusions: $154,270.72."
         ]
@@ -9413,6 +9414,7 @@
       "tenant_id": "suite_310",
       "gross_share_before_exclusions": "63523.48",
       "exclusions_applied": [],
+      "direct_bills_applied": [],
       "base_year_adjustment": {
         "base_year": 2023,
         "base_amount": "56350.00",
@@ -9425,6 +9427,8 @@
       },
       "cap_adjustment": null,
       "final_charge": "7173.48",
+      "direct_bill_total": "0.00",
+      "total_due": "7173.48",
       "annual_prebilled": "35350.00",
       "vs_prebilled": "-28176.52",
       "citations": [
@@ -10782,6 +10786,7 @@
           "snow": "1354.84",
           "utilities": "11008.08"
         },
+        "direct_bill_total": "0.00",
         "steps": [
           "Gross share before exclusions: $63,523.48.",
           "Applied base year credit of $56,350.00."
@@ -10792,9 +10797,12 @@
       "tenant_id": "suite_400",
       "gross_share_before_exclusions": "254093.24",
       "exclusions_applied": [],
+      "direct_bills_applied": [],
       "base_year_adjustment": null,
       "cap_adjustment": null,
       "final_charge": "254093.24",
+      "direct_bill_total": "0.00",
+      "total_due": "254093.24",
       "annual_prebilled": "251496.00",
       "vs_prebilled": "2597.24",
       "citations": [
@@ -12152,6 +12160,7 @@
           "snow": "5419.35",
           "utilities": "44032.24"
         },
+        "direct_bill_total": "0.00",
         "steps": [
           "Gross share before exclusions: $254,093.24."
         ]
@@ -12159,11 +12168,12 @@
     },
     {
       "tenant_id": "unit_101",
-      "gross_share_before_exclusions": "87302.80",
+      "gross_share_before_exclusions": "86290.28",
       "exclusions_applied": [],
+      "direct_bills_applied": [],
       "base_year_adjustment": null,
       "cap_adjustment": {
-        "controllable_uncapped": "35700.81",
+        "controllable_uncapped": "33399.65",
         "uncontrollable_uncapped": "62216.76",
         "controllable_cap_ceiling_psf": "12.82",
         "controllable_cap_ceiling_total": "57690.00",
@@ -12174,9 +12184,11 @@
           "quote": "Operating Expenses are capped at 104% compounded annually over the 2022 Base Year CAM."
         }
       },
-      "final_charge": "97917.57",
+      "final_charge": "95616.41",
+      "direct_bill_total": "0.00",
+      "total_due": "95616.41",
       "annual_prebilled": "57690.00",
-      "vs_prebilled": "40227.57",
+      "vs_prebilled": "37926.41",
       "citations": [
         {
           "gl_line_id": "gl_0001",
@@ -12420,15 +12432,6 @@
             "quote": "Operating Expenses are capped at 104% compounded annually over the 2022 Base Year CAM."
           },
           "contribution_amount": "36.29"
-        },
-        {
-          "gl_line_id": "gl_0031",
-          "lease_citation_ref": {
-            "doc": "CanadaFirst Bank Lease",
-            "section": "\u00a76.05",
-            "quote": "Operating Expenses are capped at 104% compounded annually over the 2022 Base Year CAM."
-          },
-          "contribution_amount": "575.29"
         },
         {
           "gl_line_id": "gl_0032",
@@ -12809,15 +12812,6 @@
           "contribution_amount": "36.29"
         },
         {
-          "gl_line_id": "gl_0077",
-          "lease_citation_ref": {
-            "doc": "CanadaFirst Bank Lease",
-            "section": "\u00a76.05",
-            "quote": "Operating Expenses are capped at 104% compounded annually over the 2022 Base Year CAM."
-          },
-          "contribution_amount": "575.29"
-        },
-        {
           "gl_line_id": "gl_0078",
           "lease_citation_ref": {
             "doc": "CanadaFirst Bank Lease",
@@ -13140,15 +13134,6 @@
             "quote": "Operating Expenses are capped at 104% compounded annually over the 2022 Base Year CAM."
           },
           "contribution_amount": "36.29"
-        },
-        {
-          "gl_line_id": "gl_0117",
-          "lease_citation_ref": {
-            "doc": "CanadaFirst Bank Lease",
-            "section": "\u00a76.05",
-            "quote": "Operating Expenses are capped at 104% compounded annually over the 2022 Base Year CAM."
-          },
-          "contribution_amount": "575.29"
         },
         {
           "gl_line_id": "gl_0118",
@@ -13520,15 +13505,6 @@
           "contribution_amount": "36.29"
         },
         {
-          "gl_line_id": "gl_0163",
-          "lease_citation_ref": {
-            "doc": "CanadaFirst Bank Lease",
-            "section": "\u00a76.05",
-            "quote": "Operating Expenses are capped at 104% compounded annually over the 2022 Base Year CAM."
-          },
-          "contribution_amount": "575.29"
-        },
-        {
           "gl_line_id": "gl_0164",
           "lease_citation_ref": {
             "doc": "CanadaFirst Bank Lease",
@@ -13617,26 +13593,30 @@
           "landscaping": "2540.34",
           "management_fee": "8041.93",
           "realty_tax": "35970.96",
-          "repairs_maintenance": "11873.40",
+          "repairs_maintenance": "9572.24",
           "security": "3266.12",
           "snow": "1741.94",
           "utilities": "20511.92"
         },
+        "direct_bill_total": "0.00",
         "steps": [
-          "Gross share before exclusions: $87,302.80.",
-          "Applied CAM cap check: controllable $35,700.81 vs ceiling $57,690.00."
+          "Gross share before exclusions: $86,290.28.",
+          "Applied CAM cap check: controllable $33,399.65 vs ceiling $57,690.00."
         ]
       }
     },
     {
       "tenant_id": "unit_102",
-      "gross_share_before_exclusions": "34921.34",
+      "gross_share_before_exclusions": "34516.34",
       "exclusions_applied": [],
+      "direct_bills_applied": [],
       "base_year_adjustment": null,
       "cap_adjustment": null,
-      "final_charge": "39167.19",
+      "final_charge": "38246.75",
+      "direct_bill_total": "0.00",
+      "total_due": "38246.75",
       "annual_prebilled": "32058.00",
-      "vs_prebilled": "7109.19",
+      "vs_prebilled": "6188.75",
       "citations": [
         {
           "gl_line_id": "gl_0001",
@@ -13880,15 +13860,6 @@
             "quote": "Tenant pays its Proportionate Share of Operating Expenses allocable to the Retail Pool."
           },
           "contribution_amount": "14.52"
-        },
-        {
-          "gl_line_id": "gl_0031",
-          "lease_citation_ref": {
-            "doc": "Standard Form Lease",
-            "section": "\u00a76.02",
-            "quote": "Tenant pays its Proportionate Share of Operating Expenses allocable to the Retail Pool."
-          },
-          "contribution_amount": "230.11"
         },
         {
           "gl_line_id": "gl_0032",
@@ -14269,15 +14240,6 @@
           "contribution_amount": "14.52"
         },
         {
-          "gl_line_id": "gl_0077",
-          "lease_citation_ref": {
-            "doc": "Standard Form Lease",
-            "section": "\u00a76.02",
-            "quote": "Tenant pays its Proportionate Share of Operating Expenses allocable to the Retail Pool."
-          },
-          "contribution_amount": "230.11"
-        },
-        {
           "gl_line_id": "gl_0078",
           "lease_citation_ref": {
             "doc": "Standard Form Lease",
@@ -14600,15 +14562,6 @@
             "quote": "Tenant pays its Proportionate Share of Operating Expenses allocable to the Retail Pool."
           },
           "contribution_amount": "14.52"
-        },
-        {
-          "gl_line_id": "gl_0117",
-          "lease_citation_ref": {
-            "doc": "Standard Form Lease",
-            "section": "\u00a76.02",
-            "quote": "Tenant pays its Proportionate Share of Operating Expenses allocable to the Retail Pool."
-          },
-          "contribution_amount": "230.11"
         },
         {
           "gl_line_id": "gl_0118",
@@ -14980,15 +14933,6 @@
           "contribution_amount": "14.52"
         },
         {
-          "gl_line_id": "gl_0163",
-          "lease_citation_ref": {
-            "doc": "Standard Form Lease",
-            "section": "\u00a76.02",
-            "quote": "Tenant pays its Proportionate Share of Operating Expenses allocable to the Retail Pool."
-          },
-          "contribution_amount": "230.11"
-        },
-        {
           "gl_line_id": "gl_0164",
           "lease_citation_ref": {
             "doc": "Standard Form Lease",
@@ -15077,20 +15021,22 @@
           "landscaping": "1016.14",
           "management_fee": "3216.80",
           "realty_tax": "14388.42",
-          "repairs_maintenance": "4749.31",
+          "repairs_maintenance": "3828.87",
           "security": "1306.52",
           "snow": "696.78",
           "utilities": "8204.81"
         },
+        "direct_bill_total": "0.00",
         "steps": [
-          "Gross share before exclusions: $34,921.34."
+          "Gross share before exclusions: $34,516.34."
         ]
       }
     },
     {
       "tenant_id": "unit_103",
-      "gross_share_before_exclusions": "48501.32",
+      "gross_share_before_exclusions": "47938.84",
       "exclusions_applied": [],
+      "direct_bills_applied": [],
       "base_year_adjustment": {
         "base_year": 2024,
         "base_amount": "38500.00",
@@ -15102,9 +15048,11 @@
         }
       },
       "cap_adjustment": null,
-      "final_charge": "15898.41",
+      "final_charge": "14620.01",
+      "direct_bill_total": "0.00",
+      "total_due": "14620.01",
       "annual_prebilled": "3750.00",
-      "vs_prebilled": "12148.41",
+      "vs_prebilled": "10870.01",
       "citations": [
         {
           "gl_line_id": "gl_0001",
@@ -15348,15 +15296,6 @@
             "quote": "Tenant pays its Proportionate Share of Operating Expenses allocable to the Retail Pool."
           },
           "contribution_amount": "20.16"
-        },
-        {
-          "gl_line_id": "gl_0031",
-          "lease_citation_ref": {
-            "doc": "Standard Form Lease",
-            "section": "\u00a76.02",
-            "quote": "Tenant pays its Proportionate Share of Operating Expenses allocable to the Retail Pool."
-          },
-          "contribution_amount": "319.60"
         },
         {
           "gl_line_id": "gl_0032",
@@ -15737,15 +15676,6 @@
           "contribution_amount": "20.16"
         },
         {
-          "gl_line_id": "gl_0077",
-          "lease_citation_ref": {
-            "doc": "Standard Form Lease",
-            "section": "\u00a76.02",
-            "quote": "Tenant pays its Proportionate Share of Operating Expenses allocable to the Retail Pool."
-          },
-          "contribution_amount": "319.60"
-        },
-        {
           "gl_line_id": "gl_0078",
           "lease_citation_ref": {
             "doc": "Standard Form Lease",
@@ -16068,15 +15998,6 @@
             "quote": "Tenant pays its Proportionate Share of Operating Expenses allocable to the Retail Pool."
           },
           "contribution_amount": "20.16"
-        },
-        {
-          "gl_line_id": "gl_0117",
-          "lease_citation_ref": {
-            "doc": "Standard Form Lease",
-            "section": "\u00a76.02",
-            "quote": "Tenant pays its Proportionate Share of Operating Expenses allocable to the Retail Pool."
-          },
-          "contribution_amount": "319.60"
         },
         {
           "gl_line_id": "gl_0118",
@@ -16448,15 +16369,6 @@
           "contribution_amount": "20.16"
         },
         {
-          "gl_line_id": "gl_0163",
-          "lease_citation_ref": {
-            "doc": "Standard Form Lease",
-            "section": "\u00a76.02",
-            "quote": "Tenant pays its Proportionate Share of Operating Expenses allocable to the Retail Pool."
-          },
-          "contribution_amount": "319.60"
-        },
-        {
           "gl_line_id": "gl_0164",
           "lease_citation_ref": {
             "doc": "Standard Form Lease",
@@ -16545,24 +16457,25 @@
           "landscaping": "1411.32",
           "management_fee": "4467.72",
           "realty_tax": "19983.84",
-          "repairs_maintenance": "6596.31",
+          "repairs_maintenance": "5317.91",
           "security": "1814.52",
           "snow": "967.74",
           "utilities": "11395.50"
         },
+        "direct_bill_total": "0.00",
         "steps": [
-          "Gross share before exclusions: $48,501.32.",
+          "Gross share before exclusions: $47,938.84.",
           "Applied base year credit of $38,500.00."
         ]
       }
     },
     {
       "tenant_id": "unit_104",
-      "gross_share_before_exclusions": "120283.76",
+      "gross_share_before_exclusions": "118888.76",
       "exclusions_applied": [
         {
           "category": "repairs_maintenance",
-          "amount_removed": "10495.00",
+          "amount_removed": "9100.00",
           "reason": "modified_gross_repairs_maintenance",
           "citation_ref": {
             "doc": "Peak Fitness Studio Lease",
@@ -16593,9 +16506,12 @@
           ]
         }
       ],
+      "direct_bills_applied": [],
       "base_year_adjustment": null,
       "cap_adjustment": null,
       "final_charge": "90288.76",
+      "direct_bill_total": "0.00",
+      "total_due": "90288.76",
       "annual_prebilled": "50220.00",
       "vs_prebilled": "40068.76",
       "citations": [
@@ -17510,36 +17426,41 @@
           "security": "4500.00",
           "snow": "2400.00"
         },
+        "direct_bill_total": "0.00",
         "steps": [
-          "Gross share before exclusions: $120,283.76.",
-          "Excluded repairs_maintenance under modified_gross_repairs_maintenance: -$10,495.00.",
+          "Gross share before exclusions: $118,888.76.",
+          "Excluded repairs_maintenance under modified_gross_repairs_maintenance: -$9,100.00.",
           "Excluded utilities under modified_gross_utilities: -$19,500.00."
         ]
       }
     },
     {
       "tenant_id": "unit_105",
-      "gross_share_before_exclusions": "97002.88",
-      "exclusions_applied": [
+      "gross_share_before_exclusions": "95877.88",
+      "exclusions_applied": [],
+      "direct_bills_applied": [
         {
           "category": "repairs_maintenance",
-          "amount_removed": "1125.00",
+          "amount_billed": "4500.00",
           "reason": "schedule_c_grease_trap",
           "citation_ref": {
             "doc": "Pronto Italian Kitchen Lease",
             "section": "Schedule C.1",
             "quote": "Grease trap servicing and associated compliance costs are excluded and billed directly to the tenant."
           },
-          "reallocated_to": [
-            "unit_101",
-            "unit_102",
-            "unit_103"
+          "source_gl_ids": [
+            "gl_0031",
+            "gl_0077",
+            "gl_0117",
+            "gl_0163"
           ]
         }
       ],
       "base_year_adjustment": null,
       "cap_adjustment": null,
       "final_charge": "106240.17",
+      "direct_bill_total": "4500.00",
+      "total_due": "110740.17",
       "annual_prebilled": "85500.00",
       "vs_prebilled": "20740.17",
       "citations": [
@@ -18951,18 +18872,20 @@
           "snow": "1935.48",
           "utilities": "22790.98"
         },
+        "direct_bill_total": "4500.00",
         "steps": [
-          "Gross share before exclusions: $97,002.88.",
-          "Excluded repairs_maintenance under schedule_c_grease_trap: -$1,125.00."
+          "Gross share before exclusions: $95,877.88.",
+          "Direct-billed lease-specific items: +$4,500.00."
         ]
       }
     }
   ],
   "landlord_absorbed_total": "131149.03",
+  "direct_billed_total": "4500.00",
   "provenance": {
     "plugin_version": "0.1.0",
     "run_timestamp": "2026-04-15T10:50:00",
-    "inputs_hash": "sha256:bed93e4152f9f10cd0b963de0828a13556a74f8c0b346e3274f360165dc3cf84",
+    "inputs_hash": "sha256:4e5adfaade8dceb936a942cc4b0d8a47f58d796b9f44f68797c21e451b888e04",
     "operator": "pytest"
   }
 }

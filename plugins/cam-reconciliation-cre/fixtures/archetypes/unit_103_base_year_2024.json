@@ -1,6 +1,6 @@
 {
   "tenant_id": "unit_103",
-  "expected_final_charge": "15898.41",
-  "expected_gross_before_exclusions": "48501.32",
+  "expected_final_charge": "14620.01",
+  "expected_gross_before_exclusions": "47938.84",
   "expected_base_year_amount_removed": "38500.00"
 }
