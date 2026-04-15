@@ -1,0 +1,163 @@
+Date,Account,Category,Vendor,Invoice Ref,Memo,Amount,Pool
+2025-01-02,6600,Janitorial - Contract,Clean Pro Services Ltd.,CPS-2025-JAN,Monthly janitorial contract,3679.56,Shared
+2025-01-03,6610,Janitorial - Day Porter,Clean Pro Services Ltd.,CPS-DP-2025-JAN,Retail concourse day porter,1649.46,Retail
+2025-01-05,6410,R&M - Elevator,Kone Elevator Canada,KONE-2025-JAN,Monthly elevator service contract,1677.50,Office
+2025-01-05,6700,Security - Patrol,GardaWorld,GW-2025-JAN,Nightly mobile patrol,2894.71,Shared
+2025-01-10,6460,R&M - Storefront Glass,Crystal Clear Window Co.,CCW-2025-JAN,Retail storefront glass cleaning,931.94,Retail
+2025-01-12,6200,Insurance,Marsh Canada Ltd.,INS-2025-ANNUAL,Annual property and liability premium,50019.20,Shared
+2025-01-12,6710,Security - Alarm,ADT Commercial,ADT-2025-JAN,Monitored alarm,353.02,Shared
+2025-01-15,6100,Realty Tax,Municipal Tax Authority,TAX-2025-JAN,Interim billing,31025.17,Shared
+2025-01-20,6310,Utilities - Electric,Alectra Utilities,ALT-2025-JAN,Base building electric — JAN,7949.09,Shared
+2025-01-22,6320,Utilities - Gas,Enbridge Gas Inc.,ENB-2025-JAN,Base building gas — JAN,6589.53,Shared
+2025-01-28,6500,Management Fee,Harborline Property Management,HPM-MF-2025-JAN,Management fee — 4% of JAN gross revenue,8600.96,Shared
+2025-01-28,6900,Snow & Ice,Snowman Contracting,SNOW-2025-JAN,Snow plowing and salting,5039.82,Shared
+2025-02-02,6600,Janitorial - Contract,Clean Pro Services Ltd.,CPS-2025-FEB,Monthly janitorial contract,3679.56,Shared
+2025-02-03,6610,Janitorial - Day Porter,Clean Pro Services Ltd.,CPS-DP-2025-FEB,Retail concourse day porter,1649.46,Retail
+2025-02-05,6410,R&M - Elevator,Kone Elevator Canada,KONE-2025-FEB,Monthly elevator service contract,1677.50,Office
+2025-02-05,6700,Security - Patrol,GardaWorld,GW-2025-FEB,Nightly mobile patrol,2894.71,Shared
+2025-02-12,6710,Security - Alarm,ADT Commercial,ADT-2025-FEB,Monitored alarm,353.02,Shared
+2025-02-14,6430,R&M - General,Metro Building Services,MRO-2025-0214,Plumbing repair to common washroom,8072.93,Shared
+2025-02-15,6100,Realty Tax,Municipal Tax Authority,TAX-2025-FEB,Interim billing,31025.17,Shared
+2025-02-20,6310,Utilities - Electric,Alectra Utilities,ALT-2025-FEB,Base building electric — FEB,7631.13,Shared
+2025-02-22,6320,Utilities - Gas,Enbridge Gas Inc.,ENB-2025-FEB,Base building gas — FEB,5904.22,Shared
+2025-02-28,6500,Management Fee,Harborline Property Management,HPM-MF-2025-FEB,Management fee — 4% of FEB gross revenue,8600.96,Shared
+2025-02-28,6900,Snow & Ice,Snowman Contracting,SNOW-2025-FEB,Snow plowing and salting,3959.85,Shared
+2025-03-02,6600,Janitorial - Contract,Clean Pro Services Ltd.,CPS-2025-MAR,Monthly janitorial contract,3679.56,Shared
+2025-03-03,6610,Janitorial - Day Porter,Clean Pro Services Ltd.,CPS-DP-2025-MAR,Retail concourse day porter,1649.46,Retail
+2025-03-05,6410,R&M - Elevator,Kone Elevator Canada,KONE-2025-MAR,Monthly elevator service contract,1677.49,Office
+2025-03-05,6700,Security - Patrol,GardaWorld,GW-2025-MAR,Nightly mobile patrol,2894.71,Shared
+2025-03-10,6460,R&M - Storefront Glass,Crystal Clear Window Co.,CCW-2025-MAR,Retail storefront glass cleaning,931.94,Retail
+2025-03-12,6420,R&M - HVAC,Mechanical Systems Inc.,MSI-2025-Q1,Q1 HVAC preventive maintenance,6150.81,Shared
+2025-03-12,6710,Security - Alarm,ADT Commercial,ADT-2025-MAR,Monitored alarm,353.02,Shared
+2025-03-15,6100,Realty Tax,Municipal Tax Authority,TAX-2025-MAR,Interim billing,31025.17,Shared
+2025-03-16,6620,Janitorial - Supplies,Swish Maintenance,SWM-2025-Q1,Q1 janitorial supplies,1712.90,Shared
+2025-03-18,6720,Security - Access Control,SecureTech Inc.,ST-2025-Q1,Q1 access control maintenance,847.24,Shared
+2025-03-18,6830,Landscaping - Tree Pruning,ArborCare Ltd.,ARB-2025-SPRING,Spring tree pruning,1773.42,Shared
+2025-03-19,6440,R&M - Pest Control,Orkin Canada,ORK-2025-Q1,Q1 pest control,1397.91,Shared
+2025-03-20,6310,Utilities - Electric,Alectra Utilities,ALT-2025-MAR,Base building electric — MAR,7392.65,Shared
+2025-03-22,6320,Utilities - Gas,Enbridge Gas Inc.,ENB-2025-MAR,Base building gas — MAR,5166.19,Shared
+2025-03-22,6430,R&M - General,Metro Building Services,MRO-2025-0322,LED retrofit to garage fixtures,10274.64,Shared
+2025-03-27,6330,Utilities - Water,Regional Water Services,WTR-2025-Q1,Q1 water and sewer,6568.58,Shared
+2025-03-28,6500,Management Fee,Harborline Property Management,HPM-MF-2025-MAR,Management fee — 4% of MAR gross revenue,8600.96,Shared
+2025-03-28,6900,Snow & Ice,Snowman Contracting,SNOW-2025-MAR,Snow plowing and salting,2519.91,Shared
+2025-04-02,6600,Janitorial - Contract,Clean Pro Services Ltd.,CPS-2025-APR,Monthly janitorial contract,3679.56,Shared
+2025-04-03,6610,Janitorial - Day Porter,Clean Pro Services Ltd.,CPS-DP-2025-APR,Retail concourse day porter,1649.46,Retail
+2025-04-05,6410,R&M - Elevator,Kone Elevator Canada,KONE-2025-APR,Monthly elevator service contract,1677.49,Office
+2025-04-05,6700,Security - Patrol,GardaWorld,GW-2025-APR,Nightly mobile patrol,2894.71,Shared
+2025-04-10,6820,Landscaping - Irrigation,GreenScape Contractors,GSC-IRR-2025,Annual irrigation maintenance,2364.54,Shared
+2025-04-12,6710,Security - Alarm,ADT Commercial,ADT-2025-APR,Monitored alarm,353.02,Shared
+2025-04-15,6100,Realty Tax,Municipal Tax Authority,TAX-2025-APR,Interim billing,31025.17,Shared
+2025-04-20,6310,Utilities - Electric,Alectra Utilities,ALT-2025-APR,Base building electric — APR,7154.18,Shared
+2025-04-22,6320,Utilities - Gas,Enbridge Gas Inc.,ENB-2025-APR,Base building gas — APR,4428.16,Shared
+2025-04-28,6500,Management Fee,Harborline Property Management,HPM-MF-2025-APR,Management fee — 4% of APR gross revenue,8600.96,Shared
+2025-04-30,6800,Landscaping - Maintenance,GreenScape Contractors,GSC-2025-APR,Monthly landscaping maintenance,2327.60,Shared
+2025-05-02,6600,Janitorial - Contract,Clean Pro Services Ltd.,CPS-2025-MAY,Monthly janitorial contract,3679.56,Shared
+2025-05-03,6610,Janitorial - Day Porter,Clean Pro Services Ltd.,CPS-DP-2025-MAY,Retail concourse day porter,1649.46,Retail
+2025-05-05,6410,R&M - Elevator,Kone Elevator Canada,KONE-2025-MAY,Monthly elevator service contract,1677.49,Office
+2025-05-05,6700,Security - Patrol,GardaWorld,GW-2025-MAY,Nightly mobile patrol,2894.71,Shared
+2025-05-08,6430,R&M - General,Metro Building Services,MRO-2025-0508,Electrical panel maintenance,5871.22,Shared
+2025-05-09,6470,R&M - Roof,Flynn Canada Roofing,FLN-2025-SPRING,Spring roof inspection and repair,4473.31,Shared
+2025-05-10,6460,R&M - Storefront Glass,Crystal Clear Window Co.,CCW-2025-MAY,Retail storefront glass cleaning,931.94,Retail
+2025-05-12,6710,Security - Alarm,ADT Commercial,ADT-2025-MAY,Monitored alarm,353.01,Shared
+2025-05-15,6100,Realty Tax,Municipal Tax Authority,TAX-2025-MAY,Interim billing,31025.17,Shared
+2025-05-15,6810,Landscaping - Seasonal,GreenScape Contractors,GSC-SPRING-2025,Spring seasonal plantings,3399.03,Shared
+2025-05-20,6310,Utilities - Electric,Alectra Utilities,ALT-2025-MAY,Base building electric — MAY,6995.20,Shared
+2025-05-22,6320,Utilities - Gas,Enbridge Gas Inc.,ENB-2025-MAY,Base building gas — MAY,3690.13,Shared
+2025-05-22,6630,Janitorial - Window,Crystal Clear Window Co.,CCW-INT-2025-SPRING,Spring interior window cleaning,2664.51,Shared
+2025-05-28,6500,Management Fee,Harborline Property Management,HPM-MF-2025-MAY,Management fee — 4% of MAY gross revenue,8600.96,Shared
+2025-05-30,6800,Landscaping - Maintenance,GreenScape Contractors,GSC-2025-MAY,Monthly landscaping maintenance,2327.60,Shared
+2025-06-02,6600,Janitorial - Contract,Clean Pro Services Ltd.,CPS-2025-JUN,Monthly janitorial contract,3679.56,Shared
+2025-06-03,6610,Janitorial - Day Porter,Clean Pro Services Ltd.,CPS-DP-2025-JUN,Retail concourse day porter,1649.46,Retail
+2025-06-05,6410,R&M - Elevator,Kone Elevator Canada,KONE-2025-JUN,Monthly elevator service contract,1677.49,Office
+2025-06-05,6700,Security - Patrol,GardaWorld,GW-2025-JUN,Nightly mobile patrol,2894.71,Shared
+2025-06-12,6420,R&M - HVAC,Mechanical Systems Inc.,MSI-2025-Q2,Q2 HVAC preventive maintenance,6150.81,Shared
+2025-06-12,6710,Security - Alarm,ADT Commercial,ADT-2025-JUN,Monitored alarm,353.01,Shared
+2025-06-15,6100,Realty Tax,Municipal Tax Authority,TAX-2025-JUN,Interim billing,31025.17,Shared
+2025-06-16,6620,Janitorial - Supplies,Swish Maintenance,SWM-2025-Q2,Q2 janitorial supplies,1712.90,Shared
+2025-06-18,6720,Security - Access Control,SecureTech Inc.,ST-2025-Q2,Q2 access control maintenance,847.23,Shared
+2025-06-19,6440,R&M - Pest Control,Orkin Canada,ORK-2025-Q2,Q2 pest control,1397.91,Shared
+2025-06-20,6310,Utilities - Electric,Alectra Utilities,ALT-2025-JUN,Base building electric — JUN,7313.16,Shared
+2025-06-22,6320,Utilities - Gas,Enbridge Gas Inc.,ENB-2025-JUN,Base building gas — JUN,3268.41,Shared
+2025-06-27,6330,Utilities - Water,Regional Water Services,WTR-2025-Q2,Q2 water and sewer,6568.58,Shared
+2025-06-28,6500,Management Fee,Harborline Property Management,HPM-MF-2025-JUN,Management fee — 4% of JUN gross revenue,8772.97,Shared
+2025-06-30,6800,Landscaping - Maintenance,GreenScape Contractors,GSC-2025-JUN,Monthly landscaping maintenance,2327.60,Shared
+2025-07-02,6600,Janitorial - Contract,Clean Pro Services Ltd.,CPS-2025-JUL,Monthly janitorial contract,3679.56,Shared
+2025-07-03,6610,Janitorial - Day Porter,Clean Pro Services Ltd.,CPS-DP-2025-JUL,Retail concourse day porter,1649.46,Retail
+2025-07-05,6410,R&M - Elevator,Kone Elevator Canada,KONE-2025-JUL,Monthly elevator service contract,1677.49,Office
+2025-07-05,6700,Security - Patrol,GardaWorld,GW-2025-JUL,Nightly mobile patrol,2894.71,Shared
+2025-07-10,6460,R&M - Storefront Glass,Crystal Clear Window Co.,CCW-2025-JUL,Retail storefront glass cleaning,931.94,Retail
+2025-07-11,6430,R&M - General,Metro Building Services,MRO-2025-0711,Lobby carpentry and millwork repair,7339.03,Shared
+2025-07-12,6710,Security - Alarm,ADT Commercial,ADT-2025-JUL,Monitored alarm,353.01,Shared
+2025-07-15,6100,Realty Tax,Municipal Tax Authority,TAX-2025-JUL,Post-reassessment billing,35525.17,Shared
+2025-07-20,6310,Utilities - Electric,Alectra Utilities,ALT-2025-JUL,Base building electric — JUL,8108.07,Shared
+2025-07-22,6320,Utilities - Gas,Enbridge Gas Inc.,ENB-2025-JUL,Base building gas — JUL,3057.54,Shared
+2025-07-28,6500,Management Fee,Harborline Property Management,HPM-MF-2025-JUL,Management fee — 4% of JUL gross revenue,8858.98,Shared
+2025-07-30,6800,Landscaping - Maintenance,GreenScape Contractors,GSC-2025-JUL,Monthly landscaping maintenance,2327.60,Shared
+2025-08-02,6600,Janitorial - Contract,Clean Pro Services Ltd.,CPS-2025-AUG,Monthly janitorial contract,3679.56,Shared
+2025-08-03,6610,Janitorial - Day Porter,Clean Pro Services Ltd.,CPS-DP-2025-AUG,Retail concourse day porter,1649.46,Retail
+2025-08-05,6410,R&M - Elevator,Kone Elevator Canada,KONE-2025-AUG,Monthly elevator service contract,1677.49,Office
+2025-08-05,6700,Security - Patrol,GardaWorld,GW-2025-AUG,Nightly mobile patrol,2894.71,Shared
+2025-08-12,6710,Security - Alarm,ADT Commercial,ADT-2025-AUG,Monitored alarm,353.01,Shared
+2025-08-15,6100,Realty Tax,Municipal Tax Authority,TAX-2025-AUG,Post-reassessment billing,35525.17,Shared
+2025-08-20,6310,Utilities - Electric,Alectra Utilities,ALT-2025-AUG,Base building electric — AUG,8426.03,Shared
+2025-08-22,6320,Utilities - Gas,Enbridge Gas Inc.,ENB-2025-AUG,Base building gas — AUG,3162.97,Shared
+2025-08-28,6500,Management Fee,Harborline Property Management,HPM-MF-2025-AUG,Management fee — 4% of AUG gross revenue,8944.99,Shared
+2025-08-30,6800,Landscaping - Maintenance,GreenScape Contractors,GSC-2025-AUG,Monthly landscaping maintenance,2327.60,Shared
+2025-09-02,6600,Janitorial - Contract,Clean Pro Services Ltd.,CPS-2025-SEP,Monthly janitorial contract,3679.56,Shared
+2025-09-03,6610,Janitorial - Day Porter,Clean Pro Services Ltd.,CPS-DP-2025-SEP,Retail concourse day porter,1649.46,Retail
+2025-09-05,6410,R&M - Elevator,Kone Elevator Canada,KONE-2025-SEP,Monthly elevator service contract,1677.49,Office
+2025-09-05,6700,Security - Patrol,GardaWorld,GW-2025-SEP,Nightly mobile patrol,2894.71,Shared
+2025-09-10,6460,R&M - Storefront Glass,Crystal Clear Window Co.,CCW-2025-SEP,Retail storefront glass cleaning,931.94,Retail
+2025-09-12,6420,R&M - HVAC,Mechanical Systems Inc.,MSI-2025-Q3,Q3 HVAC preventive maintenance,6150.80,Shared
+2025-09-12,6710,Security - Alarm,ADT Commercial,ADT-2025-SEP,Monitored alarm,353.01,Shared
+2025-09-15,6100,Realty Tax,Municipal Tax Authority,TAX-2025-SEP,Post-reassessment billing,35525.17,Shared
+2025-09-16,6620,Janitorial - Supplies,Swish Maintenance,SWM-2025-Q3,Q3 janitorial supplies,1712.90,Shared
+2025-09-18,6720,Security - Access Control,SecureTech Inc.,ST-2025-Q3,Q3 access control maintenance,847.23,Shared
+2025-09-19,6440,R&M - Pest Control,Orkin Canada,ORK-2025-Q3,Q3 pest control,1397.91,Shared
+2025-09-20,6310,Utilities - Electric,Alectra Utilities,ALT-2025-SEP,Base building electric — SEP,8267.05,Shared
+2025-09-22,6320,Utilities - Gas,Enbridge Gas Inc.,ENB-2025-SEP,Base building gas — SEP,3479.27,Shared
+2025-09-25,6430,R&M - General,Metro Building Services,MRO-2025-0925,Asphalt crack sealing and line touch-up,6605.13,Shared
+2025-09-25,6810,Landscaping - Seasonal,GreenScape Contractors,GSC-FALL-2025,Fall seasonal plantings,3399.03,Shared
+2025-09-27,6330,Utilities - Water,Regional Water Services,WTR-2025-Q3,Q3 water and sewer,6568.57,Shared
+2025-09-28,6500,Management Fee,Harborline Property Management,HPM-MF-2025-SEP,Management fee — 4% of SEP gross revenue,8858.98,Shared
+2025-09-30,6800,Landscaping - Maintenance,GreenScape Contractors,GSC-2025-SEP,Monthly landscaping maintenance,2327.60,Shared
+2025-10-02,6600,Janitorial - Contract,Clean Pro Services Ltd.,CPS-2025-OCT,Monthly janitorial contract,3679.56,Shared
+2025-10-03,6610,Janitorial - Day Porter,Clean Pro Services Ltd.,CPS-DP-2025-OCT,Retail concourse day porter,1649.45,Retail
+2025-10-05,6410,R&M - Elevator,Kone Elevator Canada,KONE-2025-OCT,Monthly elevator service contract,1677.49,Office
+2025-10-05,6700,Security - Patrol,GardaWorld,GW-2025-OCT,Nightly mobile patrol,2894.71,Shared
+2025-10-12,6710,Security - Alarm,ADT Commercial,ADT-2025-OCT,Monitored alarm,353.01,Shared
+2025-10-15,6100,Realty Tax,Municipal Tax Authority,TAX-2025-OCT,Post-reassessment billing,35525.17,Shared
+2025-10-20,6310,Utilities - Electric,Alectra Utilities,ALT-2025-OCT,Base building electric — OCT,7949.09,Shared
+2025-10-22,6320,Utilities - Gas,Enbridge Gas Inc.,ENB-2025-OCT,Base building gas — OCT,4322.73,Shared
+2025-10-22,6630,Janitorial - Window,Crystal Clear Window Co.,CCW-INT-2025-FALL,Fall interior window cleaning,2664.51,Shared
+2025-10-28,6500,Management Fee,Harborline Property Management,HPM-MF-2025-OCT,Management fee — 4% of OCT gross revenue,8772.97,Shared
+2025-10-30,6800,Landscaping - Maintenance,GreenScape Contractors,GSC-2025-OCT,Monthly landscaping maintenance,2327.59,Shared
+2025-11-02,6600,Janitorial - Contract,Clean Pro Services Ltd.,CPS-2025-NOV,Monthly janitorial contract,3679.55,Shared
+2025-11-03,6610,Janitorial - Day Porter,Clean Pro Services Ltd.,CPS-DP-2025-NOV,Retail concourse day porter,1649.45,Retail
+2025-11-05,6410,R&M - Elevator,Kone Elevator Canada,KONE-2025-NOV,Monthly elevator service contract,1677.49,Office
+2025-11-05,6700,Security - Patrol,GardaWorld,GW-2025-NOV,Nightly mobile patrol,2894.71,Shared
+2025-11-07,6470,R&M - Roof,Flynn Canada Roofing,FLN-2025-FALL,Fall roof inspection and flashing repair,4473.31,Shared
+2025-11-10,6460,R&M - Storefront Glass,Crystal Clear Window Co.,CCW-2025-NOV,Retail storefront glass cleaning,931.94,Retail
+2025-11-12,6710,Security - Alarm,ADT Commercial,ADT-2025-NOV,Monitored alarm,353.01,Shared
+2025-11-15,6100,Realty Tax,Municipal Tax Authority,TAX-2025-NOV,Post-reassessment billing,35525.17,Shared
+2025-11-18,6430,R&M - General,Metro Building Services,MRO-2025-1118,Backflow test and certification,8806.83,Shared
+2025-11-20,6310,Utilities - Electric,Alectra Utilities,ALT-2025-NOV,Base building electric — NOV,8028.58,Shared
+2025-11-22,6320,Utilities - Gas,Enbridge Gas Inc.,ENB-2025-NOV,Base building gas — NOV,5271.62,Shared
+2025-11-28,6500,Management Fee,Harborline Property Management,HPM-MF-2025-NOV,Management fee — 4% of NOV gross revenue,8686.96,Shared
+2025-11-28,6900,Snow & Ice,Snowman Contracting,SNOW-2025-NOV,Snow plowing and salting,2879.89,Shared
+2025-11-30,6800,Landscaping - Maintenance,GreenScape Contractors,GSC-2025-NOV,Monthly landscaping maintenance,2327.59,Shared
+2025-12-02,6600,Janitorial - Contract,Clean Pro Services Ltd.,CPS-2025-DEC,Monthly janitorial contract,3679.55,Shared
+2025-12-03,6610,Janitorial - Day Porter,Clean Pro Services Ltd.,CPS-DP-2025-DEC,Retail concourse day porter,1649.45,Retail
+2025-12-05,6410,R&M - Elevator,Kone Elevator Canada,KONE-2025-DEC,Monthly elevator service contract,1677.49,Office
+2025-12-05,6700,Security - Patrol,GardaWorld,GW-2025-DEC,Nightly mobile patrol,2894.70,Shared
+2025-12-12,6420,R&M - HVAC,Mechanical Systems Inc.,MSI-2025-Q4,Q4 HVAC preventive maintenance,6150.80,Shared
+2025-12-12,6710,Security - Alarm,ADT Commercial,ADT-2025-DEC,Monitored alarm,353.01,Shared
+2025-12-15,6100,Realty Tax,Municipal Tax Authority,TAX-2025-DEC,Post-reassessment billing,35525.13,Shared
+2025-12-16,6620,Janitorial - Supplies,Swish Maintenance,SWM-2025-Q4,Q4 janitorial supplies,1712.89,Shared
+2025-12-18,6720,Security - Access Control,SecureTech Inc.,ST-2025-Q4,Q4 access control maintenance,847.23,Shared
+2025-12-19,6440,R&M - Pest Control,Orkin Canada,ORK-2025-Q4,Q4 pest control,1397.91,Shared
+2025-12-20,6310,Utilities - Electric,Alectra Utilities,ALT-2025-DEC,Base building electric — DEC,8585.02,Shared
+2025-12-22,6320,Utilities - Gas,Enbridge Gas Inc.,ENB-2025-DEC,Base building gas — DEC,6747.68,Shared
+2025-12-27,6330,Utilities - Water,Regional Water Services,WTR-2025-Q4,Q4 water and sewer,6568.57,Shared
+2025-12-28,6500,Management Fee,Harborline Property Management,HPM-MF-2025-DEC,Management fee — 4% of DEC gross revenue,8600.95,Shared
+2025-12-28,6900,Snow & Ice,Snowman Contracting,SNOW-2025-DEC,Snow plowing and salting,7199.73,Shared

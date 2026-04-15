@@ -1,0 +1,39 @@
+{
+  "case_id": "09_northline_commerce_court",
+  "property_name": "Northline Commerce Court",
+  "budget_total": "916218.00",
+  "raw_actual_total": "971418.00",
+  "corrected_recoverable_total": "963918.00",
+  "duplicate_amount": "3600",
+  "turnover_amount": "0",
+  "management_fee_excess": "3900",
+  "scenario_flags": {
+    "include_cap": true,
+    "cap_binding": false,
+    "include_modified_gross": false,
+    "include_restaurant_exclusion": false,
+    "include_base_year_retail": true,
+    "include_base_year_office": true,
+    "include_vacancy": true
+  },
+  "issues": {
+    "duplicate": {
+      "category": "security",
+      "invoice_ref": "GW-rt-DUP",
+      "keywords": [
+        "duplicate",
+        "patrol",
+        "re-entered"
+      ]
+    },
+    "turnover": null,
+    "management_fee": {
+      "keywords": [
+        "effective gross income",
+        "gross potential income",
+        "management fee",
+        "EGI"
+      ]
+    }
+  }
+}

@@ -24,9 +24,80 @@ TOTAL_EXPENSES_RE = re.compile(
     r"TOTAL OPERATING EXPENSES\s+([0-9,]+)\s+([0-9,]+)\s+([+\-]?[0-9,]+)",
     re.MULTILINE,
 )
+MONEY_RE = re.compile(r"\$?\s*([0-9]{1,3}(?:,[0-9]{3})+(?:\.[0-9]{2})|[0-9]+\.[0-9]{2})")
+
+
+def _is_corrected_header(line: str) -> bool:
+    stripped = line.strip().lower()
+    header_prefix_re = re.compile(r"^(?:[#*\-\s]+|[a-z]\.\d+\s+|step\s+\d+\.?\s+)?corrected\b")
+    if not header_prefix_re.match(stripped):
+        return False
+    return any(token in stripped for token in ("recoverable", "opex", "operating expense"))
+
+
+def _extract_corrected_total(text: str) -> Decimal | None:
+    lines = text.splitlines()
+    candidates: list[str] = []
+    for idx, line in enumerate(lines):
+        if not _is_corrected_header(line):
+            continue
+
+        line_amounts = MONEY_RE.findall(line)
+        if line_amounts:
+            candidates.append(line_amounts[-1])
+            continue
+
+        window: list[tuple[str, list[str]]] = []
+        for next_line in lines[idx + 1 : idx + 7]:
+            if not next_line.strip():
+                if window:
+                    break
+                continue
+            next_amounts = MONEY_RE.findall(next_line)
+            if next_amounts:
+                window.append((next_line, next_amounts))
+        if not window:
+            continue
+
+        corrected_window = [
+            amounts[-1]
+            for candidate_line, amounts in window
+            if _is_corrected_header(candidate_line)
+        ]
+        if corrected_window:
+            candidates.append(corrected_window[-1])
+            continue
+
+        first_line, first_amounts = window[0]
+        if len(first_amounts) == 1 and "raw" not in first_line.lower():
+            candidates.append(first_amounts[0])
+            continue
+
+        equals_window = [
+            amounts[-1]
+            for candidate_line, amounts in window
+            if "=" in candidate_line
+        ]
+        if equals_window:
+            candidates.append(equals_window[-1])
+            continue
+
+        candidates.append(window[-1][1][-1])
+
+    if not candidates:
+        return None
+    return money(candidates[-1].replace(",", ""))
 
 
 def extract_anthropic_totals(text: str) -> dict[str, object]:
+    corrected_total = _extract_corrected_total(text)
+    if corrected_total is not None:
+        return {
+            "budget_total": None,
+            "reported_total": corrected_total,
+            "reported_variance": None,
+        }
+
     match = TOTAL_RECONCILIATION_RE.search(text)
     if not match:
         match = TOTAL_EXPENSES_RE.search(text)

@@ -1,0 +1,18 @@
+id: 04_airport_north_hub
+name: Airport North Business Hub
+address: 455 Jetstream Avenue, Mississauga, ON L5S 1X7
+rsf_total: 57000
+rsf_retail: 16000
+rsf_office: 41000
+gross_potential_income: '2840360.00'
+effective_gross_income: '2712860.00'
+projected_effective_gross_income: '2677860.00'
+vacancy_loss: '107500.00'
+credit_allowance: '20000.00'
+pools:
+- name: office
+  rsf: 41000
+  share_of_total: 0.72
+- name: retail
+  rsf: 16000
+  share_of_total: 0.28

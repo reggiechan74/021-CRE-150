@@ -1,0 +1,39 @@
+{
+  "case_id": "02_kingsway_commons",
+  "property_name": "Kingsway Commons",
+  "budget_total": "924768.00",
+  "raw_actual_total": "990368.00",
+  "corrected_recoverable_total": "983368.00",
+  "duplicate_amount": "4200",
+  "turnover_amount": "0",
+  "management_fee_excess": "2800",
+  "scenario_flags": {
+    "include_cap": true,
+    "cap_binding": true,
+    "include_modified_gross": true,
+    "include_restaurant_exclusion": false,
+    "include_base_year_retail": true,
+    "include_base_year_office": false,
+    "include_vacancy": false
+  },
+  "issues": {
+    "duplicate": {
+      "category": "security",
+      "invoice_ref": "GW-ns-DUP",
+      "keywords": [
+        "duplicate",
+        "patrol",
+        "re-entered"
+      ]
+    },
+    "turnover": null,
+    "management_fee": {
+      "keywords": [
+        "effective gross income",
+        "gross potential income",
+        "management fee",
+        "EGI"
+      ]
+    }
+  }
+}

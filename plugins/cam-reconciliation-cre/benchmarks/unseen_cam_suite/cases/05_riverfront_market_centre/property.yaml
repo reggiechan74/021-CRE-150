@@ -1,0 +1,18 @@
+id: 05_riverfront_market_centre
+name: Riverfront Market Centre
+address: 88 Riverfront Lane, Calgary, AB T2P 3N4
+rsf_total: 48000
+rsf_retail: 20000
+rsf_office: 28000
+gross_potential_income: '2123000.00'
+effective_gross_income: '2123000.00'
+projected_effective_gross_income: '2088000.00'
+vacancy_loss: '0.00'
+credit_allowance: '0.00'
+pools:
+- name: office
+  rsf: 28000
+  share_of_total: 0.58
+- name: retail
+  rsf: 20000
+  share_of_total: 0.42

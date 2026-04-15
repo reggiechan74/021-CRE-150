@@ -1,0 +1,18 @@
+id: 10_university_gate_centre
+name: University Gate Centre
+address: 510 University Gate, Waterloo, ON N2L 3G1
+rsf_total: 57000
+rsf_retail: 23000
+rsf_office: 34000
+gross_potential_income: '2879950.00'
+effective_gross_income: '2762450.00'
+projected_effective_gross_income: '2727450.00'
+vacancy_loss: '97500.00'
+credit_allowance: '20000.00'
+pools:
+- name: office
+  rsf: 34000
+  share_of_total: 0.6
+- name: retail
+  rsf: 23000
+  share_of_total: 0.4

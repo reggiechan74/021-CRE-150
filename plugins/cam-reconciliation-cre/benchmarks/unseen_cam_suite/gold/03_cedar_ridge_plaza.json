@@ -1,0 +1,31 @@
+{
+  "case_id": "03_cedar_ridge_plaza",
+  "property_name": "Cedar Ridge Plaza",
+  "budget_total": "786600.00",
+  "raw_actual_total": "834600.00",
+  "corrected_recoverable_total": "824800.00",
+  "duplicate_amount": "0",
+  "turnover_amount": "9800",
+  "management_fee_excess": "0",
+  "scenario_flags": {
+    "include_cap": true,
+    "cap_binding": false,
+    "include_modified_gross": false,
+    "include_restaurant_exclusion": true,
+    "include_base_year_retail": true,
+    "include_base_year_office": true,
+    "include_vacancy": false
+  },
+  "issues": {
+    "duplicate": null,
+    "turnover": {
+      "invoice_ref": "TURN-za-1018",
+      "keywords": [
+        "turnover",
+        "move-out",
+        "deep clean"
+      ]
+    },
+    "management_fee": null
+  }
+}

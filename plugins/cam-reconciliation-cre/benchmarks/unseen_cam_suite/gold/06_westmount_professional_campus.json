@@ -1,0 +1,31 @@
+{
+  "case_id": "06_westmount_professional_campus",
+  "property_name": "Westmount Professional Campus",
+  "budget_total": "971964.00",
+  "raw_actual_total": "1010464.00",
+  "corrected_recoverable_total": "1006264.00",
+  "duplicate_amount": "0",
+  "turnover_amount": "0",
+  "management_fee_excess": "4200",
+  "scenario_flags": {
+    "include_cap": true,
+    "cap_binding": false,
+    "include_modified_gross": false,
+    "include_restaurant_exclusion": false,
+    "include_base_year_retail": true,
+    "include_base_year_office": true,
+    "include_vacancy": false
+  },
+  "issues": {
+    "duplicate": null,
+    "turnover": null,
+    "management_fee": {
+      "keywords": [
+        "effective gross income",
+        "gross potential income",
+        "management fee",
+        "EGI"
+      ]
+    }
+  }
+}

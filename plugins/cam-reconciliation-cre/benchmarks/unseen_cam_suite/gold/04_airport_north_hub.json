@@ -1,0 +1,39 @@
+{
+  "case_id": "04_airport_north_hub",
+  "property_name": "Airport North Business Hub",
+  "budget_total": "1052676.00",
+  "raw_actual_total": "1105176.00",
+  "corrected_recoverable_total": "1092476.00",
+  "duplicate_amount": "7600",
+  "turnover_amount": "0",
+  "management_fee_excess": "5100",
+  "scenario_flags": {
+    "include_cap": true,
+    "cap_binding": true,
+    "include_modified_gross": true,
+    "include_restaurant_exclusion": false,
+    "include_base_year_retail": false,
+    "include_base_year_office": true,
+    "include_vacancy": true
+  },
+  "issues": {
+    "duplicate": {
+      "category": "utilities",
+      "invoice_ref": "ALT-2025-DEC",
+      "keywords": [
+        "duplicate",
+        "electric",
+        "re-entered"
+      ]
+    },
+    "turnover": null,
+    "management_fee": {
+      "keywords": [
+        "effective gross income",
+        "gross potential income",
+        "management fee",
+        "EGI"
+      ]
+    }
+  }
+}

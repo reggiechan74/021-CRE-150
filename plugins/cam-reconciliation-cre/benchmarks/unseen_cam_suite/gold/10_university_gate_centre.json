@@ -1,0 +1,46 @@
+{
+  "case_id": "10_university_gate_centre",
+  "property_name": "University Gate Centre",
+  "budget_total": "1072170.00",
+  "raw_actual_total": "1172170.00",
+  "corrected_recoverable_total": "1143670.00",
+  "duplicate_amount": "8400",
+  "turnover_amount": "15400",
+  "management_fee_excess": "4700",
+  "scenario_flags": {
+    "include_cap": true,
+    "cap_binding": true,
+    "include_modified_gross": true,
+    "include_restaurant_exclusion": true,
+    "include_base_year_retail": true,
+    "include_base_year_office": true,
+    "include_vacancy": true
+  },
+  "issues": {
+    "duplicate": {
+      "category": "utilities",
+      "invoice_ref": "GA-2025-re-4471",
+      "keywords": [
+        "duplicate",
+        "gas",
+        "re-entered"
+      ]
+    },
+    "turnover": {
+      "invoice_ref": "TURN-re-1018",
+      "keywords": [
+        "turnover",
+        "move-out",
+        "deep clean"
+      ]
+    },
+    "management_fee": {
+      "keywords": [
+        "effective gross income",
+        "gross potential income",
+        "management fee",
+        "EGI"
+      ]
+    }
+  }
+}

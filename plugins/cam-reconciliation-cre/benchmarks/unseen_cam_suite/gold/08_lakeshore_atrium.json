@@ -1,0 +1,24 @@
+{
+  "case_id": "08_lakeshore_atrium",
+  "property_name": "Lakeshore Atrium",
+  "budget_total": "906300.00",
+  "raw_actual_total": "938700.00",
+  "corrected_recoverable_total": "938700.00",
+  "duplicate_amount": "0",
+  "turnover_amount": "0",
+  "management_fee_excess": "0",
+  "scenario_flags": {
+    "include_cap": true,
+    "cap_binding": true,
+    "include_modified_gross": true,
+    "include_restaurant_exclusion": true,
+    "include_base_year_retail": true,
+    "include_base_year_office": false,
+    "include_vacancy": false
+  },
+  "issues": {
+    "duplicate": null,
+    "turnover": null,
+    "management_fee": null
+  }
+}

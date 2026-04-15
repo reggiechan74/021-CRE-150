@@ -1,0 +1,132 @@
+[
+  {
+    "case_id": "01_harborpoint_exchange",
+    "property_name": "Harborpoint Exchange",
+    "scenario_flags": {
+      "include_cap": true,
+      "cap_binding": false,
+      "include_modified_gross": true,
+      "include_restaurant_exclusion": true,
+      "include_base_year_retail": true,
+      "include_base_year_office": true,
+      "include_vacancy": true
+    }
+  },
+  {
+    "case_id": "02_kingsway_commons",
+    "property_name": "Kingsway Commons",
+    "scenario_flags": {
+      "include_cap": true,
+      "cap_binding": true,
+      "include_modified_gross": true,
+      "include_restaurant_exclusion": false,
+      "include_base_year_retail": true,
+      "include_base_year_office": false,
+      "include_vacancy": false
+    }
+  },
+  {
+    "case_id": "03_cedar_ridge_plaza",
+    "property_name": "Cedar Ridge Plaza",
+    "scenario_flags": {
+      "include_cap": true,
+      "cap_binding": false,
+      "include_modified_gross": false,
+      "include_restaurant_exclusion": true,
+      "include_base_year_retail": true,
+      "include_base_year_office": true,
+      "include_vacancy": false
+    }
+  },
+  {
+    "case_id": "04_airport_north_hub",
+    "property_name": "Airport North Business Hub",
+    "scenario_flags": {
+      "include_cap": true,
+      "cap_binding": true,
+      "include_modified_gross": true,
+      "include_restaurant_exclusion": false,
+      "include_base_year_retail": false,
+      "include_base_year_office": true,
+      "include_vacancy": true
+    }
+  },
+  {
+    "case_id": "05_riverfront_market_centre",
+    "property_name": "Riverfront Market Centre",
+    "scenario_flags": {
+      "include_cap": false,
+      "cap_binding": false,
+      "include_modified_gross": true,
+      "include_restaurant_exclusion": true,
+      "include_base_year_retail": false,
+      "include_base_year_office": true,
+      "include_vacancy": true
+    }
+  },
+  {
+    "case_id": "06_westmount_professional_campus",
+    "property_name": "Westmount Professional Campus",
+    "scenario_flags": {
+      "include_cap": true,
+      "cap_binding": false,
+      "include_modified_gross": false,
+      "include_restaurant_exclusion": false,
+      "include_base_year_retail": true,
+      "include_base_year_office": true,
+      "include_vacancy": false
+    }
+  },
+  {
+    "case_id": "07_meadowvale_station_centre",
+    "property_name": "Meadowvale Station Centre",
+    "scenario_flags": {
+      "include_cap": true,
+      "cap_binding": false,
+      "include_modified_gross": true,
+      "include_restaurant_exclusion": true,
+      "include_base_year_retail": false,
+      "include_base_year_office": false,
+      "include_vacancy": true
+    }
+  },
+  {
+    "case_id": "08_lakeshore_atrium",
+    "property_name": "Lakeshore Atrium",
+    "scenario_flags": {
+      "include_cap": true,
+      "cap_binding": true,
+      "include_modified_gross": true,
+      "include_restaurant_exclusion": true,
+      "include_base_year_retail": true,
+      "include_base_year_office": false,
+      "include_vacancy": false
+    }
+  },
+  {
+    "case_id": "09_northline_commerce_court",
+    "property_name": "Northline Commerce Court",
+    "scenario_flags": {
+      "include_cap": true,
+      "cap_binding": false,
+      "include_modified_gross": false,
+      "include_restaurant_exclusion": false,
+      "include_base_year_retail": true,
+      "include_base_year_office": true,
+      "include_vacancy": true
+    }
+  },
+  {
+    "case_id": "10_university_gate_centre",
+    "property_name": "University Gate Centre",
+    "scenario_flags": {
+      "include_cap": true,
+      "cap_binding": true,
+      "include_modified_gross": true,
+      "include_restaurant_exclusion": true,
+      "include_base_year_retail": true,
+      "include_base_year_office": true,
+      "include_vacancy": true
+    }
+  }
+]

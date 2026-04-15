@@ -1,0 +1,382 @@
+[
+  {
+    "case_id": "01_harborpoint_exchange",
+    "property_name": "Harborpoint Exchange",
+    "budget_total": "886464.00",
+    "raw_actual_total": "975114.00",
+    "corrected_recoverable_total": "950964.00",
+    "duplicate_amount": "9300",
+    "turnover_amount": "11250",
+    "management_fee_excess": "3600",
+    "scenario_flags": {
+      "include_cap": true,
+      "cap_binding": false,
+      "include_modified_gross": true,
+      "include_restaurant_exclusion": true,
+      "include_base_year_retail": true,
+      "include_base_year_office": true,
+      "include_vacancy": true
+    },
+    "issues": {
+      "duplicate": {
+        "category": "utilities",
+        "invoice_ref": "GA-2025-ge-4471",
+        "keywords": [
+          "duplicate",
+          "gas",
+          "re-entered"
+        ]
+      },
+      "turnover": {
+        "invoice_ref": "TURN-ge-1018",
+        "keywords": [
+          "turnover",
+          "move-out",
+          "deep clean"
+        ]
+      },
+      "management_fee": {
+        "keywords": [
+          "effective gross income",
+          "gross potential income",
+          "management fee",
+          "EGI"
+        ]
+      }
+    }
+  },
+  {
+    "case_id": "02_kingsway_commons",
+    "property_name": "Kingsway Commons",
+    "budget_total": "924768.00",
+    "raw_actual_total": "990368.00",
+    "corrected_recoverable_total": "983368.00",
+    "duplicate_amount": "4200",
+    "turnover_amount": "0",
+    "management_fee_excess": "2800",
+    "scenario_flags": {
+      "include_cap": true,
+      "cap_binding": true,
+      "include_modified_gross": true,
+      "include_restaurant_exclusion": false,
+      "include_base_year_retail": true,
+      "include_base_year_office": false,
+      "include_vacancy": false
+    },
+    "issues": {
+      "duplicate": {
+        "category": "security",
+        "invoice_ref": "GW-ns-DUP",
+        "keywords": [
+          "duplicate",
+          "patrol",
+          "re-entered"
+        ]
+      },
+      "turnover": null,
+      "management_fee": {
+        "keywords": [
+          "effective gross income",
+          "gross potential income",
+          "management fee",
+          "EGI"
+        ]
+      }
+    }
+  },
+  {
+    "case_id": "03_cedar_ridge_plaza",
+    "property_name": "Cedar Ridge Plaza",
+    "budget_total": "786600.00",
+    "raw_actual_total": "834600.00",
+    "corrected_recoverable_total": "824800.00",
+    "duplicate_amount": "0",
+    "turnover_amount": "9800",
+    "management_fee_excess": "0",
+    "scenario_flags": {
+      "include_cap": true,
+      "cap_binding": false,
+      "include_modified_gross": false,
+      "include_restaurant_exclusion": true,
+      "include_base_year_retail": true,
+      "include_base_year_office": true,
+      "include_vacancy": false
+    },
+    "issues": {
+      "duplicate": null,
+      "turnover": {
+        "invoice_ref": "TURN-za-1018",
+        "keywords": [
+          "turnover",
+          "move-out",
+          "deep clean"
+        ]
+      },
+      "management_fee": null
+    }
+  },
+  {
+    "case_id": "04_airport_north_hub",
+    "property_name": "Airport North Business Hub",
+    "budget_total": "1052676.00",
+    "raw_actual_total": "1105176.00",
+    "corrected_recoverable_total": "1092476.00",
+    "duplicate_amount": "7600",
+    "turnover_amount": "0",
+    "management_fee_excess": "5100",
+    "scenario_flags": {
+      "include_cap": true,
+      "cap_binding": true,
+      "include_modified_gross": true,
+      "include_restaurant_exclusion": false,
+      "include_base_year_retail": false,
+      "include_base_year_office": true,
+      "include_vacancy": true
+    },
+    "issues": {
+      "duplicate": {
+        "category": "utilities",
+        "invoice_ref": "ALT-2025-DEC",
+        "keywords": [
+          "duplicate",
+          "electric",
+          "re-entered"
+        ]
+      },
+      "turnover": null,
+      "management_fee": {
+        "keywords": [
+          "effective gross income",
+          "gross potential income",
+          "management fee",
+          "EGI"
+        ]
+      }
+    }
+  },
+  {
+    "case_id": "05_riverfront_market_centre",
+    "property_name": "Riverfront Market Centre",
+    "budget_total": "820800.00",
+    "raw_actual_total": "881700.00",
+    "corrected_recoverable_total": "865800.00",
+    "duplicate_amount": "2400",
+    "turnover_amount": "13500",
+    "management_fee_excess": "0",
+    "scenario_flags": {
+      "include_cap": false,
+      "cap_binding": false,
+      "include_modified_gross": true,
+      "include_restaurant_exclusion": true,
+      "include_base_year_retail": false,
+      "include_base_year_office": true,
+      "include_vacancy": true
+    },
+    "issues": {
+      "duplicate": {
+        "category": "janitorial",
+        "invoice_ref": "CPS-DP-re-DUP",
+        "keywords": [
+          "duplicate",
+          "day porter",
+          "re-entered"
+        ]
+      },
+      "turnover": {
+        "invoice_ref": "TURN-re-1018",
+        "keywords": [
+          "turnover",
+          "move-out",
+          "deep clean"
+        ]
+      },
+      "management_fee": null
+    }
+  },
+  {
+    "case_id": "06_westmount_professional_campus",
+    "property_name": "Westmount Professional Campus",
+    "budget_total": "971964.00",
+    "raw_actual_total": "1010464.00",
+    "corrected_recoverable_total": "1006264.00",
+    "duplicate_amount": "0",
+    "turnover_amount": "0",
+    "management_fee_excess": "4200",
+    "scenario_flags": {
+      "include_cap": true,
+      "cap_binding": false,
+      "include_modified_gross": false,
+      "include_restaurant_exclusion": false,
+      "include_base_year_retail": true,
+      "include_base_year_office": true,
+      "include_vacancy": false
+    },
+    "issues": {
+      "duplicate": null,
+      "turnover": null,
+      "management_fee": {
+        "keywords": [
+          "effective gross income",
+          "gross potential income",
+          "management fee",
+          "EGI"
+        ]
+      }
+    }
+  },
+  {
+    "case_id": "07_meadowvale_station_centre",
+    "property_name": "Meadowvale Station Centre",
+    "budget_total": "924426.00",
+    "raw_actual_total": "1000126.00",
+    "corrected_recoverable_total": "983626.00",
+    "duplicate_amount": "5600",
+    "turnover_amount": "8700",
+    "management_fee_excess": "2200",
+    "scenario_flags": {
+      "include_cap": true,
+      "cap_binding": false,
+      "include_modified_gross": true,
+      "include_restaurant_exclusion": true,
+      "include_base_year_retail": false,
+      "include_base_year_office": false,
+      "include_vacancy": true
+    },
+    "issues": {
+      "duplicate": {
+        "category": "utilities",
+        "invoice_ref": "ROP-re-DUP",
+        "keywords": [
+          "duplicate",
+          "water",
+          "re-entered"
+        ]
+      },
+      "turnover": {
+        "invoice_ref": "TURN-re-1018",
+        "keywords": [
+          "turnover",
+          "move-out",
+          "deep clean"
+        ]
+      },
+      "management_fee": {
+        "keywords": [
+          "effective gross income",
+          "gross potential income",
+          "management fee",
+          "EGI"
+        ]
+      }
+    }
+  },
+  {
+    "case_id": "08_lakeshore_atrium",
+    "property_name": "Lakeshore Atrium",
+    "budget_total": "906300.00",
+    "raw_actual_total": "938700.00",
+    "corrected_recoverable_total": "938700.00",
+    "duplicate_amount": "0",
+    "turnover_amount": "0",
+    "management_fee_excess": "0",
+    "scenario_flags": {
+      "include_cap": true,
+      "cap_binding": true,
+      "include_modified_gross": true,
+      "include_restaurant_exclusion": true,
+      "include_base_year_retail": true,
+      "include_base_year_office": false,
+      "include_vacancy": false
+    },
+    "issues": {
+      "duplicate": null,
+      "turnover": null,
+      "management_fee": null
+    }
+  },
+  {
+    "case_id": "09_northline_commerce_court",
+    "property_name": "Northline Commerce Court",
+    "budget_total": "916218.00",
+    "raw_actual_total": "971418.00",
+    "corrected_recoverable_total": "963918.00",
+    "duplicate_amount": "3600",
+    "turnover_amount": "0",
+    "management_fee_excess": "3900",
+    "scenario_flags": {
+      "include_cap": true,
+      "cap_binding": false,
+      "include_modified_gross": false,
+      "include_restaurant_exclusion": false,
+      "include_base_year_retail": true,
+      "include_base_year_office": true,
+      "include_vacancy": true
+    },
+    "issues": {
+      "duplicate": {
+        "category": "security",
+        "invoice_ref": "GW-rt-DUP",
+        "keywords": [
+          "duplicate",
+          "patrol",
+          "re-entered"
+        ]
+      },
+      "turnover": null,
+      "management_fee": {
+        "keywords": [
+          "effective gross income",
+          "gross potential income",
+          "management fee",
+          "EGI"
+        ]
+      }
+    }
+  },
+  {
+    "case_id": "10_university_gate_centre",
+    "property_name": "University Gate Centre",
+    "budget_total": "1072170.00",
+    "raw_actual_total": "1172170.00",
+    "corrected_recoverable_total": "1143670.00",
+    "duplicate_amount": "8400",
+    "turnover_amount": "15400",
+    "management_fee_excess": "4700",
+    "scenario_flags": {
+      "include_cap": true,
+      "cap_binding": true,
+      "include_modified_gross": true,
+      "include_restaurant_exclusion": true,
+      "include_base_year_retail": true,
+      "include_base_year_office": true,
+      "include_vacancy": true
+    },
+    "issues": {
+      "duplicate": {
+        "category": "utilities",
+        "invoice_ref": "GA-2025-re-4471",
+        "keywords": [
+          "duplicate",
+          "gas",
+          "re-entered"
+        ]
+      },
+      "turnover": {
+        "invoice_ref": "TURN-re-1018",
+        "keywords": [
+          "turnover",
+          "move-out",
+          "deep clean"
+        ]
+      },
+      "management_fee": {
+        "keywords": [
+          "effective gross income",
+          "gross potential income",
+          "management fee",
+          "EGI"
+        ]
+      }
+    }
+  }
+]

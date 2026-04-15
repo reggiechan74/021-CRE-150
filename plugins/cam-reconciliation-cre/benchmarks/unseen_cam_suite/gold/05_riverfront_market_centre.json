@@ -1,0 +1,39 @@
+{
+  "case_id": "05_riverfront_market_centre",
+  "property_name": "Riverfront Market Centre",
+  "budget_total": "820800.00",
+  "raw_actual_total": "881700.00",
+  "corrected_recoverable_total": "865800.00",
+  "duplicate_amount": "2400",
+  "turnover_amount": "13500",
+  "management_fee_excess": "0",
+  "scenario_flags": {
+    "include_cap": false,
+    "cap_binding": false,
+    "include_modified_gross": true,
+    "include_restaurant_exclusion": true,
+    "include_base_year_retail": false,
+    "include_base_year_office": true,
+    "include_vacancy": true
+  },
+  "issues": {
+    "duplicate": {
+      "category": "janitorial",
+      "invoice_ref": "CPS-DP-re-DUP",
+      "keywords": [
+        "duplicate",
+        "day porter",
+        "re-entered"
+      ]
+    },
+    "turnover": {
+      "invoice_ref": "TURN-re-1018",
+      "keywords": [
+        "turnover",
+        "move-out",
+        "deep clean"
+      ]
+    },
+    "management_fee": null
+  }
+}

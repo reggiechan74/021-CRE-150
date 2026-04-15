@@ -1,0 +1,18 @@
+id: 03_cedar_ridge_plaza
+name: Cedar Ridge Plaza
+address: 245 Cedar Ridge Road, Ottawa, ON K2P 1A4
+rsf_total: 50000
+rsf_retail: 24000
+rsf_office: 26000
+gross_potential_income: '2036000.00'
+effective_gross_income: '2036000.00'
+projected_effective_gross_income: '2001000.00'
+vacancy_loss: '0.00'
+credit_allowance: '0.00'
+pools:
+- name: office
+  rsf: 26000
+  share_of_total: 0.52
+- name: retail
+  rsf: 24000
+  share_of_total: 0.48
