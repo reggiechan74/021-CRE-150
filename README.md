@@ -2,12 +2,14 @@
 
 ![Workshop](https://img.shields.io/badge/021_Events-CRE--150-0066cc?style=flat-square)
 ![Platform](https://img.shields.io/badge/platform-Claude_Cowork-5436DA?style=flat-square)
-![Plugins](https://img.shields.io/badge/plugins-5-brightgreen?style=flat-square)
+![Plugins](https://img.shields.io/badge/plugins-7-brightgreen?style=flat-square)
 ![cre-lease-abstraction](https://img.shields.io/badge/cre--lease--abstraction-v0.3.0-blue?style=flat-square)
 ![mls-extractor](https://img.shields.io/badge/mls--extractor-v0.5.1-blue?style=flat-square)
 ![mcda-sales-comparison](https://img.shields.io/badge/mcda--sales--comparison-v1.0.0-blue?style=flat-square)
 ![mcda-lease-comparison](https://img.shields.io/badge/mcda--lease--comparison-v1.0.0-blue?style=flat-square)
 ![tenant-credit](https://img.shields.io/badge/tenant--credit-v1.0.0-blue?style=flat-square)
+![cam-reconciliation-cre](https://img.shields.io/badge/cam--reconciliation--cre-v0.1.0-blue?style=flat-square)
+![roof-replacement-review](https://img.shields.io/badge/roof--replacement--review-v0.1.0-blue?style=flat-square)
 
 Plugin repository for the **CRE-150** training workshop in the **021 Events** series.
 
@@ -102,9 +104,41 @@ Accepts one to three years of financial statements. Extracts balance sheet and i
 
 ---
 
+### `cam-reconciliation-cre` — v0.1.0
+
+Landlord-side CAM true-up for commercial real estate. Combines lease-aware recoverability rules with deterministic Python math so the same inputs always produce the same tenant charges, landlord absorption totals, and comparison output.
+
+**Trigger:** `/cam-reconcile <property-dir>`
+
+Ingests a property package (`property.yaml`, `leases.json`, `gl.csv`, `budget.md`), applies lease-aware corrections for duplicate invoices, turnover charges, management-fee basis errors, modified-gross exclusions, restaurant carve-outs, base years, and CAM caps, then emits typed manifests, tenant PDF statements, a workpaper workbook, an audit log, and an optional Anthropic comparison report.
+
+```
+/cam-reconcile <property-dir>
+/cam-explain <allocated-manifest.json> <tenant-id-or-line-id>
+/cam-compare-vs-anthropic <allocated-manifest.json> <anthropic-output.txt>
+```
+
+---
+
+### `roof-replacement-review` — v0.1.0
+
+Owner-side tender evaluation for Ontario roof replacement projects. Scores contractor bids against the owner's RFP using mandatory pass/fail gates plus a weighted MCDA rubric. Supports commercial (OBC Part 3) low-slope membrane systems and residential (OBC Part 9) steep-slope systems.
+
+**Trigger:** `/roof-review <rfp.pdf> <bid1.pdf> <bid2.pdf> ...`
+
+Parses the RFP and each bid into a normalized tender manifest, applies qualification gates (WSIB, CGL, bonding, WAH training, Skilled Trades Ontario, financial capacity), scores a weighted matrix across Price / Technical / Experience / Warranty / Schedule / Qualifications, and produces a scoring matrix, a red-flag report, and a recommendation memo with citations to OBC, CRCA, and CCDC-23.
+
+```
+/roof-review <rfp.pdf> <bid1.pdf> <bid2.pdf> ...
+/roof-redflags <manifest.json>
+/roof-memo <manifest.json>
+```
+
+---
+
 ## Cowork Optimization
 
-All five plugins are designed specifically for Claude Cowork's context architecture. Each skill follows a three-step dispatch pattern:
+All seven plugins are designed specifically for Claude Cowork's context architecture. Each skill follows a three-step dispatch pattern:
 
 1. **Primary context (thin)** — resolves file paths and environment variables, dispatches a subagent
 2. **Extraction subagent (full 200k window)** — handles all document reads, extraction, and file writes
@@ -118,8 +152,9 @@ This keeps the primary context from being exhausted by large document reads, whi
 
 Load all plugins into your Claude Cowork workspace by pointing to this repository in your plugin settings.
 
-- `cre-lease-abstraction`, `mls-extractor`, `mcda-sales-comparison`, `mcda-lease-comparison`, `tenant-credit` — no API keys required
+- `cre-lease-abstraction`, `mls-extractor`, `mcda-sales-comparison`, `mcda-lease-comparison`, `tenant-credit`, `cam-reconciliation-cre`, `roof-replacement-review` — no API keys required
 - `mcda-lease-comparison` — optional: set `DISTANCEMATRIX_API_KEY` for automatic driving distance calculation (free tier: 1,000 elements/month at distancematrix.ai)
+- `cam-reconciliation-cre`, `roof-replacement-review` — require Python dependencies from each plugin's `requirements.txt`
 
 ---
 
