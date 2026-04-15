@@ -2,11 +2,12 @@
 
 ![Workshop](https://img.shields.io/badge/021_Events-CRE--150-0066cc?style=flat-square)
 ![Platform](https://img.shields.io/badge/platform-Claude_Cowork-5436DA?style=flat-square)
-![Plugins](https://img.shields.io/badge/plugins-4-brightgreen?style=flat-square)
+![Plugins](https://img.shields.io/badge/plugins-5-brightgreen?style=flat-square)
 ![cre-lease-abstraction](https://img.shields.io/badge/cre--lease--abstraction-v0.3.0-blue?style=flat-square)
 ![mls-extractor](https://img.shields.io/badge/mls--extractor-v0.5.1-blue?style=flat-square)
 ![mcda-sales-comparison](https://img.shields.io/badge/mcda--sales--comparison-v1.0.0-blue?style=flat-square)
 ![mcda-lease-comparison](https://img.shields.io/badge/mcda--lease--comparison-v1.0.0-blue?style=flat-square)
+![tenant-credit](https://img.shields.io/badge/tenant--credit-v1.0.0-blue?style=flat-square)
 
 Plugin repository for the **CRE-150** training workshop in the **021 Events** series.
 
@@ -85,9 +86,25 @@ Supports four tenant personas — Default, 3PL/Distribution, Manufacturing, Offi
 
 ---
 
+### `tenant-credit` — v1.0.0
+
+Tenant credit analysis for commercial real estate lease approvals. Extracts financial data from PDF financial statements, runs a 100-point weighted credit scoring algorithm (A–F rating), estimates default probability and expected loss, and generates a comprehensive credit report with security deposit and approval recommendations.
+
+**Trigger:** "Tenant credit analysis" / "analyze tenant financials" / "creditworthiness" + point to a PDF
+
+Accepts one to three years of financial statements. Extracts balance sheet and income statement data, calculates 15+ financial ratios across four categories (liquidity, leverage, profitability, rent coverage), scores the tenant on a 100-point scale, and recommends a security amount with step-down schedule.
+
+```
+/tenant-credit /path/to/2024_financials.pdf
+/tenant-credit /path/to/2024_financials.pdf /path/to/2023_financials.pdf
+/tenant-credit /path/to/2024_financials.pdf /path/to/lease_proposal.pdf
+```
+
+---
+
 ## Cowork Optimization
 
-All four plugins are designed specifically for Claude Cowork's context architecture. Each skill follows a three-step dispatch pattern:
+All five plugins are designed specifically for Claude Cowork's context architecture. Each skill follows a three-step dispatch pattern:
 
 1. **Primary context (thin)** — resolves file paths and environment variables, dispatches a subagent
 2. **Extraction subagent (full 200k window)** — handles all document reads, extraction, and file writes
@@ -101,7 +118,7 @@ This keeps the primary context from being exhausted by large document reads, whi
 
 Load all plugins into your Claude Cowork workspace by pointing to this repository in your plugin settings.
 
-- `cre-lease-abstraction`, `mls-extractor`, `mcda-sales-comparison`, `mcda-lease-comparison` — no API keys required
+- `cre-lease-abstraction`, `mls-extractor`, `mcda-sales-comparison`, `mcda-lease-comparison`, `tenant-credit` — no API keys required
 - `mcda-lease-comparison` — optional: set `DISTANCEMATRIX_API_KEY` for automatic driving distance calculation (free tier: 1,000 elements/month at distancematrix.ai)
 
 ---

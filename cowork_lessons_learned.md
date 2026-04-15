@@ -207,3 +207,80 @@ The boundary to draw:
 ### Rule of thumb
 
 When a skill's domain knowledge exceeds ~150 lines, split it by role: embed only the compact reference tables the subagent needs to execute correctly (variables, encodings, schemas), and keep the strategy, language, and interpretation narrative in the primary SKILL.md. The subagent executes; the primary agent understands.
+
+---
+
+## Lesson 5 — Extract minimal dependencies when porting scripts with shared utility imports
+
+**Date**: 2026-04-14
+**Plugin affected**: `tenant-credit` — import from `vp-real-estate/Credit_Analysis`
+
+### What happened
+
+`credit_analysis.py` imports two functions from the source repo's shared utilities module:
+
+```python
+from Shared_Utils.financial_utils import calculate_financial_ratios, safe_divide
+```
+
+The full `Shared_Utils/financial_utils.py` is 600+ lines with top-level imports of `numpy_financial`, `scipy.optimize`, and others. These packages are not guaranteed to be installed in a Cowork plugin environment. Python fails the import at module load time — before any function is called — so even though `credit_analysis.py` only uses `safe_divide` and `calculate_financial_ratios` (which have zero external dependencies), bundling the full shared module would cause an `ImportError` in any environment missing `scipy`.
+
+### The fix
+
+Create a minimal `financial_utils.py` in the plugin's `scripts/` directory containing only the two functions actually used. This:
+- Preserves the import name (`from financial_utils import ...`) so `credit_analysis.py` needs only a one-line change
+- Eliminates transitive dependency failures from unused parts of the shared module
+- Makes the dependency surface explicit and auditable
+
+### Rule of thumb
+
+When porting scripts that import from a source repo's shared utilities, do not bundle the full shared module. Instead:
+
+1. Identify exactly which functions are imported (grep for `from Shared_Utils import` or similar)
+2. Check whether those functions have external dependencies (look at the top of the shared file)
+3. If the shared module has heavy imports but the needed functions are pure Python, extract only those functions into a minimal local file
+4. If the shared module's imports are all standard library or already available, bundle the full file
+
+The boundary to draw: **if `pip install X` would be required for a function that isn't called, don't import that function.**
+
+---
+
+## Lesson 6 — Replace inline runtime scripts with proper script files during plugin import
+
+**Date**: 2026-04-14
+**Plugin affected**: `tenant-credit` — import from `vp-real-estate/Credit_Analysis`
+
+### What happened
+
+The original `tenant-credit.md` slash command wrote `run_credit_analysis.py` to disk at runtime using a heredoc inside the skill step:
+
+```bash
+cat > run_credit_analysis.py << 'SCRIPT'
+import json, sys
+from Credit_Analysis.credit_analysis import ...
+...
+SCRIPT
+python3 run_credit_analysis.py credit_inputs/...
+```
+
+This pattern was necessary in the source repo because the command ran in a workspace without a persistent scripts directory. In a plugin, the `scripts/` directory exists and is version-controlled.
+
+### The problem with inline heredoc scripts
+
+- **Quoting fragility**: heredoc content containing `$`, backticks, or single quotes requires careful escaping that is easy to get wrong and hard to debug
+- **Not version-controlled as code**: the script lives inside a markdown file, invisible to `git diff` as a Python file
+- **Not testable in isolation**: you can't run the script directly without executing the full skill
+- **Drift risk**: the skill and the script can diverge if only one is updated
+
+### The fix
+
+During plugin import, move any inline runtime scripts to proper files in `${PLUGIN_ROOT}/skills/${PLUGIN_NAME}/scripts/`. Update the skill to call them directly:
+
+```bash
+# Instead of: cat > run_credit_analysis.py << 'SCRIPT' ... SCRIPT
+cd "<SCRIPTS_DIR>" && python3 run_credit_analysis.py "<input_json>"
+```
+
+### Rule of thumb
+
+If the source skill writes a script to disk at runtime, that script belongs in the `scripts/` directory of the imported plugin. Inline scripts are a workaround for repos without a plugin structure — they should not survive the import.

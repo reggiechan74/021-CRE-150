@@ -1,0 +1,8 @@
+{
+  "name": "tenant-credit",
+  "version": "1.0.0",
+  "description": "Tenant credit analysis for commercial real estate — extracts financial data from PDF statements, runs 15+ ratio analysis and 100-point weighted credit scoring, calculates default probability and expected loss, and generates a comprehensive credit report with security deposit recommendations",
+  "author": {
+    "name": "Reggie Chan"
+  }
+}

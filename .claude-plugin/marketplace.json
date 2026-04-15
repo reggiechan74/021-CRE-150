@@ -5,8 +5,8 @@
     "email": "reggie.chan@gmail.com"
   },
   "metadata": {
-    "description": "Commercial real estate tools — lease abstraction, MLS data extraction, MCDA sales comparison valuation, and relative valuation competitive positioning",
-    "version": "0.5.0"
+    "description": "Commercial real estate tools — lease abstraction, MLS data extraction, MCDA sales comparison valuation, relative valuation competitive positioning, and tenant credit analysis",
+    "version": "0.6.0"
   },
   "plugins": [
     {
@@ -40,6 +40,15 @@
       "name": "mcda-lease-comparison",
       "source": "./plugins/mcda-lease-comparison",
       "description": "MCDA competitive positioning analysis — ranks subject property against comparables on up to 25 weighted variables, calculates sensitivity analysis to achieve Top 3 positioning, and generates a strategic pricing report with landscape PDF output",
+      "version": "1.0.0",
+      "author": {
+        "name": "Reggie Chan"
+      }
+    },
+    {
+      "name": "tenant-credit",
+      "source": "./plugins/tenant-credit",
+      "description": "Tenant credit analysis — extracts financial data from PDF statements, runs 15+ ratio analysis and 100-point weighted credit scoring (A–F rating), calculates default probability and expected loss, and generates a credit report with security deposit recommendations",
       "version": "1.0.0",
       "author": {
         "name": "Reggie Chan"
