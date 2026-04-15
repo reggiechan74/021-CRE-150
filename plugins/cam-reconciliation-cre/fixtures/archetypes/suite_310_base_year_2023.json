@@ -1,0 +1,6 @@
+{
+  "tenant_id": "suite_310",
+  "expected_final_charge": "7173.48",
+  "expected_gross_before_exclusions": "63523.48",
+  "expected_base_year_amount_removed": "56350.00"
+}

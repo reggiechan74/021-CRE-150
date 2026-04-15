@@ -1,0 +1,9 @@
+{
+  "tenant_id": "unit_104",
+  "expected_final_charge": "90288.76",
+  "expected_gross_before_exclusions": "120283.76",
+  "expected_exclusions": {
+    "utilities": "19500.00",
+    "repairs_maintenance": "10495.00"
+  }
+}

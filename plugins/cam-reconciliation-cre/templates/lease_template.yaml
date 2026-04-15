@@ -1,0 +1,15 @@
+- tenant_id: unit_100
+  tenant_name: Example Tenant
+  unit_label: Suite 100
+  rsf: 2500
+  pool: office
+  pro_rata_of_pool: 0.2500
+  lease_type: net
+  annual_prebilled: 0.00
+  excluded_categories: []
+  specific_exclusions: []
+  clause_refs:
+    allocation:
+      doc: Standard Form Lease
+      section: §6.02
+      quote: Tenant pays its Proportionate Share of Operating Expenses allocable to the applicable Pool.

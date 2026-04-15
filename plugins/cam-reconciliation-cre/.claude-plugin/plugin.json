@@ -1,0 +1,8 @@
+{
+  "name": "cam-reconciliation-cre",
+  "version": "0.1.0",
+  "description": "CRE-native CAM reconciliation engine with lease-aware recoverability, deterministic allocation math, and citation-linked tenant statements",
+  "author": {
+    "name": "Reggie Chan"
+  }
+}

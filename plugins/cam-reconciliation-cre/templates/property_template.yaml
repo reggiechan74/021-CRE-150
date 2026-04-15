@@ -1,0 +1,15 @@
+id: subject_property
+name: Subject Property
+address: 123 Example Street, City, Province PostalCode
+rsf_total: 10000
+rsf_retail: 0
+rsf_office: 10000
+gross_potential_income: 0.00
+effective_gross_income: 0.00
+projected_effective_gross_income: 0.00
+vacancy_loss: 0.00
+credit_allowance: 0.00
+pools:
+  - name: office
+    rsf: 10000
+    share_of_total: 1.0000

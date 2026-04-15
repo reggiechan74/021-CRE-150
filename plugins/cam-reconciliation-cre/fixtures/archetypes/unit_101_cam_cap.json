@@ -1,0 +1,8 @@
+{
+  "tenant_id": "unit_101",
+  "expected_final_charge": "97917.57",
+  "expected_gross_before_exclusions": "87302.80",
+  "expected_controllable_uncapped": "35700.81",
+  "expected_cap_ceiling_total": "57690.00",
+  "expected_cap_landlord_absorbed": "0.00"
+}

@@ -1,0 +1,5 @@
+.bootstrapped
+fixtures/matheson/reconciliation-output/
+scripts/__pycache__/
+tests/__pycache__/
+*.pyc

@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Commercial real estate tools — lease abstraction, MLS data extraction, MCDA sales comparison valuation, relative valuation competitive positioning, and tenant credit analysis",
-    "version": "0.6.0"
+    "version": "0.7.0"
   },
   "plugins": [
     {
@@ -50,6 +50,15 @@
       "source": "./plugins/tenant-credit",
       "description": "Tenant credit analysis — extracts financial data from PDF statements, runs 15+ ratio analysis and 100-point weighted credit scoring (A–F rating), calculates default probability and expected loss, and generates a credit report with security deposit recommendations",
       "version": "1.0.0",
+      "author": {
+        "name": "Reggie Chan"
+      }
+    },
+    {
+      "name": "cam-reconciliation-cre",
+      "source": "./plugins/cam-reconciliation-cre",
+      "description": "CRE-native CAM reconciliation engine — lease-aware recoverability, deterministic allocation math, tenant statements, and comparison vs generic finance workflows",
+      "version": "0.1.0",
       "author": {
         "name": "Reggie Chan"
       }
