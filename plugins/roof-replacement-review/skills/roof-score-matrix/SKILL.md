@@ -24,11 +24,13 @@ You are producing the cross-bid scoring matrix after the qualification-check and
 
    If any missing, run the upstream skill or stop and tell the user what's missing.
 
-2. **Invoke the scoring engine.**
+2. **Invoke the scoring engine.** If the user supplied an `evaluation_config.yaml` (via `config=<path>` argument to the command), pass it with `--config`:
 
 ```bash
-python3 "$CLAUDE_PLUGIN_ROOT/scripts/score.py" --manifest <tender_manifest.json>
+python3 "$CLAUDE_PLUGIN_ROOT/scripts/score.py" --manifest <tender_manifest.json> [--config <evaluation_config.yaml>]
 ```
+
+Config overrides the RFP's `weighting` and/or `price_scoring_method` — useful when the owner wants to reweight for project type (occupied, heritage, BPS) without editing the parsed RFP. The engine validates that weights sum to 100 and records the source in `manifest.rfp.evaluation_criteria.weighting_source` for audit.
 
 This:
 - Computes price sub-score via the configured method (default: `(lowest/this) × 100`)

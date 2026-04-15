@@ -1,6 +1,6 @@
 ---
 description: Run the full roof replacement tender review pipeline — extracts RFP and bids, evaluates mandatories, scores bids, flags risks, and writes the recommendation memo
-argument-hint: "<rfp.pdf> <bid1.pdf> <bid2.pdf> [bid3.pdf ...]"
+argument-hint: "<rfp.pdf> <bid1.pdf> <bid2.pdf> [bid3.pdf ...] [config=<evaluation_config.yaml>]"
 ---
 
 # /roof-review
@@ -28,12 +28,15 @@ python3 "$CLAUDE_PLUGIN_ROOT/scripts/normalize.py" \
   --out "<rfp-output-dir>/manifests/tender_manifest.json"
 ```
 
-6. **Score.** Run the scoring engine:
+6. **Score.** Run the scoring engine. If the user passed `config=<path>` in the arguments, append `--config <path>` to override the RFP's weights and price scoring method:
 
 ```bash
 python3 "$CLAUDE_PLUGIN_ROOT/scripts/score.py" \
-  --manifest "<rfp-output-dir>/manifests/tender_manifest.json"
+  --manifest "<rfp-output-dir>/manifests/tender_manifest.json" \
+  [--config <evaluation_config.yaml>]
 ```
+
+Example config at `templates/evaluation_config.yaml`. Common uses: occupied-building weighting (raise schedule + technical), BPS procurement (raise price, use `lowest_compliant` method), heritage/complex roof (raise technical).
 
 7. **Render deliverables.** Invoke `roof-score-matrix` (writes `scoring_matrix.md`), then the red-flag consolidator:
 

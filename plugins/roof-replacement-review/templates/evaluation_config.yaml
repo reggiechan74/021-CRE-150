@@ -1,0 +1,53 @@
+# evaluation_config.yaml — Optional MCDA override for /roof-review
+#
+# Pass to score.py via: --config <path>
+# Pass to /roof-review or /roof-score-matrix via: config=<path>
+#
+# Any value you provide here REPLACES the corresponding value from rfp.json.
+# Values you omit fall back to what rfp.json provides (or to schema defaults
+# if rfp.json is also silent).
+#
+# Rules:
+# - If you provide `weighting`, you must provide ALL six keys (they must sum
+#   to 100). Omitted keys are treated as 0 — this is intentional so a partial
+#   override cannot silently leave a stale weight in place.
+# - If you provide `price_scoring_method`, it must be one of:
+#     - formula_lowest_ratio   (default: score = (lowest / this) × 100)
+#     - linear_interpolation   (score = (highest - this) / (highest - lowest) × 100)
+#     - lowest_compliant       (lowest = 100, everyone else = 0)
+#
+# The plugin's schema defaults (applied when both RFP and config are silent):
+#   price: 45, technical_approach: 15, experience_references: 15,
+#   warranty_materials: 10, schedule: 5, qualifications_certifications: 10
+
+# Example 1 — occupied commercial building: raise schedule + technical weights
+# to reflect tenant-disruption sensitivity, lower price weight accordingly.
+weighting:
+  price: 35
+  technical_approach: 20
+  experience_references: 10
+  warranty_materials: 15
+  schedule: 15
+  qualifications_certifications: 5
+
+price_scoring_method: formula_lowest_ratio
+
+# Example 2 — heritage/complex roof (commented out):
+# weighting:
+#   price: 25
+#   technical_approach: 30
+#   experience_references: 15
+#   warranty_materials: 15
+#   schedule: 10
+#   qualifications_certifications: 5
+# price_scoring_method: formula_lowest_ratio
+
+# Example 3 — BPS/public procurement, price-heaviest within Procurement Directive:
+# weighting:
+#   price: 60
+#   technical_approach: 10
+#   experience_references: 10
+#   warranty_materials: 10
+#   schedule: 5
+#   qualifications_certifications: 5
+# price_scoring_method: lowest_compliant

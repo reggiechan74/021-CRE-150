@@ -101,6 +101,70 @@ def test_comparison_populated(built_manifest: Path) -> None:
     assert comp["price_spread_percent"] < 5
 
 
+def test_config_override_weights_and_method(built_manifest: Path, tmp_path: Path) -> None:
+    """A yaml config must replace the RFP's weights and price scoring method."""
+    config_path = tmp_path / "evaluation_config.yaml"
+    config_path.write_text(
+        """
+weighting:
+  price: 60
+  technical_approach: 10
+  experience_references: 10
+  warranty_materials: 10
+  schedule: 5
+  qualifications_certifications: 5
+price_scoring_method: lowest_compliant
+""".strip(),
+        encoding="utf-8",
+    )
+    subprocess.run(
+        [sys.executable, str(SCRIPT), "--manifest", str(built_manifest), "--config", str(config_path)],
+        check=True,
+    )
+    data = json.loads(built_manifest.read_text())
+
+    crit = data["rfp"]["evaluation_criteria"]
+    assert crit["weighting"]["price"] == 60
+    assert crit["weighting"]["technical_approach"] == 10
+    assert crit["price_scoring_method"] == "lowest_compliant"
+    assert "config_override" in crit["weighting_source"]
+
+    # Under lowest_compliant, Apex (lowest compliant at $485k) gets 100 on price;
+    # Keystone gets 0. Meridian stays excluded.
+    bids = {b["bidder_id"]: b for b in data["bids"]}
+    assert bids["apex"]["scores"]["price"] == 100.0
+    assert bids["keystone"]["scores"]["price"] == 0.0
+    assert bids["meridian"]["scores"]["rank"] is None
+
+
+def test_config_weights_must_sum_to_100(built_manifest: Path, tmp_path: Path) -> None:
+    """A config with weights not summing to 100 must fail with a clear error."""
+    config_path = tmp_path / "bad_config.yaml"
+    config_path.write_text(
+        "weighting:\n  price: 50\n  technical_approach: 30\n",  # only sums to 80
+        encoding="utf-8",
+    )
+    result = subprocess.run(
+        [sys.executable, str(SCRIPT), "--manifest", str(built_manifest), "--config", str(config_path)],
+        capture_output=True,
+        text=True,
+    )
+    assert result.returncode != 0
+    assert "sum to 100" in result.stderr
+
+
+def test_config_rejects_unknown_method(built_manifest: Path, tmp_path: Path) -> None:
+    config_path = tmp_path / "bad_method.yaml"
+    config_path.write_text("price_scoring_method: made_up_method\n", encoding="utf-8")
+    result = subprocess.run(
+        [sys.executable, str(SCRIPT), "--manifest", str(built_manifest), "--config", str(config_path)],
+        capture_output=True,
+        text=True,
+    )
+    assert result.returncode != 0
+    assert "price_scoring_method" in result.stderr
+
+
 def test_redflag_report_renders(built_manifest: Path, tmp_path: Path) -> None:
     subprocess.run([sys.executable, str(SCRIPT), "--manifest", str(built_manifest)], check=True)
     report = tmp_path / "redflag_report.md"

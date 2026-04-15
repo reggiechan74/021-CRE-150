@@ -35,7 +35,7 @@ Evaluates roofing contractor tender submissions against an owner's RFP for Ontar
 
 Optional:
 
-- `evaluation_config.yaml` — override the default weighting (Price 45 / Technical 15 / Experience 15 / Warranty 10 / Schedule 5 / Qualifications 10)
+- `evaluation_config.yaml` — override the RFP's weights and/or price scoring method at run time. Pass to `/roof-review` or `/roof-score-matrix` via `config=<path>`, or directly to `scripts/score.py` via `--config <path>`. See `templates/evaluation_config.yaml` for the schema and examples (occupied commercial, heritage/complex, BPS procurement). The schema's own defaults (applied when both RFP and config are silent) are Price 45 / Technical 15 / Experience 15 / Warranty 10 / Schedule 5 / Qualifications 10.
 
 ## Outputs
 
