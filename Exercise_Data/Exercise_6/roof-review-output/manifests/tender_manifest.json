@@ -1,0 +1,1291 @@
+{
+  "manifest_version": "1.0.0",
+  "generated_at": "2026-04-15T21:41:20.378344+00:00",
+  "project": {
+    "owner": "Tenebrus Capital",
+    "owner_type": "private_commercial",
+    "property": "2550 Argentia Road, Mississauga, ON L5T 2Y3",
+    "building_classification": "obc_part_3",
+    "roof_type": "low_slope_commercial",
+    "roof_area_sqft": 85000,
+    "jurisdiction": "Ontario, Canada",
+    "building_year_built": 1998,
+    "existing_roof_age_years": 28,
+    "occupied_during_work": true,
+    "designated_substances_assessment_required": true
+  },
+  "rfp": {
+    "rfp_id": "TC-ROOF-2026-001",
+    "issued_date": "2026-03-15",
+    "submission_deadline": "2026-04-12T14:00:00-04:00",
+    "site_meeting_mandatory": true,
+    "contract_form": "ccdc_2",
+    "scope_of_work": {
+      "work_description": "Full tear-off and replacement of existing BUR on 85,000 sqft occupied industrial building with temperature-sensitive pharmaceutical tenant. TPO single-ply system. Phased to 15,000 sqft max exposure. Ponding correction required.",
+      "tear_off_required": true,
+      "deck_replacement_allowance_bf": 0,
+      "insulation_upgrade_to_code": true,
+      "membrane_system_specified": {
+        "category": "tpo",
+        "thickness_spec": "60 mil minimum, white (>=80% solar reflectance), heat-welded seams",
+        "manufacturer_acceptable_list": [],
+        "attachment_method": "fully_adhered"
+      },
+      "included_items": [
+        "Complete tear-off to deck",
+        "TPO 60 mil min fully adhered preferred (MA acceptable)",
+        "Polyiso insulation R-30 min two-layer staggered",
+        "1/4in gypsum or HD polyiso cover board",
+        "All flashings at 47 penetrations",
+        "Tapered insulation for ponding correction",
+        "Phased installation with watertight end of each day"
+      ],
+      "excluded_items": [],
+      "alternates_requested": [
+        "Snow guards per lin ft",
+        "Additional insulation per R-value",
+        "Annual maintenance program",
+        "Pre-removal infrared moisture survey",
+        "Post-install thermal imaging",
+        "Warranty extension beyond 20 years"
+      ]
+    },
+    "warranty_requirements": {
+      "minimum_manufacturer_years": 20,
+      "warranty_type_required": "total_system_ndl",
+      "minimum_workmanship_years": 2,
+      "manufacturer_certification_required": true
+    },
+    "mandatory_requirements": {
+      "wsib_clearance_required": true,
+      "cgl_minimum_cad": 5000000,
+      "owner_named_additional_insured": true,
+      "completed_operations_years": 2,
+      "bid_bond_percent": 0,
+      "performance_bond_percent": 50,
+      "labour_material_bond_percent": 50,
+      "working_at_heights_training_required": true,
+      "addenda_acknowledgment_required": true,
+      "non_collusion_declaration_required": false,
+      "site_visit_required": true,
+      "minimum_years_in_business": 10,
+      "minimum_similar_projects": 3
+    },
+    "evaluation_criteria": {
+      "weighting": {
+        "price": 35,
+        "technical_approach": 23,
+        "experience_references": 10,
+        "warranty_materials": 15,
+        "schedule": 12,
+        "qualifications_certifications": 5
+      },
+      "price_scoring_method": "formula_lowest_ratio"
+    }
+  },
+  "bids": [
+    {
+      "bidder_id": "heritage",
+      "bidder_name": "Heritage Construction Group",
+      "source_pdf": "05-Bid-Heritage-Construction.md",
+      "pricing": {
+        "base_bid_cad": 578000,
+        "hst_included": false,
+        "alternates": [
+          {
+            "description": "VE-1 Mechanically attached system",
+            "price_cad": -42000
+          },
+          {
+            "description": "VE-3 Upgrade to 80 mil membrane",
+            "price_cad": 38000
+          },
+          {
+            "description": "VE-4 Upgrade to R-38 insulation",
+            "price_cad": 24000
+          },
+          {
+            "description": "VE-5 Combined optimal package (MA + 80 mil + R-38, no cover board)",
+            "price_cad": 12000
+          }
+        ],
+        "unit_prices": {},
+        "allowances_carried": [
+          {
+            "item": "Tapered insulation for ponding",
+            "amount_cad": 20000
+          },
+          {
+            "item": "Steel deck repair",
+            "amount_cad": 10000
+          },
+          {
+            "item": "Wood deck repair (office wing)",
+            "amount_cad": 10000
+          },
+          {
+            "item": "Hazmat testing",
+            "amount_cad": 3500
+          }
+        ]
+      },
+      "scope_response": {
+        "full_compliance_claimed": true,
+        "exclusions_declared": [
+          "Major deck repairs above allowances",
+          "Skylight replacement",
+          "HVAC modifications",
+          "After-hours work",
+          "Major hazmat abatement beyond minor ACM",
+          "Building permits",
+          "Temperature monitoring equipment (coordinates only)",
+          "Third-party testing beyond allowance"
+        ],
+        "clarifications": [
+          "Base bid meets RFP; VE options offered for owner consideration"
+        ],
+        "substitutions_proposed": []
+      },
+      "materials_system": {
+        "manufacturer": "GAF / Carlisle / Firestone (certified)",
+        "system_name": "TPO 60 mil fully adhered with gypsum cover board (base); 80 mil + R-38 + MA (VE-5 option)",
+        "membrane_thickness_actual": "60 mil base / 80 mil VE",
+        "insulation_spec": "Polyiso R-30 two-layer staggered + gypsum cover board (base)",
+        "cover_board_included": true,
+        "product_data_sheets_attached": true
+      },
+      "warranty_offered": {
+        "manufacturer_years": 20,
+        "warranty_type": "total_system_ndl",
+        "workmanship_years": 2,
+        "wind_uplift_coverage_mph": null,
+        "manufacturer_certified_installer": true,
+        "certification_program": "GAF Master Elite + Carlisle Master + Firestone Premier",
+        "evidence_page": "Cover letter + warranty sample"
+      },
+      "qualifications": {
+        "years_in_business": 14,
+        "wsib_clearance_attached": true,
+        "wsib_in_good_standing": true,
+        "cgl_limit_cad": 5000000,
+        "cgl_completed_operations_years": 2,
+        "owner_named_as_additional_insured": true,
+        "coi_attached": true,
+        "working_at_heights_training_confirmed": true,
+        "references_provided": [
+          {
+            "project_name": "Amazon Fulfillment Centre YHM1, Hamilton (occupied, 185,000 sqft, VE saved $127k)",
+            "completion_year": 2024,
+            "similar_scope": true
+          },
+          {
+            "project_name": "Magnotta Winery Expansion (92,000 sqft phased during harvest)",
+            "completion_year": 2023,
+            "similar_scope": true
+          },
+          {
+            "project_name": "Prologis Park 407, Vaughan (145,000 sqft multi-building portfolio)",
+            "completion_year": 2025,
+            "similar_scope": true
+          },
+          {
+            "project_name": "Apotex Pharmaceuticals, Toronto (78,000 sqft, temperature-sensitive — directly analogous)",
+            "completion_year": 2024,
+            "similar_scope": true
+          }
+        ],
+        "subcontracting_declared": false,
+        "subcontractors_named": []
+      },
+      "schedule": {
+        "mobilization_days_after_award": null,
+        "work_duration_days": 90,
+        "substantial_completion_date": "2026-07-30",
+        "crew_size": 4,
+        "accommodates_occupied_building": true
+      },
+      "technical_approach": {
+        "narrative": "3-phase plan: office wing (1-18), main NW (19-52), main SE with ponding tapered (53-90). Max 10,000 sqft exposed. Bi-weekly coordination. Substantial completion 1 day before July 31 LD threshold.",
+        "tear_off_staging_plan": "6-page phasing plan attached",
+        "weather_protection_plan": "Daily watertight by 5PM; reinforced weighted tarps + secondary drainage",
+        "fall_protection_plan": "COR certified, annual WAH refresh, dedicated safety coordinator for projects >75,000 sqft",
+        "waste_disposal_plan": "Legal disposal; $3,500 hazmat testing allowance included",
+        "site_safety_plan_attached": true
+      },
+      "mandatory_gates": {
+        "wsib": {
+          "result": "pass",
+          "evidence": "Clearance attached, WSIB rate 0.81 (well below 1.0 avg — strong safety record)"
+        },
+        "cgl": {
+          "result": "pass",
+          "evidence": "$5M CGL meets minimum + $2M pollution liability"
+        },
+        "additional_insured": {
+          "result": "pass",
+          "evidence": "COI attached; standard for COR-certified"
+        },
+        "completed_ops": {
+          "result": "pass",
+          "evidence": "2-yr completed ops meets minimum"
+        },
+        "wah_training": {
+          "result": "pass",
+          "evidence": "Annual updates; COR certified"
+        },
+        "addenda": {
+          "result": "pass",
+          "evidence": "Attachments comprehensive"
+        },
+        "site_visit": {
+          "result": "pass",
+          "evidence": "Attended March 25"
+        },
+        "years_in_business": {
+          "result": "pass",
+          "evidence": "14 years (since 2012)"
+        },
+        "references": {
+          "result": "pass",
+          "evidence": "4 occupied-building refs including Apotex (pharma temperature-sensitive — directly analogous) and Amazon YHM1. Fully satisfies RFP §5.1."
+        },
+        "manufacturer_certification": {
+          "result": "pass",
+          "evidence": "GAF Master Elite (top 2%) + Carlisle Master + Firestone Premier"
+        },
+        "warranty_minimum": {
+          "result": "pass",
+          "evidence": "20-yr NDL meets min; 2-yr workmanship meets min (can upgrade to 5-yr for $8,500)"
+        },
+        "membrane_spec": {
+          "result": "pass",
+          "evidence": "60 mil meets min"
+        },
+        "insulation_spec": {
+          "result": "pass",
+          "evidence": "R-30 two-layer staggered matches spec"
+        },
+        "cover_board": {
+          "result": "pass",
+          "evidence": "Gypsum cover board included in base bid"
+        },
+        "ponding_correction": {
+          "result": "pass",
+          "evidence": "$20,000 tapered insulation allowance + 5-yr ponding warranty"
+        }
+      },
+      "red_flags": [
+        {
+          "severity": "medium",
+          "category": "warranty",
+          "description": "Base workmanship 2 years meets min but lags Summit (5 yr) and Pinnacle (3 yr). $8,500 upgrade to 5-yr available as negotiation item",
+          "citation": "fixture 02 §3 workmanship warranty range 2-10 yr",
+          "evidence": "Warranty section page 3",
+          "recommendation": "negotiate — include 5-yr upgrade in contract"
+        },
+        {
+          "severity": "medium",
+          "category": "scope",
+          "description": "VE-5 suggests removing cover board on MA system — manufacturer-acceptable but departs from RFP spec. Owner must decide whether VE-5 is accepted (saves $8k; upgrades membrane + insulation) or base bid preserved.",
+          "citation": "RFP §3.2 cover board requirement + fixture 02 §4 MA-system manufacturer variance",
+          "evidence": "VE Option 5 details",
+          "recommendation": "clarify — owner elects base or VE-5 at contract formation"
+        },
+        {
+          "severity": "low",
+          "category": "schedule",
+          "description": "Substantial completion July 30 leaves 1 day margin before $500/day LD trigger July 31. Typical risk factor but no contingency buffer in schedule.",
+          "citation": "RFP §9.5 liquidated damages",
+          "evidence": "Schedule page 3",
+          "recommendation": "accept-with-condition — include weather/unforeseen-condition extension protocol in contract"
+        }
+      ],
+      "scores": {
+        "technical_approach": 88,
+        "experience_references": 92,
+        "warranty_materials": 82,
+        "schedule": 88,
+        "qualifications_certifications": 90,
+        "price": 100.0,
+        "weighted_total": 91.8,
+        "compliant": true,
+        "rank": 1
+      }
+    },
+    {
+      "bidder_id": "lakeside",
+      "bidder_name": "Lakeside Roofing Inc.",
+      "source_pdf": "01-Bid-Lakeside-Roofing.md",
+      "pricing": {
+        "base_bid_cad": 487500,
+        "hst_included": false,
+        "alternates": [],
+        "unit_prices": {},
+        "allowances_carried": []
+      },
+      "scope_response": {
+        "full_compliance_claimed": false,
+        "exclusions_declared": [
+          "Steel deck repairs",
+          "Wood deck replacement",
+          "Damaged roof drains or leaders",
+          "Skylight work",
+          "HVAC curb modifications",
+          "Work outside 7AM-6PM weekdays",
+          "Snow guards ($45/lf if required)",
+          "Infrared moisture survey",
+          "Additional insulation above R-30",
+          "Tapered insulation for ponding correction",
+          "Hazardous material abatement",
+          "Temporary weather protection for incomplete phases",
+          "Temperature monitoring of warehouse during construction",
+          "After-hours HVAC coordination"
+        ],
+        "clarifications": [
+          "Our inspection did not confirm significant ponding — recommend standard installation and address drainage only if issues persist"
+        ],
+        "substitutions_proposed": [
+          {
+            "spec_item": "60 mil TPO",
+            "substitute_offered": "45 mil TPO mechanically attached",
+            "equivalence_justification": "Efficient system reducing install time and cost; single-layer insulation meets code minimum"
+          }
+        ]
+      },
+      "materials_system": {
+        "manufacturer": "not specified",
+        "system_name": "45 mil TPO mechanically attached",
+        "membrane_thickness_actual": "45 mil",
+        "insulation_spec": "Polyiso R-30 single layer",
+        "cover_board_included": false,
+        "product_data_sheets_attached": true
+      },
+      "warranty_offered": {
+        "manufacturer_years": 15,
+        "warranty_type": "unclear",
+        "workmanship_years": 2,
+        "wind_uplift_coverage_mph": null,
+        "manufacturer_certified_installer": false,
+        "certification_program": "",
+        "evidence_page": "Cover letter, page 1"
+      },
+      "qualifications": {
+        "years_in_business": 12,
+        "wsib_clearance_attached": true,
+        "wsib_clearance_date": null,
+        "wsib_in_good_standing": true,
+        "cgl_limit_cad": 5000000,
+        "cgl_completed_operations_years": null,
+        "owner_named_as_additional_insured": null,
+        "coi_attached": true,
+        "bid_bond_attached": false,
+        "bonding_capacity_cad": null,
+        "working_at_heights_training_confirmed": true,
+        "crca_member": false,
+        "certificate_of_qualification_roofers_count": null,
+        "references_provided": [
+          {
+            "project_name": "Maple Logistics Centre, Brampton",
+            "owner_contact": "John Petrovic",
+            "value_cad": null,
+            "completion_year": 2024,
+            "similar_scope": true
+          },
+          {
+            "project_name": "Westpark Industrial, Mississauga",
+            "owner_contact": "Sarah Chen",
+            "value_cad": null,
+            "completion_year": 2023,
+            "similar_scope": true
+          },
+          {
+            "project_name": "Torque Distribution, Vaughan",
+            "owner_contact": "Mike Sullivan",
+            "value_cad": null,
+            "completion_year": 2025,
+            "similar_scope": true
+          }
+        ],
+        "subcontracting_declared": false,
+        "subcontractors_named": []
+      },
+      "schedule": {
+        "mobilization_days_after_award": null,
+        "work_duration_days": 75,
+        "substantial_completion_date": "2026-07-15",
+        "crew_size": null,
+        "accommodates_occupied_building": false
+      },
+      "technical_approach": {
+        "narrative": "Work in sections to minimize disruption; expose only necessary areas. Work around operations schedule.",
+        "tear_off_staging_plan": "",
+        "weather_protection_plan": "",
+        "fall_protection_plan": "Standard fall protection",
+        "waste_disposal_plan": "",
+        "site_safety_plan_attached": false
+      },
+      "mandatory_gates": {
+        "wsib": {
+          "result": "pass",
+          "evidence": "WSIB clearance attached, experience rating 0.98"
+        },
+        "cgl": {
+          "result": "pass",
+          "evidence": "$5M CGL meets minimum"
+        },
+        "additional_insured": {
+          "result": "needs_clarification",
+          "evidence": "COI attached but owner-as-AI status not confirmed in cover letter"
+        },
+        "completed_ops": {
+          "result": "needs_clarification",
+          "evidence": "Completed-operations tail not disclosed"
+        },
+        "wah_training": {
+          "result": "pass",
+          "evidence": "Fall protection training confirmed"
+        },
+        "addenda": {
+          "result": "needs_clarification",
+          "evidence": "Addenda not explicitly acknowledged in cover letter"
+        },
+        "site_visit": {
+          "result": "pass",
+          "evidence": "Attended March 25 site visit"
+        },
+        "years_in_business": {
+          "result": "pass",
+          "evidence": "12 years, meets 10-year minimum"
+        },
+        "references": {
+          "result": "needs_clarification",
+          "evidence": "3 industrial refs 50,000+ sqft within 5 yrs — but none explicitly identified as OCCUPIED with phasing per RFP §5.1"
+        },
+        "manufacturer_certification": {
+          "result": "fail",
+          "evidence": "No manufacturer certification provided; RFP §5.1 mandatory requirement"
+        },
+        "warranty_minimum": {
+          "result": "fail",
+          "evidence": "15-year manufacturer warranty — below RFP §9.6 20-year minimum"
+        },
+        "membrane_spec": {
+          "result": "fail",
+          "evidence": "45 mil TPO proposed vs RFP §3.1 60 mil minimum"
+        },
+        "insulation_spec": {
+          "result": "fail",
+          "evidence": "Single-layer R-30 proposed vs RFP §3.2 minimum two-layer staggered"
+        },
+        "cover_board": {
+          "result": "fail",
+          "evidence": "Cover board excluded vs RFP §3.2 requirement"
+        },
+        "ponding_correction": {
+          "result": "fail",
+          "evidence": "Denies ponding, excludes tapered insulation vs RFP §11.5 'must be addressed'"
+        }
+      },
+      "red_flags": [
+        {
+          "severity": "critical",
+          "category": "materials",
+          "description": "45 mil TPO proposed vs RFP 60 mil minimum",
+          "citation": "RFP §3.1 + fixture 02 §1.3 commercial single-ply standards",
+          "evidence": "Bid page 1 'Membrane: 45 mil TPO, mechanically attached'",
+          "recommendation": "reject"
+        },
+        {
+          "severity": "critical",
+          "category": "materials",
+          "description": "Single-layer insulation vs RFP minimum two-layer staggered",
+          "citation": "RFP §3.2 + fixture 02 §1 — thermal bridging at joints",
+          "evidence": "Bid 'Insulation: Polyisocyanurate, R-30 (single layer to meet code minimum)'",
+          "recommendation": "reject"
+        },
+        {
+          "severity": "critical",
+          "category": "materials",
+          "description": "No cover board over polyiso voids most NDL warranties and RFP spec",
+          "citation": "RFP §3.2 + fixture 02 §4 missing cover board red flag",
+          "evidence": "Bid exclusions implicit; no cover board in price breakdown",
+          "recommendation": "reject"
+        },
+        {
+          "severity": "critical",
+          "category": "warranty",
+          "description": "15-year manufacturer warranty below RFP 20-year minimum",
+          "citation": "RFP §9.6 + fixture 02 §1 warranty taxonomy",
+          "evidence": "Bid warranty section 'Manufacturer Warranty: 15-year limited'",
+          "recommendation": "reject"
+        },
+        {
+          "severity": "critical",
+          "category": "qualifications",
+          "description": "No manufacturer certification — RFP mandatory requirement",
+          "citation": "RFP §5.1.6 + fixture 02 §3 certified installer programs",
+          "evidence": "Cover letter silent on manufacturer certification; no program named",
+          "recommendation": "reject"
+        },
+        {
+          "severity": "high",
+          "category": "scope",
+          "description": "Denies ponding correction despite RFP §11.5 'ponding must be addressed'",
+          "citation": "RFP §11.5 — non-optional requirement",
+          "evidence": "Bid 'our inspection did not confirm significant ponding'",
+          "recommendation": "reject"
+        },
+        {
+          "severity": "high",
+          "category": "scope",
+          "description": "Excludes weather protection for incomplete phases — required by RFP §4.3",
+          "citation": "RFP §4.3 phasing requirements",
+          "evidence": "Exclusion #12 'Temporary weather protection for incomplete phases'",
+          "recommendation": "reject"
+        },
+        {
+          "severity": "high",
+          "category": "scope",
+          "description": "Excludes temperature monitoring and after-hours HVAC coordination — critical for pharmaceutical tenant",
+          "citation": "RFP §11.2 temperature sensitivity + §2.1.7 HVAC protection",
+          "evidence": "Exclusions #13 and #14",
+          "recommendation": "reject"
+        },
+        {
+          "severity": "high",
+          "category": "scope",
+          "description": "Vague phasing approach does not demonstrate compliance with 15,000 sqft max exposure or daily watertight requirements",
+          "citation": "RFP §4.3",
+          "evidence": "Bid 'phasing approach' section is 3 sentences; no phase map",
+          "recommendation": "reject"
+        }
+      ],
+      "scores": {
+        "technical_approach": 30,
+        "experience_references": 55,
+        "warranty_materials": 25,
+        "schedule": 45,
+        "qualifications_certifications": 55,
+        "rank": null,
+        "weighted_total": null,
+        "compliant": false
+      }
+    },
+    {
+      "bidder_id": "metro",
+      "bidder_name": "Metro Building Solutions Inc.",
+      "source_pdf": "04-Bid-Metro-Building-Solutions.md",
+      "pricing": {
+        "base_bid_cad": 468000,
+        "hst_included": false,
+        "alternates": [
+          {
+            "description": "Cover board installation",
+            "price_cad": 38000
+          },
+          {
+            "description": "Steel deck repair allowance",
+            "price_cad": 35000
+          },
+          {
+            "description": "Wood deck repair allowance",
+            "price_cad": 20000
+          },
+          {
+            "description": "Tapered insulation for ponding",
+            "price_cad": 28000
+          },
+          {
+            "description": "Drain replacement (~6 drains)",
+            "price_cad": 14400
+          },
+          {
+            "description": "HVAC curb work (~4)",
+            "price_cad": 12800
+          },
+          {
+            "description": "Skylight replacement (4 per count)",
+            "price_cad": 19200
+          }
+        ],
+        "unit_prices": {
+          "deck_replacement_per_hr": 185,
+          "weekend_premium_per_hr": 95,
+          "fascia_per_lf": 145
+        },
+        "allowances_carried": []
+      },
+      "scope_response": {
+        "full_compliance_claimed": false,
+        "exclusions_declared": [
+          "Steel deck repairs ($185/hr + materials, est $25-45k)",
+          "Wood deck replacement ($15-25k est)",
+          "Cover board (NOT included; $38k optional)",
+          "Tapered insulation for ponding (NOT included; $22-35k optional)",
+          "Drain bowl/leader replacement ($2,400/drain)",
+          "HVAC curb modifications ($3,200/unit)",
+          "Skylight work ($4,800/skylight)",
+          "Work outside standard hours ($95/hr worker premium)",
+          "Hazmat abatement (actual cost + 15%)",
+          "Additional insulation above R-30 ($3.20/sf per R-value)",
+          "Infrared survey ($4,500)",
+          "Building permits ($3,800-$5,200)",
+          "Third-party testing (actual + 10%)",
+          "Landscape protection beyond caution tape",
+          "Waste disposal fee escalation (market adjustment)",
+          "Material price escalation (>60 day delay)",
+          "Substantial completion inspection ($2,800)",
+          "Phasing coordination >90 days ($2,500/week)",
+          "Temperature monitoring (actual + 10%)",
+          "Weekend weather protection ($1,500/wknd)",
+          "Multi-level access special equipment (actual rental)"
+        ],
+        "clarifications": [
+          "Phasing can be accomplished within 90 days IF reasonable cooperation",
+          "Cover board typically not required for buildings of this type",
+          "Ponding does not necessarily indicate failure; address only if leaks",
+          "Mechanically attached equivalent performance to fully adhered"
+        ],
+        "substitutions_proposed": [
+          {
+            "spec_item": "Two-layer R-30 staggered",
+            "substitute_offered": "Single-layer R-30",
+            "equivalence_justification": "Meets OBC minimum; single-layer 'industry standard'"
+          },
+          {
+            "spec_item": "Cover board required",
+            "substitute_offered": "No cover board",
+            "equivalence_justification": "'Typically not required for industrial buildings unless specified by manufacturer for warranty'"
+          }
+        ]
+      },
+      "materials_system": {
+        "manufacturer": "not specified",
+        "system_name": "TPO 60 mil mechanically attached, single-layer insulation, no cover board",
+        "membrane_thickness_actual": "60 mil",
+        "insulation_spec": "Polyiso R-30 single layer",
+        "cover_board_included": false,
+        "product_data_sheets_attached": true
+      },
+      "warranty_offered": {
+        "manufacturer_years": 20,
+        "warranty_type": "unclear",
+        "workmanship_years": 1,
+        "wind_uplift_coverage_mph": null,
+        "manufacturer_certified_installer": false,
+        "certification_program": "",
+        "evidence_page": "Cover letter"
+      },
+      "qualifications": {
+        "years_in_business": 16,
+        "wsib_clearance_attached": true,
+        "wsib_in_good_standing": true,
+        "cgl_limit_cad": 5000000,
+        "cgl_completed_operations_years": null,
+        "owner_named_as_additional_insured": null,
+        "coi_attached": true,
+        "working_at_heights_training_confirmed": true,
+        "references_provided": [
+          {
+            "project_name": "Smallwood Industrial Park, Etobicoke (48,000 sqft — below 50k threshold)",
+            "completion_year": 2024,
+            "similar_scope": false
+          },
+          {
+            "project_name": "Valley View Warehouse, Vaughan (52,000 sqft)",
+            "completion_year": 2023,
+            "similar_scope": true
+          },
+          {
+            "project_name": "Eastgate Commerce Centre, Mississauga (67,000 sqft)",
+            "completion_year": 2025,
+            "similar_scope": true
+          }
+        ],
+        "subcontracting_declared": null,
+        "subcontractors_named": []
+      },
+      "schedule": {
+        "mobilization_days_after_award": null,
+        "work_duration_days": 90,
+        "substantial_completion_date": "2026-08-15",
+        "crew_size": null,
+        "accommodates_occupied_building": false
+      },
+      "technical_approach": {
+        "narrative": "Standard tear-off and replacement. Work can be phased if needed.",
+        "tear_off_staging_plan": "",
+        "weather_protection_plan": "",
+        "fall_protection_plan": "Fall protection equipment provided",
+        "waste_disposal_plan": "",
+        "site_safety_plan_attached": false
+      },
+      "mandatory_gates": {
+        "wsib": {
+          "result": "pass",
+          "evidence": "Clearance attached, WSIB rate 1.12 — ABOVE industry average 1.0 indicates weaker safety record"
+        },
+        "cgl": {
+          "result": "pass",
+          "evidence": "$5M CGL meets minimum"
+        },
+        "additional_insured": {
+          "result": "needs_clarification",
+          "evidence": "COI attached; AI status not confirmed"
+        },
+        "completed_ops": {
+          "result": "needs_clarification",
+          "evidence": "Completed ops tail not disclosed"
+        },
+        "wah_training": {
+          "result": "pass",
+          "evidence": "Fall protection provided"
+        },
+        "addenda": {
+          "result": "needs_clarification",
+          "evidence": "Addenda not explicitly acknowledged"
+        },
+        "site_visit": {
+          "result": "pass",
+          "evidence": "Attended"
+        },
+        "years_in_business": {
+          "result": "pass",
+          "evidence": "16 years (since 2010)"
+        },
+        "references": {
+          "result": "needs_clarification",
+          "evidence": "Smallwood at 48,000 below 50k min; none of three explicitly identified as OCCUPIED with phasing per RFP §5.1"
+        },
+        "manufacturer_certification": {
+          "result": "fail",
+          "evidence": "No manufacturer certification provided; RFP §5.1.6 mandatory"
+        },
+        "warranty_workmanship": {
+          "result": "fail",
+          "evidence": "1-year workmanship below RFP §9.6 2-year minimum"
+        },
+        "membrane_spec": {
+          "result": "pass",
+          "evidence": "60 mil meets min"
+        },
+        "insulation_spec": {
+          "result": "fail",
+          "evidence": "Single-layer R-30 proposed vs RFP §3.2 minimum two-layer staggered"
+        },
+        "cover_board": {
+          "result": "fail",
+          "evidence": "Cover board excluded from base vs RFP §3.2 requirement"
+        },
+        "ponding_correction": {
+          "result": "fail",
+          "evidence": "Tapered insulation excluded; denies ponding requires correction vs RFP §11.5"
+        }
+      },
+      "red_flags": [
+        {
+          "severity": "critical",
+          "category": "pricing",
+          "description": "Low-bid trap — base $468k, but 25 enumerated exclusions with large dollar values ($35k deck, $38k cover board, $28k ponding, $19k skylights, $14k drains, $12k HVAC). Realistic project total likely $600-$700k including known-required scope.",
+          "citation": "fixture 03 §4 unbalanced bidding + low-bid trap",
+          "evidence": "Exclusions list, bid pages 2-4",
+          "recommendation": "reject"
+        },
+        {
+          "severity": "critical",
+          "category": "scope",
+          "description": "Excludes cover board, tapered insulation, and denies both are needed — direct contradiction of RFP §3.2 and §11.5",
+          "citation": "RFP §3.2 + §11.5",
+          "evidence": "Clarifications #13-15",
+          "recommendation": "reject"
+        },
+        {
+          "severity": "critical",
+          "category": "materials",
+          "description": "Single-layer insulation vs RFP minimum two-layer staggered",
+          "citation": "RFP §3.2 + fixture 02 §1 thermal bridging",
+          "evidence": "Key Specifications section",
+          "recommendation": "reject"
+        },
+        {
+          "severity": "critical",
+          "category": "warranty",
+          "description": "1-year workmanship warranty below RFP 2-year minimum",
+          "citation": "RFP §9.6 mandatory",
+          "evidence": "Warranty section",
+          "recommendation": "reject"
+        },
+        {
+          "severity": "critical",
+          "category": "qualifications",
+          "description": "No manufacturer certification — RFP §5.1.6 mandatory gate",
+          "citation": "RFP §5.1.6 + fixture 02 §3",
+          "evidence": "Cover letter silent on manufacturer programs",
+          "recommendation": "reject"
+        },
+        {
+          "severity": "high",
+          "category": "safety",
+          "description": "WSIB experience rating 1.12 — above industry average 1.0, indicates below-average safety performance. Financial-distress / safety-risk signal per fixture 04 §5",
+          "citation": "fixture 04 §1.5 + §5",
+          "evidence": "Safety Program section",
+          "recommendation": "reject"
+        },
+        {
+          "severity": "high",
+          "category": "scope",
+          "description": "References fail 50,000+ sqft threshold (Smallwood 48k) and occupied-with-phasing requirement",
+          "citation": "RFP §5.1.4",
+          "evidence": "References section",
+          "recommendation": "reject"
+        },
+        {
+          "severity": "high",
+          "category": "pricing",
+          "description": "20% upfront payment at signing is aggressive and inconsistent with Ontario Construction Act norms (progress billings monthly with 10% holdback is the stipulated structure)",
+          "citation": "RFP §9.3 + Ontario Construction Act",
+          "evidence": "Payment Schedule section",
+          "recommendation": "reject"
+        },
+        {
+          "severity": "high",
+          "category": "scope",
+          "description": "Weekend weather protection excluded ($1,500/wknd) — directly contradicts RFP §4.3 phasing requirements",
+          "citation": "RFP §4.3",
+          "evidence": "Exclusion #23",
+          "recommendation": "reject"
+        },
+        {
+          "severity": "medium",
+          "category": "scope",
+          "description": "Denies skylight count (claims 4 seen vs RFP states 4) — minor but inattention to RFP detail",
+          "citation": "RFP §2.1.5",
+          "evidence": "Exclusion #8 notes mismatch",
+          "recommendation": "clarify"
+        }
+      ],
+      "scores": {
+        "technical_approach": 25,
+        "experience_references": 45,
+        "warranty_materials": 30,
+        "schedule": 40,
+        "qualifications_certifications": 35,
+        "rank": null,
+        "weighted_total": null,
+        "compliant": false
+      }
+    },
+    {
+      "bidder_id": "pinnacle",
+      "bidder_name": "Pinnacle Roofing Corp.",
+      "source_pdf": "03-Bid-Pinnacle-Roofing.md",
+      "pricing": {
+        "base_bid_cad": 612000,
+        "hst_included": false,
+        "alternates": [
+          {
+            "description": "Snow guard system installed",
+            "price_cad": 52
+          },
+          {
+            "description": "Additional insulation to R-38",
+            "price_cad": 24000
+          },
+          {
+            "description": "Upgrade to 80 mil membrane",
+            "price_cad": 38000
+          },
+          {
+            "description": "Extended workmanship warranty to 5 years",
+            "price_cad": 8500
+          }
+        ],
+        "unit_prices": {},
+        "allowances_carried": [
+          {
+            "item": "Tapered insulation for ponding",
+            "amount_cad": 18000
+          },
+          {
+            "item": "Steel deck repair",
+            "amount_cad": 12000
+          },
+          {
+            "item": "Wood deck repair (office wing)",
+            "amount_cad": 8000
+          }
+        ]
+      },
+      "scope_response": {
+        "full_compliance_claimed": true,
+        "exclusions_declared": [
+          "Major deck repairs exceeding allowances",
+          "Skylight replacement or major repairs",
+          "HVAC equipment modifications",
+          "After-hours work",
+          "Major hazmat abatement beyond minor handling",
+          "Temperature monitoring equipment (coordination only)",
+          "Building permits (~$4,500-$6,000)"
+        ],
+        "clarifications": [
+          "Final tapered insulation quantity to be confirmed during removal; $18k allowance"
+        ],
+        "substitutions_proposed": []
+      },
+      "materials_system": {
+        "manufacturer": "Carlisle Syntec / Firestone / Johns Manville (certified)",
+        "system_name": "TPO 60 mil fully adhered with gypsum cover board",
+        "membrane_thickness_actual": "60 mil",
+        "insulation_spec": "Polyiso R-30 two-layer staggered joints + gypsum cover board",
+        "cover_board_included": true,
+        "product_data_sheets_attached": true
+      },
+      "warranty_offered": {
+        "manufacturer_years": 20,
+        "warranty_type": "total_system_ndl",
+        "workmanship_years": 3,
+        "wind_uplift_coverage_mph": null,
+        "manufacturer_certified_installer": true,
+        "certification_program": "Carlisle Certified + Firestone Authorized + Johns Manville Preferred",
+        "evidence_page": "Cover letter + warranty sample"
+      },
+      "qualifications": {
+        "years_in_business": 18,
+        "wsib_clearance_attached": true,
+        "wsib_in_good_standing": true,
+        "cgl_limit_cad": 5000000,
+        "cgl_completed_operations_years": 2,
+        "owner_named_as_additional_insured": true,
+        "coi_attached": true,
+        "working_at_heights_training_confirmed": true,
+        "references_provided": [
+          {
+            "project_name": "Canadian Tire Distribution Centre, Concord (occupied, 85-day phased, 95,000 sqft)",
+            "completion_year": 2024,
+            "similar_scope": true
+          },
+          {
+            "project_name": "Loblaws Head Office, Brampton (continuous ops, 78,000 sqft)",
+            "completion_year": 2023,
+            "similar_scope": true
+          },
+          {
+            "project_name": "Tim Hortons Supply Chain, Oakville (cold storage, temperature monitoring, 62,000 sqft)",
+            "completion_year": 2025,
+            "similar_scope": true
+          }
+        ],
+        "subcontracting_declared": false,
+        "subcontractors_named": []
+      },
+      "schedule": {
+        "mobilization_days_after_award": null,
+        "work_duration_days": 80,
+        "substantial_completion_date": "2026-07-20",
+        "crew_size": 3,
+        "accommodates_occupied_building": true
+      },
+      "technical_approach": {
+        "narrative": "3-phase plan: office wing (1-20), main A (21-50), main B with ponding tapered (51-80). Max 10,000 sqft exposed. Twice-weekly coordination meetings.",
+        "tear_off_staging_plan": "Attached",
+        "weather_protection_plan": "Daily watertight; reinforced tarps weekend",
+        "fall_protection_plan": "Standard per WSIB program",
+        "waste_disposal_plan": "Legal disposal; testing on discovery",
+        "site_safety_plan_attached": true
+      },
+      "mandatory_gates": {
+        "wsib": {
+          "result": "pass",
+          "evidence": "Clearance attached, WSIB rate 0.89"
+        },
+        "cgl": {
+          "result": "pass",
+          "evidence": "$5M CGL meets minimum"
+        },
+        "additional_insured": {
+          "result": "pass",
+          "evidence": "COI attached; owner as AI standard practice confirmed"
+        },
+        "completed_ops": {
+          "result": "pass",
+          "evidence": "2-yr completed ops meets minimum"
+        },
+        "wah_training": {
+          "result": "pass",
+          "evidence": "Fall protection training updated every 2 years (note: O. Reg. 297/13 requires 3-yr; 2-yr cycle exceeds)"
+        },
+        "addenda": {
+          "result": "pass",
+          "evidence": "Attachments indicate full RFP review"
+        },
+        "site_visit": {
+          "result": "pass",
+          "evidence": "Attended March 25"
+        },
+        "years_in_business": {
+          "result": "pass",
+          "evidence": "18 years (established 2008)"
+        },
+        "references": {
+          "result": "pass",
+          "evidence": "3 refs all 50,000+ sqft, all past 3 years, Canadian Tire + Loblaws explicitly occupied + Tim Hortons cold storage directly comparable"
+        },
+        "manufacturer_certification": {
+          "result": "pass",
+          "evidence": "Carlisle Certified + Firestone Authorized + Johns Manville Preferred"
+        },
+        "warranty_minimum": {
+          "result": "pass",
+          "evidence": "20-yr NDL meets min; 3-yr workmanship exceeds 2-yr min"
+        },
+        "membrane_spec": {
+          "result": "pass",
+          "evidence": "60 mil meets min"
+        },
+        "insulation_spec": {
+          "result": "pass",
+          "evidence": "R-30 two-layer staggered matches spec"
+        },
+        "cover_board": {
+          "result": "pass",
+          "evidence": "Gypsum cover board included"
+        },
+        "ponding_correction": {
+          "result": "pass",
+          "evidence": "Tapered insulation $18k allowance + 5-yr ponding warranty"
+        }
+      },
+      "red_flags": [
+        {
+          "severity": "low",
+          "category": "schedule",
+          "description": "Permits excluded ($4.5-6k owner cost) — common but worth pricing into total",
+          "citation": "bid clarification #7",
+          "evidence": "Exclusions page 8",
+          "recommendation": "accept-with-condition — owner to fund permits separately"
+        },
+        {
+          "severity": "low",
+          "category": "scope",
+          "description": "Crew size not stated; relies on project manager + supervisor + 3 installers",
+          "citation": "fixture 03 §3 schedule scoring — crew adequacy",
+          "evidence": "Project Team section",
+          "recommendation": "clarify — confirm max crew during peak phase"
+        }
+      ],
+      "scores": {
+        "technical_approach": 80,
+        "experience_references": 85,
+        "warranty_materials": 82,
+        "schedule": 82,
+        "qualifications_certifications": 78,
+        "price": 94.44,
+        "weighted_total": 85.99,
+        "compliant": true,
+        "rank": 3
+      }
+    },
+    {
+      "bidder_id": "summit",
+      "bidder_name": "Summit Contracting Ltd.",
+      "source_pdf": "02-Bid-Summit-Contracting.md",
+      "pricing": {
+        "base_bid_cad": 742000,
+        "hst_included": false,
+        "alternates": [],
+        "unit_prices": {},
+        "allowances_carried": [
+          {
+            "item": "Steel deck repairs",
+            "amount_cad": 10000
+          },
+          {
+            "item": "Wood deck replacement (office wing)",
+            "amount_cad": 8000
+          },
+          {
+            "item": "Contingency for unknown conditions",
+            "amount_cad": 15000
+          }
+        ]
+      },
+      "scope_response": {
+        "full_compliance_claimed": true,
+        "exclusions_declared": [
+          "Major abatement beyond minor ACM handling",
+          "Work stoppage costs during extended testing"
+        ],
+        "clarifications": [
+          "R-38 two-layer staggered priced as standard; 80 mil membrane vs 60 mil spec; fully adhered"
+        ],
+        "substitutions_proposed": []
+      },
+      "materials_system": {
+        "manufacturer": "GAF / Carlisle / Firestone (certified)",
+        "system_name": "TPO 80 mil fully adhered with HD polyiso cover board",
+        "membrane_thickness_actual": "80 mil",
+        "insulation_spec": "Polyiso R-38 two-layer staggered joints + HD polyiso cover board",
+        "cover_board_included": true,
+        "product_data_sheets_attached": true
+      },
+      "warranty_offered": {
+        "manufacturer_years": 30,
+        "warranty_type": "total_system_ndl",
+        "workmanship_years": 5,
+        "wind_uplift_coverage_mph": 130,
+        "manufacturer_certified_installer": true,
+        "certification_program": "GAF Master Elite (top 2% nationwide), Carlisle Master, Firestone Premier",
+        "evidence_page": "Cover letter + attachments; warranty sample included"
+      },
+      "qualifications": {
+        "years_in_business": 25,
+        "wsib_clearance_attached": true,
+        "wsib_in_good_standing": true,
+        "cgl_limit_cad": 10000000,
+        "cgl_completed_operations_years": 2,
+        "owner_named_as_additional_insured": true,
+        "coi_attached": true,
+        "bid_bond_attached": null,
+        "bonding_capacity_cad": null,
+        "working_at_heights_training_confirmed": true,
+        "crca_member": null,
+        "certificate_of_qualification_roofers_count": 4,
+        "references_provided": [
+          {
+            "project_name": "Maple Leaf Food Corporation, Toronto",
+            "value_cad": null,
+            "completion_year": 2023,
+            "similar_scope": true
+          },
+          {
+            "project_name": "Shoppers Drug Mart Distribution Centre, Brampton (210,000 sqft pharma)",
+            "value_cad": null,
+            "completion_year": 2022,
+            "similar_scope": true
+          },
+          {
+            "project_name": "Magnotta Winery, Niagara",
+            "value_cad": null,
+            "completion_year": 2024,
+            "similar_scope": true
+          },
+          {
+            "project_name": "Pfizer Canada, Mississauga (pharma, similar scope)",
+            "value_cad": null,
+            "completion_year": 2025,
+            "similar_scope": true
+          }
+        ],
+        "subcontracting_declared": false,
+        "subcontractors_named": []
+      },
+      "schedule": {
+        "mobilization_days_after_award": null,
+        "work_duration_days": 85,
+        "substantial_completion_date": "2026-07-25",
+        "crew_size": 4,
+        "accommodates_occupied_building": true
+      },
+      "technical_approach": {
+        "narrative": "3-phase plan: office wing (days 1-25), main NW (26-55), main SE with tapered insulation (56-85). Max 8,000 sqft exposed. Wireless temperature sensors with ±2°C alerts. Weekend-only HVAC shutdowns with 72-hr notice.",
+        "tear_off_staging_plan": "Detailed 8-page phasing plan attached",
+        "weather_protection_plan": "Daily watertight by 5PM; reinforced weighted tarps for weekend protection",
+        "fall_protection_plan": "COR-certified, dedicated safety officer on site",
+        "waste_disposal_plan": "Hazmat testing pre-removal; licensed for minor abatement",
+        "site_safety_plan_attached": true
+      },
+      "mandatory_gates": {
+        "wsib": {
+          "result": "pass",
+          "evidence": "Clearance attached, WSIB rate 0.72 (excellent)"
+        },
+        "cgl": {
+          "result": "pass",
+          "evidence": "$10M CGL, 2x RFP minimum"
+        },
+        "additional_insured": {
+          "result": "pass",
+          "evidence": "Standard for COR-certified contractor; COI attached"
+        },
+        "completed_ops": {
+          "result": "pass",
+          "evidence": "Standard 2-yr tail on CGL"
+        },
+        "wah_training": {
+          "result": "pass",
+          "evidence": "COR certified, annual updates"
+        },
+        "addenda": {
+          "result": "pass",
+          "evidence": "Attachments list includes all RFP references"
+        },
+        "site_visit": {
+          "result": "pass",
+          "evidence": "Attended March 25"
+        },
+        "years_in_business": {
+          "result": "pass",
+          "evidence": "25 years, exceeds 10-yr minimum"
+        },
+        "references": {
+          "result": "pass",
+          "evidence": "4 occupied-building refs including 2 pharma (Pfizer, Shoppers). Directly satisfies RFP §5.1 occupied-with-phasing requirement."
+        },
+        "manufacturer_certification": {
+          "result": "pass",
+          "evidence": "GAF Master Elite + Carlisle Master + Firestone Premier"
+        },
+        "warranty_minimum": {
+          "result": "pass",
+          "evidence": "30-year NDL exceeds 20-yr minimum; 5-yr workmanship exceeds 2-yr"
+        },
+        "membrane_spec": {
+          "result": "pass",
+          "evidence": "80 mil exceeds 60 mil minimum"
+        },
+        "insulation_spec": {
+          "result": "pass",
+          "evidence": "R-38 two-layer exceeds R-30 min + two-layer spec"
+        },
+        "cover_board": {
+          "result": "pass",
+          "evidence": "HD polyiso cover board included"
+        },
+        "ponding_correction": {
+          "result": "pass",
+          "evidence": "Tapered insulation system + 10-yr ponding warranty"
+        }
+      },
+      "red_flags": [
+        {
+          "severity": "medium",
+          "category": "pricing",
+          "description": "Base bid 28% above next compliant bid (Pinnacle $612k) — premium pricing warrants owner consideration of whether upgrades (80 mil, R-38, 30-yr) are required vs RFP minimums",
+          "citation": "fixture 03 §4 — price premium analysis",
+          "evidence": "Base $742,000 vs Pinnacle $612,000 and Heritage $578,000",
+          "recommendation": "accept-with-condition — clarify whether owner wants upgraded spec or if Summit should rebid to base spec"
+        }
+      ],
+      "scores": {
+        "technical_approach": 95,
+        "experience_references": 95,
+        "warranty_materials": 98,
+        "schedule": 92,
+        "qualifications_certifications": 95,
+        "price": 77.9,
+        "weighted_total": 89.1,
+        "compliant": true,
+        "rank": 2
+      }
+    }
+  ],
+  "comparison": {
+    "price_low_cad": 578000,
+    "price_high_cad": 742000,
+    "price_spread_percent": 28.37,
+    "all_bids_price_low_cad": 468000,
+    "all_bids_price_high_cad": 742000,
+    "compliant_bidders_count": 3,
+    "recommended_bidder_id": "heritage"
+  }
+}

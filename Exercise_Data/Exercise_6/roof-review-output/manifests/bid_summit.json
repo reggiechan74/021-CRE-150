@@ -1,0 +1,108 @@
+{
+  "bidder_id": "summit",
+  "bidder_name": "Summit Contracting Ltd.",
+  "source_pdf": "02-Bid-Summit-Contracting.md",
+  "pricing": {
+    "base_bid_cad": 742000,
+    "hst_included": false,
+    "alternates": [],
+    "unit_prices": {},
+    "allowances_carried": [
+      { "item": "Steel deck repairs", "amount_cad": 10000 },
+      { "item": "Wood deck replacement (office wing)", "amount_cad": 8000 },
+      { "item": "Contingency for unknown conditions", "amount_cad": 15000 }
+    ]
+  },
+  "scope_response": {
+    "full_compliance_claimed": true,
+    "exclusions_declared": [
+      "Major abatement beyond minor ACM handling",
+      "Work stoppage costs during extended testing"
+    ],
+    "clarifications": [
+      "R-38 two-layer staggered priced as standard; 80 mil membrane vs 60 mil spec; fully adhered"
+    ],
+    "substitutions_proposed": []
+  },
+  "materials_system": {
+    "manufacturer": "GAF / Carlisle / Firestone (certified)",
+    "system_name": "TPO 80 mil fully adhered with HD polyiso cover board",
+    "membrane_thickness_actual": "80 mil",
+    "insulation_spec": "Polyiso R-38 two-layer staggered joints + HD polyiso cover board",
+    "cover_board_included": true,
+    "product_data_sheets_attached": true
+  },
+  "warranty_offered": {
+    "manufacturer_years": 30,
+    "warranty_type": "total_system_ndl",
+    "workmanship_years": 5,
+    "wind_uplift_coverage_mph": 130,
+    "manufacturer_certified_installer": true,
+    "certification_program": "GAF Master Elite (top 2% nationwide), Carlisle Master, Firestone Premier",
+    "evidence_page": "Cover letter + attachments; warranty sample included"
+  },
+  "qualifications": {
+    "years_in_business": 25,
+    "wsib_clearance_attached": true,
+    "wsib_in_good_standing": true,
+    "cgl_limit_cad": 10000000,
+    "cgl_completed_operations_years": 2,
+    "owner_named_as_additional_insured": true,
+    "coi_attached": true,
+    "bid_bond_attached": null,
+    "bonding_capacity_cad": null,
+    "working_at_heights_training_confirmed": true,
+    "crca_member": null,
+    "certificate_of_qualification_roofers_count": 4,
+    "references_provided": [
+      { "project_name": "Maple Leaf Food Corporation, Toronto", "value_cad": null, "completion_year": 2023, "similar_scope": true },
+      { "project_name": "Shoppers Drug Mart Distribution Centre, Brampton (210,000 sqft pharma)", "value_cad": null, "completion_year": 2022, "similar_scope": true },
+      { "project_name": "Magnotta Winery, Niagara", "value_cad": null, "completion_year": 2024, "similar_scope": true },
+      { "project_name": "Pfizer Canada, Mississauga (pharma, similar scope)", "value_cad": null, "completion_year": 2025, "similar_scope": true }
+    ],
+    "subcontracting_declared": false,
+    "subcontractors_named": []
+  },
+  "schedule": {
+    "mobilization_days_after_award": null,
+    "work_duration_days": 85,
+    "substantial_completion_date": "2026-07-25",
+    "crew_size": 4,
+    "accommodates_occupied_building": true
+  },
+  "technical_approach": {
+    "narrative": "3-phase plan: office wing (days 1-25), main NW (26-55), main SE with tapered insulation (56-85). Max 8,000 sqft exposed. Wireless temperature sensors with ±2°C alerts. Weekend-only HVAC shutdowns with 72-hr notice.",
+    "tear_off_staging_plan": "Detailed 8-page phasing plan attached",
+    "weather_protection_plan": "Daily watertight by 5PM; reinforced weighted tarps for weekend protection",
+    "fall_protection_plan": "COR-certified, dedicated safety officer on site",
+    "waste_disposal_plan": "Hazmat testing pre-removal; licensed for minor abatement",
+    "site_safety_plan_attached": true
+  },
+  "mandatory_gates": {
+    "wsib": { "result": "pass", "evidence": "Clearance attached, WSIB rate 0.72 (excellent)" },
+    "cgl": { "result": "pass", "evidence": "$10M CGL, 2x RFP minimum" },
+    "additional_insured": { "result": "pass", "evidence": "Standard for COR-certified contractor; COI attached" },
+    "completed_ops": { "result": "pass", "evidence": "Standard 2-yr tail on CGL" },
+    "wah_training": { "result": "pass", "evidence": "COR certified, annual updates" },
+    "addenda": { "result": "pass", "evidence": "Attachments list includes all RFP references" },
+    "site_visit": { "result": "pass", "evidence": "Attended March 25" },
+    "years_in_business": { "result": "pass", "evidence": "25 years, exceeds 10-yr minimum" },
+    "references": { "result": "pass", "evidence": "4 occupied-building refs including 2 pharma (Pfizer, Shoppers). Directly satisfies RFP §5.1 occupied-with-phasing requirement." },
+    "manufacturer_certification": { "result": "pass", "evidence": "GAF Master Elite + Carlisle Master + Firestone Premier" },
+    "warranty_minimum": { "result": "pass", "evidence": "30-year NDL exceeds 20-yr minimum; 5-yr workmanship exceeds 2-yr" },
+    "membrane_spec": { "result": "pass", "evidence": "80 mil exceeds 60 mil minimum" },
+    "insulation_spec": { "result": "pass", "evidence": "R-38 two-layer exceeds R-30 min + two-layer spec" },
+    "cover_board": { "result": "pass", "evidence": "HD polyiso cover board included" },
+    "ponding_correction": { "result": "pass", "evidence": "Tapered insulation system + 10-yr ponding warranty" }
+  },
+  "red_flags": [
+    { "severity": "medium", "category": "pricing", "description": "Base bid 28% above next compliant bid (Pinnacle $612k) — premium pricing warrants owner consideration of whether upgrades (80 mil, R-38, 30-yr) are required vs RFP minimums", "citation": "fixture 03 §4 — price premium analysis", "evidence": "Base $742,000 vs Pinnacle $612,000 and Heritage $578,000", "recommendation": "accept-with-condition — clarify whether owner wants upgraded spec or if Summit should rebid to base spec" }
+  ],
+  "scores": {
+    "technical_approach": 95,
+    "experience_references": 95,
+    "warranty_materials": 98,
+    "schedule": 92,
+    "qualifications_certifications": 95
+  }
+}

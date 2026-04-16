@@ -1,0 +1,126 @@
+{
+  "bidder_id": "lakeside",
+  "bidder_name": "Lakeside Roofing Inc.",
+  "source_pdf": "01-Bid-Lakeside-Roofing.md",
+  "pricing": {
+    "base_bid_cad": 487500,
+    "hst_included": false,
+    "alternates": [],
+    "unit_prices": {},
+    "allowances_carried": []
+  },
+  "scope_response": {
+    "full_compliance_claimed": false,
+    "exclusions_declared": [
+      "Steel deck repairs",
+      "Wood deck replacement",
+      "Damaged roof drains or leaders",
+      "Skylight work",
+      "HVAC curb modifications",
+      "Work outside 7AM-6PM weekdays",
+      "Snow guards ($45/lf if required)",
+      "Infrared moisture survey",
+      "Additional insulation above R-30",
+      "Tapered insulation for ponding correction",
+      "Hazardous material abatement",
+      "Temporary weather protection for incomplete phases",
+      "Temperature monitoring of warehouse during construction",
+      "After-hours HVAC coordination"
+    ],
+    "clarifications": [
+      "Our inspection did not confirm significant ponding — recommend standard installation and address drainage only if issues persist"
+    ],
+    "substitutions_proposed": [
+      { "spec_item": "60 mil TPO", "substitute_offered": "45 mil TPO mechanically attached", "equivalence_justification": "Efficient system reducing install time and cost; single-layer insulation meets code minimum" }
+    ]
+  },
+  "materials_system": {
+    "manufacturer": "not specified",
+    "system_name": "45 mil TPO mechanically attached",
+    "membrane_thickness_actual": "45 mil",
+    "insulation_spec": "Polyiso R-30 single layer",
+    "cover_board_included": false,
+    "product_data_sheets_attached": true
+  },
+  "warranty_offered": {
+    "manufacturer_years": 15,
+    "warranty_type": "unclear",
+    "workmanship_years": 2,
+    "wind_uplift_coverage_mph": null,
+    "manufacturer_certified_installer": false,
+    "certification_program": "",
+    "evidence_page": "Cover letter, page 1"
+  },
+  "qualifications": {
+    "years_in_business": 12,
+    "wsib_clearance_attached": true,
+    "wsib_clearance_date": null,
+    "wsib_in_good_standing": true,
+    "cgl_limit_cad": 5000000,
+    "cgl_completed_operations_years": null,
+    "owner_named_as_additional_insured": null,
+    "coi_attached": true,
+    "bid_bond_attached": false,
+    "bonding_capacity_cad": null,
+    "working_at_heights_training_confirmed": true,
+    "crca_member": false,
+    "certificate_of_qualification_roofers_count": null,
+    "references_provided": [
+      { "project_name": "Maple Logistics Centre, Brampton", "owner_contact": "John Petrovic", "value_cad": null, "completion_year": 2024, "similar_scope": true },
+      { "project_name": "Westpark Industrial, Mississauga", "owner_contact": "Sarah Chen", "value_cad": null, "completion_year": 2023, "similar_scope": true },
+      { "project_name": "Torque Distribution, Vaughan", "owner_contact": "Mike Sullivan", "value_cad": null, "completion_year": 2025, "similar_scope": true }
+    ],
+    "subcontracting_declared": false,
+    "subcontractors_named": []
+  },
+  "schedule": {
+    "mobilization_days_after_award": null,
+    "work_duration_days": 75,
+    "substantial_completion_date": "2026-07-15",
+    "crew_size": null,
+    "accommodates_occupied_building": false
+  },
+  "technical_approach": {
+    "narrative": "Work in sections to minimize disruption; expose only necessary areas. Work around operations schedule.",
+    "tear_off_staging_plan": "",
+    "weather_protection_plan": "",
+    "fall_protection_plan": "Standard fall protection",
+    "waste_disposal_plan": "",
+    "site_safety_plan_attached": false
+  },
+  "mandatory_gates": {
+    "wsib": { "result": "pass", "evidence": "WSIB clearance attached, experience rating 0.98" },
+    "cgl": { "result": "pass", "evidence": "$5M CGL meets minimum" },
+    "additional_insured": { "result": "needs_clarification", "evidence": "COI attached but owner-as-AI status not confirmed in cover letter" },
+    "completed_ops": { "result": "needs_clarification", "evidence": "Completed-operations tail not disclosed" },
+    "wah_training": { "result": "pass", "evidence": "Fall protection training confirmed" },
+    "addenda": { "result": "needs_clarification", "evidence": "Addenda not explicitly acknowledged in cover letter" },
+    "site_visit": { "result": "pass", "evidence": "Attended March 25 site visit" },
+    "years_in_business": { "result": "pass", "evidence": "12 years, meets 10-year minimum" },
+    "references": { "result": "needs_clarification", "evidence": "3 industrial refs 50,000+ sqft within 5 yrs — but none explicitly identified as OCCUPIED with phasing per RFP §5.1" },
+    "manufacturer_certification": { "result": "fail", "evidence": "No manufacturer certification provided; RFP §5.1 mandatory requirement" },
+    "warranty_minimum": { "result": "fail", "evidence": "15-year manufacturer warranty — below RFP §9.6 20-year minimum" },
+    "membrane_spec": { "result": "fail", "evidence": "45 mil TPO proposed vs RFP §3.1 60 mil minimum" },
+    "insulation_spec": { "result": "fail", "evidence": "Single-layer R-30 proposed vs RFP §3.2 minimum two-layer staggered" },
+    "cover_board": { "result": "fail", "evidence": "Cover board excluded vs RFP §3.2 requirement" },
+    "ponding_correction": { "result": "fail", "evidence": "Denies ponding, excludes tapered insulation vs RFP §11.5 'must be addressed'" }
+  },
+  "red_flags": [
+    { "severity": "critical", "category": "materials", "description": "45 mil TPO proposed vs RFP 60 mil minimum", "citation": "RFP §3.1 + fixture 02 §1.3 commercial single-ply standards", "evidence": "Bid page 1 'Membrane: 45 mil TPO, mechanically attached'", "recommendation": "reject" },
+    { "severity": "critical", "category": "materials", "description": "Single-layer insulation vs RFP minimum two-layer staggered", "citation": "RFP §3.2 + fixture 02 §1 — thermal bridging at joints", "evidence": "Bid 'Insulation: Polyisocyanurate, R-30 (single layer to meet code minimum)'", "recommendation": "reject" },
+    { "severity": "critical", "category": "materials", "description": "No cover board over polyiso voids most NDL warranties and RFP spec", "citation": "RFP §3.2 + fixture 02 §4 missing cover board red flag", "evidence": "Bid exclusions implicit; no cover board in price breakdown", "recommendation": "reject" },
+    { "severity": "critical", "category": "warranty", "description": "15-year manufacturer warranty below RFP 20-year minimum", "citation": "RFP §9.6 + fixture 02 §1 warranty taxonomy", "evidence": "Bid warranty section 'Manufacturer Warranty: 15-year limited'", "recommendation": "reject" },
+    { "severity": "critical", "category": "qualifications", "description": "No manufacturer certification — RFP mandatory requirement", "citation": "RFP §5.1.6 + fixture 02 §3 certified installer programs", "evidence": "Cover letter silent on manufacturer certification; no program named", "recommendation": "reject" },
+    { "severity": "high", "category": "scope", "description": "Denies ponding correction despite RFP §11.5 'ponding must be addressed'", "citation": "RFP §11.5 — non-optional requirement", "evidence": "Bid 'our inspection did not confirm significant ponding'", "recommendation": "reject" },
+    { "severity": "high", "category": "scope", "description": "Excludes weather protection for incomplete phases — required by RFP §4.3", "citation": "RFP §4.3 phasing requirements", "evidence": "Exclusion #12 'Temporary weather protection for incomplete phases'", "recommendation": "reject" },
+    { "severity": "high", "category": "scope", "description": "Excludes temperature monitoring and after-hours HVAC coordination — critical for pharmaceutical tenant", "citation": "RFP §11.2 temperature sensitivity + §2.1.7 HVAC protection", "evidence": "Exclusions #13 and #14", "recommendation": "reject" },
+    { "severity": "high", "category": "scope", "description": "Vague phasing approach does not demonstrate compliance with 15,000 sqft max exposure or daily watertight requirements", "citation": "RFP §4.3", "evidence": "Bid 'phasing approach' section is 3 sentences; no phase map", "recommendation": "reject" }
+  ],
+  "scores": {
+    "technical_approach": 30,
+    "experience_references": 55,
+    "warranty_materials": 25,
+    "schedule": 45,
+    "qualifications_certifications": 55
+  }
+}

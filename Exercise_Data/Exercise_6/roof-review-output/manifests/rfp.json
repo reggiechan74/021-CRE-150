@@ -1,0 +1,96 @@
+{
+  "project": {
+    "owner": "Tenebrus Capital",
+    "owner_type": "private_commercial",
+    "property": "2550 Argentia Road, Mississauga, ON L5T 2Y3",
+    "building_classification": "obc_part_3",
+    "roof_type": "low_slope_commercial",
+    "roof_area_sqft": 85000,
+    "jurisdiction": "Ontario, Canada",
+    "building_year_built": 1998,
+    "existing_roof_age_years": 28,
+    "occupied_during_work": true,
+    "designated_substances_assessment_required": true
+  },
+  "rfp": {
+    "rfp_id": "TC-ROOF-2026-001",
+    "issued_date": "2026-03-15",
+    "submission_deadline": "2026-04-12T14:00:00-04:00",
+    "site_meeting_mandatory": true,
+    "contract_form": "ccdc_2",
+    "scope_of_work": {
+      "work_description": "Full tear-off and replacement of existing BUR on 85,000 sqft occupied industrial building with temperature-sensitive pharmaceutical tenant. TPO single-ply system. Phased to 15,000 sqft max exposure. Ponding correction required.",
+      "tear_off_required": true,
+      "deck_replacement_allowance_bf": 0,
+      "insulation_upgrade_to_code": true,
+      "membrane_system_specified": {
+        "category": "tpo",
+        "thickness_spec": "60 mil minimum, white (>=80% solar reflectance), heat-welded seams",
+        "manufacturer_acceptable_list": [],
+        "attachment_method": "fully_adhered"
+      },
+      "included_items": [
+        "Complete tear-off to deck",
+        "TPO 60 mil min fully adhered preferred (MA acceptable)",
+        "Polyiso insulation R-30 min two-layer staggered",
+        "1/4in gypsum or HD polyiso cover board",
+        "All flashings at 47 penetrations",
+        "Tapered insulation for ponding correction",
+        "Phased installation with watertight end of each day"
+      ],
+      "excluded_items": [],
+      "alternates_requested": [
+        "Snow guards per lin ft",
+        "Additional insulation per R-value",
+        "Annual maintenance program",
+        "Pre-removal infrared moisture survey",
+        "Post-install thermal imaging",
+        "Warranty extension beyond 20 years"
+      ]
+    },
+    "warranty_requirements": {
+      "minimum_manufacturer_years": 20,
+      "warranty_type_required": "total_system_ndl",
+      "minimum_workmanship_years": 2,
+      "manufacturer_certification_required": true
+    },
+    "mandatory_requirements": {
+      "wsib_clearance_required": true,
+      "cgl_minimum_cad": 5000000,
+      "owner_named_additional_insured": true,
+      "completed_operations_years": 2,
+      "bid_bond_percent": 0,
+      "performance_bond_percent": 50,
+      "labour_material_bond_percent": 50,
+      "working_at_heights_training_required": true,
+      "addenda_acknowledgment_required": true,
+      "non_collusion_declaration_required": false,
+      "site_visit_required": true,
+      "minimum_years_in_business": 10,
+      "minimum_similar_projects": 3
+    },
+    "evaluation_criteria": {
+      "weighting": {
+        "price": 35,
+        "technical_approach": 23,
+        "experience_references": 10,
+        "warranty_materials": 15,
+        "schedule": 12,
+        "qualifications_certifications": 5
+      },
+      "price_scoring_method": "formula_lowest_ratio"
+    }
+  },
+  "_provenance": {
+    "rfp.evaluation_criteria.weighting": "RFP §7 Evaluation Criteria — Price 35 / Materials 20 / Warranty 15 / Schedule 12 / Qualifications 10 / Safety 5 / VE 3. Normalized to 6-criterion schema by folding Safety into qualifications_certifications and VE (3%) into technical_approach (20+3=23).",
+    "rfp.warranty_requirements": "RFP §9.6 — 20-year manufacturer min, 2-year workmanship min, transferable",
+    "rfp.mandatory_requirements.cgl_minimum_cad": "RFP §5.1 — $5M per occurrence",
+    "project.occupied_during_work": "RFP §1.2 + §11.1-2 — pharmaceutical tenant, temperature-sensitive"
+  },
+  "extraction_notes": [
+    "RFP §7 includes Safety (5%) and VE (3%) criteria not in default 6-criterion schema. Mapped Safety -> qualifications_certifications, VE -> technical_approach.",
+    "RFP §5.1 requires 'at least one reference for occupied building with phasing' — evaluated as a specific gate within reference check.",
+    "Liquidated damages $500/day beyond July 31, 2026 — factored into schedule scoring.",
+    "Pre-1980 building trigger does NOT apply (1998 build). Asbestos unlikely but RFP §2.3 requires contingency planning."
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "bidder_id": "heritage",
+  "bidder_name": "Heritage Construction Group",
+  "source_pdf": "05-Bid-Heritage-Construction.md",
+  "pricing": {
+    "base_bid_cad": 578000,
+    "hst_included": false,
+    "alternates": [
+      { "description": "VE-1 Mechanically attached system", "price_cad": -42000 },
+      { "description": "VE-3 Upgrade to 80 mil membrane", "price_cad": 38000 },
+      { "description": "VE-4 Upgrade to R-38 insulation", "price_cad": 24000 },
+      { "description": "VE-5 Combined optimal package (MA + 80 mil + R-38, no cover board)", "price_cad": 12000 }
+    ],
+    "unit_prices": {},
+    "allowances_carried": [
+      { "item": "Tapered insulation for ponding", "amount_cad": 20000 },
+      { "item": "Steel deck repair", "amount_cad": 10000 },
+      { "item": "Wood deck repair (office wing)", "amount_cad": 10000 },
+      { "item": "Hazmat testing", "amount_cad": 3500 }
+    ]
+  },
+  "scope_response": {
+    "full_compliance_claimed": true,
+    "exclusions_declared": [
+      "Major deck repairs above allowances",
+      "Skylight replacement",
+      "HVAC modifications",
+      "After-hours work",
+      "Major hazmat abatement beyond minor ACM",
+      "Building permits",
+      "Temperature monitoring equipment (coordinates only)",
+      "Third-party testing beyond allowance"
+    ],
+    "clarifications": [
+      "Base bid meets RFP; VE options offered for owner consideration"
+    ],
+    "substitutions_proposed": []
+  },
+  "materials_system": {
+    "manufacturer": "GAF / Carlisle / Firestone (certified)",
+    "system_name": "TPO 60 mil fully adhered with gypsum cover board (base); 80 mil + R-38 + MA (VE-5 option)",
+    "membrane_thickness_actual": "60 mil base / 80 mil VE",
+    "insulation_spec": "Polyiso R-30 two-layer staggered + gypsum cover board (base)",
+    "cover_board_included": true,
+    "product_data_sheets_attached": true
+  },
+  "warranty_offered": {
+    "manufacturer_years": 20,
+    "warranty_type": "total_system_ndl",
+    "workmanship_years": 2,
+    "wind_uplift_coverage_mph": null,
+    "manufacturer_certified_installer": true,
+    "certification_program": "GAF Master Elite + Carlisle Master + Firestone Premier",
+    "evidence_page": "Cover letter + warranty sample"
+  },
+  "qualifications": {
+    "years_in_business": 14,
+    "wsib_clearance_attached": true,
+    "wsib_in_good_standing": true,
+    "cgl_limit_cad": 5000000,
+    "cgl_completed_operations_years": 2,
+    "owner_named_as_additional_insured": true,
+    "coi_attached": true,
+    "working_at_heights_training_confirmed": true,
+    "references_provided": [
+      { "project_name": "Amazon Fulfillment Centre YHM1, Hamilton (occupied, 185,000 sqft, VE saved $127k)", "completion_year": 2024, "similar_scope": true },
+      { "project_name": "Magnotta Winery Expansion (92,000 sqft phased during harvest)", "completion_year": 2023, "similar_scope": true },
+      { "project_name": "Prologis Park 407, Vaughan (145,000 sqft multi-building portfolio)", "completion_year": 2025, "similar_scope": true },
+      { "project_name": "Apotex Pharmaceuticals, Toronto (78,000 sqft, temperature-sensitive — directly analogous)", "completion_year": 2024, "similar_scope": true }
+    ],
+    "subcontracting_declared": false,
+    "subcontractors_named": []
+  },
+  "schedule": {
+    "mobilization_days_after_award": null,
+    "work_duration_days": 90,
+    "substantial_completion_date": "2026-07-30",
+    "crew_size": 4,
+    "accommodates_occupied_building": true
+  },
+  "technical_approach": {
+    "narrative": "3-phase plan: office wing (1-18), main NW (19-52), main SE with ponding tapered (53-90). Max 10,000 sqft exposed. Bi-weekly coordination. Substantial completion 1 day before July 31 LD threshold.",
+    "tear_off_staging_plan": "6-page phasing plan attached",
+    "weather_protection_plan": "Daily watertight by 5PM; reinforced weighted tarps + secondary drainage",
+    "fall_protection_plan": "COR certified, annual WAH refresh, dedicated safety coordinator for projects >75,000 sqft",
+    "waste_disposal_plan": "Legal disposal; $3,500 hazmat testing allowance included",
+    "site_safety_plan_attached": true
+  },
+  "mandatory_gates": {
+    "wsib": { "result": "pass", "evidence": "Clearance attached, WSIB rate 0.81 (well below 1.0 avg — strong safety record)" },
+    "cgl": { "result": "pass", "evidence": "$5M CGL meets minimum + $2M pollution liability" },
+    "additional_insured": { "result": "pass", "evidence": "COI attached; standard for COR-certified" },
+    "completed_ops": { "result": "pass", "evidence": "2-yr completed ops meets minimum" },
+    "wah_training": { "result": "pass", "evidence": "Annual updates; COR certified" },
+    "addenda": { "result": "pass", "evidence": "Attachments comprehensive" },
+    "site_visit": { "result": "pass", "evidence": "Attended March 25" },
+    "years_in_business": { "result": "pass", "evidence": "14 years (since 2012)" },
+    "references": { "result": "pass", "evidence": "4 occupied-building refs including Apotex (pharma temperature-sensitive — directly analogous) and Amazon YHM1. Fully satisfies RFP §5.1." },
+    "manufacturer_certification": { "result": "pass", "evidence": "GAF Master Elite (top 2%) + Carlisle Master + Firestone Premier" },
+    "warranty_minimum": { "result": "pass", "evidence": "20-yr NDL meets min; 2-yr workmanship meets min (can upgrade to 5-yr for $8,500)" },
+    "membrane_spec": { "result": "pass", "evidence": "60 mil meets min" },
+    "insulation_spec": { "result": "pass", "evidence": "R-30 two-layer staggered matches spec" },
+    "cover_board": { "result": "pass", "evidence": "Gypsum cover board included in base bid" },
+    "ponding_correction": { "result": "pass", "evidence": "$20,000 tapered insulation allowance + 5-yr ponding warranty" }
+  },
+  "red_flags": [
+    { "severity": "medium", "category": "warranty", "description": "Base workmanship 2 years meets min but lags Summit (5 yr) and Pinnacle (3 yr). $8,500 upgrade to 5-yr available as negotiation item", "citation": "fixture 02 §3 workmanship warranty range 2-10 yr", "evidence": "Warranty section page 3", "recommendation": "negotiate — include 5-yr upgrade in contract" },
+    { "severity": "medium", "category": "scope", "description": "VE-5 suggests removing cover board on MA system — manufacturer-acceptable but departs from RFP spec. Owner must decide whether VE-5 is accepted (saves $8k; upgrades membrane + insulation) or base bid preserved.", "citation": "RFP §3.2 cover board requirement + fixture 02 §4 MA-system manufacturer variance", "evidence": "VE Option 5 details", "recommendation": "clarify — owner elects base or VE-5 at contract formation" },
+    { "severity": "low", "category": "schedule", "description": "Substantial completion July 30 leaves 1 day margin before $500/day LD trigger July 31. Typical risk factor but no contingency buffer in schedule.", "citation": "RFP §9.5 liquidated damages", "evidence": "Schedule page 3", "recommendation": "accept-with-condition — include weather/unforeseen-condition extension protocol in contract" }
+  ],
+  "scores": {
+    "technical_approach": 88,
+    "experience_references": 92,
+    "warranty_materials": 82,
+    "schedule": 88,
+    "qualifications_certifications": 90
+  }
+}

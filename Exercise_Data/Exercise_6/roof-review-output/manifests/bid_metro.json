@@ -1,0 +1,145 @@
+{
+  "bidder_id": "metro",
+  "bidder_name": "Metro Building Solutions Inc.",
+  "source_pdf": "04-Bid-Metro-Building-Solutions.md",
+  "pricing": {
+    "base_bid_cad": 468000,
+    "hst_included": false,
+    "alternates": [
+      { "description": "Cover board installation", "price_cad": 38000 },
+      { "description": "Steel deck repair allowance", "price_cad": 35000 },
+      { "description": "Wood deck repair allowance", "price_cad": 20000 },
+      { "description": "Tapered insulation for ponding", "price_cad": 28000 },
+      { "description": "Drain replacement (~6 drains)", "price_cad": 14400 },
+      { "description": "HVAC curb work (~4)", "price_cad": 12800 },
+      { "description": "Skylight replacement (4 per count)", "price_cad": 19200 }
+    ],
+    "unit_prices": {
+      "deck_replacement_per_hr": 185,
+      "weekend_premium_per_hr": 95,
+      "fascia_per_lf": 145
+    },
+    "allowances_carried": []
+  },
+  "scope_response": {
+    "full_compliance_claimed": false,
+    "exclusions_declared": [
+      "Steel deck repairs ($185/hr + materials, est $25-45k)",
+      "Wood deck replacement ($15-25k est)",
+      "Cover board (NOT included; $38k optional)",
+      "Tapered insulation for ponding (NOT included; $22-35k optional)",
+      "Drain bowl/leader replacement ($2,400/drain)",
+      "HVAC curb modifications ($3,200/unit)",
+      "Skylight work ($4,800/skylight)",
+      "Work outside standard hours ($95/hr worker premium)",
+      "Hazmat abatement (actual cost + 15%)",
+      "Additional insulation above R-30 ($3.20/sf per R-value)",
+      "Infrared survey ($4,500)",
+      "Building permits ($3,800-$5,200)",
+      "Third-party testing (actual + 10%)",
+      "Landscape protection beyond caution tape",
+      "Waste disposal fee escalation (market adjustment)",
+      "Material price escalation (>60 day delay)",
+      "Substantial completion inspection ($2,800)",
+      "Phasing coordination >90 days ($2,500/week)",
+      "Temperature monitoring (actual + 10%)",
+      "Weekend weather protection ($1,500/wknd)",
+      "Multi-level access special equipment (actual rental)"
+    ],
+    "clarifications": [
+      "Phasing can be accomplished within 90 days IF reasonable cooperation",
+      "Cover board typically not required for buildings of this type",
+      "Ponding does not necessarily indicate failure; address only if leaks",
+      "Mechanically attached equivalent performance to fully adhered"
+    ],
+    "substitutions_proposed": [
+      { "spec_item": "Two-layer R-30 staggered", "substitute_offered": "Single-layer R-30", "equivalence_justification": "Meets OBC minimum; single-layer 'industry standard'" },
+      { "spec_item": "Cover board required", "substitute_offered": "No cover board", "equivalence_justification": "'Typically not required for industrial buildings unless specified by manufacturer for warranty'" }
+    ]
+  },
+  "materials_system": {
+    "manufacturer": "not specified",
+    "system_name": "TPO 60 mil mechanically attached, single-layer insulation, no cover board",
+    "membrane_thickness_actual": "60 mil",
+    "insulation_spec": "Polyiso R-30 single layer",
+    "cover_board_included": false,
+    "product_data_sheets_attached": true
+  },
+  "warranty_offered": {
+    "manufacturer_years": 20,
+    "warranty_type": "unclear",
+    "workmanship_years": 1,
+    "wind_uplift_coverage_mph": null,
+    "manufacturer_certified_installer": false,
+    "certification_program": "",
+    "evidence_page": "Cover letter"
+  },
+  "qualifications": {
+    "years_in_business": 16,
+    "wsib_clearance_attached": true,
+    "wsib_in_good_standing": true,
+    "cgl_limit_cad": 5000000,
+    "cgl_completed_operations_years": null,
+    "owner_named_as_additional_insured": null,
+    "coi_attached": true,
+    "working_at_heights_training_confirmed": true,
+    "references_provided": [
+      { "project_name": "Smallwood Industrial Park, Etobicoke (48,000 sqft — below 50k threshold)", "completion_year": 2024, "similar_scope": false },
+      { "project_name": "Valley View Warehouse, Vaughan (52,000 sqft)", "completion_year": 2023, "similar_scope": true },
+      { "project_name": "Eastgate Commerce Centre, Mississauga (67,000 sqft)", "completion_year": 2025, "similar_scope": true }
+    ],
+    "subcontracting_declared": null,
+    "subcontractors_named": []
+  },
+  "schedule": {
+    "mobilization_days_after_award": null,
+    "work_duration_days": 90,
+    "substantial_completion_date": "2026-08-15",
+    "crew_size": null,
+    "accommodates_occupied_building": false
+  },
+  "technical_approach": {
+    "narrative": "Standard tear-off and replacement. Work can be phased if needed.",
+    "tear_off_staging_plan": "",
+    "weather_protection_plan": "",
+    "fall_protection_plan": "Fall protection equipment provided",
+    "waste_disposal_plan": "",
+    "site_safety_plan_attached": false
+  },
+  "mandatory_gates": {
+    "wsib": { "result": "pass", "evidence": "Clearance attached, WSIB rate 1.12 — ABOVE industry average 1.0 indicates weaker safety record" },
+    "cgl": { "result": "pass", "evidence": "$5M CGL meets minimum" },
+    "additional_insured": { "result": "needs_clarification", "evidence": "COI attached; AI status not confirmed" },
+    "completed_ops": { "result": "needs_clarification", "evidence": "Completed ops tail not disclosed" },
+    "wah_training": { "result": "pass", "evidence": "Fall protection provided" },
+    "addenda": { "result": "needs_clarification", "evidence": "Addenda not explicitly acknowledged" },
+    "site_visit": { "result": "pass", "evidence": "Attended" },
+    "years_in_business": { "result": "pass", "evidence": "16 years (since 2010)" },
+    "references": { "result": "needs_clarification", "evidence": "Smallwood at 48,000 below 50k min; none of three explicitly identified as OCCUPIED with phasing per RFP §5.1" },
+    "manufacturer_certification": { "result": "fail", "evidence": "No manufacturer certification provided; RFP §5.1.6 mandatory" },
+    "warranty_workmanship": { "result": "fail", "evidence": "1-year workmanship below RFP §9.6 2-year minimum" },
+    "membrane_spec": { "result": "pass", "evidence": "60 mil meets min" },
+    "insulation_spec": { "result": "fail", "evidence": "Single-layer R-30 proposed vs RFP §3.2 minimum two-layer staggered" },
+    "cover_board": { "result": "fail", "evidence": "Cover board excluded from base vs RFP §3.2 requirement" },
+    "ponding_correction": { "result": "fail", "evidence": "Tapered insulation excluded; denies ponding requires correction vs RFP §11.5" }
+  },
+  "red_flags": [
+    { "severity": "critical", "category": "pricing", "description": "Low-bid trap — base $468k, but 25 enumerated exclusions with large dollar values ($35k deck, $38k cover board, $28k ponding, $19k skylights, $14k drains, $12k HVAC). Realistic project total likely $600-$700k including known-required scope.", "citation": "fixture 03 §4 unbalanced bidding + low-bid trap", "evidence": "Exclusions list, bid pages 2-4", "recommendation": "reject" },
+    { "severity": "critical", "category": "scope", "description": "Excludes cover board, tapered insulation, and denies both are needed — direct contradiction of RFP §3.2 and §11.5", "citation": "RFP §3.2 + §11.5", "evidence": "Clarifications #13-15", "recommendation": "reject" },
+    { "severity": "critical", "category": "materials", "description": "Single-layer insulation vs RFP minimum two-layer staggered", "citation": "RFP §3.2 + fixture 02 §1 thermal bridging", "evidence": "Key Specifications section", "recommendation": "reject" },
+    { "severity": "critical", "category": "warranty", "description": "1-year workmanship warranty below RFP 2-year minimum", "citation": "RFP §9.6 mandatory", "evidence": "Warranty section", "recommendation": "reject" },
+    { "severity": "critical", "category": "qualifications", "description": "No manufacturer certification — RFP §5.1.6 mandatory gate", "citation": "RFP §5.1.6 + fixture 02 §3", "evidence": "Cover letter silent on manufacturer programs", "recommendation": "reject" },
+    { "severity": "high", "category": "safety", "description": "WSIB experience rating 1.12 — above industry average 1.0, indicates below-average safety performance. Financial-distress / safety-risk signal per fixture 04 §5", "citation": "fixture 04 §1.5 + §5", "evidence": "Safety Program section", "recommendation": "reject" },
+    { "severity": "high", "category": "scope", "description": "References fail 50,000+ sqft threshold (Smallwood 48k) and occupied-with-phasing requirement", "citation": "RFP §5.1.4", "evidence": "References section", "recommendation": "reject" },
+    { "severity": "high", "category": "pricing", "description": "20% upfront payment at signing is aggressive and inconsistent with Ontario Construction Act norms (progress billings monthly with 10% holdback is the stipulated structure)", "citation": "RFP §9.3 + Ontario Construction Act", "evidence": "Payment Schedule section", "recommendation": "reject" },
+    { "severity": "high", "category": "scope", "description": "Weekend weather protection excluded ($1,500/wknd) — directly contradicts RFP §4.3 phasing requirements", "citation": "RFP §4.3", "evidence": "Exclusion #23", "recommendation": "reject" },
+    { "severity": "medium", "category": "scope", "description": "Denies skylight count (claims 4 seen vs RFP states 4) — minor but inattention to RFP detail", "citation": "RFP §2.1.5", "evidence": "Exclusion #8 notes mismatch", "recommendation": "clarify" }
+  ],
+  "scores": {
+    "technical_approach": 25,
+    "experience_references": 45,
+    "warranty_materials": 30,
+    "schedule": 40,
+    "qualifications_certifications": 35
+  }
+}

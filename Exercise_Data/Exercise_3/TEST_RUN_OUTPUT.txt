@@ -1,0 +1,231 @@
+
+################################################################################
+# CRE-150 EXERCISE 3 — TEST RUN OF ANTHROPIC FINANCE PLUGIN
+# Plugin: knowledge-work-plugins/finance v1.2.0
+# Data: Matheson Gateway Centre FY2025 GL Extract (173 transactions)
+# Run date: 2026-04-15
+################################################################################
+
+================================================================================
+/reconciliation opex 2025
+================================================================================
+
+Following methodology: knowledge-work-plugins/finance/skills/reconciliation/SKILL.md
+Adapted for budget-vs-actual opex reconciliation (CAM recovery context).
+
+Category                   Budget       Actual   Difference    % Var
+--------------------------------------------------------------------
+Realty Tax           $   420,000 $   495,600 $   +75,600  +18.0%
+Utilities            $   195,000 $   204,900 $    +9,900   +5.1%
+R&M                  $   115,000 $   104,896 $   -10,104   -8.8%
+Management Fee       $   108,000 $   114,800 $    +6,800   +6.3%
+Janitorial           $    85,000 $    99,496 $   +14,496  +17.1%
+Insurance            $    55,000 $    55,000 $        +0   +0.0%
+Security             $    45,000 $    45,000 $        +0   +0.0%
+Landscaping          $    35,000 $    35,000 $        +0   +0.0%
+Snow & Ice           $    24,000 $    24,000 $        +0   +0.0%
+--------------------------------------------------------------------
+TOTAL                $ 1,082,000 $ 1,178,692 $   +96,692   +8.9%
+
+RECONCILING ITEMS — CATEGORY 2 (ADJUSTMENTS REQUIRED)
+--------------------------------------------------------------------
+
+  >>> DUPLICATE INVOICE DETECTED <<<
+      Vendor:     Enbridge Gas Inc.
+      Invoice #:  GA-2025-12-4471
+      Amount:     $9,900.00
+      Postings:
+        - 2025-12-22  acct 6320  "Dec 2025 gas — common area + base building"
+        - 2025-12-29  acct 6320  "Dec 2025 gas — invoice re-entered in year-end close (DUPLICATE OF 2025"
+      Category:   Category 2 — Recording error (duplicate)
+      Action:     Reverse $9,900.00 from GL. Verify in AP system.
+      Age:        107 days since most recent posting
+
+RECONCILING ITEMS — CATEGORY 3 (REQUIRES INVESTIGATION)
+--------------------------------------------------------------------
+
+  >>> OUTLIER POSTING — investigate <<<
+      Date:       2025-10-18
+      Vendor:     Clean Pro Services Ltd.
+      Category:   Janitorial - Contract
+      Amount:     $14,500.00  (typical: $4,200)
+      Invoice #:  CPS-SPECIAL-2025-1018
+      Memo:       Suite 320 move-out deep clean & restoration (predecessor Apex Consulting) — post-vacate cleaning, carpet extraction, wall spot-paint, kitchenette degrease
+      Category:   Category 3 — Requires investigation
+      Action:     Review invoice. If related to tenant turnover or one-time
+                  event, may require reclassification per lease terms.
+
+  >>> OUTLIER POSTING — investigate <<<
+      Date:       2025-12-31
+      Vendor:     Snowman Contracting
+      Category:   Snow & Ice
+      Amount:     $11,400.00  (typical: $3,600)
+      Invoice #:  SNOW-2025-DEC
+      Memo:       December 2025 snow plowing + salting (7 events)
+      Category:   Category 3 — Requires investigation
+      Action:     Review invoice. If related to tenant turnover or one-time
+                  event, may require reclassification per lease terms.
+
+  >>> OUTLIER POSTING — investigate <<<
+      Date:       2025-03-22
+      Vendor:     Metro Building Services
+      Category:   R&M - General
+      Amount:     $8,900.00  (typical: $2,100)
+      Invoice #:  MRO-2025-0322
+      Memo:       LED retrofit, parking garage fixtures (42 units)
+      Category:   Category 3 — Requires investigation
+      Action:     Review invoice. If related to tenant turnover or one-time
+                  event, may require reclassification per lease terms.
+
+  >>> OUTLIER POSTING — investigate <<<
+      Date:       2025-09-28
+      Vendor:     Metro Building Services
+      Category:   R&M - General
+      Amount:     $6,800.00  (typical: $2,100)
+      Invoice #:  MRO-2025-0928
+      Memo:       Asphalt crack sealing, parking lot (pre-winter)
+      Category:   Category 3 — Requires investigation
+      Action:     Review invoice. If related to tenant turnover or one-time
+                  event, may require reclassification per lease terms.
+
+TREND ANALYSIS — Realty Tax (monthly)
+--------------------------------------------------------------------
+  Month          Amount      vs Jan
+  Jan      $    35,000         +0
+  Feb      $    35,000         +0
+  Mar      $    35,000         +0
+  Apr      $    35,000         +0
+  May      $    35,000         +0
+  Jun      $    35,000         +0
+  Jul      $    47,600    +12,600   ← STEP CHANGE
+  Aug      $    47,600    +12,600
+  Sep      $    47,600    +12,600
+  Oct      $    47,600    +12,600
+  Nov      $    47,600    +12,600
+  Dec      $    47,600    +12,600
+
+  >>> STEP-CHANGE DETECTED: Jul 2025 onward
+      Pattern consistent with tax reassessment or rate change event.
+      Action: Obtain MPAC Notice or tax rate documentation to confirm driver.
+      Category: Category 2 — legitimate variance if documented, recoverable per lease.
+
+AGING OF RECONCILING ITEMS
+--------------------------------------------------------------------
+  0-30     $         0
+  31-60    $         0
+  61-90    $         0
+  90+      $    51,500 ← ESCALATE
+
+
+================================================================================
+/variance-analysis opex 2025 vs budget
+================================================================================
+
+Following methodology: knowledge-work-plugins/finance/skills/variance-analysis/SKILL.md
+
+Materiality threshold (5% of total budget): $54,100
+Individual line materiality (5% of line budget): varies per line
+
+MATERIAL VARIANCES (exceeding 5% of line budget):
+--------------------------------------------------------------------------------
+
+  Realty Tax: $+75,600 (UNFAVORABLE, 18.0% of budget)
+    Driver decomposition (rate/volume analog for tax):
+      H1 2025 (Jan-Jun):  6 mo × $35,000 = $210,000 (pre-reassessment)
+      H2 2025 (Jul-Dec):  6 mo × $47,600 = $285,600 (post-reassessment)
+      Step change driver: tax assessment event (not rate inflation)
+      Recommended narrative: 'MPAC reassessment effective July 1,
+      2025 increased assessed value, driving $75,600 variance. Confirm
+      with assessment notice and validate recovery treatment per lease'
+
+  Utilities: $+9,900 (UNFAVORABLE, 5.1% of budget)
+    Driver decomposition (spend category):
+      Electric           $   115,000
+      Gas                $    71,900
+      Water              $    18,000
+    NOTE: Duplicate invoice detected in reconciliation. After reversal of
+    $9,900 duplicate, utilities actual = $195,000 ≈ budget. Variance is
+    100% attributable to the duplicate posting, not to true utility usage.
+
+  R&M: $-10,104 (FAVORABLE, 8.8% of budget)
+    Driver decomposition: immaterial or no structured driver data available.
+
+  Management Fee: $+6,800 (UNFAVORABLE, 6.3% of budget)
+    Driver decomposition:
+      Budgeted on projected EGI of $2,700,000 × 4% = $108,000
+      Actual posted: $114,800
+      Implied revenue basis: $2,870,000
+    >>> PLUGIN LIMITATION: Cannot determine whether the correct revenue
+        basis is Gross Potential Income, Effective Gross Income, or actual
+        cash received. Requires reading the Management Agreement §4.1 to
+        validate. Flag for human review.
+
+  Janitorial: $+14,496 (UNFAVORABLE, 17.1% of budget)
+    Driver decomposition (recurring vs one-time):
+      Recurring contract + day porter + supplies + window: $84,996
+      One-time entry (Oct 18, Suite 320 deep clean):       $14,500
+      Recurring is 85.4% of actual; one-time is 14.6%
+    NOTE: $14,500 one-time posting is outlier to contract pattern.
+    Memo indicates tenant-turnover event. Recommend review against lease
+    exclusions before including in recoverable opex.
+
+TOTAL VARIANCE: $+96,692
+  Favorable components: $-10,104
+  Unfavorable components: $+106,796
+
+
+================================================================================
+/income-statement annual 2025
+================================================================================
+
+Following methodology: knowledge-work-plugins/finance/skills/financial-statements/SKILL.md
+
+MATHESON GATEWAY CENTRE — FY2025 PROPERTY INCOME STATEMENT
+================================================================================
+
+                                                 Actual         Budget          Var $
+-------------------------------------------------------------------------------------
+REVENUE                                 
+  Gross Potential Base Rent                   1,756,000      1,756,000             +0
+  Gross Potential Recoveries                  1,017,000      1,017,000             +0
+  Parking Income                                 85,000         85,000             +0
+  Other Income                                   12,000         12,000             +0
+  Less: Vacancy Loss (Suite 320)                -80,000        -70,000        -10,000
+  Less: Credit/Collection Allowance             -20,000        -20,000             +0
+-------------------------------------------------------------------------------------
+EFFECTIVE GROSS INCOME (EGI)                  2,770,000      2,780,000        -10,000
+
+OPERATING EXPENSES                      
+  Realty Tax                                    495,600        420,000        +75,600
+  Utilities                                     204,900        195,000         +9,900
+  R&M                                           104,896        115,000        -10,104
+  Management Fee                                114,800        108,000         +6,800
+  Janitorial                                     99,496         85,000        +14,496
+  Insurance                                      55,000         55,000             +0
+  Security                                       45,000         45,000             +0
+  Landscaping                                    35,000         35,000             +0
+  Snow & Ice                                     24,000         24,000             +0
+-------------------------------------------------------------------------------------
+TOTAL OPERATING EXPENSES                      1,178,692      1,082,000        +96,692
+
+NET OPERATING INCOME (NOI)                    1,591,308      1,698,000       -106,692
+
+FLUX COMMENTARY (material variances >5% of line):
+-------------------------------------------------------------------------------------
+  Realty Tax ($75,600 unfavorable): MPAC reassessment effective 2025-07-01 drove
+    step increase from $35k/mo to $47.6k/mo in H2 2025. Legitimate variance.
+    Recoverable from tenants per standard lease §6.01 (realty tax is recoverable).
+
+  Utilities ($9,900 unfavorable): Investigate — reconciliation flagged duplicate
+    Enbridge invoice GA-2025-12-4471 posted twice (Dec 22 and Dec 29). Pending
+    reversal, variance is $0 after correction.
+
+  Janitorial ($14,496 unfavorable): One-time $14,500 posting Oct 18 for Suite 320
+    move-out deep clean. Recommend lease review — per standard lease §6.03(c),
+    one-time tenant-turnover charges may be excluded from recoverable opex.
+
+  Management Fee ($6,800 unfavorable): Requires review of Management Agreement §4.1
+    to determine correct revenue basis. Implied basis of $2,870,000 differs from
+    budgeted EGI basis of $2,700,000. Cannot programmatically verify without
+    reading the agreement — flag for human review.
+
