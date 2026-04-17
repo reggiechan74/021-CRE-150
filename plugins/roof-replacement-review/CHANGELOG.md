@@ -10,6 +10,10 @@
 - `scripts/normalize.py` gains `--qual-sidecars` and `--tech-sidecars` flags and deep-merges sidecar files onto base bid manifests. Collisions on `mandatory_gates`, `scores`, or `scoring_rationale` keys are fatal — they indicate a skill wrote outside its ownership boundary.
 - `roof-qualification-check` and `roof-technical-review` SKILL.md files now specify allowlisted fixture reads to reduce per-subagent context load.
 
+### Added
+- Gate-applicability tier model: `scripts/gate_applicability.py` and `scripts/reconcile_gates.py` classify gates as statutory / RFP-specified / prudent-evaluator and refuse to score a tender when a bidder was failed on a gate the RFP never invoked, or when identical evidence was treated asymmetrically across bidders. The qualification-check SKILL picked up the matching three-tier `compliant` / `conditional` / `non_compliant` compliance model. This work originated alongside the pipeline-speedup commits and landed together with them.
+- Deterministic renderer scripts (`render_matrix.py`, `render_memo.py`) produce the scoring matrix and recommendation memo mechanically from the tender manifest, with optional LLM refinement passes layered on top via the baseline-refinement pattern.
+
 ### Migration notes
 - Legacy base-bid manifests that already carry merged gates/scores still work when `normalize.py` is called without sidecar globs. Fixtures under `fixtures/sample_bids/` are unchanged.
 - Any caller that ran `normalize.py` with the old two-flag shape is untouched; the two new flags are optional.

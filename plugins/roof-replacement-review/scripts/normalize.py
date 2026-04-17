@@ -103,12 +103,16 @@ def main() -> int:
 
     qual_index: dict[str, dict] = {}
     tech_index: dict[str, dict] = {}
-    if args.qual_sidecars:
-        qual_paths = sorted(Path(p) for p in glob.glob(args.qual_sidecars))
-        qual_index = index_by_bidder(qual_paths)
-    if args.tech_sidecars:
-        tech_paths = sorted(Path(p) for p in glob.glob(args.tech_sidecars))
-        tech_index = index_by_bidder(tech_paths)
+    try:
+        if args.qual_sidecars:
+            qual_paths = sorted(Path(p) for p in glob.glob(args.qual_sidecars))
+            qual_index = index_by_bidder(qual_paths)
+        if args.tech_sidecars:
+            tech_paths = sorted(Path(p) for p in glob.glob(args.tech_sidecars))
+            tech_index = index_by_bidder(tech_paths)
+    except ValueError as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        return 1
 
     all_errors: list[str] = []
     for bid in bids:

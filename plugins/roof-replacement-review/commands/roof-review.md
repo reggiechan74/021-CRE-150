@@ -29,6 +29,11 @@ Resolve the plugin root from `CLAUDE_PLUGIN_ROOT` or use:
    Run the `roof-bid-extract` skill on this single bid. Write the base bid manifest
    to <RFP_DIR>/roof-review-output/manifests/bid_<slug>.json.
 
+   IMPORTANT: rfp.json is being extracted concurrently by a sibling wave-1 subagent
+   and is NOT yet available. Do not attempt to read it. Per `roof-bid-extract`
+   SKILL.md §Inputs, this skill does not require the RFP manifest — record bid
+   facts verbatim and defer RFP comparison to wave 2.
+
    Do NOT touch rfp.json or any other bid's manifest. Do NOT evaluate mandatory
    gates or sub-scores — that is wave 2's job.
 
