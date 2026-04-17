@@ -17,6 +17,7 @@ import pytest
 
 PLUGIN_ROOT = Path(__file__).resolve().parents[1]
 NORMALIZE = PLUGIN_ROOT / "scripts" / "normalize.py"
+FIXTURES = PLUGIN_ROOT / "fixtures"
 
 
 def _write_json(path: Path, data: dict) -> None:
@@ -201,3 +202,26 @@ def test_merge_warns_on_orphan_sidecar(tmp_path: Path, rfp_manifest: Path, base_
     )
     assert "mystery" in result.stderr
     assert "no matching base bid" in result.stderr
+
+
+def test_legacy_fixture_shape_still_merges_cleanly(tmp_path: Path) -> None:
+    """Regression guard: legacy fixtures (pre-sidecar) have qual+tech fields
+    already merged into the base bid manifest. normalize must accept them
+    unchanged when no sidecar globs are passed."""
+    out = tmp_path / "tender_manifest.json"
+    result = subprocess.run(
+        [
+            sys.executable, str(NORMALIZE),
+            "--rfp", str(FIXTURES / "sample_rfp" / "rfp.json"),
+            "--bids", str(FIXTURES / "sample_bids" / "bid_*.json"),
+            "--out", str(out),
+        ],
+        capture_output=True, text=True, check=True,
+    )
+    assert "Qual sidecars merged" not in result.stdout
+    data = json.loads(out.read_text())
+    assert len(data["bids"]) == 3
+    # Legacy fixtures carry these pre-populated — they must survive the pass-through.
+    for bid in data["bids"]:
+        assert "mandatory_gates" in bid
+        assert "scores" in bid
