@@ -1,0 +1,517 @@
+{
+  "bidder_id": "heritage",
+  "bidder_name": "Heritage Construction Group",
+  "source_pdf": "05-Bid-Heritage-Construction.md",
+  "pricing": {
+    "base_bid_cad": 578000,
+    "hst_included": false,
+    "alternates": [
+      {
+        "description": "VE Option 1: Mechanically attached system (instead of fully adhered) \u2014 save $42,000",
+        "price_cad": -42000
+      },
+      {
+        "description": "VE Option 2: Reduced insulation \u2014 single-layer R-30 instead of two-layer staggered \u2014 save $18,000 (contractor NOT RECOMMENDED)",
+        "price_cad": -18000
+      },
+      {
+        "description": "VE Option 3: Upgrade 60 mil to 80 mil TPO with 30-year NDL \u2014 add $38,000",
+        "price_cad": 38000
+      },
+      {
+        "description": "VE Option 4: Upgrade R-30 to R-38 insulation \u2014 add $24,000",
+        "price_cad": 24000
+      },
+      {
+        "description": "VE Option 5: Combined (mech-attached + 80 mil + R-38, no cover board) \u2014 net add $12,000",
+        "price_cad": 12000
+      },
+      {
+        "description": "VE Option 6: Phased installation across fiscal years for CCA treatment (schedule impact)",
+        "price_cad": null
+      }
+    ],
+    "unit_prices": {
+      "deck_replacement_per_bf": null,
+      "insulation_per_sqft_per_rvalue": null,
+      "flashing_per_lf": null
+    },
+    "allowances_carried": [
+      {
+        "item": "Tapered insulation allowance (ponding correction)",
+        "amount_cad": 20000
+      },
+      {
+        "item": "Steel deck repair allowance",
+        "amount_cad": 10000
+      },
+      {
+        "item": "Wood deck repair allowance (office wing)",
+        "amount_cad": 10000
+      },
+      {
+        "item": "Hazardous material testing allowance",
+        "amount_cad": 3500
+      }
+    ]
+  },
+  "scope_response": {
+    "full_compliance_claimed": true,
+    "exclusions_declared": [
+      "Major steel deck repairs exceeding $10,000 allowance",
+      "Major wood deck replacement exceeding $10,000 allowance",
+      "Replacement of damaged roof drains or leaders",
+      "Skylight replacement or major repairs",
+      "HVAC equipment modifications or replacements",
+      "Work outside standard hours (7 AM - 6 PM weekdays)",
+      "Hazardous material abatement beyond minor handling",
+      "Building permits (estimated $4,500-$6,000)",
+      "Temperature monitoring equipment (owner to provide)",
+      "Third-party testing/inspection beyond our testing allowance"
+    ],
+    "clarifications": [
+      "Ponding correction based on $20,000 tapered-insulation allowance; final quantity TBD at removal",
+      "Deck allowances ($10k steel + $10k wood) assumed sufficient for typical conditions; extras via change order",
+      "ACM testing allowance included; major abatement would be extra",
+      "HVAC shutdowns assumed to be schedulable for weekends; weekday shutdowns require 72-hr notice",
+      "Owner to provide temperature monitoring equipment in warehouse",
+      "Cover board included in base bid but can be removed if VE Option 5 is selected",
+      "Building permits typically owner responsibility; can be arranged for separate fee"
+    ],
+    "substitutions_proposed": [
+      {
+        "spec_item": "Fully-adhered TPO per RFP \u00a73.1",
+        "substitute_offered": "Mechanically attached TPO (VE Option 1)",
+        "equivalence_justification": "Contractor asserts mechanically attached system is acceptable for a single-storey, 28-ft industrial building with parapet walls in Mississauga; warranty and service life comparable (25-28 years vs 30+ years), savings $42,000. Proposed as optional VE \u2014 base bid remains fully-adhered."
+      },
+      {
+        "spec_item": "Cover board (1/4\" gypsum or HD polyiso) per RFP",
+        "substitute_offered": "No cover board (under VE Option 5 only)",
+        "equivalence_justification": "Contractor states Carlisle and Firestone do not require cover board with mechanically attached assembly. Only applies if VE Option 5 accepted. Base bid retains 1/4\" gypsum cover board."
+      }
+    ]
+  },
+  "materials_system": {
+    "manufacturer": "Carlisle / Firestone / GAF (multiple certifications held; specific manufacturer for this project not named in base bid)",
+    "system_name": "TPO single-ply, 60 mil, fully-adhered with R-30 polyiso (two-layer staggered) and 1/4\" gypsum cover board",
+    "membrane_thickness_actual": "60 mil",
+    "insulation_spec": "R-30 polyiso, two-layer staggered joints",
+    "cover_board_included": true,
+    "product_data_sheets_attached": true
+  },
+  "warranty_offered": {
+    "manufacturer_years": 20,
+    "warranty_type": "ndl",
+    "workmanship_years": 2,
+    "wind_uplift_coverage_mph": null,
+    "manufacturer_certified_installer": true,
+    "certification_program": "Carlisle Syntec Master Installer; Firestone Premier Contractor; GAF Master Elite",
+    "evidence_page": "Bid \u00a7'WARRANTY (BASE BID)' and \u00a7'MANUFACTURER CERTIFICATIONS'"
+  },
+  "qualifications": {
+    "years_in_business": 14,
+    "wsib_clearance_attached": true,
+    "wsib_clearance_date": null,
+    "wsib_in_good_standing": true,
+    "cgl_limit_cad": 5000000,
+    "cgl_completed_operations_years": null,
+    "owner_named_as_additional_insured": null,
+    "coi_attached": true,
+    "bid_bond_attached": null,
+    "bonding_capacity_cad": 5000000,
+    "working_at_heights_training_confirmed": true,
+    "crca_member": false,
+    "certificate_of_qualification_roofers_count": null,
+    "references_provided": [
+      {
+        "project_name": "Amazon Fulfillment Centre YHM1, Hamilton ON",
+        "owner_contact": "Infrastructure Team, (905) 555-0891",
+        "value_cad": null,
+        "completion_year": 2024,
+        "similar_scope": true
+      },
+      {
+        "project_name": "Magnotta Winery Expansion, Niagara-on-the-Lake ON",
+        "owner_contact": "Marco Caputo, Owner, (905) 555-0634",
+        "value_cad": null,
+        "completion_year": 2023,
+        "similar_scope": true
+      },
+      {
+        "project_name": "Prologis Park 407, Vaughan ON",
+        "owner_contact": "Asset Management, (416) 555-0923",
+        "value_cad": null,
+        "completion_year": 2025,
+        "similar_scope": true
+      },
+      {
+        "project_name": "Apotex Pharmaceuticals, Toronto ON",
+        "owner_contact": "Facility Operations, (416) 555-0834",
+        "value_cad": null,
+        "completion_year": 2024,
+        "similar_scope": true
+      }
+    ],
+    "subcontracting_declared": false,
+    "subcontractors_named": []
+  },
+  "schedule": {
+    "mobilization_days_after_award": null,
+    "work_duration_days": 90,
+    "substantial_completion_date": "2026-07-30",
+    "crew_size": null,
+    "accommodates_occupied_building": true
+  },
+  "technical_approach": {
+    "narrative": "Three-phase plan on 85,000 sqft occupied pharma-warehouse. Phase 1: office wing (5,100 sqft, days 1-18). Phase 2: NW main (20,000 sqft, days 19-52). Phase 3: SE main incl. ponding areas (25,000 sqft, days 53-90). Max 10,000 sqft exposed at any time (below 15,000 sqft RFP limit), daily watertight by 5 PM, weekend reinforced tarps with weighted edges + secondary drainage, 2 coordination meetings/week, 72-hr HVAC shutdown notice.",
+    "tear_off_staging_plan": "Three-phase sequenced staging described (office wing first, then NW main, then SE main). Maximum exposed area capped at 10,000 sqft. No dumpster placement, lift strategy, or adjacent-property protection detail provided.",
+    "weather_protection_plan": "Each phase watertight by 5 PM daily. Weekend protection uses reinforced tarps with weighted edges and secondary drainage. No explicit forecast-monitoring protocol provided.",
+    "fall_protection_plan": "COR-certified; fall protection training for all workers (updated annually); dedicated safety coordinator for projects >75,000 sqft; CRSP-certified Safety Coordinator. No site-specific parapet/perimeter fall-arrest plan, no named anchor points.",
+    "waste_disposal_plan": "Complete roof removal and legal disposal included. Lead flashing separated and disposed of as hazardous waste. No recycling commitments stated.",
+    "site_safety_plan_attached": true
+  },
+  "mandatory_gates": {
+    "wsib_clearance": {
+      "result": "pass",
+      "evidence": "Bid \u00a7INSURANCE COVERAGE cites WSIB Account #7890123-45; attachments list 'WSIB Clearance Certificate' and 'WSIB Experience Rating Letter (0.81)'. RFP \u00a75.1.1.",
+      "notes": "Good-standing text not quoted in the bid body; standard condition for online re-verification at clearances.wsib.ca applies per fixture 04 \u00a71.4."
+    },
+    "cgl_insurance": {
+      "result": "needs_clarification",
+      "evidence": "Bid \u00a7INSURANCE COVERAGE: CGL $5,000,000 per occurrence \u2014 meets RFP \u00a75.1.2 minimum. Bid does NOT explicitly state owner named as additional insured nor the completed-operations tail (RFP requires 2 yrs). COI attached per attachments list but not quoted.",
+      "notes": "Owner to verify COI endorsement shows Tenebrus Capital as additional insured and 2-yr completed-ops coverage per RFP \u00a75.1.2."
+    },
+    "bid_bond": {
+      "result": "pass",
+      "evidence": "RFP \u00a79.2 requires 50% performance + 50% L&M bonds (no bid-bond % stated in RFP). Bid declares bonding capacity up to $5M per project \u2014 comfortably above $578k project value. Consent of surety not explicitly attached.",
+      "notes": "RFP did not require a bid bond; bonding capacity declaration satisfies surety-capacity check. Consent of surety should be confirmed pre-award per fixture 04 \u00a75."
+    },
+    "working_at_heights": {
+      "result": "pass",
+      "evidence": "Bid \u00a7SAFETY PROGRAM: 'Fall protection training for all workers (updated annually)' and COR certification. RFP \u00a75.1 / fixture 04 \u00a73 (O. Reg. 297/13).",
+      "notes": "Current WAH training cards should be verified at contract signing."
+    },
+    "addenda_acknowledgment": {
+      "result": "needs_clarification",
+      "evidence": "Bid does not contain a Form of Tender section explicitly acknowledging addenda. No addenda numbers cited. RFP mandatory per \u00a75.1.",
+      "notes": "Owner to confirm addenda acknowledgment before award."
+    },
+    "non_collusion_declaration": {
+      "result": "needs_clarification",
+      "evidence": "No non-collusion declaration found in the bid body or the attachments list. RFP mandatory.",
+      "notes": "Likely submitted under separate Form of Tender not included in markdown excerpt; owner to confirm."
+    },
+    "site_visit": {
+      "result": "pass",
+      "evidence": "Cover letter: 'We attended the mandatory site visit on March 25, 2026'. RFP \u00a76.4 / \u00a78.1.",
+      "notes": ""
+    },
+    "minimum_years_in_business": {
+      "result": "pass",
+      "evidence": "Cover letter: 'Founded in 2012' \u2014 14 years in business as of 2026. Closing remarks: '14 years in business'. RFP \u00a75.1.3 minimum 10 years.",
+      "notes": ""
+    },
+    "minimum_similar_projects": {
+      "result": "pass",
+      "evidence": "Four references provided (Amazon 185k sqft 2024; Magnotta 92k sqft 2023; Prologis 145k sqft 2025; Apotex 78k sqft 2024). All are commercial roof replacements within last 5 years. RFP \u00a75.1.4 minimum 3.",
+      "notes": "Reference values were not stated in CAD, so the 0.5\u00d7-2\u00d7 comparable-value test cannot be strictly validated; however, roof-area and scope profiles are plausibly comparable. Apotex is the strongest comparator (78k sqft, temperature-sensitive pharma \u2014 near-identical to subject)."
+    }
+  },
+  "red_flags": [
+    {
+      "severity": "high",
+      "category": "qualifications",
+      "description": "CGL coverage: owner-as-additional-insured endorsement and 2-year completed-operations tail not explicitly confirmed in bid narrative.",
+      "citation": "RFP \u00a75.1.2; fixture 04 \u00a72",
+      "evidence": "Bid \u00a7INSURANCE COVERAGE lists CGL $5M but is silent on additional-insured endorsement and completed-ops years.",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "high",
+      "category": "qualifications",
+      "description": "Addenda acknowledgment and non-collusion declaration not evidenced in the submitted bid text.",
+      "citation": "RFP \u00a75.1; CCDC 23 guidance (fixture 03)",
+      "evidence": "Neither item appears in the bid narrative nor in the attachments list.",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "medium",
+      "category": "qualifications",
+      "description": "Reference project values not stated; comparability by 0.5\u00d7-2\u00d7 subject-value test cannot be confirmed.",
+      "citation": "roof-qualification-check Gate 8; fixture 04 \u00a71",
+      "evidence": "Bid \u00a7REFERENCES lists four projects with sqft but omits contract value.",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "critical",
+      "category": "warranty",
+      "description": "RFP requires total_system_ndl warranty; bid offers '20-year NDL warranty on TPO membrane' \u2014 appears to be a membrane-scope NDL, not a total-system NDL covering the full assembly (insulation, flashings, labour). A specific manufacturer system-warranty program is not named for the base bid.",
+      "citation": "RFP \u00a73.1 / \u00a79.6 warranty_type_required = total_system_ndl; fixture 02 \u00a71 & \u00a74.5",
+      "evidence": "Bid \u00a7WARRANTY (BASE BID): 'Manufacturer Warranty: 20-year NDL warranty on TPO membrane'. No named Platinum/Red Shield/Sopra-Garantie Mammouth program attached for base bid.",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "high",
+      "category": "warranty",
+      "description": "Workmanship warranty is 2 years \u2014 meets RFP minimum but below market median of 5 years for a complex occupied pharma-warehouse project with 47 penetrations.",
+      "citation": "fixture 02 \u00a73; RFP \u00a79.6 minimum 2 yrs",
+      "evidence": "Bid \u00a7WARRANTY: 'Workmanship Warranty: 2 years on installation'.",
+      "recommendation": "negotiate"
+    },
+    {
+      "severity": "high",
+      "category": "materials",
+      "description": "Specific membrane manufacturer for the base bid is not named. Contractor lists three certifications (Carlisle, Firestone, GAF) but does not commit to a single product data line for the 60 mil TPO.",
+      "citation": "fixture 02 \u00a74 mis-matched components voids system warranty",
+      "evidence": "Bid \u00a7MANUFACTURER CERTIFICATIONS lists three; base bid section does not name the manufacturer to be installed.",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "high",
+      "category": "safety",
+      "description": "Wind-uplift design basis (CSA A123.21 or FM 1-29) not stated anywhere in the bid. Single-ply commercial roof, 28 ft, with 47 penetrations requires an explicit uplift design reference.",
+      "citation": "fixture 01 \u00a71.2; CSA A123.21",
+      "evidence": "Bid narrative discusses mechanically-attached vs adhered trade-off under VE Option 1 but never cites a wind-uplift design standard.",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "high",
+      "category": "safety",
+      "description": "Fall-protection approach is stated generically (COR, WAH training, safety coordinator) but no site-specific plan naming anchor points, parapet/perimeter detail, or CSA Z91 anchor compliance is provided.",
+      "citation": "fixture 01 \u00a73; CSA Z91",
+      "evidence": "Bid \u00a7SAFETY PROGRAM describes program-level commitments only.",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "critical",
+      "category": "substitutions",
+      "description": "VE Option 5 removes cover board from a TPO-over-polyiso assembly. Removing the cover board over polyiso voids most manufacturer system warranties and creates a long-term performance defect (board-joint telegraphing, membrane puncture). Contractor's blanket claim that 'mechanically attached does not require cover board per Carlisle and Firestone' is not supported by current manufacturer guidelines for system-warranted assemblies.",
+      "citation": "fixture 02 \u00a74 cover board requirement; CRCA best practice",
+      "evidence": "Bid VE Option 5: 'Remove cover board (not required with mechanically attached assembly per manufacturer)'.",
+      "recommendation": "reject"
+    },
+    {
+      "severity": "medium",
+      "category": "substitutions",
+      "description": "VE Option 1 (mechanically attached) proposed as 'ACCEPTABLE' but equivalence justification is thin \u2014 site-specific wind uplift design is not provided, and Ontario TPO wind-event losses correlate with mech-attached systems.",
+      "citation": "fixture 02 \u00a71; fixture 01 \u00a71.2",
+      "evidence": "Bid VE Option 1: 'wind uplift risk is moderate. Mechanically attached systems are widely used in similar applications.'",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "medium",
+      "category": "scope",
+      "description": "Bid excludes 'work outside standard hours (7 AM - 6 PM weekdays)' \u2014 but also commits to 72-hr weekend HVAC shutdowns. Ambiguity about premium for any after-hours or weekend roofing labour that the phasing plan may require.",
+      "citation": "RFP \u00a711.1 occupied-site phasing; RFP \u00a71.2",
+      "evidence": "Bid \u00a7EXCLUSIONS item 6 vs \u00a7PHASING PLAN weekend protection + \u00a7CLARIFICATIONS item 5.",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "medium",
+      "category": "scope",
+      "description": "Crew size not stated and mobilization-days-after-award not stated; 90-day duration on 85,000 sqft occupied building with three phases depends on crew resourcing that is not quantified.",
+      "citation": "RFP \u00a74 schedule; roof-qualification-check schedule sub-factor",
+      "evidence": "Bid \u00a7PROJECT TEAM lists PM/Supervisor/Safety/4 installers but does not specify total crew deployed.",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "low",
+      "category": "scope",
+      "description": "Bid explicitly excludes replacement of damaged roof drains or leaders; RFP scope included 'tapered insulation or added drains' to resolve ponding. Potential scope gap if drain addition becomes the preferred ponding-correction path.",
+      "citation": "RFP \u00a73 scope included_items",
+      "evidence": "Bid \u00a7EXCLUSIONS item 3 vs RFP included_items 'Tapered insulation or added drains'.",
+      "recommendation": "clarify"
+    }
+  ],
+  "extraction_notes": [
+    "Base bid explicitly stated before HST: '$578,000 (before HST)'. HST $75,140 listed separately.",
+    "Specific TPO membrane manufacturer for base bid was not named \u2014 contractor holds three certifications (Carlisle, Firestone, GAF) but did not commit to one. Owner should require manufacturer + product line declared at bid clarification.",
+    "Warranty type recorded as `ndl` (not `total_system_ndl`) because bid says '20-year NDL warranty on TPO membrane' \u2014 scope is the membrane, not the total system, and no named Platinum/Red Shield/Sopra-Garantie program is attached for the base bid. VE Option 3 upgrades to 30-year NDL but still not explicitly total_system_ndl.",
+    "Reference contract values not provided in bid; comparability test uses roof-area and scope profile proxy only. Apotex (78k sqft, temperature-sensitive pharma, 2024) is the strongest direct analogue.",
+    "CGL additional-insured endorsement and completed-operations-years tail were not quoted in the bid narrative; COI is attached but not reproduced. Owner to read COI endorsement directly.",
+    "Addenda acknowledgment and non-collusion declaration were not found in the bid body \u2014 likely submitted under a separate Form of Tender not included in the markdown excerpt. Owner to verify before award.",
+    "Wind-uplift design basis (CSA A123.21 or FM 1-29) not stated anywhere in the bid.",
+    "Crew size and mobilization-days-after-award not stated numerically.",
+    "Unit prices (deck per bf, insulation per sqft per R, flashing per lf) not provided \u2014 all deck/ponding handled via lump-sum allowances.",
+    "VE Option 5's claim that cover board is not required with a mechanically attached TPO assembly is contestable \u2014 most manufacturer system warranties still require a cover board over polyiso. Flagged as critical substitutions red flag."
+  ],
+  "_provenance": {
+    "bidder_name": "Cover letter header 'Heritage Construction Group'",
+    "pricing.base_bid_cad": "\u00a7BID SUMMARY 'Base Bid Price (before HST) $578,000.00'",
+    "pricing.hst_included": "\u00a7BID SUMMARY HST shown separately = hst_included false",
+    "pricing.alternates": "\u00a7VALUE ENGINEERING PROPOSALS VE Options 1-6",
+    "pricing.allowances_carried": "\u00a7PRICE BREAKDOWN (tapered, steel, wood) + \u00a7HAZARDOUS MATERIALS APPROACH (testing allowance)",
+    "scope_response.exclusions_declared": "\u00a7EXCLUSIONS",
+    "scope_response.clarifications": "\u00a7CLARIFICATIONS AND ASSUMPTIONS",
+    "scope_response.substitutions_proposed": "\u00a7VALUE ENGINEERING PROPOSALS VE Option 1 and VE Option 5",
+    "materials_system.membrane_thickness_actual": "\u00a7KEY SPECIFICATIONS 'Membrane Thickness 60 mil'",
+    "materials_system.insulation_spec": "\u00a7KEY SPECIFICATIONS R-30 two-layer staggered",
+    "materials_system.cover_board_included": "\u00a7KEY SPECIFICATIONS '1/4\" gypsum board'",
+    "warranty_offered.manufacturer_years": "\u00a7WARRANTY (BASE BID) '20-year NDL warranty on TPO membrane'",
+    "warranty_offered.warranty_type": "\u00a7WARRANTY (BASE BID); taxonomy per fixture 02 \u00a71 \u2014 NDL scoped to membrane only",
+    "warranty_offered.workmanship_years": "\u00a7WARRANTY (BASE BID) '2 years on installation'",
+    "warranty_offered.certification_program": "\u00a7MANUFACTURER CERTIFICATIONS",
+    "qualifications.years_in_business": "Cover letter 'Founded in 2012' + \u00a7CLOSING '14 years in business'",
+    "qualifications.cgl_limit_cad": "\u00a7INSURANCE COVERAGE",
+    "qualifications.bonding_capacity_cad": "\u00a7WHY HERITAGE '$5 million per project'",
+    "qualifications.working_at_heights_training_confirmed": "\u00a7SAFETY PROGRAM",
+    "qualifications.references_provided": "\u00a7REFERENCES",
+    "schedule.work_duration_days": "\u00a7PROJECT SCHEDULE '90 days'",
+    "schedule.substantial_completion_date": "\u00a7PROJECT SCHEDULE 'July 30, 2026'",
+    "technical_approach.narrative": "\u00a7PHASING PLAN SUMMARY"
+  },
+  "scores": {
+    "technical_approach": 66,
+    "warranty_materials": 79,
+    "experience_references": 73,
+    "qualifications_certifications": 55,
+    "schedule": 65
+  },
+  "scoring_rationale": {
+    "technical_approach": {
+      "points": 66,
+      "sub_factors": [
+        {
+          "name": "Tear-off & staging",
+          "points": 20,
+          "rationale": "Three-phase sequenced staging with max 10,000 sqft exposed (below 15k RFP cap); no dumpster placement, lift strategy, or adjacent-property protection detail."
+        },
+        {
+          "name": "Weather protection / dry-in",
+          "points": 20,
+          "rationale": "Daily watertight by 5 PM per phase, weekend reinforced tarps with weighted edges and secondary drainage; no explicit forecast-monitoring protocol."
+        },
+        {
+          "name": "Fall protection & safety",
+          "points": 10,
+          "rationale": "COR certification, WAH training, CRSP coordinator stated \u2014 program-level only; no site-specific plan, no named anchor points or parapet/perimeter detail."
+        },
+        {
+          "name": "Waste / environmental / logistics",
+          "points": 8,
+          "rationale": "Complete removal and legal disposal, lead flashing separated as hazardous; no recycling commitments (DSA not required \u2014 building 1998)."
+        },
+        {
+          "name": "Quality control / inspection protocol",
+          "points": 8,
+          "rationale": "Coordination meetings referenced but no in-progress QC checkpoints or scheduled manufacturer inspection tied to NDL warranty requirements."
+        }
+      ],
+      "summary": "Phased occupied-site plan with solid dry-in commitments but generic fall-protection and thin QC/inspection protocol."
+    },
+    "warranty_materials": {
+      "points": 79,
+      "sub_factors": [
+        {
+          "name": "Warranty type (vs RFP requirement)",
+          "points": 35,
+          "rationale": "20-year NDL on membrane only \u2014 falls short of RFP-required total_system_ndl (named system program); recorded at NDL tier per rubric ladder."
+        },
+        {
+          "name": "Warranty years vs RFP minimum",
+          "points": 12,
+          "rationale": "20-year manufacturer warranty meets RFP minimum of 20 years; does not exceed."
+        },
+        {
+          "name": "Installer certification at claimed warranty tier",
+          "points": 20,
+          "rationale": "Multiple top-tier certifications (Carlisle Master Installer, Firestone Premier, GAF Master Elite) aligned with NDL warranty tier claimed."
+        },
+        {
+          "name": "Workmanship warranty years",
+          "points": 6,
+          "rationale": "2-year workmanship warranty \u2014 meets RFP minimum but below 5-year market median."
+        },
+        {
+          "name": "Materials quality",
+          "points": 6,
+          "rationale": "60 mil TPO (meets spec), R-30 two-layer staggered polyiso, 1/4\" gypsum cover board \u2014 meets industry standard, does not exceed."
+        }
+      ],
+      "summary": "NDL warranty on membrane only falls short of total_system_ndl requirement; certifications strong but workmanship and material tier are baseline."
+    },
+    "experience_references": {
+      "points": 73,
+      "sub_factors": [
+        {
+          "name": "Count of comparable references",
+          "points": 40,
+          "rationale": "4 references (Amazon, Magnotta, Prologis, Apotex) \u2014 all commercial, within 5 yrs; values not stated so comparability strictly by scope/area proxy (Apotex 78k sqft strongest analogue)."
+        },
+        {
+          "name": "Recency of most-recent comparable reference",
+          "points": 25,
+          "rationale": "Most-recent comparable is Prologis Park 407 (2025) \u2014 under 1 year old."
+        },
+        {
+          "name": "Verifiability",
+          "points": 8,
+          "rationale": "Contacts and completion year provided on all references; contract values missing on every reference."
+        }
+      ],
+      "summary": "Four recent commercial references including a near-identical pharma analogue; contract values missing limit verifiability."
+    },
+    "qualifications_certifications": {
+      "points": 55,
+      "sub_factors": [
+        {
+          "name": "Years in business",
+          "points": 25,
+          "rationale": "14 years in business (founded 2012) \u2014 falls in 10-14 yr band."
+        },
+        {
+          "name": "Manufacturer certification at or above warranty tier claimed",
+          "points": 30,
+          "rationale": "Top-tier program (GAF Master Elite) plus Carlisle Master Installer and Firestone Premier \u2014 multiple, including a top-tier program."
+        },
+        {
+          "name": "Skilled Trades C of Q crew",
+          "points": 0,
+          "rationale": "Certificate of Qualification roofer count not stated in bid."
+        },
+        {
+          "name": "Industry membership",
+          "points": 0,
+          "rationale": "Not a CRCA member; no regional/provincial association cited."
+        }
+      ],
+      "summary": "Top-tier GAF Master Elite plus Carlisle/Firestone credentials and 14 years in business; no CRCA membership and crew C of Q count not disclosed."
+    },
+    "schedule": {
+      "points": 65,
+      "sub_factors": [
+        {
+          "name": "Timeline realism vs scope",
+          "points": 40,
+          "rationale": "Detailed three-phase sequencing with day ranges (1-18 office, 19-52 NW, 53-90 SE) and specific sqft per phase \u2014 realistic for 85,000 sqft occupied site."
+        },
+        {
+          "name": "Crew adequacy",
+          "points": 0,
+          "rationale": "Crew size not stated numerically; project team lists PM/supervisor/safety/4 installers but total deployed crew not quantified."
+        },
+        {
+          "name": "Mobilization and completion dates vs RFP",
+          "points": 10,
+          "rationale": "Substantial completion 2026-07-30 meets RFP target; mobilization days after award not stated."
+        },
+        {
+          "name": "Occupied-building accommodation",
+          "points": 15,
+          "rationale": "Named tenant-coordination plan: 2 coordination meetings/week, 72-hr HVAC shutdown notice, weekend scheduling for weekday shutdowns, daily watertight by 5 PM."
+        }
+      ],
+      "summary": "Detailed three-phase sequencing with strong tenant-coordination plan; crew size and mobilization-days-after-award undisclosed."
+    },
+    "strengths": [
+      "Top-tier manufacturer certifications (GAF Master Elite, Carlisle Master Installer, Firestone Premier) with 14 yrs in business",
+      "Detailed three-phase sequencing for occupied pharma-warehouse with 72-hr HVAC coordination and daily watertight commitments",
+      "Four commercial references within 5 years, including Apotex pharma as a near-identical scope analogue"
+    ],
+    "weaknesses": [
+      "Warranty is membrane-only NDL, not the total_system_ndl the RFP requires; no named manufacturer system-warranty program for the base bid",
+      "Wind-uplift design basis absent, fall-protection plan only program-level, crew size and mobilization-days-after-award not quantified"
+    ],
+    "differentiator": "Stacked top-tier manufacturer certifications (including GAF Master Elite) paired with a disciplined three-phase occupied-site plan \u2014 but warranty scope and base-bid manufacturer commitment are the catch."
+  }
+}

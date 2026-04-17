@@ -1,0 +1,549 @@
+{
+  "bidder_id": "metro",
+  "bidder_name": "Metro Building Solutions Inc.",
+  "source_pdf": "04-Bid-Metro-Building-Solutions.md",
+  "pricing": {
+    "base_bid_cad": 468000,
+    "hst_included": false,
+    "alternates": [
+      {
+        "description": "Cover board installation",
+        "price_cad": 38000
+      },
+      {
+        "description": "Steel deck repair allowance",
+        "price_cad": 35000
+      },
+      {
+        "description": "Wood deck repair allowance",
+        "price_cad": 20000
+      },
+      {
+        "description": "Tapered insulation for ponding",
+        "price_cad": 28000
+      },
+      {
+        "description": "Drain replacement (estimated 6)",
+        "price_cad": 14400
+      },
+      {
+        "description": "HVAC curb work (estimated 4)",
+        "price_cad": 12800
+      },
+      {
+        "description": "Skylight replacement (4 units per their count)",
+        "price_cad": 19200
+      },
+      {
+        "description": "Building permit",
+        "price_cad": 4500
+      },
+      {
+        "description": "3-year workmanship warranty upgrade",
+        "price_cad": 8500
+      },
+      {
+        "description": "Infrared moisture survey",
+        "price_cad": 4500
+      },
+      {
+        "description": "Hazardous material testing",
+        "price_cad": 3200
+      }
+    ],
+    "unit_prices": {
+      "deck_replacement_per_bf": null,
+      "insulation_per_sqft_per_rvalue": 3.2,
+      "flashing_per_lf": null
+    },
+    "allowances_carried": [
+      {
+        "item": "Deck fastening (additional)",
+        "amount_cad": 8500
+      }
+    ]
+  },
+  "scope_response": {
+    "full_compliance_claimed": false,
+    "exclusions_declared": [
+      "Steel deck repairs ($185/hour + materials; est. $25,000-$45,000)",
+      "Deck fastening ($8,500 allowance)",
+      "Wood deck replacement office wing (est. $15,000-$25,000)",
+      "Cover board (optional upgrade $38,000) \u2014 contractor states typically not installed on industrial buildings this age",
+      "Tapered insulation for ponding (optional upgrade $22,000-$35,000) \u2014 contractor recommends addressing only if leaks occur",
+      "Drain replacement ($2,400 per drain; est. 6-8)",
+      "HVAC curb modifications ($3,200 per unit; est. 4-6)",
+      "Skylight work ($4,800/skylight; contractor counted 4 vs RFP 12)",
+      "Fascia repairs ($145/linear foot)",
+      "After-hours work premium ($95/hour/worker)",
+      "Hazardous materials (actual cost + 15%)",
+      "Additional insulation above R-30 ($3.20/sq ft per R-value)",
+      "Snow guards ($58/linear foot)",
+      "Infrared survey ($4,500)",
+      "Permits ($3,800-$5,200)",
+      "Third-party testing/inspection (actual cost + 10%)",
+      "Landscape protection (actual cost)",
+      "Waste disposal fee escalation (actual cost adjustment)",
+      "Material price escalation if start delayed >60 days",
+      "Substantial completion third-party inspection ($2,800)",
+      "Phasing coordination if schedule extends beyond 90 days ($2,500/week supervision)",
+      "Temperature monitoring (actual cost + 10%)",
+      "Weekend weather protection ($1,500/weekend)",
+      "Multiple roof levels access (actual rental)",
+      "Daily cleanup \u2014 substituted with weekly if daily not feasible"
+    ],
+    "clarifications": [
+      "Assumes existing roof is non-hazardous",
+      "Assumes steel deck is sound, minimal repair",
+      "Assumes wood deck in acceptable condition",
+      "Assumes building vacated or normal operations continue (contradicts RFP: occupied pharma warehouse with phasing requirement)",
+      "Assumes phasing can be accomplished within 90 days",
+      "Assumes cover board not required for building type",
+      "Assumes ponding does not require correction unless active leaks",
+      "Asserts mechanically attached system is equivalent to fully adhered for this application"
+    ],
+    "substitutions_proposed": [
+      {
+        "spec_item": "Fully-adhered TPO attachment (RFP \u00a73.1)",
+        "substitute_offered": "Mechanically attached TPO",
+        "equivalence_justification": "Contractor asserts 'mechanically attached systems are industry standard for buildings of this type and provide equivalent performance to fully adhered at lower cost.' No engineering calculation or manufacturer approval provided."
+      },
+      {
+        "spec_item": "Cover board (1/4 inch gypsum or HD polyiso per RFP scope)",
+        "substitute_offered": "No cover board in base bid",
+        "equivalence_justification": "Contractor asserts cover board 'typically not required for industrial buildings unless specified by manufacturer for warranty purposes.' This contradicts RFP included_items."
+      },
+      {
+        "spec_item": "Tapered insulation or added drains to resolve ponding (RFP scope)",
+        "substitute_offered": "Not included; optional upgrade only",
+        "equivalence_justification": "Contractor states ponding is 'common on roofs of this age and does not necessarily indicate failure.' Direct conflict with RFP included_items."
+      },
+      {
+        "spec_item": "Daily cleanup on occupied site (RFP scope)",
+        "substitute_offered": "Weekly cleanup if daily not feasible",
+        "equivalence_justification": "Exclusion item 25 \u2014 no justification beyond site-conditions caveat."
+      }
+    ]
+  },
+  "materials_system": {
+    "manufacturer": "Not specified (product data sheets attached per cover letter, manufacturer name not disclosed in bid body)",
+    "system_name": "60 mil TPO mechanically attached",
+    "membrane_thickness_actual": "60 mil",
+    "insulation_spec": "Polyisocyanurate R-30 (layer count/stagger not stated)",
+    "cover_board_included": false,
+    "product_data_sheets_attached": true
+  },
+  "warranty_offered": {
+    "manufacturer_years": 20,
+    "warranty_type": "material_only",
+    "workmanship_years": 1,
+    "wind_uplift_coverage_mph": null,
+    "manufacturer_certified_installer": false,
+    "certification_program": null,
+    "evidence_page": "Cover letter \u2014 WARRANTY section"
+  },
+  "qualifications": {
+    "years_in_business": 16,
+    "wsib_clearance_attached": true,
+    "wsib_clearance_date": null,
+    "wsib_in_good_standing": null,
+    "cgl_limit_cad": 5000000,
+    "cgl_completed_operations_years": null,
+    "owner_named_as_additional_insured": null,
+    "coi_attached": true,
+    "bid_bond_attached": false,
+    "bonding_capacity_cad": null,
+    "working_at_heights_training_confirmed": false,
+    "crca_member": false,
+    "certificate_of_qualification_roofers_count": 0,
+    "references_provided": [
+      {
+        "project_name": "Smallwood Industrial Park",
+        "owner_contact": "Peter Smallwood, (416) 555-0567",
+        "value_cad": null,
+        "completion_year": 2024,
+        "similar_scope": true
+      },
+      {
+        "project_name": "Valley View Warehouse",
+        "owner_contact": "Maria Santos, (905) 555-0678",
+        "value_cad": null,
+        "completion_year": 2023,
+        "similar_scope": true
+      },
+      {
+        "project_name": "Eastgate Commerce Centre",
+        "owner_contact": "James O'Brien, (905) 555-0789",
+        "value_cad": null,
+        "completion_year": 2025,
+        "similar_scope": true
+      }
+    ],
+    "subcontracting_declared": false,
+    "subcontractors_named": []
+  },
+  "schedule": {
+    "mobilization_days_after_award": null,
+    "work_duration_days": 90,
+    "substantial_completion_date": "2026-08-15",
+    "crew_size": null,
+    "accommodates_occupied_building": false
+  },
+  "technical_approach": {
+    "narrative": "Competitive base price; transparent extras. Asserts phasing possible, flexible start, but provides no dedicated phasing/tenant coordination plan; Assumption #5 even contemplates 'building vacated or operations continue normally' \u2014 inconsistent with RFP occupied-pharma phasing requirement.",
+    "tear_off_staging_plan": "Not described",
+    "weather_protection_plan": "Not described; exclusion #23 charges extra for weekend weather protection",
+    "fall_protection_plan": "Generic: 'Fall protection equipment provided' (Safety Program section)",
+    "waste_disposal_plan": "Not described beyond line-item 'Roof removal and disposal $78,000' and exclusion #18 for disposal-fee escalation",
+    "site_safety_plan_attached": false
+  },
+  "mandatory_gates": {
+    "wsib_clearance": {
+      "result": "needs_clarification",
+      "evidence": "Attachments list 'WSIB Clearance Certificate' and 'WSIB Experience Rating Letter (1.12)'; WSIB Account #3456789-01 cited. No clearance date or good-standing text in bid body.",
+      "notes": "Owner to verify validity window and good-standing text via clearances.wsib.ca per fixture 04 \u00a71.4. Experience Rating 1.12 (>1.00) signals above-average claims history \u2014 captured as qualifications red flag."
+    },
+    "cgl_insurance": {
+      "result": "needs_clarification",
+      "evidence": "CGL $5,000,000 per occurrence meets RFP \u00a75.1.2 minimum. Cover letter does not state owner named as additional insured nor completed-operations tail years; COI attached per exhibit list but not quoted.",
+      "notes": "Owner must verify COI names Tenebrus Capital as additional insured and carries \u22652 yr completed-operations coverage (RFP \u00a75.1.2)."
+    },
+    "bid_bond": {
+      "result": "pass",
+      "evidence": "RFP \u00a79.2 does not require a bid bond (bid_bond_percent = null; only 50% performance and 50% L&M bonds required). Bid contains no bid bond but none was required.",
+      "notes": "Performance and L&M bonding capacity not explicitly declared; owner should confirm surety consent before award."
+    },
+    "working_at_heights": {
+      "result": "fail",
+      "evidence": "Safety Program section lists 'Written safety procedures' and 'Fall protection equipment provided' but does not confirm all on-site workers hold current O. Reg. 297/13 Working-at-Heights training. RFP \u00a75.1 requires confirmation.",
+      "notes": "Fixture 04 \u00a73 requires explicit WAH confirmation. Silence = fail; owner can resolve via addendum/clarification."
+    },
+    "addenda_acknowledgment": {
+      "result": "needs_clarification",
+      "evidence": "No addenda acknowledgment statement in the bid. Cover letter cites RFP number only.",
+      "notes": "If any addenda were issued (RFP does not list any in the manifest), acknowledgment is missing \u2014 clarify with owner."
+    },
+    "non_collusion": {
+      "result": "needs_clarification",
+      "evidence": "No non-collusion declaration text visible in bid; not listed in attachments.",
+      "notes": "RFP mandatory_requirements.non_collusion_declaration_required=true. Owner to confirm whether a signed declaration was submitted separately."
+    },
+    "site_visit": {
+      "result": "pass",
+      "evidence": "Cover letter: 'We attended the site visit on March 25, 2026.' RFP site_meeting_mandatory=true.",
+      "notes": ""
+    },
+    "years_in_business": {
+      "result": "pass",
+      "evidence": "'operating in the Greater Toronto Area since 2010' (cover letter). 2026 - 2010 = 16 years, exceeds RFP \u00a75.1.3 minimum of 10.",
+      "notes": ""
+    },
+    "similar_projects": {
+      "result": "needs_clarification",
+      "evidence": "Three references provided (Smallwood 2024 48k sqft, Valley View 2023 52k sqft, Eastgate 2025 67k sqft) \u2014 count meets RFP \u00a75.1.4 minimum of 3. All within 5-year recency and commercial low-slope class. However, project values not disclosed \u2014 comparable test (0.5\u00d7-2\u00d7 subject value) cannot be verified from bid alone.",
+      "notes": "Owner to request reference project values to confirm 0.5\u00d7-2\u00d7 comparability per qualification-check Gate 8."
+    }
+  },
+  "red_flags": [
+    {
+      "severity": "critical",
+      "category": "scope",
+      "description": "Base bid excludes cover board \u2014 directly contradicts RFP included scope (\u00a73.1 cover board required) and voids TPO manufacturer warranty over polyiso assemblies.",
+      "citation": "RFP \u00a73.1 / fixture 02 \u00a74 \u2014 cover board required over polyiso for single-ply system warranty",
+      "evidence": "Cover letter Exclusion #4: 'Cover board - Not included in base bid. Optional upgrade at $38,000.'",
+      "recommendation": "reject"
+    },
+    {
+      "severity": "critical",
+      "category": "substitutions",
+      "description": "Mechanically attached TPO proposed in lieu of RFP-specified fully-adhered system. No manufacturer approval or wind-uplift calculation provided; equivalence justification is unsupported assertion.",
+      "citation": "RFP \u00a73.1 attachment_method=fully_adhered / fixture 02 \u00a71",
+      "evidence": "Key Specifications: 'Mechanically attached system.' Assumption #15: 'Mechanically attached system acceptable (equivalent to fully adhered for this application).'",
+      "recommendation": "reject"
+    },
+    {
+      "severity": "critical",
+      "category": "scope",
+      "description": "Tapered insulation / ponding resolution excluded; contractor dismisses ponding as 'superficial' \u2014 direct contradiction of RFP included_items requiring ponding resolution.",
+      "citation": "RFP \u00a73.1 included_items 'Tapered insulation or added drains to resolve ponding'",
+      "evidence": "Exclusion #5 and Additional Notes: 'Ponding water is common on roofs of this age and does not necessarily indicate failure.'",
+      "recommendation": "reject"
+    },
+    {
+      "severity": "critical",
+      "category": "warranty",
+      "description": "Warranty is 20-year manufacturer 'limited' on membrane only \u2014 material_only tier, not the total_system_ndl required. Workmanship warranty only 1 year vs RFP \u00a79.6 minimum 2 years. No manufacturer-certified-installer status declared.",
+      "citation": "RFP warranty_requirements (20 yr total_system_ndl, 2 yr workmanship, manufacturer certification required) / fixture 02 \u00a71 warranty taxonomy",
+      "evidence": "Warranty section: 'Manufacturer Warranty: 20-year limited warranty on TPO membrane. Workmanship Warranty: 1 year on installation.'",
+      "recommendation": "reject"
+    },
+    {
+      "severity": "critical",
+      "category": "safety",
+      "description": "Working-at-Heights training (O. Reg. 297/13) not explicitly confirmed; only generic 'Fall protection equipment provided.' Fails RFP mandatory gate.",
+      "citation": "RFP \u00a75.1 / O. Reg. 297/13 / fixture 04 \u00a73",
+      "evidence": "Safety Program section \u2014 no WAH training statement.",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "critical",
+      "category": "materials",
+      "description": "Assumption #5 ('Building will be vacated or operations can continue normally during work') directly contradicts RFP project.occupied_during_work=true and \u00a711.1 phased occupied pharma warehouse requirement. No phasing plan submitted.",
+      "citation": "RFP \u00a71.2 / \u00a711.1 / scope_of_work work_description (max 15,000 sqft exposed)",
+      "evidence": "Clarifications & Assumptions #5 and #12",
+      "recommendation": "reject"
+    },
+    {
+      "severity": "high",
+      "category": "scope",
+      "description": "Skylight count discrepancy: RFP specifies 12 skylights; bidder 'counted 4 during site visit' and prices work only for 4. Any replacement beyond 4 billed at $4,800/skylight as extra.",
+      "citation": "RFP scope / flashings at 47 penetrations",
+      "evidence": "Exclusion #8",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "high",
+      "category": "scope",
+      "description": "25+ listed exclusions and open-ended cost adjusters (material escalation, waste-fee escalation, temperature monitoring, weekend weather protection) transfer price risk to owner and undermine bid comparability.",
+      "citation": "fixture 03 \u00a75 \u2014 low-ball base-bid pattern",
+      "evidence": "Cover letter 'IMPORTANT EXCLUSIONS' list (25 items) + final NOTE TO BIDDER warning at bid foot.",
+      "recommendation": "negotiate"
+    },
+    {
+      "severity": "high",
+      "category": "qualifications",
+      "description": "WSIB Experience Rating 1.12 is above industry average (1.00 baseline) \u2014 financial/claims-history signal per fixture 04 \u00a75. Warrants review of 3-year claims history before award.",
+      "citation": "fixture 04 \u00a75 \u2014 WSIB experience rating signal",
+      "evidence": "Safety Program section: 'WSIB Experience Rating: 1.12'",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "high",
+      "category": "qualifications",
+      "description": "No manufacturer certification (GAF Master Elite, Soprema PAQ+S, Firestone Red Shield, Sika Sarnafil, etc.) declared; TPO system manufacturer itself not named in bid body. RFP manufacturer_certification_required=true.",
+      "citation": "RFP warranty_requirements.manufacturer_certification_required / fixture 02 \u00a73",
+      "evidence": "No certification program cited anywhere in bid; TPO manufacturer omitted from Key Specifications.",
+      "recommendation": "reject"
+    },
+    {
+      "severity": "high",
+      "category": "qualifications",
+      "description": "Reference project values not disclosed \u2014 comparability (0.5\u00d7-2\u00d7 of $468k subject value) cannot be verified. All three references are commercial low-slope within 5 years (positive signal), but Smallwood at 48k sqft and Valley View at 52k sqft are materially smaller than the 85k sqft subject roof.",
+      "citation": "fixture 03 \u2014 reference comparability / Gate 8 definition",
+      "evidence": "References section lists name, location, sqft, contact but no project value.",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "high",
+      "category": "safety",
+      "description": "No fall-protection plan, anchor-point strategy, weather-protection plan, tear-off staging plan, or site-safety plan attached. Occupied pharma warehouse with 47 penetrations demands a specific plan.",
+      "citation": "fixture 01 \u00a73 / CSA Z91 / OBC occupied-building precautions",
+      "evidence": "Technical approach sections absent; cover letter contains only generic statements.",
+      "recommendation": "reject"
+    },
+    {
+      "severity": "high",
+      "category": "materials",
+      "description": "Wind-uplift design basis (CSA A123.21 or FM 1-29) not stated \u2014 required for commercial low-slope, especially when attachment method is being substituted to mechanically fastened.",
+      "citation": "fixture 01 \u00a71.2 \u2014 commercial low-slope wind-uplift design",
+      "evidence": "Key Specifications omits wind-uplift figures; no wind_uplift_coverage_mph claimed in warranty.",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "medium",
+      "category": "scope",
+      "description": "Front-loaded payment schedule (20% mobilization + 30% progress + 30% substantial + 10% holdback) concentrates owner risk. Construction Act holdback respected, but 20% mobilization is above GTA commercial norm (~10%).",
+      "citation": "Construction Act / fixture 03 \u00a76 payment norms",
+      "evidence": "Payment Schedule section and note 'We require larger upfront payment due to material procurement costs.'",
+      "recommendation": "negotiate"
+    },
+    {
+      "severity": "medium",
+      "category": "warranty",
+      "description": "Bid does not identify TPO manufacturer \u2014 impossible to confirm warranty eligibility or manufacturer acceptable-list fit.",
+      "citation": "fixture 02 \u00a74 \u2014 named-manufacturer requirement",
+      "evidence": "Key Specifications: '60 mil TPO' (no manufacturer).",
+      "recommendation": "clarify"
+    }
+  ],
+  "extraction_notes": [
+    "TPO manufacturer name not stated in bid body despite Product Data Sheets being listed as an attachment \u2014 owner to request the PDS or bid copy to identify.",
+    "WSIB clearance certificate date and good-standing wording not extractable from cover letter alone; relies on attachment text.",
+    "COI attached but owner-named-additional-insured status and completed-operations tail years not stated in cover letter \u2014 requires COI review.",
+    "Bonding capacity and surety consent for performance/L&M bonds not declared.",
+    "Non-collusion declaration not referenced in bid or attachment list.",
+    "Addenda acknowledgment not present \u2014 unknown whether any addenda were issued for TC-ROOF-2026-001.",
+    "Reference project dollar values not disclosed; comparability test (Gate 8) cannot be completed.",
+    "Crew size, foreman name, and mobilization-days-after-award not stated.",
+    "Wind-uplift design basis and wind_uplift_coverage_mph not stated.",
+    "Insulation layer stagger (RFP requires two staggered layers) not described."
+  ],
+  "_provenance": {
+    "pricing.base_bid_cad": "Bid Summary table, cover letter",
+    "pricing.hst_included": "Bid Summary shows base $468,000 + HST $60,840 separately",
+    "scope_response.substitutions_proposed": "Key Specifications + Assumption #15 (mechanically attached); Exclusion #4 (cover board); Exclusion #5 (ponding)",
+    "warranty_offered.manufacturer_years": "Warranty section, cover letter",
+    "warranty_offered.warranty_type": "'20-year limited warranty on TPO membrane' (membrane-only = material_only tier per fixture 02 \u00a71)",
+    "warranty_offered.workmanship_years": "Warranty section: '1 year on installation'",
+    "qualifications.years_in_business": "Cover letter: 'operating ... since 2010'",
+    "qualifications.cgl_limit_cad": "Insurance Coverage section",
+    "qualifications.references_provided": "References section",
+    "schedule.work_duration_days": "Project Schedule: Substantial Completion 90 days",
+    "mandatory_gates.site_visit": "Cover letter: 'We attended the site visit on March 25, 2026'",
+    "mandatory_gates.years_in_business": "Cover letter: 'since 2010'"
+  },
+  "scores": {
+    "technical_approach": 18,
+    "warranty_materials": 35,
+    "experience_references": 53,
+    "qualifications_certifications": 35,
+    "schedule": 40
+  },
+  "scoring_rationale": {
+    "technical_approach": {
+      "points": 18,
+      "sub_factors": [
+        {
+          "name": "Tear-off & staging",
+          "points": 0,
+          "rationale": "No tear-off or staging plan described; bid omits dumpster placement, lift strategy, staging zones."
+        },
+        {
+          "name": "Weather protection / dry-in",
+          "points": 0,
+          "rationale": "Not addressed; Exclusion #23 charges extra for weekend weather protection rather than committing to a dry-in plan."
+        },
+        {
+          "name": "Fall protection & safety",
+          "points": 10,
+          "rationale": "Generic 'Fall protection equipment provided' statement; no named anchor points, no parapet/perimeter plan."
+        },
+        {
+          "name": "Waste / environmental / logistics",
+          "points": 8,
+          "rationale": "Disposal mentioned as a line item ($78,000 roof removal and disposal); no DSA plan or recycling commitments."
+        },
+        {
+          "name": "Quality control / inspection protocol",
+          "points": 0,
+          "rationale": "No QC checkpoints, manufacturer inspections, or final walk-through process described."
+        }
+      ],
+      "summary": "No tear-off/staging, dry-in, or QC plan; only generic fall-protection and line-item disposal \u2014 technical approach is skeletal."
+    },
+    "warranty_materials": {
+      "points": 35,
+      "sub_factors": [
+        {
+          "name": "Warranty type vs RFP requirement",
+          "points": 20,
+          "rationale": "20-year limited warranty on TPO membrane = material_only tier; RFP required total_system_ndl (non-compliant but scored at tier offered)."
+        },
+        {
+          "name": "Warranty years vs RFP minimum",
+          "points": 12,
+          "rationale": "20 years meets RFP minimum of 20 manufacturer years."
+        },
+        {
+          "name": "Installer certification at claimed warranty tier",
+          "points": 0,
+          "rationale": "No manufacturer certification declared; TPO manufacturer itself not named in bid body."
+        },
+        {
+          "name": "Workmanship warranty years",
+          "points": 3,
+          "rationale": "1-year workmanship warranty \u2014 below RFP 2-year minimum and below market median."
+        },
+        {
+          "name": "Materials quality",
+          "points": 0,
+          "rationale": "60 mil TPO meets thickness but no cover board over polyiso \u2014 below industry standard per fixture 02 \u00a74."
+        }
+      ],
+      "summary": "20-yr material_only warranty (RFP requires total_system_ndl), 1-yr workmanship below minimum, no certified installer, missing cover board degrades materials quality."
+    },
+    "experience_references": {
+      "points": 53,
+      "sub_factors": [
+        {
+          "name": "Count of comparable references",
+          "points": 20,
+          "rationale": "3 commercial low-slope refs within 5 years, but values undisclosed and two (48k/52k sqft) are materially smaller than 85k subject \u2014 comparability unverifiable; credited as 1-2 comparable."
+        },
+        {
+          "name": "Recency of most-recent comparable reference",
+          "points": 25,
+          "rationale": "Eastgate Commerce Centre completed 2025 (<1 year before bid)."
+        },
+        {
+          "name": "Verifiability",
+          "points": 8,
+          "rationale": "Named contact, phone, completion year and sqft on every reference; project values omitted across all three."
+        }
+      ],
+      "summary": "Three recent commercial low-slope refs \u2014 Eastgate 2025 very recent \u2014 but project values undisclosed so 0.5x-2x comparability is unverifiable."
+    },
+    "qualifications_certifications": {
+      "points": 35,
+      "sub_factors": [
+        {
+          "name": "Years in business",
+          "points": 35,
+          "rationale": "16 years (since 2010) exceeds 15+ year threshold."
+        },
+        {
+          "name": "Manufacturer certification at or above warranty tier",
+          "points": 0,
+          "rationale": "No manufacturer certification declared; TPO manufacturer not even named."
+        },
+        {
+          "name": "Skilled Trades C of Q crew",
+          "points": 0,
+          "rationale": "Zero Certificate of Qualification roofers identified in bid."
+        },
+        {
+          "name": "Industry membership",
+          "points": 0,
+          "rationale": "Not a CRCA member; no regional/provincial association membership disclosed."
+        }
+      ],
+      "summary": "Strong tenure (16 yrs), but zero manufacturer certification, no C of Q roofers disclosed, and no CRCA/association membership."
+    },
+    "schedule": {
+      "points": 40,
+      "sub_factors": [
+        {
+          "name": "Timeline realism vs scope",
+          "points": 30,
+          "rationale": "90-day duration is realistic for 85k sqft scope; no phase sequencing or milestones provided."
+        },
+        {
+          "name": "Crew adequacy",
+          "points": 0,
+          "rationale": "Crew size not stated; no foreman named."
+        },
+        {
+          "name": "Mobilization and completion dates vs RFP",
+          "points": 10,
+          "rationale": "Substantial completion date 2026-08-15 provided; mobilization-days-after-award not stated."
+        },
+        {
+          "name": "Occupied-building accommodation",
+          "points": 0,
+          "rationale": "accommodates_occupied_building=false; Assumption #5 contemplates a vacated building \u2014 direct conflict with RFP occupied pharma phasing requirement."
+        }
+      ],
+      "summary": "90-day duration is plausible, but crew size, foreman, mobilization, and occupied-building accommodation are all missing or contradicted."
+    },
+    "strengths": [
+      "16 years in business \u2014 exceeds RFP minimum of 10 and clears the 15+ tenure tier.",
+      "References are all recent commercial low-slope (Eastgate 2025, Smallwood 2024, Valley View 2023) within 5-year window.",
+      "60 mil TPO membrane thickness itself meets RFP specification."
+    ],
+    "weaknesses": [
+      "Warranty is material_only with 1-yr workmanship and no certified installer \u2014 non-compliant with RFP total_system_ndl + 2-yr workmanship + certification requirements.",
+      "Technical approach is skeletal: no tear-off/staging, dry-in, QC, or occupied-building phasing plan; Assumption #5 even presumes a vacated building."
+    ],
+    "differentiator": "Lowest-headline base bid, but built on excluded cover board, mechanically-attached substitution, and 25+ exclusions that transfer substantial price and scope risk to the owner."
+  }
+}
