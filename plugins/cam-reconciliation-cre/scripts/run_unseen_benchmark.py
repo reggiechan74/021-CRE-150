@@ -14,6 +14,7 @@ from scripts.allocate import allocate_manifest
 from scripts.classify_validator import apply_decisions, generate_default_decisions
 from scripts.ingest import build_manifest
 from scripts.manifest import money
+from scripts.validation import ManifestJSONEncoder
 
 
 SUITE_ROOT = PLUGIN_ROOT / "benchmarks" / "unseen_cam_suite"
@@ -55,7 +56,7 @@ def run_case(case_dir: Path) -> dict[str, object]:
     output_dir = OURS_ROOT / case_dir.name
     output_dir.mkdir(parents=True, exist_ok=True)
     (output_dir / "allocated_manifest.json").write_text(
-        json.dumps(allocated.model_dump(mode="json"), indent=2, default=str) + "\n",
+        json.dumps(allocated, cls=ManifestJSONEncoder, indent=2) + "\n",
         encoding="utf-8",
     )
     (output_dir / "submission.json").write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")

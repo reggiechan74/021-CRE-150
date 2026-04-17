@@ -12,7 +12,6 @@ Resolve the plugin root from `CLAUDE_PLUGIN_ROOT` or use:
 Then run:
 
 ```bash
-python3 "$CLAUDE_PLUGIN_ROOT/scripts/bootstrap.py"
 python3 "$CLAUDE_PLUGIN_ROOT/scripts/ingest.py" --property-dir "<property-dir>"
 python3 "$CLAUDE_PLUGIN_ROOT/scripts/classify_validator.py" \
   --manifest "<property-dir>/reconciliation-output/manifests/raw_manifest.json"

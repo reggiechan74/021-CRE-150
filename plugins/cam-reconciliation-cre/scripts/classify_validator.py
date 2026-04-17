@@ -5,11 +5,11 @@ from __future__ import annotations
 import argparse
 import json
 from collections import defaultdict
+from dataclasses import dataclass, replace
 from decimal import Decimal, ROUND_FLOOR
 import sys
 from pathlib import Path
-
-from pydantic import BaseModel
+from typing import Any
 
 PLUGIN_ROOT = Path(__file__).resolve().parent.parent
 if str(PLUGIN_ROOT) not in sys.path:
@@ -27,11 +27,20 @@ from scripts.manifest import (
     canonical_category,
     money,
 )
+from scripts.validation import ManifestJSONEncoder
 
 
-class DecisionRecord(BaseModel):
+@dataclass
+class DecisionRecord:
     line_id: str
     classification: Classification
+
+    @classmethod
+    def from_dict(cls, data: dict[str, Any]) -> "DecisionRecord":
+        return cls(
+            line_id=data["line_id"],
+            classification=Classification.from_dict(data["classification"]),
+        )
 
 
 def split_amount(total: Decimal, weighted_items: list[tuple[str, Decimal]]) -> dict[str, Decimal]:
@@ -167,7 +176,7 @@ def generate_default_decisions(manifest: Manifest) -> list[DecisionRecord]:
 
 def load_decisions(path: Path) -> list[DecisionRecord]:
     data = json.loads(path.read_text(encoding="utf-8"))
-    return [DecisionRecord.model_validate(item) for item in data]
+    return [DecisionRecord.from_dict(item) for item in data]
 
 
 def apply_decisions(manifest: Manifest, decisions: list[DecisionRecord]) -> Manifest:
@@ -179,8 +188,8 @@ def apply_decisions(manifest: Manifest, decisions: list[DecisionRecord]) -> Mani
 
     updated_lines = []
     for line in manifest.gl_lines:
-        updated_lines.append(line.model_copy(update={"classification": decision_map[line.line_id]}))
-    return manifest.model_copy(update={"gl_lines": updated_lines})
+        updated_lines.append(replace(line, classification=decision_map[line.line_id]))
+    return replace(manifest, gl_lines=updated_lines)
 
 
 def decisions_output_path(raw_manifest_path: Path) -> Path:
@@ -205,8 +214,10 @@ def main() -> None:
 
     decisions_path = args.decisions_output or decisions_output_path(args.manifest)
     decisions_path.parent.mkdir(parents=True, exist_ok=True)
-    decisions_payload = [item.model_dump(mode="json") for item in decisions]
-    decisions_path.write_text(json.dumps(decisions_payload, indent=2, default=str), encoding="utf-8")
+    decisions_path.write_text(
+        json.dumps(decisions, cls=ManifestJSONEncoder, indent=2),
+        encoding="utf-8",
+    )
 
     output = args.output or classified_output_path(args.manifest)
     output.parent.mkdir(parents=True, exist_ok=True)

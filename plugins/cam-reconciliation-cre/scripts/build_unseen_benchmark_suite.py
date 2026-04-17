@@ -9,8 +9,6 @@ from decimal import Decimal
 from pathlib import Path
 from typing import Any
 
-import yaml
-
 PLUGIN_ROOT = Path(__file__).resolve().parent.parent
 SUITE_ROOT = PLUGIN_ROOT / "benchmarks" / "unseen_cam_suite"
 CASES_ROOT = SUITE_ROOT / "cases"
@@ -50,11 +48,6 @@ def normalize_weights(weights: dict[str, Decimal], total_rsf: int) -> dict[str, 
 def write_json(path: Path, payload: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, default=str) + "\n", encoding="utf-8")
-
-
-def write_yaml(path: Path, payload: Any) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(yaml.safe_dump(payload, sort_keys=False), encoding="utf-8")
 
 
 def write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
@@ -872,7 +865,7 @@ def build_case(case: CaseDefinition) -> dict[str, Any]:
 
     case_dir = CASES_ROOT / case.case_id
     case_dir.mkdir(parents=True, exist_ok=True)
-    write_yaml(case_dir / "property.yaml", property_payload)
+    write_json(case_dir / "property.json", property_payload)
     write_json(case_dir / "leases.json", leases)
     budget_md = build_budget_md(case, budget, leases)
     (case_dir / "budget.md").write_text(budget_md, encoding="utf-8")
@@ -894,7 +887,7 @@ def build_case(case: CaseDefinition) -> dict[str, Any]:
             "- `Lease_Excerpts_CAM_Clauses.md`",
             "",
             "Plugin input files for `cam-reconciliation-cre`:",
-            "- `property.yaml`",
+            "- `property.json`",
             "- `leases.json`",
             "- `gl.csv`",
             "- `budget.md`",

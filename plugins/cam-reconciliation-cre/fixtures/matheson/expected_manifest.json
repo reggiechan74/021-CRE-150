@@ -6663,6 +6663,12 @@
       }
     }
   ],
+  "provenance": {
+    "plugin_version": "0.1.0",
+    "run_timestamp": "2026-04-15T10:50:00",
+    "inputs_hash": "sha256:859a99ddb98bb8326d51143a08aab03e76648ec614ed0b6de6e9aaf6a9bd1da5",
+    "operator": "pytest"
+  },
   "tenant_charges": [
     {
       "tenant_id": "suite_200",
@@ -18881,11 +18887,5 @@
     }
   ],
   "landlord_absorbed_total": "131149.03",
-  "direct_billed_total": "4500.00",
-  "provenance": {
-    "plugin_version": "0.1.0",
-    "run_timestamp": "2026-04-15T10:50:00",
-    "inputs_hash": "sha256:4e5adfaade8dceb936a942cc4b0d8a47f58d796b9f44f68797c21e451b888e04",
-    "operator": "pytest"
-  }
+  "direct_billed_total": "4500.00"
 }

@@ -6,7 +6,6 @@ from datetime import datetime
 from decimal import Decimal
 
 import pytest
-from pydantic import ValidationError
 
 from scripts.manifest import (
     BaseYearConfig,
@@ -20,6 +19,7 @@ from scripts.manifest import (
     Property,
     Provenance,
 )
+from scripts.validation import ManifestJSONEncoder, ValidationError
 
 
 def minimal_manifest() -> Manifest:
@@ -84,10 +84,12 @@ def test_manifest_round_trip(tmp_path):
 
 
 def test_manifest_rejects_unknown_root_field():
-    data = minimal_manifest().model_dump(mode="json")
+    import json
+
+    data = json.loads(json.dumps(minimal_manifest(), cls=ManifestJSONEncoder))
     data["unknown_field"] = "oops"
     with pytest.raises(ValidationError):
-        Manifest.model_validate(data)
+        Manifest.from_dict(data)
 
 
 def test_lease_cap_config():

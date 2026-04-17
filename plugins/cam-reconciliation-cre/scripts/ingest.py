@@ -11,8 +11,6 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
-import yaml
-
 PLUGIN_ROOT = Path(__file__).resolve().parent.parent
 if str(PLUGIN_ROOT) not in sys.path:
     sys.path.insert(0, str(PLUGIN_ROOT))
@@ -75,15 +73,15 @@ def _read_budget(path: Path) -> dict[str, str]:
 
 
 def _read_property(path: Path) -> Property:
-    data = yaml.safe_load(path.read_text(encoding="utf-8"))
-    return Property.model_validate(data)
+    data = json.loads(path.read_text(encoding="utf-8"))
+    return Property.from_dict(data)
 
 
 def _read_leases(path: Path) -> list[Lease]:
     data = json.loads(path.read_text(encoding="utf-8"))
     if isinstance(data, dict) and "leases" in data:
         data = data["leases"]
-    return [Lease.model_validate(item) for item in data]
+    return [Lease.from_dict(item) for item in data]
 
 
 def _read_gl(path: Path) -> list[GLLine]:
@@ -117,7 +115,7 @@ def build_manifest(
     operator: str | None = None,
 ) -> Manifest:
     property_dir = property_dir.resolve()
-    property_path = property_dir / "property.yaml"
+    property_path = property_dir / "property.json"
     leases_path = property_dir / "leases.json"
     gl_path = property_dir / "gl.csv"
     budget_path = property_dir / "budget.md"
@@ -147,7 +145,7 @@ def output_path_for(property_dir: Path) -> Path:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Build a raw reconciliation manifest from property inputs.")
-    parser.add_argument("--property-dir", type=Path, required=True, help="Directory containing property.yaml, leases.json, gl.csv, and budget.md/json.")
+    parser.add_argument("--property-dir", type=Path, required=True, help="Directory containing property.json, leases.json, gl.csv, and budget.md/json.")
     parser.add_argument("--output", type=Path, help="Output path for raw_manifest.json.")
     parser.add_argument("--plugin-version", default="0.1.0")
     parser.add_argument("--fiscal-year", type=int, default=2025)

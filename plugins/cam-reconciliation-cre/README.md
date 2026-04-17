@@ -6,7 +6,7 @@ CAM reconciliation for commercial real estate training workflows. The plugin com
 
 - Landlord-side CAM true-up for a single property
 - Lease-aware corrections for duplicate invoices, turnover charges, management fee basis errors, modified-gross exclusions, restaurant carve-outs, base years, and CAM caps
-- Output artifacts: typed manifests, tenant PDFs, workpaper workbook, audit log, category commentary, and Anthropic comparison report
+- Output artifacts: typed manifests, per-tenant markdown statements, workpaper workbook, audit log, category commentary, and Anthropic comparison report
 
 ## Commands
 
@@ -26,7 +26,7 @@ The bundled Matheson fixture demonstrates the workshop payoff:
 
 Expected files in `<property-dir>`:
 
-- `property.yaml`
+- `property.json`
 - `leases.json`
 - `gl.csv`
 - `budget.md` or `budget.json`
@@ -40,7 +40,7 @@ Running `/cam-reconcile` or the underlying scripts writes to `<property-dir>/rec
 - `manifests/classification_decisions.json`
 - `manifests/classified_manifest.json`
 - `manifests/allocated_manifest.json`
-- `tenant_statements/*.pdf`
+- `tenant_statements/*.md`
 - `workpaper.xlsx`
 - `audit_log.md`
 - `narrative_commentary.md`
@@ -53,13 +53,10 @@ Running `/cam-reconcile` or the underlying scripts writes to `<property-dir>/rec
 - `scripts/allocate.py`
 - `scripts/statement.py`
 - `scripts/compare.py`
-- `scripts/bootstrap.py`
 
-## Setup
+## Dependencies
 
-```bash
-python3 plugins/cam-reconciliation-cre/scripts/bootstrap.py
-```
+Runs in Claude Cowork's code execution sandbox. Uses only the Python stdlib plus Cowork pre-installs (numpy, pandas, scipy, scikit-learn, openpyxl, matplotlib, seaborn). No setup required.
 
 ## Manual Run
 

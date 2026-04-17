@@ -58,7 +58,7 @@
       "name": "cam-reconciliation-cre",
       "source": "./plugins/cam-reconciliation-cre",
       "description": "CRE-native CAM reconciliation engine — lease-aware recoverability, deterministic allocation math, tenant statements, and comparison vs generic finance workflows",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "author": {
         "name": "Reggie Chan"
       }

@@ -1,0 +1,25 @@
+{
+  "id": "06_westmount_professional_campus",
+  "name": "Westmount Professional Campus",
+  "address": "1212 Westmount Boulevard, Montreal, QC H3Y 1Z8",
+  "rsf_total": 58000,
+  "rsf_retail": 14000,
+  "rsf_office": 44000,
+  "gross_potential_income": "2612540.00",
+  "effective_gross_income": "2507540.00",
+  "projected_effective_gross_income": "2472540.00",
+  "vacancy_loss": "85000.00",
+  "credit_allowance": "20000.00",
+  "pools": [
+    {
+      "name": "office",
+      "rsf": 44000,
+      "share_of_total": 0.76
+    },
+    {
+      "name": "retail",
+      "rsf": 14000,
+      "share_of_total": 0.24
+    }
+  ]
+}

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 from decimal import Decimal
 
 
@@ -39,3 +40,19 @@ def test_management_fee_reduced_to_egi_basis(classified_matheson_manifest):
         if line.category_raw == "Management Fee"
     )
     assert recoverable_total == Decimal("110800.00")
+
+
+def test_decision_record_roundtrip(raw_matheson_manifest):
+    from scripts.classify_validator import DecisionRecord, generate_default_decisions
+    from scripts.validation import ManifestJSONEncoder
+
+    decisions = generate_default_decisions(raw_matheson_manifest)
+    payload = json.loads(json.dumps(decisions, cls=ManifestJSONEncoder))
+    rebuilt = [DecisionRecord.from_dict(item) for item in payload]
+
+    assert len(rebuilt) == len(decisions)
+    for original, restored in zip(decisions, rebuilt):
+        assert original.line_id == restored.line_id
+        assert original.classification.recoverable == restored.classification.recoverable
+        assert original.classification.reason == restored.classification.reason
+        assert original.classification.recoverable_amount == restored.classification.recoverable_amount

@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 from collections import defaultdict
+from dataclasses import asdict, replace
 from decimal import Decimal, ROUND_FLOOR
 import sys
 from pathlib import Path
@@ -108,7 +109,7 @@ def direct_bill_for_line(lease: Lease, line_category_key: str, raw_category: str
             continue
         if _specific_exclusion_treatment(rule) != "direct_bill_to_matching_tenant":
             continue
-        citation = LeaseCitation.model_validate(rule["citation"]) if "citation" in rule else lease.clause_refs.get("restaurant_exclusion", PRONTO_GREASE_TRAP_CITATION)
+        citation = LeaseCitation.from_dict(rule["citation"]) if "citation" in rule else lease.clause_refs.get("restaurant_exclusion", PRONTO_GREASE_TRAP_CITATION)
         return True, rule.get("reason", "specific_exclusion"), citation
 
     return False, None, None
@@ -129,7 +130,7 @@ def exclusion_for_line(lease: Lease, line_category_key: str, raw_category: str, 
             continue
         if _specific_exclusion_treatment(rule) == "direct_bill_to_matching_tenant":
             continue
-        citation = LeaseCitation.model_validate(rule["citation"]) if "citation" in rule else lease.clause_refs.get("restaurant_exclusion", PRONTO_GREASE_TRAP_CITATION)
+        citation = LeaseCitation.from_dict(rule["citation"]) if "citation" in rule else lease.clause_refs.get("restaurant_exclusion", PRONTO_GREASE_TRAP_CITATION)
         return True, rule.get("reason", "specific_exclusion"), citation
 
     return False, None, None
@@ -354,7 +355,7 @@ def allocate_manifest(manifest: Manifest) -> Manifest:
                 "base_year": lease.base_year.year,
                 "base_amount": base_amount,
                 "amount_removed": absorbed,
-                "citation": lease.clause_refs.get("base_year", BASE_YEAR_CITATION).model_dump(mode="json"),
+                "citation": asdict(lease.clause_refs.get("base_year", BASE_YEAR_CITATION)),
             }
             steps.append(f"Applied base year credit of ${absorbed:,.2f}.")
 
@@ -379,7 +380,7 @@ def allocate_manifest(manifest: Manifest) -> Manifest:
                 "controllable_cap_ceiling_psf": cap_psf,
                 "controllable_cap_ceiling_total": cap_ceiling_total,
                 "landlord_absorbed": landlord_absorbed,
-                "citation": lease.clause_refs.get("cap", CANADAFIRST_CAP).model_dump(mode="json"),
+                "citation": asdict(lease.clause_refs.get("cap", CANADAFIRST_CAP)),
             }
             steps.append(
                 f"Applied CAM cap check: controllable ${controllable:,.2f} vs ceiling ${cap_ceiling_total:,.2f}."
@@ -399,7 +400,7 @@ def allocate_manifest(manifest: Manifest) -> Manifest:
             citations.append(
                 {
                     "gl_line_id": line_id,
-                    "lease_citation_ref": _line_citation_for_charge(lease, category_key).model_dump(mode="json"),
+                    "lease_citation_ref": asdict(_line_citation_for_charge(lease, category_key)),
                     "contribution_amount": contribution,
                 }
             )
@@ -437,13 +438,12 @@ def allocate_manifest(manifest: Manifest) -> Manifest:
             f"!= recoverable {recoverable_total}"
         )
 
-    return manifest.model_copy(
-        update={
-            "gl_lines": manifest.gl_lines,
-            "tenant_charges": tenant_charges,
-            "landlord_absorbed_total": landlord_absorbed_total,
-            "direct_billed_total": total_direct_billed,
-        }
+    return replace(
+        manifest,
+        gl_lines=manifest.gl_lines,
+        tenant_charges=tenant_charges,
+        landlord_absorbed_total=landlord_absorbed_total,
+        direct_billed_total=total_direct_billed,
     )
 
 

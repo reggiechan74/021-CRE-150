@@ -1,0 +1,25 @@
+{
+  "id": "02_kingsway_commons",
+  "name": "Kingsway Commons",
+  "address": "910 Kingsway Drive, Vancouver, BC V5V 3C5",
+  "rsf_total": 52000,
+  "rsf_retail": 22000,
+  "rsf_office": 30000,
+  "gross_potential_income": "2457480.00",
+  "effective_gross_income": "2387480.00",
+  "projected_effective_gross_income": "2352480.00",
+  "vacancy_loss": "50000.00",
+  "credit_allowance": "20000.00",
+  "pools": [
+    {
+      "name": "office",
+      "rsf": 30000,
+      "share_of_total": 0.58
+    },
+    {
+      "name": "retail",
+      "rsf": 22000,
+      "share_of_total": 0.42
+    }
+  ]
+}

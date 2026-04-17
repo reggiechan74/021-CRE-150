@@ -10,10 +10,6 @@ from pathlib import Path
 
 from openpyxl import Workbook
 from openpyxl.styles import Alignment, Font, PatternFill
-from reportlab.lib import colors
-from reportlab.lib.pagesizes import LETTER
-from reportlab.lib.styles import getSampleStyleSheet
-from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
 
 PLUGIN_ROOT = Path(__file__).resolve().parent.parent
 if str(PLUGIN_ROOT) not in sys.path:
@@ -110,108 +106,81 @@ def lease_narrative(manifest: Manifest, charge) -> str:
     )
 
 
-def render_tenant_pdf(manifest: Manifest, charge, output_path: Path) -> None:
+def render_tenant_markdown(manifest: Manifest, charge, output_path: Path) -> None:
     lease = next(lease for lease in manifest.leases if lease.tenant_id == charge.tenant_id)
-    styles = getSampleStyleSheet()
-    story = []
-    story.append(Paragraph(f"{manifest.property.name} — FY{manifest.fiscal_year} CAM Statement", styles["Title"]))
-    story.append(Paragraph(f"{lease.tenant_name} ({lease.unit_label})", styles["Heading2"]))
-    story.append(Paragraph(lease_narrative(manifest, charge), styles["BodyText"]))
-    story.append(Spacer(1, 12))
-
-    summary_rows = [
-        ["Gross Share Before Exclusions", f"${money(charge.gross_share_before_exclusions):,.2f}"],
-        ["Final CAM Charge", f"${money(charge.final_charge):,.2f}"],
-        ["Direct-Billed Items", f"${money(charge.direct_bill_total):,.2f}"],
-        ["Total Due", f"${money(charge.total_due):,.2f}"],
-        ["Pre-billed", f"${money(charge.annual_prebilled or 0):,.2f}"],
-        ["CAM True-Up", f"${money(charge.vs_prebilled or 0):,.2f}"],
-    ]
-    table = Table(summary_rows, colWidths=[260, 140])
-    table.setStyle(
-        TableStyle(
-            [
-                ("BACKGROUND", (0, 0), (-1, 0), colors.whitesmoke),
-                ("BOX", (0, 0), (-1, -1), 0.5, colors.grey),
-                ("INNERGRID", (0, 0), (-1, -1), 0.25, colors.lightgrey),
-            ]
-        )
-    )
-    story.append(table)
+    lines: list[str] = []
+    lines.append(f"# {manifest.property.name} — FY{manifest.fiscal_year} CAM Statement")
+    lines.append("")
+    lines.append(f"## {lease.tenant_name} ({lease.unit_label})")
+    lines.append("")
+    lines.append(lease_narrative(manifest, charge))
+    lines.append("")
+    lines.append("## Summary")
+    lines.append("")
+    lines.append("| Line Item | Amount |")
+    lines.append("|-----------|-------:|")
+    lines.append(f"| Gross Share Before Exclusions | ${money(charge.gross_share_before_exclusions):,.2f} |")
+    lines.append(f"| Final CAM Charge | ${money(charge.final_charge):,.2f} |")
+    lines.append(f"| Direct-Billed Items | ${money(charge.direct_bill_total):,.2f} |")
+    lines.append(f"| Total Due | ${money(charge.total_due):,.2f} |")
+    lines.append(f"| Pre-billed | ${money(charge.annual_prebilled or 0):,.2f} |")
+    lines.append(f"| CAM True-Up | ${money(charge.vs_prebilled or 0):,.2f} |")
 
     if charge.exclusions_applied:
-        story.append(Spacer(1, 12))
-        story.append(Paragraph("Lease-Specific Exclusions", styles["Heading3"]))
+        lines.append("")
+        lines.append("## Lease-Specific Exclusions")
+        lines.append("")
         for exclusion in charge.exclusions_applied:
-            story.append(
-                Paragraph(
-                    f"{exclusion.category}: -${money(exclusion.amount_removed):,.2f} "
-                    f"({exclusion.citation_ref.section if exclusion.citation_ref else 'lease exclusion'})",
-                    styles["BodyText"],
-                )
+            section = exclusion.citation_ref.section if exclusion.citation_ref else "lease exclusion"
+            lines.append(
+                f"- {exclusion.category}: -${money(exclusion.amount_removed):,.2f} ({section})"
             )
 
     if charge.direct_bills_applied:
-        story.append(Spacer(1, 12))
-        story.append(Paragraph("Lease-Specific Direct Bills", styles["Heading3"]))
+        lines.append("")
+        lines.append("## Lease-Specific Direct Bills")
+        lines.append("")
         for item in charge.direct_bills_applied:
+            section = item.citation_ref.section if item.citation_ref else "lease direct bill"
             source_ids = ", ".join(item.source_gl_ids)
-            story.append(
-                Paragraph(
-                    f"{item.category}: +${money(item.amount_billed):,.2f} "
-                    f"({item.citation_ref.section if item.citation_ref else 'lease direct bill'}; GL {source_ids})",
-                    styles["BodyText"],
-                )
+            lines.append(
+                f"- {item.category}: +${money(item.amount_billed):,.2f} ({section}; GL {source_ids})"
             )
 
     if charge.base_year_adjustment:
-        story.append(Spacer(1, 12))
-        story.append(Paragraph("Base Year Adjustment", styles["Heading3"]))
-        story.append(
-            Paragraph(
-                f"Base year amount removed: ${money(charge.base_year_adjustment['amount_removed']):,.2f}.",
-                styles["BodyText"],
-            )
+        lines.append("")
+        lines.append("## Base Year Adjustment")
+        lines.append("")
+        lines.append(
+            f"Base year amount removed: ${money(charge.base_year_adjustment['amount_removed']):,.2f}."
         )
 
     if charge.cap_adjustment:
-        story.append(Spacer(1, 12))
-        story.append(Paragraph("CAM Cap Review", styles["Heading3"]))
-        story.append(
-            Paragraph(
-                f"Controllable share: ${money(charge.cap_adjustment['controllable_uncapped']):,.2f}; "
-                f"ceiling: ${money(charge.cap_adjustment['controllable_cap_ceiling_total']):,.2f}; "
-                f"landlord absorbed: ${money(charge.cap_adjustment['landlord_absorbed']):,.2f}.",
-                styles["BodyText"],
-            )
+        lines.append("")
+        lines.append("## CAM Cap Review")
+        lines.append("")
+        lines.append(
+            f"- Controllable share: ${money(charge.cap_adjustment['controllable_uncapped']):,.2f}"
+        )
+        lines.append(
+            f"- Ceiling: ${money(charge.cap_adjustment['controllable_cap_ceiling_total']):,.2f}"
+        )
+        lines.append(
+            f"- Landlord absorbed: ${money(charge.cap_adjustment['landlord_absorbed']):,.2f}"
         )
 
-    story.append(Spacer(1, 12))
-    story.append(Paragraph("Citation Trail", styles["Heading3"]))
-    citation_rows = [["GL Line", "Contribution", "Lease Authority"]]
+    lines.append("")
+    lines.append("## Citation Trail")
+    lines.append("")
+    lines.append("| GL Line | Contribution | Lease Authority |")
+    lines.append("|---------|-------------:|-----------------|")
     for item in charge.citations[:20]:
-        citation_rows.append(
-            [
-                item["gl_line_id"],
-                f"${money(item['contribution_amount']):,.2f}",
-                item["lease_citation_ref"]["section"],
-            ]
+        lines.append(
+            f"| {item['gl_line_id']} | ${money(item['contribution_amount']):,.2f} | {item['lease_citation_ref']['section']} |"
         )
-    citation_table = Table(citation_rows, colWidths=[90, 120, 190], repeatRows=1)
-    citation_table.setStyle(
-        TableStyle(
-            [
-                ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#1F4E78")),
-                ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
-                ("BOX", (0, 0), (-1, -1), 0.5, colors.grey),
-                ("INNERGRID", (0, 0), (-1, -1), 0.25, colors.lightgrey),
-            ]
-        )
-    )
-    story.append(citation_table)
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    SimpleDocTemplate(str(output_path), pagesize=LETTER).build(story)
+    output_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
 def render_workpaper(manifest: Manifest, output_path: Path) -> None:
@@ -333,7 +302,7 @@ def render_outputs(manifest: Manifest, output_dir: Path) -> dict[str, Path]:
     output_dir.mkdir(parents=True, exist_ok=True)
     statements_dir = output_dir / "tenant_statements"
     for charge in manifest.tenant_charges:
-        render_tenant_pdf(manifest, charge, statements_dir / f"{charge.tenant_id}.pdf")
+        render_tenant_markdown(manifest, charge, statements_dir / f"{charge.tenant_id}.md")
 
     workpaper = output_dir / "workpaper.xlsx"
     audit_log = output_dir / "audit_log.md"

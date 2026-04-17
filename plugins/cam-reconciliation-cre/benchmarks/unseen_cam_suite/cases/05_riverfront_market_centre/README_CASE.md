@@ -7,7 +7,7 @@ Manual Anthropic run packet:
 - `Lease_Excerpts_CAM_Clauses.md`
 
 Plugin input files for `cam-reconciliation-cre`:
-- `property.yaml`
+- `property.json`
 - `leases.json`
 - `gl.csv`
 - `budget.md`
