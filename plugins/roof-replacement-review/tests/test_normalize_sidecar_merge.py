@@ -18,6 +18,10 @@ import pytest
 PLUGIN_ROOT = Path(__file__).resolve().parents[1]
 NORMALIZE = PLUGIN_ROOT / "scripts" / "normalize.py"
 FIXTURES = PLUGIN_ROOT / "fixtures"
+SCORE = PLUGIN_ROOT / "scripts" / "score.py"
+RENDER_MATRIX = PLUGIN_ROOT / "scripts" / "render_matrix.py"
+RENDER_MEMO = PLUGIN_ROOT / "scripts" / "render_memo.py"
+REDFLAGS = PLUGIN_ROOT / "scripts" / "redflags.py"
 
 
 def _write_json(path: Path, data: dict) -> None:
@@ -225,3 +229,90 @@ def test_legacy_fixture_shape_still_merges_cleanly(tmp_path: Path) -> None:
     for bid in data["bids"]:
         assert "mandatory_gates" in bid
         assert "scores" in bid
+
+
+def test_end_to_end_with_synthetic_sidecars(tmp_path: Path, rfp_manifest: Path) -> None:
+    """End-to-end: two base bids + their qual and tech sidecars must flow through
+    normalize → score → all three renderers without error."""
+    # Base bids
+    for bid_id, price in [("alpha", 480000), ("beta", 520000)]:
+        _write_json(tmp_path / f"bid_{bid_id}.json", {
+            "bidder_id": bid_id,
+            "bidder_name": f"{bid_id.title()} Roofing",
+            "pricing": {"base_bid_cad": price, "hst_included": False},
+            "red_flags": [],
+            "extraction_notes": [],
+        })
+        _write_json(tmp_path / f"bid_{bid_id}.qual.json", {
+            "bidder_id": bid_id,
+            "mandatory_gates": {
+                "wsib_clearance": {"result": "pass", "evidence": "p. 1"},
+                "cgl_insurance": {"result": "pass", "evidence": "p. 2"},
+            },
+            "scores": {
+                "experience_references": 60,
+                "qualifications_certifications": 55,
+                "schedule": 70,
+            },
+            "scoring_rationale": {},
+            "red_flags": [],
+        })
+        _write_json(tmp_path / f"bid_{bid_id}.tech.json", {
+            "bidder_id": bid_id,
+            "mandatory_gates": {
+                "cover_board": {"result": "pass", "evidence": "p. 10"},
+            },
+            "scores": {
+                "technical_approach": 65,
+                "warranty_materials": 70,
+            },
+            "scoring_rationale": {},
+            "red_flags": [],
+        })
+
+    # RFP with weights
+    _write_json(tmp_path / "rfp.json", {
+        "project": {"name": "Smoke Test"},
+        "rfp": {
+            "mandatory_requirements": {},
+            "submission_requirements": [],
+            "evaluation_criteria": {
+                "weighting": {
+                    "price": 45, "technical_approach": 15, "experience_references": 15,
+                    "warranty_materials": 10, "schedule": 5, "qualifications_certifications": 10,
+                },
+                "price_scoring_method": "formula_lowest_ratio",
+            },
+        },
+    })
+
+    manifest = tmp_path / "tender_manifest.json"
+    subprocess.run([
+        sys.executable, str(NORMALIZE),
+        "--rfp", str(tmp_path / "rfp.json"),
+        "--bids", str(tmp_path / "bid_*.json"),
+        "--qual-sidecars", str(tmp_path / "bid_*.qual.json"),
+        "--tech-sidecars", str(tmp_path / "bid_*.tech.json"),
+        "--out", str(manifest),
+    ], check=True)
+
+    subprocess.run([sys.executable, str(SCORE), "--manifest", str(manifest)], check=True)
+
+    scored = json.loads(manifest.read_text())
+    assert scored["comparison"]["recommended_bidder_id"] in {"alpha", "beta"}
+    ranked = [b for b in scored["bids"] if b["scores"].get("rank") == 1]
+    assert len(ranked) == 1
+
+    for script, out_name in [
+        (RENDER_MATRIX, "scoring_matrix.md"),
+        (RENDER_MEMO, "recommendation_memo.md"),
+        (REDFLAGS, "redflag_report.md"),
+    ]:
+        out_path = tmp_path / out_name
+        subprocess.run([
+            sys.executable, str(script),
+            "--manifest", str(manifest),
+            "--out", str(out_path),
+        ], check=True)
+        assert out_path.is_file()
+        assert out_path.stat().st_size > 0
