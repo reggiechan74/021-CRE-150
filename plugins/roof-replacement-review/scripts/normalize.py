@@ -114,7 +114,7 @@ def main() -> int:
     for bid in bids:
         bid_id = bid.get("bidder_id")
         if not bid_id:
-            all_errors.append(f"base bid manifest missing bidder_id")
+            all_errors.append("base bid manifest missing bidder_id")
             continue
         if bid_id in qual_index:
             all_errors.extend(merge_sidecar(bid, qual_index[bid_id], f"{bid_id}.qual"))
@@ -132,6 +132,22 @@ def main() -> int:
                 "score.py will fail unless this is intentional",
                 file=sys.stderr,
             )
+
+    bid_ids = {bid.get("bidder_id") for bid in bids}
+    orphan_quals = sorted(set(qual_index) - bid_ids)
+    orphan_techs = sorted(set(tech_index) - bid_ids)
+    for orphan in orphan_quals:
+        print(
+            f"WARNING: qual sidecar for bidder '{orphan}' has no matching base bid "
+            "manifest — likely a bidder_id typo; sidecar contents will be dropped",
+            file=sys.stderr,
+        )
+    for orphan in orphan_techs:
+        print(
+            f"WARNING: tech sidecar for bidder '{orphan}' has no matching base bid "
+            "manifest — likely a bidder_id typo; sidecar contents will be dropped",
+            file=sys.stderr,
+        )
 
     if all_errors:
         print("ERROR: sidecar merge failed:", file=sys.stderr)

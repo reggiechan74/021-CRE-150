@@ -176,3 +176,28 @@ def test_merge_tolerates_missing_sidecars(
     # No sidecars means no gates/scores populated yet — that's fine, score.py fails later
     # with a clearer error. This test just asserts normalize itself doesn't crash.
     assert "mandatory_gates" not in bids[0] or bids[0].get("mandatory_gates") == {}
+
+
+def test_merge_warns_on_orphan_sidecar(tmp_path: Path, rfp_manifest: Path, base_bid: Path) -> None:
+    """Orphan sidecar — bidder_id doesn't match any base bid — must surface a
+    warning so operators notice bidder_id typos instead of chasing 'missing
+    sidecar' errors in a loop."""
+    _write_json(tmp_path / "bid_mystery.qual.json", {
+        "bidder_id": "mystery",
+        "mandatory_gates": {"wsib_clearance": {"result": "pass"}},
+        "scores": {"experience_references": 10, "qualifications_certifications": 10, "schedule": 10},
+        "scoring_rationale": {},
+        "red_flags": [],
+    })
+    result = subprocess.run(
+        [
+            sys.executable, str(NORMALIZE),
+            "--rfp", str(rfp_manifest),
+            "--bids", str(tmp_path / "bid_*.json"),
+            "--qual-sidecars", str(tmp_path / "bid_*.qual.json"),
+            "--out", str(tmp_path / "tender_manifest.json"),
+        ],
+        capture_output=True, text=True, check=True,
+    )
+    assert "mystery" in result.stderr
+    assert "no matching base bid" in result.stderr
