@@ -265,8 +265,9 @@ Using the extracted landlord name and property address from Step B, match agains
 }
 ```
 
-**If acquisition_cost is 0.0 or missing and area is known**:
-`acquisition_cost = area_sf × default_acquisition_cost_psf`
+**If acquisition_cost is 0.0 or missing**:
+`acquisition_cost = gla_building_sf × default_acquisition_cost_psf`
+Use `gla_building_sf` (full building GLA), NOT the unit's `area_sf`. The acquisition cost is for the whole building, not just the tenant's unit.
 
 **If year_built is known**:
 `remaining_depreciation_years = max(1, 40 - (current_year - year_built))`

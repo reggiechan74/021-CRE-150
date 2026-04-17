@@ -19,7 +19,27 @@ depreciation via the Inwood sinking fund method.
 """
 
 import numpy as np
-import numpy_financial as npf
+try:
+    import numpy_financial as npf
+except ImportError:
+    # numpy_financial was split from numpy in v1.17; provide inline fallbacks
+    class npf:  # noqa: N801
+        @staticmethod
+        def pv(rate, nper, pmt, fv=0, when=0):
+            if rate == 0:
+                return -(pmt * nper + fv)
+            when_factor = (1 + rate) if when == 1 else 1
+            pv_factor = (1 - (1 + rate) ** -nper) / rate
+            return -(pmt * pv_factor * when_factor + fv * (1 + rate) ** -nper)
+
+        @staticmethod
+        def pmt(rate, nper, pv, fv=0, when=0):
+            if rate == 0:
+                return -(pv + fv) / nper
+            when_factor = (1 + rate) if when == 1 else 1
+            pv_factor = (1 - (1 + rate) ** -nper) / rate
+            return -(pv + fv * (1 + rate) ** -nper) / (pv_factor * when_factor)
+
 from dataclasses import dataclass, field
 from typing import List, Optional
 from datetime import datetime, date
