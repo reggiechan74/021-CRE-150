@@ -1,0 +1,8 @@
+{
+  "name": "roof-replacement-review",
+  "version": "0.1.0",
+  "description": "Owner-side Ontario roof tender evaluation — parses RFP and contractor bids, applies mandatory qualification gates (WSIB, CGL, WAH, Skilled Trades Ontario), runs weighted MCDA scoring, and produces a scoring matrix, red-flag report, and recommendation memo with OBC/CRCA/CCDC-23 citations",
+  "author": {
+    "name": "Reggie Chan"
+  }
+}
