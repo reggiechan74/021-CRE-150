@@ -11,45 +11,97 @@ Resolve the plugin root from `CLAUDE_PLUGIN_ROOT` or use:
 
 ## Pipeline
 
-1. **Extract RFP.** Invoke the `roof-rfp-extract` skill on the first argument. Writes `roof-review-output/manifests/rfp.json` in the RFP's directory. Runs in the main thread because every downstream bid needs the RFP manifest.
+1. **Wave 1 — extract everything in parallel.** Dispatch `N+1` subagents in a **single message**:
+   - **One** subagent invokes the `roof-rfp-extract` skill on the RFP argument. It writes `<rfp-dir>/roof-review-output/manifests/rfp.json`.
+   - **For each bid PDF argument**, one subagent invokes the `roof-bid-extract` skill. Each writes `<rfp-dir>/roof-review-output/manifests/bid_<slug>.json`.
 
-2. **Fan out per-bid processing (PARALLEL).** For each bid PDF passed as an argument, dispatch **one** `Agent` tool call. Send all bid-subagent calls in a **single message** so they run concurrently. Each subagent handles one bid end-to-end: extract → qualification check → technical review. This is the performance-critical step — do NOT run bids sequentially in the main thread.
+   These are RFP-independent (see `skills/roof-bid-extract/SKILL.md` "Inputs") so they legitimately run concurrently. The main thread waits for all wave-1 subagents to return before proceeding.
 
-   Per-bid subagent prompt template (substitute `<BID_PATH>`, `<RFP_MANIFEST_PATH>`, `<PLUGIN_ROOT>`):
+   Per-bid wave-1 subagent prompt template (substitute `<BID_PATH>`, `<RFP_DIR>`, `<PLUGIN_ROOT>`):
 
    ```
-   You are processing one roofing bid for the roof-replacement-review pipeline.
+   You are extracting one roofing bid for the roof-replacement-review pipeline.
 
    Plugin root: <PLUGIN_ROOT>    (also available as $CLAUDE_PLUGIN_ROOT)
-   RFP manifest: <RFP_MANIFEST_PATH>
    Bid PDF: <BID_PATH>
+   Output directory: <RFP_DIR>/roof-review-output/manifests/
 
-   Run these three skills in order on this single bid:
-     a. roof-bid-extract — produces <rfp-dir>/roof-review-output/manifests/bid_<slug>.json
-     b. roof-qualification-check — populates mandatory_gates + qualification red_flags + sub-scores in that same bid manifest
-     c. roof-technical-review — populates technical red_flags + technical/warranty sub-scores in that same bid manifest
+   Run the `roof-bid-extract` skill on this single bid. Write the base bid manifest
+   to <RFP_DIR>/roof-review-output/manifests/bid_<slug>.json.
 
-   Do NOT touch the RFP manifest or any other bid's manifest.
+   Do NOT touch rfp.json or any other bid's manifest. Do NOT evaluate mandatory
+   gates or sub-scores — that is wave 2's job.
 
    Return ONLY:
      - Bidder legal name
      - Bid manifest path
-     - Compliance status (compliant | non-compliant | needs-clarification)
-     - Weighted sub-score snapshot (the five rated sub-scores)
-     - Count of critical/high red flags
+     - Base bid (and HST treatment)
+     - Declared exclusions count
      - Any extraction_notes items that need owner follow-up
    ```
 
-   The main thread waits for all subagents to return before proceeding to step 3.
+2. **Wave 2 — review each bid in parallel.** Once wave 1 completes, dispatch `2 × N` subagents in a **single message** (one qual + one tech per bid):
+   - Each **qual subagent** invokes `roof-qualification-check` on one bid and writes `bid_<slug>.qual.json`.
+   - Each **tech subagent** invokes `roof-technical-review` on the same bid and writes `bid_<slug>.tech.json`.
 
-3. **Merge manifests.** Run the merge script:
+   Because the two skills write disjoint sidecar files and have disjoint output ownership (gate names, sub-scores, red-flag categories — see `skills/roof-qualification-check/SKILL.md` "Sidecar Output File" and `skills/roof-technical-review/SKILL.md` "Sidecar Output File"), they can run concurrently without conflict.
+
+   Per-bid wave-2 qual subagent prompt template:
+
+   ```
+   You are running qualification review for one roofing bid.
+
+   Plugin root: <PLUGIN_ROOT>
+   RFP manifest: <RFP_DIR>/roof-review-output/manifests/rfp.json
+   Base bid manifest: <RFP_DIR>/roof-review-output/manifests/bid_<slug>.json
+
+   Run the `roof-qualification-check` skill. Write your output ONLY to:
+     <RFP_DIR>/roof-review-output/manifests/bid_<slug>.qual.json
+
+   Do NOT modify the base bid manifest or any other file.
+
+   Return ONLY:
+     - Bidder legal name
+     - Gate pass / fail / needs-clarification counts
+     - Sub-scores (experience_references, qualifications_certifications, schedule)
+     - Critical qualification issues
+   ```
+
+   Per-bid wave-2 tech subagent prompt template:
+
+   ```
+   You are running technical review for one roofing bid.
+
+   Plugin root: <PLUGIN_ROOT>
+   RFP manifest: <RFP_DIR>/roof-review-output/manifests/rfp.json
+   Base bid manifest: <RFP_DIR>/roof-review-output/manifests/bid_<slug>.json
+
+   Run the `roof-technical-review` skill. Write your output ONLY to:
+     <RFP_DIR>/roof-review-output/manifests/bid_<slug>.tech.json
+
+   Do NOT modify the base bid manifest or any other file.
+
+   Return ONLY:
+     - Bidder legal name
+     - Sub-scores (technical_approach, warranty_materials)
+     - Critical/high red flag counts
+     - Top 3 technical concerns
+   ```
+
+   The main thread waits for all `2 × N` subagents to return before proceeding.
+
+3. **Merge manifests.** Run the merge script with both sidecar globs:
 
 ```bash
 python3 "$CLAUDE_PLUGIN_ROOT/scripts/normalize.py" \
   --rfp "<rfp-output-dir>/manifests/rfp.json" \
   --bids "<rfp-output-dir>/manifests/bid_*.json" \
+  --qual-sidecars "<rfp-output-dir>/manifests/bid_*.qual.json" \
+  --tech-sidecars "<rfp-output-dir>/manifests/bid_*.tech.json" \
   --out "<rfp-output-dir>/manifests/tender_manifest.json"
 ```
+
+The `--bids` glob picks up only `bid_<slug>.json` (base manifests); the sidecar globs match the `.qual.json` and `.tech.json` siblings. `normalize.py` will refuse to merge if the two sidecars collide on a gate/score/rationale key — that indicates a skill wrote outside its ownership boundary and must be fixed before scoring.
 
 4. **Score.** Run the scoring engine. If the user passed `config=<path>` in the arguments, append `--config <path>` to override the RFP's weights and price scoring method:
 
@@ -59,27 +111,33 @@ python3 "$CLAUDE_PLUGIN_ROOT/scripts/score.py" \
   [--config <evaluation_config.yaml>]
 ```
 
+`score.py` runs `reconcile_gates` (gate applicability + cross-bid symmetry) as its first action and refuses to score if a bidder has been failed on a gate the RFP never invoked, or if identical evidence has been treated asymmetrically across bidders. Fix the flagged bid sidecars by re-running the relevant wave-2 subagent on the offending bid(s), then re-run step 3 and step 4.
+
 Example config at `templates/evaluation_config.yaml`. Common uses: occupied-building weighting (raise schedule + technical), BPS procurement (raise price, use `lowest_compliant` method), heritage/complex roof (raise technical).
 
 5. **Render deliverables (deterministic fast path, then optional LLM polish).**
 
-   Run all three renderer scripts first — pure Python, no LLM, typically <1s total:
+   Run all three renderer scripts **in parallel** — pure Python, no LLM, typically <1s total. Issue all three `Bash` tool calls in a single message so they execute concurrently (they only read the manifest and write disjoint output files, so there is no ordering or race risk):
 
 ```bash
 python3 "$CLAUDE_PLUGIN_ROOT/scripts/render_matrix.py" \
   --manifest "<rfp-output-dir>/manifests/tender_manifest.json" \
   --out "<rfp-output-dir>/scoring_matrix.md"
+```
 
+```bash
 python3 "$CLAUDE_PLUGIN_ROOT/scripts/redflags.py" \
   --manifest "<rfp-output-dir>/manifests/tender_manifest.json" \
   --out "<rfp-output-dir>/redflag_report.md"
+```
 
+```bash
 python3 "$CLAUDE_PLUGIN_ROOT/scripts/render_memo.py" \
   --manifest "<rfp-output-dir>/manifests/tender_manifest.json" \
   --out "<rfp-output-dir>/recommendation_memo.md"
 ```
 
-   Then invoke the skills **as refinement passes** over the generated files — not from-scratch regeneration:
+   Then invoke the skills **as refinement passes** over the generated files — not from-scratch regeneration. Issue both refinement subagent calls in a **single message** so they run concurrently:
    - `roof-score-matrix` — read `scoring_matrix.md`, refine wording only if the mechanical output reads awkwardly; leave numbers and structure alone.
    - `roof-recommendation-memo` — read `recommendation_memo.md`, polish §1 Recommendation prose and trim/reorder award conditions in §5 for owner tone; keep §3, §4, §6, §7, §8 as-is unless data is wrong.
 
