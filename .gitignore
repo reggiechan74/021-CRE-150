@@ -4,3 +4,6 @@ __pycache__/
 .venv/
 venv/
 .DS_Store
+
+# Effective rent analyzer — deal-specific inputs/outputs (contain client data)
+plugins/effective-rent-analyzer/skills/effective-rent-analyzer/inputs/
