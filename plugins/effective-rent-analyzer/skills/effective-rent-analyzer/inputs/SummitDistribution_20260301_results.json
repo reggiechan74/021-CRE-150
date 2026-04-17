@@ -1,0 +1,73 @@
+{
+  "deal_name": "587 Beacon Road Unit B, Mississauga \u2014 Summit Distribution Inc. \u2014 5-Year Lease",
+  "calculation_date": "2026-04-16 20:13:54",
+  "inputs": {
+    "property": {
+      "unit": "B",
+      "area_sf": 125000.0,
+      "tenant": "Summit Distribution Inc."
+    },
+    "lease_terms": {
+      "term_months": 60,
+      "fixturing_months": 1,
+      "operating_costs_psf": 6.57
+    },
+    "rent_schedule_psf": [
+      18.0,
+      18.54,
+      19.1,
+      19.67,
+      20.26,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "discount_rate": 0.1
+  },
+  "results": {
+    "npv_analysis": {
+      "npv_net_rent_psf": 75.15,
+      "npv_costs_psf": -24.29,
+      "npv_lease_deal_psf": 50.86
+    },
+    "effective_rent": {
+      "ner_lease_term_only": 12.86,
+      "ner_with_fixturing": 12.45,
+      "ger_lease_term_only": 20.65,
+      "ger_with_fixturing": 20.39
+    },
+    "metrics": {
+      "effective_term_years": 3.95,
+      "incentives_pct_year1_gross": 0.7921,
+      "breakeven_months": 9.51
+    },
+    "breakeven_analysis": {
+      "unlevered_breakeven": 10.12,
+      "io_levered_breakeven": 7.86,
+      "fully_levered_breakeven": 10.06,
+      "sinking_fund_requirement_psf": 1.19,
+      "unlevered_with_caprec": 11.31,
+      "fully_levered_with_caprec": 11.25
+    },
+    "investment_assessment": {
+      "proposed_ner": 12.86,
+      "meets_unlevered_breakeven": true,
+      "meets_io_levered_breakeven": true,
+      "meets_fully_levered_breakeven": true,
+      "meets_unlevered_with_caprec": true,
+      "meets_fully_levered_with_caprec": true
+    },
+    "cost_breakdown": {
+      "tenant_cash_allowance": 1875000.0,
+      "landlord_work": 0.0,
+      "amortized_tenant_work": 0.0,
+      "pm_override_fee": 0.0,
+      "listing_agent": 301958.1,
+      "tenant_rep": 301958.1,
+      "net_free_rent_pv": 557864.05,
+      "gross_free_rent_pv": 0.0
+    }
+  }
+}

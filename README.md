@@ -2,7 +2,7 @@
 
 ![Workshop](https://img.shields.io/badge/021_Events-CRE--150-0066cc?style=flat-square)
 ![Platform](https://img.shields.io/badge/platform-Claude_Cowork-5436DA?style=flat-square)
-![Plugins](https://img.shields.io/badge/plugins-7-brightgreen?style=flat-square)
+![Plugins](https://img.shields.io/badge/plugins-8-brightgreen?style=flat-square)
 ![cre-lease-abstraction](https://img.shields.io/badge/cre--lease--abstraction-v0.3.0-blue?style=flat-square)
 ![mls-extractor](https://img.shields.io/badge/mls--extractor-v0.5.1-blue?style=flat-square)
 ![mcda-sales-comparison](https://img.shields.io/badge/mcda--sales--comparison-v1.0.0-blue?style=flat-square)
@@ -10,6 +10,7 @@
 ![tenant-credit](https://img.shields.io/badge/tenant--credit-v1.0.0-blue?style=flat-square)
 ![cam-reconciliation-cre](https://img.shields.io/badge/cam--reconciliation--cre-v0.1.0-blue?style=flat-square)
 ![roof-replacement-review](https://img.shields.io/badge/roof--replacement--review-v0.1.0-blue?style=flat-square)
+![effective-rent-analyzer](https://img.shields.io/badge/effective--rent--analyzer-v1.0.0-blue?style=flat-square)
 
 Plugin repository for the **CRE-150** training workshop in the **021 Events** series.
 
@@ -136,15 +137,31 @@ Parses the RFP and each bid into a normalized tender manifest, applies qualifica
 
 ---
 
+### `effective-rent-analyzer` — v1.0.0
+
+Lease deal investment analysis using the **Ponzi Rental Rate (PRR) framework** (Chan, 2015). Extracts terms from lease documents, matches landlord investment parameters from a configurable database, calculates NER/GER/NPV, determines breakeven thresholds at four levels, and generates an investment recommendation report.
+
+**Trigger:** "Analyze this lease deal" / "Calculate effective rent" / "NER analysis" + path to lease document + path to landlord parameters JSON
+
+Reads the lease or offer to lease (PDF, DOCX, MD), matches the landlord named in the PARTIES section against `landlord_investment_parameters.json`, builds a validated input JSON, runs `eff_rent_calculator.py`, and produces a Markdown report with NPV breakdown, NER vs breakeven comparison, and APPROVE / NEGOTIATE / REJECT recommendation.
+
+```
+/effective-rent /path/to/offer.pdf /path/to/landlord_params.json
+/effective-rent /path/to/lease.pdf /path/to/landlord_params.json /path/to/ti-quote.pdf
+```
+
+---
+
 ## Cowork Optimization
 
-All seven plugins are designed specifically for Claude Cowork's context architecture. Each skill follows a three-step dispatch pattern:
+All eight plugins are designed specifically for Claude Cowork's context architecture. Each skill follows a three-step dispatch pattern:
 
 1. **Primary context (thin)** — resolves file paths and environment variables, dispatches a subagent
 2. **Extraction subagent (full 200k window)** — handles all document reads, extraction, and file writes
 3. **Primary context** — relays the structured result to the user
 
 This keeps the primary context from being exhausted by large document reads, which is the most common failure mode for multi-step skills in Cowork. See `cowork_lessons_learned.md` for the full design rationale.
+
 
 ---
 

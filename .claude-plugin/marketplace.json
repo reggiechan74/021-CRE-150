@@ -5,8 +5,8 @@
     "email": "reggie.chan@gmail.com"
   },
   "metadata": {
-    "description": "Commercial real estate tools — lease abstraction, MLS data extraction, MCDA sales comparison valuation, competitive lease positioning, tenant credit analysis, CAM reconciliation, and Ontario roof replacement tender review",
-    "version": "0.8.0"
+    "description": "Commercial real estate tools — lease abstraction, MLS data extraction, MCDA sales comparison valuation, competitive lease positioning, tenant credit analysis, CAM reconciliation, Ontario roof replacement tender review, and effective rent analysis using the Ponzi Rental Rate framework",
+    "version": "0.9.0"
   },
   "plugins": [
     {
@@ -68,6 +68,15 @@
       "source": "./plugins/roof-replacement-review",
       "description": "Owner-side Ontario roof tender evaluation — parses RFP and contractor bids, applies mandatory qualification gates (WSIB, CGL, WAH, Skilled Trades Ontario), scores a weighted MCDA matrix, and produces a scoring matrix, red-flag report, and recommendation memo with OBC/CRCA/CCDC-23 citations",
       "version": "0.1.0",
+      "author": {
+        "name": "Reggie Chan"
+      }
+    },
+    {
+      "name": "effective-rent-analyzer",
+      "source": "./plugins/effective-rent-analyzer",
+      "description": "Effective rent analysis using the Ponzi Rental Rate (PRR) framework — extracts lease terms from documents, matches landlord investment parameters, calculates NER/GER/NPV, determines breakeven thresholds, and generates investment recommendation reports",
+      "version": "1.0.0",
       "author": {
         "name": "Reggie Chan"
       }

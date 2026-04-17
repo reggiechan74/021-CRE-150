@@ -1,0 +1,8 @@
+{
+  "name": "effective-rent-analyzer",
+  "version": "1.0.0",
+  "description": "Effective rent analysis using the Ponzi Rental Rate (PRR) framework — extracts lease terms from documents, matches landlord investment parameters, calculates NER/GER/NPV, determines breakeven thresholds, and generates investment recommendation reports",
+  "author": {
+    "name": "Reggie Chan"
+  }
+}
