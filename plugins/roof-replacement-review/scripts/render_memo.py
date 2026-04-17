@@ -40,6 +40,43 @@ def compliance_status(bid: dict) -> tuple[str, list[str], list[str]]:
     return "compliant", fails, clarifies
 
 
+TECHNICAL_GATES = frozenset({
+    "scope_compliance",
+    "membrane_thickness",
+    "cover_board",
+    "insulation_upgrade",
+    "warranty_type",
+    "warranty_duration",
+    "completion_date",
+    "mobilization_date",
+    "fire_rating",
+    "wind_uplift",
+})
+
+
+def dq_basis(bid: dict) -> str:
+    """Classify a non-compliant bid's DQ basis for §4.C of the memo.
+
+    Technical: at least one failed gate names a scope/materials/warranty/
+    schedule item that cannot be cured without a rebid.
+    Administrative: all failed gates are documentation items (CGL, bonds,
+    WAH cert, addenda, non-collusion, site visit, references, etc.) that
+    would normally be clarifiable but the bidder did not supply evidence.
+    Technical-and-administrative: both classes present.
+    """
+    gates = bid.get("mandatory_gates") or {}
+    fail_names = [n for n, g in gates.items() if isinstance(g, dict) and g.get("result") == "fail"]
+    if not fail_names:
+        return "administrative"
+    tech_hits = [n for n in fail_names if n in TECHNICAL_GATES]
+    admin_hits = [n for n in fail_names if n not in TECHNICAL_GATES]
+    if tech_hits and admin_hits:
+        return "technical-and-administrative"
+    if tech_hits:
+        return "technical"
+    return "administrative"
+
+
 def gate_to_award_condition(gate_name: str, gate: dict) -> str:
     """Translate a needs_clarification gate into an award-condition sentence."""
     ev = gate.get("evidence") or ""
@@ -169,7 +206,7 @@ def render(manifest: dict) -> str:
         second_weighted = (second.get("scores") or {}).get("weighted_total")
         if second_weighted is not None:
             lines.append(
-                f"{rec_name} achieved the highest weighted score of {rec_weighted}/100 against the RFP evaluation criteria, leading the second-ranked compliant bid ({second.get('bidder_name', '—')} at {second_weighted}/100) by {round(rec_weighted - second_weighted, 2)} points. Of the {len(bids)} submissions received, {comparison.get('compliant_bidders_count', '—')} are compliant and {len(non_compliant)} are non-compliant on material grounds (see §4)."
+                f"{rec_name} achieved the highest weighted score of {rec_weighted}/100 against the RFP evaluation criteria, leading the second-ranked bid ({second.get('bidder_name', '—')} at {second_weighted}/100) by {round(rec_weighted - second_weighted, 2)} points. Of the {len(bids)} submissions received, {comparison.get('fully_compliant_count', 0)} are fully compliant, {comparison.get('conditional_count', 0)} are compliant subject to administrative clarifications curable pre-contract, and {comparison.get('non_compliant_count', len(non_compliant))} are non-compliant on material grounds (see §4)."
             )
             lines.append("")
     lines += [
@@ -219,22 +256,45 @@ def render(manifest: dict) -> str:
         "",
         "## 4. Compliance Findings",
         "",
-        "**Compliant (ranked):**",
     ]
-    for b in ranked:
-        status, fails, clarifies = compliance_status(b)
-        note = f"all mandatory gates pass/fail satisfied; {len(clarifies)} gate(s) need documentary clarification before contract execution" if clarifies else "all mandatory gates satisfied"
-        lines.append(f"- **{b.get('bidder_name', '?')}** — {note}")
+
+    fully_compliant = [b for b in ranked if compliance_status(b)[0] == "compliant"]
+    conditional = [b for b in ranked if compliance_status(b)[0] == "needs_clarification"]
+
+    lines += ["### 4.A Fully Compliant", ""]
+    if fully_compliant:
+        for b in fully_compliant:
+            lines.append(f"- **{b.get('bidder_name', '?')}** — all mandatory gates satisfied; no clarifications required.")
+    else:
+        lines.append("- _None._")
+
+    lines += ["", "### 4.B Administratively Conditional", ""]
+    if conditional:
+        for b in conditional:
+            _, _, clarifies = compliance_status(b)
+            lines.append(
+                f"- **{b.get('bidder_name', '?')}** — ranked under the RFP §7 rubric with {len(clarifies)} "
+                f"administrative gate(s) requiring documentary clarification before contract execution: "
+                f"{', '.join(clarifies) or '—'}. Consistent with RFP §9.1, these are cured pre-award, not grounds for disqualification."
+            )
+    else:
+        lines.append("- _None._")
+
+    lines += ["", "### 4.C Non-Compliant (excluded from rated scoring)", ""]
     if non_compliant:
-        lines += ["", "**Non-compliant (excluded from rated scoring):**"]
         for b in non_compliant:
             _, fails, _ = compliance_status(b)
+            basis = dq_basis(b)
             flags = b.get("red_flags") or []
             crit = sum(1 for f in flags if f.get("severity") == "critical")
             high = sum(1 for f in flags if f.get("severity") == "high")
             lines.append(
-                f"- **{b.get('bidder_name', '?')}** — failed gates: {', '.join(fails) or '—'}; also carries {crit} critical and {high} high red flags. Non-compliance is not curable by clarification."
+                f"- **{b.get('bidder_name', '?')}** — {basis} disqualification; failed gates: "
+                f"{', '.join(fails) or '—'}; also carries {crit} critical and {high} high red flags. "
+                "Non-compliance is not curable by clarification at this stage."
             )
+    else:
+        lines.append("- _None._")
     lines += [
         "",
         "---",

@@ -93,6 +93,11 @@
           }
         },
 
+        "submission_requirements": {
+          "type": "array",
+          "description": "Verbatim list of the RFP's §6.2 (or equivalent) 'Required Content' / 'Submission Requirements' block. Each string is a single enumerated item as worded in the RFP. Used to answer: did the RFP explicitly tell bidders to submit X? If not, a missing X is at most a clarification item — never grounds for disqualification. Cf. Exercise 6 regression where bidders were failed for missing bid bonds the RFP never requested.",
+          "items": { "type": "string" }
+        },
         "mandatory_requirements": {
           "type": "object",
           "description": "Pass/fail gates. Any failure = bid non-compliant.",

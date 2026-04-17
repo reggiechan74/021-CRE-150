@@ -16,6 +16,8 @@ import sys
 from decimal import Decimal, ROUND_HALF_UP
 from pathlib import Path
 
+from reconcile_gates import find_asymmetries, find_inapplicable_fails
+
 
 RATED_KEYS = (
     "technical_approach",
@@ -106,14 +108,36 @@ def round2(x: float) -> float:
     return float(Decimal(str(x)).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP))
 
 
-def is_compliant(bid: dict) -> bool:
+def is_scorable(bid: dict) -> bool:
+    """True if the bid is either fully compliant or conditional.
+    Non-compliant bids (any gate result == 'fail') return False."""
+    return compliance_status(bid) != "non_compliant"
+
+
+# Back-compat alias — previous name conflated "scorable" with "compliant".
+is_compliant = is_scorable
+
+
+def compliance_status(bid: dict) -> str:
+    """Tri-state compliance tier:
+      - 'compliant'     — every gate passed
+      - 'conditional'   — no fails, but at least one needs_clarification (scored,
+                           ranked, surfaced with award conditions)
+      - 'non_compliant' — at least one gate failed (excluded from ranking)
+    """
     gates = bid.get("mandatory_gates") or {}
     if not gates:
-        return False
+        return "non_compliant"
+    has_clarification = False
     for gate in gates.values():
-        if isinstance(gate, dict) and gate.get("result") == "fail":
-            return False
-    return True
+        if not isinstance(gate, dict):
+            continue
+        result = gate.get("result")
+        if result == "fail":
+            return "non_compliant"
+        if result == "needs_clarification":
+            has_clarification = True
+    return "conditional" if has_clarification else "compliant"
 
 
 def compute_price_scores(bids: list[dict], method: str) -> dict[str, float]:
@@ -171,6 +195,25 @@ def main() -> int:
     with manifest_path.open("r", encoding="utf-8") as f:
         manifest = json.load(f)
 
+    # Fail-fast: reconcile gate applicability and cross-bid symmetry BEFORE scoring.
+    # A fail on a gate the RFP never invoked, or asymmetric treatment of identical
+    # evidence, would produce a legally indefensible ranking. Block it here rather
+    # than silently rank a distorted field.
+    recon_errors = (
+        find_inapplicable_fails(manifest.get("bids") or [], manifest.get("rfp") or {})
+        + find_asymmetries(manifest.get("bids") or [])
+    )
+    if recon_errors:
+        print("ERROR: gate reconciliation failed — refusing to score:", file=sys.stderr)
+        for line in recon_errors:
+            print(f"  - {line}", file=sys.stderr)
+        print(
+            "\nRe-run roof-qualification-check with the consistent applicability rules "
+            "documented in skills/roof-qualification-check/SKILL.md.",
+            file=sys.stderr,
+        )
+        return 1
+
     overrides: dict = {}
     if args.config:
         config_path = Path(args.config)
@@ -214,17 +257,36 @@ def main() -> int:
     compliant_scored: list[tuple[str, float]] = []
     for bid in bids:
         bid.setdefault("scores", {})
-        if not is_compliant(bid):
-            bid["scores"] = {**bid["scores"], "rank": None, "weighted_total": None, "compliant": False}
+        status = compliance_status(bid)
+        if status == "non_compliant":
+            bid["scores"] = {
+                **bid["scores"],
+                "rank": None,
+                "weighted_total": None,
+                "compliant": False,
+                "compliance_status": "non_compliant",
+            }
             continue
 
+        missing = [k for k in RATED_KEYS if bid["scores"].get(k) is None]
+        if missing:
+            print(
+                f"ERROR: bid {bid['bidder_id']} is compliant but missing upstream "
+                f"rated sub-score(s): {', '.join(missing)}. "
+                "Re-run roof-technical-review and roof-qualification-check "
+                "before scoring.",
+                file=sys.stderr,
+            )
+            return 1
+
         raw = {"price": price_scores.get(bid["bidder_id"], 0.0)}
-        raw.update({k: bid["scores"].get(k, 0.0) for k in RATED_KEYS})
+        raw.update({k: bid["scores"][k] for k in RATED_KEYS})
         total = compute_weighted_total(raw, weights)
 
         bid["scores"].update(raw)
         bid["scores"]["weighted_total"] = total
         bid["scores"]["compliant"] = True
+        bid["scores"]["compliance_status"] = status
         compliant_scored.append((bid["bidder_id"], total))
 
     compliant_scored.sort(key=lambda pair: pair[1], reverse=True)
@@ -233,20 +295,41 @@ def main() -> int:
         if bid.get("scores", {}).get("compliant"):
             bid["scores"]["rank"] = rank_by_id.get(bid["bidder_id"])
 
+    fully_compliant_count = sum(
+        1 for b in bids if compliance_status(b) == "compliant"
+    )
+    conditional_count = sum(
+        1 for b in bids if compliance_status(b) == "conditional"
+    )
+    non_compliant_count = sum(
+        1 for b in bids if compliance_status(b) == "non_compliant"
+    )
+
     manifest["comparison"] = {
         "price_low_cad": min(compliant_prices) if compliant_prices else None,
         "price_high_cad": max(compliant_prices) if compliant_prices else None,
         "price_spread_percent": compute_spread_percent(compliant_prices),
         "all_bids_price_low_cad": min(all_prices) if all_prices else None,
         "all_bids_price_high_cad": max(all_prices) if all_prices else None,
+        # compliant_bidders_count preserved as "scorable count" for schema
+        # back-compat — existing tests and renderers read this field. Use the
+        # three-tier counts below for user-facing compliance language.
         "compliant_bidders_count": len(compliant_scored),
+        "scorable_bidders_count": len(compliant_scored),
+        "fully_compliant_count": fully_compliant_count,
+        "conditional_count": conditional_count,
+        "non_compliant_count": non_compliant_count,
         "recommended_bidder_id": compliant_scored[0][0] if compliant_scored else None,
     }
 
     with manifest_path.open("w", encoding="utf-8") as f:
         json.dump(manifest, f, indent=2, ensure_ascii=False)
 
-    print(f"Scored {len(compliant_scored)} compliant bid(s) of {len(bids)} total")
+    print(
+        f"Scored {len(compliant_scored)} scorable bid(s) of {len(bids)} total "
+        f"({fully_compliant_count} fully compliant, {conditional_count} conditional, "
+        f"{non_compliant_count} non-compliant)"
+    )
     print(f"Weights source: {source}")
     if compliant_scored:
         print(f"Leader: {compliant_scored[0][0]} — {compliant_scored[0][1]}/100")

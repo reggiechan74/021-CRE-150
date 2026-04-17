@@ -39,7 +39,9 @@ Before extracting, be aware of the fixtures you must cite for classification dec
 
 4. **Extract warranty requirements.** Minimum years, warranty type (material-only vs NDL — see fixture 02 §1 for taxonomy), manufacturer certification requirement.
 
-5. **Extract mandatory requirements.** Each gate in §`rfp.mandatory_requirements` — set to actual value if specified in RFP, otherwise leave default.
+5. **Extract mandatory requirements.** Each gate in §`rfp.mandatory_requirements` — set to actual value if specified in RFP, otherwise leave default. **Important:** only set a mandatory-requirements field when the RFP *actually* invokes it. Do not fabricate `bid_bond_percent`, `addenda_acknowledgment_required`, or similar from "standard tender template" assumptions — those values drive gate applicability in `scripts/gate_applicability.py`, and setting them falsely will disqualify bidders for requirements the RFP never stated. When the RFP is silent, leave the field absent.
+
+5a. **Extract submission requirements verbatim.** The RFP's "Required Content" / "Submission Requirements" block (typically §6.2 in public-sector tenders; may be any section in private tenders) enumerates what bidders must submit. Copy each enumerated item as a single string into `rfp.submission_requirements[]`, preserving the RFP's wording. This list is consulted by the gate-applicability check: a gate is applicable if either `mandatory_requirements.<field>` is populated OR the item appears verbatim here. Do not paraphrase — the literal text is what future reviewers will diff against. If the RFP has no enumerated submission requirements block, write an empty array and note this in `extraction_notes`.
 
 6. **Extract evaluation criteria weighting.** If the RFP states weights, use them. If not, apply defaults from fixture 03 §3 adjusted for project context:
    - Occupied commercial → raise schedule + technical approach
@@ -56,10 +58,19 @@ Write the manifest to `<rfp-dir>/roof-review-output/manifests/rfp.json`, conform
 ```json
 {
   "project": { ... },
-  "rfp": { ... },
+  "rfp": {
+    "...": "...",
+    "submission_requirements": [
+      "Form of Tender signed in ink by an authorized signing officer",
+      "WSIB Clearance Certificate (current validity)",
+      "Certificate of Insurance — CGL minimum $5,000,000 naming owner as additional insured"
+    ],
+    "mandatory_requirements": { "...": "..." }
+  },
   "_provenance": {
     "rfp.scope_of_work.membrane_system_specified.category": "page 12, §3.2",
-    "rfp.warranty_requirements.warranty_type_required": "page 18, §5.1"
+    "rfp.warranty_requirements.warranty_type_required": "page 18, §5.1",
+    "rfp.submission_requirements": "page 22, §6.2"
   },
   "extraction_notes": ["classified as obc_part_3 due to 4-storey occupied office"]
 }

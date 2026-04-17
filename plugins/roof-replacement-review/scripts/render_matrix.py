@@ -68,6 +68,7 @@ def render(manifest: dict) -> str:
     comparison = manifest.get("comparison", {})
     weights = (rfp.get("evaluation_criteria") or {}).get("weighting") or {}
     method = (rfp.get("evaluation_criteria") or {}).get("price_scoring_method") or "—"
+    weighting_source = (rfp.get("evaluation_criteria") or {}).get("weighting_source") or "rfp_manifest"
 
     ranked = [b for b in bids if (b.get("scores") or {}).get("rank") is not None]
     ranked.sort(key=lambda b: b["scores"].get("rank", 9999))
@@ -84,7 +85,10 @@ def render(manifest: dict) -> str:
         f"**Project:** {project.get('property', '—')}",
         f"**Owner:** {project.get('owner', '—')}",
         f"**RFP:** {rfp.get('rfp_id', '—')} — issued {rfp.get('issued_date', '—')}",
-        f"**Submissions received:** {comparison.get('compliant_bidders_count', '—')} compliant of {len(bids)} total",
+        f"**Submissions received:** {len(bids)} total — "
+        f"{comparison.get('fully_compliant_count', 0)} fully compliant, "
+        f"{comparison.get('conditional_count', 0)} conditional, "
+        f"{comparison.get('non_compliant_count', 0)} non-compliant",
         f"**Evaluation date:** {manifest.get('generated_at', '—')}",
         "",
         "---",
@@ -106,6 +110,23 @@ def render(manifest: dict) -> str:
         "",
         f"Price scoring method: `{method}`",
         "",
+    ]
+
+    source_label = {
+        "rfp_manifest": "RFP manifest (§7 as issued)",
+    }.get(weighting_source, weighting_source)
+    lines.append(f"**Weighting source:** {source_label}")
+    lines.append("")
+    if weighting_source != "rfp_manifest":
+        lines += [
+            f"> ⚠️ **WARNING — weights and/or method overridden from the RFP.** "
+            f"Source: `{weighting_source}`. The rated rubric above is not the one "
+            f"published in the RFP. Evaluators must confirm the override was "
+            f"authorized before circulating this matrix.",
+            "",
+        ]
+
+    lines += [
         "---",
         "",
         "## Compliance Summary",

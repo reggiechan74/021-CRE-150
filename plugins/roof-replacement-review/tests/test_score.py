@@ -165,6 +165,68 @@ def test_config_rejects_unknown_method(built_manifest: Path, tmp_path: Path) -> 
     assert "price_scoring_method" in result.stderr
 
 
+def test_needs_clarification_bid_is_conditional_and_ranked(built_manifest: Path) -> None:
+    """Task D: a bid with only needs_clarification gates (no fails) is a
+    'conditional' bidder — scored and ranked alongside compliant bids, not
+    excluded. Three-tier compliance_status: compliant | conditional | non_compliant."""
+    data = json.loads(built_manifest.read_text())
+    for bid in data["bids"]:
+        if bid["bidder_id"] == "keystone":
+            bid["mandatory_gates"]["bid_bond"] = {
+                "result": "needs_clarification",
+                "evidence": "bid attachments list does not mention bid bond",
+                "notes": "clarifiable before award per RFP §9.1 negotiation clause",
+            }
+        if bid["bidder_id"] == "meridian":
+            # Keep meridian non-compliant via its many other fails, but align its
+            # bid_bond treatment so reconcile_gates doesn't reject the manifest
+            # for asymmetric handling of identical evidence.
+            bid["mandatory_gates"]["bid_bond"] = {
+                "result": "needs_clarification",
+                "evidence": "no bid bond attached — same gate treatment as keystone",
+            }
+    built_manifest.write_text(json.dumps(data, indent=2))
+
+    subprocess.run([sys.executable, str(SCRIPT), "--manifest", str(built_manifest)], check=True)
+    data = json.loads(built_manifest.read_text())
+    bids = {b["bidder_id"]: b for b in data["bids"]}
+
+    # Keystone is conditional, still scored and ranked.
+    assert bids["keystone"]["scores"]["compliance_status"] == "conditional"
+    assert bids["keystone"]["scores"]["rank"] is not None
+    assert bids["keystone"]["scores"]["weighted_total"] is not None
+
+    # Apex is fully compliant.
+    assert bids["apex"]["scores"]["compliance_status"] == "compliant"
+
+    # Meridian is non-compliant — unchanged.
+    assert bids["meridian"]["scores"]["compliance_status"] == "non_compliant"
+    assert bids["meridian"]["scores"]["rank"] is None
+
+
+def test_compliant_bid_missing_subscores_errors(built_manifest: Path) -> None:
+    """Task F: score.py must refuse to silently score a compliant bid that has
+    no upstream rated sub-scores. Previous behaviour was to treat missing
+    sub-scores as 0.0 and produce a 35.0-type weighted_total, masking a
+    pipeline failure where the technical-review / qualification-check skills
+    never populated the scores dict."""
+    data = json.loads(built_manifest.read_text())
+    for bid in data["bids"]:
+        if bid["bidder_id"] == "apex":
+            # Simulate the failure mode: gates pass but sub-scores never written.
+            bid["scores"] = {}
+    built_manifest.write_text(json.dumps(data, indent=2))
+
+    result = subprocess.run(
+        [sys.executable, str(SCRIPT), "--manifest", str(built_manifest)],
+        capture_output=True,
+        text=True,
+    )
+    assert result.returncode != 0, "score.py should refuse incomplete sub-scores"
+    assert "apex" in result.stderr
+    assert "sub-score" in result.stderr.lower() or "sub_score" in result.stderr.lower()
+
+
 def test_redflag_report_renders(built_manifest: Path, tmp_path: Path) -> None:
     subprocess.run([sys.executable, str(SCRIPT), "--manifest", str(built_manifest)], check=True)
     report = tmp_path / "redflag_report.md"
