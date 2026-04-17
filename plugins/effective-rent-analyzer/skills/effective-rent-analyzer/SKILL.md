@@ -234,6 +234,12 @@ Read the lease document at `{LEASE_DOC}`.
 - Industrial → use percentage method (year1_pct / subsequent_pct)
 - Office → use flat $/sf method
 
+**If commission amounts are NOT stated in the document** (e.g. "per separate agreement", "per listing agreement", or no amounts given), apply GTA market defaults — do NOT use $0:
+- Industrial default: `listing_agent_year1_pct: 0.05`, `listing_agent_subsequent_pct: 0.025`, `tenant_rep_year1_pct: 0.05`, `tenant_rep_subsequent_pct: 0.025`
+- Office default: `listing_agent_commission_psf: 2.00`, `tenant_rep_commission_psf: 2.00`
+- Note in the `leasing_costs.notes` field: "Commission amounts not stated in document — GTA market defaults applied."
+- Never set commissions to $0 unless the document explicitly states no commission is payable.
+
 ## Step C — Read Quote Documents (if provided)
 
 For each quote PDF at `{QUOTE_DOCS}`:
