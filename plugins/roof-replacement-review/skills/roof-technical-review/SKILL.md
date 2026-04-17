@@ -11,7 +11,47 @@ description: >
 
 You are evaluating whether the bid's proposed system will (a) meet the RFP specification, (b) comply with the Ontario Building Code, and (c) qualify for the warranty the contractor claims. Every finding cites an authoritative source.
 
+## Division of responsibility vs roof-qualification-check
+
+This skill owns **technical disqualification** — gate fails caused by
+scope/materials/warranty/schedule failures that cannot be cured by
+clarification without a re-bid. `roof-qualification-check` owns
+**administrative disqualification** — WSIB/CGL/bonds/training/declarations
+where an applicability filter decides whether `fail` is even permitted.
+
+The two skills must not fail the same bidder on the same underlying issue.
+If you notice a qualification-tier problem (certification lapsed,
+subcontractor undisclosed, WSIB missing), leave it for qualification-check.
+If qualification-check notices a technical-tier problem (wrong membrane
+thickness, missing cover board), it must leave it for this skill.
+
+## Technical Disqualification Gates
+
+Emit a `fail` result into `bid.mandatory_gates.<gate_name>` only when the
+RFP-specified requirement cannot be met by the proposed bid and cannot be
+cured by clarification. These are the gates this skill owns:
+
+| Gate | Emit `fail` when | Cures available |
+|---|---|---|
+| `scope_compliance` | Bid excludes or alters a work item the RFP required without offering an equivalent | Only by rebid |
+| `membrane_thickness` | Proposed thickness is below the RFP minimum (e.g., 45 mil where RFP spec'd 60 mil) | Only by rebid |
+| `cover_board` | Commercial single-ply over polyiso without a cover board when the RFP required one (or the warranty program requires one and the contractor claims that program) | Only by rebid |
+| `insulation_upgrade` | Does not meet SB-10/SB-12 when retrofit triggers the code requirement | Only by rebid |
+| `warranty_type` | Offered warranty type is weaker than RFP-required (e.g., `material_only` when RFP required `total_system_ndl`) | Only by rebid |
+| `warranty_duration` | Offered years below RFP minimum | Only by rebid |
+| `completion_date` | Proposed substantial-completion date misses the RFP-stated deadline | Only by rebid (or owner-approved schedule change) |
+| `mobilization_date` | Mobilization day misses RFP's latest-mobilization requirement | Only by rebid |
+| `fire_rating` | Proposed assembly does not meet the RFP-specified fire rating | Only by rebid |
+| `wind_uplift` | Proposed assembly's wind-uplift rating below RFP requirement (not merely "design basis not stated" — that is a red flag, not a fail) | Only by rebid |
+
+**When in doubt, prefer a red flag with `recommendation: clarify` over a
+gate fail.** A gate fail excludes the bid from rated scoring entirely; a red
+flag informs scoring and the memo without foreclosing the bid. Only fail
+when no clarification can cure the issue without re-tendering.
+
 ## Reference Material
+
+**Read only these fixtures — do not load `03_tender_evaluation_methodology.md` or `04_contractor_qualification.md`, which are owned by `roof-qualification-check`:**
 
 Treat these as ground truth — cite section numbers in your findings:
 
@@ -137,9 +177,49 @@ Append to `bid.red_flags[]`:
 - **Medium:** ambiguity worth clarifying. Examples: insulation R-value not explicitly stated but the proposed system implies compliance; substitution with partial justification on an accessory component.
 - **Low:** cosmetic or documentation gaps. Examples: missing product data sheet for accessory materials; page references missing from bid index.
 
-## Output
+## Sidecar Output File
 
-Append to the bid manifest in-place (update `red_flags`, `scores.technical_approach`, `scores.warranty_materials`). Do not touch mandatory gates — that's the qualification-check skill.
+Write your results to a **sidecar** JSON file so the qualification-check skill can
+run in parallel without clobbering your writes:
+
+**Path:** `<rfp-dir>/roof-review-output/manifests/bid_<slug>.tech.json`
+
+**Shape:**
+
+```json
+{
+  "bidder_id": "<same as base bid manifest>",
+  "mandatory_gates": { "<technical_gate_name>": { "result": "...", "evidence": "..." } },
+  "scores": {
+    "technical_approach": <0-100>,
+    "warranty_materials": <0-100>
+  },
+  "scoring_rationale": {
+    "technical_approach": { "sub_factors": { "...": <points> } },
+    "warranty_materials": { "sub_factors": { "...": <points> } }
+  },
+  "red_flags": [
+    { "severity": "...", "category": "scope|materials|warranty|safety|substitutions", ... }
+  ]
+}
+```
+
+**Do NOT** touch the base `bid_<slug>.json` — the qualification-check skill is
+writing `bid_<slug>.qual.json` concurrently and `scripts/normalize.py` will
+merge all three files. A write to `bid_<slug>.json` from this skill is a bug.
+
+Keys this sidecar MAY contain: `bidder_id`, `mandatory_gates` (only from the
+technical gate table above), `scores.technical_approach`,
+`scores.warranty_materials`, `scoring_rationale.technical_approach`,
+`scoring_rationale.warranty_materials`, `red_flags` (categories `scope`,
+`materials`, `warranty`, `safety`, `substitutions`).
+
+Keys this sidecar MUST NOT contain: `scores.experience_references`,
+`scores.qualifications_certifications`, `scores.schedule`, any administrative
+`mandatory_gates` entry (`wsib_clearance`, `cgl_insurance`, `bid_bond`,
+`working_at_heights`, `addenda`, `non_collusion`, `site_visit`,
+`years_in_business`, `references`), or any `red_flags` with
+`category: "qualifications"`.
 
 ## Summary to User
 
