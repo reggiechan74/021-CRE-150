@@ -80,7 +80,7 @@ Parties agree to negotiate the formal Lease in good faith based on the terms of 
 
 **Submarket**: Mississauga Southdown
 
-**Rentable Area**: ±125,000 square feet (subject to BOMA Z65.2-2012 measurement)
+**Rentable Area**: ±125,000 square feet (subject to BOMA Z65.2-2012 measurement — use 125,000 SF for all financial analysis purposes pending final BOMA confirmation)
 
 **Use**: Warehousing, distribution, and ancillary office purposes
 
@@ -106,13 +106,13 @@ Parties agree to negotiate the formal Lease in good faith based on the terms of 
 
 ## TERM (NON-BINDING)
 
-**Lease Commencement**: March 1, 2026, or upon substantial completion of Landlord's Work, whichever is later
+**Lease Commencement**: March 1, 2026, or upon substantial completion of Landlord's Work, whichever is later. (Landlord's Work target completion is February 15, 2026 — anticipated Commencement Date is March 1, 2026. Use March 1, 2026 for financial analysis.)
 
 **Lease Term**: 5 years
 
 **Lease Expiry**: February 28, 2031
 
-**Early Access**: Tenant may access Premises up to 30 days prior to Commencement for installation of racking and equipment, rent-free (Additional Rent applies during early access period)
+**Early Access / Fixturing Period**: Tenant may access Premises up to 30 days (1 month) prior to Commencement for installation of racking and equipment, rent-free (Additional Rent applies during early access/fixturing period). For financial analysis purposes, this constitutes a 1-month fixturing period.
 
 ---
 
@@ -340,6 +340,8 @@ Each party agrees to keep the terms of this Offer and all related negotiations c
 
 Commission is payable by Landlord pursuant to a separate listing agreement and co-operating brokerage agreement. Tenant makes no representations regarding commission obligations.
 
+**Commission Structure (GTA Industrial Standard)**: 5% of Year 1 net base rent per side; 2.5% of each subsequent year's net base rent per side. Both the listing agent and tenant representative are entitled to their respective commissions on this basis. For financial analysis purposes, apply the industrial percentage method: `listing_agent_year1_pct: 0.05`, `listing_agent_subsequent_pct: 0.025`, `tenant_rep_year1_pct: 0.05`, `tenant_rep_subsequent_pct: 0.025`.
+
 ---
 
 ## LEGAL COSTS (BINDING)
@@ -360,9 +362,9 @@ Each party is responsible for its own legal, accounting, and advisory costs. Lan
 | TI Allowance Provided | $1,875,000 |
 | Estimated Additional Rent — 5 Years (Year 1 rate × 5) | $4,106,250 |
 | **Estimated Total Gross Obligation — 5 Years** | **$15,490,000** |
-| **Average Net Effective Base Rent (after free rent)** | **$18.21/SF** |
+| **Simple Rent Average (face rent minus free rent abatement only — NOT PRR NER)** | **$18.21/SF** |
 
-*Note: Net effective rent does not reflect the cost to Landlord of TI amortization. Students should calculate the Landlord's net effective yield after accounting for TI, free rent, and leasing costs.*
+*Note: The $18.21/SF figure is a simple arithmetic average of base rent after subtracting free rent abatement. It is NOT the Net Effective Rent (NER) under the Ponzi Rental Rate (PRR) framework. The PRR NER accounts for the time value of money (NPV), TI allowance, leasing commissions, and free rent using a discounted cash flow annuity formula. Students should calculate the Landlord's true NER using the PRR framework — do not use $18.21/SF as the NER.*
 
 ---
 
