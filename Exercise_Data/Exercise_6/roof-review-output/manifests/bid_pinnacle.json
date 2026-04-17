@@ -6,64 +6,133 @@
     "base_bid_cad": 612000,
     "hst_included": false,
     "alternates": [
-      { "description": "Snow guard system installed", "price_cad": 52 },
-      { "description": "Additional insulation to R-38", "price_cad": 24000 },
-      { "description": "Upgrade to 80 mil membrane", "price_cad": 38000 },
-      { "description": "Extended workmanship warranty to 5 years", "price_cad": 8500 }
+      {
+        "description": "Snow guard system (installed) per linear foot",
+        "price_cad": 52
+      },
+      {
+        "description": "Additional insulation to R-38",
+        "price_cad": 24000
+      },
+      {
+        "description": "Upgrade to 80 mil membrane",
+        "price_cad": 38000
+      },
+      {
+        "description": "5-year preventive maintenance program (per year)",
+        "price_cad": 3200
+      },
+      {
+        "description": "Emergency service retainer (per year)",
+        "price_cad": 1800
+      },
+      {
+        "description": "Thermal imaging scan post-installation",
+        "price_cad": 2800
+      },
+      {
+        "description": "Extended workmanship warranty to 5 years",
+        "price_cad": 8500
+      }
     ],
-    "unit_prices": {},
+    "unit_prices": {
+      "deck_replacement_per_bf": null,
+      "insulation_per_sqft_per_rvalue": null,
+      "flashing_per_lf": null
+    },
     "allowances_carried": [
-      { "item": "Tapered insulation for ponding", "amount_cad": 18000 },
-      { "item": "Steel deck repair", "amount_cad": 12000 },
-      { "item": "Wood deck repair (office wing)", "amount_cad": 8000 }
+      {
+        "item": "Tapered insulation for ponding correction",
+        "amount_cad": 18000
+      },
+      {
+        "item": "Steel deck repair allowance",
+        "amount_cad": 12000
+      },
+      {
+        "item": "Wood deck repair allowance (office wing)",
+        "amount_cad": 8000
+      }
     ]
   },
   "scope_response": {
     "full_compliance_claimed": true,
     "exclusions_declared": [
-      "Major deck repairs exceeding allowances",
+      "Major steel deck repairs exceeding $12,000 allowance",
+      "Major wood deck replacement exceeding $8,000 allowance",
+      "Replacement of damaged roof drains or leaders (minor adjustments included)",
       "Skylight replacement or major repairs",
-      "HVAC equipment modifications",
-      "After-hours work",
-      "Major hazmat abatement beyond minor handling",
-      "Temperature monitoring equipment (coordination only)",
-      "Building permits (~$4,500-$6,000)"
+      "HVAC equipment modifications or replacements",
+      "Work outside standard hours (7 AM - 6 PM weekdays)",
+      "Hazardous material abatement beyond minor handling (testing included)",
+      "Temperature monitoring equipment (can be arranged through owner)",
+      "Building permits (estimated $4,500-$6,000)"
     ],
     "clarifications": [
-      "Final tapered insulation quantity to be confirmed during removal; $18k allowance"
+      "Ponding correction allowance; final tapered quantity to be confirmed during removal",
+      "Deck allowances based on visual inspection; should be sufficient",
+      "Assumes minimal ACM (1998 build); testing during removal; major abatement extra",
+      "Schedule assumes reasonable tenant cooperation; significant phasing changes may affect schedule",
+      "HVAC shutdowns assumed schedulable for weekends; weekday shutdowns require 72-hr notice",
+      "Owner to provide or arrange temperature monitoring in warehouse",
+      "Permits typically owner responsibility; can arrange if priced separately",
+      "Max 10,000 sq ft exposed at any time (tighter than RFP 15,000 sqft cap)"
     ],
     "substitutions_proposed": []
   },
   "materials_system": {
-    "manufacturer": "Carlisle Syntec / Firestone / Johns Manville (certified)",
-    "system_name": "TPO 60 mil fully adhered with gypsum cover board",
+    "manufacturer": "Not specified (Carlisle Syntec / Firestone / Johns Manville certifications listed)",
+    "system_name": "TPO 60-mil fully-adhered single-ply with R-30 polyiso two-layer + 1/4\" gypsum cover board",
     "membrane_thickness_actual": "60 mil",
-    "insulation_spec": "Polyiso R-30 two-layer staggered joints + gypsum cover board",
+    "insulation_spec": "R-30 polyiso, two-layer staggered joints",
     "cover_board_included": true,
     "product_data_sheets_attached": true
   },
   "warranty_offered": {
     "manufacturer_years": 20,
-    "warranty_type": "total_system_ndl",
+    "warranty_type": "ndl",
     "workmanship_years": 3,
     "wind_uplift_coverage_mph": null,
     "manufacturer_certified_installer": true,
-    "certification_program": "Carlisle Certified + Firestone Authorized + Johns Manville Preferred",
-    "evidence_page": "Cover letter + warranty sample"
+    "certification_program": "Carlisle Syntec Certified Installer; Firestone Authorized Contractor; Johns Manville Preferred Contractor",
+    "evidence_page": "Cover letter 'Warranty' section; Attachments '20-Year NDL Warranty Sample Documentation'"
   },
   "qualifications": {
     "years_in_business": 18,
     "wsib_clearance_attached": true,
+    "wsib_clearance_date": null,
     "wsib_in_good_standing": true,
     "cgl_limit_cad": 5000000,
-    "cgl_completed_operations_years": 2,
-    "owner_named_as_additional_insured": true,
+    "cgl_completed_operations_years": null,
+    "owner_named_as_additional_insured": null,
     "coi_attached": true,
+    "bid_bond_attached": false,
+    "bonding_capacity_cad": null,
     "working_at_heights_training_confirmed": true,
+    "crca_member": false,
+    "certificate_of_qualification_roofers_count": null,
     "references_provided": [
-      { "project_name": "Canadian Tire Distribution Centre, Concord (occupied, 85-day phased, 95,000 sqft)", "completion_year": 2024, "similar_scope": true },
-      { "project_name": "Loblaws Head Office, Brampton (continuous ops, 78,000 sqft)", "completion_year": 2023, "similar_scope": true },
-      { "project_name": "Tim Hortons Supply Chain, Oakville (cold storage, temperature monitoring, 62,000 sqft)", "completion_year": 2025, "similar_scope": true }
+      {
+        "project_name": "Canadian Tire Distribution Centre - Concord, ON",
+        "owner_contact": "David Park, Facilities Manager, (905) 555-0789",
+        "value_cad": null,
+        "completion_year": 2024,
+        "similar_scope": true
+      },
+      {
+        "project_name": "Loblaws Head Office - Brampton, ON",
+        "owner_contact": "Amanda Foster, Property Manager, (416) 555-0823",
+        "value_cad": null,
+        "completion_year": 2023,
+        "similar_scope": true
+      },
+      {
+        "project_name": "Tim Hortons Supply Chain - Oakville, ON",
+        "owner_contact": "Steve MacDougall, Director of Operations, (905) 555-0901",
+        "value_cad": null,
+        "completion_year": 2025,
+        "similar_scope": true
+      }
     ],
     "subcontracting_declared": false,
     "subcontractors_named": []
@@ -72,43 +141,359 @@
     "mobilization_days_after_award": null,
     "work_duration_days": 80,
     "substantial_completion_date": "2026-07-20",
-    "crew_size": 3,
+    "crew_size": null,
     "accommodates_occupied_building": true
   },
   "technical_approach": {
-    "narrative": "3-phase plan: office wing (1-20), main A (21-50), main B with ponding tapered (51-80). Max 10,000 sqft exposed. Twice-weekly coordination meetings.",
-    "tear_off_staging_plan": "Attached",
-    "weather_protection_plan": "Daily watertight; reinforced tarps weekend",
-    "fall_protection_plan": "Standard per WSIB program",
-    "waste_disposal_plan": "Legal disposal; testing on discovery",
+    "narrative": "Phased approach on occupied pharma-warehouse. Phase 1 office wing 5,100 sqft, Phase 2 Section A 20,000 sqft, Phase 3 Section B including ponding 25,000 sqft. Twice-weekly coordination meetings during critical phases.",
+    "tear_off_staging_plan": "Three-phase plan with max 10,000 sqft exposed at any time (tighter than RFP 15,000 sqft cap). Office wing first to establish patterns.",
+    "weather_protection_plan": "Each phase made watertight by end of work day; weekend protection with reinforced tarps.",
+    "fall_protection_plan": "Fall protection training for all workers updated every 2 years; written safety manual; weekly safety meetings. No named anchor points or parapet-specific plan.",
+    "waste_disposal_plan": "Complete roof removal and legal disposal. Visual inspection during removal; lead flashings separated and disposed as hazardous waste. No explicit DSA plan (building 1998).",
     "site_safety_plan_attached": true
   },
   "mandatory_gates": {
-    "wsib": { "result": "pass", "evidence": "Clearance attached, WSIB rate 0.89" },
-    "cgl": { "result": "pass", "evidence": "$5M CGL meets minimum" },
-    "additional_insured": { "result": "pass", "evidence": "COI attached; owner as AI standard practice confirmed" },
-    "completed_ops": { "result": "pass", "evidence": "2-yr completed ops meets minimum" },
-    "wah_training": { "result": "pass", "evidence": "Fall protection training updated every 2 years (note: O. Reg. 297/13 requires 3-yr; 2-yr cycle exceeds)" },
-    "addenda": { "result": "pass", "evidence": "Attachments indicate full RFP review" },
-    "site_visit": { "result": "pass", "evidence": "Attended March 25" },
-    "years_in_business": { "result": "pass", "evidence": "18 years (established 2008)" },
-    "references": { "result": "pass", "evidence": "3 refs all 50,000+ sqft, all past 3 years, Canadian Tire + Loblaws explicitly occupied + Tim Hortons cold storage directly comparable" },
-    "manufacturer_certification": { "result": "pass", "evidence": "Carlisle Certified + Firestone Authorized + Johns Manville Preferred" },
-    "warranty_minimum": { "result": "pass", "evidence": "20-yr NDL meets min; 3-yr workmanship exceeds 2-yr min" },
-    "membrane_spec": { "result": "pass", "evidence": "60 mil meets min" },
-    "insulation_spec": { "result": "pass", "evidence": "R-30 two-layer staggered matches spec" },
-    "cover_board": { "result": "pass", "evidence": "Gypsum cover board included" },
-    "ponding_correction": { "result": "pass", "evidence": "Tapered insulation $18k allowance + 5-yr ponding warranty" }
+    "wsib_clearance": {
+      "result": "pass",
+      "evidence": "Attachments list includes 'WSIB Clearance Certificate' and 'WSIB Experience Rating Letter (0.89)'; \u00a7Insurance cites WSIB Account #5678901-23. No explicit clearance date stated in bid body \u2014 gate passed with standard award condition to re-verify on clearances.wsib.ca before contract signing (per roof-qualification-check SKILL.md \u00a71).",
+      "notes": "RFP \u00a75.1.2 wsib_clearance_required=true."
+    },
+    "cgl_insurance": {
+      "result": "needs_clarification",
+      "evidence": "Bid \u00a7Insurance states 'Commercial General Liability: $5,000,000 per occurrence' meeting RFP \u00a75.1.2 $5M minimum. Attachments include Certificate of Insurance. However bid does NOT confirm (a) owner named as additional insured, or (b) 2-year completed-operations tail \u2014 both mandatory per RFP \u00a75.1.2.",
+      "notes": "Owner must request a COI copy confirming Tenebrus Capital as additional insured and completed-operations coverage \u2265 2 years (fixture 04 \u00a72)."
+    },
+    "bonding": {
+      "result": "pass",
+      "evidence": "RFP mandatories show no bid_bond_percent required (rfp.mandatory_requirements.bid_bond_percent=null; confirmed in extraction_notes: 'No bid bond percentage stated in \u00a79.2'). Performance + L&M bonds at 50% are post-award obligations. Bid does not declare bonding capacity, but that is not a mandatory gate per this RFP.",
+      "notes": "Owner should obtain consent of surety for 50% performance and 50% L&M bonds before award (RFP \u00a79.2)."
+    },
+    "working_at_heights_training": {
+      "result": "pass",
+      "evidence": "\u00a7Safety Program: 'Fall protection training for all workers (updated every 2 years)'. RFP \u00a75.1 working_at_heights_training_required=true.",
+      "notes": "O. Reg. 297/13 WAH training has 3-year validity (fixture 04 \u00a73); a 2-year refresh cycle comfortably satisfies this."
+    },
+    "addenda_acknowledgment": {
+      "result": "needs_clarification",
+      "evidence": "Bid does not explicitly list addenda acknowledged. Cover letter states 'carefully reviewed all RFP documents' but no Form of Tender addenda list is provided. RFP \u00a75.1 addenda_acknowledgment_required=true.",
+      "notes": "Owner must confirm whether any addenda were issued and obtain explicit acknowledgment (CCDC 23 guidance, fixture 03)."
+    },
+    "non_collusion_declaration": {
+      "result": "needs_clarification",
+      "evidence": "Bid is signed by Robert K. Thompson, President, but no separate non-collusion declaration is attached or referenced. RFP \u00a75.1 non_collusion_declaration_required=true.",
+      "notes": "Standard mandatory declaration; owner to request execution of non-collusion form."
+    },
+    "site_visit": {
+      "result": "pass",
+      "evidence": "Cover letter: 'We attended the mandatory site visit on March 25, 2026'. RFP \u00a76.4/\u00a78.1 site_visit_required=true.",
+      "notes": ""
+    },
+    "minimum_years_in_business": {
+      "result": "pass",
+      "evidence": "Cover letter: 'Established in 2008' \u2192 18 years at time of bid. RFP \u00a75.1.3 requires minimum 10 years.",
+      "notes": ""
+    },
+    "similar_project_references": {
+      "result": "pass",
+      "evidence": "Three references provided (Canadian Tire Distribution Centre Concord 95,000 sqft 2024; Loblaws Head Office Brampton 78,000 sqft 2023; Tim Hortons Supply Chain Oakville 62,000 sqft 2025). All three are commercial (Part 3 class), all roof replacements on occupied buildings, all within last 5 years. Project values not stated but scale (62-95k sqft) is within 0.5-2x of subject 85k sqft. Count of comparable \u2265 3 per RFP \u00a75.1.4.",
+      "notes": "Project values not disclosed; gate still passes on scope + recency + class. Owner may wish to request dollar values for full verification (fixture 03)."
+    }
   },
   "red_flags": [
-    { "severity": "low", "category": "schedule", "description": "Permits excluded ($4.5-6k owner cost) — common but worth pricing into total", "citation": "bid clarification #7", "evidence": "Exclusions page 8", "recommendation": "accept-with-condition — owner to fund permits separately" },
-    { "severity": "low", "category": "scope", "description": "Crew size not stated; relies on project manager + supervisor + 3 installers", "citation": "fixture 03 §3 schedule scoring — crew adequacy", "evidence": "Project Team section", "recommendation": "clarify — confirm max crew during peak phase" }
+    {
+      "severity": "high",
+      "category": "qualifications",
+      "description": "COI confirmation gap: bid does not state owner is named additional insured or confirm 2-year completed-operations tail",
+      "citation": "RFP \u00a75.1.2; fixture 04 \u00a72",
+      "evidence": "\u00a7Insurance: 'Commercial General Liability: $5,000,000 per occurrence' \u2014 no mention of additional-insured endorsement or completed-ops years",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "medium",
+      "category": "qualifications",
+      "description": "Addenda acknowledgment not explicitly listed in bid",
+      "citation": "RFP \u00a75.1; CCDC 23 guidance (fixture 03)",
+      "evidence": "No Form of Tender addenda table in submission",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "medium",
+      "category": "qualifications",
+      "description": "Non-collusion declaration not attached or referenced",
+      "citation": "RFP \u00a75.1 non_collusion_declaration_required=true",
+      "evidence": "Cover letter signed by President but no standalone declaration form evident",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "medium",
+      "category": "qualifications",
+      "description": "Reference project dollar values not disclosed, preventing full 0.5x-2x comparability check",
+      "citation": "fixture 03 tender evaluation; roof-qualification-check Gate 8",
+      "evidence": "References list square footage and contact but no contract value",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "low",
+      "category": "qualifications",
+      "description": "Skilled Trades C of Q holder count not disclosed for roofing crew",
+      "citation": "fixture 04 \u00a74",
+      "evidence": "\u00a7Project Team names PM and Site Supervisor; 'Lead Installers: 3 certified roofing technicians' without C of Q specifics",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "critical",
+      "category": "warranty",
+      "description": "Warranty type claimed is 20-year NDL but the RFP requires total_system_ndl. Bid does not attach a named system-warranty program (e.g., Carlisle Syntec Golden Seal/Sure-Weld Total System, Firestone Red Shield Platinum, Johns Manville Peak Advantage System NDL). 'NDL' alone covers materials only without the labour + full assembly coverage the owner specified.",
+      "citation": "RFP \u00a73.1/\u00a79.6 warranty_type_required=total_system_ndl; fixture 02 \u00a71 and \u00a74.5",
+      "evidence": "Cover letter \u00a7Warranty: '20-year NDL (No Dollar Limit) warranty on TPO membrane'; Attachments: '20-Year NDL Warranty Sample Documentation' (membrane-scope language only, not system)",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "high",
+      "category": "materials",
+      "description": "Membrane manufacturer not specified in bid. Bidder lists three manufacturer certifications (Carlisle, Firestone, Johns Manville) but does not commit to which manufacturer's system will be installed. Manufacturer choice determines warranty program, wind-uplift rating, component compatibility, and installer tier requirement.",
+      "citation": "fixture 02 \u00a73 and \u00a74",
+      "evidence": "\u00a7Materials System / Manufacturer Certifications list multiple brands with no commitment. No named product line on product data sheets reference.",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "high",
+      "category": "materials",
+      "description": "Wind uplift design basis not stated. Commercial low-slope retrofit should state CSA A123.21 or FM 1-29 design basis for fully-adhered TPO on a 28-year-old deck (steel + wood sections).",
+      "citation": "fixture 01 \u00a71.2 (OBC Part 3 wind uplift); CSA A123.21",
+      "evidence": "\u00a7Key Specifications lists 'Fully adhered' attachment but no uplift-test basis. Solar reflectance and thickness given; uplift rating omitted.",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "high",
+      "category": "safety",
+      "description": "Fall protection plan is generic. No named anchor points, no parapet-specific tie-off vs guardrail strategy on a 85,000 sqft occupied-building roof with 47 penetrations.",
+      "citation": "fixture 01 \u00a73; CSA Z91; O. Reg. 213/91 + O. Reg. 297/13",
+      "evidence": "\u00a7Safety Program: 'Fall protection training for all workers... Weekly safety meetings'. No site-specific plan describing anchor layout, rescue plan, or perimeter controls.",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "medium",
+      "category": "scope",
+      "description": "Exclusion: 'Replacement of damaged roof drains or leaders' \u2014 RFP \u00a7scope references 'added drains to resolve ponding' as part of included work. Bid covers tapered insulation for ponding but excludes drain replacement, creating a scope-gap risk if drains are found damaged during tear-off.",
+      "citation": "RFP \u00a73 scope_of_work included_items",
+      "evidence": "\u00a7Exclusions item 3: 'Replacement of damaged roof drains or leaders (minor adjustments included)'",
+      "recommendation": "negotiate"
+    },
+    {
+      "severity": "medium",
+      "category": "scope",
+      "description": "Working-hours exclusion (7 AM-6 PM weekdays only). RFP occupied pharma-warehouse with 72-hr HVAC shutdown coordination may require weekend work; Pinnacle excludes out-of-hours work and assumes weekend HVAC-shutdown scheduling at no cost \u2014 contradictory assumption that could yield change orders.",
+      "citation": "RFP \u00a71.2/\u00a711 occupied-site requirements",
+      "evidence": "\u00a7Exclusions item 6 vs \u00a7Clarifications item 5",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "medium",
+      "category": "scope",
+      "description": "Permits excluded. RFP does not explicitly say bidder must carry permits, but pricing transparency expects inclusion or a stated carried amount. Pinnacle puts the $4,500-$6,000 estimate on the owner.",
+      "citation": "fixture 03 tender evaluation",
+      "evidence": "\u00a7Exclusions item 9: 'Building permits (estimated $4,500-$6,000)'",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "medium",
+      "category": "scope",
+      "description": "Hazmat handling scope ambiguous \u2014 'Minor ACM handling included; major abatement would be extra' without defining the threshold. Building is post-1980 so ACM is unlikely, but owner should fix the boundary.",
+      "citation": "O. Reg. 278/05; fixture 01 \u00a74",
+      "evidence": "\u00a7Hazardous Materials Approach and \u00a7Exclusions item 7",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "low",
+      "category": "materials",
+      "description": "Flashing material spec 'Aluminum' differs from some manufacturer system-warranty requirements that call for galvanized steel at specific details. Depends on final manufacturer selection.",
+      "citation": "fixture 02 \u00a74",
+      "evidence": "\u00a7Key Specifications 'Flashing Material: Aluminum'",
+      "recommendation": "clarify"
+    }
   ],
+  "extraction_notes": [
+    "Unit prices (deck per bf, insulation per sqft per R, flashing per lf) not provided in bid. Deck repair is carried as a lump-sum allowance ($12k steel + $8k wood) with no per-bf rate; owner has no mechanism to fairly price overages beyond the allowance.",
+    "Manufacturer and system_name not committed to \u2014 bidder lists Carlisle/Firestone/Johns Manville certifications but does not select one. Owner follow-up required before award.",
+    "Wind uplift coverage mph / design basis (CSA A123.21 or FM 1-29) not stated.",
+    "WSIB clearance date not stated in bid body (certificate listed among attachments).",
+    "CGL completed-operations tail years not stated; owner-additional-insured endorsement not confirmed.",
+    "Bonding capacity / consent of surety not declared (no bid bond required by RFP, so this is informational only).",
+    "Reference project dollar values not disclosed (sqft given, value missing).",
+    "Crew size, mobilization days after award, and Skilled Trades C of Q count not disclosed.",
+    "Addenda acknowledgment and non-collusion declaration not present in submission body."
+  ],
+  "_provenance": {
+    "pricing.base_bid_cad": "Bid Summary / Price Breakdown tables",
+    "pricing.hst_included": "Bid Summary shows 'before HST' $612,000 + HST 13% $79,560",
+    "scope_response.exclusions_declared": "\u00a7Exclusions",
+    "materials_system.membrane_thickness_actual": "\u00a7Key Specifications 'Membrane Thickness: 60 mil'",
+    "materials_system.cover_board_included": "\u00a7Key Specifications 'Cover Board: 1/4\" gypsum board'",
+    "warranty_offered.manufacturer_years": "\u00a7Warranty '20-year NDL'",
+    "warranty_offered.warranty_type": "\u00a7Warranty 'NDL (No Dollar Limit) warranty on TPO membrane' \u2014 membrane-scope only, coded 'ndl' not 'total_system_ndl'",
+    "warranty_offered.workmanship_years": "\u00a7Warranty 'Workmanship Warranty: 3 years'",
+    "qualifications.years_in_business": "Cover letter 'Established in 2008' (18 yrs as of 2026-04)",
+    "qualifications.cgl_limit_cad": "\u00a7Insurance '$5,000,000 per occurrence'",
+    "qualifications.wsib_clearance_attached": "Attachments list 'WSIB Clearance Certificate'",
+    "qualifications.working_at_heights_training_confirmed": "\u00a7Safety Program 'Fall protection training for all workers (updated every 2 years)'",
+    "qualifications.references_provided": "\u00a7References (three)",
+    "schedule.substantial_completion_date": "\u00a7Project Schedule 'Substantial Completion: July 20, 2026'",
+    "schedule.work_duration_days": "\u00a7Project Schedule '(80 days)'",
+    "technical_approach.tear_off_staging_plan": "\u00a7Phasing Plan Summary (three phases) and \u00a7Phasing Protections"
+  },
   "scores": {
-    "technical_approach": 80,
-    "experience_references": 85,
-    "warranty_materials": 82,
-    "schedule": 82,
-    "qualifications_certifications": 78
+    "technical_approach": 63,
+    "warranty_materials": 79,
+    "experience_references": 73,
+    "qualifications_certifications": 60,
+    "schedule": 55
+  },
+  "scoring_rationale": {
+    "technical_approach": {
+      "points": 63,
+      "sub_factors": [
+        {
+          "name": "Tear-off & staging",
+          "points": 25,
+          "rationale": "Three-phase plan with max 10,000 sqft exposed (tighter than 15k RFP cap), office-wing-first to establish patterns, phased staging on occupied pharma warehouse."
+        },
+        {
+          "name": "Weather protection / dry-in",
+          "points": 20,
+          "rationale": "Phase-specific watertight-by-EOD plan plus weekend reinforced tarp protection \u2014 specific per-phase dry-in protocol."
+        },
+        {
+          "name": "Fall protection & safety",
+          "points": 10,
+          "rationale": "Generic WAH compliance (2-yr refresh, weekly meetings) but no named anchor points or parapet-specific tie-off plan on 85k sqft roof with 47 penetrations."
+        },
+        {
+          "name": "Waste / environmental / logistics",
+          "points": 8,
+          "rationale": "Legal disposal + lead flashing separation mentioned; no DSA required (1998 build); no recycling commitments specified."
+        },
+        {
+          "name": "Quality control / inspection protocol",
+          "points": 0,
+          "rationale": "No in-progress QC checkpoints or scheduled manufacturer inspection per warranty requirements stated."
+        }
+      ],
+      "summary": "Strong phasing and weather-protection detail on an occupied site; generic safety language and no QC/inspection protocol pull the score down."
+    },
+    "warranty_materials": {
+      "points": 79,
+      "sub_factors": [
+        {
+          "name": "Warranty type vs RFP requirement",
+          "points": 35,
+          "rationale": "20-year NDL (no-dollar-limit) offered but not attached to a named total-system program \u2014 falls in 'ndl' bucket, below RFP-required total_system_ndl (also logged as critical warranty red flag)."
+        },
+        {
+          "name": "Warranty years vs RFP minimum",
+          "points": 12,
+          "rationale": "20 years meets RFP minimum of 20."
+        },
+        {
+          "name": "Installer certification at claimed tier",
+          "points": 20,
+          "rationale": "Carlisle Syntec Certified Installer, Firestone Authorized Contractor, Johns Manville Preferred Contractor \u2014 certified at tiers capable of issuing the NDL claimed."
+        },
+        {
+          "name": "Workmanship warranty years",
+          "points": 6,
+          "rationale": "3 years workmanship warranty (in 2-4 yr band); 5-yr upgrade offered as $8,500 alternate."
+        },
+        {
+          "name": "Materials quality",
+          "points": 6,
+          "rationale": "60 mil fully-adhered TPO with 1/4\" gypsum cover board and R-30 polyiso two-layer \u2014 meets commercial standard; gypsum (not HD polyiso/DensDeck premium) and no premium membrane line committed."
+        }
+      ],
+      "summary": "Compliant thickness/cover board and strong installer-certification stack, but the NDL warranty falls short of the RFP's total-system NDL requirement and workmanship term is mid-market."
+    },
+    "experience_references": {
+      "points": 73,
+      "sub_factors": [
+        {
+          "name": "Count of comparable references",
+          "points": 40,
+          "rationale": "Three comparable commercial references (Canadian Tire Concord 95k sqft 2024, Loblaws Brampton 78k sqft 2023, Tim Hortons Oakville 62k sqft 2025) \u2014 all OBC Part 3, scope-aligned."
+        },
+        {
+          "name": "Recency of most-recent comparable",
+          "points": 25,
+          "rationale": "Tim Hortons Oakville completed 2025 \u2014 within last year of bid date."
+        },
+        {
+          "name": "Verifiability",
+          "points": 8,
+          "rationale": "Named contacts with titles and phone numbers plus completion years, but contract values not disclosed \u2014 partial verification."
+        }
+      ],
+      "summary": "Exactly the three required comparables, recent and in-class; gap is missing dollar values for full 0.5x-2x size verification."
+    },
+    "qualifications_certifications": {
+      "points": 60,
+      "sub_factors": [
+        {
+          "name": "Years in business",
+          "points": 35,
+          "rationale": "Established 2008, 18 years at time of bid (15+ yr band)."
+        },
+        {
+          "name": "Manufacturer certification at or above warranty tier",
+          "points": 25,
+          "rationale": "Three manufacturer certifications (Carlisle Syntec Certified Installer, Firestone Authorized, Johns Manville Preferred) \u2014 multiple-manufacturer band; no named top-tier program (e.g., Master Elite, Platinum, PAQ+S)."
+        },
+        {
+          "name": "Skilled Trades C of Q crew",
+          "points": 0,
+          "rationale": "C of Q holder count not disclosed; bid references '3 certified roofing technicians' without C of Q specifics (open qualifications red flag)."
+        },
+        {
+          "name": "Industry membership",
+          "points": 0,
+          "rationale": "CRCA member = false; no regional/provincial association membership disclosed."
+        }
+      ],
+      "summary": "Deep tenure and multi-manufacturer certification stack, dragged by undisclosed C of Q count and no industry association membership."
+    },
+    "schedule": {
+      "points": 55,
+      "sub_factors": [
+        {
+          "name": "Timeline realism vs scope",
+          "points": 30,
+          "rationale": "80 work-days across three phases on an 85k sqft occupied site is realistic duration; phase sequencing is described though per-phase milestone dates not tabulated."
+        },
+        {
+          "name": "Crew adequacy",
+          "points": 0,
+          "rationale": "Crew size not stated in bid (extraction_notes confirms); PM and Site Supervisor named but no crew count."
+        },
+        {
+          "name": "Mobilization and completion dates vs RFP",
+          "points": 10,
+          "rationale": "Substantial completion 2026-07-20 stated (meets RFP), but mobilization_days_after_award not stated \u2014 meets completion only."
+        },
+        {
+          "name": "Occupied-building accommodation",
+          "points": 15,
+          "rationale": "Twice-weekly coordination meetings during critical phases, 72-hr HVAC shutdown notice protocol, tenant-coordination plan embedded in three-phase sequencing."
+        }
+      ],
+      "summary": "Realistic 80-day phased schedule with strong tenant coordination; loses points on undisclosed crew size and mobilization date."
+    },
+    "strengths": [
+      "Three comparable recent commercial references (Canadian Tire 2024, Loblaws 2023, Tim Hortons 2025) directly in-scope and in-class.",
+      "60 mil fully-adhered TPO with gypsum cover board and two-layer R-30 polyiso fully meets the RFP system spec with no substitutions.",
+      "Three-phase occupied-site plan with max 10,000 sqft exposed (tighter than 15k RFP cap) and twice-weekly tenant coordination."
+    ],
+    "weaknesses": [
+      "20-year NDL warranty is not a total-system NDL \u2014 membrane-scope language only, short of what the RFP requires (critical red flag).",
+      "Membrane manufacturer not committed (three certifications listed, none selected), wind-uplift design basis missing, and fall-protection plan is generic on a 47-penetration occupied roof."
+    ],
+    "differentiator": "Deep commercial reference stack and RFP-spec-matching materials, but the warranty tier gap and un-named manufacturer undercut an otherwise compliant technical package."
   }
 }

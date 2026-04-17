@@ -48,14 +48,70 @@ Treat these as ground truth — cite section numbers in your findings:
 
 ## Sub-Score Outputs
 
-Produce raw sub-scores (0-100) for rated criteria this skill owns. Write them into `bid.scores`:
+Produce raw sub-scores (0-100) for the two rated criteria this skill owns. Each is computed as the **sum of sub-factor points**, not a single anchor match. Record the per-sub-factor points in `bid.scoring_rationale.<sub_score>.sub_factors` so the audit trail shows the math.
 
-| Sub-score | What to grade | Anchors |
+### `technical_approach` (sum of five sub-factors, max 100)
+
+| Sub-factor | Points | Criterion |
 |---|---|---|
-| `technical_approach` | Methodology quality, sequencing, protection plans, site safety | 100 = comprehensive, PM-level detail; 75 = solid outline; 50 = minimum narrative; 25 = boilerplate; 0 = missing |
-| `warranty_materials` | Warranty tier + materials quality | 100 = total-system NDL 20-30 yr, certified installer, premium materials; 75 = labour+material 15-20 yr, quality materials; 50 = material-only 10-15 yr; 25 = prorated or unclear; 0 = non-compliant |
+| Tear-off & staging | 0 | missing |
+|  | 10 | mentioned |
+|  | 20 | phased with interim protection |
+|  | 25 | detailed (dumpster placement, lift strategy, staging zones, adjacent-property protection) |
+| Weather protection / dry-in | 0 | not addressed |
+|  | 10 | generic "tarp at end of day" |
+|  | 20 | specific dry-in plan per phase with forecast protocol |
+| Fall protection & safety | 0 | not addressed |
+|  | 10 | generic WAH compliance statement |
+|  | 20 | named anchor points + specific fall-arrest equipment |
+|  | 25 | site-specific plan addressing parapets/perimeters |
+| Waste / environmental / logistics | 0 | not addressed |
+|  | 8 | disposal mentioned |
+|  | 15 | DSA plan (if pre-1980) + recycling commitments |
+| Quality control / inspection protocol | 0 | not addressed |
+|  | 8 | final walk-through only |
+|  | 15 | in-progress QC checkpoints + manufacturer inspection scheduled per warranty requirements |
 
-Use fixture 03 §3 five-point rubric anchors for consistency.
+### `warranty_materials` (sum of five sub-factors, max 100)
+
+| Sub-factor | Points | Criterion |
+|---|---|---|
+| Warranty type (vs RFP requirement) | 0 | non-compliant or `unclear` |
+|  | 10 | prorated |
+|  | 20 | material_only |
+|  | 30 | labour_and_material |
+|  | 35 | ndl (no attached system-warranty program) |
+|  | 40 | total_system_ndl (attached named system program) |
+| Warranty years vs RFP minimum | 0 | below minimum |
+|  | 12 | meets minimum |
+|  | 20 | exceeds minimum by 5+ yrs |
+| Installer certification at claimed warranty tier | 0 | none claimed |
+|  | 8 | certified but not at claimed tier |
+|  | 20 | certified at claimed tier (pre-install review + mid-job inspection schedulable) |
+| Workmanship warranty years | 0 | not stated |
+|  | 3 | <2 yrs |
+|  | 6 | 2-4 yrs |
+|  | 10 | 5+ yrs |
+| Materials quality (thickness, cover board, premium line) | 0 | below industry standard (e.g., 45 mil commercial TPO, no cover board) |
+|  | 6 | meets standard |
+|  | 10 | exceeds standard (60+ mil, HD cover, premium line) |
+
+If the sum exceeds 100 due to downstream fixture changes, cap at 100 and note in `scoring_rationale`.
+
+## Red Flag Category Ownership
+
+To prevent double-writing the same issue, each `red_flags.category` is owned by exactly one skill:
+
+| Category | Owner skill |
+|---|---|
+| `warranty` | roof-technical-review (this skill) |
+| `materials` | roof-technical-review |
+| `safety` | roof-technical-review |
+| `scope` | roof-technical-review |
+| `substitutions` | roof-technical-review |
+| `qualifications` | roof-qualification-check |
+
+If you notice an issue that would fall under `qualifications` (e.g., certification lapsed, subcontractor undisclosed), leave it for roof-qualification-check — do not write it here.
 
 ## Red Flag Output
 
@@ -74,10 +130,12 @@ Append to `bid.red_flags[]`:
 
 ## Severity Calibration
 
-- **Critical:** non-compliance voids warranty, fails OBC, or is a safety hazard. Examples: no cover board on commercial polyiso with NDL warranty claim; installer not certified for the warranty tier claimed; no fall protection plan on a parapet-less roof.
-- **High:** material deviation from RFP or industry best practice. Examples: 45 mil TPO proposed for commercial; wind uplift basis missing; warranty type `unclear`.
-- **Medium:** ambiguity worth clarifying. Examples: substitution with partial justification; insulation R-value not explicitly stated but system implies compliance.
-- **Low:** cosmetic or documentation gaps. Examples: missing product data sheet for accessory materials.
+**Overriding rule:** if a flag voids the warranty the contractor is claiming, fails the Ontario Building Code, or creates a worker/occupant safety hazard, it is **critical** — regardless of which bucket the example lists below suggest. Apply the rule first, then use the examples to calibrate.
+
+- **Critical:** non-compliance voids warranty, fails OBC, or is a safety hazard. Examples: no cover board on commercial polyiso with NDL warranty claim; installer not certified for the warranty tier claimed; no fall protection plan on a parapet-less roof; 45 mil TPO proposed where RFP specified 60 mil (voids the spec and likely the NDL warranty); warranty type `unclear` when RFP required `total_system_ndl` (owner cannot confirm they are getting what they required).
+- **High:** material deviation from RFP or industry best practice that does not void warranty/code/safety. Examples: wind uplift design basis not stated but implied; workmanship warranty below market median (2 years vs typical 5); substitution proposed with weak equivalence justification on a non-critical component.
+- **Medium:** ambiguity worth clarifying. Examples: insulation R-value not explicitly stated but the proposed system implies compliance; substitution with partial justification on an accessory component.
+- **Low:** cosmetic or documentation gaps. Examples: missing product data sheet for accessory materials; page references missing from bid index.
 
 ## Output
 

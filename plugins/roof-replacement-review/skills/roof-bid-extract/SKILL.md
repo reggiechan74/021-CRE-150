@@ -45,7 +45,13 @@ Cite these when flagging extraction anomalies (to be graduated into red flags la
 4. **Materials system.** Manufacturer + system name, actual membrane thickness (for commercial) or shingle line (for residential), insulation stack including cover board, product data sheet attachments.
 
 5. **Warranty offered.**
-   - Manufacturer years and type (`material_only` / `labour_and_material` / `total_system_ndl` / `ndl` / `prorated` / `unclear`). Use fixture 02 §1 taxonomy — if the bid says "25 year" without specifying, set `unclear` and raise a red flag later.
+   - Manufacturer years and type. Use this taxonomy (derived from fixture 02 §1 and §4.5):
+     - `material_only` — manufacturer replaces defective materials; labour and consequential damages are the owner's problem. Typical 10-15 yr.
+     - `labour_and_material` — materials plus contractor labour to re-install covered by the manufacturer, but coverage is capped (e.g., prorated, or a dollar cap equal to original system cost).
+     - `ndl` — no dollar limit on materials replacement; labour may or may not be included; read the exemplar warranty to confirm. If the bid says "NDL" without a system-warranty document attached, treat as `ndl` (not `total_system_ndl`).
+     - `total_system_ndl` — the premium tier: no dollar limit on the full assembly (membrane + insulation + flashings + labour to reinstall). Requires certified installer, pre-install drawing review, and manufacturer mid-job inspection. Examples: Soprema Sopra-Garantie Mammouth Platinum, Firestone Red Shield Platinum, Sika Sarnafil 30-yr NDL. If the bid attaches a named system-warranty program meeting these prerequisites, use this value.
+     - `prorated` — coverage declines on a schedule (common on asphalt shingle residential).
+     - `unclear` — if the bid says "25 year" without specifying which of the above, set `unclear` and raise a red flag later. Do not guess.
    - Workmanship years from the contractor (typically 2-10 yrs — fixture 02 §3)
    - Wind uplift coverage mph
    - Certified installer status + program name (e.g., GAF Master Elite, Soprema PAQ+S, Firestone Red Shield)

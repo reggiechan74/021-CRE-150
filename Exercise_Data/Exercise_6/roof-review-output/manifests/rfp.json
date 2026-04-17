@@ -1,8 +1,10 @@
 {
+  "manifest_version": "1.0.0",
+  "generated_at": "2026-04-16T22:16:00-04:00",
   "project": {
     "owner": "Tenebrus Capital",
     "owner_type": "private_commercial",
-    "property": "2550 Argentia Road, Mississauga, ON L5T 2Y3",
+    "property": "2550 Argentia Road, Mississauga, ON",
     "building_classification": "obc_part_3",
     "roof_type": "low_slope_commercial",
     "roof_area_sqft": 85000,
@@ -10,7 +12,7 @@
     "building_year_built": 1998,
     "existing_roof_age_years": 28,
     "occupied_during_work": true,
-    "designated_substances_assessment_required": true
+    "designated_substances_assessment_required": false
   },
   "rfp": {
     "rfp_id": "TC-ROOF-2026-001",
@@ -19,9 +21,9 @@
     "site_meeting_mandatory": true,
     "contract_form": "ccdc_2",
     "scope_of_work": {
-      "work_description": "Full tear-off and replacement of existing BUR on 85,000 sqft occupied industrial building with temperature-sensitive pharmaceutical tenant. TPO single-ply system. Phased to 15,000 sqft max exposure. Ponding correction required.",
+      "work_description": "Complete tear-off of existing BUR/gravel roof, deck inspection/repair (steel + wood sections), new TPO 60-mil fully-adhered single-ply system with R-30 polyiso insulation and cover board, new flashings at 47 penetrations, resolution of ponding via tapered insulation or added drains. Phased work required on occupied pharma-warehouse, max 15,000 sqft open at once.",
       "tear_off_required": true,
-      "deck_replacement_allowance_bf": 0,
+      "deck_replacement_allowance_bf": null,
       "insulation_upgrade_to_code": true,
       "membrane_system_specified": {
         "category": "tpo",
@@ -30,22 +32,29 @@
         "attachment_method": "fully_adhered"
       },
       "included_items": [
-        "Complete tear-off to deck",
-        "TPO 60 mil min fully adhered preferred (MA acceptable)",
-        "Polyiso insulation R-30 min two-layer staggered",
-        "1/4in gypsum or HD polyiso cover board",
-        "All flashings at 47 penetrations",
-        "Tapered insulation for ponding correction",
-        "Phased installation with watertight end of each day"
+        "Full tear-off and disposal to deck",
+        "Deck inspection and repair (steel); wood deck unit pricing",
+        "New TPO 60-mil fully-adhered membrane",
+        "R-30 polyiso in two staggered layers",
+        "1/4 inch gypsum or HD polyiso cover board",
+        "Tapered insulation or added drains to resolve ponding",
+        "New flashings at 47 penetrations (HVAC, vents, skylights, drains)",
+        "HVAC temporary protection, 72-hr shutdown coordination",
+        "Daily cleanup on occupied site",
+        "Phasing plan (max 15,000 sqft exposed, watertight at EOD)",
+        "As-built drawings and closeout documentation"
       ],
-      "excluded_items": [],
+      "excluded_items": [
+        "Asbestos/ACM abatement actual costs (owner-borne if discovered)",
+        "Steel deck structural repairs priced separately"
+      ],
       "alternates_requested": [
-        "Snow guards per lin ft",
-        "Additional insulation per R-value",
+        "Snow guards per linear foot",
+        "Insulation above code per R-value increment",
         "Annual maintenance program",
         "Pre-removal infrared moisture survey",
-        "Post-install thermal imaging",
-        "Warranty extension beyond 20 years"
+        "Post-install thermal imaging scan",
+        "Extended warranty beyond 20 years"
       ]
     },
     "warranty_requirements": {
@@ -59,12 +68,12 @@
       "cgl_minimum_cad": 5000000,
       "owner_named_additional_insured": true,
       "completed_operations_years": 2,
-      "bid_bond_percent": 0,
+      "bid_bond_percent": null,
       "performance_bond_percent": 50,
       "labour_material_bond_percent": 50,
       "working_at_heights_training_required": true,
       "addenda_acknowledgment_required": true,
-      "non_collusion_declaration_required": false,
+      "non_collusion_declaration_required": true,
       "site_visit_required": true,
       "minimum_years_in_business": 10,
       "minimum_similar_projects": 3
@@ -81,16 +90,33 @@
       "price_scoring_method": "formula_lowest_ratio"
     }
   },
+  "bids": [],
   "_provenance": {
-    "rfp.evaluation_criteria.weighting": "RFP §7 Evaluation Criteria — Price 35 / Materials 20 / Warranty 15 / Schedule 12 / Qualifications 10 / Safety 5 / VE 3. Normalized to 6-criterion schema by folding Safety into qualifications_certifications and VE (3%) into technical_approach (20+3=23).",
-    "rfp.warranty_requirements": "RFP §9.6 — 20-year manufacturer min, 2-year workmanship min, transferable",
-    "rfp.mandatory_requirements.cgl_minimum_cad": "RFP §5.1 — $5M per occurrence",
-    "project.occupied_during_work": "RFP §1.2 + §11.1-2 — pharmaceutical tenant, temperature-sensitive"
+    "project.owner": "§1.1 Building Description",
+    "project.property": "Title block + §1.1",
+    "project.roof_area_sqft": "§1.1 'approximately 85,000 square feet'",
+    "project.building_classification": "§1.1 industrial warehouse 85k sqft → >600m², OBC Part 3",
+    "project.occupied_during_work": "§1.2 and §11.1 occupied pharma warehouse",
+    "rfp.submission_deadline": "Header 'Bid Deadline: April 12, 2026, 2:00 PM EST'",
+    "rfp.scope_of_work.membrane_system_specified.category": "§3.1 TPO single-ply",
+    "rfp.scope_of_work.membrane_system_specified.thickness_spec": "§3.1 60 mil minimum",
+    "rfp.scope_of_work.membrane_system_specified.attachment_method": "§3.1 'Fully adhered system preferred'",
+    "rfp.warranty_requirements.minimum_manufacturer_years": "§3.1 and §9.6",
+    "rfp.warranty_requirements.minimum_workmanship_years": "§9.6",
+    "rfp.mandatory_requirements.cgl_minimum_cad": "§5.1.2 $5,000,000",
+    "rfp.mandatory_requirements.minimum_years_in_business": "§5.1.3 10 years",
+    "rfp.mandatory_requirements.minimum_similar_projects": "§5.1.4 3 references",
+    "rfp.mandatory_requirements.performance_bond_percent": "§9.2 50%",
+    "rfp.mandatory_requirements.site_visit_required": "§6.4 and §8.1 mandatory",
+    "rfp.evaluation_criteria.weighting": "§7 criteria table"
   },
   "extraction_notes": [
-    "RFP §7 includes Safety (5%) and VE (3%) criteria not in default 6-criterion schema. Mapped Safety -> qualifications_certifications, VE -> technical_approach.",
-    "RFP §5.1 requires 'at least one reference for occupied building with phasing' — evaluated as a specific gate within reference check.",
-    "Liquidated damages $500/day beyond July 31, 2026 — factored into schedule scoring.",
-    "Pre-1980 building trigger does NOT apply (1998 build). Asbestos unlikely but RFP §2.3 requires contingency planning."
+    "Classified as obc_part_3: 85,000 sqft industrial warehouse exceeds 600 m² threshold regardless of storeys.",
+    "Building built 1998 (post-1980) — DSA under OHSA s.30 not automatically required, but §2.3 cautions ACM/lead possible in transition-era materials; bidders directed to include safety protocols.",
+    "Warranty type not explicitly stated as NDL; defaulted to total_system_ndl per Part 3 convention (fixture 02 §1). RECOMMEND owner clarify in addendum — 'manufacturer warranty' without NDL language invites cheapest material-only coverage.",
+    "No bid bond percentage stated in §9.2 (only performance + L&M bonds). Owner may wish to add a bid bond requirement for a project of this size.",
+    "Deck replacement allowance (board-feet) not quantified — owner relies on bidder unit pricing. Risk: bidders with low unit prices may inflate consumed quantity; bidders with high unit prices carry a hidden premium. RECOMMEND owner set an allowance or cap.",
+    "Evaluation weighting mapped to schema: RFP §7 Price 35 / Materials 20 + Value Eng 3 → technical_approach 23 / Warranty 15 / Schedule 12 / References 10 / Safety 5 → qualifications_certifications 5. Totals 100.",
+    "Contract form inferred as CCDC 2 from §10 Attachment C 'Sample Contract Form (CCDC 2 - 2020)'."
   ]
 }

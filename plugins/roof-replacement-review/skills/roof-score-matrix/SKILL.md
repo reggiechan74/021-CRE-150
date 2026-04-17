@@ -43,7 +43,15 @@ This:
    - `weaknesses`: weakest 1-2 sub-scores with brief justification
    - `differentiator`: the single factor that most separates this bid from its neighbour in the ranking
 
-4. **Render the matrix.** Populate `templates/scoring_matrix.md` with manifest values and write to `<manifest-dir>/../scoring_matrix.md`.
+4. **Render the matrix.** Prefer the deterministic path:
+
+```bash
+python3 "$CLAUDE_PLUGIN_ROOT/scripts/render_matrix.py" \
+  --manifest <tender_manifest.json> \
+  --out <manifest-dir>/../scoring_matrix.md
+```
+
+   If `scoring_matrix.md` already exists (the `/roof-review` command typically produces it in step 5), **read it and refine only if the mechanical output reads awkwardly**. Do not regenerate from scratch. Leave numbers and structure alone — they are authoritative. Only touch rationale prose if the pulled `scoring_rationale` text reads poorly.
 
 ## Weighting Integrity Check
 

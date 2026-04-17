@@ -26,8 +26,10 @@ For each mandatory requirement in `rfp.mandatory_requirements`, evaluate against
 
 - Bid attaches certificate? `wsib_clearance_attached = true`?
 - Date within current validity window (per fixture 04 §1.3 — standard 90 days, but check WSIB's current cycle; the fixture notes a temporary quarterly renewal program active through 2026)?
-- "In good standing"? (Note: fixture 04 §1.4 — only the online verifier at `clearances.wsib.ca` is authoritative. If the bid attaches a PDF certificate, flag `needs_clarification` recommending the owner verify online before award.)
-- **Fail criteria:** No certificate, expired, or not in good standing.
+- "In good standing" text present on the attached certificate?
+- **Pass criteria:** Certificate attached + within validity window + good-standing text present. The PDF is not the final word (fixture 04 §1.4 — only the online verifier at `clearances.wsib.ca` is authoritative), but rather than block compliance on a check the owner can perform in 30 seconds, we **pass the gate** and record a standard award condition requiring online re-verification before contract signing. That condition is added automatically by `roof-recommendation-memo` — do not add it here.
+- **Needs_clarification criteria:** Certificate attached but unclear validity window (no date or ambiguous "in good standing" wording).
+- **Fail criteria:** No certificate, expired, or the certificate itself says "not in good standing" / "account in arrears."
 
 ### 2. CGL Insurance
 
@@ -66,11 +68,14 @@ For each mandatory requirement in `rfp.mandatory_requirements`, evaluate against
 
 ### 8. Similar Project References
 
-- Count ≥ RFP minimum?
-- References similar in scope (not residential if this is commercial, etc.)?
-- Project values within reasonable range of this project?
-- **Needs_clarification criteria:** References present but similarity questionable (scope or size divergence).
-- **Fail criteria:** Count below threshold.
+A reference is **comparable** to this project if ALL three hold:
+1. Same building-code class (commercial ↔ commercial, residential ↔ residential — Part 3 and Part 9 don't substitute for each other)
+2. Project value within 0.5× to 2× the subject project's value
+3. Completed within the last 5 years
+
+- Count of **comparable** references ≥ RFP minimum?
+- **Needs_clarification criteria:** References present and count meets minimum, but one or more fail the comparable test above (scope or size or recency divergence).
+- **Fail criteria:** Count of comparable references below RFP minimum.
 
 ### 9. Site Visit (if required)
 
@@ -89,9 +94,13 @@ Write each gate result to `bid.mandatory_gates.<gate_name>`:
 }
 ```
 
+## Red Flag Category Ownership
+
+This skill owns exactly one `red_flags.category` value: `qualifications`. Everything warranty/materials/safety/scope/substitutions belongs to `roof-technical-review` — do not write those categories here even if you notice the issue. If a single problem has two aspects (e.g., a lapsed certification that also affects warranty eligibility), record the qualifications aspect here and let technical-review record the warranty aspect.
+
 ## Qualification Red Flags
 
-In addition to gate results, append qualitative flags to `bid.red_flags[]` for issues that don't rise to a fail but warrant owner attention:
+In addition to gate results, append qualitative flags to `bid.red_flags[]` with `category: "qualifications"` for issues that don't rise to a fail but warrant owner attention:
 
 - Certification programs claimed but lapsed (fixture 02 §3)
 - Subcontracting the actual roofing crew to unnamed entities (fixture 04 §5)
@@ -101,11 +110,64 @@ In addition to gate results, append qualitative flags to `bid.red_flags[]` for i
 
 ## Sub-Scores
 
-Produce raw sub-scores (0-100) for:
+Produce raw sub-scores (0-100) for the three rated criteria this skill owns. Each is computed as the **sum of sub-factor points**, not a single anchor match. Record the per-sub-factor points in `bid.scoring_rationale.<sub_score>.sub_factors` so the audit trail shows the math.
 
-- `experience_references` — based on count, similarity, and recency of references (100 = 5+ directly comparable projects completed within 3 yrs; 75 = 3-4 comparable; 50 = minimum count, partial similarity; 25 = bare minimum; 0 = inadequate, flagged as fail)
-- `qualifications_certifications` — years in business, Skilled Trades C of Q count, CRCA membership, manufacturer certifications (100 = 15+ yrs + CRCA + multiple certifications + full C of Q crew; 75 = 10+ yrs + one certification; 50 = 5+ yrs + basic compliance; 25 = minimum; 0 = below minimum)
-- `schedule` — reasonableness vs project scope, crew size adequacy, occupied-building accommodation (100 = detailed Gantt + surge crew on occupied buildings; 75 = realistic timeline + crew; 50 = meets required dates; 25 = aggressive/vague; 0 = unrealistic or absent)
+### `experience_references` (sum of three sub-factors, max 100)
+
+| Sub-factor | Points | Criterion |
+|---|---|---|
+| Count of **comparable** references (Gate 8 definition) | 0 | zero comparable |
+|  | 20 | 1-2 comparable |
+|  | 40 | 3-4 comparable |
+|  | 60 | 5+ comparable |
+| Recency of most-recent comparable reference | 0 | >5 yrs or none |
+|  | 10 | 3-5 yrs |
+|  | 20 | 1-2 yrs |
+|  | 25 | <1 yr |
+| Verifiability (named contact, value, date, photo/contact for site) | 0 | missing most fields |
+|  | 8 | partial (contact only, or value only) |
+|  | 15 | complete on every reference |
+
+If `experience_references` = 0 and RFP minimum reference count is unmet, the bid fails Gate 8 (handled there, not here).
+
+### `qualifications_certifications` (sum of four sub-factors, max 100)
+
+| Sub-factor | Points | Criterion |
+|---|---|---|
+| Years in business (from `qualifications.years_in_business`) | 0 | <5 yrs |
+|  | 15 | 5-9 yrs |
+|  | 25 | 10-14 yrs |
+|  | 35 | 15+ yrs |
+| Manufacturer certification at or above warranty tier claimed | 0 | none |
+|  | 15 | certified at required tier with one manufacturer |
+|  | 25 | multiple manufacturer certifications |
+|  | 30 | top-tier program (e.g., GAF Master Elite, Soprema PAQ+S, Firestone Platinum Master Contractor) |
+| Skilled Trades C of Q crew | 0 | none identified |
+|  | 10 | foreman only |
+|  | 15 | majority of crew |
+|  | 20 | full crew |
+| Industry membership | 0 | none |
+|  | 8 | regional/provincial association |
+|  | 15 | CRCA member |
+
+### `schedule` (sum of four sub-factors, max 100)
+
+| Sub-factor | Points | Criterion |
+|---|---|---|
+| Timeline realism vs scope | 0 | unrealistic or absent |
+|  | 15 | aggressive with thin justification |
+|  | 30 | realistic duration |
+|  | 40 | detailed phase sequencing + milestones |
+| Crew adequacy | 0 | crew size not stated |
+|  | 15 | minimum crew for scope |
+|  | 20 | adequate + named foreman |
+|  | 25 | multiple crews / surge capacity for occupied buildings |
+| Mobilization and completion dates vs RFP | 0 | misses RFP dates |
+|  | 10 | meets substantial completion only |
+|  | 20 | meets both mobilization and completion |
+| Occupied-building accommodation (auto-15 if building is vacant — do not penalize) | 0 | not addressed |
+|  | 8 | generic after-hours / dust commitments |
+|  | 15 | named tenant-coordination plan + communication protocol |
 
 ## Compliance Rule
 

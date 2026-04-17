@@ -1,133 +1,110 @@
-# Memorandum
+# RECOMMENDATION MEMO — Award of Roof Replacement Contract
 
-**To:** Tenebrus Capital — Principal / Investment Committee
-**From:** David Gratton, Property Manager
-**Date:** 2026-04-15
-**Re:** Roof Replacement Tender TC-ROOF-2026-001 — Recommendation of Award, 2550 Argentia Road
+**To:** Tenebrus Capital — Executive / Property Management
+**From:** Roof Replacement Evaluation Team
+**Re:** RFP TC-ROOF-2026-001 — 2550 Argentia Road, Mississauga, ON
+**Date:** 2026-04-17
 
 ---
 
 ## 1. Recommendation
 
-Award the roof replacement contract for 2550 Argentia Road, Mississauga to **Heritage Construction Group** at a contract price of **$653,140 including HST** ($578,000 base + $75,140 HST), subject to the award conditions set out in §5.
+We recommend award of the roof replacement contract to **Heritage Construction Group** for a base bid of **$578,000 CAD** (excluding HST); with 13% HST, the all-in contract value is **$653,140**.
 
-Basis: highest weighted score (91.80/100) among three compliant bidders; lowest price among compliant bids; directly relevant Apotex pharmaceutical reference; GAF Master Elite + COR safety certification; 14 years in business with 11 occupied-building projects in past 5 years.
+Heritage Construction Group achieved the highest weighted score of 79.88/100 against the RFP evaluation criteria, leading the second-ranked compliant bid (Summit Contracting Ltd. at 76.95/100) by 2.93 points. Of the 5 submissions received, 3 are compliant and 2 are non-compliant on material grounds (see §4).
 
----
-
-## 2. Tender Summary
-
-| Item | Detail |
-|---|---|
-| RFP issued | 2026-03-15 |
-| Submissions received | 5 |
-| Compliant after mandatory gates | 3 |
-| Low compliant bid | $578,000 (Heritage) |
-| High compliant bid | $742,000 (Summit) |
-| Compliant-pool price spread | 28.4% |
-| Non-compliant bid range | $468,000–$487,500 |
-| Roof type | Low-slope commercial TPO, 85,000 sq ft |
-| Building classification | OBC Part 3 (industrial warehouse + office) |
-| Occupied during work | Yes — pharmaceutical tenant, temperature-sensitive |
+Award is conditional on the owner resolving the clarifications enumerated in §5 before contract execution.
 
 ---
 
-## 3. Ranking
+## 2. Why Not the Low Bid
 
-| Rank | Bidder | Price (ex HST) | Weighted Score | Status |
-|---:|---|---:|---:|---|
-| 1 | Heritage Construction Group | $578,000 | 91.80 | **Recommended** |
-| 2 | Summit Contracting Ltd. | $742,000 | 89.10 | Compliant, premium-priced |
-| 3 | Pinnacle Roofing Corp. | $612,000 | 85.99 | Compliant alternate |
-| — | Lakeside Roofing Inc. | $487,500 | excluded | Non-compliant: membrane thickness, insulation, warranty, cover board, manufacturer certification |
-| — | Metro Building Solutions Inc. | $468,000 | excluded | Non-compliant: workmanship warranty, insulation, cover board, manufacturer certification, 25 exclusions |
+The lowest-priced submissions — Lakeside Roofing Inc., Metro Building Solutions Inc. — are disqualified as non-compliant (see §4). Their apparent savings are engineered by deleting RFP scope items or failing mandatory gates, and would expose the owner to uninsured warranty failure or safety/regulatory risk.
 
-See `scoring_matrix.md` for sub-scores and `redflag_report.md` for gate results and qualitative issues.
+Among compliant bids, Heritage Construction Group is in fact the **low compliant bid** at $578,000. The recommendation therefore does not carry a compliant-bid price premium.
 
 ---
 
-## 4. Rationale for Recommendation
+## 3. Rated Scoring Summary (Compliant Bids)
 
-### Why Heritage
+| Rank | Bidder | Base Bid | Tech | Warranty | Schedule | Exp | Qual | **Weighted Total** |
+|---:|---|---:|---:|---:|---:|---:|---:|---:|
+| 1 | Heritage Construction Group | $578,000 | 66 | 79 | 65 | 73 | 55 | **79.88** |
+| 2 | Summit Contracting Ltd. | $742,000 | 71 | 100 | 65 | 73 | 65 | **76.95** |
+| 3 | Pinnacle Roofing Corp. | $612,000 | 63 | 79 | 55 | 73 | 60 | **76.29** |
 
-- **Lowest compliant price** — $578,000 base is $34,000 below Pinnacle and $164,000 below Summit, with full RFP compliance on all spec items (60 mil TPO fully adhered, R-30 two-layer staggered, gypsum cover board, 20-yr NDL warranty, tapered insulation allowance for ponding).
-- **Directly analogous reference** — Apotex Pharmaceuticals, Toronto (2024) is a temperature-sensitive pharmaceutical facility of comparable size (78,000 sqft) with the same coordination challenges. Amazon YHM1 demonstrates phasing capability at scale (185,000 sqft occupied).
-- **Best-in-class safety** — GAF Master Elite (top 2% of North American contractors), COR-certified, dedicated safety coordinator for projects >75,000 sqft, WSIB experience rating 0.81 (well below 1.0 industry average).
-- **Value engineering integrity** — Heritage explicitly *recommends against* VE Option 2 (single-layer insulation) on honest energy analysis ("Energy penalty exceeds savings within 10-15 years"). Contractor recommendations that cost the contractor money are a strong integrity signal per tender evaluation best practice (see `fixtures/domain_knowledge/03`).
-- **VE optionality** — VE Option 5 (+$12,000) upgrades membrane to 80 mil, insulation to R-38, and 30-yr warranty — effectively Summit's spec at $77,000 less. This is a contract-formation decision the owner can make at execution.
-
-### Why not Pinnacle (compliant alternate)
-
-Pinnacle is the safer, simpler choice. The facilitator-intended outcome for this exercise is "Pinnacle OR Heritage is defensible." This memo selects Heritage because:
-- $34,000 lower base price
-- Directly comparable pharmaceutical reference (Apotex vs Pinnacle's Tim Hortons cold storage)
-- Stronger safety ratings (0.81 WSIB + COR vs Pinnacle's 0.89 and no COR)
-- VE expertise provides post-award flexibility
-
-Pinnacle remains a defensible second choice if the owner prefers simpler contract formation without VE decisions.
-
-### Why not Summit (high compliant bid)
-
-Summit offers superior specification (80 mil membrane, R-38 insulation, 30-yr NDL, 5-yr workmanship) at a $164,000 / 28% premium over Heritage. The premium is not justified for this tenancy/hold profile unless the owner specifically values:
-- Longest-term durability (Summit's 30-yr vs Heritage's 20-yr warranty) for a >20-year hold
-- Absolute maximum tenant-disruption insurance (dedicated phasing coordinator, 8,000 sqft max exposure vs Heritage's 10,000)
-
-If the owner's hold horizon is indefinite or tenant displacement would exceed $164k in lease-value erosion, Summit becomes defensible. Otherwise Heritage delivers 90%+ of Summit's quality at 78% of Summit's price.
+Weighting applied: Price 35%, Technical 23%, Warranty 15%, Schedule 12%, Experience 10%, Qualifications 5% (100% total, per RFP §7).
 
 ---
 
-## 5. Conditions of Award
+## 4. Compliance Findings
 
-Contract execution should be subject to the following items being resolved in writing prior to signing:
+**Compliant (ranked):**
+- **Heritage Construction Group** — all mandatory gates pass/fail satisfied; 3 gate(s) need documentary clarification before contract execution
+- **Summit Contracting Ltd.** — all mandatory gates pass/fail satisfied; 5 gate(s) need documentary clarification before contract execution
+- **Pinnacle Roofing Corp.** — all mandatory gates pass/fail satisfied; 3 gate(s) need documentary clarification before contract execution
 
-1. **Owner election on VE-5.** Decide whether to accept VE Option 5 at +$12,000 (upgrading to 80 mil membrane + R-38 insulation + 30-yr NDL warranty with mechanically-attached system, no cover board) or retain the base bid specification. Recommendation: accept VE-5 — the specification upgrade is strongly value-accretive for a temperature-sensitive tenancy.
-2. **Workmanship warranty upgrade.** Negotiate extension from base 2-yr to 5-yr workmanship warranty at the stated $8,500 adder — aligns Heritage's warranty with Summit's coverage and is a small fraction of base bid.
-3. **Weather extension protocol.** Incorporate a weather/unforeseen-condition extension protocol into the schedule to preserve the 1-day margin before the July 31 liquidated-damages trigger.
-4. **Permits funding.** Confirm owner-direct funding of building permits (Heritage excludes; estimate $4,500–$6,000).
-5. **Temperature monitoring.** Confirm owner provides wireless temperature sensors in warehouse; Heritage to coordinate around any alerts.
-6. **Hazardous-material contingency.** Confirm owner responsibility for any major ACM/lead abatement beyond Heritage's $3,500 testing allowance and minor-handling scope.
-7. **HVAC shutdown protocol.** Confirm 72-hour notice for weekday shutdowns; weekend shutdowns preferred; facility manager coordination.
-8. **Contract form.** CCDC 2 (2020) Stipulated Price Contract as specified in RFP §10. Include Ontario *Construction Act* 10% statutory holdback and monthly progress certification.
-9. **Performance and L&M bonds.** 50% each as specified in RFP §9.2; confirm Heritage surety capacity covers this single project.
-10. **Reference verification.** Contact Apotex Pharmaceuticals facility operations and Amazon YHM1 infrastructure team prior to signing; confirm phasing approach and tenant coordination quality.
+**Non-compliant (excluded from rated scoring):**
+- **Lakeside Roofing Inc.** — failed gates: bonding; also carries 6 critical and 6 high red flags. Non-compliance is not curable by clarification.
+- **Metro Building Solutions Inc.** — failed gates: working_at_heights; also carries 6 critical and 7 high red flags. Non-compliance is not curable by clarification.
+
+---
+
+## 5. Award Conditions
+
+Prior to contract execution, Heritage Construction Group must provide or satisfy the following:
+
+1. Produce a Certificate of Insurance naming the owner as additional insured, with the required completed-operations tail in writing from the insurer. (Evidence note: Bid §INSURANCE COVERAGE: CGL $5,000,000 per occurrence — meets RFP §5.1.2 minimum. Bid does NOT explicitly state owner named as additional insured nor the completed-operations tail (RFP requires 2 yrs). COI attached per attachments list but not quoted.)
+2. Provide signed acknowledgment of all RFP addenda on the Form of Tender. (Evidence note: Bid does not contain a Form of Tender section explicitly acknowledging addenda. No addenda numbers cited. RFP mandatory per §5.1.)
+3. Provide a signed and dated non-collusion declaration. (Evidence note: No non-collusion declaration found in the bid body or the attachments list. RFP mandatory.)
+4. Clarify in writing: CGL coverage: owner-as-additional-insured endorsement and 2-year completed-operations tail not explicitly confirmed in bid narrative. (per RFP §5.1.2; fixture 04 §2)
+5. Clarify in writing: Addenda acknowledgment and non-collusion declaration not evidenced in the submitted bid text. (per RFP §5.1; CCDC 23 guidance (fixture 03))
+6. Clarify in writing: Reference project values not stated; comparability by 0.5×-2× subject-value test cannot be confirmed. (per roof-qualification-check Gate 8; fixture 04 §1)
+7. Negotiate: Workmanship warranty is 2 years — meets RFP minimum but below market median of 5 years for a complex occupied pharma-warehouse project with 47 penetrations. (per fixture 02 §3; RFP §9.6 minimum 2 yrs)
+8. Clarify in writing: Specific membrane manufacturer for the base bid is not named. Contractor lists three certifications (Carlisle, Firestone, GAF) but does not commit to a single product data line for the 60 mil TPO. (per fixture 02 §4 mis-matched components voids system warranty)
+9. Clarify in writing: Wind-uplift design basis (CSA A123.21 or FM 1-29) not stated anywhere in the bid. Single-ply commercial roof, 28 ft, with 47 penetrations requires an explicit uplift design reference. (per fixture 01 §1.2; CSA A123.21)
+10. Clarify in writing: Fall-protection approach is stated generically (COR, WAH training, safety coordinator) but no site-specific plan naming anchor points, parapet/perimeter detail, or CSA Z91 anchor compliance is provided. (per fixture 01 §3; CSA Z91)
+11. Clarify in writing: VE Option 1 (mechanically attached) proposed as 'ACCEPTABLE' but equivalence justification is thin — site-specific wind uplift design is not provided, and Ontario TPO wind-event losses correlate with mech-attached systems. (per fixture 02 §1; fixture 01 §1.2)
+12. Clarify in writing: Bid excludes 'work outside standard hours (7 AM - 6 PM weekdays)' — but also commits to 72-hr weekend HVAC shutdowns. Ambiguity about premium for any after-hours or weekend roofing labour that the phasing plan may require. (per RFP §11.1 occupied-site phasing; RFP §1.2)
+13. Clarify in writing: Crew size not stated and mobilization-days-after-award not stated; 90-day duration on 85,000 sqft occupied building with three phases depends on crew resourcing that is not quantified. (per RFP §4 schedule; roof-qualification-check schedule sub-factor)
+
+**Standard conditions (applied to every award):**
+- WSIB clearance re-verification at clearances.wsib.ca within 7 days of contract signing; record the verification reference number in the contract file.
+- 10% statutory holdback under Ontario Construction Act; monthly progress certification.
+- Substantial performance declaration at 97% per Construction Act s. 2, with publication per s. 32.
+- Manufacturer inspection within 30 days of substantial performance; inspector's sign-off is a condition of final warranty issuance.
 
 ---
 
 ## 6. Risk Assessment
 
 | Risk | Likelihood | Impact | Mitigation |
-|---|---|---|---|
-| Weather delay during May–July tear-off phases | Medium | High (LD trigger July 31) | Condition #3 above; Heritage includes reinforced weighted tarps + secondary drainage; owner's rep review of weekend protection |
-| Wet insulation exceeds 15-20% estimate | Medium | Medium | Heritage $10k steel deck + $10k wood deck allowances; unit pricing stated if exceeded; $3,500 hazmat testing allowance |
-| Temperature excursion in pharmaceutical warehouse | Low | Very High (tenant claim) | Heritage's Apotex protocol applies; owner-provided monitoring; weekend-only HVAC shutdowns; 10,000 sqft max exposure |
-| ACM or lead discovered during tear-off | Low-Medium | Medium (schedule + cost) | RFP §2.3 contingency structure — owner bears abatement; Heritage testing allowance + minor-handling capability |
-| Change orders from discovered deck conditions | Medium | Medium | $20,000 combined deck allowances in base; clear unit pricing for excess; owner's rep certification of any change order |
-| Contractor insolvency mid-project | Low | High | 50% performance bond + 50% L&M bond; 10% statutory holdback; Heritage 14-year business history + $5M CGL + $2M pollution liability |
-| VE-5 specification change increases coordination complexity | Low | Low | VE-5 (mechanically attached) is simpler, not more complex; Heritage's Carlisle and Firestone certifications cover both attachment methods |
+|---|:-:|:-:|---|
+| Weather delay during tear-off phase | Med | Med | Phased staging plan with daily dry-in protocol; watertight at end of each work day; schedule float between substantial and final completion. |
+| Deck replacement exceeds allowance | Med | Med | Unit prices carried in bid; owner's rep photographs and signs off each replacement quantity; cap via allowance. |
+| Concealed conditions (ACM, lead, wet insulation) discovered during tear-off | Med | High | Transition-era safety protocol in bid; owner-borne abatement cost with schedule contingency; HEPA dust protocols. |
+| Change orders from undocumented prior repairs | Med | Med | 10% owner contingency retained separately; owner's rep reviews each change before issuance; documented pricing formula in RFP. |
+| Tenant disruption on occupied building | Med | High | 72-hour HVAC coordination; max-exposure phasing cap per RFP; weekend watertight protection; daily tenant communication protocol. |
+| Contractor insolvency during project | Low | High | Performance bond + L&M bond at RFP-specified percentages; statutory holdback; monthly progress certification. |
 
 ---
 
-## 7. Contract Administration Notes
+## 7. Contract Form
 
-- **Contract form:** CCDC 2 (2020) Stipulated Price Contract per RFP §10
-- **Holdback:** 10% statutory holdback under Ontario *Construction Act*
-- **Progress payments:** Monthly, certified by owner's representative
-- **Substantial performance:** Published at 97% completion per *Construction Act* s. 2
-- **Warranty commencement:** From date of substantial performance
-- **Liquidated damages:** $500/day beyond July 31, 2026 per RFP §9.5
-- **Post-installation inspection:** Schedule GAF/Carlisle/Firestone manufacturer inspection within 30 days of substantial performance to validate warranty
+Recommend **CCDC 2 (2020) stipulated-price contract — OBC Part 3, value > $500K**.
+
+Supplementary conditions should reference the Ontario Construction Act holdback and lien provisions (s. 26, s. 32, s. 34), OBC compliance for the insulation upgrade, RFP phasing requirements, and RFP closeout deliverables (as-builts, warranty documents, maintenance manual, lien waivers).
 
 ---
 
-## 8. Decision Requested
+## 8. Next Steps
 
-Approval to award the roof replacement contract to **Heritage Construction Group** at **$653,140 including HST** (or $666,700 if VE-5 is elected at contract execution), subject to the ten award conditions in §5.
+1. Issue conditional award letter to Heritage Construction Group citing §5 conditions with a 10-business-day response window.
+2. Parallel track: notify remaining compliant bidders that their bids remain on file as alternates pending conditions satisfaction.
+3. Issue notice of non-compliance to non-compliant bidders with a right of response (Contract A disclosure per Ron Engineering doctrine).
+4. Upon conditions satisfied, execute the recommended contract form; coordinate mobilization per RFP schedule.
+5. Retain these manifests, scoring matrix, and red flag report in the procurement file as the evaluation record defensible against any bid protest.
 
 ---
 
-**Attachments**
-- A: Scoring Matrix (`scoring_matrix.md`)
-- B: Red Flag Report (`redflag_report.md`)
-- C: Tender Manifest (`manifests/tender_manifest.json`)
-
-*Prepared using `roof-replacement-review` plugin v0.1.0. Source citations in manifest `_provenance` fields and domain-knowledge fixtures (`fixtures/domain_knowledge/01_ontario_roofing_codes.md`, `02_roofing_materials_warranties.md`, `03_tender_evaluation_methodology.md`, `04_contractor_qualification.md`).*
+*Prepared from the normalized tender manifest at `manifests/tender_manifest.json`. Supporting detail: `scoring_matrix.md`, `redflag_report.md`.*
