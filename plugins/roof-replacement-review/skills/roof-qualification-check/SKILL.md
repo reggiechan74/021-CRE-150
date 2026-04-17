@@ -9,11 +9,82 @@ description: >
 
 # Roof Qualification Check
 
-You are the gatekeeper. Bids failing any mandatory requirement are non-compliant and excluded from rated scoring. Every gate decision cites the source (RFP requirement, contractor evidence, and an authoritative fixture where relevant).
+You are the gatekeeper for **administrative and qualification** gates. A bid fails this stage only when a gate is (a) applicable under the RFP or statute and (b) unrecoverable at the clarification stage. Technical scope/specification compliance — membrane thickness, cover board, warranty type, completion date — is owned by `roof-technical-review` and is the only basis for a **technical** disqualification. Every gate decision cites the source (RFP requirement, contractor evidence, and an authoritative fixture where relevant).
+
+## What goes in `mandatory_gates` — and what does NOT
+
+`mandatory_gates` is reserved for the administrative and qualification items
+enumerated in this skill. **Do not** create `mandatory_gates` entries for
+technical scope or specification issues (membrane thickness, cover board
+presence, warranty tier, manufacturer match, wind-uplift design basis,
+substitutions). Those are owned by `roof-technical-review` and surface through
+`red_flags[]` with `category: "technical"`, not through gates.
+
+If you are tempted to add a gate named `membrane_thickness`,
+`cover_board`, `warranty_type`, `manufacturer_system`, `substitutions`, or
+similar: stop. That's a technical finding. It belongs in a red flag, not a
+gate. Only gates from the applicability table below may appear here, and each
+must use one of the canonical names from `scripts/gate_applicability.py`.
+
+Why this matters: `scripts/score.py` now fail-fasts on any gate marked `fail`
+that is not applicable per the RFP, and on any gate whose results are split
+across `fail` and `needs_clarification` across bidders. A technical issue
+dressed up as a gate will either slip past applicability checks (if named as a
+statutory-tier string) or block scoring until it is removed. Either way you
+have created a defect. Keep technical findings in `red_flags[]`.
+
+## Gate applicability — which gates can fail a bidder?
+
+Before evaluating any gate, classify it into one of three tiers. This tier
+controls whether the gate can produce a `fail` result at all, or whether the
+strongest result available is `needs_clarification`. Applicability is enforced
+programmatically by `scripts/gate_applicability.py` and cross-checked by
+`scripts/reconcile_gates.py` — the code is the source of truth; this section
+documents the contract.
+
+- **Statutory** — Ontario law or Construction Act baseline. Always applicable,
+  regardless of RFP text. Can fail a bidder.
+  - `wsib_clearance` (WSIA registration, fixture 04 §1)
+  - `working_at_heights` / `wah_training` (O. Reg. 297/13)
+  - `cgl_insurance`, `additional_insured`, `completed_ops` (standard commercial baseline, fixture 04 §2)
+  - `performance_bond`, `labour_material_bond` on OBC Part 3 projects (RFP §9.2 / Construction Act)
+- **RFP-specified** — applicable only if the RFP invokes the gate via a
+  populated `rfp.mandatory_requirements.<field>` OR names the item verbatim in
+  `rfp.submission_requirements[]`. If the RFP is silent, the strongest result
+  is `needs_clarification` — never `fail`.
+  - `bid_bond` (applicable only if `bid_bond_percent` > 0 or submission_requirements mentions it)
+  - `site_visit` / `site_visit_required`
+  - `minimum_years_in_business` / `years_in_business`
+  - `similar_project_references` / `references`
+- **Prudent-evaluator** — items a careful evaluator asks about but which are
+  not RFP requirements unless explicitly declared. Default: clarify only.
+  Never a fail.
+  - `addenda_acknowledgment` / `addenda`
+  - `non_collusion_declaration` / `non_collusion`
+
+If you cannot tell which tier a gate belongs to, treat it as
+**prudent-evaluator** and mark `needs_clarification` rather than `fail`.
+
+## Compliance Rule (revised)
+
+Three-tier status, computed by `scripts/score.py` from the set of gate results:
+
+- **compliant** — every applicable gate `pass`.
+- **conditional** — no gate `fail`, but at least one `needs_clarification`.
+  These bids **are scored and ranked** alongside compliant bids. Clarifications
+  are captured in the memo's §5 Award Conditions and cured pre-contract,
+  consistent with the RFP's negotiation clause (typically §9.1). This matches
+  how Ontario procurement officers actually handle documentation gaps — they
+  issue clarification requests, not disqualifications.
+- **non_compliant** — at least one gate `fail` on a statutory or
+  RFP-specified gate. Excluded from rated scoring. Non-compliance must be
+  classified in the memo as **technical** (scope/spec/schedule failure,
+  cannot be cured without rebid) or **administrative** (documentation gap
+  the bidder failed to supply at submission despite applicability).
 
 ## Reference Material
 
-Ground truth for evaluation:
+**Read only these fixtures — do not load `01_ontario_roofing_codes.md` or `02_roofing_materials_warranties.md`, which are owned by `roof-technical-review`:**
 
 - `fixtures/domain_knowledge/04_contractor_qualification.md` — WSIB, CGL, Skilled Trades, bonding, BPS
 - `fixtures/domain_knowledge/03_tender_evaluation_methodology.md` §2 — mandatory vs rated split, Contract A/B doctrine (Ron Engineering 1981 SCC)
@@ -41,10 +112,15 @@ For each mandatory requirement in `rfp.mandatory_requirements`, evaluate against
 
 ### 3. Bid Bond / Bonding
 
-- Bid bond attached at the required percentage?
-- Bonding capacity declared ≥ project value? (Fixture 04 §5)
-- Consent of surety for performance and L&M bonds present?
-- **Fail criteria:** Missing bid bond when required; no surety consent.
+**Applicability check first:** bid bond is RFP-specified. Fail is allowed only
+if `rfp.mandatory_requirements.bid_bond_percent` is set or
+`rfp.submission_requirements` names a bid bond. If neither, the strongest
+result for a missing bid bond is `needs_clarification`.
+
+- Bid bond attached at the required percentage (if applicable)?
+- Bonding capacity declared ≥ project value? (Fixture 04 §5) — always evaluable; below project value is a `needs_clarification` when the RFP is silent on bid bonds, not a fail.
+- Consent of surety for performance and L&M bonds present? — performance/L&M are statutory on Part 3; missing consent of surety on the successful bidder is a fail at contract signing, not at submission. At submission stage, mark `needs_clarification`.
+- **Fail criteria:** Missing bid bond when the RFP specifies bid_bond_percent or explicitly lists a bid bond in submission_requirements.
 
 ### 4. Working-at-Heights Training
 
@@ -53,13 +129,27 @@ For each mandatory requirement in `rfp.mandatory_requirements`, evaluate against
 
 ### 5. Addenda Acknowledgment
 
+**Prudent-evaluator tier.** Never fail. If missing, mark `needs_clarification`
+so the owner can request a signed acknowledgment before contract execution.
+
 - All issued addenda acknowledged in the Form of Tender?
-- **Fail criteria:** Missing acknowledgment per CCDC 23 guidance (fixture 03).
+- **Needs_clarification criteria:** Missing acknowledgment. Per CCDC 23 the
+  owner can still accept the bid and require the acknowledgment as a
+  condition of award.
+- **Fail criteria:** Only when `rfp.mandatory_requirements.addenda_acknowledgment_required`
+  is explicitly true AND the bid contradicts or refuses addenda terms.
 
 ### 6. Non-Collusion Declaration
 
+**Prudent-evaluator tier.** Never fail. A missing declaration is clarifiable;
+a declaration present but contradicted by evidence of collusion is a separate
+matter (escalate to the owner's counsel).
+
 - Signed and dated?
-- **Fail criteria:** Missing or unsigned.
+- **Needs_clarification criteria:** Missing or unsigned. Owner requests a
+  signed declaration before award.
+- **Fail criteria:** Only when `rfp.mandatory_requirements.non_collusion_declaration_required`
+  is explicitly true AND the declaration is not signed after clarification.
 
 ### 7. Minimum Years in Business
 
@@ -82,9 +172,52 @@ A reference is **comparable** to this project if ALL three hold:
 - Bid confirms attendance at mandatory pre-bid site meeting?
 - **Fail criteria:** Required but not attended.
 
+## Sidecar Output File
+
+Write your results to a **sidecar** JSON file so the technical-review skill can
+run in parallel without clobbering your writes:
+
+**Path:** `<rfp-dir>/roof-review-output/manifests/bid_<slug>.qual.json`
+
+**Shape:**
+
+```json
+{
+  "bidder_id": "<same as base bid manifest>",
+  "mandatory_gates": { "<gate_name>": { "result": "...", "evidence": "...", "notes": "..." } },
+  "scores": {
+    "experience_references": <0-100>,
+    "qualifications_certifications": <0-100>,
+    "schedule": <0-100>
+  },
+  "scoring_rationale": {
+    "experience_references": { "sub_factors": { "...": <points> } },
+    "qualifications_certifications": { "sub_factors": { "...": <points> } },
+    "schedule": { "sub_factors": { "...": <points> } }
+  },
+  "red_flags": [
+    { "severity": "...", "category": "qualifications", "description": "...", ... }
+  ]
+}
+```
+
+**Do NOT** touch the base `bid_<slug>.json` — the technical-review skill is
+writing `bid_<slug>.tech.json` concurrently and `scripts/normalize.py` will
+merge all three files. A write to `bid_<slug>.json` from this skill is a bug.
+
+Keys this sidecar MAY contain: `bidder_id`, `mandatory_gates`, `scores`,
+`scoring_rationale`, `red_flags` (only `category: "qualifications"`).
+
+Keys this sidecar MUST NOT contain: `scores.technical_approach`,
+`scores.warranty_materials`, any `mandatory_gates` entry from the technical
+table in `roof-technical-review` (scope_compliance, membrane_thickness,
+cover_board, insulation_upgrade, warranty_type, warranty_duration,
+completion_date, mobilization_date, fire_rating, wind_uplift), or any
+`red_flags` with a category other than `qualifications`.
+
 ## Output per Gate
 
-Write each gate result to `bid.mandatory_gates.<gate_name>`:
+Write each gate result into the sidecar file's `mandatory_gates.<gate_name>`:
 
 ```json
 {
@@ -169,9 +302,13 @@ If `experience_references` = 0 and RFP minimum reference count is unmet, the bid
 |  | 8 | generic after-hours / dust commitments |
 |  | 15 | named tenant-coordination plan + communication protocol |
 
-## Compliance Rule
+## Compliance Rule (see the revised rule at the top of this skill)
 
-A bid is compliant if and only if all gates are `pass`. `needs_clarification` blocks ranking until resolved — mark the bid as needing owner clarification, not yet compliant or non-compliant.
+The three-tier model (`compliant` / `conditional` / `non_compliant`) is
+computed in `scripts/score.py::compliance_status()`. Do not reimplement
+compliance logic here — emit gate results and let the scoring pipeline
+assemble the tier. Cross-bid uniformity and applicability are audited by
+`scripts/reconcile_gates.py` after scoring.
 
 ## Summary to User
 
