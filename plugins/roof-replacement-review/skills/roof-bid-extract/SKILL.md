@@ -15,8 +15,18 @@ be populated and what values are expected.
 
 ## Inputs
 
-1. **RFP manifest** — tells you scope, mandatories, and weighting
-2. **Bid PDF** — the contractor's submission
+1. **Bid PDF** — the contractor's submission. This is the only input this skill
+   needs. It extracts bid facts verbatim from the submission.
+
+**This skill does NOT require the RFP manifest.** Comparison against the RFP
+(mandatory-gate evaluation, warranty-tier match, spec compliance) is performed
+by `roof-qualification-check` and `roof-technical-review` in the next pipeline
+wave. Keeping bid-extract RFP-independent is what lets `/roof-review` dispatch
+`roof-rfp-extract` and `roof-bid-extract` in parallel during wave 1.
+
+If you feel you need to check a value against the RFP here, stop — record what
+the bid says in `extraction_notes` and defer the comparison to the downstream
+skills.
 
 ## Reference Material
 
