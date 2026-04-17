@@ -9,9 +9,9 @@
 
 ## 1. Recommendation
 
-We recommend award of the roof replacement contract to **Heritage Construction Group** for a base bid of **$578,000 CAD** (excluding HST); with 13% HST, the all-in contract value is **$653,140**.
+We recommend award of the roof replacement contract to **Summit Contracting Ltd.** for a base bid of **$742,000 CAD** (excluding HST); with 13% HST, the all-in contract value is **$838,460**.
 
-Heritage Construction Group achieved the highest weighted score of 79.88/100 against the RFP evaluation criteria, leading the second-ranked compliant bid (Summit Contracting Ltd. at 76.95/100) by 2.93 points. Of the 5 submissions received, 3 are compliant and 2 are non-compliant on material grounds (see §4).
+Summit Contracting Ltd. achieved the highest weighted score of 77.66/100 against the RFP evaluation criteria, leading the second-ranked bid (Pinnacle Roofing Corp. at 75.95/100) by 1.71 points. Of the 5 submissions received, 0 are fully compliant, 5 are compliant subject to administrative clarifications curable pre-contract, and 0 are non-compliant on material grounds (see §4).
 
 Award is conditional on the owner resolving the clarifications enumerated in §5 before contract execution.
 
@@ -19,9 +19,7 @@ Award is conditional on the owner resolving the clarifications enumerated in §5
 
 ## 2. Why Not the Low Bid
 
-The lowest-priced submissions — Lakeside Roofing Inc., Metro Building Solutions Inc. — are disqualified as non-compliant (see §4). Their apparent savings are engineered by deleting RFP scope items or failing mandatory gates, and would expose the owner to uninsured warranty failure or safety/regulatory risk.
-
-Among compliant bids, Heritage Construction Group is in fact the **low compliant bid** at $578,000. The recommendation therefore does not carry a compliant-bid price premium.
+Among compliant bids, the low compliant price is $468,000 from Metro Building Solutions Inc.. The recommended bid carries a +58.5% premium, justified by the scoring differential in §3 and the qualification differentiators captured in §4.
 
 ---
 
@@ -29,9 +27,11 @@ Among compliant bids, Heritage Construction Group is in fact the **low compliant
 
 | Rank | Bidder | Base Bid | Tech | Warranty | Schedule | Exp | Qual | **Weighted Total** |
 |---:|---|---:|---:|---:|---:|---:|---:|---:|
-| 1 | Heritage Construction Group | $578,000 | 66 | 79 | 65 | 73 | 55 | **79.88** |
-| 2 | Summit Contracting Ltd. | $742,000 | 71 | 100 | 65 | 73 | 65 | **76.95** |
-| 3 | Pinnacle Roofing Corp. | $612,000 | 63 | 79 | 55 | 73 | 60 | **76.29** |
+| 1 | Summit Contracting Ltd. | $742,000 | 78 | 95 | 95 | 80 | 80 | **77.66** |
+| 2 | Pinnacle Roofing Corp. | $612,000 | 78 | 67 | 95 | 68 | 60 | **75.95** |
+| 3 | Heritage Construction Group | $578,000 | 66 | 79 | 85 | 68 | 55 | **75.12** |
+| 4 | Metro Building Solutions Inc. | $468,000 | 10 | 15 | 10 | 53 | 35 | **47.8** |
+| 5 | Lakeside Roofing Inc. | $487,500 | 10 | 6 | 15 | 55 | 15 | **44.85** |
 
 Weighting applied: Price 35%, Technical 23%, Warranty 15%, Schedule 12%, Experience 10%, Qualifications 5% (100% total, per RFP §7).
 
@@ -39,34 +39,39 @@ Weighting applied: Price 35%, Technical 23%, Warranty 15%, Schedule 12%, Experie
 
 ## 4. Compliance Findings
 
-**Compliant (ranked):**
-- **Heritage Construction Group** — all mandatory gates pass/fail satisfied; 3 gate(s) need documentary clarification before contract execution
-- **Summit Contracting Ltd.** — all mandatory gates pass/fail satisfied; 5 gate(s) need documentary clarification before contract execution
-- **Pinnacle Roofing Corp.** — all mandatory gates pass/fail satisfied; 3 gate(s) need documentary clarification before contract execution
+### 4.A Fully Compliant
 
-**Non-compliant (excluded from rated scoring):**
-- **Lakeside Roofing Inc.** — failed gates: bonding; also carries 6 critical and 6 high red flags. Non-compliance is not curable by clarification.
-- **Metro Building Solutions Inc.** — failed gates: working_at_heights; also carries 6 critical and 7 high red flags. Non-compliance is not curable by clarification.
+- _None._
+
+### 4.B Administratively Conditional
+
+- **Summit Contracting Ltd.** — ranked under the RFP §7 rubric with 3 administrative gate(s) requiring documentary clarification before contract execution: cgl_insurance, performance_bond, labour_material_bond. Consistent with RFP §9.1, these are cured pre-award, not grounds for disqualification.
+- **Pinnacle Roofing Corp.** — ranked under the RFP §7 rubric with 5 administrative gate(s) requiring documentary clarification before contract execution: cgl_insurance, performance_bond, labour_material_bond, addenda_acknowledgment, non_collusion_declaration. Consistent with RFP §9.1, these are cured pre-award, not grounds for disqualification.
+- **Heritage Construction Group** — ranked under the RFP §7 rubric with 4 administrative gate(s) requiring documentary clarification before contract execution: cgl_insurance, bonding, addenda_acknowledgment, non_collusion_declaration. Consistent with RFP §9.1, these are cured pre-award, not grounds for disqualification.
+- **Metro Building Solutions Inc.** — ranked under the RFP §7 rubric with 8 administrative gate(s) requiring documentary clarification before contract execution: wsib_clearance, cgl_insurance, bid_bond, bonds, working_at_heights, addenda_acknowledgment, non_collusion_declaration, similar_project_references. Consistent with RFP §9.1, these are cured pre-award, not grounds for disqualification.
+- **Lakeside Roofing Inc.** — ranked under the RFP §7 rubric with 9 administrative gate(s) requiring documentary clarification before contract execution: wsib_clearance, cgl_insurance, additional_insured, completed_ops, performance_bond, labour_material_bond, addenda_acknowledgment, non_collusion_declaration, similar_project_references. Consistent with RFP §9.1, these are cured pre-award, not grounds for disqualification.
+
+### 4.C Non-Compliant (excluded from rated scoring)
+
+- _None._
 
 ---
 
 ## 5. Award Conditions
 
-Prior to contract execution, Heritage Construction Group must provide or satisfy the following:
+Prior to contract execution, Summit Contracting Ltd. must provide or satisfy the following:
 
-1. Produce a Certificate of Insurance naming the owner as additional insured, with the required completed-operations tail in writing from the insurer. (Evidence note: Bid §INSURANCE COVERAGE: CGL $5,000,000 per occurrence — meets RFP §5.1.2 minimum. Bid does NOT explicitly state owner named as additional insured nor the completed-operations tail (RFP requires 2 yrs). COI attached per attachments list but not quoted.)
-2. Provide signed acknowledgment of all RFP addenda on the Form of Tender. (Evidence note: Bid does not contain a Form of Tender section explicitly acknowledging addenda. No addenda numbers cited. RFP mandatory per §5.1.)
-3. Provide a signed and dated non-collusion declaration. (Evidence note: No non-collusion declaration found in the bid body or the attachments list. RFP mandatory.)
-4. Clarify in writing: CGL coverage: owner-as-additional-insured endorsement and 2-year completed-operations tail not explicitly confirmed in bid narrative. (per RFP §5.1.2; fixture 04 §2)
-5. Clarify in writing: Addenda acknowledgment and non-collusion declaration not evidenced in the submitted bid text. (per RFP §5.1; CCDC 23 guidance (fixture 03))
-6. Clarify in writing: Reference project values not stated; comparability by 0.5×-2× subject-value test cannot be confirmed. (per roof-qualification-check Gate 8; fixture 04 §1)
-7. Negotiate: Workmanship warranty is 2 years — meets RFP minimum but below market median of 5 years for a complex occupied pharma-warehouse project with 47 penetrations. (per fixture 02 §3; RFP §9.6 minimum 2 yrs)
-8. Clarify in writing: Specific membrane manufacturer for the base bid is not named. Contractor lists three certifications (Carlisle, Firestone, GAF) but does not commit to a single product data line for the 60 mil TPO. (per fixture 02 §4 mis-matched components voids system warranty)
-9. Clarify in writing: Wind-uplift design basis (CSA A123.21 or FM 1-29) not stated anywhere in the bid. Single-ply commercial roof, 28 ft, with 47 penetrations requires an explicit uplift design reference. (per fixture 01 §1.2; CSA A123.21)
-10. Clarify in writing: Fall-protection approach is stated generically (COR, WAH training, safety coordinator) but no site-specific plan naming anchor points, parapet/perimeter detail, or CSA Z91 anchor compliance is provided. (per fixture 01 §3; CSA Z91)
-11. Clarify in writing: VE Option 1 (mechanically attached) proposed as 'ACCEPTABLE' but equivalence justification is thin — site-specific wind uplift design is not provided, and Ontario TPO wind-event losses correlate with mech-attached systems. (per fixture 02 §1; fixture 01 §1.2)
-12. Clarify in writing: Bid excludes 'work outside standard hours (7 AM - 6 PM weekdays)' — but also commits to 72-hr weekend HVAC shutdowns. Ambiguity about premium for any after-hours or weekend roofing labour that the phasing plan may require. (per RFP §11.1 occupied-site phasing; RFP §1.2)
-13. Clarify in writing: Crew size not stated and mobilization-days-after-award not stated; 90-day duration on 85,000 sqft occupied building with three phases depends on crew resourcing that is not quantified. (per RFP §4 schedule; roof-qualification-check schedule sub-factor)
+1. Produce a Certificate of Insurance naming the owner as additional insured, with the required completed-operations tail in writing from the insurer. (Evidence note: Insurance Coverage: CGL $10,000,000 per occurrence (exceeds RFP $5M minimum by 2x). COI attached per Attachments. Owner-as-additional-insured endorsement, completed-operations tail years, and named-insured match to bidder legal entity not stated in narrative.)
+2. Resolve the clarification on performance bond. (Evidence note: RFP section 9.2 requires 50% performance bond at contract signing. Bid is silent on bonding capacity and surety consent.)
+3. Resolve the clarification on labour material bond. (Evidence note: RFP section 9.2 requires 50% labour and material payment bond at contract signing. Bid is silent on bonding capacity and surety consent.)
+4. Clarify in writing: Claimed '30-year NDL on TPO membrane' but RFP requires total_system_ndl and bid does not name the specific manufacturer, system, or warranty program. Contractor holds Carlisle Master Installer, Firestone Premier Contractor, and GAF Master Elite certifications — strong credentials, but GAF Master Elite is primarily the residential tier (the matching commercial top-tiers are Carlisle Authorized Applicator for 30-yr Golden Seal, Firestone Platinum Master Contractor for Red Shield Platinum, or Sika Authorized Applicator). Without a named manufacturer system, the owner cannot confirm the warranty program, required pre-install drawing review, or mid-job manufacturer inspection (all prerequisites for a true total-system NDL per fixture 02 section 3). (per fixture 02 section 1.3 (Carlisle Golden Seal tiers), section 3.1-3.7 (certified-contractor programs and prerequisites), section 4 red-flag #5; RFP section 3.1, section 9.6.)
+5. Clarify in writing: Manufacturer/system not specifically named. Bid lists three separate manufacturer certifications (Carlisle, Firestone, GAF) but does not commit which brand comprises the 80 mil TPO assembly — membrane, adhesive, fastener plates, cover board, and flashings. Fixture 02 section 4 red-flag #1 (mismatched system components voids warranty) cannot be ruled out without a named assembly and corresponding TDS/warranty program. (per fixture 02 section 4 red-flag #1; section 1.3.)
+6. Clarify in writing: No wind uplift design basis stated. Wind warranty coverage of 130 mph is cited but no CSA A123.21 or FM 1-60/1-75/1-90 rating, no calculated uplift pressures for field/perimeter/corner zones, no fastener pattern schedule. Ontario commercial low-slope requires an explicit design basis. (per CSA A123.21-20; OBC Part 5; fixture 01 section 1.2; fixture 02 section 4 red-flag #4.)
+7. Clarify in writing: No Designated Substances Assessment (DSA) plan despite 1998 building and RFP flag designated_substances_assessment_required = true. Contractor provides pre-removal hazmat testing at 12 locations but does not reference a DSR/DSA per OHSA section 30 and O. Reg. 278/05. Major abatement excluded. (per OHSA section 30; O. Reg. 278/05; fixture 01 section 4.2; RFP section 2.3 extraction note.)
+8. Accept with written condition: Two substitutions proposed that upgrade RFP baseline specs (80 mil membrane vs 60 mil RFP minimum; R-38 insulation vs R-30 RFP minimum). Both are documented upgrades with sensible justifications, not deficiencies — but they do mean Summit's price is not directly comparable to bids that hold to the RFP baseline. Evaluator should either accept the upgrades or request a deduct-to-baseline for apples-to-apples comparison. (per CCDC 23 — substitution/equivalence doctrine; fixture 02 section 1.3 (80 mil = industry premium tier).)
+9. Clarify in writing: References: contact, project size, and completion year provided on four references; project VALUE not stated on any. Gate 8 'comparable' test (size + recency + value) partially satisfied; verifiability weak on the value field. Pfizer Canada and Shoppers Drug Mart references are unusually strong scope matches (pharmaceutical / temperature-sensitive), mitigating the value-data gap. (per qualification SKILL section 8; fixture 03.)
+10. Clarify in writing: COI attached but owner-as-additional-insured endorsement, completed-operations tail years, and named-insured match to the legal bidder entity are not stated in narrative. Shell-entity / post-completion coverage gap cannot be ruled out without the COI content. (per fixture 04 section 2, section 5.)
+11. Clarify in writing: Fall protection plan present in narrative (COR certified, dedicated safety officer, annual training, zero lost-time in 7 yrs, WSIB ER 0.72) but lacks a site-specific anchor-point layout, engineered anchor drawings, named fall-arrest equipment inventory, and rescue plan for an 85,000 sqft occupied commercial roof. (per O. Reg. 213/91 sections 26.1-26.9 (rescue plan mandatory); fixture 01 section 3.1, section 3.3.)
 
 **Standard conditions (applied to every award):**
 - WSIB clearance re-verification at clearances.wsib.ca within 7 days of contract signing; record the verification reference number in the contract file.
@@ -99,7 +104,7 @@ Supplementary conditions should reference the Ontario Construction Act holdback 
 
 ## 8. Next Steps
 
-1. Issue conditional award letter to Heritage Construction Group citing §5 conditions with a 10-business-day response window.
+1. Issue conditional award letter to Summit Contracting Ltd. citing §5 conditions with a 10-business-day response window.
 2. Parallel track: notify remaining compliant bidders that their bids remain on file as alternates pending conditions satisfaction.
 3. Issue notice of non-compliance to non-compliant bidders with a right of response (Contract A disclosure per Ron Engineering doctrine).
 4. Upon conditions satisfied, execute the recommended contract form; coordinate mobilization per RFP schedule.
