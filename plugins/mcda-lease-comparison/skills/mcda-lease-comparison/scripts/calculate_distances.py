@@ -16,9 +16,34 @@ Free tier: 1,000 elements/month
 import json
 import sys
 import os
-import requests
 import argparse
 from typing import Dict, List, Any
+
+try:
+    import requests
+    def _http_get(url, params=None, timeout=10):
+        return requests.get(url, params=params, timeout=timeout)
+except ImportError:
+    import urllib.request
+    import urllib.parse
+    import urllib.error
+    import json as _json
+
+    class _Response:
+        def __init__(self, status_code, text):
+            self.status_code = status_code
+            self.text = text
+        def json(self):
+            return _json.loads(self.text)
+
+    def _http_get(url, params=None, timeout=10):
+        if params:
+            url = url + "?" + urllib.parse.urlencode(params)
+        try:
+            with urllib.request.urlopen(url, timeout=timeout) as r:
+                return _Response(r.status, r.read().decode())
+        except urllib.error.HTTPError as e:
+            return _Response(e.code, e.read().decode(errors="replace"))
 
 
 def load_json(file_path: str) -> Dict[str, Any]:
@@ -67,7 +92,7 @@ def calculate_distance(origin: str, destination: str, api_key: str) -> float:
         'mode': 'driving'  # Can also be: walking, bicycling, transit
     }
 
-    response = requests.get(url, params=params)
+    response = _http_get(url, params=params)
 
     if response.status_code != 200:
         raise Exception(f"API request failed with status {response.status_code}: {response.text}")
