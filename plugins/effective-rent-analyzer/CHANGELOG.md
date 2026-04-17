@@ -1,5 +1,13 @@
 # Changelog — effective-rent-analyzer
 
+## [1.0.1] — 2026-04-16
+
+### Fixed
+
+- `eff_rent_calculator.py`: add inline `numpy_financial` fallback (`pv` + `pmt`) so calculator runs in environments where the package is not installed (e.g. Claude Cowork). Without this, import failure caused the subagent to silently fabricate NER results.
+- `SKILL.md`: acquisition cost formula now explicitly uses `gla_building_sf` (full building GLA) instead of ambiguous `area_sf`, preventing ~3× understatement of breakeven thresholds on no-match system defaults.
+- `SKILL.md`: when commission amounts are not stated in the lease document, GTA market defaults are applied (industrial: 5% Y1 / 2.5% subsequent each side) instead of $0, which was overstating NER by ~$1.22/sf on this deal.
+
 ## [1.0.0] — 2026-04-16
 
 ### Added
