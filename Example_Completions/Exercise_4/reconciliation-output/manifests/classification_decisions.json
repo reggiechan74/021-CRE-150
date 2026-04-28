@@ -1,0 +1,3289 @@
+[
+  {
+    "line_id": "gl_0001",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "janitorial",
+      "recoverable_amount": "4200"
+    }
+  },
+  {
+    "line_id": "gl_0002",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "retail",
+      "pool_specific": true,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "janitorial",
+      "recoverable_amount": "2083"
+    }
+  },
+  {
+    "line_id": "gl_0003",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "office",
+      "pool_specific": true,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "1833"
+    }
+  },
+  {
+    "line_id": "gl_0004",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "security",
+      "recoverable_amount": "3000"
+    }
+  },
+  {
+    "line_id": "gl_0005",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "retail",
+      "pool_specific": true,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "1000"
+    }
+  },
+  {
+    "line_id": "gl_0006",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "security",
+      "recoverable_amount": "500"
+    }
+  },
+  {
+    "line_id": "gl_0007",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "realty_tax",
+      "recoverable_amount": "35000"
+    }
+  },
+  {
+    "line_id": "gl_0008",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "insurance",
+      "recoverable_amount": "55000"
+    }
+  },
+  {
+    "line_id": "gl_0009",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "utilities",
+      "recoverable_amount": "9200"
+    }
+  },
+  {
+    "line_id": "gl_0010",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "utilities",
+      "recoverable_amount": "9800"
+    }
+  },
+  {
+    "line_id": "gl_0011",
+    "classification": {
+      "recoverable": true,
+      "reason": "management_fee_egi_adjusted",
+      "lease_citation": {
+        "doc": "Management Agreement",
+        "section": "\u00a74.1",
+        "quote": "Owner shall pay a management fee equal to four percent of Effective Gross Income."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "management_fee",
+      "recoverable_amount": "9188.29"
+    }
+  },
+  {
+    "line_id": "gl_0012",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "snow",
+      "recoverable_amount": "4800"
+    }
+  },
+  {
+    "line_id": "gl_0013",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "janitorial",
+      "recoverable_amount": "4200"
+    }
+  },
+  {
+    "line_id": "gl_0014",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "retail",
+      "pool_specific": true,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "janitorial",
+      "recoverable_amount": "2083"
+    }
+  },
+  {
+    "line_id": "gl_0015",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "office",
+      "pool_specific": true,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "1833"
+    }
+  },
+  {
+    "line_id": "gl_0016",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "security",
+      "recoverable_amount": "3000"
+    }
+  },
+  {
+    "line_id": "gl_0017",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "security",
+      "recoverable_amount": "500"
+    }
+  },
+  {
+    "line_id": "gl_0018",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "2400"
+    }
+  },
+  {
+    "line_id": "gl_0019",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "realty_tax",
+      "recoverable_amount": "35000"
+    }
+  },
+  {
+    "line_id": "gl_0020",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "utilities",
+      "recoverable_amount": "8800"
+    }
+  },
+  {
+    "line_id": "gl_0021",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "utilities",
+      "recoverable_amount": "8400"
+    }
+  },
+  {
+    "line_id": "gl_0022",
+    "classification": {
+      "recoverable": true,
+      "reason": "management_fee_egi_adjusted",
+      "lease_citation": {
+        "doc": "Management Agreement",
+        "section": "\u00a74.1",
+        "quote": "Owner shall pay a management fee equal to four percent of Effective Gross Income."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "management_fee",
+      "recoverable_amount": "9188.29"
+    }
+  },
+  {
+    "line_id": "gl_0023",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "snow",
+      "recoverable_amount": "3600"
+    }
+  },
+  {
+    "line_id": "gl_0024",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "janitorial",
+      "recoverable_amount": "4200"
+    }
+  },
+  {
+    "line_id": "gl_0025",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "retail",
+      "pool_specific": true,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "janitorial",
+      "recoverable_amount": "2083"
+    }
+  },
+  {
+    "line_id": "gl_0026",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "office",
+      "pool_specific": true,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "1833"
+    }
+  },
+  {
+    "line_id": "gl_0027",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "security",
+      "recoverable_amount": "3000"
+    }
+  },
+  {
+    "line_id": "gl_0028",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "retail",
+      "pool_specific": true,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "1000"
+    }
+  },
+  {
+    "line_id": "gl_0029",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "7000"
+    }
+  },
+  {
+    "line_id": "gl_0030",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "security",
+      "recoverable_amount": "500"
+    }
+  },
+  {
+    "line_id": "gl_0031",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "retail",
+      "pool_specific": true,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "1125"
+    }
+  },
+  {
+    "line_id": "gl_0032",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "realty_tax",
+      "recoverable_amount": "35000"
+    }
+  },
+  {
+    "line_id": "gl_0033",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "janitorial",
+      "recoverable_amount": "1500"
+    }
+  },
+  {
+    "line_id": "gl_0034",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "security",
+      "recoverable_amount": "750"
+    }
+  },
+  {
+    "line_id": "gl_0035",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "landscaping",
+      "recoverable_amount": "2000"
+    }
+  },
+  {
+    "line_id": "gl_0036",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "utilities",
+      "recoverable_amount": "8400"
+    }
+  },
+  {
+    "line_id": "gl_0037",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "1000"
+    }
+  },
+  {
+    "line_id": "gl_0038",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "utilities",
+      "recoverable_amount": "6100"
+    }
+  },
+  {
+    "line_id": "gl_0039",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "8900"
+    }
+  },
+  {
+    "line_id": "gl_0040",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "utilities",
+      "recoverable_amount": "4500"
+    }
+  },
+  {
+    "line_id": "gl_0041",
+    "classification": {
+      "recoverable": true,
+      "reason": "management_fee_egi_adjusted",
+      "lease_citation": {
+        "doc": "Management Agreement",
+        "section": "\u00a74.1",
+        "quote": "Owner shall pay a management fee equal to four percent of Effective Gross Income."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "management_fee",
+      "recoverable_amount": "9188.29"
+    }
+  },
+  {
+    "line_id": "gl_0042",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "snow",
+      "recoverable_amount": "1800"
+    }
+  },
+  {
+    "line_id": "gl_0043",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "janitorial",
+      "recoverable_amount": "4200"
+    }
+  },
+  {
+    "line_id": "gl_0044",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "retail",
+      "pool_specific": true,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "janitorial",
+      "recoverable_amount": "2083"
+    }
+  },
+  {
+    "line_id": "gl_0045",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "office",
+      "pool_specific": true,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "1833"
+    }
+  },
+  {
+    "line_id": "gl_0046",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "security",
+      "recoverable_amount": "3000"
+    }
+  },
+  {
+    "line_id": "gl_0047",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "landscaping",
+      "recoverable_amount": "3000"
+    }
+  },
+  {
+    "line_id": "gl_0048",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "security",
+      "recoverable_amount": "500"
+    }
+  },
+  {
+    "line_id": "gl_0049",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "realty_tax",
+      "recoverable_amount": "35000"
+    }
+  },
+  {
+    "line_id": "gl_0050",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "3100"
+    }
+  },
+  {
+    "line_id": "gl_0051",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "utilities",
+      "recoverable_amount": "7900"
+    }
+  },
+  {
+    "line_id": "gl_0052",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "utilities",
+      "recoverable_amount": "4200"
+    }
+  },
+  {
+    "line_id": "gl_0053",
+    "classification": {
+      "recoverable": true,
+      "reason": "management_fee_egi_adjusted",
+      "lease_citation": {
+        "doc": "Management Agreement",
+        "section": "\u00a74.1",
+        "quote": "Owner shall pay a management fee equal to four percent of Effective Gross Income."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "management_fee",
+      "recoverable_amount": "9188.29"
+    }
+  },
+  {
+    "line_id": "gl_0054",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "landscaping",
+      "recoverable_amount": "2750"
+    }
+  },
+  {
+    "line_id": "gl_0055",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "janitorial",
+      "recoverable_amount": "4200"
+    }
+  },
+  {
+    "line_id": "gl_0056",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "retail",
+      "pool_specific": true,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "janitorial",
+      "recoverable_amount": "2083"
+    }
+  },
+  {
+    "line_id": "gl_0057",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "office",
+      "pool_specific": true,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "1833"
+    }
+  },
+  {
+    "line_id": "gl_0058",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "security",
+      "recoverable_amount": "3000"
+    }
+  },
+  {
+    "line_id": "gl_0059",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "1800"
+    }
+  },
+  {
+    "line_id": "gl_0060",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "3500"
+    }
+  },
+  {
+    "line_id": "gl_0061",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "retail",
+      "pool_specific": true,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "1000"
+    }
+  },
+  {
+    "line_id": "gl_0062",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "security",
+      "recoverable_amount": "500"
+    }
+  },
+  {
+    "line_id": "gl_0063",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "realty_tax",
+      "recoverable_amount": "35000"
+    }
+  },
+  {
+    "line_id": "gl_0064",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "landscaping",
+      "recoverable_amount": "4000"
+    }
+  },
+  {
+    "line_id": "gl_0065",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "utilities",
+      "recoverable_amount": "7600"
+    }
+  },
+  {
+    "line_id": "gl_0066",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "utilities",
+      "recoverable_amount": "2800"
+    }
+  },
+  {
+    "line_id": "gl_0067",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "janitorial",
+      "recoverable_amount": "1800"
+    }
+  },
+  {
+    "line_id": "gl_0068",
+    "classification": {
+      "recoverable": true,
+      "reason": "management_fee_egi_adjusted",
+      "lease_citation": {
+        "doc": "Management Agreement",
+        "section": "\u00a74.1",
+        "quote": "Owner shall pay a management fee equal to four percent of Effective Gross Income."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "management_fee",
+      "recoverable_amount": "9188.29"
+    }
+  },
+  {
+    "line_id": "gl_0069",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "landscaping",
+      "recoverable_amount": "2750"
+    }
+  },
+  {
+    "line_id": "gl_0070",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "janitorial",
+      "recoverable_amount": "4200"
+    }
+  },
+  {
+    "line_id": "gl_0071",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "retail",
+      "pool_specific": true,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "janitorial",
+      "recoverable_amount": "2083"
+    }
+  },
+  {
+    "line_id": "gl_0072",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "office",
+      "pool_specific": true,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "1833"
+    }
+  },
+  {
+    "line_id": "gl_0073",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "security",
+      "recoverable_amount": "3000"
+    }
+  },
+  {
+    "line_id": "gl_0074",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "2200"
+    }
+  },
+  {
+    "line_id": "gl_0075",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "7000"
+    }
+  },
+  {
+    "line_id": "gl_0076",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "security",
+      "recoverable_amount": "500"
+    }
+  },
+  {
+    "line_id": "gl_0077",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "retail",
+      "pool_specific": true,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "1125"
+    }
+  },
+  {
+    "line_id": "gl_0078",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "realty_tax",
+      "recoverable_amount": "35000"
+    }
+  },
+  {
+    "line_id": "gl_0079",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "janitorial",
+      "recoverable_amount": "1500"
+    }
+  },
+  {
+    "line_id": "gl_0080",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "security",
+      "recoverable_amount": "750"
+    }
+  },
+  {
+    "line_id": "gl_0081",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "utilities",
+      "recoverable_amount": "8100"
+    }
+  },
+  {
+    "line_id": "gl_0082",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "1000"
+    }
+  },
+  {
+    "line_id": "gl_0083",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "utilities",
+      "recoverable_amount": "2100"
+    }
+  },
+  {
+    "line_id": "gl_0084",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "utilities",
+      "recoverable_amount": "4500"
+    }
+  },
+  {
+    "line_id": "gl_0085",
+    "classification": {
+      "recoverable": true,
+      "reason": "management_fee_egi_adjusted",
+      "lease_citation": {
+        "doc": "Management Agreement",
+        "section": "\u00a74.1",
+        "quote": "Owner shall pay a management fee equal to four percent of Effective Gross Income."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "management_fee",
+      "recoverable_amount": "9232.69"
+    }
+  },
+  {
+    "line_id": "gl_0086",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "landscaping",
+      "recoverable_amount": "2750"
+    }
+  },
+  {
+    "line_id": "gl_0087",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "janitorial",
+      "recoverable_amount": "4200"
+    }
+  },
+  {
+    "line_id": "gl_0088",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "retail",
+      "pool_specific": true,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "janitorial",
+      "recoverable_amount": "2083"
+    }
+  },
+  {
+    "line_id": "gl_0089",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "office",
+      "pool_specific": true,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "1833"
+    }
+  },
+  {
+    "line_id": "gl_0090",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "security",
+      "recoverable_amount": "3000"
+    }
+  },
+  {
+    "line_id": "gl_0091",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "1650"
+    }
+  },
+  {
+    "line_id": "gl_0092",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "retail",
+      "pool_specific": true,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "1000"
+    }
+  },
+  {
+    "line_id": "gl_0093",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "security",
+      "recoverable_amount": "500"
+    }
+  },
+  {
+    "line_id": "gl_0094",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "realty_tax",
+      "recoverable_amount": "47600"
+    }
+  },
+  {
+    "line_id": "gl_0095",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "utilities",
+      "recoverable_amount": "10800"
+    }
+  },
+  {
+    "line_id": "gl_0096",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "utilities",
+      "recoverable_amount": "1900"
+    }
+  },
+  {
+    "line_id": "gl_0097",
+    "classification": {
+      "recoverable": true,
+      "reason": "management_fee_egi_adjusted",
+      "lease_citation": {
+        "doc": "Management Agreement",
+        "section": "\u00a74.1",
+        "quote": "Owner shall pay a management fee equal to four percent of Effective Gross Income."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "management_fee",
+      "recoverable_amount": "9284.81"
+    }
+  },
+  {
+    "line_id": "gl_0098",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "landscaping",
+      "recoverable_amount": "2750"
+    }
+  },
+  {
+    "line_id": "gl_0099",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "janitorial",
+      "recoverable_amount": "4200"
+    }
+  },
+  {
+    "line_id": "gl_0100",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "retail",
+      "pool_specific": true,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "janitorial",
+      "recoverable_amount": "2083"
+    }
+  },
+  {
+    "line_id": "gl_0101",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "office",
+      "pool_specific": true,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "1833"
+    }
+  },
+  {
+    "line_id": "gl_0102",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "security",
+      "recoverable_amount": "3000"
+    }
+  },
+  {
+    "line_id": "gl_0103",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "security",
+      "recoverable_amount": "500"
+    }
+  },
+  {
+    "line_id": "gl_0104",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "realty_tax",
+      "recoverable_amount": "47600"
+    }
+  },
+  {
+    "line_id": "gl_0105",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "1400"
+    }
+  },
+  {
+    "line_id": "gl_0106",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "utilities",
+      "recoverable_amount": "11400"
+    }
+  },
+  {
+    "line_id": "gl_0107",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "utilities",
+      "recoverable_amount": "2000"
+    }
+  },
+  {
+    "line_id": "gl_0108",
+    "classification": {
+      "recoverable": true,
+      "reason": "management_fee_egi_adjusted",
+      "lease_citation": {
+        "doc": "Management Agreement",
+        "section": "\u00a74.1",
+        "quote": "Owner shall pay a management fee equal to four percent of Effective Gross Income."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "management_fee",
+      "recoverable_amount": "9313.77"
+    }
+  },
+  {
+    "line_id": "gl_0109",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "landscaping",
+      "recoverable_amount": "2750"
+    }
+  },
+  {
+    "line_id": "gl_0110",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "janitorial",
+      "recoverable_amount": "4200"
+    }
+  },
+  {
+    "line_id": "gl_0111",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "retail",
+      "pool_specific": true,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "janitorial",
+      "recoverable_amount": "2083"
+    }
+  },
+  {
+    "line_id": "gl_0112",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "office",
+      "pool_specific": true,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "1833"
+    }
+  },
+  {
+    "line_id": "gl_0113",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "security",
+      "recoverable_amount": "3000"
+    }
+  },
+  {
+    "line_id": "gl_0114",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "retail",
+      "pool_specific": true,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "1000"
+    }
+  },
+  {
+    "line_id": "gl_0115",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "7000"
+    }
+  },
+  {
+    "line_id": "gl_0116",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "security",
+      "recoverable_amount": "500"
+    }
+  },
+  {
+    "line_id": "gl_0117",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "retail",
+      "pool_specific": true,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "1125"
+    }
+  },
+  {
+    "line_id": "gl_0118",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "realty_tax",
+      "recoverable_amount": "47600"
+    }
+  },
+  {
+    "line_id": "gl_0119",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "janitorial",
+      "recoverable_amount": "1500"
+    }
+  },
+  {
+    "line_id": "gl_0120",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "security",
+      "recoverable_amount": "750"
+    }
+  },
+  {
+    "line_id": "gl_0121",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "utilities",
+      "recoverable_amount": "10900"
+    }
+  },
+  {
+    "line_id": "gl_0122",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "1000"
+    }
+  },
+  {
+    "line_id": "gl_0123",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "utilities",
+      "recoverable_amount": "2400"
+    }
+  },
+  {
+    "line_id": "gl_0124",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "landscaping",
+      "recoverable_amount": "4000"
+    }
+  },
+  {
+    "line_id": "gl_0125",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "utilities",
+      "recoverable_amount": "4500"
+    }
+  },
+  {
+    "line_id": "gl_0126",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "6800"
+    }
+  },
+  {
+    "line_id": "gl_0127",
+    "classification": {
+      "recoverable": true,
+      "reason": "management_fee_egi_adjusted",
+      "lease_citation": {
+        "doc": "Management Agreement",
+        "section": "\u00a74.1",
+        "quote": "Owner shall pay a management fee equal to four percent of Effective Gross Income."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "management_fee",
+      "recoverable_amount": "9284.81"
+    }
+  },
+  {
+    "line_id": "gl_0128",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "landscaping",
+      "recoverable_amount": "2750"
+    }
+  },
+  {
+    "line_id": "gl_0129",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "janitorial",
+      "recoverable_amount": "4200"
+    }
+  },
+  {
+    "line_id": "gl_0130",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "retail",
+      "pool_specific": true,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "janitorial",
+      "recoverable_amount": "2083"
+    }
+  },
+  {
+    "line_id": "gl_0131",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "office",
+      "pool_specific": true,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "1833"
+    }
+  },
+  {
+    "line_id": "gl_0132",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "security",
+      "recoverable_amount": "3000"
+    }
+  },
+  {
+    "line_id": "gl_0133",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "security",
+      "recoverable_amount": "500"
+    }
+  },
+  {
+    "line_id": "gl_0134",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "realty_tax",
+      "recoverable_amount": "47600"
+    }
+  },
+  {
+    "line_id": "gl_0135",
+    "classification": {
+      "recoverable": false,
+      "reason": "tenant_turnover_extraordinary_charge",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.03(c)",
+        "quote": "One-time extraordinary charges arising from tenant turnover, including move-out deep cleaning, are excluded."
+      },
+      "pool": "office",
+      "pool_specific": true,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "janitorial",
+      "recoverable_amount": null
+    }
+  },
+  {
+    "line_id": "gl_0136",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "utilities",
+      "recoverable_amount": "9700"
+    }
+  },
+  {
+    "line_id": "gl_0137",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "utilities",
+      "recoverable_amount": "4600"
+    }
+  },
+  {
+    "line_id": "gl_0138",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "janitorial",
+      "recoverable_amount": "1800"
+    }
+  },
+  {
+    "line_id": "gl_0139",
+    "classification": {
+      "recoverable": true,
+      "reason": "management_fee_egi_adjusted",
+      "lease_citation": {
+        "doc": "Management Agreement",
+        "section": "\u00a74.1",
+        "quote": "Owner shall pay a management fee equal to four percent of Effective Gross Income."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "management_fee",
+      "recoverable_amount": "9284.81"
+    }
+  },
+  {
+    "line_id": "gl_0140",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "2100"
+    }
+  },
+  {
+    "line_id": "gl_0141",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "landscaping",
+      "recoverable_amount": "2750"
+    }
+  },
+  {
+    "line_id": "gl_0142",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "janitorial",
+      "recoverable_amount": "4200"
+    }
+  },
+  {
+    "line_id": "gl_0143",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "retail",
+      "pool_specific": true,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "janitorial",
+      "recoverable_amount": "2083"
+    }
+  },
+  {
+    "line_id": "gl_0144",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "office",
+      "pool_specific": true,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "1833"
+    }
+  },
+  {
+    "line_id": "gl_0145",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "security",
+      "recoverable_amount": "3000"
+    }
+  },
+  {
+    "line_id": "gl_0146",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "3500"
+    }
+  },
+  {
+    "line_id": "gl_0147",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "retail",
+      "pool_specific": true,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "1000"
+    }
+  },
+  {
+    "line_id": "gl_0148",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "security",
+      "recoverable_amount": "500"
+    }
+  },
+  {
+    "line_id": "gl_0149",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "realty_tax",
+      "recoverable_amount": "47600"
+    }
+  },
+  {
+    "line_id": "gl_0150",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "1200"
+    }
+  },
+  {
+    "line_id": "gl_0151",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "utilities",
+      "recoverable_amount": "9900"
+    }
+  },
+  {
+    "line_id": "gl_0152",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "utilities",
+      "recoverable_amount": "7800"
+    }
+  },
+  {
+    "line_id": "gl_0153",
+    "classification": {
+      "recoverable": true,
+      "reason": "management_fee_egi_adjusted",
+      "lease_citation": {
+        "doc": "Management Agreement",
+        "section": "\u00a74.1",
+        "quote": "Owner shall pay a management fee equal to four percent of Effective Gross Income."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "management_fee",
+      "recoverable_amount": "9284.81"
+    }
+  },
+  {
+    "line_id": "gl_0154",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "landscaping",
+      "recoverable_amount": "2750"
+    }
+  },
+  {
+    "line_id": "gl_0155",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "snow",
+      "recoverable_amount": "2400"
+    }
+  },
+  {
+    "line_id": "gl_0156",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "janitorial",
+      "recoverable_amount": "4200"
+    }
+  },
+  {
+    "line_id": "gl_0157",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "retail",
+      "pool_specific": true,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "janitorial",
+      "recoverable_amount": "2083"
+    }
+  },
+  {
+    "line_id": "gl_0158",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "office",
+      "pool_specific": true,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "1833"
+    }
+  },
+  {
+    "line_id": "gl_0159",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "security",
+      "recoverable_amount": "3000"
+    }
+  },
+  {
+    "line_id": "gl_0160",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "1850"
+    }
+  },
+  {
+    "line_id": "gl_0161",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "7000"
+    }
+  },
+  {
+    "line_id": "gl_0162",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "security",
+      "recoverable_amount": "500"
+    }
+  },
+  {
+    "line_id": "gl_0163",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "retail",
+      "pool_specific": true,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "1125"
+    }
+  },
+  {
+    "line_id": "gl_0164",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "realty_tax",
+      "recoverable_amount": "47600"
+    }
+  },
+  {
+    "line_id": "gl_0165",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "janitorial",
+      "recoverable_amount": "1500"
+    }
+  },
+  {
+    "line_id": "gl_0166",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "security",
+      "recoverable_amount": "750"
+    }
+  },
+  {
+    "line_id": "gl_0167",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "utilities",
+      "recoverable_amount": "12300"
+    }
+  },
+  {
+    "line_id": "gl_0168",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "repairs_maintenance",
+      "recoverable_amount": "1000"
+    }
+  },
+  {
+    "line_id": "gl_0169",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "utilities",
+      "recoverable_amount": "9900"
+    }
+  },
+  {
+    "line_id": "gl_0170",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "utilities",
+      "recoverable_amount": "4500"
+    }
+  },
+  {
+    "line_id": "gl_0171",
+    "classification": {
+      "recoverable": true,
+      "reason": "management_fee_egi_adjusted",
+      "lease_citation": {
+        "doc": "Management Agreement",
+        "section": "\u00a74.1",
+        "quote": "Owner shall pay a management fee equal to four percent of Effective Gross Income."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "management_fee",
+      "recoverable_amount": "9172.85"
+    }
+  },
+  {
+    "line_id": "gl_0172",
+    "classification": {
+      "recoverable": false,
+      "reason": "duplicate_invoice",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.03(g)",
+        "quote": "Amounts posted to the general ledger in error, including duplicate invoices, are excluded."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": "gl_0169",
+      "normalized_category": "utilities",
+      "recoverable_amount": null
+    }
+  },
+  {
+    "line_id": "gl_0173",
+    "classification": {
+      "recoverable": true,
+      "reason": "standard_recoverable_operating_expense",
+      "lease_citation": {
+        "doc": "Standard Form Lease",
+        "section": "\u00a76.01",
+        "quote": "Operating Expenses means the total reasonable costs incurred in operating, maintaining, and administering the Building."
+      },
+      "pool": "shared",
+      "pool_specific": false,
+      "confidence": "high",
+      "human_review_flag": false,
+      "matched_against": null,
+      "normalized_category": "snow",
+      "recoverable_amount": "11400"
+    }
+  }
+]
