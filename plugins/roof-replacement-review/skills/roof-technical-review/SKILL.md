@@ -31,18 +31,27 @@ Emit a `fail` result into `bid.mandatory_gates.<gate_name>` only when the
 RFP-specified requirement cannot be met by the proposed bid and cannot be
 cured by clarification. These are the gates this skill owns:
 
-| Gate | Emit `fail` when | Cures available |
-|---|---|---|
-| `scope_compliance` | Bid excludes or alters a work item the RFP required without offering an equivalent | Only by rebid |
-| `membrane_thickness` | Proposed thickness is below the RFP minimum (e.g., 45 mil where RFP spec'd 60 mil) | Only by rebid |
-| `cover_board` | Commercial single-ply over polyiso without a cover board when the RFP required one (or the warranty program requires one and the contractor claims that program) | Only by rebid |
-| `insulation_upgrade` | Does not meet SB-10/SB-12 when retrofit triggers the code requirement | Only by rebid |
-| `warranty_type` | Offered warranty type is weaker than RFP-required (e.g., `material_only` when RFP required `total_system_ndl`) | Only by rebid |
-| `warranty_duration` | Offered years below RFP minimum | Only by rebid |
-| `completion_date` | Proposed substantial-completion date misses the RFP-stated deadline | Only by rebid (or owner-approved schedule change) |
-| `mobilization_date` | Mobilization day misses RFP's latest-mobilization requirement | Only by rebid |
-| `fire_rating` | Proposed assembly does not meet the RFP-specified fire rating | Only by rebid |
-| `wind_uplift` | Proposed assembly's wind-uplift rating below RFP requirement (not merely "design basis not stated" — that is a red flag, not a fail) | Only by rebid |
+| Gate | Emit `fail` when | RFP authority (must be present) | Cures available |
+|---|---|---|---|
+| `scope_compliance` | Bid excludes or alters a work item the RFP required without offering an equivalent | `rfp.scope_of_work.included_items` enumerates the items | Only by rebid |
+| `membrane_thickness` | Proposed thickness is below the RFP minimum (e.g., 45 mil where RFP spec'd 60 mil) | `rfp.scope_of_work.membrane_system_specified.thickness_spec` populated | Only by rebid |
+| `cover_board` | Commercial single-ply over polyiso without a cover board when the RFP required one (or the warranty program requires one and the contractor claims that program) | `rfp.scope_of_work.included_items` mentions cover board, OR membrane is TPO/PVC/EPDM with included_items enumerated | Only by rebid |
+| `insulation_upgrade` | Does not meet SB-10/SB-12 when retrofit triggers the code requirement | `rfp.scope_of_work.insulation_upgrade_to_code: true` | Only by rebid |
+| `warranty_type` | Offered warranty type is weaker than RFP-required (e.g., `material_only` when RFP required `total_system_ndl`) | `rfp.warranty_requirements.warranty_type_required` populated | Only by rebid |
+| `warranty_duration` | Offered years below RFP minimum | `rfp.warranty_requirements.minimum_manufacturer_years` or `minimum_workmanship_years` populated | Only by rebid |
+| `completion_date` | Proposed substantial-completion date misses the RFP-stated deadline | `rfp.required_substantial_completion_date` populated | Only by rebid (or owner-approved schedule change) |
+| `mobilization_date` | Mobilization day misses RFP's latest-mobilization requirement | `rfp.required_mobilization_by_date` populated | Only by rebid |
+| `fire_rating` | Proposed assembly does not meet the RFP-specified fire rating | `rfp.scope_of_work.fire_rating_required` populated | Only by rebid |
+| `wind_uplift` | Proposed assembly's wind-uplift rating below RFP requirement (not merely "design basis not stated" — that is a red flag, not a fail) | `rfp.scope_of_work.wind_uplift_rating_required` populated | Only by rebid |
+
+**Applicability gate (enforced by `scripts/reconcile_gates.py`):** the
+"RFP authority" column is not advisory. The reconciler uses
+`gate_applicability.is_gate_applicable()` (tier `rfp_scope`) to confirm
+the RFP actually specified the requirement before allowing a `fail`. If
+the spec field is absent (e.g., the RFP never set
+`warranty_type_required`), demote your finding from `fail` to
+`needs_clarification` and capture the underlying concern as a red flag —
+the reconciler will reject the manifest otherwise.
 
 **When in doubt, prefer a red flag with `recommendation: clarify` over a
 gate fail.** A gate fail excludes the bid from rated scoring entirely; a red

@@ -71,9 +71,10 @@ def test_non_collusion_defaults_to_clarifiable():
 
 
 def test_gate_tier_classification():
-    """Gate tier is one of: statutory | rfp_specified | prudent_evaluator.
+    """Gate tier is one of: statutory | rfp_specified | rfp_scope | prudent_evaluator.
     Statutory = can fail regardless of RFP text.
-    RFP-specified = can fail only if the RFP invokes it.
+    RFP-specified = administrative gate; can fail only if RFP invokes it.
+    RFP-scope = technical gate; applicability driven by scope_of_work / warranty_requirements.
     Prudent-evaluator = never fail; clarify only."""
     rfp = _rfp(mandatory_requirements={"bid_bond_percent": 10})
     assert gate_tier("wsib_clearance", rfp) == "statutory"
@@ -81,3 +82,113 @@ def test_gate_tier_classification():
     assert gate_tier("bid_bond", rfp) == "rfp_specified"
     assert gate_tier("addenda_acknowledgment", rfp) == "prudent_evaluator"
     assert gate_tier("non_collusion_declaration", rfp) == "prudent_evaluator"
+    assert gate_tier("membrane_thickness", rfp) == "rfp_scope"
+    assert gate_tier("cover_board", rfp) == "rfp_scope"
+    assert gate_tier("warranty_type", rfp) == "rfp_scope"
+    assert gate_tier("warranty_duration", rfp) == "rfp_scope"
+    assert gate_tier("scope_compliance", rfp) == "rfp_scope"
+
+
+# --- Technical-disqualification gates (rfp_scope tier) ---
+
+
+def test_membrane_thickness_applicable_when_thickness_specified():
+    """Exercise 6 regression: Lakeside proposed 45 mil where the RFP §3.1
+    spec'd 60 mil. The tech reviewer correctly emitted a fail on
+    `membrane_thickness`, but reconcile_gates rejected it because the gate
+    was not invoked via mandatory_requirements/submission_requirements.
+    Fix: applicability is driven by scope_of_work.membrane_system_specified."""
+    rfp = _rfp(scope_of_work={
+        "membrane_system_specified": {
+            "category": "tpo",
+            "thickness_spec": "Minimum 60 mil",
+        }
+    })
+    assert is_gate_applicable("membrane_thickness", rfp) is True
+
+
+def test_membrane_thickness_not_applicable_when_silent():
+    rfp = _rfp(scope_of_work={"membrane_system_specified": {}})
+    assert is_gate_applicable("membrane_thickness", rfp) is False
+
+
+def test_cover_board_applicable_when_named_in_included_items():
+    rfp = _rfp(scope_of_work={
+        "included_items": [
+            "Cover board: minimum 1/4 inch gypsum or HD polyiso",
+        ]
+    })
+    assert is_gate_applicable("cover_board", rfp) is True
+
+
+def test_cover_board_applicable_for_tpo_with_included_items():
+    """TPO over polyiso typically requires a cover board for warranty
+    validity. If the RFP names TPO and enumerates included items, the gate
+    is applicable even if 'cover board' is not literally listed."""
+    rfp = _rfp(scope_of_work={
+        "membrane_system_specified": {"category": "tpo"},
+        "included_items": ["New TPO membrane", "R-30 polyiso insulation"],
+    })
+    assert is_gate_applicable("cover_board", rfp) is True
+
+
+def test_cover_board_not_applicable_when_no_membrane_or_included_items():
+    rfp = _rfp()
+    assert is_gate_applicable("cover_board", rfp) is False
+
+
+def test_warranty_type_applicable_when_required():
+    rfp = _rfp(warranty_requirements={"warranty_type_required": "total_system_ndl"})
+    assert is_gate_applicable("warranty_type", rfp) is True
+
+
+def test_warranty_type_not_applicable_when_silent():
+    rfp = _rfp(warranty_requirements={})
+    assert is_gate_applicable("warranty_type", rfp) is False
+
+
+def test_warranty_duration_applicable_when_minimum_specified():
+    rfp = _rfp(warranty_requirements={"minimum_manufacturer_years": 20})
+    assert is_gate_applicable("warranty_duration", rfp) is True
+    rfp2 = _rfp(warranty_requirements={"minimum_workmanship_years": 2})
+    assert is_gate_applicable("warranty_duration", rfp2) is True
+
+
+def test_warranty_duration_not_applicable_when_silent():
+    rfp = _rfp(warranty_requirements={})
+    assert is_gate_applicable("warranty_duration", rfp) is False
+
+
+def test_scope_compliance_applicable_when_included_items_enumerated():
+    """Exercise 6 regression: Metro excluded 25 RFP-required items. A
+    bidder cannot silently exclude what the RFP enumerates as included."""
+    rfp = _rfp(scope_of_work={"included_items": ["A", "B", "C"]})
+    assert is_gate_applicable("scope_compliance", rfp) is True
+
+
+def test_scope_compliance_not_applicable_when_no_included_items():
+    rfp = _rfp(scope_of_work={})
+    assert is_gate_applicable("scope_compliance", rfp) is False
+
+
+def test_insulation_upgrade_applicable_when_code_required():
+    rfp = _rfp(scope_of_work={"insulation_upgrade_to_code": True})
+    assert is_gate_applicable("insulation_upgrade", rfp) is True
+
+
+def test_insulation_upgrade_not_applicable_when_not_required():
+    rfp = _rfp(scope_of_work={"insulation_upgrade_to_code": False})
+    assert is_gate_applicable("insulation_upgrade", rfp) is False
+
+
+def test_rfp_scope_gates_ignore_mandatory_requirements():
+    """RFP-scope gates derive applicability from scope_of_work, not from
+    mandatory_requirements. Populating mandatory_requirements should not
+    accidentally enable a tech gate that the spec didn't specify."""
+    rfp = _rfp(mandatory_requirements={
+        "wsib_clearance_required": True,
+        "cgl_minimum_cad": 5_000_000,
+    })
+    assert is_gate_applicable("membrane_thickness", rfp) is False
+    assert is_gate_applicable("cover_board", rfp) is False
+    assert is_gate_applicable("warranty_type", rfp) is False

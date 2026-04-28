@@ -35,7 +35,7 @@ have created a defect. Keep technical findings in `red_flags[]`.
 
 ## Gate applicability — which gates can fail a bidder?
 
-Before evaluating any gate, classify it into one of three tiers. This tier
+Before evaluating any gate, classify it into one of four tiers. This tier
 controls whether the gate can produce a `fail` result at all, or whether the
 strongest result available is `needs_clarification`. Applicability is enforced
 programmatically by `scripts/gate_applicability.py` and cross-checked by
@@ -48,14 +48,23 @@ documents the contract.
   - `working_at_heights` / `wah_training` (O. Reg. 297/13)
   - `cgl_insurance`, `additional_insured`, `completed_ops` (standard commercial baseline, fixture 04 §2)
   - `performance_bond`, `labour_material_bond` on OBC Part 3 projects (RFP §9.2 / Construction Act)
-- **RFP-specified** — applicable only if the RFP invokes the gate via a
-  populated `rfp.mandatory_requirements.<field>` OR names the item verbatim in
-  `rfp.submission_requirements[]`. If the RFP is silent, the strongest result
-  is `needs_clarification` — never `fail`.
+- **RFP-specified** — administrative gates. Applicable only if the RFP invokes
+  the gate via a populated `rfp.mandatory_requirements.<field>` OR names the
+  item verbatim in `rfp.submission_requirements[]`. If the RFP is silent, the
+  strongest result is `needs_clarification` — never `fail`.
   - `bid_bond` (applicable only if `bid_bond_percent` > 0 or submission_requirements mentions it)
   - `site_visit` / `site_visit_required`
   - `minimum_years_in_business` / `years_in_business`
   - `similar_project_references` / `references`
+- **RFP-scope** — technical-disqualification gates owned by
+  `roof-technical-review` (NOT this skill). Applicability is driven by
+  `rfp.scope_of_work` and `rfp.warranty_requirements`, not by
+  `mandatory_requirements`. Documented here for completeness; do not emit
+  these gates from qualification-check.
+  - `scope_compliance`, `membrane_thickness`, `cover_board`, `insulation_upgrade`
+  - `warranty_type`, `warranty_duration`
+  - `completion_date`, `mobilization_date`
+  - `fire_rating`, `wind_uplift`
 - **Prudent-evaluator** — items a careful evaluator asks about but which are
   not RFP requirements unless explicitly declared. Default: clarify only.
   Never a fail.
