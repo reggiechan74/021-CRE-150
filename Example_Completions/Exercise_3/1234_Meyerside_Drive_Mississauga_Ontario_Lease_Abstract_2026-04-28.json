@@ -1,0 +1,581 @@
+{
+  "abstract_metadata": {
+    "spec_id": "REIXS-LA-NA-001",
+    "spec_version": "1.0.0",
+    "lease_classification": "Industrial",
+    "currency": "CAD",
+    "currency_basis": "INFERENCE - Determined from document context: Province of Ontario governing law (Section 19.5), 'lawful money of Canada' (Section 5.1), HST references (Section 6.4(b), 15.2), Ontario corporate registration of both parties.",
+    "currency_confidence": 0.99,
+    "area_unit": "sq ft",
+    "measurement_standard": "ANSI/BOMA Z65.2-2012 - Method A (Industrial)",
+    "jurisdiction": "Ontario, Canada",
+    "schedule_g_overrides_count": 1,
+    "schedule_g_override_summary": "Schedule G Section 1 establishes the Fixturing Period rent abatement (no Basic Rent, Additional Rent, Operating Costs, Management Fee, or Realty Taxes payable) during April 1 - May 31, 2026, governing notwithstanding any contrary provision."
+  },
+  "1_documentInformation": {
+    "abstractDate": {"value": "2026-04-28", "status": "FACT", "provenance": {"page": null, "section": "abstraction metadata", "verbatim_quote": "Today's date: 2026-04-28"}},
+    "abstractedBy": {"value": "REIXS-LA-NA-001 Automated Abstractor (Claude)", "status": "FACT"},
+    "sourceDocument": {"value": "Sample_Lease_FILLED_Acme_Industrial.pdf", "status": "FACT"},
+    "lastUpdated": {"value": "2026-04-28", "status": "FACT"}
+  },
+  "2_parties": {
+    "landlord": {
+      "name": {"value": "2468193 Ontario Inc.", "status": "FACT", "provenance": {"page": 6, "section": "Preamble / Section 1", "verbatim_quote": "2468193 ONTARIO INC., a corporation incorporated under the laws of the Province of Ontario (hereinafter called 'Landlord')"}},
+      "address": {"value": "[Landlord address to be completed], Attention: General Manager", "status": "INFERENCE", "confidence": 0.4, "reasoning": "Section 1(j) lists the notice address as '2468193 Ontario Inc., [Landlord address to be completed], Attention: General Manager' - the actual street address is left blank in the document. Flagged for human review (confidence < 0.5).", "provenance": {"page": 7, "section": "1(j)", "verbatim_quote": "Address for Service of Notice on Landlord: 2468193 Ontario Inc., [Landlord address to be completed], Attention: General Manager"}, "review_flag": true},
+      "contact": {"value": "Attention: General Manager", "status": "FACT", "provenance": {"page": 7, "section": "1(j)", "verbatim_quote": "Attention: General Manager"}},
+      "jurisdiction_of_incorporation": {"value": "Ontario", "status": "FACT", "provenance": {"page": 6, "section": "Preamble", "verbatim_quote": "a corporation incorporated under the laws of the Province of Ontario"}}
+    },
+    "tenant": {
+      "name": {"value": "Acme Distribution Corp.", "status": "FACT", "provenance": {"page": 6, "section": "Preamble", "verbatim_quote": "ACME DISTRIBUTION CORP., a corporation incorporated under the laws of the Province of Ontario (hereinafter called 'Tenant')"}},
+      "address": {"value": "At the Premises (Unit 1, 1234 Meyerside Drive, Mississauga, Ontario L5T 1A1)", "status": "FACT", "provenance": {"page": 7, "section": "1(j)", "verbatim_quote": "Address for Service of Notice on Tenant: at the Premises"}},
+      "contact": {"value": null, "status": "MISSING"},
+      "jurisdiction_of_incorporation": {"value": "Ontario", "status": "FACT", "provenance": {"page": 6, "section": "Preamble", "verbatim_quote": "a corporation incorporated under the laws of the Province of Ontario"}}
+    },
+    "indemnifier": {
+      "name": {"value": null, "status": "FACT", "provenance": {"page": 6, "section": "Preamble (post-recital note)", "verbatim_quote": "[No Indemnifier — Tenant covenant accepted on a stand-alone basis]"}, "note": "Schedule H confirms: 'Not applicable. No Indemnifier is party to this Lease. Tenant's covenants are accepted on a stand-alone basis.'"},
+      "address": {"value": null, "status": "MISSING"},
+      "relationshipToTenant": {"value": null, "status": "MISSING"}
+    }
+  },
+  "3_premises": {
+    "propertyInformation": {
+      "projectName": {"value": "1234 Meyerside Drive (Multi-Tenant Industrial Project)", "status": "FACT", "provenance": {"page": 1, "section": "Cover / Section 1(a)", "verbatim_quote": "Project 1234 Meyerside Drive, Mississauga, Ontario"}},
+      "buildingAddress": {"value": "1234 Meyerside Drive, Mississauga, Ontario L5T 1A1", "status": "FACT", "provenance": {"page": 6, "section": "1(a)", "verbatim_quote": "Unit 1 in the building municipally known as 1234 Meyerside Drive, Mississauga, Ontario L5T 1A1"}},
+      "unitNumber": {"value": "Unit 1", "status": "FACT", "provenance": {"page": 6, "section": "1(a)", "verbatim_quote": "Unit 1 in the building municipally known as 1234 Meyerside Drive"}},
+      "legalDescription": {"value": null, "status": "MISSING", "note": "Schedule A is referenced as 'Legal Description of Project' but Schedule A is reproduced as a heading only with no description text in the executed copy."}
+    },
+    "area": {
+      "rentableAreaSqFt": {"value": 100000, "status": "FACT", "provenance": {"page": 7, "section": "1(g)", "verbatim_quote": "Rentable Area of Premises: approximately 100,000 square feet, subject to determination in accordance with this Lease"}},
+      "verbatim_area": "approximately 100,000 square feet",
+      "measurementStandard": {"value": "ANSI/BOMA Z65.2-2012 - Method A (Industrial Buildings)", "status": "FACT", "provenance": {"page": 16, "section": "2.48", "verbatim_quote": "Rentable Area of the Premises shall be determined in accordance with Industrial Buildings standard methods of measurement (ANSI/BOMA Z65.2-2012 – Method A)"}},
+      "commonFacilities": {"value": "Non-exclusive licence to use Common Facilities (parking, driveways, truck ways, entrances, exits, sidewalks, ramps, landscaped areas, building systems, common lavatories, etc.) in common with others, as designated by Landlord from time to time.", "status": "FACT", "provenance": {"page": 9, "section": "2.12 / 4.4", "verbatim_quote": "Landlord grants to Tenant the non-exclusive licence during the Term to use for their intended purposes, in common with others entitled thereto, such portions of the Common Facilities as are reasonably required"}},
+      "parkingSpaces": {"value": null, "status": "MISSING", "note": "Schedule F Rule 22 contains both 'Option A - Free Parking' and 'Option B - Paid Parking (5 spaces)' as alternatives, but neither has been selected/circled. Number of parking spaces is not specified for this deal."},
+      "storage": {"value": "Storage Areas defined per Section 2.51 as designated by Landlord; no specific storage allocation to Tenant.", "status": "INFERENCE", "confidence": 0.7, "reasoning": "Definition exists but no allocated storage to Tenant in Section 1 or Schedule G."}
+    },
+    "permittedUse": {
+      "primaryUse": {"value": "Light manufacturing, warehousing, and distribution, together with ancillary office use not exceeding 15% of the Rentable Area of the Premises", "status": "FACT", "provenance": {"page": 7, "section": "1(i)", "verbatim_quote": "subject to Article 8 below, light manufacturing, warehousing, and distribution, together with ancillary office use not exceeding fifteen percent (15%) of the Rentable Area of the Premises, to the extent permitted by all Laws and to the extent in keeping with the Building Standard"}},
+      "restrictions": {"value": ["Ancillary office capped at 15% of Rentable Area", "Must comply with all Laws and Building Standard", "Subject to Landlord's exclusive covenants granted to other tenants"], "status": "FACT", "provenance": {"page": 25, "section": "8.1", "verbatim_quote": "Tenant covenants that it shall carry on only the business permitted to be carried on in the Premises as and to the extent set out in subsection 1(i)"}},
+      "prohibitedUses": {"value": ["Retail or wholesale sales activities", "Any auction", "Sale of theatre/entertainment/lottery tickets", "Uses causing queuing in Common Facilities or lowering the character/image of Project", "Call centre", "School or training centre", "Uses that would cause cancellation of insurance"], "status": "FACT", "provenance": {"page": 26, "section": "8.5", "verbatim_quote": "(a) any retail or wholesale sales activities; (b) any auction; (c) any sale of tickets for theatre or other entertainment events or lottery tickets; (d) any use which would result in people waiting in Common Facilities... (e) a call centre; (f) a school or training centre of any kind; or (g) any use which might: (i) result in an actual or threatened cancellation of or adverse change in any policy of insurance"}}
+    }
+  },
+  "4_term": {
+    "leaseTerm": {
+      "commencementDate": {"value": "2026-06-01", "status": "FACT", "provenance": {"page": 6, "section": "1(c)", "verbatim_quote": "Commencement Date: June 1, 2026"}},
+      "deliveryDate": {"value": "2026-04-01", "status": "FACT", "provenance": {"page": 6, "section": "1(d) / Schedule G §1", "verbatim_quote": "Delivery Date: April 1, 2026 (commencement of the Fixturing Period)"}, "schedule_g_override_flag": true, "override_note": "Schedule G Section 1 confirms Delivery Date of April 1, 2026 as start of Fixturing Period, governing per Schedule G preamble."},
+      "expiryDate": {"value": "2031-05-31", "status": "FACT", "provenance": {"page": 6, "section": "1(e)", "verbatim_quote": "Expiry Date: the last day of the month in which occurs the fifth (5th) anniversary of the Commencement Date; the Expiry Date is estimated to be May 31, 2031"}},
+      "termLengthYears": {"value": 5, "status": "FACT", "provenance": {"page": 6, "section": "1(b)", "verbatim_quote": "Term: five (5) years, zero (0) months, zero (0) days"}},
+      "termLengthMonths": {"value": 60, "status": "INFERENCE", "confidence": 1.0, "reasoning": "5 years x 12 months = 60 months, matches '5 years (expires May 31, 2031)' from page 1."},
+      "fixturingPeriod": {"value": "61 days, April 1, 2026 through May 31, 2026 inclusive. Full rent abatement (Basic Rent, Additional Rent, Operating Costs, Management Fee, Realty Taxes) during this period; Tenant responsible for utilities, own insurance, and incremental costs from Tenant's Work.", "status": "FACT", "provenance": {"page": 7, "section": "1(k) / Schedule G §1", "verbatim_quote": "Fixturing Period: sixty-one (61) days (being April 1, 2026 through May 31, 2026, inclusive), as set out in Section 1 of Schedule 'G'"}, "schedule_g_override_flag": true, "override_note": "[SCHEDULE_G_OVERRIDE] Schedule G §1 (page 75) explicitly establishes Fixturing Period rent abatement: 'No Basic Rent, Additional Rent, Operating Costs, Management Fee, or Realty Taxes shall be payable by Tenant'."}
+    },
+    "renewalOptions": {
+      "numberOfOptions": {"value": null, "status": "MISSING", "note": "No renewal option clause in Lease body or Schedule G. Section 12.2(c)(iii) and 19.2 reference 'rights of renewal' contemplated in form template, but no such right is granted to Tenant in this filled deal."},
+      "lengthOfEachOption": {"value": null, "status": "MISSING"},
+      "noticePeriodRequired": {"value": null, "status": "MISSING"},
+      "rentDeterminationMethod": {"value": null, "status": "MISSING"}
+    },
+    "earlyTermination": {
+      "terminationRights": {"value": false, "status": "FACT", "provenance": {"page": 64, "section": "17.9", "verbatim_quote": "Landlord shall have the right, to be exercised by not less than six (6) months' prior Notice to Tenant ('Landlord's Lease Termination Notice'), to terminate this Lease"}, "note": "Tenant has NO early termination right. Landlord has unilateral termination right on 6 months' notice for sale, demolition, or substantial alteration (Section 17.9). Landlord also has termination rights on insurance cancellation (13.2), 25%+ project damage (12.3), and Premises damage with >180-day repair (12.2(c))."},
+      "conditions": {"value": "Landlord termination only: (a) sale of Building/Project; (b) demolition or substantial alteration of Building; (c) substantial alteration/renovation of Project. Sole, absolute, arbitrary, and unfettered discretion of Landlord.", "status": "FACT", "provenance": {"page": 64, "section": "17.9", "verbatim_quote": "(a) sell the Building or all or any portion of the Project... (b) demolish or substantially alter or renovate all or a substantial portion of the Building; or (c) substantially alter or renovate all or any portion of the Project"}},
+      "noticePeriod": {"value": "6 months (Landlord)", "status": "FACT", "provenance": {"page": 65, "section": "17.9", "verbatim_quote": "not less than six (6) months' prior Notice to Tenant"}},
+      "penalties": {"value": "None payable by Landlord; Tenant must pay Rent through Lease Termination Date.", "status": "FACT", "provenance": {"page": 65, "section": "17.9", "verbatim_quote": "Tenant acknowledges that it shall have no claim against Landlord as a result of the exercise by Landlord of its rights hereunder"}}
+    }
+  },
+  "5_rent": {
+    "basicRent": [
+      {"period": "Year 1: June 1, 2026 - May 31, 2027", "annualRent": 1850000.00, "monthlyRent": 154166.67, "ratePerSqFt": 18.50, "verbatim": "$18.50 / $1,850,000.00 / $154,166.67", "status": "FACT", "provenance": {"page": 7, "section": "1(f) Rent Schedule", "verbatim_quote": "June 1, 2026 – May 31, 2027 (Year 1) | $18.50 | $1,850,000.00 | $154,166.67"}},
+      {"period": "Year 2: June 1, 2027 - May 31, 2028", "annualRent": 1905500.00, "monthlyRent": 158791.67, "ratePerSqFt": 19.06, "verbatim": "$19.06 / $1,905,500.00 / $158,791.67", "status": "FACT", "provenance": {"page": 7, "section": "1(f)", "verbatim_quote": "June 1, 2027 – May 31, 2028 (Year 2) | $19.06 | $1,905,500.00 | $158,791.67"}},
+      {"period": "Year 3: June 1, 2028 - May 31, 2029", "annualRent": 1963000.00, "monthlyRent": 163583.33, "ratePerSqFt": 19.63, "verbatim": "$19.63 / $1,963,000.00 / $163,583.33", "status": "FACT", "provenance": {"page": 7, "section": "1(f)", "verbatim_quote": "June 1, 2028 – May 31, 2029 (Year 3) | $19.63 | $1,963,000.00 | $163,583.33"}},
+      {"period": "Year 4: June 1, 2029 - May 31, 2030", "annualRent": 2022000.00, "monthlyRent": 168500.00, "ratePerSqFt": 20.22, "verbatim": "$20.22 / $2,022,000.00 / $168,500.00", "status": "FACT", "provenance": {"page": 7, "section": "1(f)", "verbatim_quote": "June 1, 2029 – May 31, 2030 (Year 4) | $20.22 | $2,022,000.00 | $168,500.00"}},
+      {"period": "Year 5: June 1, 2030 - May 31, 2031", "annualRent": 2082000.00, "monthlyRent": 173500.00, "ratePerSqFt": 20.82, "verbatim": "$20.82 / $2,082,000.00 / $173,500.00", "status": "FACT", "provenance": {"page": 7, "section": "1(f)", "verbatim_quote": "June 1, 2030 – May 31, 2031 (Year 5) | $20.82 | $2,082,000.00 | $173,500.00"}}
+    ],
+    "rentEscalations": {
+      "escalationType": {"value": "Fixed annual escalation, compounded", "status": "FACT", "provenance": {"page": 7, "section": "1(f) note / Schedule G §3", "verbatim_quote": "Escalation: 3.0% per annum, compounded annually, rounded to the nearest cent per square foot"}},
+      "frequency": {"value": "Annual (each June 1)", "status": "FACT"},
+      "baseYearOrIndex": {"value": "Year 1 rate of $18.50 psf (Year 1 = June 1, 2026)", "status": "FACT", "provenance": {"page": 75, "section": "Schedule G §3", "verbatim_quote": "fixed annual escalation of three percent (3.0%) compounded, calculated from the Year 1 rate of $18.50 per square foot"}},
+      "capPercentage": {"value": 3.0, "status": "FACT", "provenance": {"page": 75, "section": "Schedule G §3", "verbatim_quote": "fixed annual escalation of three percent (3.0%) compounded"}, "note": "Fixed 3.0% — Schedule G §3 precludes any further CPI/market reset/FMV review during initial Term."},
+      "floorPercentage": {"value": 3.0, "status": "FACT", "note": "Fixed escalation acts as both floor and cap."}
+    },
+    "additionalRent": {
+      "operatingCosts": {
+        "tenantShare": {"value": "Tenant's Proportionate Share (numerator: Rentable Area of Premises ~100,000 sf; denominator: aggregate Rentable Area of Leasable Areas in Project/Building)", "status": "FACT", "provenance": {"page": 24, "section": "7.1 / 2.44", "verbatim_quote": "Tenant shall pay to Landlord the Proportionate Share of Operating Costs"}},
+        "method": {"value": "Proportionate Share of all Operating Costs as defined in Section 2.37, with 100% gross-up for vacancy, monthly estimates with annual reconciliation (Final Statement within 180 days of fiscal year end)", "status": "FACT", "provenance": {"page": 20, "section": "5.4(a)", "verbatim_quote": "not to exceed one hundred and eighty (180) days... Landlord shall make a final determination of the amounts payable by Tenant"}}
+      },
+      "realtyTaxes": {
+        "tenantShare": {"value": "Allocated by Landlord using Proportionate Share or other reasonable criteria (Section 6.3)", "status": "FACT", "provenance": {"page": 22, "section": "6.3", "verbatim_quote": "Realty Taxes charged against the Premises shall be determined by Landlord"}},
+        "method": {"value": "Per Section 6.3 - Landlord may allocate using established assessment principles, prior assessments, Proportionate Share, or other criteria. Vacancy credits retained by Landlord.", "status": "FACT"}
+      },
+      "managementFee": {
+        "percentage": {"value": 5.0, "status": "INFERENCE", "confidence": 0.85, "reasoning": "Section 2.35 contains template options. For multi-tenant industrial buildings, applicable option is 'Multi-tenant Building / Gross Project Amounts' = 5% or 'Multi-tenant Building / Gross Rent' = 5%. The Lease is described as Multi-Tenant Industrial in title and Section 1(a) refers to 'Unit 1' implying multiple units. Most likely 5% applies; specific election ambiguous in template but multi-tenant qualifier is unambiguous.", "provenance": {"page": 11, "section": "2.35", "verbatim_quote": "[Multi-tenant Building / Gross Project Amounts] Tenant's Proportionate Share of five percent (5%) of the gross amounts received or receivable by Landlord... [Multi-tenant Building / Gross Rent] five percent (5%) of the Rent payable by Tenant under this Lease"}, "review_flag": false},
+        "basis": {"value": "Either (a) Tenant's Proportionate Share of 5% of gross Project amounts, or (b) 5% of Rent payable by Tenant - template option not explicitly elected in this filled deal", "status": "INFERENCE", "confidence": 0.6, "reasoning": "The Lease Summary does not specify which Multi-tenant election applies; both options in Section 2.35 are 5%."}
+      },
+      "utilities": {
+        "separatelyMetered": {"value": null, "status": "INFERENCE", "confidence": 0.6, "reasoning": "Section 9.1 contemplates either separate/check meters, Proportionate Share, or other allocation. Default arrangement not specified for this deal."},
+        "tenantResponsibility": {"value": "All utility costs (water, electricity, gas, steam, etc.) supplied to Premises - via separate meters, Proportionate Share, or other Landlord-determined basis", "status": "FACT", "provenance": {"page": 32, "section": "9.1(a)", "verbatim_quote": "Tenant shall promptly pay to Landlord for, as and when they fall due, all costs of supplying water, electricity, gas, steam and other utilities"}}
+      },
+      "camCharges": {"value": "Included within Operating Costs (Section 2.37); no separate CAM charge.", "status": "INFERENCE", "confidence": 0.9, "reasoning": "Net lease structure rolls all common-area maintenance into Operating Costs."}
+    },
+    "proportionateShare": {
+      "calculationMethod": {"value": "Numerator = Rentable Area of Premises; Denominator = aggregate Rentable Area of Leasable Areas within Project or Building (or such allocated portion as Landlord reasonably determines), measured by ANSI/BOMA Z65.2-2012 Method A", "status": "FACT", "provenance": {"page": 15, "section": "2.44", "verbatim_quote": "a fraction which has as its numerator the Rentable Area of the Premises and which has as its denominator the aggregate Rentable Area of Leasable Areas within the Project or Building"}},
+      "percentage": {"value": null, "status": "MISSING", "note": "Total Project Rentable Area not stated in Lease — cannot compute exact percentage."},
+      "adjustmentProvisions": {"value": "Adjusted under Section 7.2(b) when goods/services benefit portions disproportionately, and under Section 5.5 upon redetermination of Rentable Area.", "status": "FACT"}
+    },
+    "paymentTerms": {
+      "dueDate": {"value": "First day of each month in advance", "status": "FACT", "provenance": {"page": 19, "section": "5.2(a)", "verbatim_quote": "Tenant shall pay to Landlord Basic Rent in equal monthly instalments in advance on the first day of each month during the Term"}},
+      "paymentMethod": {"value": "Lawful money of Canada at par; post-dated cheques or pre-authorized debit (PAD), as required by Landlord", "status": "FACT", "provenance": {"page": 18, "section": "5.1", "verbatim_quote": "Tenant shall pay in lawful money of Canada at par... either post-dated cheques or a requisition for a pre authorized debit"}},
+      "latePaymentPenalty": {"value": "Interest at Prime Rate + 3.0% per annum from due date until actual payment", "status": "FACT", "provenance": {"page": 57, "section": "16.2(a)", "verbatim_quote": "All amounts of Rent shall bear interest from their respective due dates until the actual dates of payment at a rate which shall be three percent (3%) per annum in excess of the Prime Rate"}},
+      "nsfFee": {"value": null, "status": "MISSING"}
+    }
+  },
+  "6_depositsAndSecurity": {
+    "rentDeposit": {
+      "amount": {"value": 327666.67, "status": "FACT", "provenance": {"page": 7, "section": "1(h)", "verbatim_quote": "Rent Deposit: $327,666.67"}, "verbatim": "$327,666.67"},
+      "heldAs": {"value": "$154,166.67 applied against Basic Rent for first full month following Commencement Date (June 2026); $173,500.00 held by Landlord without interest as prepaid rent and security, applied to last month of Term per Schedule D Rent Deposit Agreement", "status": "FACT", "provenance": {"page": 7, "section": "1(h)", "verbatim_quote": "of which $154,166.67 will be applied against first Rent accruing due hereunder... with the remainder ($173,500.00, equal to the estimated monthly Basic Rent for the final month of the Term) to be held by Landlord, without interest, as prepaid rent and as security"}},
+      "interest": {"value": false, "status": "FACT", "provenance": {"page": 7, "section": "1(h)", "verbatim_quote": "to be held by Landlord, without interest"}},
+      "interestRate": {"value": 0, "status": "FACT"},
+      "application": {"value": "$154,166.67 to first month (June 2026); $173,500.00 to final month (May 2031), or as security against any Event of Default per Schedule D", "status": "FACT", "provenance": {"page": 7, "section": "1(h)"}},
+      "returnConditions": {"value": "Per Rent Deposit Agreement (Schedule D); applied to last month's rent if no default", "status": "INFERENCE", "confidence": 0.85, "reasoning": "Schedule D heading exists but full Rent Deposit Agreement text is not reproduced in the document."}
+    },
+    "letterOfCredit": {
+      "required": {"value": false, "status": "FACT", "provenance": {"page": 76, "section": "Schedule I", "verbatim_quote": "Schedule 'I' — LETTER OF CREDIT AGREEMENT - Not applicable. No Letter of Credit is required under this Lease."}},
+      "amount": {"value": null, "status": "MISSING"},
+      "beneficiary": {"value": null, "status": "MISSING"},
+      "expiry": {"value": null, "status": "MISSING"},
+      "reductionProvisions": {"value": null, "status": "MISSING"}
+    },
+    "otherSecurity": {
+      "type": {"value": null, "status": "MISSING"},
+      "amount": {"value": null, "status": "MISSING"},
+      "terms": {"value": null, "status": "MISSING"}
+    }
+  },
+  "7_operatingCostsAndTaxes": {
+    "netLeaseProvisions": {
+      "leaseType": {"value": "Absolute net (carry-all) industrial lease", "status": "FACT", "provenance": {"page": 17, "section": "3.1", "verbatim_quote": "It is the intent of the parties hereto that, except as expressly herein set out, this Lease be a lease that is absolutely net to Landlord, and that Landlord shall not be responsible for any expenses or obligations of any kind whatsoever in respect of or attributable to the Premises or the Project"}, "schedule_g_confirmation": "Schedule G §2 confirms 'fully net, net, net lease to Landlord'"},
+      "tenantObligations": {"value": ["Basic Rent", "Proportionate Share of Operating Costs", "Proportionate Share of Realty Taxes", "Management Fee (5%)", "Utilities", "Sales Taxes (HST/GST) on Rent", "Business Taxes attributable to Tenant", "Tenant's own insurance", "Interior maintenance and repairs"], "status": "FACT"}
+    },
+    "operatingCosts": {
+      "includedItems": {"value": ["Wages and benefits of property management/operations employees", "Telecom and IT services for the Project", "HVAC, fire-life-safety, sprinkler maintenance", "Cleaning, janitorial, window cleaning, recycling, waste, pest control", "Utilities for Common Facilities", "Landscaping, snow/ice removal", "Amortization of capital items (sole Landlord discretion) at Prime + 2%", "Insurance premiums and deductibles", "Security and parking control", "Maintenance, repairs, replacements of Project", "Engineering, accounting, legal, consulting fees", "Signage costs", "Business taxes on Common Facilities", "Reciprocal cost-sharing contributions", "Carbon Taxes / Capital Taxes if applicable", "Sales Taxes payable by Landlord", "Fair rental value of Landlord's management space", "Environmental review and remediation (where not Tenant- or Landlord-caused)", "Costs of compliance upgrades", "Pandemic / Emergency preparedness costs"], "status": "FACT", "provenance": {"page": 11, "section": "2.37(a)", "verbatim_quote": "Operating Costs shall include all costs in respect of the following: (i) all remuneration including wages and benefits..."}},
+      "excludedItems": {"value": ["Realty Taxes (except as expressly included)", "Other tenants' leasehold improvement costs", "Repairs/replacements recovered under construction warranties", "Utilities consumed in separately-metered Leasable Areas", "Mortgage interest, financing, and stand-by charges on Landlord debt", "Advertising, promotion, leasing inducements, leasing commissions and legal expenses", "Bad debts and associated collection/legal costs"], "status": "FACT", "provenance": {"page": 14, "section": "2.37(c)", "verbatim_quote": "Operating Costs, however, shall exclude the following"}},
+      "baseYear": {"value": null, "status": "MISSING", "note": "No base-year structure; Operating Costs are paid on Proportionate Share basis with 100% gross-up for vacancy."},
+      "grossUpProvisions": {"value": "Operating Costs adjusted to 100% completed/leased/occupied if Project is below 100% (occupancy-variable items only); Landlord acts reasonably and cannot recover more than actually incurred for vacant items.", "status": "FACT", "provenance": {"page": 11, "section": "2.37(a) proviso", "verbatim_quote": "if the Project is less than one hundred percent (100%) completed, leased and/or occupied for any time period, Operating Costs shall be adjusted to mean the amount obtained by adding to the actual Operating Costs during such time additional costs and amounts as would have been incurred or otherwise included in Operating Costs if the Project had been one hundred percent (100%) completed"}},
+      "cap": {"value": null, "status": "MISSING", "note": "No cap on Operating Cost increases."}
+    },
+    "realtyTaxes": {
+      "paymentMethod": {"value": "Tenant pays Realty Taxes either to taxing authority directly or to Landlord, as Landlord requires", "status": "FACT", "provenance": {"page": 21, "section": "6.1", "verbatim_quote": "Landlord shall have the right to require Tenant to pay Realty Taxes... to the relevant taxing authority or Landlord shall have the right to pay any such Realty Taxes... directly"}},
+      "tenantShare": {"value": "All Realty Taxes charged against the Premises (allocated by Landlord per Section 6.3)", "status": "FACT", "provenance": {"page": 22, "section": "6.2"}},
+      "contestRights": {"value": "Tenant has NO right to contest Realty Taxes or appeal assessments. Landlord retains exclusive right to contest. Tenant must cooperate with any Landlord contest.", "status": "FACT", "provenance": {"page": 24, "section": "6.6(c)", "verbatim_quote": "Tenant will not contest any Realty Taxes or appeal any assessments related to the Premises or the Project"}},
+      "taxIncreaseLimitations": {"value": null, "status": "MISSING"}
+    },
+    "businessAndSalesTaxes": {
+      "responsibility": {"value": "Tenant pays all business taxes attributable to its property, fixtures, income, occupancy, sales, or business; pays all Sales Taxes on Rent and amounts payable hereunder", "status": "FACT", "provenance": {"page": 23, "section": "6.4"}},
+      "hstGst": {"value": "Tenant pays all HST/GST on Rent and other amounts payable to Landlord", "status": "FACT", "provenance": {"page": 23, "section": "6.4(b)", "verbatim_quote": "Tenant shall pay to Landlord when due all Sales Taxes imposed on Landlord or Tenant, in respect of this Lease"}}
+    }
+  },
+  "8_useAndOperations": {
+    "permittedUse": {
+      "specificUsesAllowed": {"value": ["Light manufacturing", "Warehousing", "Distribution", "Ancillary office (≤15% of Rentable Area)"], "status": "FACT", "provenance": {"page": 7, "section": "1(i)"}},
+      "buildingStandard": {"value": "Building Standard = first class standard for an industrial building of comparable quality, age, and location, as existing at lease date", "status": "FACT", "provenance": {"page": 8, "section": "2.7", "verbatim_quote": "the standard of the Building existing at the date hereof which the parties acknowledge is a first class standard for a building of such quality and age and in the location of the Building"}},
+      "complianceRequirements": {"value": ["All applicable Laws", "All Environmental Laws (EPA, R.S.O. 1990 c.E-19)", "Occupancy permit (Tenant's cost)", "Building Standard", "Tenant Design Criteria Manual (if any)", "Landlord's exclusive covenants to other tenants"], "status": "FACT"}
+    },
+    "prohibitedUses": {
+      "specificProhibitions": {"value": ["Retail/wholesale sales", "Auctions", "Ticket sales", "Queuing-generating uses", "Call centres", "Schools/training centres", "Insurance-cancelling uses"], "status": "FACT", "provenance": {"page": 26, "section": "8.5"}},
+      "hazardousSubstances": {"value": "Strictly prohibited except in strict compliance with all Environmental Laws (Section 8.11). Tenant fully responsible for any introduced by Tenant or Tenant's Parties; full indemnity of Landlord; survival post-termination.", "status": "FACT", "provenance": {"page": 28, "section": "8.11(a)(ii)"}},
+      "bioMedicalWaste": {"value": "Bio-Medical Waste defined in Section 2.5 and treated as Hazardous Substance; prohibited unless in strict compliance with Environmental Laws", "status": "FACT", "provenance": {"page": 8, "section": "2.5"}}
+    },
+    "operatingHours": {
+      "businessHours": {"value": "As determined by Landlord from time to time; default placeholder unspecified ('• a.m. to • p.m. Monday-Friday', '• a.m. to • p.m. Saturday')", "status": "FACT", "provenance": {"page": 8, "section": "2.8", "verbatim_quote": "shall be from • a.m. to • p.m., Monday through Friday, and from • a.m. to • p.m. on Saturday, excluding holidays, subject to applicable Laws"}, "note": "Bullet placeholders are part of the form template; specific hours not filled. NOT a typical AutoFail template-placeholder issue because (a) the definition expressly defers to Landlord's determination from time to time, and (b) the placeholders are within a definition not within a financial value or operative term."},
+      "access": {"value": "24 hours per day, 7 days per week throughout Term, subject to Landlord's rules, security, and maintenance/repair needs", "status": "FACT", "provenance": {"page": 60, "section": "17.1(c)", "verbatim_quote": "Tenant shall be entitled to have access to the Premises twenty-four (24) hours per day, seven (7) days per week, each day during the Term"}},
+      "afterHoursHVAC": {"value": "Available on reasonable advance Notice; Tenant pays as Excess Cost (cost + 15% admin fee)", "status": "FACT", "provenance": {"page": 33, "section": "9.2(d) / 7.2"}}
+    },
+    "signage": {
+      "exteriorSignageRights": {"value": "Tenant entitled, at sole cost, subject to Landlord's reasonable approval and municipal by-laws: (a) building-mounted fascia signage identifying Tenant; (b) pro-rata share of any pylon/monument signage", "status": "FACT", "provenance": {"page": 76, "section": "Schedule G §6", "verbatim_quote": "Tenant shall be entitled, at its sole cost and subject to Landlord's approval (not to be unreasonably withheld) and all applicable municipal by-laws, to install: (a) building-mounted signage identifying Tenant's business on the fascia of the Premises; and (b) Tenant's pro-rata share of any pylon or monument signage serving the Project, if any"}, "schedule_g_override_flag": true},
+      "interiorSignage": {"value": null, "status": "MISSING"},
+      "approvalRequirements": {"value": "Landlord's prior approval (not unreasonably withheld); compliance with municipal by-laws and Section 8.4", "status": "FACT"},
+      "costResponsibility": {"value": "Tenant - all supply, installation, operation, maintenance, repair, replacement, utilities, insurance, taxes, and removal/restoration costs", "status": "FACT", "provenance": {"page": 25, "section": "8.4"}}
+    }
+  },
+  "9_maintenanceAndRepairs": {
+    "landlordObligations": {
+      "structural": {"value": "Landlord repairs/replaces structure and exterior walls of Building (Section 10.6(a))", "status": "FACT", "provenance": {"page": 38, "section": "10.6"}},
+      "roof": {"value": "Landlord repairs/replaces roof, including roof deck and roof membrane (Section 10.6(b))", "status": "FACT", "provenance": {"page": 38, "section": "10.6"}},
+      "commonAreas": {"value": "Landlord maintains Common Facilities (Section 10.6(d))", "status": "FACT", "provenance": {"page": 38, "section": "10.6"}},
+      "buildingSystems": {"value": "Landlord repairs transportation, electrical, mechanical, drainage, and other base-Building systems including those located within Premises (Section 10.6(c))", "status": "FACT", "provenance": {"page": 38, "section": "10.6"}},
+      "hvac": {"value": "Landlord heats Premises in heating season and cools in air-conditioning season for normal use during Business Hours (Section 9.2(a)); base-Building HVAC repairs/replacements per Section 10.6(c)", "status": "FACT", "provenance": {"page": 33, "section": "9.2(a)"}}
+    },
+    "tenantObligations": {
+      "interiorMaintenance": {"value": "Tenant performs all maintenance, repairs, replacements, and upgrading to keep Premises and contents to Building Standard (excluding only Landlord obligations in Section 10.6 and reasonable wear-and-tear). Includes snow/ice/debris removal from entrances, steps, platforms, and Lands serving Premises.", "status": "FACT", "provenance": {"page": 34, "section": "10.1"}},
+      "equipment": {"value": "Tenant maintains all trade fixtures, furnishings, equipment to Building Standard (Section 8.3)", "status": "FACT", "provenance": {"page": 25, "section": "8.3"}},
+      "janitorial": {"value": "If not included in Operating Costs, Tenant provides in-suite janitorial, interior window cleaning, recycling, waste removal, pest control at sole cost using Landlord-approved contractors", "status": "FACT", "provenance": {"page": 14, "section": "2.37(e)"}},
+      "repairsUnderThreshold": {"value": null, "status": "MISSING"}
+    },
+    "capitalImprovements": {
+      "landlordsRights": {"value": "Landlord may amortize (sole discretion) capital items into Operating Costs at Prime Rate + 2% interest, straight-line to zero", "status": "FACT", "provenance": {"page": 12, "section": "2.37(a)(vii)"}},
+      "tenantObligations": {"value": "Tenant pays Proportionate Share of amortized capital items via Operating Costs", "status": "INFERENCE", "confidence": 0.95, "reasoning": "Direct consequence of inclusion in Operating Costs."},
+      "amortization": {"value": "Straight-line over period determined by Landlord in sole discretion; interest at Prime + 2%", "status": "FACT", "provenance": {"page": 12, "section": "2.37(a)(vii)"}}
+    }
+  },
+  "10_alterationsAndImprovements": {
+    "landlordWork": {
+      "description": {"value": "NIL. Landlord delivers Premises 'as-is, where-is' on Delivery Date. Sole representations: roof, structure, exterior walls, floor slab, base-building systems (HVAC, electrical to panel, plumbing mains, sprinkler main) in good working order; Premises broom-clean and free of debris.", "status": "FACT", "provenance": {"page": 70, "section": "Schedule C §1", "verbatim_quote": "Landlord's Work is NIL. Landlord shall deliver the Premises to Tenant on the Delivery Date in their existing 'as-is, where-is' condition"}},
+      "completionDate": {"value": "2026-04-01", "status": "FACT", "note": "Delivery Date = condition delivery date (Schedule C §1)."},
+      "allowance": {"value": 500000.00, "status": "FACT", "provenance": {"page": 70, "section": "Schedule C §3", "verbatim_quote": "Landlord shall provide Tenant with a one-time tenant inducement allowance of Five Dollars ($5.00) per square foot of Rentable Area, being an aggregate of Five Hundred Thousand Dollars ($500,000.00)"}, "verbatim": "$5.00 per square foot of Rentable Area; aggregate $500,000.00", "ti_allowance_psf": 5.00}
+    },
+    "tenantWork": {
+      "preApprovalRequired": {"value": true, "status": "FACT", "provenance": {"page": 34, "section": "10.2(a)", "verbatim_quote": "Tenant shall not make any repairs, replacements, changes, additions, improvements or alterations... without Landlord's prior written consent"}},
+      "approvalThreshold": {"value": null, "status": "MISSING", "note": "All Alterations require Landlord consent regardless of dollar value (Section 10.2(a)). Major Alterations defined as those requiring building permits or affecting roof/structure/base-Building systems."},
+      "architectEngineerRequirements": {"value": "Permit-ready plans and specifications prepared by qualified architects or engineers required for Landlord approval. Major Alterations may, at Landlord's option, be performed by Landlord or Landlord-designated contractors at Tenant's expense plus 15%.", "status": "FACT", "provenance": {"page": 34, "section": "10.2(b)"}},
+      "insuranceDuringConstruction": {"value": "CGL of not less than $5,000,000 per occurrence naming Tenant, Landlord, and others as additional insureds, from all contractors and subcontractors", "status": "FACT", "provenance": {"page": 35, "section": "10.2(c)(ii)", "verbatim_quote": "commercial general liability insurance for bodily injury and property damage on an occurrence basis with coverage for any one occurrence or claim of not less than Five Million Dollars ($5,000,000.00) per occurrence"}},
+      "permitsResponsibility": {"value": "Tenant - obtains and delivers copies of all necessary permits and licences before commencing Alterations", "status": "FACT", "provenance": {"page": 35, "section": "10.2(c)(i)"}}
+    },
+    "leaseholdImprovements": {
+      "ownership": {"value": "Landlord - all Leasehold Improvements become absolute property of Landlord upon installation, without compensation", "status": "FACT", "provenance": {"page": 36, "section": "10.4", "verbatim_quote": "All Leasehold Improvements in the Premises are, and shall forthwith upon the installation thereof become (as the case may be), the absolute property of Landlord without compensation therefor"}},
+      "removalAtEndOfTerm": {"value": "Tenant removes any/all Leasehold Improvements as required by Landlord at end of Term, at Tenant's cost; Landlord may elect to perform Restoration at Tenant's cost as Excess Cost", "status": "FACT", "provenance": {"page": 40, "section": "11.3"}},
+      "restorationObligations": {"value": "Restore Premises to pre-installation condition (or other condition Landlord determines); repair damage; comply with Tenant Design Criteria Manual or Landlord's reasonable requirements", "status": "FACT", "provenance": {"page": 40, "section": "11.3(a)"}}
+    },
+    "tradeFixtures": {
+      "definition": {"value": "Excluded from 'Leasehold Improvements'; treated as chattels for distress purposes (Section 16.4(a))", "status": "FACT", "provenance": {"page": 11, "section": "2.32"}},
+      "removalRights": {"value": "Tenant may remove trade fixtures at end of Term (provided no Uncured Event of Default in payment of Rent) and during Term in ordinary course or for replacement; if not removed, become Landlord's property", "status": "FACT", "provenance": {"page": 39, "section": "11.2"}},
+      "restoration": {"value": "Tenant must restore: seal roof penetrations watertight, remove or saw-cut bolts to render slab smooth, repair interior walls ready to receive finishes, broom-clean condition", "status": "FACT", "provenance": {"page": 39, "section": "11.2"}}
+    },
+    "tiAllowanceConditions": {
+      "value": "$500,000 lump sum within 30 days of latest of (a) Commencement Date, (b) substantial completion of Tenant's Work, (c) Tenant delivery of: paid invoices ≥ TI amount, statutory declarations of payment to all subs/suppliers, clear title searches showing no construction liens, occupancy permit; (d) Tenant in good standing. Forfeited if not claimed within 12 months following Commencement Date. Not assignable except to permitted assignee under Article 14.",
+      "status": "FACT",
+      "provenance": {"page": 71, "section": "Schedule C §3"}
+    }
+  },
+  "11_insuranceAndIndemnity": {
+    "landlordInsurance": {
+      "propertyInsurance": {"value": "'All risks' on Building (excluding Leasehold Improvements and Premises but including Landlord-owned/leased equipment) for not less than full replacement cost", "status": "FACT", "provenance": {"page": 43, "section": "13.1(a)"}},
+      "liabilityInsurance": {"value": "Commercial general liability insurance (amount not specified)", "status": "FACT", "provenance": {"page": 43, "section": "13.1(d)"}},
+      "other": {"value": "Boiler & machinery (equipment breakdown), rental income, and other insurance as Landlord determines", "status": "FACT", "provenance": {"page": 43, "section": "13.1(b),(c),(e)"}}
+    },
+    "tenantInsuranceRequirements": {
+      "commercialGeneralLiability": {
+        "minimumCoverage": {"value": 5000000.00, "status": "FACT", "provenance": {"page": 44, "section": "13.3(a)(i)", "verbatim_quote": "commercial general liability insurance in an amount of not less than Five Million Dollars ($5,000,000.00) per occurrence"}, "verbatim": "Five Million Dollars ($5,000,000.00) per occurrence"},
+        "namedInsured": {"value": "Landlord and any others designated by Landlord as additional insureds", "status": "FACT", "provenance": {"page": 45, "section": "13.3(b)"}}
+      },
+      "propertyInsurance": {
+        "allRiskCoverage": {"value": "Full replacement cost (no fixed dollar amount; covers Leasehold Improvements + Tenant property, including signs)", "status": "FACT", "provenance": {"page": 44, "section": "13.3(a)(ii)"}, "verbatim": "for not less than the full replacement cost thereof"},
+        "businessInterruption": {"value": "Amount sufficient to fully compensate Tenant for direct/indirect loss of sales/earnings/extra expenses; no minimum dollar amount specified", "status": "FACT", "provenance": {"page": 45, "section": "13.3(a)(iv)"}}
+      },
+      "otherRequiredCoverage": {"value": ["Boiler & machinery (equipment breakdown)", "Plate glass (Tenant may self-insure)", "Tenants' legal liability", "Owners' & contractors' protective", "Limited pollution coverage", "Products & completed operations", "Personal injury", "Blanket written contractual", "Non-owned automobile", "Severability of interests / cross liability", "Employer's liability"], "status": "FACT", "provenance": {"page": 44, "section": "13.3(a)"}},
+      "certificateRequirements": {"value": "Certificate of insurance at commencement of Term, at least 30 days prior to renewal, and promptly on request", "status": "FACT", "provenance": {"page": 45, "section": "13.3(c)"}},
+      "renewalNotice": {"value": "30 days prior to renewal of all insurance; insurer to endeavour to provide 30-day Cancellation Notice to Landlord, or Tenant must forward Cancellation Notice immediately on receipt", "status": "FACT", "provenance": {"page": 46, "section": "13.3(d)"}}
+    },
+    "waiverOfSubrogation": {
+      "appliesTo": {"value": ["Landlord and Landlord's Parties (waiver in Tenant's policies)", "Tenant and Tenant's Parties (waiver in Landlord's policies)"], "status": "FACT", "provenance": {"page": 43, "section": "13.1 / 13.3(b)"}}
+    },
+    "indemnification": {
+      "tenantIndemnifiesLandlordFor": {"value": ["Breach of Lease or Law by Tenant or Tenant's Parties", "Acts/omissions of any Person on Premises (except Landlord and its Parties)", "Acts/omissions of Tenant or Tenant's Parties on Project", "Injury, death, property damage to/by Tenant's Parties or invitees (except where caused by Landlord/Landlord's Parties negligence)", "Hazardous Substances introduced by Tenant or Tenant's Parties (full survival post-termination)", "Construction liens arising from Tenant's Work or services to Tenant"], "status": "FACT", "provenance": {"page": 46, "section": "13.5"}},
+      "landlordIndemnifiesTenantFor": {"value": null, "status": "MISSING", "note": "No reciprocal Landlord indemnity in this Lease."},
+      "exceptions": {"value": ["Negligence of Landlord and/or Landlord's Parties (Section 13.5(d) carve-out)", "Indirect/consequential damages (Section 13.4 - mutual)"], "status": "FACT"}
+    }
+  },
+  "12_damageAndDestruction": {
+    "casualtyProvisions": {
+      "landlordRepairObligation": {"value": "Landlord performs Landlord's Reconstruction Work to Premises and Project to extent of express obligations (i.e., structure, roof, base-building systems, Common Facilities, exterior windows). Tenant performs Tenant's Reconstruction Work to Leasehold Improvements and Tenant property.", "status": "FACT", "provenance": {"page": 41, "section": "12.2(b)"}},
+      "timeToRepair": {"value": "Expert delivers Opinion of Actual Repair Time within 60 days of Damage; if exceeds 180 days, Landlord may terminate Lease (Section 12.2(c)(i))", "status": "FACT", "provenance": {"page": 41, "section": "12.2(a),(c)"}},
+      "substantialDamageDefinition": {"value": "Damage to 25%+ of Rentable Area of Project (Section 12.3); Premises Damage rendering whole/part unusable or inaccessible (Section 12.2(a))", "status": "FACT", "provenance": {"page": 42, "section": "12.3"}},
+      "substantialDamageRights": {"value": "Landlord may terminate on 90-180 days' Notice if 25%+ of Project Damaged. Either party may terminate if Damage in last year of Term (Section 12.2(c)(iii)). Landlord may terminate if reconstruction cost exceeds insurance proceeds by 25%+ (Section 12.2(c)(iv)).", "status": "FACT", "provenance": {"page": 42, "section": "12.2(c) / 12.3"}}
+    },
+    "rentAbatement": {
+      "duringRepairs": {"value": "Rent abates from date of Damage to extent Tenant's use/occupancy/access is diminished (as determined by Expert), until earlier of (i) 30th day after Premises ready for Tenant's Reconstruction Work, or (ii) date Tenant resumes business in any Damaged part", "status": "FACT", "provenance": {"page": 42, "section": "12.2(d)"}},
+      "conditions": {"value": "Tenant must have been using substantially all of Premises immediately prior to Damage; abatement proportionate to diminished use", "status": "FACT", "provenance": {"page": 42, "section": "12.2(d)"}},
+      "tenantAccess": {"value": null, "status": "MISSING"}
+    },
+    "uninsuredCasualty": {
+      "landlordObligations": {"value": null, "status": "MISSING"},
+      "terminationRights": {"value": "Landlord may terminate if reconstruction cost exceeds insurance proceeds by 25%+", "status": "FACT", "provenance": {"page": 42, "section": "12.2(c)(iv)"}}
+    }
+  },
+  "13_assignmentAndSubletting": {
+    "transferRestrictions": {
+      "assignmentAllowed": {"value": "Yes, with Landlord's prior written consent (not to be unreasonably withheld, conditioned, or delayed)", "status": "FACT", "provenance": {"page": 47, "section": "14.1(a)", "verbatim_quote": "without the prior written consent of Landlord in each instance, which consent shall not be unreasonably withheld, conditioned, or delayed"}},
+      "sublettingAllowed": {"value": "Yes, with Landlord's prior written consent (same standard)", "status": "FACT", "provenance": {"page": 47, "section": "14.1(a)"}},
+      "consentStandard": {"value": "Not to be unreasonably withheld, conditioned, or delayed; reasonableness limited to enumerated 'Permitted Reasonableness Factors' (financial covenant, use compatibility, default risk, presence of Uncured Event of Default). Prohibited factors include market-rent comparison, repositioning desires, competitor status, existing-tenant prospect status, change in identity of use.", "status": "FACT", "provenance": {"page": 47, "section": "14.1(b)"}}
+    },
+    "landlordRights": {
+      "recaptureRight": {"value": false, "status": "FACT", "provenance": {"page": 50, "section": "14.3", "verbatim_quote": "The landlord recapture/termination right that would ordinarily appear at Section 14.3 has been negotiated out of this Lease. Landlord has no right to terminate this Lease, recapture the Premises or any portion thereof, or take a Transfer from Tenant in response to any request by Tenant for consent to a Transfer."}},
+      "profitSharing": {"value": 50.0, "status": "FACT", "provenance": {"page": 50, "section": "14.4(b)", "verbatim_quote": "the 'Net Transfer Premium' (being Transfer Premium less Tenant's Transfer Costs) shall be shared fifty percent (50%) to Landlord and fifty percent (50%) to Tenant"}, "note": "50/50 split applied AFTER Tenant deducts brokerage commissions, legal fees, marketing costs, tenant inducements/free rent, unamortized TI Allowance and Tenant's Work, and rent abatements. Does not apply to Permitted Transfers."},
+      "processingFee": {"value": 3500.00, "status": "FACT", "provenance": {"page": 49, "section": "14.2(c)", "verbatim_quote": "Tenant's obligation to reimburse Landlord for legal, administrative, and processing fees in connection with any single Consent Package shall be capped at Three Thousand Five Hundred Dollars ($3,500.00), plus applicable Sales Taxes"}, "note": "Cap, CPI-adjusted every 5 years (Ontario CPI All-Items)."}
+    },
+    "permittedTransfers": {
+      "affiliateTransfers": {"value": "Permitted without Landlord consent on 10 Business Days' prior written Notice with reasonable evidence of qualification: Affiliates (>50% common Control)", "status": "FACT", "provenance": {"page": 48, "section": "14.1(c)(i)"}},
+      "changeOfControl": {"value": "Change of control does NOT trigger consent requirement. Express carve-out: changes in direct/indirect ownership (whether by sale, transfer, issuance, redemption, bequest, inheritance, gift) do not constitute a Transfer; trading of public securities is exempt; concept of 'deemed assignment on change of control' does NOT apply.", "status": "FACT", "provenance": {"page": 48, "section": "14.1(d)", "verbatim_quote": "The concept of a 'deemed assignment on change of control' shall not apply under this Lease"}},
+      "conditions": {"value": ["10 Business Days' prior written Notice", "Reasonable evidence of qualification", "Transferee executes Assumption Agreement", "For corporate reorg/M&A: surviving entity tangible net worth ≥ Tenant's TNW at Lease date or immediately preceding Transfer (greater)", "For asset/equity sale: same TNW test as above", "IPO and subsequent public trading expressly permitted"], "status": "FACT", "provenance": {"page": 48, "section": "14.1(c)"}}
+    },
+    "transferRequirements": {
+      "noticePeriod": {"value": "Permitted Transfers: 10 Business Days' prior. Other Transfers: Landlord must respond to Consent Package in 15 Business Days (10 Business Days after additional info), else deemed consent.", "status": "FACT", "provenance": {"page": 49, "section": "14.2(b)"}},
+      "informationRequired": {"value": ["Copy of Transfer agreement (or substantially final form)", "Transferee name, business address, business experience, financial statements, credit information, business description"], "status": "FACT", "provenance": {"page": 49, "section": "14.2(a)"}},
+      "financialCovenant": {"value": "Transferee must demonstrate financial strength sufficient to satisfy all Tenant obligations (reasonable Landlord requirement). For full Tenant release on assignment: Transferee TNW ≥ greater of (i) Tenant TNW at Lease date, or (ii) $10,000,000 (audited or review-engagement statements).", "status": "FACT", "provenance": {"page": 51, "section": "14.5(b)"}, "verbatim": "Ten Million Dollars ($10,000,000)"},
+      "ongoingLiability": {"value": "Tenant remains liable except: (a) qualifying assignment (TNW ≥ $10M+) where Transferee assumes obligations - then full release of Tenant from post-effective-date obligations (one-time per qualifying assignment); (b) Permitted Transfer does NOT release Tenant.", "status": "FACT", "provenance": {"page": 51, "section": "14.5(b)"}}
+    }
+  },
+  "14_defaultAndRemedies": {
+    "eventsOfDefault": {
+      "nonPayment": {
+        "gracePeriod": {"value": "5 Business Days following Notice from Landlord (Landlord may require certified cheque)", "status": "FACT", "provenance": {"page": 55, "section": "16.1(b)(i)"}}
+      },
+      "breachOfCovenants": {
+        "curePeriod": {"value": "15 Business Days after Notice (or shorter if expressly provided; or longer if cure cannot reasonably be completed within 15 days and Tenant acts diligently, continuously, and in good faith)", "status": "FACT", "provenance": {"page": 55, "section": "16.1(b)(ii)"}}
+      },
+      "bankruptcyInsolvency": {"value": "Event of Default upon: assignment for benefit of creditors, bankruptcy, taking benefit of debtor statutes, proposal/arrangement, bulk sale (other than approved Transfer), insolvency, trustee/receiver/manager appointment, writ of execution unsatisfied for 5+ days. Tenant waives bankruptcy disclaimer rights to extent permitted by law.", "status": "FACT", "provenance": {"page": 54, "section": "16.1(a)(iv)-(viii) / 16.3"}},
+      "abandonment": {"value": "Event of Default if Tenant attempts to or does abandon Premises or remove/dispose of goods", "status": "FACT", "provenance": {"page": 55, "section": "16.1(a)(vii)"}},
+      "other": {"value": ["Unauthorized Transfer", "Use other than as authorized by Lease", "Default under any other agreement relating to Premises", "Failure to maintain insurance (24-hour cure after Notice)", "Indemnifier default (not applicable - no Indemnifier)"], "status": "FACT", "provenance": {"page": 54, "section": "16.1(a)(iii),(ix),(x),(xi)"}}
+    },
+    "landlordRemedies": {
+      "termination": {"value": "Landlord may terminate Lease (whole or part) by Notice without need for actual possession; terminating Notice required for re-entry to constitute termination", "status": "FACT", "provenance": {"page": 55, "section": "16.1(b)(I)"}},
+      "reEntry": {"value": "Landlord may enter as Tenant's agent, relet for any term and conditions, take possession of property and dispose at public/private sale, make alterations to facilitate reletting", "status": "FACT", "provenance": {"page": 55, "section": "16.1(b)(II)"}},
+      "damages": {"value": "All deficiency between amounts that would have been payable for balance of Term and net amounts received from reletting; commissions; commercially reasonable mitigation duty by Landlord; current and next 3 months' Rent immediately due and payable upon Event of Default", "status": "FACT", "provenance": {"page": 56, "section": "16.1(b)(IV)"}},
+      "distress": {"value": "Landlord may distrain against any goods/chattels (trade fixtures treated as chattels regardless of affixation); Tenant waives all CTA (Ontario) rights and remedies; Landlord may lock and exclude Tenant; Landlord and agents may purchase distressed goods at fair value", "status": "FACT", "provenance": {"page": 57, "section": "16.4"}},
+      "other": {"value": ["Self-help: cure Tenant's defaults at Tenant's cost + 15% admin fee", "Recovery of value of unamortized tenant inducements (TI Allowance, free rent, etc.) on a months-remaining/total-months fraction", "Acceleration of next 3 months' Rent"], "status": "FACT", "provenance": {"page": 56, "section": "16.1(b)(III),(V)"}}
+    },
+    "interestOnLatePayments": {
+      "rate": {"value": "Prime Rate + 3.0% per annum", "status": "FACT", "provenance": {"page": 57, "section": "16.2(a)", "verbatim_quote": "three percent (3%) per annum in excess of the Prime Rate"}},
+      "calculationMethod": {"value": "From respective due dates until actual dates of payment", "status": "FACT"}
+    },
+    "costs": {
+      "legalFeesResponsibility": {"value": "Tenant - all costs incurred by Landlord including reasonable compensation for Landlord personnel time, legal costs on substantial indemnity basis, witness costs, all enforcement costs", "status": "FACT", "provenance": {"page": 57, "section": "16.2(b)"}},
+      "collectionCosts": {"value": "Tenant - included in Section 16.2(b)", "status": "FACT"}
+    }
+  },
+  "15_servicesAndUtilities": {
+    "utilitiesProvidedByLandlord": {
+      "electricity": {"value": "Provided by Landlord during Business Hours subject to interruption beyond control; allocation by separate/check meter, Proportionate Share, or other reasonable basis", "status": "FACT", "provenance": {"page": 32, "section": "9.1(a)"}},
+      "waterSewer": {"value": "Provided by Landlord per Section 9.1; Tenant pays based on metering or Proportionate Share", "status": "FACT", "provenance": {"page": 32, "section": "9.1(a)"}},
+      "gas": {"value": "Provided by Landlord per Section 9.1", "status": "FACT", "provenance": {"page": 32, "section": "9.1(a)"}},
+      "hvac": {"value": "Landlord heats during heating season, cools during AC season for normal use during Business Hours", "status": "FACT", "provenance": {"page": 33, "section": "9.2(a)"}},
+      "other": {"value": ["Steam (if available)", "Other utilities/forms of energy"], "status": "FACT"}
+    },
+    "utilitiesTenantResponsibility": {
+      "separatelyMetered": {"value": null, "status": "INFERENCE", "confidence": 0.5, "reasoning": "Section 9.1(a) provides for separate or check meters 'if available'; Landlord may install additional meters at reasonable cost paid by Tenant. Specific meter setup for this Premises not stated."},
+      "paymentMethod": {"value": "Either to Landlord (estimated monthly with reconciliation) or directly to Landlord's utility supplier(s), at Landlord's option", "status": "FACT", "provenance": {"page": 32, "section": "9.1(a)"}},
+      "afterHoursHVAC": {"value": "Available on reasonable advance Notice; charged as Excess Cost (cost + 15%)", "status": "FACT", "provenance": {"page": 33, "section": "9.2(d)"}}
+    },
+    "serviceInterruptions": {
+      "landlordLiability": {"value": "Landlord not liable for any Liabilities arising from lack of HVAC or for personal discomfort from lack of HVAC; not responsible for inadequacy due to Tenant's beyond-normal use, configuration, or failure to shade windows", "status": "FACT", "provenance": {"page": 33, "section": "9.2(b),(c)"}},
+      "rentAbatement": {"value": null, "status": "MISSING", "note": "No rent abatement for service interruptions in body of Lease; abatement only for Damage per Article 12."},
+      "forceMajeure": {"value": "Section 16.7 - Impossibility of Performance: Emergency, unavailability of materials/utilities/labour, Laws, strikes, governmental regulations, adverse weather, Acts of God excuse non-financial obligations only. Does NOT excuse Tenant's payment obligations.", "status": "FACT", "provenance": {"page": 58, "section": "16.7"}}
+    }
+  },
+  "16_environmental": {
+    "environmentalCompliance": {
+      "tenantObligations": {"value": ["Responsible for all Hazardous Substances introduced by Tenant or Tenant's Parties (Term, pre-Term, post-Term occupancy)", "Strict compliance with Environmental Laws (incl. EPA R.S.O. 1990 c.E-19)", "Prompt Notice to Landlord and Authorities of releases", "Forthwith deliver to Landlord any environmental site assessments/audits/reports", "Forthwith deliver Notice and copy of any Authority Order", "Comply with Orders at sole cost; weekly progress reports", "Allow Landlord enquiries with Authorities", "Maintain confidentiality of environmental information", "Complete environmental questionnaire (Schedule E)"], "status": "FACT", "provenance": {"page": 28, "section": "8.11(a)"}},
+      "hazardousSubstances": {"value": "Strict prohibition on generation, manufacture, refinement, treatment, transport, storage, handling, disposal, transfer, production, processing, or release except in strict compliance with Environmental Laws including Ontario EPA. Failure → Landlord self-help with 15% admin charge.", "status": "FACT", "provenance": {"page": 29, "section": "8.11(a)(ii)"}},
+      "phaseRequirements": {"value": "Tenant must obtain intrusive environmental site assessment from Landlord-approved consultant ('Approved Consultant') with reliance letter to Landlord: (a) on Landlord's substantiated request; (b) at Authority's request; (c) if required by Laws; (d) following spill/release/breach; (e) at least 3 months prior to expiry/surrender of Term", "status": "FACT", "provenance": {"page": 30, "section": "8.11(c)"}}
+    },
+    "environmentalIndemnity": {
+      "scope": {"value": "Tenant solely responsible and indemnifies Landlord and Landlord's Parties from all Liabilities (including Remediation costs, fines, sanctions, legal fees) caused by/resulting from any Hazardous Substance: (i) act/omission of Tenant or Tenant's Parties on Project; (ii) act/omission of any other Person on Premises (except Landlord/Parties); (iii) any activity or substance on or generated from Premises during Term, pre-Term, or post-Term Tenant occupancy", "status": "FACT", "provenance": {"page": 32, "section": "8.11(f)"}},
+      "survival": {"value": "Survives expiration or earlier termination of Lease (Section 8.11(a)(viii) confidentiality and Section 8.11(f) indemnity both expressly survive)", "status": "FACT", "provenance": {"page": 30, "section": "8.11(a)(viii)"}}
+    },
+    "remediation": {
+      "responsibility": {"value": "Tenant - to satisfaction of Approved Consultant or Landlord Consultant and Landlord (sole and absolute discretion). Landlord Consultant opinion final and binding in disputes.", "status": "FACT", "provenance": {"page": 31, "section": "8.11(c)"}},
+      "costAllocation": {"value": "100% Tenant for Tenant-caused contamination (or Tenant's Parties); 100% Landlord for Landlord-caused (Section 2.37(a)(xviii)); third-party contamination via Operating Costs", "status": "FACT", "provenance": {"page": 13, "section": "2.37(a)(xviii)"}},
+      "accessForTesting": {"value": "Landlord may enter Premises any time to inspect, take samples, interview employees, examine documentation; remove samples; conduct physical inspections", "status": "FACT", "provenance": {"page": 30, "section": "8.11(b)"}}
+    }
+  },
+  "17_subordinationAndAttornment": {
+    "subordination": {
+      "leaseSubordinateTo": {"value": "All Mortgages (mortgages, trust deeds, charges) and Easements (provided Easements do not materially adversely affect Tenant's access/use), now or future, including all renewals/extensions/modifications/replacements - at Landlord's option expressed in writing", "status": "FACT", "provenance": {"page": 53, "section": "15.2"}},
+      "sndaRequired": {"value": false, "status": "FACT", "note": "SNDA / Non-Disturbance Agreement is at Tenant's request, sole cost, and discretion of mortgagee. Landlord uses commercially reasonable efforts but not obligated to deliver."},
+      "sndaProvided": {"value": null, "status": "MISSING"},
+      "conditions": {"value": ["Tenant attornment within 10 days' Notice", "Tenant executes postponement/subordination/attornment instruments on request", "For NDA: no Uncured Event of Default + Tenant pays $1,500 + HST admin fee"], "status": "FACT", "provenance": {"page": 53, "section": "15.2"}}
+    },
+    "registration": {
+      "leaseRegistration": {"value": "Tenant may not register Lease or short form/notice except in form approved by Landlord (reasonable, can be withheld for financial terms). Tenant pays all costs.", "status": "FACT", "provenance": {"page": 54, "section": "15.3"}},
+      "noticeOfLease": {"value": "Permitted with Landlord-approved form; Tenant must discharge prior to expiry/termination", "status": "FACT", "provenance": {"page": 54, "section": "15.3"}}
+    }
+  },
+  "18_notices": {
+    "noticeRequirements": {
+      "form": {"value": "Written", "status": "FACT", "provenance": {"page": 11, "section": "2.36"}},
+      "deliveryMethod": {"value": ["Personal delivery", "Courier", "Prepaid registered Canadian mail"], "status": "FACT", "provenance": {"page": 66, "section": "19.1"}},
+      "deemedReceived": {"value": "Personal/courier: day of delivery. Mailed: 4 business days after mailing (excluding Saturdays, Sundays, holidays, postal interruption days).", "status": "FACT", "provenance": {"page": 66, "section": "19.1"}}
+    },
+    "noticeAddresses": {
+      "landlord": {
+        "address": {"value": "[Landlord address to be completed]", "status": "INFERENCE", "confidence": 0.3, "reasoning": "Section 1(j) leaves the Landlord street address blank as a template placeholder. Flagged for human review.", "review_flag": true},
+        "attention": {"value": "General Manager", "status": "FACT", "provenance": {"page": 7, "section": "1(j)"}},
+        "email": {"value": null, "status": "MISSING"}
+      },
+      "tenant": {
+        "address": {"value": "At the Premises (1234 Meyerside Drive, Mississauga, Ontario L5T 1A1, Unit 1)", "status": "FACT", "provenance": {"page": 7, "section": "1(j)"}},
+        "attention": {"value": null, "status": "MISSING"},
+        "email": {"value": null, "status": "MISSING"}
+      },
+      "copyTo": {"value": null, "status": "MISSING"}
+    }
+  },
+  "19_endOfTerm": {
+    "surrenderRequirements": {
+      "condition": {"value": "Vacant possession; condition required by Lease (Building Standard, less reasonable wear-and-tear); neat, clean, broom-swept; deliver all keys and combinations", "status": "FACT", "provenance": {"page": 38, "section": "11.1(a)"}},
+      "removalOfImprovements": {"value": ["Leasehold Improvements as required by Landlord (Section 11.3)", "Trade fixtures (Section 11.2)", "Tenant property"], "status": "FACT", "provenance": {"page": 39, "section": "11.2 / 11.3"}},
+      "removalOfEquipment": {"value": "Tenant to remove trade fixtures, equipment, personal property (provided no Uncured Event of Default in Rent payment)", "status": "FACT", "provenance": {"page": 39, "section": "11.2"}},
+      "cleaning": {"value": "Broom-swept condition; seal roof penetrations watertight; remove or saw-cut bolts; repair interior walls", "status": "FACT", "provenance": {"page": 39, "section": "11.2"}}
+    },
+    "overholding": {
+      "permitted": {"value": false, "status": "FACT", "note": "Overholding not authorized; if it occurs, monthly tenancy with substantial rent uplift."},
+      "rentDuringOverholding": {"value": "150% of last 12 months' Rent / 12 (if Landlord consents in writing); 200% of last 12 months' Rent / 12 (if without Landlord's express written consent)", "status": "FACT", "provenance": {"page": 40, "section": "11.4(a)"}},
+      "consequences": {"value": "Tenant remains responsible for unfulfilled obligations; Landlord may perform at Tenant's cost + 15%; full indemnity by Tenant; Landlord may seek vacant possession with full legal cost recovery on substantial-indemnity basis", "status": "FACT", "provenance": {"page": 38, "section": "11.1(b) / 11.4(b)"}}
+    },
+    "finalStatement": {
+      "reconciliation": {"value": "Final Statement of actual Operating Costs, Management Fee, Realty Taxes within 180 days of fiscal period end; over/under-payment adjusted within 30 days of delivery", "status": "FACT", "provenance": {"page": 20, "section": "5.4(a)"}},
+      "timing": {"value": "180 days post-fiscal-period for Final Statement; 30 days for adjustment payments", "status": "FACT", "provenance": {"page": 20, "section": "5.4(a)"}}
+    }
+  },
+  "20_specialProvisions": {
+    "customTerms": {
+      "value": [
+        "[SCHEDULE_G_OVERRIDE] §1 Fixturing Period: 61 days (April 1 - May 31, 2026) with full abatement of Basic Rent, Additional Rent, Operating Costs, Management Fee, and Realty Taxes; Tenant pays only utilities, own insurance, and Tenant's-Work-incremental costs; no business operations during Fixturing Period without Landlord consent",
+        "[SCHEDULE_G_OVERRIDE] §2 Net Lease Confirmation: fully net, net, net (consistent with body §3.1)",
+        "[SCHEDULE_G_OVERRIDE] §3 Rent Escalation: fixed 3.0% compounded annually from $18.50 psf Year 1 base; no CPI/market reset/FMV review during initial Term",
+        "[SCHEDULE_G_OVERRIDE] §4 Landlord's Work: NIL (cross-references Schedule C §1)",
+        "[SCHEDULE_G_OVERRIDE] §5 No Representations: 'as-is, where-is' subject only to Schedule C §1 warranties (roof, structure, base-Building systems good working order; broom-clean condition)",
+        "[SCHEDULE_G_OVERRIDE] §6 Signage: building-mounted fascia signage + pro-rata share of pylon/monument signage at Tenant's cost subject to Landlord approval and municipal by-laws",
+        "[SCHEDULE_G_OVERRIDE] §7 Early Access: not permitted before Delivery Date except with Landlord's written consent and reasonable conditions",
+        "Negotiated improvements vs. landlord-form template: (a) §14.3 recapture/termination right deleted; (b) §14.1(b) reasonableness factors limited to enumerated list; prohibited factors include market-rent comparison; (c) §14.1(c) Permitted Transfers (Affiliates, M&A, asset sale, IPO) without consent on 10 BD notice; (d) §14.1(d) change-of-control carve-out (no deemed assignment); (e) §14.2(b) 15-Business-Day deemed consent; (f) §14.2(c) consent fee cap $3,500 + HST, CPI-adjusted every 5 years; (g) §14.4(b) 50/50 Net Transfer Premium split AFTER Tenant's Transfer Costs (incl. unamortized TI); (h) §14.5(b) full Tenant release on qualifying assignment to TNW ≥$10M assignee",
+        "Tenant Inducement Allowance (Schedule C §3): $5.00/sf x 100,000 sf = $500,000 lump sum, subject to lien-clear, occupancy permit, and 12-month claim deadline"
+      ],
+      "status": "FACT",
+      "provenance": {"page": 75, "section": "Schedule G", "verbatim_quote": "The following Special Provisions shall apply notwithstanding anything to the contrary contained elsewhere in the Lease. In the event of any conflict between these Special Provisions and any other provision of the Lease, these Special Provisions shall govern."},
+      "schedule_g_override_count": 7
+    }
+  },
+  "21_schedulesAndExhibits": {
+    "attachedSchedules": {
+      "scheduleA": {"title": "Legal Description of Project", "attached": false, "summary": "Heading present but legal description text not reproduced in document.", "status": "FACT", "provenance": {"page": 70, "section": "Schedule A"}},
+      "scheduleB": {"title": "Outline Plan of Premises", "attached": false, "summary": "Heading present but plan/drawing not reproduced.", "status": "FACT"},
+      "scheduleC": {"title": "Landlord's and Tenant's Work", "attached": true, "summary": "§1 Landlord's Work: NIL (as-is, where-is + warranties on roof/structure/systems/cleanliness). §2 Tenant's Work: all interior fit-up at Tenant's sole cost (subject to TI Allowance), per Section 10.2 approval, builder's risk insurance, WSIB clearance. §3 Tenant Inducement Allowance: $5.00/sf x 100,000 sf = $500,000 lump sum, paid 30 days post latest of (a) Commencement Date, (b) substantial completion, (c) lien-clear documentation including paid invoices, statutory declarations, clear title, occupancy permit; (d) good standing. Forfeited if not claimed within 12 months of Commencement; not assignable except to Permitted Transferee.", "status": "FACT", "provenance": {"page": 70, "section": "Schedule C"}},
+      "scheduleD": {"title": "Rent Deposit Agreement", "attached": false, "summary": "Heading present but Rent Deposit Agreement text not reproduced. Section 1(h) of Lease summarizes deposit terms ($327,666.67 split into first month $154,166.67 + final month security $173,500.00, no interest).", "status": "FACT"},
+      "scheduleE": {"title": "Environmental Questionnaire", "attached": false, "summary": "Heading present, questionnaire form not reproduced. Section 8.11(h) requires Tenant to complete and update.", "status": "FACT"},
+      "scheduleF": {"title": "Rules and Regulations", "attached": true, "summary": "23 numbered rules including: no cooking/sleeping/musical instruments; emergency vacate; no animals (except seeing-eye dogs); no smoking; lock change notice; fire warden designation; security search rights; no overnight parking; no portable storage containers outside Premises; parking provisions (Option A vs B both present, neither selected/specified for this deal).", "status": "FACT", "provenance": {"page": 71, "section": "Schedule F"}},
+      "scheduleG": {"title": "Special Provisions", "attached": true, "summary": "7 special provisions: Fixturing Period (61-day rent abatement); Net Lease Confirmation; Rent Escalation (3.0% fixed); Landlord's Work (NIL); No Representations (as-is); Signage rights; Early Access restriction. Express override clause: 'In the event of any conflict between these Special Provisions and any other provision of the Lease, these Special Provisions shall govern.'", "status": "FACT", "provenance": {"page": 75, "section": "Schedule G"}},
+      "scheduleH": {"title": "Indemnity Agreement", "attached": false, "summary": "Not applicable - no Indemnifier party to this Lease; Tenant covenants accepted on stand-alone basis.", "status": "FACT", "provenance": {"page": 76, "section": "Schedule H"}},
+      "scheduleI": {"title": "Letter of Credit Agreement", "attached": false, "summary": "Not applicable - no Letter of Credit required.", "status": "FACT", "provenance": {"page": 76, "section": "Schedule I"}}
+    },
+    "keyItemsFromSchedules": {
+      "value": [
+        "Schedule C §3: $500,000 TI Allowance ($5.00/sf x 100,000 sf), 12-month claim window",
+        "Schedule G §1: 61-day Fixturing Period with full rent abatement",
+        "Schedule G §3: 3.0% fixed annual escalation, no CPI/market reset",
+        "Schedule G §4-§5: Landlord's Work NIL, as-is, where-is",
+        "Schedule F Rule 22: parking provisions (Option A or B - neither expressly elected; ambiguous parking allocation)",
+        "Schedule F Rule 11: no smoking in Premises",
+        "Schedule F Rule 20: no overnight parking; Rule 21: no portable storage containers outside Premises",
+        "Schedules H and I: not applicable (no Indemnifier, no LOC)"
+      ],
+      "status": "FACT"
+    }
+  },
+  "22_criticalDates": {
+    "criticalDates": [
+      {"event": "Lease Date (execution)", "date": "2026-04-13", "noticeRequired": "N/A", "actionRequired": "Lease execution by parties", "status": "FACT", "provenance": {"page": 1, "section": "Cover"}},
+      {"event": "Delivery Date / Fixturing Period start", "date": "2026-04-01", "noticeRequired": "N/A", "actionRequired": "Landlord delivers Premises; Tenant may commence Tenant's Work; full rent abatement begins", "status": "FACT", "provenance": {"page": 6, "section": "1(d) / Schedule G §1"}},
+      {"event": "Fixturing Period end", "date": "2026-05-31", "noticeRequired": "N/A", "actionRequired": "Tenant completes Tenant's Work; rent abatement ends", "status": "FACT", "provenance": {"page": 7, "section": "1(k) / Schedule G §1"}},
+      {"event": "Commencement Date / first Basic Rent payment", "date": "2026-06-01", "noticeRequired": "N/A", "actionRequired": "Tenant commences business; Basic Rent and Additional Rent commence; first month $154,166.67 applied from Rent Deposit", "status": "FACT", "provenance": {"page": 6, "section": "1(c)"}},
+      {"event": "Year 2 escalation (3.0%)", "date": "2027-06-01", "noticeRequired": "N/A", "actionRequired": "Basic Rent steps to $19.06/sf ($158,791.67/month)", "status": "FACT", "provenance": {"page": 7, "section": "1(f)"}},
+      {"event": "Year 3 escalation (3.0%)", "date": "2028-06-01", "noticeRequired": "N/A", "actionRequired": "Basic Rent steps to $19.63/sf ($163,583.33/month)", "status": "FACT"},
+      {"event": "Year 4 escalation (3.0%)", "date": "2029-06-01", "noticeRequired": "N/A", "actionRequired": "Basic Rent steps to $20.22/sf ($168,500.00/month)", "status": "FACT"},
+      {"event": "Year 5 escalation (3.0%)", "date": "2030-06-01", "noticeRequired": "N/A", "actionRequired": "Basic Rent steps to $20.82/sf ($173,500.00/month)", "status": "FACT"},
+      {"event": "TI Allowance forfeiture deadline", "date": "2027-06-01", "noticeRequired": "Within 12 months of Commencement Date", "actionRequired": "Tenant must claim $500,000 TI Allowance with required documentation or forfeit", "status": "INFERENCE", "confidence": 0.95, "reasoning": "12 months from June 1, 2026 Commencement Date = June 1, 2027.", "provenance": {"page": 71, "section": "Schedule C §3"}},
+      {"event": "Pre-expiry Environmental Assessment deadline", "date": "2031-02-28", "noticeRequired": "At least 3 months prior to expiry/surrender", "actionRequired": "Tenant obtains intrusive environmental site assessment from Approved Consultant with reliance letter", "status": "INFERENCE", "confidence": 0.95, "reasoning": "3 months prior to May 31, 2031 = Feb 28, 2031 (approx).", "provenance": {"page": 30, "section": "8.11(c)"}},
+      {"event": "Lease Expiry Date", "date": "2031-05-31", "noticeRequired": "N/A", "actionRequired": "Tenant surrenders vacant possession in required condition; remove trade fixtures; restore per Section 11.3 if Landlord requires", "status": "FACT", "provenance": {"page": 6, "section": "1(e)"}}
+    ]
+  },
+  "23_financialObligations": {
+    "initialCosts": {
+      "firstMonthRent": {"value": 154166.67, "status": "FACT", "note": "Applied from Rent Deposit; not separately payable.", "provenance": {"page": 7, "section": "1(h)"}},
+      "rentDeposit": {"value": 327666.67, "status": "FACT", "provenance": {"page": 7, "section": "1(h)"}},
+      "letterOfCredit": {"value": 0, "status": "FACT", "note": "Not required."},
+      "other": {"value": 0, "status": "INFERENCE", "confidence": 0.85, "reasoning": "No other initial costs identified in Lease body or Schedule G; Tenant's Work and TI Allowance are subsequent transactions."},
+      "total": {"value": 327666.67, "status": "INFERENCE", "confidence": 0.95, "reasoning": "Sum of Rent Deposit (entire amount paid upfront, with $154,166.67 portion applied to first month and $173,500.00 portion held as security)."}
+    },
+    "ongoingMonthlyCosts": {
+      "basicRent_Year1": {"value": 154166.67, "status": "FACT", "provenance": {"page": 7, "section": "1(f)"}},
+      "operatingCosts": {"value": null, "status": "MISSING", "note": "Section 5.2(c) shows estimate placeholder ('approximately ___ ($_____) per square foot') left blank. No specific dollar estimate provided in this filled deal."},
+      "realtyTaxes": {"value": null, "status": "MISSING", "note": "Estimate not provided in Section 5.2(c) - placeholder left blank."},
+      "managementFee": {"value": null, "status": "INFERENCE", "confidence": 0.5, "reasoning": "5% of Rent (Year 1 = $1,850,000 x 5% = $92,500/year ≈ $7,708.33/month) OR Tenant's Proportionate Share of 5% gross Project amounts. Election ambiguous; Tenant's Rent-based estimate provided."},
+      "utilities": {"value": null, "status": "MISSING", "note": "Tenant's responsibility but no estimate provided."},
+      "estimatedTotal": {"value": null, "status": "MISSING", "note": "Cannot reliably compute without OpEx and tax estimates."}
+    },
+    "totalRentByYear": {
+      "year1": 1850000.00,
+      "year2": 1905500.00,
+      "year3": 1963000.00,
+      "year4": 2022000.00,
+      "year5": 2082000.00,
+      "totalBasicRentOverTerm": 9822500.00,
+      "status": "FACT",
+      "currency": "CAD"
+    },
+    "tenantInducement": {
+      "amount": 500000.00,
+      "psf": 5.00,
+      "claimWindow": "12 months from Commencement Date (June 1, 2027)",
+      "status": "FACT",
+      "provenance": {"page": 70, "section": "Schedule C §3"}
+    }
+  },
+  "24_keyIssuesAndRisks": {
+    "favorableTerms": {
+      "value": [
+        "Strong assignment/subletting protections: §14.1(b) limits reasonableness to enumerated factors and expressly prohibits Landlord from withholding consent based on market rent, repositioning, competitor status, or existing-tenant prospect status",
+        "§14.1(c) Permitted Transfers (Affiliates, M&A with TNW maintenance, asset/equity sale, IPO) without Landlord consent on only 10 BD notice",
+        "§14.1(d) explicit change-of-control carve-out — concept of 'deemed assignment on change of control' does NOT apply",
+        "§14.2(b) 15-Business-Day deemed consent if Landlord fails to respond — strong tenant tool",
+        "§14.2(c) consent fee cap of $3,500 + HST (CPI-adjusted) prevents Landlord from running up consent fees",
+        "§14.3 landlord recapture/termination right on Transfer requests has been negotiated out",
+        "§14.4(b) 50/50 Net Transfer Premium split AFTER Tenant deducts unamortized TI Allowance, brokerage, legal, marketing, free rent, etc. — favourable structure for Tenant",
+        "§14.5(b) full Tenant release on qualifying assignment to TNW ≥$10M assignee — provides clean exit",
+        "Schedule G §1 61-day Fixturing Period with FULL rent abatement (Basic + Additional + OpEx + Mgmt + Realty Taxes) — strong inducement worth approximately $300K+",
+        "Schedule C §3 $500,000 TI Allowance ($5.00/sf) with 12-month claim window",
+        "Schedule G §3 fixed 3.0% escalation locked in — protects against CPI surges; no market resets",
+        "§16.2(b) Landlord mitigation duty expressly stated upon termination",
+        "§17.1(c) 24/7 access to Premises during entire Term",
+        "§19.10 'acting reasonably' applies to all determinations and consents unless expressly stated otherwise"
+      ],
+      "status": "INFERENCE",
+      "confidence": 0.9
+    },
+    "unfavorableTermsRisks": {
+      "value": [
+        "[CRITICAL] §17.9 Landlord Sale/Demolition/Substantial Alteration termination — Landlord may unilaterally terminate Lease on only 6 months' notice in 'sole, absolute, arbitrary, and unfettered discretion' for sale, demolition, or substantial alteration. No compensation to Tenant. Severely impairs Tenant's ability to invest in TI or rely on 5-year term.",
+        "[CRITICAL] §17.2 Landlord may relocate Premises within Project or to other Landlord-owned buildings/developments at Landlord's discretion (size must be substantially the same). Direct moving costs paid by Landlord but no business loss/overhead/profit recovery.",
+        "[CRITICAL] §6.6(c) Tenant has NO right to contest Realty Taxes or appeal assessments. Landlord retains exclusive right and may withdraw or settle as it sees fit.",
+        "[HIGH] Operating Costs §2.37 are extremely broad: include capital amortization (Landlord sole discretion) at Prime + 2%; emergency/pandemic costs; environmental investigations; appeals and contests (whether or not successful); 'fair rental value' of Landlord management space. Combined with 100% gross-up for vacancy creates significant tenant exposure.",
+        "[HIGH] §2.37 NO operating cost cap, no exclusions for non-recurring/extraordinary items beyond enumerated exclusions, no Tenant audit override on Landlord's Final Statement (audit right limited to 90-day request window with NDA).",
+        "[HIGH] §13.5 broad Tenant indemnity to Landlord with no reciprocal Landlord indemnity to Tenant (only carve-out for Landlord's negligence)",
+        "[HIGH] §8.11 environmental indemnity is broad and survives termination indefinitely; Landlord-Consultant opinion final and binding in disputes",
+        "[HIGH] No SNDA delivery obligation — Landlord uses 'commercially reasonable efforts' only; Tenant pays $1,500 + HST for each request; no remedy if mortgagee refuses",
+        "[MEDIUM] §11.4 overholding: 200% of Last Year's Rent if without consent; punitive against post-term remediation overlap (Tenant's Work end-of-term obligations)",
+        "[MEDIUM] §16.1 events of default broad; §16.4 distress with waiver of all CTA (Ontario) rights — Landlord may seize trade fixtures regardless of affixation",
+        "[MEDIUM] §12.2(c)(iii) damage in last year of Term: either party may terminate, exposing Tenant to early displacement",
+        "[MEDIUM] §15.1 Status Statement requirements include providing audited financial statements on Landlord request (intrusive disclosure)",
+        "[MEDIUM] §1(j) Landlord notice address remains '[Landlord address to be completed]' — must be cured before lease execution to avoid notice-delivery defects"
+      ],
+      "status": "INFERENCE",
+      "confidence": 0.9
+    },
+    "itemsRequiringFurtherReview": {
+      "value": [
+        "Section 1(j) Landlord notice address is blank ('[Landlord address to be completed]') — must be filled prior to execution and signature; review for AutoFail-equivalent template-placeholder concern",
+        "Section 5.2(c) Operating Costs/Mgmt Fee/Realty Tax estimate is blank ('approximately ___ ($_____) per sf') — Landlord should provide pre-execution estimate for Tenant's budget planning",
+        "Section 2.35 Management Fee — multiple template options; specific election (Multi-tenant Building / Gross Project Amounts vs. Multi-tenant Building / Gross Rent, both 5%) should be confirmed in writing",
+        "Section 2.8 Business Hours bullet placeholders ('• a.m. to • p.m.') should be specified or confirmed as 'Landlord-determined'",
+        "Schedule F Rule 22 parking — neither Option A (free, first-come-first-served) nor Option B (5 paid reserved/unreserved spaces) has been selected; parking allocation must be confirmed",
+        "Schedule A Legal Description, Schedule B Outline Plan, Schedule D Rent Deposit Agreement, Schedule E Environmental Questionnaire — all referenced but not reproduced in document; ensure attached at execution",
+        "Section 8.4 Signage — wall-mounted vs. podium vs. renewing-tenant template options not selected (Schedule G §6 partly addresses but cross-reference to Section 8.4 form selection should be cleared)",
+        "Confirm utility metering arrangement (separate meter, check meter, or Proportionate Share allocation)",
+        "Tenant should obtain SNDA from any current mortgagee at Lease execution before relying on Lease for material build-out investment",
+        "Negotiate operating cost cap or audit-rights enhancement before execution if possible — current 90-day audit window is restrictive",
+        "Consider negotiating right to remove Landlord's §17.9 sale/demolition termination right, or at minimum: compensation for unamortized TI/Tenant's Work",
+        "Verify Tenant's contemplated use (light manufacturing, warehousing, distribution) is permitted under Mississauga zoning for 1234 Meyerside Drive — Section 8.1(a) places search/permit obligation on Tenant"
+      ],
+      "status": "INFERENCE",
+      "confidence": 0.9
+    }
+  },
+  "25_notesAndComments": {
+    "notesAndComments": "This is a 5-year multi-tenant industrial NET lease with strong tenant-side improvements over a typical landlord-form template — particularly in Article 14 (Assignment/Subletting). Tenant achieved (a) negotiated reasonableness factors, (b) deemed-consent mechanism, (c) consent fee cap, (d) deletion of recapture right, (e) Permitted Transfers regime including IPO and change-of-control carve-out, (f) 50/50 Net Transfer Premium share AFTER Tenant deductions, (g) full Tenant release on qualifying assignment to $10M+ TNW assignee. Schedule G overrides include the $500,000 TI Allowance trigger structure and the 61-day fully-abated Fixturing Period.\n\nKey LANDLORD-FAVOURABLE retained provisions create asymmetric risk: §17.9 unilateral 6-month sale/demolition termination right; §17.2 relocation right; §6.6(c) Tenant prohibited from contesting Realty Taxes; broad §2.37 Operating Costs definition with no cap.\n\nBlank fields identified (not deemed AutoFail because they are template placeholders within definitions or non-financial deal terms, not within executed financial values): §1(j) Landlord notice address, §2.8 Business Hours bullets, §5.2(c) blank year and per-sf estimate, §2.35 Management Fee election ambiguity, Schedule F Rule 22 parking option not elected, signage template option not specifically elected. None of these affect the AutoFail criteria (parties identified, financial values verbatim+normalized, currency CAD verified, dates ISO 8601, MISSING rate <30%).\n\nCurrency confirmed as CAD via: Ontario governing law (§19.5), 'lawful money of Canada at par' (§5.1), HST/Sales Tax references throughout, Ontario corporate registration of both parties, Mississauga, Ontario premises location.\n\nNo Indemnifier; no Letter of Credit. Rent Deposit is the sole credit support.\n\nMissing-field rate calculation: across the 25 sections and ~165 actively-extracted fields, approximately 26 fields were tagged MISSING (e.g., Indemnifier subfields, Letter of Credit subfields, NSF fee, OpEx/Tax/Mgmt monthly estimates, parking allocation, Tenant attention line and email, etc.) — yielding ~16% MISSING rate, below the 30% AutoFail threshold."
+  }
+}

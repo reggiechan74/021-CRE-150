@@ -42,7 +42,7 @@ All timestamped in Eastern Time (`YYYY-MM-DD_HHMMSS`):
 
 | File | Purpose |
 |------|---------|
-| `mcda_lease_comparison_calculator.py` | Main MCDA ranking engine |
+| `relative_valuation_calculator.py` | Main MCDA ranking engine |
 | `statistics_module.py` | Regression, correlation, outlier analysis |
 | `calculate_distances.py` | Driving distance via Distancematrix.ai |
 | `weights_loader.py` | Tenant persona weight profiles |

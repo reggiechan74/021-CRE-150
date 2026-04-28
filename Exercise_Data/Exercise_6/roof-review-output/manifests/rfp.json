@@ -1,0 +1,152 @@
+{
+  "manifest_version": "1.0.0",
+  "generated_at": "2026-04-28T00:00:00Z",
+  "project": {
+    "owner": "Tenebrus Capital",
+    "owner_type": "private_commercial",
+    "property": "2550 Argentia Road, Mississauga, Ontario",
+    "building_classification": "obc_part_3",
+    "roof_type": "low_slope_commercial",
+    "roof_area_sqft": 85000,
+    "jurisdiction": "Ontario, Canada",
+    "building_year_built": 1998,
+    "existing_roof_age_years": 28,
+    "occupied_during_work": true,
+    "designated_substances_assessment_required": false
+  },
+  "rfp": {
+    "rfp_id": "TC-ROOF-2026-001",
+    "issued_date": "2026-03-15",
+    "submission_deadline": "2026-04-12T14:00:00-04:00",
+    "site_meeting_mandatory": true,
+    "contract_form": "ccdc_2",
+    "scope_of_work": {
+      "work_description": "Complete tear-off and replacement of existing built-up gravel roof (BUR) with new 60-mil TPO single-ply roofing system across approximately 85,000 sq ft of low-slope industrial roof at 2550 Argentia Road, Mississauga. Includes deck inspection/repair, new R-30 polyiso insulation with cover board, all new flashings at 47 penetrations, drainage correction (resolve existing ponding), HVAC protection, and phased construction for an occupied pharmaceutical warehouse with cold-storage tenants.",
+      "tear_off_required": true,
+      "insulation_upgrade_to_code": true,
+      "membrane_system_specified": {
+        "category": "tpo",
+        "thickness_spec": "Minimum 60 mil, white (minimum 80% solar reflectance), heat-welded seams (chemical seamers not acceptable)",
+        "manufacturer_acceptable_list": [],
+        "attachment_method": "fully_adhered"
+      },
+      "included_items": [
+        "Complete removal and legal disposal of existing roofing materials down to deck (membrane, gravel, insulation, flashings, adhesives)",
+        "Deck inspection and steel-deck repair (priced separately as unit pricing)",
+        "Installation of new TPO single-ply roofing system per Section 3",
+        "New rigid polyisocyanurate insulation, minimum R-30, two-layer staggered with cover board (1/4 inch gypsum or HD polyiso)",
+        "New flashings at all roof edges and 47 penetrations (12 HVAC, 8 plumbing vents, 6 electrical conduits, 4 skylights, 17 pipe penetrations, drains/scuppers)",
+        "Positive drainage to all roof drains; replace damaged drain bowls/leaders; resolve existing ponding via tapered insulation or additional drains",
+        "HVAC protection during construction with 72-hour minimum coordination notice for shutdowns",
+        "Daily and final cleanup; debris removal from site daily",
+        "Phased construction with no more than 15,000 sq ft exposed at any one time; each phase watertight at end of each work day"
+      ],
+      "excluded_items": [
+        "Asbestos-containing material (ACM) abatement costs (owner to fund actual abatement; bidders to include contingency planning in schedule per §2.3)"
+      ],
+      "alternates_requested": [
+        "Snow guards (price per linear foot)",
+        "Additional insulation above code minimum (price per R-value increment)",
+        "Roof maintenance program (annual pricing)",
+        "Infrared moisture survey of existing roof prior to removal",
+        "Thermal imaging scan post-installation",
+        "Additional warranty coverage beyond 20 years",
+        "Tapered insulation system (price separately if not included in base) per §3.2",
+        "Wood deck replacement unit pricing (office wing) per §2.1.2",
+        "Steel deck repair unit pricing per §2.1.2"
+      ]
+    },
+    "warranty_requirements": {
+      "minimum_manufacturer_years": 20,
+      "warranty_type_required": "total_system_ndl",
+      "minimum_workmanship_years": 2,
+      "manufacturer_certification_required": true
+    },
+    "submission_requirements": [
+      "Cover letter on company letterhead",
+      "Total bid price (lump sum) with HST indicated separately",
+      "Detailed breakdown of costs (materials, labour, disposal, etc.)",
+      "Product data sheets for all proposed materials",
+      "Sample warranty documentation",
+      "Project schedule with key milestones and phasing plan",
+      "Proof of insurance (certificate of insurance)",
+      "Three references with contact information",
+      "WSIB clearance certificate",
+      "Safety program documentation",
+      "Phasing plan describing approach to working in occupied building",
+      "List of exclusions (clearly itemized)",
+      "Allowances (clearly identified with basis of estimate)"
+    ],
+    "mandatory_requirements": {
+      "wsib_clearance_required": true,
+      "cgl_minimum_cad": 5000000,
+      "performance_bond_percent": 50,
+      "labour_material_bond_percent": 50,
+      "site_visit_required": true,
+      "minimum_years_in_business": 10,
+      "minimum_similar_projects": 3
+    },
+    "evaluation_criteria": {
+      "weighting": {
+        "price": 35,
+        "technical_approach": 23,
+        "experience_references": 10,
+        "warranty_materials": 15,
+        "schedule": 12,
+        "qualifications_certifications": 5
+      },
+      "price_scoring_method": "formula_lowest_ratio"
+    }
+  },
+  "bids": [],
+  "_provenance": {
+    "project.owner": "§1.1 Building Description",
+    "project.property": "§1.1 Building Description; title block",
+    "project.building_classification": "§1.1 Building Description (industrial, 85,000 sq ft / 7,900 m², single storey but >600 m² and industrial occupancy → OBC Part 3)",
+    "project.roof_type": "§1.1 (existing BUR, low-slope industrial); §3.1 (TPO single-ply replacement)",
+    "project.roof_area_sqft": "§1.1 Building Description ('approximately 85,000 square feet')",
+    "project.building_year_built": "§1.1 Building Description ('Year Built: 1998')",
+    "project.existing_roof_age_years": "§1.1 Building Description ('28 years main')",
+    "project.occupied_during_work": "§1.2 Property Usage; §11 Special Notes ('This is an occupied building')",
+    "project.designated_substances_assessment_required": "§2.3 Environmental Considerations — building constructed 1998 (post-1980), no DSA explicitly required by RFP though ACM/lead flagged as possible",
+    "rfp.rfp_id": "Title block ('RFP Number: TC-ROOF-2026-001')",
+    "rfp.issued_date": "Title block ('Date Issued: March 15, 2026')",
+    "rfp.submission_deadline": "Title block ('Bid Deadline: April 12, 2026, 2:00 PM EST')",
+    "rfp.site_meeting_mandatory": "§6.4 Site Visit Attendance ('Mandatory'); §8.1 Mandatory Site Visit",
+    "rfp.contract_form": "§10 Attachments — Attachment C 'Sample Contract Form (CCDC 2 - 2020)'",
+    "rfp.scope_of_work.tear_off_required": "§2.1.1 'Complete roof removal'",
+    "rfp.scope_of_work.insulation_upgrade_to_code": "§2.1.4 / §3.2 ('R-30 as per Ontario Building Code 2024')",
+    "rfp.scope_of_work.membrane_system_specified.category": "§3.1 Roofing Membrane (TPO)",
+    "rfp.scope_of_work.membrane_system_specified.thickness_spec": "§3.1 ('Minimum 60 mil', white, heat-welded seams)",
+    "rfp.scope_of_work.membrane_system_specified.attachment_method": "§3.1 ('Fully adhered system preferred; mechanically attached acceptable')",
+    "rfp.scope_of_work.alternates_requested": "§2.2 Optional Work; §3.2 (tapered insulation); §2.1.2 (deck unit pricing)",
+    "rfp.warranty_requirements.minimum_manufacturer_years": "§3.1 / §9.6 ('Minimum 20-year manufacturer warranty on membrane')",
+    "rfp.warranty_requirements.minimum_workmanship_years": "§9.6 ('Minimum 2-year workmanship warranty from contractor')",
+    "rfp.warranty_requirements.manufacturer_certification_required": "§5.1.6 'Manufacturer Authorization: Proof of manufacturer certification for proposed roofing system'",
+    "rfp.warranty_requirements.warranty_type_required": "INFERRED — RFP §3.1/§9.6 specify only 'manufacturer warranty on membrane' without type. Applied OBC Part 3 default of total_system_ndl per fixture 02 §1; flagged in extraction_notes.",
+    "rfp.submission_requirements": "§6.2 Required Content (verbatim list of 13 items)",
+    "rfp.mandatory_requirements.wsib_clearance_required": "§5.1.2 Insurance — 'Workers Compensation: As per WSIB requirements'; §6.2.9 'WSIB clearance certificate'",
+    "rfp.mandatory_requirements.cgl_minimum_cad": "§5.1.2 'Commercial General Liability: Minimum $5,000,000 per occurrence'",
+    "rfp.mandatory_requirements.performance_bond_percent": "§9.2 Performance Security ('Performance bond: 50% of contract value')",
+    "rfp.mandatory_requirements.labour_material_bond_percent": "§9.2 Performance Security ('Labour and material payment bond: 50% of contract value')",
+    "rfp.mandatory_requirements.site_visit_required": "§6.4 / §8.1 ('Mandatory. Bidders who do not attend the site visit will not have their bids considered.')",
+    "rfp.mandatory_requirements.minimum_years_in_business": "§5.1.3 ('Minimum 10 years commercial roofing experience')",
+    "rfp.mandatory_requirements.minimum_similar_projects": "§5.1.4 ('Minimum 3 references from similar projects (50,000+ sq ft) completed within past 5 years')",
+    "rfp.evaluation_criteria.weighting": "§7 Evaluation Criteria (consolidated from 7 RFP categories into 6 schema buckets — see extraction_notes)"
+  },
+  "extraction_notes": [
+    "Classified as obc_part_3: 85,000 sq ft industrial warehouse with occupied office and pharmaceutical cold-storage tenants — industrial occupancy AND footprint vastly exceeds the 600 m² Part 9 ceiling.",
+    "Roof type classified as low_slope_commercial: existing BUR being replaced with TPO single-ply (typical slope <2:12 for industrial warehouse).",
+    "Owner type set to private_commercial — Tenebrus Capital is a private capital firm; not a BPS entity, so BPS Procurement Directive does not apply.",
+    "Evaluation weighting consolidates RFP's 7 categories (Price 35 / Materials 20 / Warranty 15 / Schedule 12 / Qualifications 10 / Safety 5 / Value Engineering 3) into the schema's 6 buckets: technical_approach=23 (Materials 20 + Value Engineering 3), qualifications_certifications=5 (Safety only — Qualifications/References mapped to experience_references=10). Sums to 100. RFP-stated weights, not defaults.",
+    "Mandatory gates populated only where the RFP explicitly invokes them: WSIB clearance, CGL $5M, performance bond 50%, L&M bond 50%, mandatory site visit, 10 years in business, 3 similar references. RFP is SILENT on bid bond, addenda acknowledgment, non-collusion declaration, working-at-heights training cert, owner named as additional insured, and completed-operations period — these gates are deliberately left unpopulated to avoid disqualifying bidders for requirements the RFP never stated.",
+    "Pollution/Environmental Liability ($1M) is flagged as 'recommended' in §5.1.2 — NOT mandatory. Auto Liability $2M is required but no schema field exists; noted here for future reviewer awareness.",
+    "COR safety certification is 'preferred' per §5.1.5 / §5.2 — NOT mandatory. Bidders cannot be disqualified for lacking COR.",
+    "RFP DEFICIENCY (warranty type not specified): §3.1 and §9.6 require '20-year manufacturer warranty' but do not specify NDL vs material-only vs labour-and-material. Applied OBC Part 3 default of total_system_ndl (fixture 02 §1) so bidders compete on equivalent terms. OWNER FOLLOW-UP: confirm warranty type before bid evaluation; an addendum specifying NDL is recommended.",
+    "RFP DEFICIENCY (no wood-deck replacement allowance specified): §1.1 and §2.1.2 acknowledge wood deck sections in office wing of unknown condition and ask bidders to 'provide unit pricing,' but no board-foot allowance is carried in the base bid. OWNER FOLLOW-UP: extras for wood deck replacement could blow the budget; consider adding an allowance (e.g., 500 bf) so bids are comparable.",
+    "RFP DEFICIENCY (no manufacturer acceptable list): §3.1 specifies TPO 60-mil but does not name acceptable manufacturers (e.g., Carlisle, GAF, Firestone, Versico, Johns Manville). OWNER FOLLOW-UP: bidders may propose lower-tier manufacturers whose NDL warranty terms vary materially.",
+    "Cover board IS specified (§3.2 — 1/4 inch gypsum or HD polyiso required) — this is good practice for NDL-warranty validity per fixture 02 §1.",
+    "Designated Substances Assessment (DSA): building was constructed in 1998, so OHSA s.30 pre-1980 trigger does not apply by default. However, §2.3 acknowledges potential ACM and lead flashings during the 1998 transition period. OWNER FOLLOW-UP: a DSA may still be prudent given the §2.3 hazard caveat; current RFP does not require one before tender.",
+    "Liquidated damages of $500/calendar day per §9.5 noted but not captured in schema (no LD field)."
+  ]
+}

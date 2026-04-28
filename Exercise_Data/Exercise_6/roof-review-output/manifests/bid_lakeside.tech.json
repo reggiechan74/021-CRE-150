@@ -1,0 +1,166 @@
+{
+  "bidder_id": "lakeside",
+  "bidder_name": "Lakeside Roofing Inc.",
+  "mandatory_gates": {
+    "membrane_thickness": {
+      "result": "fail",
+      "evidence": "Bid KEY SPECIFICATIONS: 'Membrane: 45 mil TPO, mechanically attached'. RFP \u00a73.1 specifies 'Minimum 60 mil', but RFP \u00a74 mandatory_requirements does not invoke membrane_thickness as a formal mandatory gate \u2014 Tenebrus Capital populated only wsib_clearance_required, cgl_minimum_cad, performance_bond_percent, labour_material_bond_percent, site_visit_required, minimum_years_in_business, and minimum_similar_projects. Per scripts/reconcile_gates.py applicability rule, the underlying technical concern is captured as a critical red flag (45 mil sub-spec for Class A commercial retrofit per fixture 02 \u00a71.3). RFP \u00a73.1 specifies but does not invoke as mandatory gate \u2014 captured as critical red flag instead."
+    },
+    "cover_board": {
+      "result": "fail",
+      "evidence": "Bid materials_system.cover_board_included = false; cover board not mentioned in KEY SPECIFICATIONS or PRICE BREAKDOWN. RFP \u00a73.2 / scope_of_work.included_items requires 'cover board (1/4 inch gypsum or HD polyiso)', but RFP \u00a74 mandatory_requirements does not invoke cover_board as a formal mandatory gate. Per scripts/reconcile_gates.py applicability rule, the underlying technical concern is captured as a critical red flag (missing cover board over polyiso voids most NDL warranties per fixture 02 \u00a74 Red Flag #3). RFP \u00a73.2 specifies but does not invoke as mandatory gate \u2014 captured as critical red flag instead."
+    },
+    "warranty_type": {
+      "result": "fail",
+      "evidence": "Bid WARRANTY: '15-year limited warranty on TPO membrane' (material_only per extraction). RFP warranty_requirements.warranty_type_required = 'total_system_ndl' (an INFERRED default from fixture 02 \u00a71, not a literal RFP statement); RFP \u00a74 mandatory_requirements does not invoke warranty_type as a formal mandatory gate. Per scripts/reconcile_gates.py applicability rule, the underlying technical concern is captured as a critical red flag (material-only is substantively weaker than NDL Total System per fixture 02 \u00a74 Red Flag #5). RFP \u00a73.1/\u00a79.6 specifies but does not invoke as mandatory gate \u2014 captured as critical red flag instead."
+    },
+    "warranty_duration": {
+      "result": "fail",
+      "evidence": "Bid WARRANTY offers 15-year manufacturer warranty. RFP \u00a73.1/\u00a79.6 and warranty_requirements.minimum_manufacturer_years = 20, but RFP \u00a74 mandatory_requirements does not invoke warranty_duration as a formal mandatory gate. Per scripts/reconcile_gates.py applicability rule, the underlying technical concern (offered duration 5 years below RFP minimum) is captured as a critical red flag. RFP \u00a73.1/\u00a79.6 specifies but does not invoke as mandatory gate \u2014 captured as critical red flag instead."
+    },
+    "scope_compliance": {
+      "result": "fail",
+      "evidence": "Bid EXCLUSIONS list contradicts multiple RFP-required base-scope items: (a) excludes 'Temporary weather protection for incomplete phases' vs RFP requirement that 'each phase watertight at end of each work day'; (b) excludes 'Tapered insulation for ponding correction' vs RFP requirement to 'resolve existing ponding via tapered insulation or additional drains'; (c) bidder rebuts ponding existence; (d) excludes 'Replacement of damaged roof drains or leaders' vs RFP requirement to 'replace damaged drain bowls/leaders'; (e) single-layer R-30 vs RFP \u00a73.2 'two-layer staggered'; (f) no wind uplift design basis stated. RFP \u00a74 mandatory_requirements does not invoke scope_compliance as a formal mandatory gate. Per scripts/reconcile_gates.py applicability rule, these are captured as critical red flags. RFP \u00a73.1/\u00a73.2/\u00a75.1.6 specifies as scope/warranty requirement (rfp_scope tier)."
+    }
+  },
+  "scores": {
+    "technical_approach": 20,
+    "warranty_materials": 26
+  },
+  "scoring_rationale": {
+    "technical_approach": {
+      "sub_factors": {
+        "tear_off_staging": 10,
+        "weather_protection_dry_in": 0,
+        "fall_protection_safety": 10,
+        "waste_environmental_logistics": 0,
+        "quality_control_inspection": 0
+      },
+      "notes": "Tear-off: PHASING APPROACH mentions sectional work but no dumpster/lift/staging detail (10). Weather protection: explicitly EXCLUDED in exclusions list #12 (0). Fall protection: 'Fall protection training for all workers' generic WAH statement, no anchor points or site-specific plan (10). Waste/environmental: no disposal plan, no recycling commitment, no DSA addressed (0). QC: no in-progress checkpoints, no manufacturer inspection scheduled (0). Total = 20/100. Sub-score remains low to reflect the severity of the underlying technical deficiencies, even though the gates were demoted to needs_clarification per the RFP-applicability rule."
+    },
+    "warranty_materials": {
+      "sub_factors": {
+        "warranty_type_vs_rfp": 20,
+        "warranty_years_vs_rfp_minimum": 0,
+        "installer_certification_at_claimed_tier": 0,
+        "workmanship_warranty_years": 6,
+        "materials_quality": 0
+      },
+      "notes": "Warranty type: material_only = 20 points (weakest type that scores). Years: 15 vs 20 minimum = below minimum = 0. Installer certification: none claimed; no GAF Master Elite, Carlisle Authorized Applicator, Sika Sarnafil, Soprema PAQ+S etc. (0). Workmanship: 2 years stated = 6 (2-4 yrs band). Materials quality: 45 mil TPO, no cover board, manufacturer not named \u2014 below industry standard per fixture 02 \u00a76 Quick Evaluation Matrix (0). Total = 26/100. Sub-score remains low to reflect the severity of the warranty/materials deficiencies, even though the warranty_type and warranty_duration gates were demoted to needs_clarification per the RFP-applicability rule."
+    }
+  },
+  "red_flags": [
+    {
+      "severity": "critical",
+      "category": "materials",
+      "description": "45 mil TPO membrane proposed where RFP \u00a73.1 specified minimum 60 mil. Sub-specification thickness for a Class A commercial retrofit; voids the RFP spec and would not unlock 20-year+ warranty from any reputable manufacturer. NOTE: Underlying gate (membrane_thickness) demoted to needs_clarification because RFP \u00a74 did not invoke it as a formal mandatory gate; severity preserved here per fixture 02 \u00a74.",
+      "citation": "fixture 02 \u00a71.3 (TPO thickness: '45 mil: Residential or light commercial. Not acceptable for Class A commercial retrofit'); RFP \u00a73.1; fixture 02 \u00a76 Quick Evaluation Matrix (Fail = <60 mil)",
+      "evidence": "Bid KEY SPECIFICATIONS: 'Membrane: 45 mil TPO, mechanically attached'; PRICE BREAKDOWN line item 'TPO membrane (45 mil) $145,000'",
+      "recommendation": "reject"
+    },
+    {
+      "severity": "critical",
+      "category": "materials",
+      "description": "No cover board over polyiso insulation. Cover board (HD polyiso or DensDeck) is mandatory under single-ply TPO to protect membrane from foot traffic punctures, provide a smooth substrate, and unlock manufacturer system warranties. NOTE: Underlying gate (cover_board) demoted to needs_clarification because RFP \u00a74 did not invoke it as a formal mandatory gate; severity preserved here per fixture 02 \u00a74.",
+      "citation": "fixture 02 \u00a74 Red Flag #3 ('Missing cover board... Polyiso alone under TPO/PVC/EPDM is best-practice-deficient... Most manufacturer 25-year+ warranties require it'); RFP \u00a73.2 included_items ('cover board (1/4 inch gypsum or HD polyiso)')",
+      "evidence": "Bid KEY SPECIFICATIONS lists only Membrane, Insulation, and Attachment \u2014 cover board absent; PRICE BREAKDOWN has no cover board line item; bid manifest materials_system.cover_board_included = false",
+      "recommendation": "reject"
+    },
+    {
+      "severity": "critical",
+      "category": "warranty",
+      "description": "Warranty type is material_only (15-yr limited) where RFP requires total_system_ndl with 20-year minimum. Material-only excludes labour to repair and excludes installation defects \u2014 owner is left exposed to workmanship and accessory failures. NOTE: Underlying gate (warranty_type) demoted to needs_clarification because RFP \u00a74 did not invoke it as a formal mandatory gate; severity preserved here per fixture 02 \u00a74.",
+      "citation": "fixture 02 \u00a74 Red Flag #5 ('25-year warranty without the type... Material-only, labor-and-material, or NDL Total System \u2014 these are radically different products priced similarly by weaker bidders'); RFP warranty_requirements (warranty_type_required = total_system_ndl, minimum 20 years)",
+      "evidence": "Bid WARRANTY section: '15-year limited warranty on TPO membrane' and 'Sample 15-Year Warranty Documentation attached' (no NDL/total-system language)",
+      "recommendation": "reject"
+    },
+    {
+      "severity": "critical",
+      "category": "warranty",
+      "description": "Warranty duration of 15 years is 5 years below RFP minimum of 20 years. Below RFP \u00a73.1/\u00a79.6 requirement of 'Minimum 20-year manufacturer warranty on membrane.' NOTE: Underlying gate (warranty_duration) demoted to needs_clarification because RFP \u00a74 did not invoke it as a formal mandatory gate; severity preserved here per fixture 02 \u00a74.",
+      "citation": "RFP \u00a73.1 / \u00a79.6 ('Minimum 20-year manufacturer warranty on membrane'); RFP warranty_requirements.minimum_manufacturer_years = 20; fixture 02 \u00a74 Red Flag #5",
+      "evidence": "Bid WARRANTY section: '15-year limited warranty on TPO membrane'; Sample 15-Year Warranty Documentation attached; warranty_offered.manufacturer_years = 15",
+      "recommendation": "reject"
+    },
+    {
+      "severity": "critical",
+      "category": "warranty",
+      "description": "Manufacturer of TPO membrane is not named in the bid. Without a named manufacturer the owner cannot validate (a) which warranty product is being offered, (b) whether the contractor is certified at the claimed tier, or (c) system component compatibility. No GAF Master Elite, Carlisle Authorized Applicator, Sika Sarnafil, Firestone Red Shield, or Johns Manville Peak Advantage program named.",
+      "citation": "fixture 02 \u00a73 (Manufacturer Certified Contractor Programs \u2014 'Non-certified installers cannot sell the top-tier warranties \u2014 regardless of installation quality'); RFP \u00a75.1.6 (Manufacturer Authorization required)",
+      "evidence": "ATTACHMENTS list: 'Product Data Sheets (45 mil TPO membrane)' \u2014 manufacturer not identified anywhere in bid; warranty_offered.manufacturer_certified_installer = false",
+      "recommendation": "reject"
+    },
+    {
+      "severity": "critical",
+      "category": "scope",
+      "description": "Bidder excludes 'Temporary weather protection for incomplete phases' (exclusion #12), explicitly contradicting the RFP requirement that 'each phase watertight at end of each work day.' For an occupied pharmaceutical warehouse with cold-storage tenants, this exclusion creates direct exposure to interior water damage. NOTE: Underlying gate (scope_compliance) demoted to needs_clarification because RFP \u00a74 did not invoke it as a formal mandatory gate; severity preserved here per fixture 02 \u00a74.",
+      "citation": "RFP scope_of_work.included_items ('Phased construction with no more than 15,000 sq ft exposed at any one time; each phase watertight at end of each work day')",
+      "evidence": "Bid EXCLUSIONS AND CLARIFICATIONS item #12: 'Temporary weather protection for incomplete phases'",
+      "recommendation": "reject"
+    },
+    {
+      "severity": "critical",
+      "category": "scope",
+      "description": "Bidder rebuts the RFP's documented ponding condition ('our inspection did not confirm significant ponding') and excludes tapered insulation and damaged drain replacement from base bid. This is a substitution of bidder judgment for the owner's stated scope and would leave the existing drainage defect unresolved. Combined with the absence of weather protection, the un-corrected drainage condition creates a system that cannot deliver the 20+ year service life the RFP envisions.",
+      "citation": "fixture 01 \u00a71.4 (Drainage \u2014 'industry minimum 2% positive slope to drains'; 'Red flag: Dead-flat roof with no tapered insulation'); RFP scope_of_work.included_items (drainage correction including tapered insulation or additional drains; 'replace damaged drain bowls/leaders')",
+      "evidence": "Bid ADDITIONAL NOTES: 'Regarding the ponding issues noted in the RFP: our inspection did not confirm significant ponding. We recommend proceeding with standard installation and addressing any drainage issues if they persist after completion'; EXCLUSIONS items #3 (drains/leaders) and #10 (tapered insulation)",
+      "recommendation": "reject"
+    },
+    {
+      "severity": "critical",
+      "category": "materials",
+      "description": "Insulation is single-layer R-30. RFP \u00a73.2 requires 'two-layer staggered with cover board.' Single-layer rigid insulation on a commercial roof creates joint leakage and thermal bridging per fixture 02 \u00a74 Red Flag #1 / fixture 01 \u00a71.3. Combined with the absent cover board and 45 mil membrane, the assembly will not deliver the assumed thermal performance or warranty eligibility.",
+      "citation": "fixture 01 \u00a71.3 ('Two layers of insulation with staggered joints is standard practice to maintain continuity'; Red flag: 'Single layer of rigid insulation on a commercial roof'); RFP scope_of_work.included_items",
+      "evidence": "Bid KEY SPECIFICATIONS: 'Insulation: Polyisocyanurate, R-30 (single layer to meet code minimum)'; ADDITIONAL NOTES: 'Single-layer insulation meets code requirements while minimizing material costs'",
+      "recommendation": "reject"
+    },
+    {
+      "severity": "critical",
+      "category": "scope",
+      "description": "No wind uplift design basis stated. RFP project is a 28-year-old industrial warehouse with parapeted perimeter; a CSA A123.21 (or FM 1-29) calculation by zone is required. Mechanically-attached TPO with no zoning calculation is at high risk of perimeter/corner billowing \u2014 a safety hazard for occupants and adjacent properties.",
+      "citation": "fixture 01 \u00a71.2 ('Tender must demonstrate: Wind load calculation for the specific project... Named CSA A123.21 listing... Fastening schedule showing field, perimeter, and corner patterns'); fixture 02 \u00a74 Red Flag #4",
+      "evidence": "Bid contains no wind uplift calculation, no CSA A123.21 listing, no FM rating, no fastening schedule by zone. warranty_offered.wind_uplift_coverage_mph = null.",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "high",
+      "category": "safety",
+      "description": "No site-specific fall protection plan. Bid offers a generic 'Fall protection training for all workers' statement. For an 85,000 sq ft low-slope industrial roof, O. Reg. 213/91 Part III requires named anchor points, lifelines, rescue plan, and zone-by-zone control approach. Required rescue plan is absent.",
+      "citation": "fixture 01 \u00a73.3 ('Tender must demonstrate: Site-specific fall protection plan identifying which method is used in which zone; anchor specifications; harness/lanyard/SRL inventory; rescue plan (mandatory per \u00a726.1)'); O. Reg. 213/91 \u00a726.1",
+      "evidence": "Bid SAFETY PROGRAM section lists training/meetings/incident reporting only. technical_approach.site_safety_plan_attached = false. No anchor layout, no rescue plan stated.",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "high",
+      "category": "scope",
+      "description": "No waste disposal / environmental plan. RFP is replacing 85,000 sq ft of existing built-up gravel roof \u2014 a significant tonnage of demolition debris. No facility named, no diversion commitment, no dumpster placement plan.",
+      "citation": "fixture 01 \u00a74.1 ('Tender must demonstrate: Named waste disposal / recycling facility; diversion rate target; bin type'); RFP scope_of_work.included_items ('Complete removal and legal disposal')",
+      "evidence": "Bid technical_approach.waste_disposal_plan = null; PRICE BREAKDOWN has 'Roof removal and disposal $85,000' lump-sum but no facility, weights, or diversion target",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "high",
+      "category": "warranty",
+      "description": "No manufacturer certification at claimed warranty tier. RFP \u00a75.1.6 explicitly requires 'Proof of manufacturer certification for proposed roofing system.' Without certification the manufacturer will not issue any extended warranty regardless of contractor installation quality.",
+      "citation": "fixture 02 \u00a73 (all manufacturer programs); RFP \u00a75.1.6 (manufacturer authorization required)",
+      "evidence": "Bid warranty_offered.manufacturer_certified_installer = false; certification_program = null. No GAF Master Elite / Carlisle Authorized Applicator / Sika Sarnafil / Soprema PAQ+S / Firestone Red Shield / JM Peak Advantage cited.",
+      "recommendation": "reject"
+    },
+    {
+      "severity": "medium",
+      "category": "scope",
+      "description": "Mechanically attached TPO proposed where RFP \u00a73.1 stated 'Fully adhered system preferred; mechanically attached acceptable.' Acceptable per RFP letter, but combined with no wind uplift design and no cover board, the mechanically-attached choice compounds wind/uplift risk on perimeter and corner zones.",
+      "citation": "fixture 02 \u00a71.3 (TPO attachment methods \u2014 MF 'billows in high wind if not designed for uplift'); RFP \u00a73.1",
+      "evidence": "Bid KEY SPECIFICATIONS: 'Attachment: Mechanically attached system'; ADDITIONAL NOTES: 'We use efficient mechanically attached systems that reduce installation time and cost'",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "medium",
+      "category": "scope",
+      "description": "After-hours HVAC coordination and HVAC curb modifications excluded. RFP requires 72-hour minimum coordination notice for shutdowns and lists HVAC protection during construction in base scope. Excluding curb work and after-hours coordination on an occupied pharmaceutical warehouse with cold-storage tenants creates change-order exposure.",
+      "citation": "RFP scope_of_work.included_items ('HVAC protection during construction with 72-hour minimum coordination notice for shutdowns')",
+      "evidence": "Bid EXCLUSIONS items #5 ('HVAC curb modifications or replacements'), #6 ('Work required outside standard working hours'), #14 ('After-hours HVAC coordination')",
+      "recommendation": "negotiate"
+    }
+  ]
+}

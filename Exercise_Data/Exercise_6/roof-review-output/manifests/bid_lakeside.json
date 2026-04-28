@@ -1,0 +1,155 @@
+{
+  "bidder_id": "lakeside",
+  "bidder_name": "Lakeside Roofing Inc.",
+  "source_pdf": "01-Bid-Lakeside-Roofing.md",
+  "pricing": {
+    "base_bid_cad": 487500.00,
+    "hst_included": false,
+    "alternates": [],
+    "unit_prices": {},
+    "allowances_carried": []
+  },
+  "scope_response": {
+    "full_compliance_claimed": false,
+    "exclusions_declared": [
+      "Steel deck repairs - to be quoted separately if required after deck exposure",
+      "Wood deck replacement in office wing - to be quoted if required",
+      "Replacement of damaged roof drains or leaders",
+      "Skylight replacement or repairs",
+      "HVAC curb modifications or replacements",
+      "Work required outside standard working hours (7 AM - 6 PM weekdays)",
+      "Snow guards (available at $45/linear foot if required)",
+      "Infrared moisture survey",
+      "Additional insulation above R-30",
+      "Tapered insulation for ponding correction - available as upgrade",
+      "Hazardous material abatement - owner to arrange and pay separately",
+      "Temporary weather protection for incomplete phases",
+      "Temperature monitoring of warehouse during construction",
+      "After-hours HVAC coordination"
+    ],
+    "clarifications": [
+      "Regarding the ponding issues noted in the RFP: our inspection did not confirm significant ponding. We recommend proceeding with standard installation and addressing any drainage issues if they persist after completion.",
+      "We use efficient mechanically attached systems that reduce installation time and cost",
+      "Single-layer insulation meets code requirements while minimizing material costs",
+      "Our lean crew structure keeps labour costs competitive",
+      "We can offer extended warranty options at additional cost"
+    ],
+    "substitutions_proposed": []
+  },
+  "materials_system": {
+    "manufacturer": null,
+    "system_name": "45 mil TPO, mechanically attached",
+    "membrane_thickness_actual": "45 mil",
+    "insulation_spec": "Polyisocyanurate, R-30 (single layer to meet code minimum)",
+    "cover_board_included": false,
+    "product_data_sheets_attached": true
+  },
+  "warranty_offered": {
+    "manufacturer_years": 15,
+    "warranty_type": "material_only",
+    "workmanship_years": 2,
+    "wind_uplift_coverage_mph": null,
+    "manufacturer_certified_installer": false,
+    "certification_program": null,
+    "evidence_page": "WARRANTY section (cover letter); Sample 15-Year Warranty Documentation attached"
+  },
+  "qualifications": {
+    "years_in_business": 12,
+    "wsib_clearance_attached": true,
+    "wsib_clearance_date": null,
+    "wsib_in_good_standing": true,
+    "cgl_limit_cad": 5000000,
+    "cgl_completed_operations_years": null,
+    "owner_named_as_additional_insured": null,
+    "coi_attached": true,
+    "bid_bond_attached": false,
+    "bonding_capacity_cad": null,
+    "working_at_heights_training_confirmed": true,
+    "crca_member": null,
+    "certificate_of_qualification_roofers_count": null,
+    "references_provided": [
+      {
+        "project_name": "Maple Logistics Centre - Brampton, ON",
+        "owner_contact": "John Petrovic, (905) 555-0234",
+        "value_cad": null,
+        "completion_year": 2024,
+        "similar_scope": true
+      },
+      {
+        "project_name": "Westpark Industrial - Mississauga, ON",
+        "owner_contact": "Sarah Chen, (905) 555-0287",
+        "value_cad": null,
+        "completion_year": 2023,
+        "similar_scope": true
+      },
+      {
+        "project_name": "Torque Distribution - Vaughan, ON",
+        "owner_contact": "Mike Sullivan, (905) 555-0312",
+        "value_cad": null,
+        "completion_year": 2025,
+        "similar_scope": true
+      }
+    ],
+    "subcontracting_declared": false,
+    "subcontractors_named": []
+  },
+  "schedule": {
+    "mobilization_days_after_award": null,
+    "work_duration_days": 75,
+    "substantial_completion_date": "2026-07-15",
+    "crew_size": null,
+    "accommodates_occupied_building": true
+  },
+  "technical_approach": {
+    "narrative": "We will complete the roof in sections to minimize disruption. Our team will work efficiently to expose only necessary areas at one time. We can work around your operations schedule.",
+    "tear_off_staging_plan": "Phased sectional tear-off — expose only necessary areas at one time; work around occupant operations schedule.",
+    "weather_protection_plan": null,
+    "fall_protection_plan": "Fall protection training for all workers (per Safety Program section)",
+    "waste_disposal_plan": null,
+    "site_safety_plan_attached": false
+  },
+  "_provenance": {
+    "bidder_name": "COVER LETTER section, line 11 ('Lakeside Roofing Inc.')",
+    "pricing.base_bid_cad": "BID SUMMARY table - Total Bid Price (before HST) $487,500.00",
+    "pricing.hst_included": "BID SUMMARY table - HST shown separately at 13% ($63,375.00) on top of $487,500 base",
+    "scope_response.exclusions_declared": "EXCLUSIONS AND CLARIFICATIONS section (items 1-14)",
+    "scope_response.clarifications": "ADDITIONAL NOTES section (ponding rebuttal, mechanical attachment rationale, single-layer insulation)",
+    "materials_system.membrane_thickness_actual": "KEY SPECIFICATIONS section - 'Membrane: 45 mil TPO, mechanically attached'",
+    "materials_system.insulation_spec": "KEY SPECIFICATIONS section - 'Insulation: Polyisocyanurate, R-30 (single layer to meet code minimum)'",
+    "materials_system.product_data_sheets_attached": "ATTACHMENTS list - 'Product Data Sheets (45 mil TPO membrane)'",
+    "warranty_offered.manufacturer_years": "WARRANTY section - '15-year limited warranty on TPO membrane'",
+    "warranty_offered.warranty_type": "WARRANTY section - 'limited warranty' wording is consistent with material-only coverage typical of 15-yr TPO; ATTACHMENTS notes 'Sample 15-Year Warranty Documentation'",
+    "warranty_offered.workmanship_years": "WARRANTY section - '2 years on installation'",
+    "qualifications.years_in_business": "COVER LETTER - 'serving the Greater Toronto Area for 12 years'",
+    "qualifications.cgl_limit_cad": "INSURANCE COVERAGE section - 'Commercial General Liability: $5,000,000 per occurrence'",
+    "qualifications.wsib_clearance_attached": "INSURANCE COVERAGE section + ATTACHMENTS - WSIB Account #1234567-89, Clearance Certificate attached",
+    "qualifications.wsib_in_good_standing": "SAFETY PROGRAM section - WSIB Experience Rating: 0.98 (below 1.0 = better-than-average)",
+    "qualifications.working_at_heights_training_confirmed": "SAFETY PROGRAM section - 'Fall protection training for all workers'",
+    "qualifications.references_provided": "REFERENCES section (3 industrial roof replacement projects, GTA, 2023-2025)",
+    "qualifications.coi_attached": "ATTACHMENTS list - Certificate of Insurance",
+    "schedule.work_duration_days": "PROJECT SCHEDULE section - May 1 to July 15 (75 days stated)",
+    "schedule.substantial_completion_date": "PROJECT SCHEDULE section - 'Substantial Completion: July 15, 2026'",
+    "schedule.accommodates_occupied_building": "PHASING APPROACH section - 'work around your operations schedule'",
+    "technical_approach.narrative": "PHASING APPROACH section",
+    "technical_approach.fall_protection_plan": "SAFETY PROGRAM section"
+  },
+  "extraction_notes": [
+    "Manufacturer of TPO membrane is NOT named in the bid (KEY SPECIFICATIONS lists '45 mil TPO' generically; ATTACHMENTS list says 'Product Data Sheets (45 mil TPO membrane)' without naming Carlisle/GAF/Firestone/Johns Manville/Sika/etc.). Owner follow-up needed to identify manufacturer for system compatibility and warranty validation.",
+    "Warranty type recorded as 'material_only': bid says '15-year limited warranty on TPO membrane' (limited + manufacturer-only language and a 15-yr term align with material-only TPO coverage). Bid does NOT claim NDL or labour-and-material. Confirm via the attached Sample 15-Year Warranty Documentation in wave 2.",
+    "Cover board: NOT mentioned anywhere in KEY SPECIFICATIONS or PRICE BREAKDOWN. Recorded as cover_board_included=false. Owner should confirm whether RFP required a cover board over polyiso (industry best practice for mechanically attached TPO).",
+    "Wind uplift coverage mph: NOT stated in bid. Field left null.",
+    "Manufacturer certified installer / certification program: NOT claimed in the bid. No GAF Master Elite, Firestone Red Shield, Soprema PAQ+S, or equivalent program named.",
+    "Bid bond: NOT mentioned in COVER LETTER or ATTACHMENTS. bid_bond_attached set to false.",
+    "Bonding capacity: NOT declared anywhere in the submission.",
+    "CGL completed operations years: NOT specified — only the $5M per-occurrence limit is given.",
+    "Owner-named-as-additional-insured: NOT explicitly confirmed in the cover letter. To be verified against the actual COI in wave 2.",
+    "WSIB clearance certificate date: NOT shown in the markdown bid (cert is attached but date not transcribed). Field left null.",
+    "Crew size: NOT stated in the bid.",
+    "Mobilization days after award: NOT stated. Bid lists Start Date May 1, 2026 but does not specify days-from-award.",
+    "Subcontracting: NOT addressed in the bid (no declaration either way). subcontracting_declared set to false.",
+    "CRCA membership and Skilled Trades C of Q holder count: NOT stated.",
+    "Site safety plan: comprehensive Safety Program described in narrative, but no formal site-specific safety plan document is listed in ATTACHMENTS. site_safety_plan_attached=false.",
+    "RFP TC-ROOF-2026-001 noted ponding issues; bidder rebuts ('our inspection did not confirm significant ponding') and excludes tapered insulation. This is a substantive scope deviation from the RFP narrative — flag for wave 2 technical-review comparison.",
+    "Bid validity: 60 days from April 12, 2026 (note: bid is dated March 30, 2026 in the cover letter, but validity stamp says 'from April 12, 2026' — possible internal date inconsistency worth flagging for owner)."
+  ]
+}

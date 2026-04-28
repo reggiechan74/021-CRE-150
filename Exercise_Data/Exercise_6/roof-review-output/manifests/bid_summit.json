@@ -1,0 +1,255 @@
+{
+  "bidder_id": "summit",
+  "bidder_name": "Summit Contracting Ltd.",
+  "source_pdf": "02-Bid-Summit-Contracting.md",
+  "pricing": {
+    "base_bid_cad": 742000,
+    "hst_included": false,
+    "alternates": [
+      {
+        "description": "Snow guard system (installed) — unit price",
+        "price_cad": 65,
+        "_unit": "per linear foot"
+      },
+      {
+        "description": "Additional insulation upgrade to R-45",
+        "price_cad": 28000
+      },
+      {
+        "description": "10-year preventive maintenance program (annual)",
+        "price_cad": 4200,
+        "_unit": "per year"
+      },
+      {
+        "description": "Emergency repair retainer (24/7 priority service, annual)",
+        "price_cad": 2400,
+        "_unit": "per year"
+      },
+      {
+        "description": "Thermal imaging scan post-installation",
+        "price_cad": 3500
+      },
+      {
+        "description": "Extended workmanship warranty to 10 years",
+        "price_cad": 12000
+      }
+    ],
+    "unit_prices": {
+      "deck_replacement_per_bf": null,
+      "insulation_per_sqft_per_rvalue": null,
+      "flashing_per_lf": null
+    },
+    "allowances_carried": [
+      {
+        "item": "Steel deck repairs (any excess quoted separately)",
+        "amount_cad": 10000
+      },
+      {
+        "item": "Wood deck replacement in office wing",
+        "amount_cad": 8000
+      },
+      {
+        "item": "Contingency allowance for unknown conditions",
+        "amount_cad": 15000
+      },
+      {
+        "item": "Tapered insulation system for ponding correction (1,200 sq ft) — included line item",
+        "amount_cad": 28000
+      },
+      {
+        "item": "Hazardous material testing (12 sample locations, asbestos and lead) — included",
+        "amount_cad": null
+      }
+    ]
+  },
+  "scope_response": {
+    "full_compliance_claimed": true,
+    "exclusions_declared": [],
+    "clarifications": [
+      "Steel deck repairs included up to $10,000; any excess quoted separately.",
+      "Wood deck replacement included up to $8,000 allowance (office wing).",
+      "Replacement of up to 4 damaged roof drains included; additional drain if required is included in allowance for southeast quadrant phase.",
+      "Hazardous-material approach: 'minor ACM can be handled under our existing certification'; full abatement would be extra (not included).",
+      "Lead flashings handled as hazardous waste if present; disposal costs included.",
+      "R-38 priced as standard (RFP minimum R-30); contractor chose to upgrade voluntarily.",
+      "80 mil TPO membrane priced as standard (RFP minimum 60 mil); contractor chose to upgrade voluntarily.",
+      "Fully adhered attachment proposed (RFP allowed fully or mechanically attached).",
+      "Bid valid for 60 days from April 12, 2026."
+    ],
+    "substitutions_proposed": []
+  },
+  "materials_system": {
+    "manufacturer": "Not explicitly named for the 30-yr NDL membrane — bid lists Carlisle Syntec (Master Installer), Firestone Building Products (Premier Contractor), and GAF (Master Elite) certifications without identifying which manufacturer's TPO is being supplied",
+    "system_name": "TPO single-ply membrane system, fully adhered, 80 mil premium grade",
+    "membrane_thickness_actual": "80 mil",
+    "insulation_spec": "R-38 polyiso, two-layer with staggered joints, plus high-density polyiso cover board; tapered insulation system for ponding correction over 1,200 sq ft",
+    "cover_board_included": true,
+    "product_data_sheets_attached": true
+  },
+  "warranty_offered": {
+    "manufacturer_years": 30,
+    "warranty_type": "ndl",
+    "workmanship_years": 5,
+    "wind_uplift_coverage_mph": 130,
+    "manufacturer_certified_installer": true,
+    "certification_program": "Carlisle Syntec Master Installer; Firestone Building Products Premier Contractor; GAF Master Elite (top 2% nationwide)",
+    "evidence_page": "Section 'WARRANTY' and 'MANUFACTURER CERTIFICATIONS'"
+  },
+  "qualifications": {
+    "years_in_business": 25,
+    "wsib_clearance_attached": true,
+    "wsib_clearance_date": null,
+    "wsib_in_good_standing": true,
+    "cgl_limit_cad": 10000000,
+    "cgl_completed_operations_years": null,
+    "owner_named_as_additional_insured": null,
+    "coi_attached": true,
+    "bid_bond_attached": false,
+    "bonding_capacity_cad": null,
+    "working_at_heights_training_confirmed": true,
+    "crca_member": null,
+    "certificate_of_qualification_roofers_count": null,
+    "references_provided": [
+      {
+        "project_name": "Maple Leaf Food Corporation roof replacement",
+        "owner_contact": "Robert Thompson, VP Operations, (416) 555-0445",
+        "value_cad": null,
+        "completion_year": 2023,
+        "similar_scope": true,
+        "_notes": "125,000 sq ft, occupied facility with phasing; completed 18 days ahead of schedule"
+      },
+      {
+        "project_name": "Shoppers Drug Mart Distribution Centre roof replacement, Brampton ON",
+        "owner_contact": "Jennifer Wu, Director of Facilities, (905) 555-0521",
+        "value_cad": null,
+        "completion_year": 2022,
+        "similar_scope": true,
+        "_notes": "210,000 sq ft, temperature-sensitive pharmaceutical storage; zero temperature excursions"
+      },
+      {
+        "project_name": "Magnotta Winery roof replacement, Niagara-on-the-Lake ON",
+        "owner_contact": "Marco Caputo, Owner, (905) 555-0634",
+        "value_cad": null,
+        "completion_year": 2024,
+        "similar_scope": false,
+        "_notes": "68,000 sq ft, historic building with complex architectural requirements"
+      },
+      {
+        "project_name": "Pfizer Canada roof replacement, Mississauga ON",
+        "owner_contact": "Susan Mitchell, Facility Manager, (905) 555-0788",
+        "value_cad": null,
+        "completion_year": 2025,
+        "similar_scope": true,
+        "_notes": "95,000 sq ft, pharmaceutical facility with strict temperature controls; described as similar scope to this project"
+      }
+    ],
+    "subcontracting_declared": false,
+    "subcontractors_named": []
+  },
+  "schedule": {
+    "mobilization_days_after_award": null,
+    "work_duration_days": 85,
+    "substantial_completion_date": "2026-07-25",
+    "crew_size": null,
+    "accommodates_occupied_building": true
+  },
+  "technical_approach": {
+    "narrative": "Three-phase plan tailored to occupied, temperature-sensitive pharmaceutical/warehouse facility. Phase 1 (Days 1-25) office wing 5,100 sf isolated from main roof; Phase 2 (Days 26-55) main roof NW quadrant 20,000 sf; Phase 3 (Days 56-85) main roof SE quadrant 25,000 sf including ponding areas with tapered insulation. Maximum 8,000 sf exposed at any time (well under RFP's 15,000 sf limit). Each phase made watertight daily by 5:00 PM. Wireless temperature monitoring with ±2°C alerts. HVAC coordination with 72-hr notice; shutdowns on weekends only.",
+    "tear_off_staging_plan": "Three-phase tear-off with maximum 8,000 sq ft exposed at any time; office wing first (Phase 1) to establish workflow patterns, then NW main roof (Phase 2), then SE main roof including ponding areas (Phase 3). Pre-removal infrared moisture survey and 12-location hazmat sampling.",
+    "weather_protection_plan": "Each phase made watertight daily by 5:00 PM. Weekend protection: reinforced tarps with weighted edges. Temporary weather protection installed each evening during Phase 2.",
+    "fall_protection_plan": "Fall protection training for all workers (updated annually). Dedicated safety officer on-site for projects over 50,000 sq ft. CRSP-certified Safety Officer (Patricia Lee). COR (Certificate of Recognition) certified. Daily tailgate safety meetings. Zero lost-time incidents in past 7 years; WSIB Experience Rating 0.72.",
+    "waste_disposal_plan": "Daily site cleanup and debris removal included. Lead flashings handled as hazardous waste if present (disposal costs included). ACM disposal under existing limited-abatement certification for minor quantities.",
+    "site_safety_plan_attached": true
+  },
+  "extraction_notes": [
+    {
+      "field": "materials_system.manufacturer",
+      "issue": "The 30-year NDL TPO membrane manufacturer is not explicitly identified. Bid lists three manufacturer certifications (Carlisle Syntec Master Installer, Firestone Premier Contractor, GAF Master Elite) without specifying which system will be supplied. NDL warranty validity depends on the actual manufacturer + system + certified-installer match.",
+      "evidence": "Sections 'WARRANTY' and 'MANUFACTURER CERTIFICATIONS'; Attachments list 'Product Data Sheets (80 mil TPO membrane)' and '30-Year NDL Warranty Sample Documentation' but body of bid does not name the manufacturer of the supplied system.",
+      "owner_action": "Clarify which manufacturer's 30-yr NDL TPO system is being proposed and confirm Summit holds the corresponding certified-installer credential for that specific system."
+    },
+    {
+      "field": "warranty_offered.warranty_type",
+      "issue": "Recorded as 'ndl' per skill taxonomy guidance (NDL claimed without a specific named premium-tier system program such as Soprema Mammouth Platinum, Firestone Red Shield Platinum, or Sika Sarnafil 30-yr NDL). Bid attaches '30-Year NDL Warranty Sample Documentation' but does not name the program; the additional ponding warranty (10-yr) and Class 4 hail rating are also claimed but the underlying program name is absent.",
+      "evidence": "Section 'WARRANTY'; Attachments list.",
+      "owner_action": "Request the named manufacturer warranty program and exemplar warranty document to confirm whether labour-to-reinstall is included and whether this qualifies as total_system_ndl."
+    },
+    {
+      "field": "qualifications.bid_bond_attached / bonding_capacity_cad",
+      "issue": "No bid bond, performance bond, or bonding-capacity letter is mentioned in the cover letter or in the attachments list. Whether this is a deficiency depends on whether the RFP required bonding (deferred to wave 2).",
+      "evidence": "Attachments list does not include any bond or surety document.",
+      "owner_action": "If RFP required bid bond / agreement to bond, request and verify. Defer determination to roof-qualification-check."
+    },
+    {
+      "field": "qualifications.wsib_clearance_date",
+      "issue": "WSIB Clearance Certificate is listed as an attachment but the certificate's issue/clearance date is not stated in the bid body. WSIB clearance certificates are typically valid for ~60 days, so the date matters for currency.",
+      "evidence": "Attachments list 'WSIB Clearance Certificate'; INSURANCE COVERAGE section gives Account #9876543-21 only.",
+      "owner_action": "Verify the WSIB clearance certificate is current as of bid opening (and remains current at contract execution)."
+    },
+    {
+      "field": "qualifications.cgl_completed_operations_years / owner_named_as_additional_insured",
+      "issue": "Bid declares CGL of $10M per occurrence and lists 'Certificate of Insurance ($10M liability)' as an attachment, but does not state completed-operations coverage years or whether owner (Tenebrus Capital) will be named as additional insured.",
+      "evidence": "Section 'INSURANCE COVERAGE'; Attachments list.",
+      "owner_action": "Review COI directly to confirm completed-operations period and additional-insured endorsement."
+    },
+    {
+      "field": "qualifications.working_at_heights_training_confirmed",
+      "issue": "Bid states 'Fall protection training for all workers (updated annually)' and is COR-certified; this likely satisfies Ontario Working-at-Heights training but the bid does not use the specific 'MOL-approved Working-at-Heights' phrasing or attach training records.",
+      "evidence": "SAFETY PROGRAM section.",
+      "owner_action": "Request MOL-approved WAH training certificates (per O.Reg. 297/13) for the assigned crew."
+    },
+    {
+      "field": "qualifications.crca_member / certificate_of_qualification_roofers_count",
+      "issue": "Bid does not declare CRCA membership. Crew is described as '4 certified roofing technicians (average 12 years experience)' and 'certified installers' but no Skilled Trades Ontario Certificate of Qualification (Roofer 449A) count is provided.",
+      "evidence": "Sections 'PROJECT TEAM' and 'PRICE BREAKDOWN' (line 'Labour (certified installers, phasing premium)').",
+      "owner_action": "Clarify CRCA membership status and how many of the assigned crew hold the Roofer (449A) C of Q."
+    },
+    {
+      "field": "schedule.mobilization_days_after_award / crew_size",
+      "issue": "Mobilization days after award not stated explicitly; only Start Date May 1, 2026 is given. Crew size not stated as a single number — only roles (PM, supervisor, safety officer, 4 lead installers, phasing coordinator).",
+      "evidence": "Sections 'PROJECT SCHEDULE' and 'PROJECT TEAM'.",
+      "owner_action": "Confirm mobilization window post-award and total daily crew complement at peak."
+    },
+    {
+      "field": "pricing.unit_prices",
+      "issue": "Unit prices for deck replacement per bf, insulation per sqft per R, and flashing per lf are not provided. Allowance overruns on steel deck and wood deck would be 'quoted separately' rather than computed from a published unit rate.",
+      "evidence": "Section 'INCLUDED IN OUR BID PRICE' items 2-3.",
+      "owner_action": "Request unit prices for deck repairs, additional insulation R-value, and additional flashing lf to lock in change-order pricing before contract."
+    },
+    {
+      "field": "scope_response.exclusions_declared",
+      "issue": "Bid claims a comprehensive inclusion list and does not enumerate explicit exclusions; however, full hazmat (ACM) abatement beyond 'minor' quantities, deck repairs above the $10K/$8K allowances, and any drain replacements beyond 4 are effectively excluded (would be extra). Treated as clarifications rather than verbatim exclusions because the bid did not provide a labelled 'Exclusions' section.",
+      "evidence": "Sections 'HAZARDOUS MATERIALS APPROACH' and 'INCLUDED IN OUR BID PRICE'.",
+      "owner_action": "Optional: request a formal Exclusions list to remove ambiguity at change-order time."
+    }
+  ],
+  "_provenance": {
+    "bidder_name": "Cover Letter, line 11 ('Summit Contracting Ltd.')",
+    "pricing.base_bid_cad": "Cover Letter §BID SUMMARY — 'Total Bid Price (before HST) $742,000.00'",
+    "pricing.hst_included": "Cover Letter §BID SUMMARY — HST shown as separate line of $96,460.00 added to $742,000 base; HST treatment is 'plus HST'",
+    "pricing.alternates": "§OPTIONAL ADD-ONS (PRICED SEPARATELY)",
+    "pricing.allowances_carried": "§PRICE BREAKDOWN and §INCLUDED IN OUR BID PRICE",
+    "scope_response.clarifications": "§INCLUDED IN OUR BID PRICE; §HAZARDOUS MATERIALS APPROACH; §VALUE ENGINEERING OBSERVATIONS; §KEY SPECIFICATIONS",
+    "materials_system.membrane_thickness_actual": "§KEY SPECIFICATIONS table; §PRICE BREAKDOWN ('TPO membrane (80 mil premium grade)')",
+    "materials_system.insulation_spec": "§KEY SPECIFICATIONS; §PRICE BREAKDOWN",
+    "materials_system.cover_board_included": "§KEY SPECIFICATIONS row 'Cover Board'; §PRICE BREAKDOWN line 'Cover board (high-density polyiso) $48,000'",
+    "warranty_offered.manufacturer_years": "§WARRANTY — '30-year NDL'",
+    "warranty_offered.warranty_type": "§WARRANTY — 'NDL (No Dollar Limit)'",
+    "warranty_offered.workmanship_years": "§WARRANTY — '5 years on installation'",
+    "warranty_offered.wind_uplift_coverage_mph": "§WARRANTY — 'Up to 130 mph wind speed coverage'",
+    "warranty_offered.certification_program": "§MANUFACTURER CERTIFICATIONS",
+    "warranty_offered.evidence_page": "§WARRANTY",
+    "qualifications.years_in_business": "Cover Letter line 28 — 'For over 25 years, we have been serving the GTA'",
+    "qualifications.wsib_clearance_attached": "ATTACHMENTS list — 'WSIB Clearance Certificate'",
+    "qualifications.wsib_in_good_standing": "§INSURANCE COVERAGE — WSIB Account #9876543-21; §SAFETY PROGRAM — 'WSIB Experience Rating: 0.72'",
+    "qualifications.cgl_limit_cad": "§INSURANCE COVERAGE — 'Commercial General Liability: $10,000,000 per occurrence'",
+    "qualifications.coi_attached": "ATTACHMENTS — 'Certificate of Insurance ($10M liability)'",
+    "qualifications.working_at_heights_training_confirmed": "§SAFETY PROGRAM — 'Fall protection training for all workers (updated annually)'; COR certified",
+    "qualifications.references_provided": "§REFERENCES (4 entries)",
+    "schedule.work_duration_days": "§PROJECT SCHEDULE — '85 days'",
+    "schedule.substantial_completion_date": "§PROJECT SCHEDULE — 'Substantial Completion: July 25, 2026'",
+    "schedule.accommodates_occupied_building": "§PHASING PLAN SUMMARY (three-phase plan tailored to occupied facility)",
+    "technical_approach.narrative": "§PHASING PLAN SUMMARY",
+    "technical_approach.site_safety_plan_attached": "ATTACHMENTS — 'Safety Program Manual (excerpt)'; §SAFETY PROGRAM"
+  }
+}

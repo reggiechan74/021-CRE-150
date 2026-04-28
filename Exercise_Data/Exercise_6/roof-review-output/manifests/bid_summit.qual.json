@@ -1,0 +1,123 @@
+{
+  "bidder_id": "summit",
+  "mandatory_gates": {
+    "wsib_clearance": {
+      "result": "needs_clarification",
+      "evidence": "Bid ATTACHMENTS list 'WSIB Clearance Certificate' and INSURANCE COVERAGE section gives WSIB Account #9876543-21; SAFETY PROGRAM cites WSIB Experience Rating 0.72 (favourable). However, the certificate's issue/clearance date is not stated in the bid body, so the validity window cannot be confirmed from the manifest text alone (fixture 04 §1.3 — clearance certificates have a defined validity window).",
+      "notes": "Statutory gate. Certificate is attached and good-standing is consistent with the 0.72 experience rating, so this is not a fail. Owner should re-verify online at clearances.wsib.ca before contract execution per fixture 04 §1.4 — added as an award condition by roof-recommendation-memo."
+    },
+    "cgl_insurance": {
+      "result": "pass",
+      "evidence": "INSURANCE COVERAGE — 'Commercial General Liability: $10,000,000 per occurrence'. RFP §5.1.2 requires minimum $5M; Summit at $10M is 2x the floor.",
+      "notes": "Statutory gate. Limit clearly exceeds RFP requirement."
+    },
+    "additional_insured": {
+      "result": "needs_clarification",
+      "evidence": "Bid declares CGL limit of $10M and lists 'Certificate of Insurance ($10M liability)' as an attachment, but the bid body does not state whether Tenebrus Capital is named as additional insured on the COI.",
+      "notes": "Statutory gate per fixture 04 §2. Owner must confirm the additional-insured endorsement on the COI before contract execution; not a fail at submission given the COI is attached."
+    },
+    "completed_ops": {
+      "result": "needs_clarification",
+      "evidence": "Bid does not state the completed-operations coverage period for the $10M CGL policy. Critical for the post-install warranty period per fixture 04 §2.",
+      "notes": "Statutory gate. Owner to confirm completed-ops tail (recommended ≥ 2 years to align with workmanship warranty, ideally longer given the 30-yr NDL membrane warranty)."
+    },
+    "performance_bond": {
+      "result": "needs_clarification",
+      "evidence": "RFP §9.2 requires performance bond at 50% of contract value (mandatory_requirements.performance_bond_percent = 50). Summit's bid does not include a consent of surety or agreement-to-bond letter, and no surety is named in the cover letter or attachments list.",
+      "notes": "Statutory on OBC Part 3 / RFP-specified at §9.2. Per skill calibration, missing consent of surety on the successful bidder is a fail at contract signing, not at submission — request consent of surety before award."
+    },
+    "labour_material_bond": {
+      "result": "needs_clarification",
+      "evidence": "RFP §9.2 requires labour and material payment bond at 50% of contract value. No surety document or agreement-to-bond letter is included in the bid.",
+      "notes": "Statutory on OBC Part 3 / RFP-specified at §9.2. Same treatment as performance_bond — clarify consent of surety pre-award."
+    },
+    "working_at_heights": {
+      "result": "pass",
+      "evidence": "SAFETY PROGRAM section: 'Fall protection training for all workers (updated annually)'; COR certified; CRSP-certified Safety Officer (Patricia Lee); zero lost-time incidents in past 7 years; WSIB Experience Rating 0.72.",
+      "notes": "Statutory per O. Reg. 297/13 (3-year validity). The bid does not use the explicit 'MOL-approved Working-at-Heights' phrasing, but COR certification and the annual fall-protection training claim are consistent with compliance. Owner should request training records for assigned crew as a routine award condition; not a fail."
+    },
+    "site_visit": {
+      "result": "pass",
+      "evidence": "Cover Letter: 'We attended the mandatory site visit on March 25, 2026, and our team conducted a thorough assessment of the existing conditions.' RFP §6.4 / §8.1 require attendance at mandatory pre-bid site meeting.",
+      "notes": "RFP-specified gate; site_visit_required = true. Attendance affirmatively claimed."
+    },
+    "minimum_years_in_business": {
+      "result": "pass",
+      "evidence": "Cover Letter: 'For over 25 years, we have been serving the GTA' — qualifications.years_in_business = 25. RFP §5.1.3 requires minimum 10 years commercial roofing experience.",
+      "notes": "RFP-specified gate. 25 years ≥ 10 (2.5x threshold)."
+    },
+    "similar_project_references": {
+      "result": "pass",
+      "evidence": "Bid §REFERENCES lists 4 projects; 3 are comparable per skill definition (commercial Part 3, completed ≤5 yrs, scale aligned with 85,000 sq ft subject): (1) Maple Leaf Food, 125,000 sq ft, 2023 — occupied phasing; (2) Shoppers Drug Mart Distribution Centre, 210,000 sq ft, 2022 — pharmaceutical cold-storage; (4) Pfizer Canada Mississauga, 95,000 sq ft, 2025 — pharmaceutical with strict temperature controls, described as similar scope. RFP §5.1.4 requires minimum 3 references (50,000+ sq ft) within past 5 years.",
+      "notes": "RFP-specified gate. Three comparable references meet the §5.1.4 threshold. The Magnotta Winery reference (68,000 sq ft, 2024) is flagged in the bid as similar_scope=false (historic building, architectural focus) — counted as non-comparable but not required to meet the gate."
+    },
+    "bid_bond": {
+      "result": "needs_clarification",
+      "evidence": "Bid does not include a bid bond. RFP §6.2 (submission_requirements) does not list a bid bond and rfp.mandatory_requirements.bid_bond_percent is not set; the only bonding requirements specified are performance and L&M bonds at §9.2.",
+      "notes": "RFP-specified gate not invoked by this RFP — per skill applicability rules, strongest result is needs_clarification, not fail. Owner may optionally request agreement-to-bond as a comfort item."
+    }
+  },
+  "scores": {
+    "experience_references": 73,
+    "qualifications_certifications": 65,
+    "schedule": 95
+  },
+  "scoring_rationale": {
+    "experience_references": {
+      "sub_factors": {
+        "comparable_reference_count": 40,
+        "recency_of_most_recent_comparable": 25,
+        "verifiability_of_references": 8
+      },
+      "notes": "3 comparable references (Maple Leaf 2023, Shoppers Drug Mart 2022, Pfizer 2025) → 40 points (3-4 tier). Most recent comparable Pfizer 2025 is <1 yr from 2026 bid date → 25 points. Verifiability is partial: every reference includes a named contact, title, and phone, plus completion year; project values are not provided on any reference (value_cad = null on all four), so verifiability is partial rather than complete → 8 points."
+    },
+    "qualifications_certifications": {
+      "sub_factors": {
+        "years_in_business": 35,
+        "manufacturer_certification": 30,
+        "skilled_trades_c_of_q": 0,
+        "industry_membership": 0
+      },
+      "notes": "25 yrs in business → 35 points (15+ tier). Three top-tier manufacturer certifications declared (GAF Master Elite — top 2% nationwide, Carlisle Syntec Master Installer, Firestone Premier Contractor) → 30 points (top-tier program). Skilled Trades Ontario Certificate of Qualification (Roofer 449A) count is not declared (bid uses 'certified roofing technicians' generically) → 0. CRCA membership not declared in bid body or attachments → 0."
+    },
+    "schedule": {
+      "sub_factors": {
+        "timeline_realism_vs_scope": 40,
+        "crew_adequacy": 20,
+        "mobilization_and_completion_dates": 20,
+        "occupied_building_accommodation": 15
+      },
+      "notes": "Detailed three-phase sequencing with day-numbered milestones (Phase 1 Days 1-25 office wing 5,100 sf, Phase 2 Days 26-55 NW main 20,000 sf, Phase 3 Days 56-85 SE main 25,000 sf), max 8,000 sf exposed (well under 15,000 sf RFP cap), watertight by 5:00 PM each day → 40 points. Crew named with foreman (Frank Kowalski, 22 yrs) and dedicated phasing coordinator + safety officer; not multi-crew surge → 20 points. Start May 1 / Substantial Completion July 25 / Final Aug 10 → meets both mobilization and completion windows → 20 points. Building is occupied (project.occupied_during_work=true) and bid provides a named tenant-coordination plan: wireless ±2°C temperature alerts, 72-hr HVAC coordination, weekend-only shutdowns, dedicated phasing coordinator → 15 points."
+    }
+  },
+  "red_flags": [
+    {
+      "severity": "medium",
+      "category": "qualifications",
+      "description": "Skilled Trades Ontario Certificate of Qualification (Roofer 449A) count for the assigned crew is not declared. Bid lists '4 certified roofing technicians (average 12 years experience)' but does not state how many hold the 449A C of Q. Per fixture 04 §4 the trade is voluntary in Ontario, but a Part 3 occupied pharmaceutical re-roof warrants explicit confirmation of 449A coverage on the working crew.",
+      "evidence": "Bid §PROJECT TEAM and §PRICE BREAKDOWN ('Labour (certified installers, phasing premium)').",
+      "owner_action": "Request a roster of crew members with their 449A C of Q numbers (or equivalent journeyperson credentials) before contract execution."
+    },
+    {
+      "severity": "medium",
+      "category": "qualifications",
+      "description": "TPO membrane manufacturer for the proposed 30-year NDL warranty is not explicitly named. Bid claims three top-tier manufacturer certifications (GAF Master Elite, Carlisle Syntec Master Installer, Firestone Premier Contractor) but does not specify which manufacturer's TPO system is being supplied. NDL warranty validity depends on the actual manufacturer + system + certified-installer match per fixture 02 §1.",
+      "evidence": "Bid §WARRANTY and §MANUFACTURER CERTIFICATIONS; ATTACHMENTS list shows '30-Year NDL Warranty Sample Documentation' (sample, not the named program).",
+      "owner_action": "Clarify which manufacturer's 30-yr NDL TPO system is being proposed and confirm the matching certified-installer credential. (Technical-warranty aspect of the same issue is owned by roof-technical-review.)"
+    },
+    {
+      "severity": "low",
+      "category": "qualifications",
+      "description": "CRCA (Canadian Roofing Contractors Association) membership is not declared. Not mandatory under the RFP but is a positive industry-membership signal for a complex commercial Part 3 re-roof.",
+      "evidence": "Bid does not mention CRCA in the cover letter, project team, or attachments list.",
+      "owner_action": "Optional — confirm CRCA membership status during clarification round; affects the 'industry membership' sub-score on qualifications_certifications."
+    },
+    {
+      "severity": "medium",
+      "category": "qualifications",
+      "description": "Surety/bonding documentation for the §9.2 performance bond (50%) and labour & material bond (50%) is absent from the bid. No agreement-to-bond letter, consent of surety, or named surety is provided. Per skill calibration this is a needs_clarification at submission stage but must be cured before contract execution on this Construction Act / Part 3 project.",
+      "evidence": "Bid ATTACHMENTS list does not include a surety letter or agreement to bond; no surety is named in the cover letter.",
+      "owner_action": "Require consent of surety / agreement-to-bond letter from a Surety Association of Canada-licensed surety as a condition of award. Confirm bonding capacity ≥ $742K base bid plus alternates."
+    }
+  ]
+}

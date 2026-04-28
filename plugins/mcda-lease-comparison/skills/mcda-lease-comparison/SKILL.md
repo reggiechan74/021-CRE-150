@@ -138,7 +138,7 @@ From the resolved plugin root, construct absolute paths:
 - `SCRIPTS_DIR` = `<plugin_root>/skills/mcda-lease-comparison/scripts`
 - `REFERENCES_DIR` = `<plugin_root>/skills/mcda-lease-comparison/references`
 - `INPUTS_DIR` = `<plugin_root>/skills/mcda-lease-comparison/inputs`
-- `CALCULATOR` = `<SCRIPTS_DIR>/mcda_lease_comparison_calculator.py`
+- `CALCULATOR` = `<SCRIPTS_DIR>/relative_valuation_calculator.py`
 - `DISTANCE_CALCULATOR` = `<SCRIPTS_DIR>/calculate_distances.py`
 - `PDF_STYLE` = `<REFERENCES_DIR>/pdf_style.css`
 - `SCHEMA_TEMPLATE` = `<INPUTS_DIR>/schema_template.json`
@@ -373,7 +373,7 @@ Note: `cd` to the scripts directory first — the calculator uses sibling import
 Build the command based on flags:
 
 ```bash
-cd "{{ SCRIPTS_DIR }}" && python3 mcda_lease_comparison_calculator.py \
+cd "{{ SCRIPTS_DIR }}" && python3 relative_valuation_calculator.py \
   --input "{{ WORKSPACE }}/Reports/{{ TIMESTAMP }}_mcda_lease_comparison_input.json" \
   --output "{{ WORKSPACE }}/Reports/{{ TIMESTAMP }}_mcda_lease_comparison_report.md" \
   --output-json "{{ WORKSPACE }}/Reports/{{ TIMESTAMP }}_mcda_lease_comparison_output.json" \

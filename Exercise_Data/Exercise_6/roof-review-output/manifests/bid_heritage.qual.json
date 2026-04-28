@@ -1,0 +1,146 @@
+{
+  "bidder_id": "heritage",
+  "mandatory_gates": {
+    "wsib_clearance": {
+      "result": "pass",
+      "evidence": "WSIB Clearance Certificate listed in ATTACHMENTS; INSURANCE COVERAGE section: 'Workers Compensation: WSIB Account #7890123-45'; SAFETY PROGRAM: 'WSIB Experience Rating: 0.81' (below 1.0 = better than industry average). Bid manifest: wsib_clearance_attached=true, wsib_in_good_standing=true.",
+      "notes": "Certificate attached and bidder confirms good standing. wsib_clearance_date not transcribed in bid body — standard pre-contract online re-verification at clearances.wsib.ca will be added as an award condition by the memo skill (do not double-count here). Statutory tier."
+    },
+    "cgl_insurance": {
+      "result": "pass",
+      "evidence": "INSURANCE COVERAGE section: 'Commercial General Liability: $5,000,000 per occurrence'; matches RFP §5.1.2 minimum (mandatory_requirements.cgl_minimum_cad = $5,000,000). Certificate of Insurance listed in ATTACHMENTS.",
+      "notes": "Limit meets RFP minimum exactly. Statutory tier."
+    },
+    "additional_insured": {
+      "result": "needs_clarification",
+      "evidence": "INSURANCE COVERAGE section lists CGL, Auto, Pollution and WSIB but does NOT explicitly state Tenebrus Capital is named as additional insured on the COI. Bid manifest qualifications.owner_named_as_additional_insured = null.",
+      "notes": "Standard COI endorsement clarifiable pre-contract; no evidence of refusal. Statutory tier — owner-named-as-additional-insured is part of the standard commercial baseline (fixture 04 §2)."
+    },
+    "completed_ops": {
+      "result": "needs_clarification",
+      "evidence": "INSURANCE COVERAGE section does not state a completed-operations tail. Bid manifest qualifications.cgl_completed_operations_years = null.",
+      "notes": "Critical for the post-install warranty period (fixture 04 §2). Owner to require COI endorsement showing completed-ops tail of at least 2 years (workmanship warranty period) before contract execution."
+    },
+    "working_at_heights": {
+      "result": "pass",
+      "evidence": "SAFETY PROGRAM section: 'Fall protection training for all workers (updated annually)'; PROJECT TEAM names Marcus Johnson as CRSP-certified Safety Coordinator; technical_approach.fall_protection_plan: 'Annual fall protection training for all workers; COR-certified safety program'. Bid manifest qualifications.working_at_heights_training_confirmed = true.",
+      "notes": "Annual updates exceed the 3-year O. Reg. 297/13 validity. COR certification provides additional safety-system assurance. Statutory tier."
+    },
+    "performance_bond": {
+      "result": "needs_clarification",
+      "evidence": "WHY HERITAGE CONSTRUCTION GROUP §5: 'Bonding capacity up to $5 million per project' — capacity declared but no consent of surety for the 50% performance bond required by RFP §9.2 was attached to this bid submission.",
+      "notes": "Bonding capacity is sufficient (project value $578K << $5M capacity). Per the skill's calibration, missing consent of surety at the submission stage is needs_clarification, not fail; consent of surety becomes a fail only at contract signing for the successful bidder. Statutory tier on OBC Part 3."
+    },
+    "labour_material_bond": {
+      "result": "needs_clarification",
+      "evidence": "Same as performance_bond — $5M bonding capacity declared but consent of surety for the 50% L&M bond required by RFP §9.2 was not attached.",
+      "notes": "Statutory tier on OBC Part 3 (Construction Act). Same calibration: clarifiable at submission, fail only at contract signing if not produced."
+    },
+    "bid_bond": {
+      "result": "needs_clarification",
+      "evidence": "RFP submission_requirements does not list a bid bond and mandatory_requirements has no bid_bond_percent — therefore bid_bond is NOT APPLICABLE per scripts/gate_applicability.py and the strongest result is needs_clarification, never fail. Bid attachments list COI, WSIB cert, COR, product data sheets, warranty samples, reference letters, manufacturer certifications, VE summary, safety program, phasing plan, Apotex case study — no bid bond.",
+      "notes": "Owner may wish to confirm whether a bid bond was intended even though the RFP is silent. Listed for completeness; cannot fail this gate."
+    },
+    "site_visit": {
+      "result": "pass",
+      "evidence": "COVER LETTER: 'We attended the mandatory site visit on March 25, 2026, and conducted a detailed analysis of the existing conditions.' RFP §6.4 / §8.1 require mandatory attendance.",
+      "notes": "Attendance confirmed in writing on company letterhead. RFP-specified tier (mandatory_requirements.site_visit_required = true)."
+    },
+    "minimum_years_in_business": {
+      "result": "pass",
+      "evidence": "COVER LETTER: 'Founded in 2012'; WHY HERITAGE §5: '14 years in business'. Bid manifest qualifications.years_in_business = 14. RFP §5.1.3 requires minimum 10 years.",
+      "notes": "14 years exceeds the 10-year RFP minimum by 40%. RFP-specified tier."
+    },
+    "similar_project_references": {
+      "result": "pass",
+      "evidence": "Four references provided, all commercial/industrial low-slope roof replacements completed 2023-2025: Amazon Fulfillment YHM1 Hamilton (185,000 sf, 2024), Magnotta Winery Niagara-on-the-Lake (92,000 sf, 2023), Prologis Park 407 Vaughan (145,000 sf, 2025), Apotex Pharmaceuticals Toronto (78,000 sf, 2024). RFP §5.1.4 requires minimum 3 references from similar projects (50,000+ sq ft) within past 5 years.",
+      "notes": "All four references pass the comparable test: same building-code class (commercial/industrial OBC Part 3), value within 0.5x-2x of subject project (size proxy: all 78K-185K sf vs subject 85K sf), and recency (all within 1-3 years). Apotex reference is particularly material — same temperature-sensitive pharmaceutical occupancy as subject. Owner_contact, project name, and completion year present on every reference; project value not stated (clarification opportunity, not a fail). RFP-specified tier."
+    }
+  },
+  "scores": {
+    "experience_references": 73,
+    "qualifications_certifications": 55,
+    "schedule": 85
+  },
+  "scoring_rationale": {
+    "experience_references": {
+      "sub_factors": {
+        "comparable_reference_count_4_yields_3_to_4_band": 40,
+        "recency_most_recent_2025_under_1_year": 25,
+        "verifiability_partial_contact_and_date_present_value_cad_null_on_all_four": 8
+      }
+    },
+    "qualifications_certifications": {
+      "sub_factors": {
+        "years_in_business_14_in_10_to_14_band": 25,
+        "manufacturer_certs_top_tier_GAF_Master_Elite_plus_Carlisle_Master_Installer_plus_Firestone_Premier": 30,
+        "skilled_trades_c_of_q_crew_not_numerically_declared_4_certified_technicians_but_no_Ontario_C_of_Q_status": 0,
+        "industry_membership_CRCA_not_declared": 0
+      }
+    },
+    "schedule": {
+      "sub_factors": {
+        "timeline_realism_90_day_3_phase_with_milestones_and_phase_durations": 40,
+        "crew_adequacy_named_foreman_Dave_Kowalczyk_4_lead_installers_no_surge_capacity_stated": 20,
+        "mobilization_and_completion_substantial_completion_met_mobilization_days_not_declared": 10,
+        "occupied_building_named_coordination_plan_72hr_HVAC_notice_biweekly_meetings_temperature_monitoring": 15
+      }
+    }
+  },
+  "red_flags": [
+    {
+      "severity": "medium",
+      "category": "qualifications",
+      "description": "Owner-named-as-additional-insured not explicitly stated on Heritage's INSURANCE COVERAGE section. Standard COI endorsement clarifiable pre-contract but must be confirmed before award.",
+      "recommendation": "Require revised Certificate of Insurance naming Tenebrus Capital as additional insured on the CGL policy prior to contract execution."
+    },
+    {
+      "severity": "medium",
+      "category": "qualifications",
+      "description": "CGL completed-operations tail duration not stated in bid. Critical for the 2-year workmanship warranty period and any latent-defect exposure post-substantial-completion.",
+      "recommendation": "Require COI endorsement evidencing a completed-operations tail of at least 2 years (matching workmanship warranty) — preferably extending to the 20-year manufacturer warranty term where commercially available."
+    },
+    {
+      "severity": "medium",
+      "category": "qualifications",
+      "description": "Performance bond and Labour & Material payment bond consent-of-surety letters not attached to bid submission. RFP §9.2 mandates 50% performance and 50% L&M bonds. Heritage declared $5M bonding capacity (well above project value) but no surety consent letter attached.",
+      "recommendation": "On award notification, require consent of surety letters from a Canadian-licensed surety naming both bonds at the required 50% before contract signing. Failure to produce at that stage would be a fail."
+    },
+    {
+      "severity": "low",
+      "category": "qualifications",
+      "description": "Skilled Trades Ontario Certificate of Qualification (C of Q) status of the four lead installers not declared. Bid describes them as 'certified roofing technicians' with avg 10 years experience, but Ontario C of Q is the regulated trade credential under O. Reg. 458/22 / Skilled Trades Ontario.",
+      "recommendation": "Owner to request written confirmation that at minimum the foreman (Dave Kowalczyk) and a majority of the lead installers hold a current Ontario C of Q in roofing or a related compulsory trade. Affects qualifications sub-score, not a gate."
+    },
+    {
+      "severity": "low",
+      "category": "qualifications",
+      "description": "Subcontracting status not explicitly declared. Bid implies self-perform (named PM, supervisor, safety coordinator, 4 lead installers) but does not state whether any portion of the roofing crew is subcontracted. Shell-company / unnamed-sub risk per fixture 04 §5.",
+      "recommendation": "Owner to require written declaration of any subcontracted scope (especially the actual roofing crew) and named subcontractors with their own WSIB/CGL/WAH evidence before contract execution."
+    },
+    {
+      "severity": "low",
+      "category": "qualifications",
+      "description": "WSIB clearance certificate date not transcribed in bid body (certificate is listed as attached). Standard award condition is online re-verification at clearances.wsib.ca within 30 days of contract signing — added automatically by the memo skill.",
+      "recommendation": "Verify WSIB validity online before contract signing; no action required at evaluation stage."
+    },
+    {
+      "severity": "low",
+      "category": "qualifications",
+      "description": "CRCA (Canadian Roofing Contractors Association) membership not declared. Affects industry-membership sub-factor of qualifications_certifications scoring (0 of 15 awarded).",
+      "recommendation": "Informational; not curable for this bid."
+    },
+    {
+      "severity": "low",
+      "category": "qualifications",
+      "description": "Reference project values (CAD) not stated for any of the four references. All four references pass the size/recency/scope comparable test on the available data, so this is not a gate fail; it does affect verifiability sub-factor of experience_references (8 of 15 awarded instead of 15 of 15).",
+      "recommendation": "If owner wishes to validate the $0.5x-2x project-value comparable test rigorously, request approximate contract values from Heritage for the Apotex and Magnotta references in particular."
+    },
+    {
+      "severity": "low",
+      "category": "qualifications",
+      "description": "Bid bond not attached. RFP is silent on bid bonds (no bid_bond_percent in mandatory_requirements; no 'bid bond' in submission_requirements) so this is NOT a gate fail per applicability rules. Listed as a red flag because most Ontario private-commercial CCDC 2 procurements treat a 10% bid bond as best practice.",
+      "recommendation": "Optional: if owner wishes to harden the bid against withdrawal during the 60-day validity window, request a 10% bid bond from the apparent low bidder pre-award."
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "bidder_id": "lakeside",
+  "mandatory_gates": {
+    "wsib_clearance": {
+      "result": "needs_clarification",
+      "evidence": "INSURANCE COVERAGE + ATTACHMENTS — WSIB Account #1234567-89 with Clearance Certificate attached and Experience Rating 0.98 (good standing). Manifest qualifications.wsib_clearance_date is null — cert date not transcribed.",
+      "notes": "Account, attachment, and good-standing language all present (fixture 04 §1.3); only the issue date is unverified in the extraction. Re-verify online at clearances.wsib.ca per fixture 04 §1.4 before contract — handled as a standard award condition by the recommendation memo. Tier: statutory."
+    },
+    "cgl_insurance": {
+      "result": "pass",
+      "evidence": "INSURANCE COVERAGE — 'Commercial General Liability: $5,000,000 per occurrence' meets RFP §5.1.2 minimum_cgl_cad of 5,000,000.",
+      "notes": "Limit meets RFP floor exactly. Tier: statutory."
+    },
+    "additional_insured": {
+      "result": "needs_clarification",
+      "evidence": "Cover letter does not state owner is named as additional insured; manifest qualifications.owner_named_as_additional_insured is null pending COI inspection.",
+      "notes": "Standard CCDC 2 / commercial baseline (fixture 04 §2). Verify against the actual COI before contract. Tier: statutory."
+    },
+    "completed_ops": {
+      "result": "needs_clarification",
+      "evidence": "Bid states only the $5M per-occurrence limit (cover letter INSURANCE COVERAGE). Completed-operations tail period is not disclosed; manifest qualifications.cgl_completed_operations_years is null.",
+      "notes": "Required to bracket the warranty period (fixture 04 §2). Owner to request completed-ops endorsement and tail length before contract. Tier: statutory."
+    },
+    "performance_bond": {
+      "result": "needs_clarification",
+      "evidence": "RFP §9.2 requires performance bond 50% of contract value at award. Bid does not address bonding capacity or consent of surety; manifest qualifications.bonding_capacity_cad is null.",
+      "notes": "OBC Part 3 / Construction Act statutory item — required at contract execution, not at submission. Per fixture 04 §5, missing consent of surety on the successful bidder is a fail at contract signing, not at submission stage. Owner to request bonding letter and consent of surety pre-award. Tier: statutory (timing carries it as needs_clarification at submission)."
+    },
+    "labour_material_bond": {
+      "result": "needs_clarification",
+      "evidence": "RFP §9.2 requires L&M bond 50% of contract value. Bid is silent on L&M bonding.",
+      "notes": "Same posture as performance_bond — clarifiable at submission, must be cured before contract. Tier: statutory."
+    },
+    "bid_bond": {
+      "result": "needs_clarification",
+      "evidence": "Bid does not include a bid bond (qualifications.bid_bond_attached=false). RFP submission_requirements (§6.2) lists 13 items; no bid bond is named. mandatory_requirements has no bid_bond_percent field.",
+      "notes": "Per gate_applicability.py and fixture 04 §5, bid_bond is RFP-specified — when the RFP is silent, missing bid bond is at most a clarification, never a fail. Owner may still request one as a precaution before award. Tier: rfp_specified (not invoked)."
+    },
+    "working_at_heights": {
+      "result": "pass",
+      "evidence": "SAFETY PROGRAM — 'Fall protection training for all workers'; manifest qualifications.working_at_heights_training_confirmed=true.",
+      "notes": "Confirmed in narrative form. Owner should request training records (3-yr validity per O. Reg. 297/13) at contract execution. Tier: statutory."
+    },
+    "site_visit": {
+      "result": "pass",
+      "evidence": "COVER LETTER — 'We attended the mandatory site visit on March 25, 2026.' Satisfies RFP §6.4 / §8.1 mandatory site meeting.",
+      "notes": "Tier: rfp_specified (invoked via site_visit_required=true)."
+    },
+    "minimum_years_in_business": {
+      "result": "pass",
+      "evidence": "COVER LETTER — '12 years' serving GTA; manifest qualifications.years_in_business=12. RFP §5.1.3 requires minimum 10.",
+      "notes": "Tier: rfp_specified (invoked via minimum_years_in_business=10)."
+    },
+    "similar_project_references": {
+      "result": "needs_clarification",
+      "evidence": "Three industrial roof replacement references provided: Maple Logistics 62,000 sf (2024), Westpark 71,000 sf (2023), Torque Distribution 55,000 sf (2025). All same building class (industrial commercial), all within 5 years, all >50,000 sf, all within 0.5x-2x of subject 85,000 sf footprint.",
+      "notes": "Count meets RFP §5.1.4 minimum of 3. However, the value-proxy comparable test cannot be fully verified — references list sqft and contacts but no project values, so the 0.5x-2x value test from this skill's Gate 8 definition relies on size as a proxy. Owner should request budget values from each reference to confirm comparable scope. Strongest result available is needs_clarification. Tier: rfp_specified."
+    }
+  },
+  "scores": {
+    "experience_references": 68,
+    "qualifications_certifications": 25,
+    "schedule": 48
+  },
+  "scoring_rationale": {
+    "experience_references": {
+      "sub_factors": {
+        "comparable_reference_count_3-4": 40,
+        "recency_1-2_years": 20,
+        "verifiability_partial_no_values": 8
+      }
+    },
+    "qualifications_certifications": {
+      "sub_factors": {
+        "years_in_business_10-14": 25,
+        "manufacturer_certification_none": 0,
+        "skilled_trades_c_of_q_not_stated": 0,
+        "industry_membership_none": 0
+      }
+    },
+    "schedule": {
+      "sub_factors": {
+        "timeline_realism_realistic_duration": 30,
+        "crew_adequacy_not_stated": 0,
+        "mobilization_completion_substantial_only": 10,
+        "occupied_building_generic": 8
+      }
+    }
+  },
+  "red_flags": [
+    {
+      "severity": "high",
+      "category": "qualifications",
+      "description": "No manufacturer-certified installer status claimed and no manufacturer named for the proposed 45-mil TPO. Without manufacturer certification, the bidder cannot deliver a manufacturer-issued NDL or even a typical 20-yr extended warranty (fixture 04 §4). This compounds the warranty-tier deficiency owned by technical-review and limits owner recourse.",
+      "evidence": "KEY SPECIFICATIONS / WARRANTY / ATTACHMENTS — '15-year limited warranty', no manufacturer named, certification_program=null, manufacturer_certified_installer=false."
+    },
+    {
+      "severity": "medium",
+      "category": "qualifications",
+      "description": "Crew size, mobilization-from-award lead time, named foreman, and any Skilled Trades Certificate of Qualification (Roofer 449A) crew composition are all unstated. For an occupied 85,000 sf pharma cold-storage warehouse this is a meaningful gap in the bidder's resourcing story.",
+      "evidence": "Schedule section omits crew_size and mobilization_days; qualifications.certificate_of_qualification_roofers_count=null."
+    },
+    {
+      "severity": "medium",
+      "category": "qualifications",
+      "description": "Owner-named-as-additional-insured and CGL completed-operations tail period are not confirmed in the cover letter. Both are commercial baseline (fixture 04 §2) and must be cured before contract.",
+      "evidence": "qualifications.owner_named_as_additional_insured=null; cgl_completed_operations_years=null."
+    },
+    {
+      "severity": "medium",
+      "category": "qualifications",
+      "description": "Reference values not disclosed — only square footage and owner contacts. The Gate 8 comparable test relies on 0.5x-2x value match; without budget figures the comparability is inferred from size only. Owner should obtain original contract values from each reference to validate.",
+      "evidence": "REFERENCES section — three projects cited with sqft and contact only; manifest references_provided[].value_cad=null."
+    },
+    {
+      "severity": "low",
+      "category": "qualifications",
+      "description": "Subcontracting posture not declared. Bid does not affirm self-perform or name any subcontractor. Per fixture 04 §5, undisclosed subcontracting of the actual roofing crew is a financial-distress and quality-control signal.",
+      "evidence": "qualifications.subcontracting_declared=false but no affirmative self-perform statement; subcontractors_named=[]."
+    },
+    {
+      "severity": "low",
+      "category": "qualifications",
+      "description": "CRCA membership and any Skilled Trades industry membership are not stated. Not disqualifying, but limits the qualifications_certifications sub-score and signals the bidder is not invested in industry-association reputational scrutiny.",
+      "evidence": "qualifications.crca_member=null; no industry association named in cover letter."
+    },
+    {
+      "severity": "low",
+      "category": "qualifications",
+      "description": "WSIB clearance certificate date not transcribed; only the account number and good-standing experience rating are visible. Validity window cannot be confirmed from the manifest alone — re-verify online at clearances.wsib.ca before contract (handled as a standard award condition).",
+      "evidence": "qualifications.wsib_clearance_date=null."
+    }
+  ]
+}

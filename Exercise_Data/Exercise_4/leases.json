@@ -1,0 +1,246 @@
+[
+  {
+    "tenant_id": "unit_101",
+    "tenant_name": "CanadaFirst Bank",
+    "unit_label": "Unit 101",
+    "rsf": 4500,
+    "pool": "retail",
+    "pro_rata_of_pool": "0.2250",
+    "lease_type": "net_with_cap",
+    "cap": {
+      "base_year": 2022,
+      "base_year_cam_psf": "11.40",
+      "annual_increase_rate": "0.04",
+      "uncontrollable_categories": [
+        "realty_tax",
+        "insurance",
+        "utilities",
+        "snow"
+      ]
+    },
+    "annual_prebilled": "57690.00",
+    "clause_refs": {
+      "allocation": {
+        "doc": "Standard Form Lease",
+        "section": "§6.02",
+        "quote": "Tenant pays its Proportionate Share of Operating Expenses allocable to the Retail Pool."
+      },
+      "cap": {
+        "doc": "CanadaFirst Bank Lease",
+        "section": "§6.05",
+        "quote": "Operating Expenses are capped at 104% compounded annually over the 2022 Base Year CAM."
+      },
+      "cap_uncontrollable": {
+        "doc": "CanadaFirst Bank Lease",
+        "section": "§6.05.1",
+        "quote": "Realty tax, insurance, utilities, and snow removal pass through without the cap."
+      }
+    }
+  },
+  {
+    "tenant_id": "unit_102",
+    "tenant_name": "Brewhouse Coffee Co.",
+    "unit_label": "Unit 102",
+    "rsf": 1800,
+    "pool": "retail",
+    "pro_rata_of_pool": "0.0900",
+    "lease_type": "net",
+    "annual_prebilled": "32058.00",
+    "clause_refs": {
+      "allocation": {
+        "doc": "Standard Form Lease",
+        "section": "§6.02",
+        "quote": "Tenant pays its Proportionate Share of Operating Expenses allocable to the Retail Pool."
+      }
+    }
+  },
+  {
+    "tenant_id": "unit_103",
+    "tenant_name": "Matheson Family Dental",
+    "unit_label": "Unit 103",
+    "rsf": 2500,
+    "pool": "retail",
+    "pro_rata_of_pool": "0.1250",
+    "lease_type": "base_year",
+    "base_year": {
+      "year": 2024,
+      "cam_psf": "15.40",
+      "gross_up_to_percent": "1.0"
+    },
+    "annual_prebilled": "3750.00",
+    "clause_refs": {
+      "allocation": {
+        "doc": "Standard Form Lease",
+        "section": "§6.02",
+        "quote": "Tenant pays its Proportionate Share of Operating Expenses allocable to the Retail Pool."
+      },
+      "base_year": {
+        "doc": "Matheson Family Dental Lease",
+        "section": "§6.06",
+        "quote": "Tenant pays only the amount by which current-year Operating Expenses exceed the 2024 Base Year CAM."
+      }
+    }
+  },
+  {
+    "tenant_id": "unit_104",
+    "tenant_name": "Peak Fitness Studio",
+    "unit_label": "Unit 104",
+    "rsf": 6200,
+    "pool": "retail",
+    "pro_rata_of_pool": "0.3100",
+    "lease_type": "modified_gross",
+    "excluded_categories": [
+      "utilities",
+      "repairs_maintenance"
+    ],
+    "annual_prebilled": "50220.00",
+    "clause_refs": {
+      "allocation": {
+        "doc": "Peak Fitness Studio Lease",
+        "section": "§6.07",
+        "quote": "All categories other than utilities and repair and maintenance flow through on the Retail Pool share."
+      },
+      "modified_gross_utilities": {
+        "doc": "Peak Fitness Studio Lease",
+        "section": "§6.07(a)",
+        "quote": "All utility costs are excluded from the tenant's Proportionate Share of Operating Expenses."
+      },
+      "modified_gross_repairs_maintenance": {
+        "doc": "Peak Fitness Studio Lease",
+        "section": "§6.07(b)",
+        "quote": "All repair and maintenance expenses are excluded from the tenant's Proportionate Share of Operating Expenses."
+      }
+    }
+  },
+  {
+    "tenant_id": "unit_105",
+    "tenant_name": "Pronto Italian Kitchen",
+    "unit_label": "Unit 105",
+    "rsf": 5000,
+    "pool": "retail",
+    "pro_rata_of_pool": "0.2500",
+    "lease_type": "net_with_exclusions",
+    "specific_exclusions": [
+      {
+        "category": "repairs_maintenance",
+        "match_category_raw": "R&M - Grease Trap",
+        "treatment": "direct_bill_to_matching_tenant",
+        "reason": "schedule_c_grease_trap",
+        "citation": {
+          "doc": "Pronto Italian Kitchen Lease",
+          "section": "Schedule C.1",
+          "quote": "Grease trap servicing and associated compliance costs are excluded and billed directly to the tenant."
+        }
+      }
+    ],
+    "annual_prebilled": "85500.00",
+    "clause_refs": {
+      "allocation": {
+        "doc": "Standard Form Lease",
+        "section": "§6.02",
+        "quote": "Tenant pays its Proportionate Share of Operating Expenses allocable to the Retail Pool."
+      },
+      "restaurant_exclusion": {
+        "doc": "Pronto Italian Kitchen Lease",
+        "section": "Schedule C.1",
+        "quote": "Grease trap servicing and related compliance costs are excluded from the tenant's Operating Expense share."
+      }
+    }
+  },
+  {
+    "tenant_id": "suite_200",
+    "tenant_name": "Harrington & Kline LLP",
+    "unit_label": "Suite 200",
+    "rsf": 14000,
+    "pool": "office",
+    "pro_rata_of_pool": "0.3333",
+    "lease_type": "net",
+    "annual_prebilled": "251496.00",
+    "clause_refs": {
+      "allocation": {
+        "doc": "Standard Form Lease",
+        "section": "§6.02",
+        "quote": "Tenant pays its Proportionate Share of Operating Expenses allocable to the Office Pool."
+      }
+    }
+  },
+  {
+    "tenant_id": "suite_300",
+    "tenant_name": "Meridian Civil Engineering",
+    "unit_label": "Suite 300",
+    "rsf": 8500,
+    "pool": "office",
+    "pro_rata_of_pool": "0.2024",
+    "lease_type": "net",
+    "annual_prebilled": "152703.00",
+    "clause_refs": {
+      "allocation": {
+        "doc": "Standard Form Lease",
+        "section": "§6.02",
+        "quote": "Tenant pays its Proportionate Share of Operating Expenses allocable to the Office Pool."
+      }
+    }
+  },
+  {
+    "tenant_id": "suite_310",
+    "tenant_name": "Coverpoint Insurance Brokers",
+    "unit_label": "Suite 310",
+    "rsf": 3500,
+    "pool": "office",
+    "pro_rata_of_pool": "0.0833",
+    "lease_type": "base_year",
+    "base_year": {
+      "year": 2023,
+      "cam_psf": "16.10",
+      "gross_up_to_percent": "1.0"
+    },
+    "annual_prebilled": "35350.00",
+    "clause_refs": {
+      "allocation": {
+        "doc": "Standard Form Lease",
+        "section": "§6.02",
+        "quote": "Tenant pays its Proportionate Share of Operating Expenses allocable to the Office Pool."
+      },
+      "base_year": {
+        "doc": "Coverpoint Insurance Lease",
+        "section": "§6.06",
+        "quote": "Tenant pays only the amount by which current-year Operating Expenses exceed the 2023 Base Year CAM."
+      }
+    }
+  },
+  {
+    "tenant_id": "suite_320",
+    "tenant_name": "VACANT (Apex Consulting Group predecessor)",
+    "unit_label": "Suite 320",
+    "rsf": 2000,
+    "pool": "office",
+    "pro_rata_of_pool": "0.0476",
+    "lease_type": "net",
+    "annual_prebilled": "0.00",
+    "is_vacant": true,
+    "clause_refs": {
+      "allocation": {
+        "doc": "Standard Form Lease",
+        "section": "§6.02",
+        "quote": "The applicable Pool includes all rentable area, with the landlord absorbing any vacant suite share."
+      }
+    }
+  },
+  {
+    "tenant_id": "suite_400",
+    "tenant_name": "Helix AI Labs",
+    "unit_label": "Suite 400",
+    "rsf": 14000,
+    "pool": "office",
+    "pro_rata_of_pool": "0.3333",
+    "lease_type": "net",
+    "annual_prebilled": "251496.00",
+    "clause_refs": {
+      "allocation": {
+        "doc": "Standard Form Lease",
+        "section": "§6.02",
+        "quote": "Tenant pays its Proportionate Share of Operating Expenses allocable to the Office Pool."
+      }
+    }
+  }
+]

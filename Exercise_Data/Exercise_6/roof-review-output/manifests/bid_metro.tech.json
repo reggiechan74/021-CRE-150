@@ -1,0 +1,149 @@
+{
+  "bidder_id": "metro",
+  "mandatory_gates": {
+    "cover_board": {
+      "result": "fail",
+      "evidence": "Bid IMPORTANT EXCLUSIONS item #4 explicitly excludes cover board from base bid (offered as $38,000 add-on); RFP \u00a73.2 specifies '1/4 inch gypsum or HD polyiso' cover board over polyiso under TPO and fixture 02 \u00a71.3 makes cover board mandatory under TPO for NDL-warranty validity. However, RFP \u00a73.2/\u00a75.1.6/\u00a79.6 specifies as scope/warranty requirement (rfp_scope tier). RFP mandatory_requirements does not list cover_board, and submission_requirements does not enumerate it verbatim. Per scripts/reconcile_gates.py applicability rule, demoted to needs_clarification; underlying technical concern preserved in red_flags[] as critical."
+    },
+    "scope_compliance": {
+      "result": "fail",
+      "evidence": "Base bid omits multiple RFP-required scope items without offering equivalents (cover board, tapered insulation for ponding, drain bowl/leader replacement, HVAC curb work, skylight reconciliation, permits) and contains 25 declared exclusions plus 15 clarifications/assumptions that materially diverge from the RFP scope. However, RFP \u00a73.2/\u00a75.1.6/\u00a79.6 specifies as scope/warranty requirement (rfp_scope tier). RFP mandatory_requirements does not list scope_compliance and submission_requirements does not enumerate a verbatim 'full scope compliance' clause. Per scripts/reconcile_gates.py applicability rule, demoted to needs_clarification; the cumulative scope-divergence concern is preserved in red_flags[] as critical."
+    },
+    "warranty_duration": {
+      "result": "fail",
+      "evidence": "Bid WARRANTY section: 'Workmanship Warranty: 1 year on installation' is below RFP \u00a79.6 stated minimum of 2 years; the 3-year upgrade is offered only as a $8,500 priced add-on. However, RFP \u00a73.2/\u00a75.1.6/\u00a79.6 specifies as scope/warranty requirement (rfp_scope tier). RFP mandatory_requirements does not list warranty_duration (only wsib_clearance_required, cgl_minimum_cad, performance_bond_percent, labour_material_bond_percent, site_visit_required, minimum_years_in_business, minimum_similar_projects), and submission_requirements does not enumerate a verbatim '2-year workmanship warranty' line item. Per scripts/reconcile_gates.py applicability rule, demoted to needs_clarification; underlying deficiency preserved in red_flags[] as critical."
+    }
+  },
+  "scores": {
+    "technical_approach": 18,
+    "warranty_materials": 12
+  },
+  "scoring_rationale": {
+    "technical_approach": {
+      "sub_factors": {
+        "tear_off_staging": 0,
+        "weather_protection_dry_in": 0,
+        "fall_protection_safety": 10,
+        "waste_environmental_logistics": 0,
+        "quality_control_inspection": 8
+      },
+      "notes": "Tear-off & staging: 0 - bid contains no tear-off plan, no staging zones, no dumpster or lift strategy; only a generic 90-day duration is given. Weather protection: 0 - no dry-in plan; weekend weather protection is offered only as a priced add-on ($1,500/weekend, Exclusion #23), implying no inherent commitment to dry-in. Fall protection: 10 - SAFETY PROGRAM mentions 'Fall protection equipment provided' and 'Written safety procedures' but names no anchor points, no site-specific plan addressing parapets, and no rescue plan; this is a generic WAH compliance statement only. Waste/environmental: 0 - no waste disposal plan, no recycling/diversion commitment, no DSA acknowledgement; in fact Exclusion #11 places hazardous-material risk on the owner ('actual cost plus 15%') and Exclusion #18 includes a market-adjustment clause for tipping fees. QC/inspection: 8 - bid lists product data sheets and references only a 'Substantial completion inspection' (Exclusion #20) at $2,800 add-on - no in-progress QC checkpoints and no manufacturer mid-job inspection scheduled (which would be required under any 20-yr+ NDL warranty per fixture 02 \u00a71.3 and \u00a74). Sum = 18/100. Score retained at low value despite gate demotion because severity of underlying technical concerns is unchanged."
+    },
+    "warranty_materials": {
+      "sub_factors": {
+        "warranty_type_vs_rfp": 0,
+        "warranty_years_vs_rfp_minimum": 12,
+        "installer_certification_at_claimed_tier": 0,
+        "workmanship_warranty_years": 0,
+        "materials_quality": 0
+      },
+      "notes": "Warranty type: 0 - bid states '20-year limited warranty on TPO membrane' with no NDL/labour/material qualifier; extracted as 'unclear'; RFP-required type is total_system_ndl (per RFP-extractor inferred default). Warranty years: 12 - 20 yrs meets the RFP minimum exactly. Installer certification: 0 - bid declares no manufacturer (Carlisle, GAF, Firestone, Sika, JM, Soprema, IKO, Versico, etc.) and no certified-installer status (Master Elite, Red Shield, Authorized Applicator, PAQ+S, etc.). Per fixture 02 \u00a73, a 20-yr manufacturer warranty cannot issue without certified-installer designation. Workmanship: 0 - 1 year stated, below the <2 yr threshold which itself only earns 3 points; the table's 0-point bucket is 'not stated' but a 1-year offering that fails the RFP minimum is properly scored at 0 here. Materials quality: 0 - 60 mil meets industry minimum but the assembly omits the cover board, which fixture 02 \u00a76 quick-evaluation matrix scores as 'fail'; net assembly quality is below industry standard. Sum = 12/100. Score retained at low value despite gate demotion because severity of underlying warranty/materials concerns is unchanged."
+    }
+  },
+  "red_flags": [
+    {
+      "severity": "critical",
+      "category": "materials",
+      "description": "No cover board in base bid for TPO over polyiso. Cover board is explicitly required by RFP \u00a73.2 (1/4\" gypsum or HD polyiso) and is mandatory under TPO per fixture 02 \u00a71.3 to protect polyiso facer and provide NDL-warranty-compliant substrate. Bidder's clarification 'Cover board not required for this building type' is contrary to industry practice and to the RFP. Captured here as a critical red flag because RFP did not invoke cover_board as a formal mandatory gate (rfp.mandatory_requirements does not list it and submission_requirements does not enumerate it verbatim) - per fixture 02 \u00a74 this remains a critical disqualifier-level concern even though the gate has been demoted to needs_clarification.",
+      "citation": "fixture 02 \u00a71.3 (TPO insulation stack: 'Cover board is mandatory under TPO'); fixture 02 \u00a74 #3 (missing cover board red flag); fixture 02 \u00a76 (Quick Evaluation Matrix: no cover board = Fail); RFP \u00a73.2",
+      "evidence": "IMPORTANT EXCLUSIONS item #4: 'Cover board - Not included in base bid. Optional upgrade at $38,000.' CLARIFICATIONS #13: 'Cover board not required for this building type.' Add-on price $38,000 (OPTIONAL ADD-ONS).",
+      "recommendation": "reject"
+    },
+    {
+      "severity": "critical",
+      "category": "warranty",
+      "description": "Workmanship warranty of 1 year is below RFP \u00a79.6 minimum of 2 years. The 3-year upgrade is priced separately at $8,500. Per fixture 02 \u00a74 #6, a workmanship warranty below market median is a defined red flag; 1 yr is well below the 5-yr Ontario market median. Captured as critical red flag rather than gate fail because RFP did not invoke warranty_duration as a formal mandatory gate (rfp.mandatory_requirements does not list it; \u00a79.6 narrative text is not enumerated verbatim in rfp.submission_requirements). Per fixture 02 \u00a74 the underlying deficiency remains critical.",
+      "citation": "RFP \u00a79.6 ('Minimum 2-year workmanship warranty from contractor'); fixture 02 \u00a74 #6 ('typical 5 years')",
+      "evidence": "WARRANTY section: 'Workmanship Warranty: 1 year on installation.' OPTIONAL ADD-ONS: '3-year workmanship warranty upgrade - $8,500.'",
+      "recommendation": "reject"
+    },
+    {
+      "severity": "critical",
+      "category": "warranty",
+      "description": "Warranty type is unclear ('20-year limited warranty on TPO membrane') and bidder names no manufacturer and no certified-installer designation. RFP-inferred default per fixture 02 \u00a71 is total_system_ndl. Without manufacturer + certified installer + cover board + mid-job inspection, any 20-yr NDL warranty cannot issue per fixture 02 \u00a73 and \u00a74 #1, #5, #7. Critical because (a) warranty type cannot be confirmed, (b) no manufacturer is named, and (c) no certified-installer credentials are attached - any one is critical per fixture 02 \u00a74.",
+      "citation": "fixture 02 \u00a73 (manufacturer certified contractor programs); fixture 02 \u00a74 #5 ('25-year warranty without the type'); fixture 02 \u00a74 #7 (no pre-install/mid-job manufacturer inspection); RFP \u00a73.1 / \u00a75.1.6",
+      "evidence": "WARRANTY section: '20-year limited warranty on TPO membrane' (no NDL/material/labour qualifier, no manufacturer name). KEY SPECIFICATIONS lists '60 mil TPO, mechanically attached' with no brand. ATTACHMENTS lists 'Sample Warranty Documentation' but no manufacturer authorization letter and no Master Elite / Red Shield / Authorized Applicator certificate.",
+      "recommendation": "reject"
+    },
+    {
+      "severity": "critical",
+      "category": "scope",
+      "description": "Bidder declares 25 exclusions in base bid covering cover board, tapered insulation, permits, hazmat handling, material price escalation, and other scope items the RFP requires. The cumulative effect is that the $468K base bid is not directly comparable to fully-compliant bids and the bidder explicitly refuses to include several RFP-required items in base scope (cover board excluded; tapered insulation for ponding 'address only if leaks occur'; permits not included; hazmat on cost-plus-15%). Per fixture 02 \u00a74, cumulative declared-exclusions of this magnitude on RFP-required scope is critical. Captured as red flag (not gate fail) because RFP did not invoke scope_compliance as a formal mandatory gate.",
+      "citation": "RFP \u00a72.1 (included items); RFP \u00a72.1.7 (positive drainage / resolve ponding via tapered insulation); fixture 02 \u00a74 (scope-divergence pattern)",
+      "evidence": "IMPORTANT EXCLUSIONS - PLEASE READ CAREFULLY section enumerates 25 items. Notable items: #4 cover board excluded; #5 tapered insulation excluded ('We recommend addressing only if leaks occur'); #11 hazardous materials cost-plus-15%; #15 permits not included; #19 material price escalation if start delayed past 60 days. CLARIFICATIONS #13, #14, #15 reinforce these substitutions.",
+      "recommendation": "reject"
+    },
+    {
+      "severity": "critical",
+      "category": "scope",
+      "description": "Bidder excludes tapered insulation for ponding correction and proposes 'address only if leaks occur.' This contradicts RFP \u00a72.1.7 which requires positive drainage and resolution of existing ponding via tapered insulation or additional drains. Standing water on a 28-year-old roof is the proximate cause of premature membrane failure and will void most manufacturer NDL warranties (fixture 02 \u00a71.3 / \u00a74).",
+      "citation": "RFP \u00a72.1.7 ('Positive drainage to all roof drains; ... resolve existing ponding via tapered insulation or additional drains'); fixture 01 \u00a71.4 ('No tapered insulation' = red flag)",
+      "evidence": "IMPORTANT EXCLUSIONS item #5: 'Tapered insulation for ponding - Not included. ... We recommend addressing only if leaks occur.' CLARIFICATIONS #14: 'Ponding does not require correction unless causing active leaks.'",
+      "recommendation": "reject"
+    },
+    {
+      "severity": "critical",
+      "category": "substitutions",
+      "description": "Bidder substitutes mechanically attached for the RFP-preferred fully-adhered system without a wind uplift calculation or named CSA A123.21 / FM 1-60+ assembly listing. RFP \u00a73.1 states fully adhered preferred but accepts MF; however, MF systems require explicit wind-uplift design (zone-specific fastening pattern). Bid does not provide this.",
+      "citation": "RFP \u00a73.1 (membrane attachment_method: fully_adhered); fixture 01 \u00a71.2 (CSA A123.21 wind uplift listing required); fixture 02 \u00a74 #4 ('No wind uplift design basis')",
+      "evidence": "KEY SPECIFICATIONS: '60 mil TPO, mechanically attached.' CLARIFICATIONS #15: 'Mechanically attached system acceptable (equivalent to fully adhered for this application).' No CSA A123.21 listing, no fastener pattern, no zone-specific calculation provided.",
+      "recommendation": "reject"
+    },
+    {
+      "severity": "critical",
+      "category": "scope",
+      "description": "Front-loaded payment schedule: 20% upon contract signing for 'mobilization and materials' exceeds typical 10% mobilization and Construction Act norms. Combined with the 25 declared exclusions, this front-loading shifts financial risk to the owner if scope disputes arise mid-project. Per fixture 02 \u00a74 critical-flag pattern, front-loaded payments combined with high-exclusion scopes are a defined risk pattern.",
+      "citation": "Construction Act (Ontario) - holdback provisions; fixture 02 \u00a74 (cumulative bid-pattern risk indicators)",
+      "evidence": "PAYMENT SCHEDULE section: '20% upon contract signing (mobilization and materials); 30% progress payment (monthly); 30% upon substantial completion; 10% holdback (released as per Construction Act).' Bidder note: 'We require larger upfront payment due to material procurement costs.'",
+      "recommendation": "negotiate"
+    },
+    {
+      "severity": "high",
+      "category": "scope",
+      "description": "Skylight count discrepancy: bidder counted 4 skylights at site visit; bid claims 'RFP states 12 skylights.' RFP scope_of_work.included_items actually itemizes '4 skylights' within the 47-penetration count. Either way, the bidder's interpretation of scope is unreconciled with the RFP and the discrepancy must be resolved before award.",
+      "citation": "RFP \u00a72.1.5 (47 penetrations including 4 skylights)",
+      "evidence": "IMPORTANT EXCLUSIONS item #8: 'Skylight work - ... 12 skylights on roof per RFP - we counted 4 during site visit.' RFP scope_of_work.included_items: '47 penetrations (12 HVAC, 8 plumbing vents, 6 electrical conduits, 4 skylights, ...)'.",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "high",
+      "category": "safety",
+      "description": "Safety program is generic - 'Fall protection equipment provided' and 'Written safety procedures' - with no site-specific fall protection plan, no named anchor points, no parapet/perimeter strategy, and no rescue plan. Per fixture 01 \u00a73.3 (O. Reg. 213/91 \u00a726.1), a rescue plan is mandatory for any fall-arrest system; absence is a critical regulatory gap. Marked high (not critical) because deficiency may be cured by submission of a site-specific plan; no evidence the contractor cannot produce one.",
+      "citation": "O. Reg. 213/91 \u00a726.1 (fall arrest > 3m, rescue plan mandatory); fixture 01 \u00a73.3",
+      "evidence": "SAFETY PROGRAM section: 'Written safety procedures; Fall protection equipment provided; WSIB Experience Rating 1.12.' technical_approach.fall_protection_plan: 'Fall protection equipment provided (Safety Program section)' - no anchor points, no rescue plan.",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "high",
+      "category": "materials",
+      "description": "Manufacturer not named for any product (membrane, insulation, flashings, adhesives, fasteners). Per fixture 02 \u00a74 #1 (mismatched system components voids most system warranties), the bid hides which brand family will be used and whether components are compatible. Required for any manufacturer system warranty to issue.",
+      "citation": "fixture 02 \u00a74 #1 (mismatched system components); RFP \u00a76.2.4 (product data sheets required)",
+      "evidence": "materials_system.manufacturer: null. KEY SPECIFICATIONS: '60 mil TPO, mechanically attached.' BID PRICE BREAKDOWN line 'TPO membrane (60 mil) - $152,000' with no brand. ATTACHMENTS list shows 'Product Data Sheets (60 mil TPO membrane)' - but the manifest does not record which brand.",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "high",
+      "category": "scope",
+      "description": "Wind uplift design basis is not stated. For a 85,000 sq ft Mississauga industrial roof under OBC Part 3, the bid must state the design wind uplift pressure per zone and a CSA A123.21 (or FM 1-60+) listed assembly. Absence is a fixture 02 \u00a74 #4 'No wind uplift design basis' red flag.",
+      "citation": "fixture 01 \u00a71.2 (CSA A123.21); fixture 02 \u00a74 #4; NBC Part 4 wind loads",
+      "evidence": "warranty_offered.wind_uplift_coverage_mph: null. No mention of CSA A123.21, FM 1-60/1-90, ASCE 7, or zone-specific fastening pattern anywhere in the bid.",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "high",
+      "category": "scope",
+      "description": "Bidder excludes hazardous-material handling on a cost-plus-15% basis (Exclusion #11) without acknowledgement of OHSA s.30 Designated Substance Report duty (building constructed 1998 - post-1980 trigger does not apply, but RFP \u00a72.3 flagged ACM/lead possibility during 1998 transition period). No DSA / DSR receipt acknowledgement, no Type 1/2/3 classification framework offered.",
+      "citation": "fixture 01 \u00a74.2 (O. Reg. 278/05; OHSA \u00a730 DSR duty); RFP \u00a72.3",
+      "evidence": "IMPORTANT EXCLUSIONS item #11: 'Hazardous materials - If any hazardous materials discovered during removal (asbestos, lead flashing, etc.): actual cost plus 15%.' CLARIFICATIONS #1, #4: 'Existing roof can be removed without special hazardous material handling'; 'All existing flashings are non-hazardous materials' - assumption not supported by survey.",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "medium",
+      "category": "materials",
+      "description": "Insulation R-30 is stated and matches RFP \u00a73.2 / OBC SB-10 Zone 5 prescriptive minimum, but the layer count, joint stagger, and vapour barrier product/perm rating are not specified. Fixture 01 \u00a71.3 requires two-layer staggered installation and a vapour barrier on the warm side; bid silent on both.",
+      "citation": "fixture 01 \u00a71.3; OBC Part 5 \u00a75.5.1 (vapour barrier)",
+      "evidence": "materials_system.insulation_spec: 'Polyisocyanurate, R-30.' No mention of layer count, stagger, or vapour barrier in narrative or attachments list.",
+      "recommendation": "clarify"
+    }
+  ]
+}

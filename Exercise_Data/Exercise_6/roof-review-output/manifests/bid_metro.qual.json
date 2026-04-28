@@ -1,0 +1,147 @@
+{
+  "bidder_id": "metro",
+  "mandatory_gates": {
+    "wsib_clearance": {
+      "result": "needs_clarification",
+      "evidence": "ATTACHMENTS lists 'WSIB Clearance Certificate' and INSURANCE COVERAGE section cites WSIB Account #3456789-01; however bid manifest qualifications.wsib_clearance_date is null and qualifications.wsib_in_good_standing is null — no clearance date or 'in good standing' wording extracted from the certificate.",
+      "notes": "Certificate is attached so this is not a fail per skill §1, but validity window and good-standing text are not visible in the bid body. Owner must re-verify on clearances.wsib.ca prior to award (handled as standard award condition by roof-recommendation-memo). WSIB experience rating 1.12 is above the 1.00 industry baseline — flagged as a separate qualifications red flag (financial-distress / claims-history signal per fixture 04 §5)."
+    },
+    "cgl_insurance": {
+      "result": "pass",
+      "evidence": "INSURANCE COVERAGE section: 'Commercial General Liability: $5,000,000 per occurrence' equals RFP §5.1.2 / mandatory_requirements.cgl_minimum_cad of $5,000,000.",
+      "notes": "Limit meets RFP minimum exactly. Named-insured / additional-insured / completed-operations questions tracked in their own gates."
+    },
+    "additional_insured": {
+      "result": "needs_clarification",
+      "evidence": "Bid declares CGL limit but is silent on whether Tenebrus Capital is named as additional insured on the COI; qualifications.owner_named_as_additional_insured is null in the manifest.",
+      "notes": "Standard commercial baseline per fixture 04 §2 — owner must verify the COI names Tenebrus Capital as additional insured before contract execution. Statutory tier per skill, but missing data is clarifiable, not a fail."
+    },
+    "completed_ops": {
+      "result": "needs_clarification",
+      "evidence": "qualifications.cgl_completed_operations_years is null in the manifest; INSURANCE COVERAGE section names a CGL limit but does not state the completed-operations tail.",
+      "notes": "Critical for the 20-year warranty period per fixture 04 §2. Owner should confirm the completed-ops tail extends through the warranty period before award."
+    },
+    "performance_bond": {
+      "result": "needs_clarification",
+      "evidence": "Bid is silent on bonding capacity and consent of surety. RFP §9.2 requires a 50% performance bond on this OBC Part 3 project.",
+      "notes": "Per skill §3: performance/L&M bonds are statutory on OBC Part 3 but missing consent of surety on the successful bidder is a fail at contract signing, not at submission. Mark needs_clarification at submission stage. qualifications.bonding_capacity_cad is null."
+    },
+    "labour_material_bond": {
+      "result": "needs_clarification",
+      "evidence": "Bid is silent on L&M bond; RFP §9.2 requires a 50% L&M bond on this OBC Part 3 project.",
+      "notes": "Same treatment as performance_bond — clarifiable at submission stage; consent of surety required before contract execution."
+    },
+    "bid_bond": {
+      "result": "needs_clarification",
+      "evidence": "qualifications.bid_bond_attached is false. RFP mandatory_requirements does not set bid_bond_percent and submission_requirements (§6.2) does not list a bid bond.",
+      "notes": "RFP-specified tier and the RFP did not invoke this gate (per gate_applicability.py). Strongest result is needs_clarification — cannot fail. Owner may waive or request a bid bond before award."
+    },
+    "working_at_heights": {
+      "result": "needs_clarification",
+      "evidence": "SAFETY PROGRAM section states 'Fall protection equipment provided' but the bid does not confirm O. Reg. 297/13 Working-at-Heights training currency for on-site workers; qualifications.working_at_heights_training_confirmed is null.",
+      "notes": "Statutory under O. Reg. 297/13 (fixture 04 §3) but no explicit denial — only a missing confirmation. Owner should require WAH training records prior to mobilization."
+    },
+    "site_visit": {
+      "result": "pass",
+      "evidence": "Cover Letter: 'We attended the site visit on March 25, 2026.' RFP §6.4 / §8.1 makes the site meeting mandatory.",
+      "notes": "Attendance affirmatively stated."
+    },
+    "minimum_years_in_business": {
+      "result": "pass",
+      "evidence": "Cover Letter: 'operating in the Greater Toronto Area since 2010' — 16 years as of 2026; qualifications.years_in_business = 16. RFP §5.1.3 requires minimum 10 years.",
+      "notes": "Comfortably exceeds the 10-year RFP threshold."
+    },
+    "similar_project_references": {
+      "result": "needs_clarification",
+      "evidence": "Three references provided (REFERENCES section): Smallwood Industrial Park 48,000 sf (2024), Valley View Warehouse 52,000 sf (2023), Eastgate Commerce Centre 67,000 sf (2025). RFP §5.1.4 requires 3 references for similar projects 50,000+ sq ft completed within 5 years.",
+      "notes": "Count meets the minimum (3) and all are commercial/industrial low-slope roof replacements within the 5-year window. Smallwood at 48,000 sf falls just below the RFP's 50,000 sf size threshold — fails the RFP's stated comparability test on size. Valley View (52,000 sf) and Eastgate (67,000 sf) clearly comparable. Per skill Gate 8: count meets minimum but one reference fails the comparable test → needs_clarification, not fail. Owner may request a substitute or accept the marginal reference. Project values are not declared on any reference, limiting size-comparability verification."
+    },
+    "addenda_acknowledgment": {
+      "result": "needs_clarification",
+      "evidence": "Bid does not acknowledge or list any RFP addenda; cover letter and bid body silent on addenda.",
+      "notes": "Prudent-evaluator tier per skill §5 — never a fail. RFP mandatory_requirements does not flag addenda_acknowledgment_required. Owner may request a signed acknowledgment prior to contract."
+    },
+    "non_collusion_declaration": {
+      "result": "needs_clarification",
+      "evidence": "No non-collusion declaration is referenced in the cover letter, bid body, or ATTACHMENTS list.",
+      "notes": "Prudent-evaluator tier per skill §6 — never a fail. RFP does not explicitly require a non-collusion declaration. Owner may request a signed declaration before award."
+    }
+  },
+  "scores": {
+    "experience_references": 53,
+    "qualifications_certifications": 35,
+    "schedule": 58
+  },
+  "scoring_rationale": {
+    "experience_references": {
+      "sub_factors": {
+        "comparable_reference_count": 20,
+        "recency_most_recent_comparable": 25,
+        "verifiability": 8
+      },
+      "notes": "Three references provided. Two strictly comparable to RFP's 50,000+ sf threshold (Valley View 52K, Eastgate 67K); Smallwood (48K) is marginally under. Counted as 1-2 strictly comparable → 20 points. Most-recent comparable Eastgate 2025 (<1 yr) → 25 points. Verifiability is partial: every reference has named contact, scope sq ft, and completion year, but project value is missing on all three → 8 points (partial)."
+    },
+    "qualifications_certifications": {
+      "sub_factors": {
+        "years_in_business": 35,
+        "manufacturer_certification": 0,
+        "skilled_trades_c_of_q_crew": 0,
+        "industry_membership": 0
+      },
+      "notes": "16 years in business → 35 points (15+ band). No manufacturer certification declared (no Carlisle Authorized, GAF Master Elite, Firestone Red Shield, Sika Sarnafil, etc.) and no certified-installer status — critical given the 20-year manufacturer warranty claim. No Skilled Trades Ontario C of Q roofer count provided. CRCA / regional membership not declared."
+    },
+    "schedule": {
+      "sub_factors": {
+        "timeline_realism": 30,
+        "crew_adequacy": 0,
+        "mobilization_completion_dates": 20,
+        "occupied_building_accommodation": 8
+      },
+      "notes": "90-day duration (May 15 – Aug 15 substantial; Aug 30 final) is realistic for 85,000 sf TPO tear-off and replacement → 30 points (realistic duration). No detailed phase sequencing or milestones beyond start / substantial / final, so does not earn the 40-point tier. Crew size not stated → 0 points. Both substantial and final completion dates are fixed against a stated start date → 20 points (RFP does not impose mandatory dates so 'meets both' applies). Occupied-building accommodation is generic ('Work can be phased to accommodate tenant operations if needed' / 'flexible on start date') with no named tenant-coordination plan or communication protocol for the pharmaceutical cold-storage tenants → 8 points."
+    }
+  },
+  "red_flags": [
+    {
+      "severity": "high",
+      "category": "qualifications",
+      "description": "WSIB experience rating of 1.12 is above the 1.00 industry baseline, indicating worse-than-average claims history. Per fixture 04 §5, an elevated rating is a financial-distress / safety-performance signal that warrants owner due diligence before award on a 90-day occupied-building project.",
+      "evidence": "SAFETY PROGRAM section: 'WSIB Experience Rating: 1.12'; manifest qualifications.wsib_experience_rating = 1.12."
+    },
+    {
+      "severity": "high",
+      "category": "qualifications",
+      "description": "No manufacturer certified-installer status declared. The bid claims a 20-year manufacturer warranty on the TPO membrane but does not name the manufacturer (Carlisle, GAF, Firestone, Versico, Sika, Johns Manville) and does not declare certified-installer credentials (e.g., Carlisle Authorized, GAF Master Select, Firestone Red Shield, Sika Sarnafil). Per fixture 02 §3, manufacturer warranties at this tier are typically only issued to certified installers; the warranty as offered may be unenforceable. Owner must verify before award.",
+      "evidence": "WARRANTY section ('20-year limited warranty on TPO membrane'); KEY SPECIFICATIONS / BID SUMMARY (no manufacturer named); no certification listed in ATTACHMENTS."
+    },
+    {
+      "severity": "medium",
+      "category": "qualifications",
+      "description": "Reference verifiability is incomplete: all three references include named contact, scope size, and completion year, but no contract value is provided on any. The RFP comparability test (50,000+ sq ft within 5 years) is met on size for two of three references; Smallwood Industrial Park (48,000 sf, 2024) is marginally below the RFP's 50,000 sf threshold.",
+      "evidence": "REFERENCES section; manifest qualifications.references_provided[].value_cad all null."
+    },
+    {
+      "severity": "medium",
+      "category": "qualifications",
+      "description": "No Skilled Trades Ontario Certificate of Qualification (313A roofer C of Q) crew count declared. For an 85,000 sf occupied OBC Part 3 commercial roof replacement, the absence of a stated C of Q crew count limits the owner's ability to assess installation quality and compliance with Skilled Trades Act requirements (fixture 04 §4).",
+      "evidence": "Bid is silent on C of Q roofer count; manifest qualifications.certificate_of_qualification_roofers_count is null."
+    },
+    {
+      "severity": "medium",
+      "category": "qualifications",
+      "description": "Crew size and mobilization-days-after-award are not declared. The bid commits to a 90-day duration but does not state crew composition or named foreman, limiting owner ability to assess production capacity and supervision continuity for an occupied-building project.",
+      "evidence": "PROJECT SCHEDULE section; manifest schedule.crew_size and schedule.mobilization_days_after_award both null."
+    },
+    {
+      "severity": "low",
+      "category": "qualifications",
+      "description": "Working-at-Heights training under O. Reg. 297/13 is not affirmatively confirmed. Bid mentions 'Fall protection equipment provided' but does not state that on-site workers hold current WAH training certificates (3-year validity per fixture 04 §3).",
+      "evidence": "SAFETY PROGRAM section; manifest qualifications.working_at_heights_training_confirmed is null."
+    },
+    {
+      "severity": "low",
+      "category": "qualifications",
+      "description": "No CRCA (Canadian Roofing Contractors Association) or regional roofing-association membership declared. Industry membership is a minor positive indicator of professional standards (fixture 04 §4) and is absent from the bid.",
+      "evidence": "Bid silent; manifest qualifications.crca_member is null."
+    }
+  ]
+}

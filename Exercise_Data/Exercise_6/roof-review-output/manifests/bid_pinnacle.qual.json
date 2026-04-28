@@ -1,0 +1,154 @@
+{
+  "bidder_id": "pinnacle",
+  "mandatory_gates": {
+    "wsib_clearance": {
+      "result": "needs_clarification",
+      "evidence": "WSIB Clearance Certificate listed in ATTACHMENTS; account #5678901-23 cited in INSURANCE COVERAGE; bidder claims good standing and provides Experience Rating 0.89. However, certificate issue/expiry date is NOT transcribed in the cover-letter narrative — validity window cannot be confirmed from the bid text alone.",
+      "notes": "Statutory gate (fixture 04 §1). Per skill rules, certificate-attached-but-date-unclear is a clarification, not a fail. Owner to inspect attached certificate; standard award condition will require online re-verification at clearances.wsib.ca per fixture 04 §1.4 (added by recommendation-memo skill, not here)."
+    },
+    "cgl_insurance": {
+      "result": "pass",
+      "evidence": "INSURANCE COVERAGE section: 'Commercial General Liability: $5,000,000 per occurrence' — meets RFP §5.1.2 / mandatory_requirements.cgl_minimum_cad of $5,000,000.",
+      "notes": "Statutory baseline gate; RFP-specified limit met."
+    },
+    "additional_insured": {
+      "result": "needs_clarification",
+      "evidence": "INSURANCE COVERAGE section silent on whether Tenebrus Capital is named as additional insured. COI is attached but contents not transcribed in bid narrative.",
+      "notes": "Statutory baseline (fixture 04 §2). Owner to inspect attached COI; if not listed, request endorsement before contract execution."
+    },
+    "completed_ops": {
+      "result": "needs_clarification",
+      "evidence": "INSURANCE COVERAGE section declares CGL $5M per occurrence but does not state completed-operations tail length.",
+      "notes": "Statutory baseline (fixture 04 §2). Critical for the post-install warranty period; verify on COI that completed-ops coverage runs at least 2 years past substantial completion."
+    },
+    "performance_bond": {
+      "result": "needs_clarification",
+      "evidence": "RFP §9.2 requires 50% performance bond on this OBC Part 3 project. Pinnacle bid is silent on bonding capacity, surety, or consent of surety. ATTACHMENTS list and INSURANCE COVERAGE section make no reference to bonds.",
+      "notes": "Statutory on Part 3 (Construction Act). Per skill, missing consent of surety at submission is needs_clarification (becomes a fail at contract signing if successful bidder cannot produce). Owner to request consent of surety and bonding capacity confirmation prior to award."
+    },
+    "labour_material_bond": {
+      "result": "needs_clarification",
+      "evidence": "RFP §9.2 requires 50% L&M payment bond. Pinnacle bid does not address L&M bonding or surety.",
+      "notes": "Statutory on Part 3. Same treatment as performance_bond — clarification at submission, becomes a fail at contract execution if not produced."
+    },
+    "bid_bond": {
+      "result": "needs_clarification",
+      "evidence": "RFP submission_requirements list 13 items; bid bond is NOT among them, and rfp.mandatory_requirements has no bid_bond_percent field. Pinnacle did not attach a bid bond.",
+      "notes": "RFP-specified tier; RFP is silent on bid bonds, so this gate is not applicable as a fail (per gate_applicability.py). Strongest result is needs_clarification. Owner may still request a bid security from preferred bidder before award if desired."
+    },
+    "working_at_heights": {
+      "result": "pass",
+      "evidence": "SAFETY PROGRAM section: 'Fall protection training for all workers (updated every 2 years)'. Bid asserts a written safety manual, weekly safety meetings, and incident reporting. WSIB Experience Rating 0.89 (below industry average) corroborates an active safety culture.",
+      "notes": "Statutory (O. Reg. 297/13). Bidder uses 'fall protection' rather than the regulatory term 'working at heights', and refresh interval is stated as 2 years rather than the 3-year regulatory validity. Treated as pass on the basis of explicit confirmation that all on-site workers are trained; terminology gap captured as a qualifications red flag for owner follow-up at award."
+    },
+    "site_visit": {
+      "result": "pass",
+      "evidence": "Cover Letter para 2: 'We attended the mandatory site visit on March 25, 2026.' submission_metadata.site_visit_attended = true; site_visit_date = 2026-03-25.",
+      "notes": "RFP-specified (§6.4 / §8.1 mandatory). Confirmed."
+    },
+    "minimum_years_in_business": {
+      "result": "pass",
+      "evidence": "Cover Letter: 'Established in 2008' — 18 years to 2026. Exceeds RFP §5.1.3 minimum of 10 years commercial roofing experience.",
+      "notes": "RFP-specified. Comfortable margin above threshold."
+    },
+    "similar_project_references": {
+      "result": "pass",
+      "evidence": "Three references, all comparable on the three-part test: (1) Canadian Tire Distribution Centre, Concord ON (2024, 95,000 sf, occupied distribution); (2) Loblaws Head Office, Brampton ON (2023, 78,000 sf, continuous-ops office); (3) Tim Hortons Supply Chain, Oakville ON (2025, 62,000 sf, cold-storage). All commercial OBC Part 3 class, all >50,000 sf threshold per RFP §5.1.4, all completed within last 3 years. Named contacts with phone numbers provided.",
+      "notes": "RFP-specified. Count = 3 comparable references = RFP minimum. Project dollar values are not disclosed in bid (recorded as null in references_provided[*].value_cad), which prevents the 0.5x-2x value-comparable test from being verified — flagged in scoring as verifiability gap, but the size/recency/class tests are met so the gate passes. Owner can confirm contract values during reference checks."
+    },
+    "addenda_acknowledgment": {
+      "result": "needs_clarification",
+      "evidence": "Bid does not reference any addenda acknowledgment. RFP did not explicitly require an addenda acknowledgment in mandatory_requirements (no addenda_acknowledgment_required field) and the submission_requirements list does not enumerate it.",
+      "notes": "Prudent-evaluator tier — never a fail. If any addenda were issued (none recorded in rfp.json), owner should request signed acknowledgment before contract execution per CCDC 23 norms."
+    },
+    "non_collusion_declaration": {
+      "result": "needs_clarification",
+      "evidence": "No non-collusion declaration is attached or referenced in the bid.",
+      "notes": "Prudent-evaluator tier — never a fail. Owner can require a signed declaration as a condition of award."
+    }
+  },
+  "scores": {
+    "experience_references": 68,
+    "qualifications_certifications": 60,
+    "schedule": 95
+  },
+  "scoring_rationale": {
+    "experience_references": {
+      "sub_factors": {
+        "comparable_reference_count_3_to_4": 40,
+        "recency_most_recent_within_1_to_2_years": 20,
+        "verifiability_partial_contact_and_size_no_value": 8
+      },
+      "notes": "All three references pass the comparable test (Part 3 commercial, 62K-95K sf, completed 2023-2025). Most recent is Tim Hortons 2025 (within 1 year of bid). Each reference has named contact, scope size, and completion year, but contract value is null on all three — capped at 'partial' for verifiability."
+    },
+    "qualifications_certifications": {
+      "sub_factors": {
+        "years_in_business_15_plus": 35,
+        "multiple_manufacturer_certifications": 25,
+        "skilled_trades_c_of_q_crew_none_identified": 0,
+        "industry_membership_none_stated": 0
+      },
+      "notes": "Established 2008 (18 years). Three manufacturer certifications (Carlisle Syntec Certified Installer, Firestone Authorized Contractor, Johns Manville Preferred Contractor) — qualifies as multiple manufacturers but none are at the top-tier program level (Master Elite / PAQ+S / Platinum Master Contractor) so capped at 25 points. Bid cites '3 certified roofing technicians' but does not specify Skilled Trades Ontario C of Q holders, so 0 awarded. No CRCA or regional association membership stated."
+    },
+    "schedule": {
+      "sub_factors": {
+        "timeline_detailed_phase_sequencing_with_milestones": 40,
+        "crew_adequacy_named_foreman": 20,
+        "mobilization_and_completion_meets_rfp": 20,
+        "occupied_building_named_tenant_coordination": 15
+      },
+      "notes": "80-day duration with three named phases (Office wing 5,100 sf / Main A 20,000 sf / Main B 25,000 sf incl. ponding) and explicit milestone dates (May 1 start, July 20 substantial, Aug 5 final). Site Supervisor Tom Bakos named as foreman (18 years roofing experience); PM Jennifer Morrison and 3 lead installers identified, but raw crew size is not stated. Both mobilization (May 1) and completion (Aug 5) align with RFP window. Occupied-building accommodation includes phased max 10,000 sf exposure, end-of-day watertight, weekend tarp protection, twice-weekly coordination meetings during critical phases, and 72-hour HVAC shutdown notice — qualifies as named tenant-coordination plan."
+    }
+  },
+  "red_flags": [
+    {
+      "severity": "medium",
+      "category": "qualifications",
+      "description": "Bonding silent in submission. RFP §9.2 requires 50% performance bond and 50% L&M bond on this OBC Part 3 project, but Pinnacle's submission contains no consent of surety, no bonding capacity declaration, and no surety identified. Bond capacity below project value or inability to obtain consent of surety would prevent contract execution.",
+      "owner_followup": "Before any award decision, request: (1) consent of surety from a Canadian surety on the federal-approved list, (2) bonding capacity letter showing single-project capacity at least equal to contract value with reasonable balance for other work, (3) confirmation of no current bond claims open.",
+      "evidence": "ATTACHMENTS list; INSURANCE COVERAGE section silent on bonding"
+    },
+    {
+      "severity": "medium",
+      "category": "qualifications",
+      "description": "Working-at-heights training described in non-regulatory terms. SAFETY PROGRAM cites 'Fall protection training for all workers (updated every 2 years)'. O. Reg. 297/13 mandates a CPO-approved working-at-heights training program with 3-year validity. The 2-year refresh and 'fall protection' label could indicate either (a) the bidder uses an internal program rebranded as fall protection while still meeting the regulatory requirement, or (b) workers are trained on harness use but lack the formal regulatory cert.",
+      "owner_followup": "Before award, request copies of WAH completion records (CPO-approved training provider, worker name, completion date) for all on-site workers — this is the documentation the MoL would require during a job-site inspection.",
+      "evidence": "SAFETY PROGRAM section"
+    },
+    {
+      "severity": "low",
+      "category": "qualifications",
+      "description": "Manufacturer ambiguity. Bid lists three manufacturer certifications (Carlisle Syntec, Firestone, Johns Manville) but does not name which manufacturer's TPO system will actually be supplied. The '20-Year NDL Warranty Sample Documentation' attachment is a sample, not a system-specific warranty letter. The named installer credential must match the supplied system for total-system NDL eligibility (fixture 04 §4); a Carlisle Certified Installer cannot install Johns Manville and obtain a JM NDL warranty.",
+      "owner_followup": "Confirm the supplied manufacturer in writing and obtain the matching system warranty letter — sample documentation is not adequate for award decisions.",
+      "evidence": "MANUFACTURER CERTIFICATIONS section; ATTACHMENTS list"
+    },
+    {
+      "severity": "low",
+      "category": "qualifications",
+      "description": "Skilled Trades Ontario C of Q crew composition not disclosed. Project Team identifies Project Manager (Jennifer Morrison, 12 yrs), Site Supervisor (Tom Bakos, 18 yrs), and '3 certified roofing technicians (avg 8 yrs)'. 'Certified' here appears to refer to manufacturer certification, not Skilled Trades Ontario C of Q. The Roofer trade (no. 449A) is not compulsory in Ontario, so this is not a regulatory issue, but for an 85,000 sf Part 3 project a crew with C of Q holders is a quality-of-workmanship signal.",
+      "owner_followup": "Request count of C of Q-holding roofers expected on-site (foreman + installers).",
+      "evidence": "PROJECT TEAM section"
+    },
+    {
+      "severity": "low",
+      "category": "qualifications",
+      "description": "Reference contract values not disclosed. All three references provide named contact, scope size in sf, and completion year, but contract value is omitted. The comparable-project test requires project value within 0.5x to 2x the subject project's value; this dimension cannot be verified from the submission. Sizes (62K-95K sf) are comparable to the 85K subject, so the gate passes on size and recency, but a reference at materially different price-per-sqft could indicate a different scope depth.",
+      "owner_followup": "During reference checks, capture each project's actual contract value and confirm comparability to the $612K base bid.",
+      "evidence": "REFERENCES section"
+    },
+    {
+      "severity": "low",
+      "category": "qualifications",
+      "description": "WSIB clearance certificate date not transcribed. Bid asserts WSIB account #5678901-23 in good standing with Experience Rating 0.89, but the issue/expiry date of the attached certificate is not visible in the bid narrative.",
+      "owner_followup": "Inspect the attached WSIB Clearance Certificate to confirm validity period, then re-verify online at clearances.wsib.ca within 30 days of contract signing per fixture 04 §1.4.",
+      "evidence": "ATTACHMENTS list; INSURANCE COVERAGE section"
+    },
+    {
+      "severity": "low",
+      "category": "qualifications",
+      "description": "Owner-as-additional-insured and completed-operations tail unconfirmed. Bid declares CGL $5M per occurrence but does not specify whether Tenebrus Capital is named as additional insured nor the completed-operations tail length. Both are routine COI items.",
+      "owner_followup": "Inspect attached COI; if missing, request endorsements before contract execution. Completed-ops should run at least 2 years past substantial completion to overlap the 3-year workmanship warranty.",
+      "evidence": "INSURANCE COVERAGE section; COI attached but contents not transcribed"
+    }
+  ]
+}

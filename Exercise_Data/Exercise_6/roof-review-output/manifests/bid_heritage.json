@@ -1,0 +1,220 @@
+{
+  "bidder_id": "heritage",
+  "bidder_name": "Heritage Construction Group",
+  "source_pdf": "05-Bid-Heritage-Construction.md",
+  "pricing": {
+    "base_bid_cad": 578000,
+    "hst_included": false,
+    "hst_amount_cad": 75140,
+    "base_bid_with_hst_cad": 653140,
+    "alternates": [
+      {
+        "description": "VE Option 1: Mechanically attached system instead of fully adhered membrane (same 20-year NDL warranty available; contractor notes acceptable risk profile for 28 ft single-story industrial building)",
+        "price_cad": -42000
+      },
+      {
+        "description": "VE Option 2: Single-layer R-30 insulation instead of two-layer R-30 staggered (contractor NOT RECOMMENDED; 5-8% energy penalty)",
+        "price_cad": -18000
+      },
+      {
+        "description": "VE Option 3: Upgrade from 60 mil to 80 mil TPO membrane; warranty upgrades to 30-year NDL",
+        "price_cad": 38000
+      },
+      {
+        "description": "VE Option 4: Upgrade from R-30 to R-38 insulation; estimated 18-22% reduction in roof-related HVAC costs; 4-6 yr payback",
+        "price_cad": 24000
+      },
+      {
+        "description": "VE Option 5 (Combined Optimal Package): mechanically attached + 80 mil TPO + R-38 insulation + cover board removed (per Carlisle/Firestone with mechanically attached); 30-year NDL warranty. Net cost = -$42,000 + $38,000 + $24,000 - $8,000 (cover board removal) = +$12,000",
+        "price_cad": 12000
+      },
+      {
+        "description": "VE Option 6: Phased installation across fiscal years (Phase 1 Dec 2026 = $180,000; Phase 2 Apr 2027 = $398,000) for potential CCA tax benefits; contractor notes this would extend schedule and require winter protection of exposed deck",
+        "price_cad": 0
+      }
+    ],
+    "unit_prices": {
+      "deck_replacement_per_bf": null,
+      "insulation_per_sqft_per_rvalue": null,
+      "flashing_per_lf": null
+    },
+    "allowances_carried": [
+      {
+        "item": "Tapered insulation allowance (ponding correction, southwest quadrant)",
+        "amount_cad": 20000
+      },
+      {
+        "item": "Steel deck repair allowance",
+        "amount_cad": 10000
+      },
+      {
+        "item": "Wood deck repair allowance (office wing)",
+        "amount_cad": 10000
+      },
+      {
+        "item": "Hazardous material testing allowance (ACM testing if suspected)",
+        "amount_cad": 3500
+      }
+    ]
+  },
+  "scope_response": {
+    "full_compliance_claimed": true,
+    "exclusions_declared": [
+      "Major steel deck repairs exceeding $10,000 allowance",
+      "Major wood deck replacement exceeding $10,000 allowance",
+      "Replacement of damaged roof drains or leaders",
+      "Skylight replacement or major repairs",
+      "HVAC equipment modifications or replacements",
+      "Work outside standard hours (7 AM - 6 PM weekdays)",
+      "Hazardous material abatement beyond minor handling",
+      "Building permits (estimated $4,500-$6,000)",
+      "Temperature monitoring equipment (we coordinate; owner to provide)",
+      "Third-party testing/inspection beyond our testing allowance"
+    ],
+    "clarifications": [
+      "Ponding correction: $20,000 tapered insulation allowance carried; final quantity to be confirmed during removal.",
+      "Deck conditions: $10,000 steel deck and $10,000 wood deck allowances should be sufficient for typical conditions per visual site inspection.",
+      "Hazardous materials: Building is 1998, so ACM is unlikely but possible. Testing allowance and minor handling included; major abatement would be extra.",
+      "Phasing: Schedule assumes reasonable cooperation from tenant for access and coordination.",
+      "HVAC coordination: Assumes HVAC shutdowns can be scheduled for weekends when needed; weekday shutdowns require 72-hour notice as per RFP.",
+      "Temperature monitoring: Owner to provide temperature monitoring in warehouse; contractor will coordinate around any alerts.",
+      "Cover board: Included in base bid; can be removed if VE Option 5 is selected (mechanically attached system does not require cover board per Carlisle and Firestone).",
+      "Permits: Building permits typically owner responsibility; contractor can arrange if needed (priced separately)."
+    ],
+    "substitutions_proposed": [
+      {
+        "spec_item": "Membrane attachment (RFP allows fully or mechanically attached)",
+        "substitute_offered": "VE Option 1 — Mechanically attached system in lieu of base-bid fully-adhered",
+        "equivalence_justification": "For a single-story industrial building in Mississauga (28 ft, parapet walls, sheltered) wind uplift risk is moderate. Mechanically attached systems are widely used in similar applications. Same 20-year NDL warranty available. Trade-off: marginally shorter expected service life (25-28 years vs 30+ years)."
+      },
+      {
+        "spec_item": "Cover board (RFP requires 1/4\" gypsum or HD polyiso)",
+        "substitute_offered": "VE Option 5 — No cover board when paired with mechanically attached 80 mil TPO assembly",
+        "equivalence_justification": "Mechanically attached system does not require cover board per Carlisle and Firestone manufacturer specifications."
+      }
+    ]
+  },
+  "materials_system": {
+    "manufacturer": "Not explicitly named in base bid; contractor holds Carlisle Syntec Master Installer, Firestone Building Products Premier Contractor, and GAF Master Elite certifications",
+    "system_name": "TPO single-ply (60 mil base bid; 80 mil under VE Option 3/5)",
+    "membrane_thickness_actual": "60 mil (base bid)",
+    "insulation_spec": "R-30, two-layer staggered joints (base bid). 1/4\" gypsum cover board included in base bid.",
+    "cover_board_included": true,
+    "product_data_sheets_attached": true
+  },
+  "warranty_offered": {
+    "manufacturer_years": 20,
+    "warranty_type": "ndl",
+    "workmanship_years": 2,
+    "wind_uplift_coverage_mph": null,
+    "manufacturer_certified_installer": true,
+    "certification_program": "Carlisle Syntec Master Installer; Firestone Premier Contractor; GAF Master Elite",
+    "evidence_page": "Section: WARRANTY (BASE BID); Section: MANUFACTURER CERTIFICATIONS",
+    "additional_notes": "5-year ponding warranty included with tapered insulation. 30-year NDL warranty available under VE Option 3 (80 mil TPO) and VE Option 5 (combined package). Sample 20-Year and 30-Year NDL Warranty documentation listed as attachment."
+  },
+  "qualifications": {
+    "years_in_business": 14,
+    "wsib_clearance_attached": true,
+    "wsib_clearance_date": null,
+    "wsib_in_good_standing": true,
+    "wsib_account_number": "7890123-45",
+    "wsib_experience_rating": 0.81,
+    "cgl_limit_cad": 5000000,
+    "cgl_completed_operations_years": null,
+    "owner_named_as_additional_insured": null,
+    "coi_attached": true,
+    "bid_bond_attached": null,
+    "bonding_capacity_cad": 5000000,
+    "working_at_heights_training_confirmed": true,
+    "crca_member": null,
+    "certificate_of_qualification_roofers_count": null,
+    "references_provided": [
+      {
+        "project_name": "Amazon Fulfillment Centre YHM1, Hamilton ON",
+        "owner_contact": "Infrastructure Team, (905) 555-0891",
+        "value_cad": null,
+        "completion_year": 2024,
+        "similar_scope": true,
+        "notes": "185,000 sq ft roof replacement; occupied distribution facility; VE saved owner $127,000 vs original spec"
+      },
+      {
+        "project_name": "Magnotta Winery Expansion, Niagara-on-the-Lake ON",
+        "owner_contact": "Marco Caputo, Owner, (905) 555-0634",
+        "value_cad": null,
+        "completion_year": 2023,
+        "similar_scope": true,
+        "notes": "92,000 sq ft roof replacement; phased installation to maintain harvest-season operations"
+      },
+      {
+        "project_name": "Prologis Park 407, Vaughan ON",
+        "owner_contact": "Asset Management, (416) 555-0923",
+        "value_cad": null,
+        "completion_year": 2025,
+        "similar_scope": true,
+        "notes": "145,000 sq ft roof replacement; multi-building portfolio with complex phasing across four buildings"
+      },
+      {
+        "project_name": "Apotex Pharmaceuticals, Toronto ON",
+        "owner_contact": "Facility Operations, (416) 555-0834",
+        "value_cad": null,
+        "completion_year": 2024,
+        "similar_scope": true,
+        "notes": "78,000 sq ft roof replacement; temperature-sensitive facility with similar challenges to subject project"
+      }
+    ],
+    "subcontracting_declared": false,
+    "subcontractors_named": [],
+    "additional_insurance": {
+      "automobile_liability_cad": 2000000,
+      "pollution_liability_cad": 2000000
+    },
+    "safety_certifications": [
+      "COR (Certificate of Recognition) certified",
+      "Annual fall protection training for all workers",
+      "Daily tailgate safety meetings",
+      "Dedicated safety coordinator on projects over 75,000 sq ft"
+    ],
+    "key_personnel": [
+      "Lisa Chen - Project Manager (14 years experience, PMP certified)",
+      "Dave Kowalczyk - Site Supervisor (20 years roofing experience)",
+      "Marcus Johnson - Safety Coordinator (CRSP certified)",
+      "4 lead installers (avg 10 years; described as 'certified roofing technicians')"
+    ]
+  },
+  "schedule": {
+    "mobilization_days_after_award": null,
+    "work_duration_days": 90,
+    "start_date": "2026-05-01",
+    "substantial_completion_date": "2026-07-30",
+    "final_completion_date": "2026-08-12",
+    "crew_size": null,
+    "accommodates_occupied_building": true
+  },
+  "technical_approach": {
+    "narrative": "Three-phase approach for occupied, temperature-sensitive industrial facility. Phase 1 (Days 1-18): Office wing 5,100 sq ft. Phase 2 (Days 19-52): Main roof NW section 20,000 sq ft. Phase 3 (Days 53-90): Main roof SE section incl. ponding areas 25,000 sq ft with tapered insulation system. 11 occupied-building references in past 5 years.",
+    "tear_off_staging_plan": "Maximum 10,000 sq ft exposed at any time (under 15,000 sq ft RFP limit). Each phase watertight by 5:00 PM daily. Two coordination meetings per week during active phases.",
+    "weather_protection_plan": "Each phase watertight by 5:00 PM daily. Weekend protection: reinforced tarps with weighted edges and secondary drainage.",
+    "fall_protection_plan": "Annual fall protection training for all workers; COR-certified safety program; dedicated safety coordinator (Marcus Johnson, CRSP).",
+    "waste_disposal_plan": "Complete legal disposal included in base bid. Lead flashing separated and disposed of as hazardous waste. Visual ACM inspection during removal; up to 100 sq ft non-friable ACM handled under contractor procedures.",
+    "site_safety_plan_attached": true,
+    "hazmat_approach": "Visual ACM inspection during removal; $3,500 testing allowance carried; minor non-friable ACM (up to 100 sq ft) handled under contractor procedures; lead flashing disposal included. Major abatement excluded."
+  },
+  "extraction_notes": [
+    "HST treatment: Base bid is $578,000 BEFORE HST (13% = $75,140; total with HST $653,140). HST treatment is explicit, not silent.",
+    "Manufacturer not explicitly named in base bid — contractor holds three certifications (Carlisle Syntec Master Installer, Firestone Premier Contractor, GAF Master Elite) but does not commit to a specific manufacturer/system on the base-bid TPO. Owner follow-up needed to confirm which TPO system (and therefore which named NDL warranty) will actually be installed before contract execution. (Section: KEY SPECIFICATIONS, MANUFACTURER CERTIFICATIONS)",
+    "Warranty type recorded as 'ndl' per skill taxonomy: bid says '20-year NDL warranty on TPO membrane' and lists 'Sample 20-Year and 30-Year NDL Warranty Sample Documentation' as an attachment — but no manufacturer-specific named system warranty (e.g., Firestone Red Shield Platinum, Carlisle Total System Warranty) is committed to in the bid. Not classified as 'total_system_ndl' since no certified-installer/system-warranty-program prerequisites are documented in this submission.",
+    "Workmanship warranty: 2 years stated on installation. May be below RFP minimum — flag for wave-2 RFP comparison.",
+    "Wind uplift coverage mph: Not stated in bid. Bid notes for VE Option 1 'slightly more vulnerable to extreme wind events' but provides no mph rating. Owner follow-up needed.",
+    "Bid bond: Bonding CAPACITY of $5M per project declared; bid does NOT explicitly state whether a bid bond is attached to this submission. 'Certificate of Insurance' and 'WSIB Clearance Certificate' are listed as attachments but bid bond is not. Owner follow-up needed before mandatory-gate evaluation. (Section: ATTACHMENTS; Section: WHY HERITAGE CONSTRUCTION GROUP — '5. Stable Company')",
+    "Owner-as-additional-insured: Not explicitly stated in INSURANCE COVERAGE section. Owner follow-up needed.",
+    "CGL completed-operations tail (years): Not stated in bid. Owner follow-up needed.",
+    "WSIB clearance date: Certificate listed as attached but date not transcribed in bid body.",
+    "CRCA membership: Not declared in bid.",
+    "Skilled Trades Ontario Certificate of Qualification (C of Q) holders on crew: Not numerically declared. Bid references '4 certified roofing technicians' but does not specify Ontario C of Q status.",
+    "Mobilization days after award: Not declared. Start date stated as May 1, 2026 (work commences ~30 days after April 12, 2026 bid validity start).",
+    "Crew size: Not numerically declared (4 lead installers named, plus PM, supervisor, safety coordinator, phasing coordinator).",
+    "Unit prices for deck replacement per bf, insulation per sqft per R, and flashing per lf: Not provided in bid. Allowances carried in lieu (steel $10K, wood $10K).",
+    "Subcontracting: Not declared one way or the other. Bid implies self-perform but does not explicitly state. Owner follow-up needed.",
+    "Bid validity: 60 days from April 12, 2026 (i.e., expires June 11, 2026)."
+  ]
+}

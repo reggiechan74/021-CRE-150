@@ -1,0 +1,150 @@
+{
+  "bidder_id": "heritage",
+  "bidder_name": "Heritage Construction Group",
+  "mandatory_gates": {
+    "scope_compliance": {
+      "result": "pass",
+      "evidence": "Base bid §KEY SPECIFICATIONS confirms 60 mil TPO fully-adhered, R-30 two-layer staggered insulation, 1/4\" gypsum cover board, white 80% solar reflectance — matches RFP §3.1/§3.2. VE Options 1-5 are alternates; the base bid itself is RFP-compliant."
+    },
+    "membrane_thickness": {
+      "result": "pass",
+      "evidence": "60 mil TPO base bid (KEY SPECIFICATIONS table) meets RFP §3.1 minimum 60 mil. Fixture 02 §1.3 floor for commercial."
+    },
+    "cover_board": {
+      "result": "pass",
+      "evidence": "1/4\" gypsum cover board explicitly listed in base bid PRICE BREAKDOWN ($28,000 line item) and KEY SPECIFICATIONS table. RFP §3.2 requires 1/4\" gypsum or HD polyiso."
+    },
+    "insulation_upgrade": {
+      "result": "pass",
+      "evidence": "R-30 two-layer staggered polyiso (PRICE BREAKDOWN: $115,000) meets RFP §3.2 'R-30 as per Ontario Building Code 2024' and SB-10 Zone 5 minimum ~R-30ci (fixture 01 §1.3)."
+    },
+    "warranty_type": {
+      "result": "pass",
+      "evidence": "Bid §WARRANTY (BASE BID) offers '20-year NDL warranty on TPO membrane'. RFP §3.1/§9.6 specify '20-year manufacturer warranty' without explicitly defining type; rfp.json applied total_system_ndl as inferred default. Heritage's NDL claim is at or near the inferred default but lacks a named manufacturer system program — flagged as warranty red flag rather than gate fail since clarification (manufacturer/system commitment) can cure without re-bid."
+    },
+    "warranty_duration": {
+      "result": "pass",
+      "evidence": "20-year manufacturer warranty (base) and 2-year workmanship — meets RFP §9.6 minimums (20 yr / 2 yr)."
+    },
+    "completion_date": {
+      "result": "pass",
+      "evidence": "Substantial completion July 30, 2026; final completion August 12, 2026. Within RFP-implicit 2026 construction season; no specific RFP completion deadline cited in rfp.json."
+    },
+    "fire_rating": {
+      "result": "pass",
+      "evidence": "Base bid TPO with cover board + polyiso assembly is a standard CAN/ULC-S107 Class A configuration for major manufacturers. RFP does not specify a class beyond OBC default; no deficiency identified."
+    },
+    "wind_uplift": {
+      "result": "pass",
+      "evidence": "Bid does not numerically state CSA A123.21 / FM 1-29 uplift rating — but proposed assembly (60 mil TPO fully-adhered over HD cover board over polyiso) is a standard rated assembly. Missing design basis treated as red flag (per skill rubric: 'design basis not stated' is a red flag, not a fail)."
+    }
+  },
+  "scores": {
+    "technical_approach": 71,
+    "warranty_materials": 79
+  },
+  "scoring_rationale": {
+    "technical_approach": {
+      "sub_factors": {
+        "tear_off_staging": 25,
+        "weather_protection_dry_in": 20,
+        "fall_protection_safety": 10,
+        "waste_environmental_logistics": 8,
+        "quality_control_inspection": 8
+      },
+      "notes": "Tear-off staging detailed with phased approach, 10,000 sq ft max exposure (under RFP 15,000 sq ft cap), three named phases with sq ft assigned, two coordination meetings/week, watertight by 5 PM daily — earns 'detailed' tier. Weather protection earns 'specific dry-in plan per phase' (each phase watertight by 5 PM, weekend reinforced tarps with weighted edges and secondary drainage) but no explicit forecast/weather-monitoring protocol — 20 not 25. Fall protection narrative is generic WAH compliance (annual training, COR cert, named safety coordinator) with no named anchor points, no fall-arrest equipment inventory, no rescue plan, no parapet-specific approach — 10 only. Waste/environmental: disposal and lead flashing handling mentioned; no named recycling facility, no diversion target, building is 1998 so DSA not required — 8 ('disposal mentioned'). Quality control: bi-weekly progress reports with photos and twice-weekly coordination meetings, but no in-progress QC checkpoints by manufacturer technical rep tied to NDL warranty inspection requirements — 8."
+    },
+    "warranty_materials": {
+      "sub_factors": {
+        "warranty_type_vs_rfp": 35,
+        "warranty_years_vs_rfp_minimum": 12,
+        "installer_certification_at_claimed_tier": 20,
+        "workmanship_warranty_years": 6,
+        "materials_quality": 6
+      },
+      "notes": "Warranty type 'ndl' per extraction (no manufacturer-specific named system program committed in base bid; Heritage references 'Sample 20-Year and 30-Year NDL Warranty Sample Documentation' as attachment but does not commit to Carlisle Total System / Firestone Red Shield Platinum / Sika Sarnafil specific program) — scored 35 ('ndl without attached named system program') rather than 40 ('total_system_ndl'). Years 20 = meets RFP minimum exactly (12 pts); 80 mil VE Option 3/5 would unlock 30-year NDL but is alternate, not base. Installer certification: Heritage holds three Master/Premier/Master Elite certifications (Carlisle Syntec, Firestone, GAF) — full 20 pts at claimed tier, though absence of specific manufacturer commitment in base bid prevents verifying certification matches the actual TPO system that will be installed. Workmanship 2 years = 6 pts (2-4 yr range; below 5-yr market median per fixture 02 §4 #6). Materials quality at standard: 60 mil TPO, gypsum cover board, two-layer staggered — meets standard, does not exceed (no 80 mil or HD polyiso in base) — 6 pts."
+    }
+  },
+  "red_flags": [
+    {
+      "severity": "high",
+      "category": "warranty",
+      "description": "Manufacturer not committed in base bid: contractor holds Carlisle/Firestone/GAF certifications but does not name which system will be installed, so the specific NDL warranty program (Carlisle Golden Seal, Firestone Red Shield, GAF Diamond Pledge) cannot be verified before contract execution.",
+      "citation": "fixture 02 §3 (Manufacturer Certified Contractor Programs); fixture 02 §4 #1 (mismatched system components red flag)",
+      "evidence": "Heritage bid §KEY SPECIFICATIONS lists '60 mil TPO' generically; §MANUFACTURER CERTIFICATIONS lists three certifications without committing to one. Base manifest extraction_notes #2: 'Manufacturer not explicitly named in base bid... Owner follow-up needed to confirm which TPO system (and therefore which named NDL warranty) will actually be installed before contract execution.'",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "high",
+      "category": "warranty",
+      "description": "Workmanship warranty 2 years is at the RFP floor and below the 5-year market median for reputable Ontario commercial contractors per fixture 02 §4 #6. Combined with bid's own claim of 14 years in business and stable bonding, a longer workmanship term would be expected.",
+      "citation": "fixture 02 §4 #6 (workmanship warranty market median 5 years); RFP §9.6 (minimum 2 years)",
+      "evidence": "Bid §WARRANTY (BASE BID): 'Workmanship Warranty: 2 years on installation.'",
+      "recommendation": "negotiate"
+    },
+    {
+      "severity": "high",
+      "category": "materials",
+      "description": "Wind uplift design basis not stated. RFP is silent on numeric uplift requirements but bid does not cite CSA A123.21 listing or FM 1-60/1-90 rating for the proposed 60 mil fully-adhered TPO over R-30 polyiso assembly. For a 28-year-old industrial roof with parapets at 28 ft height in Mississauga, factored uplift pressures should be calculated per NBC Part 4.",
+      "citation": "fixture 01 §1.2 (CSA A123.21 / FM 1-29); fixture 02 §4 #4 (no wind uplift design basis red flag)",
+      "evidence": "Heritage bid references 'wind uplift risk is moderate' for VE Option 1 (mechanically attached) but provides no calculation, no zone breakdown (field/perimeter/corner), and no listed assembly number anywhere. Base manifest extraction_notes #5: 'Wind uplift coverage mph: Not stated in bid... Owner follow-up needed.'",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "high",
+      "category": "safety",
+      "description": "Fall protection plan is generic WAH compliance language (annual training, COR cert, dedicated coordinator) but lacks site-specific elements required by O. Reg. 213/91 §26.1: named anchor points, lifeline/lanyard inventory, rescue plan, and approach for parapet/perimeter work on the 47 penetrations and three roof levels. No NOP filing commitment cited (project >$50k triggers per O. Reg. 213/91 §6).",
+      "citation": "O. Reg. 213/91 §26.1 (fall protection plan and rescue plan); O. Reg. 213/91 §6 (Notice of Project); fixture 01 §3.2-3.3",
+      "evidence": "Bid §SAFETY PROGRAM: 'Fall protection training for all workers (updated annually); Daily tailgate safety meetings; Dedicated safety coordinator for projects over 75,000 sq ft.' No site-specific fall protection plan, no anchor layout, no rescue plan visible. Heritage manifest field technical_approach.fall_protection_plan is similarly generic.",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "critical",
+      "category": "substitutions",
+      "description": "VE Option 5 (Combined Optimal Package) proposes removing the cover board when paired with mechanically attached 80 mil TPO. Removing the cover board on commercial single-ply over polyiso voids most NDL warranty programs and is a top-tier red flag in fixture 02 §4 #3. Although Heritage cites 'Carlisle and Firestone' permitting this with mechanically attached, neither manufacturer's published Sure-Weld or UltraPly TPO 80 mil 30-year NDL warranty program waives the cover board requirement on polyiso — this would require explicit written manufacturer approval. As an alternate the option is informational, but if the owner selects VE 5 it becomes a critical scope risk.",
+      "citation": "fixture 02 §4 #3 (missing cover board = top-tier red flag); fixture 02 §1.3 (cover board mandatory under TPO); RFP §3.2 (cover board required)",
+      "evidence": "Bid §VE OPTION 5: 'Additional Savings: Remove cover board (not required with mechanically attached assembly per manufacturer) = -$8,000... No cover board (acceptable with this assembly per manufacturer) ... 30-year NDL warranty.' Bid §CLARIFICATIONS #7: 'Cover board: Included in base bid; can be removed if VE Option 5 is selected (mechanically attached system does not require cover board per Carlisle and Firestone).'",
+      "recommendation": "reject"
+    },
+    {
+      "severity": "medium",
+      "category": "warranty",
+      "description": "RFP-required warranty type 'total_system_ndl' (per inferred default in rfp.json provenance) versus Heritage's bid-stated 'ndl' — the difference is whether the warranty is a manufacturer-specific named system program (e.g., Carlisle Total System, Firestone Red Shield Platinum) with PAQ+S/Authorized Applicator inspection prerequisites. Heritage's attached 'Sample 20-Year and 30-Year NDL Warranty Sample Documentation' is sample-only and not committed to a specific system. Cure available via clarification.",
+      "citation": "fixture 02 §1.3 (Carlisle 30-year Golden Seal prerequisites: Authorized Applicator, mid-job inspection); RFP §3.1 / §9.6 / §5.1.6 (manufacturer certification required)",
+      "evidence": "Bid §ATTACHMENTS lists 'Sample 20-Year and 30-Year NDL Warranty Sample Documentation' but no executed warranty form or manufacturer pre-job notice. Base manifest warranty_offered.warranty_type='ndl' (not 'total_system_ndl'); extraction_notes #3: 'Not classified as total_system_ndl since no certified-installer/system-warranty-program prerequisites are documented in this submission.'",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "medium",
+      "category": "scope",
+      "description": "Manufacturer pre-installation notice and mid-job technical inspection not budgeted or scheduled. Carlisle/Firestone/GAF top-tier (25-30 year) NDL warranties universally require pre-job notice + mid-job manufacturer rep inspection + final inspection (fixture 02 §4 #7). Without these line items, the 20-year NDL claim may be marketing-only.",
+      "citation": "fixture 02 §4 #7 (no pre-installation or mid-job manufacturer inspection for long warranties)",
+      "evidence": "Bid §PRICE BREAKDOWN does not include a manufacturer technical-rep inspection line item. §QUALITY CONTROL is bi-weekly progress reports by Heritage staff only.",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "medium",
+      "category": "scope",
+      "description": "Bid excludes 'Replacement of damaged roof drains or leaders' but RFP §2.1 §included_items requires 'replace damaged drain bowls/leaders'. This appears to be a direct exclusion of a required scope item — not just a cap on quantities.",
+      "citation": "RFP §2.1.5 (drainage scope); fixture 02 §5 (drain reconditioning vs replacement)",
+      "evidence": "Bid §EXCLUSIONS #3: 'Replacement of damaged roof drains or leaders.' Compare to RFP scope_of_work.included_items: 'replace damaged drain bowls/leaders'.",
+      "recommendation": "negotiate"
+    },
+    {
+      "severity": "medium",
+      "category": "scope",
+      "description": "Bid excludes 'Skylight replacement or major repairs' but RFP §2.1 included_items references '4 skylights' as part of the 47 penetrations requiring new flashings. Heritage covers flashings but is silent on skylight curb integration / re-flashing approach where existing skylights remain.",
+      "citation": "RFP §2.1 (47 penetrations including 4 skylights); fixture 02 §5 (skylight reglazing)",
+      "evidence": "Bid §EXCLUSIONS #4: 'Skylight replacement or major repairs'; bid §INCLUDED IN BASE BID PRICE #6: 'All flashings and penetrations (47 counted during site visit)' — internal ambiguity.",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "low",
+      "category": "scope",
+      "description": "VE Option 1 narrative claims fully-adhered specification but RFP §3.1 explicitly allows mechanically attached as an acceptable alternative. The 'value engineering' framing therefore overstates the savings as a deviation from RFP. Not a substitution flag, just a slight mischaracterization.",
+      "citation": "RFP §3.1 (Fully adhered system preferred; mechanically attached acceptable)",
+      "evidence": "Bid §VE OPTION 1: presented as alternative to base bid fully-adhered system; RFP allows both attachment methods.",
+      "recommendation": "accept-with-condition"
+    }
+  ]
+}

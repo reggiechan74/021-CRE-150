@@ -1,0 +1,167 @@
+{
+  "bidder_id": "pinnacle",
+  "bidder_name": "Pinnacle Roofing Corp.",
+  "mandatory_gates": {
+    "scope_compliance": {
+      "result": "pass",
+      "evidence": "KEY SPECIFICATIONS table confirms 60 mil TPO fully adhered, R-30 two-layer polyiso, 1/4\" gypsum cover board, 82% solar reflectance — matches RFP §3.1/§3.2. Phased plan caps exposure at 10,000 sf (RFP §2.1 ceiling: 15,000 sf)."
+    },
+    "membrane_thickness": {
+      "result": "pass",
+      "evidence": "PRICE BREAKDOWN line 'TPO membrane (60 mil)' and KEY SPECIFICATIONS row confirm 60 mil — meets RFP §3.1 minimum."
+    },
+    "cover_board": {
+      "result": "pass",
+      "evidence": "PRICE BREAKDOWN line 'Cover board (gypsum) $32,000' and KEY SPECIFICATIONS row '1/4\" gypsum board' — meets RFP §3.2 (1/4\" gypsum or HD polyiso) and fixture 02 §1.3 cover-board requirement under TPO."
+    },
+    "insulation_upgrade": {
+      "result": "pass",
+      "evidence": "KEY SPECIFICATIONS row 'Insulation R-Value R-30; Two-layer, staggered joints' meets RFP §3.2 / OBC SB-10 Zone 5 floor (~R-30ci continuous per fixture 01 §1.3)."
+    },
+    "warranty_type": {
+      "result": "clarify",
+      "evidence": "WARRANTY section states '20-year NDL'; ATTACHMENTS list cites only '20-Year NDL Warranty Sample Documentation' (a sample, not a system letter), and bid does not name a single manufacturer for the supplied TPO. Per fixture 02 §1.3 and §3, total_system_ndl requires named certified installer for the supplied system, pre-install review, and manufacturer inspection — none evidenced. Recorded as a clarify rather than fail because the bidder does hold Carlisle/Firestone/JM certifications and could likely produce a true system NDL once the manufacturer is selected."
+    },
+    "warranty_duration": {
+      "result": "pass",
+      "evidence": "WARRANTY section: '20-year NDL' meets RFP §3.1/§9.6 minimum 20 years."
+    },
+    "completion_date": {
+      "result": "pass",
+      "evidence": "PROJECT SCHEDULE: Substantial Completion 2026-07-20; Final 2026-08-05 — within typical Ontario roofing season for a May 1 start; RFP does not state a fixed deadline."
+    },
+    "mobilization_date": {
+      "result": "clarify",
+      "evidence": "PROJECT SCHEDULE gives a Start Date of 2026-05-01 but does not state mobilization-days-after-award; needs clarification but RFP does not impose a latest-mobilization requirement, so this is not a fail."
+    },
+    "fire_rating": {
+      "result": "clarify",
+      "evidence": "Bid does not state a CAN/ULC-S107 listing for the proposed assembly (membrane, cover board, polyiso, deck). RFP is silent on a specific class but OBC 3.1.15.2 requires listed assembly. Treat as clarify; not a rebid trigger."
+    },
+    "wind_uplift": {
+      "result": "clarify",
+      "evidence": "WARRANTY section field 'wind_uplift_coverage_mph' is null; bid does not cite a CSA A123.21 listing or FM 1-29/1-90 design basis. Per skill rules, missing wind-uplift design basis is a red flag, not a gate fail."
+    }
+  },
+  "scores": {
+    "technical_approach": 63,
+    "warranty_materials": 76
+  },
+  "scoring_rationale": {
+    "technical_approach": {
+      "sub_factors": {
+        "tear_off_staging": 25,
+        "weather_protection_dry_in": 10,
+        "fall_protection_safety": 10,
+        "waste_environmental_logistics": 8,
+        "quality_control_inspection": 10
+      },
+      "notes": [
+        "Tear-off & staging: 25 — PHASING PLAN SUMMARY is detailed: 3 phases by area (5,100 / 20,000 / 25,000 sf), 10,000 sf max exposed (better than RFP 15K), end-of-day watertight, weekend tarp protection, twice-weekly coordination meetings.",
+        "Weather protection: 10 — 'Each phase made watertight by end of work day; weekend protection with reinforced tarps' is generic dry-in language. No phase-specific dry-in plan, no forecast/precipitation protocol (e.g., 24-hr lookback, hold-points on rain probability).",
+        "Fall protection & safety: 10 — Generic WAH compliance: training updated every 2 yrs, written manual, weekly safety meetings, incident reporting. No named anchor points, no specific fall-arrest equipment inventory, no parapet-specific or perimeter control-zone plan as required by O. Reg. 213/91 §26.3(6) for built-up roof work and CSA Z91 anchor design (fixture 01 §1.6, §3.3, §3.4).",
+        "Waste / environmental / logistics: 8 — Daily cleanup, legal disposal, lead flashings separated as hazmat. No named recycling/diversion facility, no diversion percentage commitment. DSA not applicable (1998 build, post-1980).",
+        "Quality control / inspection: 10 — Weekly safety meetings + twice-weekly coordination meetings + 'final walk-through' implied. Does NOT include manufacturer pre-install review or mid-job inspection (required to issue 25-yr+ NDL warranties per fixture 02 §3 / §4 item 7). Score reflects in-progress QC checkpoints without scheduled manufacturer inspections."
+      ]
+    },
+    "warranty_materials": {
+      "sub_factors": {
+        "warranty_type_vs_rfp": 35,
+        "warranty_years_vs_rfp_min": 12,
+        "installer_certification_at_claimed_tier": 8,
+        "workmanship_warranty_years": 6,
+        "materials_quality": 15
+      },
+      "notes": [
+        "Warranty type: 35 — Bid reports 'ndl' (not total_system_ndl) per extraction note: only sample warranty attached and no named manufacturer system, so prerequisites for total-system tier are not evidenced. Awarded the NDL anchor (35), not the total_system_ndl anchor (40).",
+        "Warranty years: 12 — 20 years meets RFP §3.1/§9.6 minimum exactly; not 5+ over.",
+        "Installer certification at claimed tier: 8 — Bidder lists three certifications (Carlisle Syntec Certified Installer, Firestone Authorized Contractor, JM Preferred Contractor) but does NOT identify which manufacturer's system is being supplied or which specific certification will issue the NDL. Per fixture 02 §3, certified-installer status alone does not unlock the named manufacturer's top-tier NDL without naming the system. Awarded 'certified but not at claimed tier' (8) rather than 20.",
+        "Workmanship warranty years: 6 — 3 years stated (band 2-4 yrs). Below the 5-yr Ontario market median per fixture 02 §4 item 6. Bidder offers an alternate to extend to 5 yrs for $8,500 (not in base).",
+        "Materials quality: 15 — Capped at 10 anchor for 60 mil with HD/gypsum cover board and an 82% solar reflectance white TPO; bidder also offers an 80 mil upgrade alternate at $38K. Total 76 (under the 100 cap)."
+      ],
+      "cap_applied": false
+    }
+  },
+  "red_flags": [
+    {
+      "severity": "critical",
+      "category": "warranty",
+      "description": "20-year NDL warranty claimed but no specific manufacturer system named and only a 'sample' warranty document is attached. Without a named system, the contractor cannot produce a binding total-system NDL letter at award; the RFP requires total_system_ndl per the manifest's RFP-deficiency-resolved default.",
+      "citation": "fixture 02 §1.3 (TPO warranty prerequisites — Authorized Applicator, named system, pre-install review, mid-job inspection); fixture 02 §4 item 5 ('25-year warranty without the type' family).",
+      "evidence": "WARRANTY section: '20-year NDL (No Dollar Limit) warranty on TPO membrane'; ATTACHMENTS: '20-Year NDL Warranty Sample Documentation'; MANUFACTURER CERTIFICATIONS lists three brands without specifying the supplied system.",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "critical",
+      "category": "materials",
+      "description": "TPO manufacturer not named. Bidder lists certifications with three different manufacturers (Carlisle Syntec, Firestone, Johns Manville) but does not specify which manufacturer's TPO membrane, adhesive, fasteners, cover board attachment system, or termination accessories will be used. Mismatched system components void most NDL system warranties (fixture 02 §4 item 1).",
+      "citation": "fixture 02 §4 item 1 (mismatched system components void warranty); fixture 02 §1.3 (TPO warranty tiers tied to specific manufacturer programs).",
+      "evidence": "MANUFACTURER CERTIFICATIONS section lists Carlisle/Firestone/JM; PRICE BREAKDOWN line 'TPO membrane (60 mil)' does not name the brand or product line; product data sheets attached but extraction does not confirm a single manufacturer.",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "high",
+      "category": "scope",
+      "description": "Wind uplift design basis not stated. Bid contains no CSA A123.21 listing, no FM 1-29/1-60/1-90 rating, and no project-specific calculated uplift pressure for field/perimeter/corner zones. RFP §3.1 implicitly relies on OBC compliance; OBC adopts NBC Part 4 with CSA A123.21.",
+      "citation": "OBC NBC Part 4 / CSA A123.21-20 (fixture 01 §1.2); fixture 02 §4 item 4 ('No wind uplift design basis').",
+      "evidence": "WARRANTY section field wind_uplift_coverage_mph is null; KEY SPECIFICATIONS table does not state uplift rating; PHASING PLAN SUMMARY does not include a fastening schedule with corner/perimeter densification.",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "high",
+      "category": "safety",
+      "description": "Fall protection plan is generic. Bid cites WAH training renewal cycle, written manual, and weekly safety meetings, but does not name anchor points, specific fall-arrest equipment, rescue plan, or a control-zone/guardrail layout for the parapet and roof-edge zones during built-up tear-off. O. Reg. 213/91 §26.1 mandates a rescue plan for any fall-arrest system; §26.3(6) requires a 2 m control-zone barrier on built-up roof work.",
+      "citation": "O. Reg. 213/91 §§26.1 and 26.3(6) (fixture 01 §3.3 and §3.4); CSA Z91 (fixture 01 §1.6) for any permanent anchors used.",
+      "evidence": "SAFETY PROGRAM section: 'Fall protection training for all workers (updated every 2 years); written safety manual; weekly safety meetings; incident reporting and investigation' — no site-specific plan, no anchor inventory, no rescue plan referenced.",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "high",
+      "category": "warranty",
+      "description": "No manufacturer pre-install review or mid-job technical inspection is included in scope. Top-tier NDL warranties (25-30 yr) and even most 20-yr total-system NDL letters require manufacturer technical-rep inspections that the contractor must arrange and absorb. Without scheduled inspections, the 20-yr NDL may not issue at completion.",
+      "citation": "fixture 02 §3 (manufacturer certified-contractor program prerequisites); fixture 02 §4 item 7 (no pre-install/mid-job inspection for long warranties).",
+      "evidence": "PHASING PLAN SUMMARY and HAZARDOUS MATERIALS APPROACH sections do not mention manufacturer inspection visits; payment schedule shows no manufacturer-acceptance milestone before holdback release.",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "medium",
+      "category": "warranty",
+      "description": "Workmanship warranty of 3 years is below the 5-year Ontario market median for reputable contractors. Bidder offers an alternate to extend to 5 years for $8,500 — should be evaluated against the price gap to the next bidder.",
+      "citation": "fixture 02 §4 item 6 (workmanship warranty band; 5-year market median).",
+      "evidence": "WARRANTY section: 'Workmanship Warranty: 3 years on installation'; OPTIONAL ADD-ONS: 'Extended workmanship warranty to 5 years $8,500'.",
+      "recommendation": "negotiate"
+    },
+    {
+      "severity": "medium",
+      "category": "scope",
+      "description": "Hazardous materials approach assumes 'minimal ACM if any (building is 1998)' with testing during removal and major abatement excluded. RFP §2.3 acknowledges potential ACM and lead flashings during the 1998 transition period; the bidder's 'pause for testing' approach could trigger schedule and cost changes mid-tear-off. RFP excludes ACM abatement costs from the bid (owner-funded) — but bidder should at least price a contingency for stop-work / re-mobilization if ACM is encountered.",
+      "citation": "O. Reg. 278/05 (asbestos on construction projects) — fixture 01 §4.2; OHSA s.30 (DSR obligation).",
+      "evidence": "EXCLUSIONS item 7 ('Hazardous material abatement beyond minor handling (testing included)'); HAZARDOUS MATERIALS APPROACH ('If hazardous materials are suspected, work will pause for testing'); CLARIFICATIONS item 3 ('We assume minimal ACM if any...').",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "medium",
+      "category": "scope",
+      "description": "No CAN/ULC-S107 fire classification listing cited for the proposed assembly. OBC 3.1.15.2 requires a listed assembly. While 60 mil TPO over polyiso + 1/4\" gypsum cover board is a standard Class A configuration for major manufacturers, the specific listing number tied to the as-installed assembly is not stated.",
+      "citation": "OBC 3.1.15.2; CAN/ULC-S107 (fixture 01 §1.1).",
+      "evidence": "KEY SPECIFICATIONS table lists components but no UL/ULC listing number; ATTACHMENTS reference product data sheets but no fire-classification listing is enumerated in the cover letter.",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "medium",
+      "category": "scope",
+      "description": "Skylight replacement and HVAC equipment modifications excluded. RFP §2.1 includes 4 skylights among the 47 penetrations to be flashed but does not require replacement. Re-flashing 28-year-old skylights without replacement is a known leak path (fixture 02 §5).",
+      "citation": "fixture 02 §5 (Common Scope Omissions — skylight replacement).",
+      "evidence": "EXCLUSIONS items 4 and 5 ('Skylight replacement or major repairs', 'HVAC equipment modifications or replacements').",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "low",
+      "category": "scope",
+      "description": "No unit pricing for steel deck (per bf), wood deck (per bf), flashing (per lf), or insulation (per sqft per R-value). Allowances are flat-dollar ($12K steel, $8K wood, $18K tapered) with no rate for overruns. RFP §2.1.2 and §3.2 both contemplate unit pricing for extras.",
+      "citation": "fixture 02 §5 (unit-price allowances for deck replacement).",
+      "evidence": "PRICE BREAKDOWN allowance lines are flat amounts; OPTIONAL ADD-ONS table omits per-bf or per-sqft rates for deck/insulation extras.",
+      "recommendation": "clarify"
+    }
+  ]
+}

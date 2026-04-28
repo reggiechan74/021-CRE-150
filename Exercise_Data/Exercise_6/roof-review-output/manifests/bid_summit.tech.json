@@ -1,0 +1,117 @@
+{
+  "bidder_id": "summit",
+  "mandatory_gates": {
+    "scope_compliance": {
+      "result": "pass",
+      "evidence": "Cover Letter §INCLUDED IN OUR BID PRICE and §KEY SPECIFICATIONS — bid claims full RFP compliance with no declared exclusions; tapered insulation, cover board, 47-penetration flashing scope, hazmat testing, drain replacement (4) all included."
+    },
+    "membrane_thickness": {
+      "result": "pass",
+      "evidence": "§KEY SPECIFICATIONS — 80 mil TPO proposed vs RFP minimum 60 mil. Voluntary upgrade noted in §VALUE ENGINEERING OBSERVATIONS."
+    },
+    "cover_board": {
+      "result": "pass",
+      "evidence": "§KEY SPECIFICATIONS row 'Cover Board: High-density polyiso'; §PRICE BREAKDOWN line 'Cover board (high-density polyiso) $48,000'. Meets fixture 02 §4 requirement for HD polyiso/DensDeck under TPO over polyiso."
+    },
+    "insulation_upgrade": {
+      "result": "pass",
+      "evidence": "§KEY SPECIFICATIONS — R-38 two-layer staggered polyiso vs RFP minimum R-30. Meets/exceeds SB-10 Zone 5 ~R-30ci continuous threshold (fixture 01 §1.3)."
+    },
+    "warranty_type": {
+      "result": "pass",
+      "evidence": "§WARRANTY — '30-year NDL (No Dollar Limit) warranty on TPO membrane'. Meets RFP-required total_system_ndl tier in form, although the named manufacturer program backing the NDL is not identified (see warranty red flag)."
+    },
+    "warranty_duration": {
+      "result": "pass",
+      "evidence": "§WARRANTY — 30-year manufacturer warranty exceeds RFP 20-year minimum by 10 years; workmanship 5 years exceeds RFP 2-year minimum."
+    },
+    "completion_date": {
+      "result": "pass",
+      "evidence": "§PROJECT SCHEDULE — Substantial Completion July 25, 2026; Final Completion Aug 10, 2026. RFP does not specify a hard substantial-completion deadline; bid is consistent with the May-Aug 2026 occupied-building work window."
+    },
+    "fire_rating": {
+      "result": "unclear",
+      "evidence": "Bid does not state CAN/ULC-S107 class or listing number for the proposed assembly. RFP does not specify a class either. Treated as documentation gap, not a gate fail (see materials red flag)."
+    },
+    "wind_uplift": {
+      "result": "unclear",
+      "evidence": "§WARRANTY cites '130 mph wind speed coverage' as a warranty term; bid does not state CSA A123.21 dynamic uplift listing, FM 1-29 design pressures, or zone-by-zone fastening/adhesion design. Per skill guidance, 'design basis not stated' is a high red flag, not a wind_uplift gate fail."
+    }
+  },
+  "scores": {
+    "technical_approach": 78,
+    "warranty_materials": 83
+  },
+  "scoring_rationale": {
+    "technical_approach": {
+      "sub_factors": {
+        "tear_off_and_staging": 25,
+        "weather_protection_dry_in": 20,
+        "fall_protection_and_safety": 10,
+        "waste_environmental_logistics": 8,
+        "quality_control_inspection_protocol": 15
+      },
+      "notes": "Tear-off & staging (25): three-phase plan with maximum 8,000 sf exposed (vs 15,000 sf RFP cap), dedicated phasing coordinator, pre-removal infrared moisture survey, hazmat sampling at 12 locations, lift/protection strategy implied for multi-level roof. Weather protection (20): each phase watertight daily by 5:00 PM, reinforced weighted-edge tarps for weekends, temporary weather protection installed each evening during Phase 2 — phase-specific dry-in plan. Fall protection (10): COR-certified, CRSP-certified safety officer Patricia Lee, annual fall protection training, daily tailgate meetings, dedicated safety officer for >50,000 sf — but the bid does not name specific anchor points, anchor type/load rating, harness/lanyard model, or document a written rescue plan, so it scores at the 'generic WAH compliance statement' tier. Waste/environmental (8): daily debris removal, lead-flashings as hazardous waste, ACM testing — but no named recycling/diversion facility, no DSA referenced (RFP §2.3 acknowledges potential ACM despite 1998 build), no diversion-rate target. QC/inspection (15): final manufacturer-rep inspection, weekly progress reports with photos, in-progress phasing checkpoints, wireless temperature monitoring with ±2°C alerts."
+    },
+    "warranty_materials": {
+      "sub_factors": {
+        "warranty_type_vs_rfp": 35,
+        "warranty_years_vs_rfp_minimum": 20,
+        "installer_certification_at_claimed_tier": 8,
+        "workmanship_warranty_years": 10,
+        "materials_quality": 10
+      },
+      "notes": "Warranty type (35): NDL claimed but no named premium system program (e.g., Carlisle Sure-Weld 30-yr Golden Seal, GAF EverGuard 30-yr, Sika Sarnafil 30-yr). Per rubric, 'ndl (no attached system-warranty program)' = 35; total_system_ndl with named program would unlock 40. Years (20): 30 yr exceeds RFP 20-yr minimum by 10 yr, > 5 yr above. Installer certification at claimed tier (8): bid lists three Master/Premier-tier certifications across Carlisle, Firestone, and GAF, but does not identify which manufacturer is supplying the 30-yr NDL TPO system being installed; without that linkage we cannot confirm certified-at-claimed-tier for the actual supplied system. Workmanship (10): 5 yr stated, 5+ yr threshold = 10. Materials quality (10): 80 mil TPO + HD polyiso cover board + R-38 polyiso + Kynar-finish premium aluminum flashings — exceeds standard."
+    }
+  },
+  "red_flags": [
+    {
+      "severity": "critical",
+      "category": "warranty",
+      "description": "30-year NDL warranty claimed without identifying the supplying manufacturer or named system program. Bid lists Carlisle Syntec Master Installer, Firestone Premier Contractor, and GAF Master Elite certifications, but does not say which manufacturer's TPO and which warranty program (e.g., Sure-Weld 30-yr Golden Seal, EverGuard 30-yr, or Firestone equivalent) is being supplied. NDL validity depends on the actual manufacturer + installed system + certified-installer match — and 30-yr tiers require pre-installation drawing review, mid-job and final manufacturer inspection on the specific named system.",
+      "citation": "fixture 02 §1.3 (TPO warranty tiers: 30-yr Golden Seal requires 80 mil + Authorized Applicator + manufacturer inspection); fixture 02 §3 (manufacturer certified contractor programs); fixture 02 §4 item 1 (mismatched system components void warranty)",
+      "evidence": "Sections 'WARRANTY' and 'MANUFACTURER CERTIFICATIONS'; Attachments list 'Product Data Sheets (80 mil TPO membrane)' and '30-Year NDL Warranty Sample Documentation' but the body of the bid never names the manufacturer of the system being installed.",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "high",
+      "category": "materials",
+      "description": "Wind uplift design basis not stated. Bid cites '130 mph wind speed coverage' as a warranty term but does not provide a CSA A123.21 dynamic uplift listing for the as-proposed assembly, FM 1-29 design pressures for field/perimeter/corner zones, NBC Part 4 wind-load calculation, or fastening/adhesion schedule keyed to zone. A roof of this height and exposure (multi-level industrial) requires zone-by-zone uplift design.",
+      "citation": "fixture 01 §1.2 (CSA A123.21 wind uplift, FM 1-29 zones); fixture 02 §4 item 4 ('No wind uplift design basis')",
+      "evidence": "§WARRANTY — '130 mph wind speed coverage' is the only wind reference; no q-value, no zone pressures, no listed assembly identifier appears in the bid body or attachments list.",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "high",
+      "category": "safety",
+      "description": "Site-specific fall protection plan is generic. Bid confirms COR certification, CRSP-certified safety officer, annual fall protection training, and dedicated safety officer for >50,000 sf projects — but does not identify named anchor points, anchor type/load rating (≥22.2 kN per O. Reg. 213/91), harness/lanyard/SRL inventory, control-zone demarcation per §26.3(6) for built-up roof work, or a written rescue plan (which is mandatory under §26.1 for any fall-arrest system).",
+      "citation": "O. Reg. 213/91 §§26.1–26.9; fixture 01 §3.3 (fall arrest hierarchy and rescue plan requirement); fixture 01 §3.4 (guardrails/control zone)",
+      "evidence": "§SAFETY PROGRAM — 'Fall protection training for all workers (updated annually). Dedicated safety officer on-site for projects over 50,000 sq ft.'; ATTACHMENTS lists 'Safety Program Manual (excerpt)' but no project-specific fall protection plan or rescue plan is described in the bid body.",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "medium",
+      "category": "scope",
+      "description": "Hazardous-material boundary is ambiguous. Bid states 'minor ACM can be handled under our existing certification' but full abatement would be extra. The threshold between 'minor' and 'full' is not defined, and Type 1/2/3 classification per O. Reg. 278/05 is not stated. RFP §2.3 acknowledges potential ACM and lead from the 1998 transition period.",
+      "citation": "O. Reg. 278/05; fixture 01 §4.2 (ACM Type 1/2/3 classification, MLITSD notification for Type 3)",
+      "evidence": "§HAZARDOUS MATERIALS APPROACH — 'If ACM confirmed: We hold appropriate licensing for limited abatement. Full abatement would be extra, but minor ACM can be handled under our existing certification.'",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "medium",
+      "category": "materials",
+      "description": "Fire classification listing not provided. Bid does not cite a CAN/ULC-S107 Class A/B/C listing for the as-proposed assembly (membrane + insulation + cover board + steel deck). RFP also does not require a specific class, but for an 85,000 sf OBC Part 3 industrial building this is a documentation gap that should be closed before contract.",
+      "citation": "fixture 01 §1.1 (CAN/ULC-S107 listing must match as-proposed assembly); OBC 3.1.15.2",
+      "evidence": "Bid 'KEY SPECIFICATIONS' table and 'PRICE BREAKDOWN' do not mention a CAN/ULC-S107 listing or fire class; no UL/ULC listing number cited.",
+      "recommendation": "clarify"
+    },
+    {
+      "severity": "low",
+      "category": "materials",
+      "description": "No CRCA technical bulletin or named C&D recycling/diversion facility for ~150 tons of BUR/gravel tear-off waste. RFP does not require diversion targets, but a named disposal facility and weight-tracking commitment is industry best practice and would protect the owner against unauthorized dumping liability.",
+      "citation": "fixture 01 §4.1 (asphalt shingle disposal best practice — named facility, diversion rate, weight tracking)",
+      "evidence": "§INCLUDED IN OUR BID PRICE — 'Daily site cleanup and debris removal included.' No facility named in bid body or attachments list.",
+      "recommendation": "accept-with-condition"
+    }
+  ]
+}

@@ -1,0 +1,297 @@
+{
+  "bidder_id": "pinnacle",
+  "bidder_name": "Pinnacle Roofing Corp.",
+  "source_pdf": "03-Bid-Pinnacle-Roofing.md",
+  "pricing": {
+    "base_bid_cad": 612000.00,
+    "hst_included": false,
+    "hst_amount_cad": 79560.00,
+    "total_with_hst_cad": 691560.00,
+    "alternates": [
+      {
+        "description": "Snow guard system (installed)",
+        "price_cad": 52,
+        "unit": "per_linear_foot"
+      },
+      {
+        "description": "Additional insulation to R-38",
+        "price_cad": 24000
+      },
+      {
+        "description": "Upgrade to 80 mil membrane",
+        "price_cad": 38000
+      },
+      {
+        "description": "5-year preventive maintenance program",
+        "price_cad": 3200,
+        "unit": "per_year"
+      },
+      {
+        "description": "Emergency service retainer",
+        "price_cad": 1800,
+        "unit": "per_year"
+      },
+      {
+        "description": "Thermal imaging scan post-installation",
+        "price_cad": 2800
+      },
+      {
+        "description": "Extended workmanship warranty to 5 years",
+        "price_cad": 8500
+      }
+    ],
+    "unit_prices": {
+      "deck_replacement_per_bf": null,
+      "insulation_per_sqft_per_rvalue": null,
+      "flashing_per_lf": null
+    },
+    "allowances_carried": [
+      {
+        "item": "Tapered insulation for ponding correction",
+        "amount_cad": 18000
+      },
+      {
+        "item": "Steel deck repair allowance",
+        "amount_cad": 12000
+      },
+      {
+        "item": "Wood deck repair allowance (office wing)",
+        "amount_cad": 8000
+      }
+    ]
+  },
+  "scope_response": {
+    "full_compliance_claimed": true,
+    "exclusions_declared": [
+      "Major steel deck repairs exceeding $12,000 allowance",
+      "Major wood deck replacement exceeding $8,000 allowance",
+      "Replacement of damaged roof drains or leaders (minor adjustments included)",
+      "Skylight replacement or major repairs",
+      "HVAC equipment modifications or replacements",
+      "Work outside standard hours (7 AM - 6 PM weekdays)",
+      "Hazardous material abatement beyond minor handling (testing included)",
+      "Temperature monitoring equipment (can be arranged through owner)",
+      "Building permits (estimated $4,500-$6,000)"
+    ],
+    "clarifications": [
+      "Ponding correction: tapered insulation allowance included; final quantity to be confirmed during removal.",
+      "Deck conditions: allowances for both steel and wood deck repairs included; should be sufficient based on visual inspection.",
+      "Hazardous materials: assumes minimal ACM if any (building is 1998); testing during removal; major abatement would be extra.",
+      "Phasing: schedule assumes reasonable cooperation from tenant for access and coordination; significant phasing changes may affect schedule.",
+      "HVAC coordination: assumes HVAC shutdowns can be scheduled for weekends when needed; weekday shutdowns require 72-hour notice.",
+      "Temperature monitoring: owner to provide or arrange temperature monitoring in warehouse; contractor will coordinate around any alerts.",
+      "Permits: building permits typically owner responsibility; contractor can arrange if needed (priced separately)."
+    ],
+    "substitutions_proposed": []
+  },
+  "materials_system": {
+    "manufacturer": "Not explicitly named in bid (Carlisle Syntec, Firestone Building Products, and Johns Manville listed as certified affiliations)",
+    "system_name": "TPO membrane, 60 mil, fully adhered",
+    "membrane_thickness_actual": "60 mil",
+    "insulation_spec": "R-30, two-layer staggered joints, with 1/4\" gypsum cover board",
+    "cover_board_included": true,
+    "product_data_sheets_attached": true
+  },
+  "warranty_offered": {
+    "manufacturer_years": 20,
+    "warranty_type": "ndl",
+    "workmanship_years": 3,
+    "wind_uplift_coverage_mph": null,
+    "manufacturer_certified_installer": true,
+    "certification_program": "Carlisle Syntec Certified Installer; Firestone Building Products Authorized Contractor; Johns Manville Preferred Contractor",
+    "evidence_page": "Cover Letter, sections 'WARRANTY' and 'MANUFACTURER CERTIFICATIONS'; '20-Year NDL Warranty Sample Documentation' attachment listed"
+  },
+  "qualifications": {
+    "years_in_business": 18,
+    "wsib_clearance_attached": true,
+    "wsib_clearance_date": null,
+    "wsib_in_good_standing": true,
+    "wsib_account_number": "5678901-23",
+    "wsib_experience_rating": 0.89,
+    "cgl_limit_cad": 5000000,
+    "cgl_completed_operations_years": null,
+    "owner_named_as_additional_insured": null,
+    "coi_attached": true,
+    "bid_bond_attached": false,
+    "bonding_capacity_cad": null,
+    "working_at_heights_training_confirmed": true,
+    "crca_member": null,
+    "certificate_of_qualification_roofers_count": null,
+    "references_provided": [
+      {
+        "project_name": "Canadian Tire Distribution Centre, Concord, ON",
+        "owner_contact": "David Park, Facilities Manager, (905) 555-0789",
+        "value_cad": null,
+        "scope_size_sqft": 95000,
+        "completion_year": 2024,
+        "similar_scope": true,
+        "notes": "Occupied distribution facility; phased installation over 85 days."
+      },
+      {
+        "project_name": "Loblaws Head Office, Brampton, ON",
+        "owner_contact": "Amanda Foster, Property Manager, (416) 555-0823",
+        "value_cad": null,
+        "scope_size_sqft": 78000,
+        "completion_year": 2023,
+        "similar_scope": true,
+        "notes": "Office building with continuous operations; zero disruption incidents."
+      },
+      {
+        "project_name": "Tim Hortons Supply Chain, Oakville, ON",
+        "owner_contact": "Steve MacDougall, Director of Operations, (905) 555-0901",
+        "value_cad": null,
+        "scope_size_sqft": 62000,
+        "completion_year": 2025,
+        "similar_scope": true,
+        "notes": "Cold storage facility; temperature monitoring throughout construction."
+      }
+    ],
+    "subcontracting_declared": false,
+    "subcontractors_named": [],
+    "project_team": [
+      {"role": "Project Manager", "name": "Jennifer Morrison", "experience_years": 12},
+      {"role": "Site Supervisor", "name": "Tom Bakos", "experience_years": 18},
+      {"role": "Lead Installers", "name": "3 certified roofing technicians", "experience_years": 8}
+    ]
+  },
+  "schedule": {
+    "mobilization_days_after_award": null,
+    "work_duration_days": 80,
+    "start_date": "2026-05-01",
+    "substantial_completion_date": "2026-07-20",
+    "final_completion_date": "2026-08-05",
+    "crew_size": null,
+    "accommodates_occupied_building": true
+  },
+  "technical_approach": {
+    "narrative": "Phased occupied-building installation: Phase 1 (Days 1-20) office wing 5,100 sf; Phase 2 (Days 21-50) main roof Section A 20,000 sf; Phase 3 (Days 51-80) main roof Section B 25,000 sf including ponding areas with tapered insulation. Twice-weekly coordination meetings during critical phases. Stated 8 occupied-building roof replacements completed in past 5 years.",
+    "tear_off_staging_plan": "Maximum 10,000 sq ft exposed at any time; phased by section.",
+    "weather_protection_plan": "Each phase made watertight by end of work day; weekend protection with reinforced tarps.",
+    "fall_protection_plan": "Fall protection training for all workers (updated every 2 years); written safety manual; weekly safety meetings; incident reporting and investigation.",
+    "waste_disposal_plan": "Daily cleanup and debris removal; legal disposal included; lead flashings separated and disposed of as hazardous waste.",
+    "site_safety_plan_attached": true,
+    "hazmat_approach": "Visual inspection during removal; if hazardous materials suspected, work pauses for testing; minor ACM handling included; major abatement would be extra; lead flashings handled as hazmat."
+  },
+  "payment_schedule": {
+    "mobilization_percent": 10,
+    "materials_delivery_percent": 20,
+    "progress_payments_percent": 45,
+    "substantial_completion_percent": 15,
+    "holdback_percent": 10,
+    "holdback_release_basis": "Ontario Construction Act"
+  },
+  "attachments_listed": [
+    "Certificate of Insurance",
+    "WSIB Clearance Certificate",
+    "WSIB Experience Rating Letter (0.89)",
+    "Product Data Sheets (60 mil TPO membrane)",
+    "20-Year NDL Warranty Sample Documentation",
+    "Three Reference Letters",
+    "Manufacturer Certifications",
+    "Safety Program Summary",
+    "Phasing Plan Overview (4 pages)"
+  ],
+  "submission_metadata": {
+    "submitted_by": "Robert K. Thompson, President",
+    "submitted_date": "2026-03-30",
+    "bid_validity_days": 60,
+    "bid_validity_from": "2026-04-12",
+    "site_visit_attended": true,
+    "site_visit_date": "2026-03-25"
+  },
+  "_provenance": {
+    "bidder_name": "Cover Letter header (Pinnacle Roofing Corp.)",
+    "pricing.base_bid_cad": "BID SUMMARY table — 'Total Bid Price (before HST) $612,000.00'",
+    "pricing.hst_included": "BID SUMMARY table — HST 13% shown as separate line of $79,560.00",
+    "pricing.allowances_carried": "PRICE BREAKDOWN table (Tapered insulation $18,000; Steel deck repair $12,000; Wood deck repair $8,000)",
+    "pricing.alternates": "OPTIONAL ADD-ONS (PRICED SEPARATELY) table",
+    "scope_response.exclusions_declared": "EXCLUSIONS section, items 1-9",
+    "scope_response.clarifications": "CLARIFICATIONS AND ASSUMPTIONS section",
+    "materials_system.membrane_thickness_actual": "KEY SPECIFICATIONS table and PRICE BREAKDOWN line 'TPO membrane (60 mil)'",
+    "materials_system.insulation_spec": "KEY SPECIFICATIONS table",
+    "materials_system.cover_board_included": "KEY SPECIFICATIONS table — '1/4\" gypsum board'",
+    "warranty_offered.manufacturer_years": "WARRANTY section — '20-year NDL'",
+    "warranty_offered.warranty_type": "WARRANTY section — '20-year NDL (No Dollar Limit) warranty on TPO membrane'",
+    "warranty_offered.workmanship_years": "WARRANTY section — '3 years on installation'",
+    "warranty_offered.certification_program": "MANUFACTURER CERTIFICATIONS section",
+    "qualifications.years_in_business": "Cover Letter — 'Established in 2008' (18 years to 2026)",
+    "qualifications.cgl_limit_cad": "INSURANCE COVERAGE section — '$5,000,000 per occurrence'",
+    "qualifications.wsib_account_number": "INSURANCE COVERAGE section — 'WSIB Account #5678901-23'",
+    "qualifications.wsib_experience_rating": "SAFETY PROGRAM section — 'WSIB Experience Rating: 0.89'",
+    "qualifications.references_provided": "REFERENCES section",
+    "qualifications.working_at_heights_training_confirmed": "SAFETY PROGRAM section — 'Fall protection training for all workers (updated every 2 years)'",
+    "schedule": "PROJECT SCHEDULE section",
+    "technical_approach": "PHASING PLAN SUMMARY and HAZARDOUS MATERIALS APPROACH sections",
+    "payment_schedule": "PAYMENT SCHEDULE section",
+    "attachments_listed": "ATTACHMENTS list at bid foot",
+    "submission_metadata": "Cover Letter date and signature block; bid validity footer"
+  },
+  "extraction_notes": [
+    {
+      "field": "materials_system.manufacturer",
+      "issue": "Bid does not name a single manufacturer for the supplied TPO system. Three certifications are listed (Carlisle Syntec, Firestone Building Products, Johns Manville) but no specific system is identified. The '20-Year NDL Warranty Sample Documentation' attachment is referenced but the manufacturer issuing the NDL is unstated.",
+      "evidence": "MANUFACTURER CERTIFICATIONS section; ATTACHMENTS list",
+      "owner_followup": "Confirm which manufacturer's TPO system will be supplied and obtain the matching system warranty letter (not a generic sample)."
+    },
+    {
+      "field": "warranty_offered.warranty_type",
+      "issue": "Bid states '20-year NDL' but does not attach a system-warranty document — only 'sample' documentation. Per the warranty taxonomy, this is recorded as 'ndl' (not total_system_ndl) because the prerequisites for total-system NDL (named certified installer for the supplied system, pre-install drawing review, manufacturer mid-job inspection) are not evidenced.",
+      "evidence": "WARRANTY section; ATTACHMENTS list ('20-Year NDL Warranty Sample Documentation')",
+      "owner_followup": "Request the actual manufacturer NDL warranty form (not a sample) tied to the proposed system, and confirm whether labour to reinstall is covered or only material replacement."
+    },
+    {
+      "field": "warranty_offered.wind_uplift_coverage_mph",
+      "issue": "Bid does not specify wind uplift coverage in mph.",
+      "evidence": "WARRANTY section",
+      "owner_followup": "Request stated wind-uplift coverage from manufacturer warranty."
+    },
+    {
+      "field": "qualifications.bid_bond_attached / bonding_capacity_cad",
+      "issue": "No bid bond or bonding capacity is referenced in the submission or in the ATTACHMENTS list. (Note: per /roof-review-output protocol, whether this is a mandatory failure depends on the RFP §6.2 submission requirements — defer to wave-2 qualification check.)",
+      "evidence": "ATTACHMENTS list; INSURANCE COVERAGE section silent on bonding",
+      "owner_followup": "If RFP requires bid bond, request from bidder or treat as compliance gap."
+    },
+    {
+      "field": "qualifications.wsib_clearance_date",
+      "issue": "WSIB Clearance Certificate is listed as attached but the certificate's issue/expiry date is not transcribed in the cover letter narrative.",
+      "evidence": "ATTACHMENTS list; INSURANCE COVERAGE section names account number 5678901-23 only",
+      "owner_followup": "Confirm WSIB clearance is current (within 60 days of bid open) by reviewing the attached certificate."
+    },
+    {
+      "field": "qualifications.cgl_completed_operations_years",
+      "issue": "Bid declares CGL $5M per occurrence but does not state completed-operations tail length.",
+      "evidence": "INSURANCE COVERAGE section",
+      "owner_followup": "Verify completed operations period meets RFP minimum (typically 2 years) on COI."
+    },
+    {
+      "field": "qualifications.owner_named_as_additional_insured",
+      "issue": "Bid does not state whether Tenebrus Capital is named as additional insured on the contractor's CGL.",
+      "evidence": "INSURANCE COVERAGE section",
+      "owner_followup": "Inspect attached COI to confirm owner is named as additional insured."
+    },
+    {
+      "field": "qualifications.crca_member / certificate_of_qualification_roofers_count",
+      "issue": "No statement of CRCA membership; no count of Skilled Trades Ontario C of Q-holding roofers on crew. Cover letter cites '3 certified roofing technicians' (manufacturer-certified, not necessarily Skilled Trades C of Q).",
+      "evidence": "PROJECT TEAM section",
+      "owner_followup": "Request CRCA membership confirmation and explicit C of Q holder count if material to evaluation."
+    },
+    {
+      "field": "pricing.unit_prices",
+      "issue": "Bid does not provide unit pricing for deck replacement (per bf), flashing (per lf), or insulation (per sqft per R-value). Allowances are flat-dollar.",
+      "evidence": "PRICE BREAKDOWN table; allowance lines",
+      "owner_followup": "If extras over allowance are likely, request unit-rate schedule for extras/deducts pricing."
+    },
+    {
+      "field": "schedule.mobilization_days_after_award / crew_size",
+      "issue": "Mobilization days after award and crew size are not stated; only fixed start (May 1) and end (August 5) dates given.",
+      "evidence": "PROJECT SCHEDULE section",
+      "owner_followup": "Confirm mobilization lead time and crew size for owner facility planning."
+    },
+    {
+      "field": "scope_response.full_compliance_claimed",
+      "issue": "Bid states 'meeting all specified requirements' (cover letter para 2) but contains nine exclusions and seven clarifications. Recorded as full compliance per cover-letter language; flag the inconsistency for wave-2 technical review.",
+      "evidence": "Cover letter paragraph 2; EXCLUSIONS and CLARIFICATIONS AND ASSUMPTIONS sections",
+      "owner_followup": "Wave-2: reconcile each exclusion/clarification against RFP spec to confirm true compliance."
+    }
+  ]
+}

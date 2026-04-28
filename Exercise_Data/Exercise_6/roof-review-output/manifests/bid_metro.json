@@ -1,0 +1,360 @@
+{
+  "bidder_id": "metro",
+  "bidder_name": "Metro Building Solutions Inc.",
+  "source_pdf": "04-Bid-Metro-Building-Solutions.md",
+  "bid_date": "2026-03-30",
+  "bid_validity_days": 60,
+  "bid_valid_from": "2026-04-12",
+  "signatory": "Victor Novak, Estimating Manager",
+  "contact": {
+    "address": "2100 Dundas Street East, Mississauga, ON L4X 1M2",
+    "phone": "(905) 555-0466",
+    "email": "tenders@metrobuildingsolutions.ca"
+  },
+
+  "pricing": {
+    "base_bid_cad": 468000,
+    "hst_included": false,
+    "hst_amount_cad": 60840,
+    "total_with_hst_cad": 528840,
+    "price_breakdown": [
+      { "item": "Roof removal and disposal", "amount_cad": 78000 },
+      { "item": "TPO membrane (60 mil)", "amount_cad": 152000 },
+      { "item": "Insulation (R-30)", "amount_cad": 108000 },
+      { "item": "Flashings and penetrations", "amount_cad": 62000 },
+      { "item": "Labour", "amount_cad": 52000 },
+      { "item": "Equipment and scaffolding", "amount_cad": 12000 },
+      { "item": "Cleanup", "amount_cad": 4000 }
+    ],
+    "alternates": [
+      { "description": "Cover board installation", "price_cad": 38000 },
+      { "description": "Steel deck repair allowance", "price_cad": 35000 },
+      { "description": "Wood deck repair allowance", "price_cad": 20000 },
+      { "description": "Tapered insulation for ponding (estimate)", "price_cad": 28000 },
+      { "description": "Drain replacement (estimated 6)", "price_cad": 14400 },
+      { "description": "HVAC curb work (estimated 4)", "price_cad": 12800 },
+      { "description": "Skylight replacement (4 units per Metro count; RFP states 12)", "price_cad": 19200 },
+      { "description": "Building permit (estimate)", "price_cad": 4500 },
+      { "description": "3-year workmanship warranty upgrade", "price_cad": 8500 },
+      { "description": "Infrared moisture survey", "price_cad": 4500 },
+      { "description": "Hazardous material testing", "price_cad": 3200 }
+    ],
+    "unit_prices": {
+      "steel_deck_repair_labour_per_hour_cad": 185,
+      "fascia_repair_per_lf_cad": 145,
+      "snow_guards_per_lf_cad": 58,
+      "additional_insulation_per_sqft_per_rvalue_cad": 3.20,
+      "drain_replacement_per_drain_cad": 2400,
+      "hvac_curb_per_unit_cad": 3200,
+      "skylight_replacement_per_unit_cad": 4800,
+      "after_hours_premium_per_worker_per_hour_cad": 95,
+      "phasing_supervision_per_week_cad": 2500,
+      "weekend_weather_protection_per_weekend_cad": 1500
+    },
+    "allowances_carried": [
+      { "item": "Deck fastening (if deck requires additional fastening to structure)", "amount_cad": 8500 }
+    ]
+  },
+
+  "scope_response": {
+    "full_compliance_claimed": false,
+    "exclusions_declared": [
+      "Steel deck repairs - $185/hour for labour plus materials (estimated $25,000-$45,000 based on visual inspection)",
+      "Deck fastening - If deck requires additional fastening to structure: $8,500 allowance",
+      "Wood deck replacement (office wing) - Not included. Estimated $15,000-$25,000 if required.",
+      "Cover board - Not included in base bid. Optional upgrade at $38,000. Note: We typically do not install cover board on industrial buildings of this age unless specifically required by owner.",
+      "Tapered insulation for ponding - Not included. Optional upgrade at $22,000-$35,000 depending on solution. Note: Ponding observed during site visit appears to be superficial. We recommend addressing only if leaks occur.",
+      "Drain replacement - Any drain bowls or leaders requiring replacement: $2,400 per drain (estimated 6-8 drains may need replacement)",
+      "HVAC curb modifications - Any modifications or replacements: $3,200 per unit (estimated 4-6 curbs may require work)",
+      "Skylight work - Skylight replacement or repairs: $4,800 per skylight (12 skylights on roof per RFP - we counted 4 during site visit)",
+      "Fascia repairs - Any fascia replacement required: $145/linear foot",
+      "Work outside standard hours - Weekend or after-hours work: $95/hour per worker premium",
+      "Hazardous materials - If any hazardous materials discovered during removal (asbestos, lead flashing, etc.): actual cost plus 15%",
+      "Additional insulation - Above R-30: $3.20/sq ft per R-value increment",
+      "Snow guards - If required: $58/linear foot",
+      "Infrared survey - If owner requires: $4,500",
+      "Permits - Building permits not included. Estimated $3,800-$5,200",
+      "Testing and inspection - Third-party testing/inspection if required by owner: actual cost plus 10%",
+      "Protection of landscaping - If special protection required beyond standard caution tape: actual cost",
+      "Waste disposal fees - If disposal fees exceed current rates due to market changes: actual cost adjustment",
+      "Material price escalation - If project start delayed beyond 60 days from bid date: material costs subject to market adjustment",
+      "Substantial completion inspection - Third-party inspection if required by owner: $2,800",
+      "Phasing coordination - If phasing extends schedule beyond 90 days: $2,500/week additional supervision",
+      "Temperature monitoring - If required by owner: actual cost of equipment plus 10%",
+      "Weekend weather protection - If weekend work not performed: $1,500/weekend for tarps and protection",
+      "Multiple roof levels access - If special equipment required for office wing roof: actual rental cost",
+      "Daily cleanup - If daily cleanup not feasible due to site conditions: weekly cleanup at no additional cost"
+    ],
+    "clarifications": [
+      "Existing roof can be removed without special hazardous material handling",
+      "Steel deck is in sound condition requiring minimal repairs",
+      "Wood deck in office wing is in acceptable condition",
+      "All existing flashings are non-hazardous materials",
+      "Building will be vacated or operations can continue normally during work",
+      "No special access restrictions beyond standard safety requirements",
+      "Weather conditions allow normal construction schedule",
+      "No union jurisdictional disputes affecting work",
+      "Materials can be delivered and stored on-site without special arrangements",
+      "Existing roof drains are functional and compatible with new system",
+      "Electrical power available on-site for tools and equipment",
+      "Phasing can be accomplished within 90-day schedule",
+      "Cover board not required for this building type",
+      "Ponding does not require correction unless causing active leaks",
+      "Mechanically attached system acceptable (equivalent to fully adhered for this application)"
+    ],
+    "substitutions_proposed": [
+      {
+        "spec_item": "Attachment method (RFP-specified system)",
+        "substitute_offered": "Mechanically attached TPO system",
+        "equivalence_justification": "Mechanically attached systems are industry standard for buildings of this type and provide equivalent performance to fully adhered at lower cost (Clarifications #15 and Additional Notes)."
+      },
+      {
+        "spec_item": "Cover board",
+        "substitute_offered": "No cover board in base bid",
+        "equivalence_justification": "Bidder states cover board is typically not required for industrial buildings unless specified by manufacturer for warranty purposes (Clarifications #13 and Exclusion #4)."
+      },
+      {
+        "spec_item": "Tapered insulation for ponding correction",
+        "substitute_offered": "Omit tapered insulation; address only if active leaks",
+        "equivalence_justification": "Bidder asserts ponding observed during site visit appears superficial and is common on roofs of this age, not necessarily indicating failure (Exclusion #5 and Additional Notes)."
+      }
+    ]
+  },
+
+  "materials_system": {
+    "manufacturer": null,
+    "system_name": "60 mil TPO, mechanically attached",
+    "membrane_thickness_actual": "60 mil",
+    "insulation_spec": "Polyisocyanurate, R-30",
+    "cover_board_included": false,
+    "product_data_sheets_attached": true
+  },
+
+  "warranty_offered": {
+    "manufacturer_years": 20,
+    "warranty_type": "unclear",
+    "workmanship_years": 1,
+    "wind_uplift_coverage_mph": null,
+    "manufacturer_certified_installer": null,
+    "certification_program": null,
+    "evidence_page": "WARRANTY section",
+    "raw_text": "Manufacturer Warranty: 20-year limited warranty on TPO membrane; Workmanship Warranty: 1 year on installation"
+  },
+
+  "qualifications": {
+    "years_in_business": 16,
+    "wsib_clearance_attached": true,
+    "wsib_clearance_date": null,
+    "wsib_in_good_standing": null,
+    "wsib_account_number": "3456789-01",
+    "wsib_experience_rating": 1.12,
+    "cgl_limit_cad": 5000000,
+    "cgl_completed_operations_years": null,
+    "owner_named_as_additional_insured": null,
+    "coi_attached": true,
+    "automobile_liability_cad": 2000000,
+    "bid_bond_attached": false,
+    "bonding_capacity_cad": null,
+    "working_at_heights_training_confirmed": null,
+    "crca_member": null,
+    "certificate_of_qualification_roofers_count": null,
+    "references_provided": [
+      {
+        "project_name": "Smallwood Industrial Park",
+        "location": "Etobicoke, ON",
+        "owner_contact": "Peter Smallwood, (416) 555-0567",
+        "value_cad": null,
+        "completion_year": 2024,
+        "scope_description": "48,000 sq ft roof replacement",
+        "similar_scope": true
+      },
+      {
+        "project_name": "Valley View Warehouse",
+        "location": "Vaughan, ON",
+        "owner_contact": "Maria Santos, (905) 555-0678",
+        "value_cad": null,
+        "completion_year": 2023,
+        "scope_description": "52,000 sq ft roof replacement",
+        "similar_scope": true
+      },
+      {
+        "project_name": "Eastgate Commerce Centre",
+        "location": "Mississauga, ON",
+        "owner_contact": "James O'Brien, (905) 555-0789",
+        "value_cad": null,
+        "completion_year": 2025,
+        "scope_description": "67,000 sq ft roof replacement",
+        "similar_scope": true
+      }
+    ],
+    "subcontracting_declared": false,
+    "subcontractors_named": []
+  },
+
+  "schedule": {
+    "start_date": "2026-05-15",
+    "start_date_flexibility": "flexible",
+    "mobilization_days_after_award": null,
+    "work_duration_days": 90,
+    "substantial_completion_date": "2026-08-15",
+    "final_completion_date": "2026-08-30",
+    "crew_size": null,
+    "accommodates_occupied_building": true
+  },
+
+  "technical_approach": {
+    "narrative": "60 mil TPO mechanically attached over polyisocyanurate insulation R-30, no cover board in base scope. Bidder claims phasing can accommodate occupied operations within 90-day schedule.",
+    "tear_off_staging_plan": null,
+    "weather_protection_plan": null,
+    "fall_protection_plan": "Fall protection equipment provided (Safety Program section)",
+    "waste_disposal_plan": null,
+    "site_safety_plan_attached": false,
+    "safety_program_summary": "Written safety procedures; Fall protection equipment provided; WSIB Experience Rating 1.12"
+  },
+
+  "payment_terms": {
+    "schedule": [
+      "20% upon contract signing (mobilization and materials)",
+      "30% progress payment (monthly)",
+      "30% upon substantial completion",
+      "10% holdback (released as per Construction Act)"
+    ],
+    "notes": "Bidder requires larger upfront payment due to material procurement costs; states standard for projects of this size."
+  },
+
+  "attachments_listed": [
+    "Certificate of Insurance",
+    "WSIB Clearance Certificate",
+    "WSIB Experience Rating Letter (1.12)",
+    "Product Data Sheets (60 mil TPO membrane)",
+    "Sample Warranty Documentation",
+    "Three Reference Letters"
+  ],
+
+  "_provenance": {
+    "bidder_name": "COVER LETTER section header",
+    "contact": "COVER LETTER section",
+    "bid_date": "COVER LETTER section (March 30, 2026)",
+    "bid_validity_days": "Footer (Bid valid for 60 days from April 12, 2026)",
+    "pricing.base_bid_cad": "BID SUMMARY section",
+    "pricing.hst_included": "BID SUMMARY section (HST 13% shown separately, $60,840.00)",
+    "pricing.total_with_hst_cad": "BID SUMMARY section",
+    "pricing.price_breakdown": "PRICE BREAKDOWN section",
+    "pricing.alternates": "OPTIONAL ADD-ONS section",
+    "pricing.unit_prices": "IMPORTANT EXCLUSIONS - PLEASE READ CAREFULLY section",
+    "pricing.allowances_carried": "IMPORTANT EXCLUSIONS section item #2 (Deck fastening allowance)",
+    "scope_response.full_compliance_claimed": "Inferred from IMPORTANT EXCLUSIONS (25 items) and CLARIFICATIONS AND ASSUMPTIONS sections",
+    "scope_response.exclusions_declared": "IMPORTANT EXCLUSIONS - PLEASE READ CAREFULLY section",
+    "scope_response.clarifications": "CLARIFICATIONS AND ASSUMPTIONS section",
+    "scope_response.substitutions_proposed": "CLARIFICATIONS AND ASSUMPTIONS items #13, #15 and IMPORTANT EXCLUSIONS items #4, #5; ADDITIONAL NOTES",
+    "materials_system.system_name": "KEY SPECIFICATIONS section",
+    "materials_system.membrane_thickness_actual": "KEY SPECIFICATIONS section",
+    "materials_system.insulation_spec": "KEY SPECIFICATIONS section",
+    "materials_system.cover_board_included": "IMPORTANT EXCLUSIONS section item #4",
+    "materials_system.product_data_sheets_attached": "ATTACHMENTS list (Product Data Sheets - 60 mil TPO membrane)",
+    "warranty_offered.manufacturer_years": "WARRANTY section",
+    "warranty_offered.warranty_type": "WARRANTY section says '20-year limited warranty' with no NDL/material-only/labour qualifier - flagged unclear",
+    "warranty_offered.workmanship_years": "WARRANTY section",
+    "warranty_offered.evidence_page": "WARRANTY section",
+    "qualifications.years_in_business": "COVER LETTER (operating in GTA since 2010 -> 16 years as of 2026)",
+    "qualifications.wsib_clearance_attached": "ATTACHMENTS list (WSIB Clearance Certificate)",
+    "qualifications.wsib_account_number": "INSURANCE COVERAGE / SAFETY PROGRAM sections",
+    "qualifications.wsib_experience_rating": "SAFETY PROGRAM section (1.12)",
+    "qualifications.cgl_limit_cad": "INSURANCE COVERAGE section",
+    "qualifications.coi_attached": "ATTACHMENTS list (Certificate of Insurance)",
+    "qualifications.automobile_liability_cad": "INSURANCE COVERAGE section",
+    "qualifications.bid_bond_attached": "Not listed in ATTACHMENTS section - bid bond absent",
+    "qualifications.references_provided": "REFERENCES section",
+    "schedule.start_date": "PROJECT SCHEDULE section",
+    "schedule.work_duration_days": "PROJECT SCHEDULE section (90 days to substantial completion)",
+    "schedule.substantial_completion_date": "PROJECT SCHEDULE section",
+    "schedule.final_completion_date": "PROJECT SCHEDULE section",
+    "schedule.accommodates_occupied_building": "ADDITIONAL NOTES (Work can be phased to accommodate tenant operations if needed)",
+    "technical_approach.fall_protection_plan": "SAFETY PROGRAM section",
+    "payment_terms.schedule": "PAYMENT SCHEDULE section",
+    "attachments_listed": "ATTACHMENTS section at end of document"
+  },
+
+  "extraction_notes": [
+    {
+      "field": "warranty_offered.warranty_type",
+      "issue": "Bid states '20-year limited warranty on TPO membrane' without specifying material-only vs labour-and-material vs NDL. Per skill taxonomy, recorded as 'unclear' pending owner clarification. Owner should request the manufacturer warranty exemplar referenced in attachments ('Sample Warranty Documentation').",
+      "evidence": "WARRANTY section"
+    },
+    {
+      "field": "materials_system.manufacturer",
+      "issue": "Bid identifies '60 mil TPO' but does not name the manufacturer or system brand (e.g., Carlisle, GAF, Firestone, Johns Manville, Sika). Owner should request manufacturer identification before any award.",
+      "evidence": "KEY SPECIFICATIONS section and BID SUMMARY"
+    },
+    {
+      "field": "warranty_offered.manufacturer_certified_installer",
+      "issue": "No certified-installer status declared (no GAF Master Elite, Firestone Red Shield, Carlisle Authorized, Sika Sarnafil, etc.). A 20-yr manufacturer warranty typically requires certified installer designation. Owner should clarify.",
+      "evidence": "Absent from bid; not in ATTACHMENTS"
+    },
+    {
+      "field": "qualifications.bid_bond_attached",
+      "issue": "Bid bond not listed in ATTACHMENTS section and no bonding capacity declared in body of bid. Defer to wave-2 mandatory-gates check; flag for owner if RFP requires bid bond.",
+      "evidence": "ATTACHMENTS section (bid bond absent)"
+    },
+    {
+      "field": "qualifications.working_at_heights_training_confirmed",
+      "issue": "Bid mentions 'Fall protection equipment provided' but does not confirm Working-at-Heights training under O.Reg 297/13. Owner should require WAH training records prior to award.",
+      "evidence": "SAFETY PROGRAM section"
+    },
+    {
+      "field": "qualifications.owner_named_as_additional_insured",
+      "issue": "CGL limit of $5,000,000 declared but bid does not state whether owner (Tenebrus Capital) is named as additional insured. Verify on COI before award.",
+      "evidence": "INSURANCE COVERAGE section"
+    },
+    {
+      "field": "qualifications.cgl_completed_operations_years",
+      "issue": "CGL limit declared but completed operations period not specified. Verify on COI.",
+      "evidence": "INSURANCE COVERAGE section"
+    },
+    {
+      "field": "qualifications.crca_member",
+      "issue": "CRCA membership not declared.",
+      "evidence": "Absent from bid"
+    },
+    {
+      "field": "qualifications.certificate_of_qualification_roofers_count",
+      "issue": "Bid does not declare Skilled Trades Ontario C of Q roofer count on crew.",
+      "evidence": "Absent from bid"
+    },
+    {
+      "field": "scope_response.exclusions_declared",
+      "issue": "Bid contains 25 declared exclusions and 15 clarifications/assumptions, plus 11 'optional add-ons'. Many exclusions cover items typically expected in a roof replacement scope (cover board, tapered insulation for ponding, drain replacement, skylights, permits, after-hours work, hazardous materials, escalation). Net effect: base bid of $468K is not directly comparable to fully-compliant bids without monetizing the alternates and remaining open exclusions. Defer scope-divergence comparison to wave 2.",
+      "evidence": "IMPORTANT EXCLUSIONS - PLEASE READ CAREFULLY section (25 items); CLARIFICATIONS AND ASSUMPTIONS section (15 items); OPTIONAL ADD-ONS section (11 items)"
+    },
+    {
+      "field": "scope_response.skylight_count_dispute",
+      "issue": "Bidder counted 4 skylights during site visit; bid notes RFP states 12 skylights. Owner should reconcile actual skylight count and confirm whether skylight replacement is in or out of scope.",
+      "evidence": "IMPORTANT EXCLUSIONS item #8"
+    },
+    {
+      "field": "schedule.crew_size",
+      "issue": "Crew size not stated.",
+      "evidence": "Absent from bid"
+    },
+    {
+      "field": "schedule.mobilization_days_after_award",
+      "issue": "Mobilization days after contract award not stated; only calendar start date (May 15, 2026) given.",
+      "evidence": "PROJECT SCHEDULE section"
+    },
+    {
+      "field": "warranty_offered.wind_uplift_coverage_mph",
+      "issue": "Wind uplift coverage not declared.",
+      "evidence": "Absent from bid"
+    },
+    {
+      "field": "payment_terms.schedule",
+      "issue": "Bidder requests 20% on signing (mobilization/materials) which exceeds typical Construction Act front-loading and typical 10% mobilization. Owner finance should review.",
+      "evidence": "PAYMENT SCHEDULE section"
+    },
+    {
+      "field": "scope_response.material_price_escalation",
+      "issue": "Exclusion #19 introduces an open-ended material price escalation clause if start delayed beyond 60 days from bid date (i.e., past June 11, 2026). Stated start is May 15, 2026 - within window - but owner should confirm a fixed escalation cap.",
+      "evidence": "IMPORTANT EXCLUSIONS item #19"
+    }
+  ]
+}
