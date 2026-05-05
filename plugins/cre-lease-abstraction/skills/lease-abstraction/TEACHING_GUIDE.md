@@ -10,8 +10,6 @@
 
 > **Skill creation is fundamentally the encoding of domain knowledge into a form that an AI can execute.**
 
-Everything else is implementation detail.
-
 You are not teaching them to code. You are teaching them to **articulate their expertise so precisely that a very literal-minded junior could execute it without asking any questions.** The AI is that junior. The skill is the instruction manual.
 
 ---
@@ -119,7 +117,7 @@ They'll tell you:
 | `MISSING` | This term is not in the lease | ⚪ Gray — not applicable or omitted |
 | `CONFLICT` | Two clauses contradict | 🔴 Red — stop, human must decide |
 
-**Teaching point:** These aren't technical jargon — they're the same flags you'd use when training a junior abstractor.
+**Teaching point:** These aren't technical jargon — they're quality flags you'd use when training anyone new to lease abstraction.
 
 ---
 
@@ -144,7 +142,7 @@ TEMPLATE:
 [Insert 25-section template]
 ```
 
-**Say:** *"This is you, telling a very detail-oriented junior exactly how to do the job. The junior is the AI. The instruction sheet is the prompt."*
+**Say:** *"This is you, telling a very detail-oriented junior exactly how to do the job. The instruction sheet is the prompt."*
 
 ---
 
@@ -179,9 +177,9 @@ TEMPLATE:
 
 ---
 
-### Critical Insight: Lease Data Is Load-Bearing Operating Data
+### Critical Insight: Lease Data Is Load-Bearing — Know What You're Automating
 
-**Not all data is created equal.**
+**Not all data is created equal. Not all automation is created equal.**
 
 | Statistical Data (Predictions) | Load-Bearing Operating Data (Leases) |
 |--------------------------------|--------------------------------------|
@@ -198,61 +196,13 @@ TEMPLATE:
 - **Life-safety consequences:** Wrong insurance requirements → uncovered loss → bankruptcy
 - **Compliance consequences:** Incorrect BOMA standard → misstated portfolio value → investor lawsuit
 
-**Why this matters for skill design:**
-
-You're not building a chatbot that gives helpful suggestions. You're building a **production system** that produces data people will:
-- Sign legal documents based on
-- Wire millions of dollars based on
-- Stake their career reputation on
-- Defend in court if challenged
-
-**Every design decision must reflect this.** AutoFail conditions, provenance requirements, status tags, validation gates — these aren't bureaucratic overhead. They're the difference between a tool that's *helpful* and a tool that's *safe to rely on*.
-
----
-
-### Critical Insight: Know What You're Automating — Load-Bearing or Non-Load-Bearing?
-
-**Not all automation is created equal.**
+**Tool types and their appropriate uses:**
 
 | Tool Type | Purpose | Output Use | Risk Level |
 |-----------|---------|------------|------------|
 | **Desktop Chatbot** | Quick high-level overview | Orientation, initial due diligence, talking points | Non-load-bearing — do not rely on for decisions |
 | **Agentic Tool (Cowork)** | Automate workflow steps | Varies by task | Must distinguish: load-bearing vs. non-load-bearing |
 | **Production Skill** | Produce auditable output | Legal, financial, compliance decisions | Load-bearing — must meet 100% accuracy standard |
-
-**Desktop Chatbot — Non-Load-Bearing Only:**
-
-A chatbot prompt like "Summarize this lease" is designed for **speed, not accuracy**. The output:
-- Has no provenance (can't verify where terms came from)
-- Has no validation (no AutoFail conditions)
-- Has no structure (can't import into systems)
-- May be directionally correct but legally unreliable
-
-**Use it for:** Getting a sense of the lease in 30 seconds. **Don't use it for:** Anything that requires accuracy.
-
-**Agentic Tool (Cowork) — Depends on the Task:**
-
-Cowork and similar tools let you automate multi-step workflows. But you must be explicit about **what kind of work** you're automating:
-
-| Task Type | Example | Automation Approach |
-|-----------|---------|---------------------|
-| **Non-Load-Bearing** | "Draft an email summarizing the lease for the broker" | Pre-saved prompts — basic skill structure |
-| **Load-Bearing** | "Extract rent calculations for Yardi import" | Full governance — DDD, REIXS, validation, AutoFail |
-
-**Pre-saved prompts are the most basic skill structure:**
-
-```
-When user asks to summarize a lease:
-1. Read the lease
-2. Extract: parties, premises, term, rent, critical dates
-3. Return a 1-page summary in markdown
-
-That's it. No validation. No provenance. No status tags.
-```
-
-This is fine for **non-load-bearing work** — drafts, orientation, internal memos.
-
-**The problem:** If you don't distinguish between load-bearing and non-load-bearing automation, you'll build a tool that *looks* authoritative but produces chatbot-quality output. And someone will rely on it for a million-dollar decision.
 
 **Design rule:** Before building a skill, ask:
 1. **What decision will this output support?** (If the answer is "I don't know" — it's non-load-bearing)
@@ -261,6 +211,16 @@ This is fine for **non-load-bearing work** — drafts, orientation, internal mem
 
 If load-bearing: Build with full governance (DDD, validation, AutoFail, provenance).
 If non-load-bearing: Pre-saved prompts are sufficient — but label the output "DRAFT — Do not rely on for decisions."
+
+**Why this matters for skill design:**
+
+You're not building a chatbot that gives helpful suggestions. You're building a **production system** that produces data people will:
+- Sign legal documents based on
+- Wire millions of dollars based on
+- Stake their career reputation on
+- Defend in court if challenged
+
+**Every design decision must reflect this.** AutoFail conditions, provenance requirements, status tags, and validation gates aren't bureaucratic overhead. They're the difference between a tool that's *helpful* and a tool that's *safe to rely on*.
 
 ---
 
@@ -273,7 +233,42 @@ If non-load-bearing: Pre-saved prompts are sufficient — but label the output "
 
 **Why it matters:** "If the AI can read the whole lease at once, it can cross-reference Schedule G against the main body. If it can only read a few pages, it'll miss contradictions."
 
-### Technical Concept 3: Subagents — Decomposing the Workflow for Automation
+### Technical Concept 3: Automation Amplifies Everything — Capability AND Incapability
+
+**The hard truth:** Agentic AI can 10x your capability. It will also 10x your incapability. The math always holds.
+
+| Scenario | Manual Work | Agentic AI |
+|----------|-------------|------------|
+| You understand the domain well | 10 correct abstracts/day | 100 correct abstracts/day |
+| You have a gap in your knowledge | 10 abstracts with 1 error each | 100 abstracts with 10 errors each |
+| You don't know what you don't know | 10 abstracts with unknown errors | 100 abstracts with unknown errors — discovered too late |
+
+**Why this matters:**
+
+A chatbot making one mistake produces one wrong summary. A skill making the same mistake produces 100 wrong abstracts before anyone notices. A human reviewing 100 AI-generated abstracts will catch **fewer** errors per document than if they'd abstracted 10 leases manually — review fatigue is real.
+
+**This is why domain knowledge is critical, not optional.**
+
+You cannot say "I'll let the AI figure it out along the way." If you don't understand the domain well enough to:
+- Specify what correct looks like
+- Recognize an error when you see it
+- Write a rule that prevents the mistake from repeating
+
+...then you're not automating. You're building a mistake factory.
+
+**Design implications:**
+
+1. **Test on known-correct work first** — Run the skill on leases you've already abstracted. Compare output to your gold standard. Fix discrepancies before processing new leases.
+
+2. **Human-in-the-loop until proven** — The skill drafts, you verify. Do this for 20-50 leases until error patterns stabilize. Then reduce review frequency.
+
+3. **Monitor for error patterns** — If the same mistake appears across multiple leases, stop and fix the rule. Don't process more until it's corrected.
+
+4. **Validation gates before scale** — AutoFail conditions, provenance requirements, and status tags aren't bureaucracy. They're the difference between "10x productive" and "10x embarrassed."
+
+**Say:** *"Automation doesn't replace domain expertise. It multiplies it. If your expertise is solid, you win big. If there are gaps, they get bigger."*
+
+### Technical Concept 4: Subagents — Decomposing the Workflow for Automation
 
 **The reality:** A single lease administrator IS responsible for all of these tasks:
 1. Reading the lease
@@ -303,7 +298,7 @@ Because **automation requires decomposition**. A human can hold the entire workf
 
 **Say:** *"You do all these steps yourself — that's your job. But when automating, we split the work so each AI agent does one thing well, with a fresh context, and can be fixed independently if something goes wrong."*
 
-### Technical Concept 4: The Output Contract Is "What Goes Into Yardi"
+### Technical Concept 5: The Output Contract Is "What Goes Into Yardi"
 
 **Show them:** A JSON field mapping to Yardi/Argus.
 
@@ -359,62 +354,20 @@ They'll tell you the obvious ones:
 - "Using the wrong currency"
 - "Making up a number when it's not in the lease"
 
-**Then prompt them for domain-specific confusions:**
+**Then prompt them for domain-specific confusions** — things like:
+- Landlord's work vs. tenant improvement allowance
+- Net free rent vs. gross free rent
+- Free rent at commencement vs. zero rent during fixturing period
+- Assignment vs. subletting vs. change of control
+- Who does the work vs. who pays for it
+- Operating costs vs. capital costs
 
-| Confusion | Why It Matters |
-|-----------|----------------|
-| **Landlord's work vs. tenant improvement allowance** | One is landlord's obligation, the other is tenant's budget — affects who spends what and who owns the improvements |
-| **Net free rent vs. gross free rent** | Net excludes operating costs, gross includes them — different financial impact over the same period |
-| **Free rent at commencement vs. zero rent during fixturing period** | Both might be "3 months" — but fixturing is *outside* the lease term, free rent is *inside* — affects commencement date, expiry date, and rent commencement |
-| **Assignment vs. subletting vs. change of control** | Assignment transfers the lease, subletting creates a new tenant-landlord relationship, change of control triggers consent rights — different legal consequences |
-| **Who does the work vs. who pays for it** | Landlord may do the work, but payment source varies: (1) recoverable operating cost = landlord does work, pool of tenants pay; (2) direct chargeback = landlord does work, single tenant pays; (3) landlord obligation = landlord does work, landlord pays |
-| **Tenant doing landlord's work (base building)** | Government tenants or security-sensitive tenants may be required to perform base building work themselves due to security clearances or cost control — reverses the traditional "landlord does work, tenant reimburses" model |
-| **Tenant chargebacks vs. recoverable operating costs** | Chargeback is to a specific tenant for specific costs, recoverable operating costs are shared across a cost pool — different calculation bases |
-| **Operating costs vs. capital costs** | Operating costs are typically recoverable, capital costs may or may not be — and each has recoverable and non-recoverable subcategories |
-| **Recoverable vs. non-recoverable costs (within both operating and capital)** | Affects what the tenant actually pays — misclassification changes the financial obligation |
-
-**Designing the DDD requires thinking through all combinations/permutations:**
-
-| Dimension | Options | Combinations |
-|-----------|---------|--------------|
-| **Who does the work?** | Landlord, Tenant, Third-party contractor | 3 options |
-| **Who pays?** | Landlord, Single tenant, Pool of tenants | 3 options |
-| **Cost type?** | Operating, Capital | 2 options |
-| **Recoverability?** | Fully recoverable, Partially recoverable, Non-recoverable | 3 options |
-| **Jurisdiction?** | Varies by province/state, federal statutes | N options |
-
-**Total permutations:** 3 × 3 × 2 × 3 × N = potentially hundreds of valid combinations depending on jurisdiction.
-
-**Jurisdictional constraints matter:**
-
-| Jurisdiction | Constraint Type | Example |
-|--------------|-----------------|---------|
-| **Ontario (Residential)** | Statutory requirement | All residential leases must be **gross leases** using the provincial template; tenants automatically entitled to month-to-month after expiry |
-| **Ontario (Commercial)** | Contractual default | Net leases permitted; **overhold/holding over must be explicitly contracted in** — no default right |
-| **Japan (Commercial)** | Statutory right | Commercial tenants have **statutory termination rights** that cannot be contracted away — lease may say one thing, statute overrides |
-| **Various U.S. states** | Prohibited recovery | Capital improvements cannot be passed to tenants (e.g., roof replacement in some states) |
-| **Various jurisdictions** | Voidable provisions | Indemnification clauses, waiver of subrogation, or certain penalty provisions may be unenforceable |
-
-**Why this matters for DDD design:** You cannot design a field like `operatingCosts.recoverable` as a simple boolean. You need:
-- `whoPerformedWork`: "Landlord" | "Tenant" | "ThirdParty"
-- `whoPays`: "Landlord" | "SingleTenant" | "TenantPool"
-- `costType`: "Operating" | "Capital"
-- `recoverability`: "FullyRecoverable" | "PartiallyRecoverable" | "NonRecoverable"
-- `jurisdictionalConstraint`: string (cite applicable statute or case law)
-- `contractualOverride`: boolean (whether lease contracts around default rule)
-
-**Why this matters for extraction:** The skill must:
-- Know which jurisdiction's law applies (governing law clause)
-- Flag provisions that contradict statutory requirements (e.g., Ontario residential net lease = void)
-- Distinguish between contracted-in rights vs. statutory defaults (e.g., overhold in Ontario commercial)
-- Extract statutory rights even if not mentioned in the lease (e.g., Japan termination rights)
-
-**This becomes your AutoFail conditions.** Each confusion above should trigger a validation rule:
+**Why this matters:** Each confusion becomes a validation rule. For example:
 - "If fixturing period is extracted, verify it's marked as outside the lease term"
-- "If free rent is extracted, verify it's distinguished from fixturing"
 - "If assignment clause is found, verify subletting clause is extracted separately"
 - "If operating costs are extracted, verify capital costs are not included"
-- "If tenant is listed as performing base building work, verify security clause or cost-control provision exists"
+
+**These become your AutoFail conditions.**
 
 ### Step 4: Iterate on the Prompt Together
 
@@ -465,7 +418,7 @@ RULE: Extract landlord.name from lease.
 
 **If it fails:** "The AI guessed instead of flagging uncertainty. What rule would prevent that?"
 
-**Teaching point:** Debugging a skill is like training a junior. You don't rewrite the whole instruction manual — you add specific guidance for the edge case.
+**Teaching point:** Debugging a skill is like training someone new. You don't rewrite the whole instruction manual — you add specific guidance for the edge case.
 
 ---
 
@@ -478,6 +431,7 @@ RULE: Extract landlord.name from lease.
 | **Status tags** | Traffic light system | 🟢🟡🔴 Green/yellow/red flags |
 | **Prompts** | Instruction sheet for a junior | "Tell the AI exactly what you'd tell a trainee" |
 | **Context window** | How much the AI can read at once | "Reading the whole book vs. a few pages" |
+| **Automation amplification** | Show the 10x capability/incapability table | "10x productive or 10x embarrassed — same multiplier" |
 | **Subagents** | Delegating to specialists | "Ask a colleague to handle one part" |
 | **Validation rules** | Success criteria from their experience | "How do you know it's done right?" |
 | **AutoFail conditions** | Worst mistakes to avoid | "What would get a junior fired?" |
@@ -543,7 +497,3 @@ You'll know they're not ready when they:
 **Start with their expertise. Translate it to instructions. Introduce technology as the tool that executes those instructions.**
 
 The goal isn't to make them an agentic engineer. The goal is to make them a **skill author** — someone who can encode their domain knowledge into a form an AI can execute.
-
-You're not teaching them to code. You're teaching them to articulate what they already know so precisely that a very literal-minded junior (the AI) could execute it without asking questions.
-
-Everything else is implementation detail.
