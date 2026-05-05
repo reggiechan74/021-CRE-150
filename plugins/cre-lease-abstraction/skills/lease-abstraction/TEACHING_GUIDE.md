@@ -179,6 +179,37 @@ TEMPLATE:
 
 ---
 
+### Critical Insight: Lease Data Is Load-Bearing Operating Data
+
+**Not all data is created equal.**
+
+| Statistical Data (Predictions) | Load-Bearing Operating Data (Leases) |
+|--------------------------------|--------------------------------------|
+| Used to predict trends | Used to execute legal obligations |
+| 80% accuracy is acceptable | 100% accuracy is required |
+| Wrong prediction = embarrassing | Wrong data = lawsuit, financial loss, safety risk |
+| Can be averaged or modeled | Must be exact, verbatim, traceable |
+| "Close enough" is fine | "Close enough" is negligence |
+
+**Lease abstraction produces load-bearing data:**
+
+- **Legal consequences:** Missing a renewal deadline → tenant loses rights → litigation
+- **Financial consequences:** Wrong rent calculation → over/under payment → breach of contract
+- **Life-safety consequences:** Wrong insurance requirements → uncovered loss → bankruptcy
+- **Compliance consequences:** Incorrect BOMA standard → misstated portfolio value → investor lawsuit
+
+**Why this matters for skill design:**
+
+You're not building a chatbot that gives helpful suggestions. You're building a **production system** that produces data people will:
+- Sign legal documents based on
+- Wire millions of dollars based on
+- Stake their career reputation on
+- Defend in court if challenged
+
+**Every design decision must reflect this.** AutoFail conditions, provenance requirements, status tags, validation gates — these aren't bureaucratic overhead. They're the difference between a tool that's *helpful* and a tool that's *safe to rely on*.
+
+---
+
 ### Technical Concept 2: Context Window Is "How Much the AI Can Read at Once"
 
 **Analogy:** Think of it like reading a book with a narrow highlighter.
