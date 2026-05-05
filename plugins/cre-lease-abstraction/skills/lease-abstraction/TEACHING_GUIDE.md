@@ -146,6 +146,36 @@ TEMPLATE:
 
 **Say:** *"This is you, telling a very detail-oriented junior exactly how to do the job. The junior is the AI. The instruction sheet is the prompt."*
 
+---
+
+### Critical Insight: AI Knows Leases, But Doesn't Know *Your* Firm
+
+**The AI has been trained on:**
+- Generic lease structures and common clauses
+- Standard legal terminology
+- Typical abstract templates and formats
+- General CRE best practices
+
+**The AI has NOT been trained on:**
+- Your firm's specific abstract template
+- Your client's reporting requirements
+- Your internal approval workflows
+- Your edge case handling rules (e.g., "When rent is TBD, flag for partner review")
+- Your risk tolerance (what to escalate vs. what to note quietly)
+
+**Why this matters:** You're not teaching the AI what a lease is. You're teaching it **how your firm abstracts leases**.
+
+| Generic Knowledge (AI Has) | Your Firm's Knowledge (You Provide) |
+|----------------------------|-------------------------------------|
+| What a renewal option looks like | Which renewal deadlines are P1 vs. P2 for your clients |
+| What base rent is | How you handle rent abatements in rent calculations |
+| What Schedule G is | That Schedule G always trumps main body in your abstracts |
+| What an assignment clause is | That you need to track the full assignment chain, not just current landlord |
+
+**The skill encodes the difference.**
+
+---
+
 ### Technical Concept 2: Context Window Is "How Much the AI Can Read at Once"
 
 **Analogy:** Think of it like reading a book with a narrow highlighter.
