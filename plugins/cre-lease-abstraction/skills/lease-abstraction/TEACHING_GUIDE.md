@@ -219,25 +219,35 @@ You're not building a chatbot that gives helpful suggestions. You're building a 
 
 **Why it matters:** "If the AI can read the whole lease at once, it can cross-reference Schedule G against the main body. If it can only read a few pages, it'll miss contradictions."
 
-### Technical Concept 3: Subagents Are Specialist Colleagues
+### Technical Concept 3: Subagents — Decomposing the Workflow for Automation
 
-**Analogy:** You wouldn't ask one person to:
-1. Read the lease
-2. Extract financial terms
-3. Extract legal terms
-4. Build the critical dates calendar
-5. Format the output
-6. Validate quality
+**The reality:** A single lease administrator IS responsible for all of these tasks:
+1. Reading the lease
+2. Extracting financial terms
+3. Extracting legal terms
+4. Building the critical dates calendar
+5. Formatting the output
+6. Validating quality
 
-**Instead:** You delegate.
+**So why use subagents?**
+
+Because **automation requires decomposition**. A human can hold the entire workflow in their head across hours or days. An AI works in a single pass through a context window. Breaking the work into subagents:
+
+| Reason | Why It Matters |
+|--------|----------------|
+| **Fresh context for each task** | Each subagent gets a clean 200k-token window — no risk of early instructions being "forgotten" |
+| **Specialized prompts** | The critical dates agent only thinks about dates. The extraction agent only thinks about the 258 fields. Focused prompts = better results. |
+| **Parallel execution** | Multiple subagents can run simultaneously — faster than one agent doing everything sequentially |
+| **Independent validation** | The validation agent wasn't involved in the extraction — it can catch errors the extractor missed |
+| **Easier debugging** | If dates are wrong, you fix the critical dates agent. You don't rewrite the entire monolithic prompt. |
 
 | Subagent | Role |
 |----------|------|
-| Extraction agent | Reads the lease, fills the template |
-| Critical dates agent | Focuses only on dates and deadlines |
-| Validation agent | Checks the work for errors |
+| Extraction agent | Reads the lease, fills the 258-field template |
+| Critical dates agent | Focuses only on dates and deadlines across 10 categories |
+| Validation agent | Checks the work for AutoFail conditions and quality gates |
 
-**Say:** *"A subagent is like asking a colleague to handle one part of the job. You give them clear instructions, they come back with results."*
+**Say:** *"You do all these steps yourself — that's your job. But when automating, we split the work so each AI agent does one thing well, with a fresh context, and can be fixed independently if something goes wrong."*
 
 ### Technical Concept 4: The Output Contract Is "What Goes Into Yardi"
 
