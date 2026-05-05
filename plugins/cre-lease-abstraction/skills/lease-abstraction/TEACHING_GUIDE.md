@@ -148,13 +148,13 @@ TEMPLATE:
 
 ---
 
-### Critical Insight: AI Knows Leases, But Doesn't Know *Your* Firm
+### Critical Insight: AI Knows Generic Leases, But Doesn't Know *Your* Firm's Template
 
 **The AI has been trained on:**
 - Generic lease structures and common clauses
 - Standard legal terminology
-- Typical abstract templates and formats
-- General CRE best practices
+- General CRE concepts (rent, term, parties, options, etc.)
+- Common legal patterns across many documents
 
 **The AI has NOT been trained on:**
 - Your firm's specific abstract template
@@ -162,14 +162,15 @@ TEMPLATE:
 - Your internal approval workflows
 - Your edge case handling rules (e.g., "When rent is TBD, flag for partner review")
 - Your risk tolerance (what to escalate vs. what to note quietly)
+- **Your firm's schedule naming conventions** (e.g., Schedule G = Special Provisions — but another firm might use Schedule H, or no letter at all)
 
-**Why this matters:** You're not teaching the AI what a lease is. You're teaching it **how your firm abstracts leases**.
+**Why this matters:** You're not teaching the AI what a lease is. You're teaching it **how your firm abstracts leases** — including which schedules matter, what they're called, and how to handle contradictions.
 
 | Generic Knowledge (AI Has) | Your Firm's Knowledge (You Provide) |
 |----------------------------|-------------------------------------|
 | What a renewal option looks like | Which renewal deadlines are P1 vs. P2 for your clients |
 | What base rent is | How you handle rent abatements in rent calculations |
-| What Schedule G is | That Schedule G always trumps main body in your abstracts |
+| That leases have special provisions | That *Schedule G* is where Special Provisions live in your templates — and that Schedule G always trumps main body |
 | What an assignment clause is | That you need to track the full assignment chain, not just current landlord |
 
 **The skill encodes the difference.**
