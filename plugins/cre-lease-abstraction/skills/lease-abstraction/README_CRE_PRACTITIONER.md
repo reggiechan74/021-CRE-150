@@ -16,17 +16,36 @@ Think of it as **automated lease abstraction** — the kind of work a paralegal 
 
 ## Why This Skill Was Built
 
-### The Problem
+### The Problem: Deterministic Systems Need Deterministic Inputs
 
-- Commercial leases are 50–100+ pages of dense legal language
-- Critical deadlines (like renewal notices) are buried in different sections
-- Manual abstraction is slow, expensive, and people make mistakes
-- Different people abstracting the same lease produce inconsistent results
+Commercial real estate runs on **deterministic systems** — Excel, Yardi, Argus. These tools require structured, consistent data:
+- Same field names
+- Same formats
+- Same calculation rules
+
+**Lease abstraction — when done by humans or chatbots — is non-deterministic.**
+
+Two abstractors reading the same lease will produce:
+- Different field names for the same concept
+- Different interpretations of ambiguous clauses
+- Different omissions based on what each person deemed "important"
+
+**The result:** You cannot load a human-written Word abstract into Yardi. The data doesn't match the schema. The field names don't align. The structure is wrong.
+
+| System Type | Examples | Requires |
+|-------------|----------|----------|
+| **Deterministic** | Excel, Yardi, Argus | Structured data, consistent fields, repeatable output |
+| **Non-Deterministic** | Human abstraction, chatbot summaries | Varies by person, run, or interpretation |
+
+**This mismatch is the root problem.** Your portfolio management systems demand deterministic inputs, but lease abstraction has historically been non-deterministic.
 
 ### The Solution
 
-This skill applies a **standardized method** (REIXS-LA-NA-001) that:
-- Extracts the same 258 fields every time
+This skill applies a **standardized method** (REIXS-LA-NA-001) that makes lease abstraction **deterministic**:
+
+- Same lease → same 258 fields every time
+- Same field names across all leases
+- Same structure → output you can load into Yardi without manual reconciliation
 - Tags every term with its source (page number, clause reference, exact quote)
 - Says "not found" instead of guessing when something's missing
 - Flags contradictions instead of silently picking one
