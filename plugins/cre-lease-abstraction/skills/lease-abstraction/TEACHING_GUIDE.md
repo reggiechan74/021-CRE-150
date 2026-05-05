@@ -299,13 +299,31 @@ They'll say things like:
 
 **Ask:** *"What are the worst mistakes an abstractor could make?"*
 
-They'll tell you:
+They'll tell you the obvious ones:
 - "Swapping landlord and tenant"
 - "Missing a renewal deadline"
 - "Using the wrong currency"
 - "Making up a number when it's not in the lease"
 
-**This becomes your AutoFail conditions.**
+**Then prompt them for domain-specific confusions:**
+
+| Confusion | Why It Matters |
+|-----------|----------------|
+| **Landlord's work vs. tenant improvement allowance** | One is landlord's obligation, the other is tenant's budget — affects who spends what and who owns the improvements |
+| **Net free rent vs. gross free rent** | Net excludes operating costs, gross includes them — different financial impact over the same period |
+| **Free rent at commencement vs. zero rent during fixturing period** | Both might be "3 months" — but fixturing is *outside* the lease term, free rent is *inside* — affects commencement date, expiry date, and rent commencement |
+| **Assignment vs. subletting vs. change of control** | Assignment transfers the lease, subletting creates a new tenant-landlord relationship, change of control triggers consent rights — different legal consequences |
+| **Tenant chargebacks vs. recoverable operating costs** | Chargeback is to a specific tenant for specific costs, recoverable operating costs are shared across a cost pool — different calculation bases |
+| **Operating costs vs. capital costs** | Operating costs are typically recoverable, capital costs may or may not be — and each has recoverable and non-recoverable subcategories |
+| **Recoverable vs. non-recoverable costs (within both operating and capital)** | Affects what the tenant actually pays — misclassification changes the financial obligation |
+
+**Why these matter:** These aren't typos or omissions. These are **conceptual confusions** — the abstractor saw the right words but applied the wrong label. This is more dangerous than a missing field because the output *looks* correct but is substantively wrong.
+
+**This becomes your AutoFail conditions.** Each confusion above should trigger a validation rule:
+- "If fixturing period is extracted, verify it's marked as outside the lease term"
+- "If free rent is extracted, verify it's distinguished from fixturing"
+- "If assignment clause is found, verify subletting clause is extracted separately"
+- "If operating costs are extracted, verify capital costs are not included"
 
 ### Step 4: Iterate on the Prompt Together
 
