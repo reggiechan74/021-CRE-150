@@ -172,6 +172,41 @@ This ensures:
 
 ---
 
+### Re-Measurement Clauses: Area Can Change Without Physical Changes
+
+A naive CRE practitioner might think: *"I just need the total net rentable area across my portfolio to calculate total rent receipts — how hard can that be?"*
+
+**The reality:** Many leases contain **operating cost adjustment clauses** that trigger on re-measurements. This means:
+
+- A building is re-measured (often under a newer BOMA standard or due to renovations)
+- The net rentable area changes — **without any physical change to the building footprint**
+- Rent obligations are recalculated based on the new area
+- Your portfolio's total rentable area fluctuates
+
+**Example:**
+
+| Event | Building A | Building B | Portfolio Total |
+|-------|------------|------------|-----------------|
+| Initial measurement (BOMA 1996) | 100,000 sf | 150,000 sf | 250,000 sf |
+| Building A re-measured (BOMA 2017) | 98,500 sf | 150,000 sf | 248,500 sf |
+| **Physical change to Building A?** | **No** | **N/A** | **N/A** |
+
+**Why this matters for data systems:**
+
+Without capturing the **measurement date** and **measurement standard** alongside the area value, you can't explain why:
+- Rent receipts changed when the building didn't
+- Two abstracts of the same lease show different square footage
+- Portfolio totals drift over time
+
+The DDD requires capturing:
+- `premises.area.rentableAreaSqFt` — the numeric value
+- `premises.area.measurementStandard` — which standard was used
+- `premises.area.measurementDate` — when the measurement was taken (if stated)
+
+This creates an **audit trail** that explains area changes and protects against data integrity issues when re-measurement clauses are triggered.
+
+---
+
 ### The Bottom Line: Why the DDD Exists
 
 | Without DDD | With DDD |
