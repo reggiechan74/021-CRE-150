@@ -56,6 +56,31 @@ This skill bridges that gap. It extracts lease terms directly into the structure
 
 ---
 
+### Why "Summarize This Lease" Can't Produce System-Ready Output
+
+A one-sentence prompt with an attached lease cannot produce output that matches a property management system's schema. Here's why:
+
+| Requirement | Chatbot Prompt | This Skill |
+|-------------|----------------|------------|
+| **Output schema** | None — free-form narrative | 258 pre-defined fields matching system schemas |
+| **Missing vs. Zero** | No distinction — silence is ambiguous | Explicit: `MISSING` (not found) vs. `FACT: $0` (explicitly zero) |
+| **Field-level validation** | None — no way to verify completeness | Every field validated against DDD definition |
+| **Import readiness** | Requires manual re-keying or mapping | Direct import — field names match system expectations |
+
+**The Missing vs. Zero problem matters:**
+
+- **MISSING:** "The lease does not address late payment fees" → field is `null` / "Not specified"
+- **ZERO:** "Late payment fee: $0" or "No late fee shall apply" → field is `0` (explicitly stated)
+
+This distinction is critical for:
+- **Rent calculations** — Is CAM excluded or is it $0?
+- **Legal review** — Is a protection absent or explicitly waived?
+- **Compliance** — Is insurance not mentioned or explicitly not required?
+
+A chatbot summary won't tell you the difference. This skill does — every field carries a status tag (`FACT`, `INFERENCE`, `MISSING`, `CONFLICT`) so you know exactly what you're looking at.
+
+---
+
 ## Why Not Just Ask a Chatbot to "Summarize This Lease"?
 
 You could paste your lease into a chatbot and get a summary in 30 seconds. So why use this skill instead?
