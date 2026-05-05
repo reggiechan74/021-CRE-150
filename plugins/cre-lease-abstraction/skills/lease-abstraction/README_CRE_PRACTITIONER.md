@@ -41,7 +41,7 @@ Two abstractors reading the same lease will produce:
 
 ### The Solution
 
-This skill applies a **standardized method** (REIXS-LA-NA-001) that makes lease abstraction **deterministic**:
+This skill applies a **standardized method** (REIXS-LA-NA-001) that makes lease abstraction more **deterministic**:
 
 - Same lease → same 258 fields every time
 - Same field names across all leases
@@ -49,6 +49,10 @@ This skill applies a **standardized method** (REIXS-LA-NA-001) that makes lease 
 - Tags every term with its source (page number, clause reference, exact quote)
 - Says "not found" instead of guessing when something's missing
 - Flags contradictions instead of silently picking one
+
+**Why this works:** Property management systems like Yardi work because users manually enter data into **pre-defined fields**. The calculations happen behind the scenes — out of sight, but consistent and repeatable. The problem has never been the systems themselves; it's been getting lease data **into** those pre-defined fields without manual re-keying.
+
+This skill bridges that gap. It extracts lease terms directly into the structured fields your systems expect — the same way a user would manually enter them, but automated, auditable, and at scale.
 
 ---
 
