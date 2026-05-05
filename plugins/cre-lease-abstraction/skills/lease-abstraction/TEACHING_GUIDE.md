@@ -6,6 +6,16 @@
 
 ---
 
+## The One-Sentence Framing
+
+> **Skill creation is fundamentally the encoding of domain knowledge into a form that an AI can execute.**
+
+Everything else is implementation detail.
+
+You are not teaching them to code. You are teaching them to **articulate their expertise so precisely that a very literal-minded junior could execute it without asking any questions.** The AI is that junior. The skill is the instruction manual.
+
+---
+
 ## Where to Begin: Start With Their Workflow, Not the Technology
 
 Don't start with:
@@ -307,14 +317,6 @@ RULE: Extract landlord.name from lease.
 
 ---
 
-## The One-Sentence Framing That Works
-
-> **"Building a skill is writing down your expertise so precisely that a very literal-minded junior could execute it without asking you any questions."**
-
-Everything else is implementation detail.
-
----
-
 ## Sample First Session (2 Hours)
 
 | Time | Activity |
@@ -359,4 +361,6 @@ You'll know they're not ready when they:
 
 The goal isn't to make them an agentic engineer. The goal is to make them a **skill author** — someone who can encode their domain knowledge into a form an AI can execute.
 
-Everything else is optional.
+You're not teaching them to code. You're teaching them to articulate what they already know so precisely that a very literal-minded junior (the AI) could execute it without asking questions.
+
+Everything else is implementation detail.
