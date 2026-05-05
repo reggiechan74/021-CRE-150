@@ -210,6 +210,60 @@ You're not building a chatbot that gives helpful suggestions. You're building a 
 
 ---
 
+### Critical Insight: Know What You're Automating — Load-Bearing or Non-Load-Bearing?
+
+**Not all automation is created equal.**
+
+| Tool Type | Purpose | Output Use | Risk Level |
+|-----------|---------|------------|------------|
+| **Desktop Chatbot** | Quick high-level overview | Orientation, initial due diligence, talking points | Non-load-bearing — do not rely on for decisions |
+| **Agentic Tool (Cowork)** | Automate workflow steps | Varies by task | Must distinguish: load-bearing vs. non-load-bearing |
+| **Production Skill** | Produce auditable output | Legal, financial, compliance decisions | Load-bearing — must meet 100% accuracy standard |
+
+**Desktop Chatbot — Non-Load-Bearing Only:**
+
+A chatbot prompt like "Summarize this lease" is designed for **speed, not accuracy**. The output:
+- Has no provenance (can't verify where terms came from)
+- Has no validation (no AutoFail conditions)
+- Has no structure (can't import into systems)
+- May be directionally correct but legally unreliable
+
+**Use it for:** Getting a sense of the lease in 30 seconds. **Don't use it for:** Anything that requires accuracy.
+
+**Agentic Tool (Cowork) — Depends on the Task:**
+
+Cowork and similar tools let you automate multi-step workflows. But you must be explicit about **what kind of work** you're automating:
+
+| Task Type | Example | Automation Approach |
+|-----------|---------|---------------------|
+| **Non-Load-Bearing** | "Draft an email summarizing the lease for the broker" | Pre-saved prompts — basic skill structure |
+| **Load-Bearing** | "Extract rent calculations for Yardi import" | Full governance — DDD, REIXS, validation, AutoFail |
+
+**Pre-saved prompts are the most basic skill structure:**
+
+```
+When user asks to summarize a lease:
+1. Read the lease
+2. Extract: parties, premises, term, rent, critical dates
+3. Return a 1-page summary in markdown
+
+That's it. No validation. No provenance. No status tags.
+```
+
+This is fine for **non-load-bearing work** — drafts, orientation, internal memos.
+
+**The problem:** If you don't distinguish between load-bearing and non-load-bearing automation, you'll build a tool that *looks* authoritative but produces chatbot-quality output. And someone will rely on it for a million-dollar decision.
+
+**Design rule:** Before building a skill, ask:
+1. **What decision will this output support?** (If the answer is "I don't know" — it's non-load-bearing)
+2. **What happens if this output is wrong?** (Lawsuit = load-bearing. Embarrassing = non-load-bearing)
+3. **Does this need to be importable into Yardi/Argus?** (Yes = load-bearing)
+
+If load-bearing: Build with full governance (DDD, validation, AutoFail, provenance).
+If non-load-bearing: Pre-saved prompts are sufficient — but label the output "DRAFT — Do not rely on for decisions."
+
+---
+
 ### Technical Concept 2: Context Window Is "How Much the AI Can Read at Once"
 
 **Analogy:** Think of it like reading a book with a narrow highlighter.
