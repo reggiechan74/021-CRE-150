@@ -163,6 +163,8 @@ TEMPLATE:
 - Your edge case handling rules (e.g., "When rent is TBD, flag for partner review")
 - Your risk tolerance (what to escalate vs. what to note quietly)
 - **Your firm's schedule naming conventions** (e.g., Schedule G = Special Provisions — but another firm might use Schedule H, or no letter at all)
+- **Your particular corpus of lease agreements** — the AI has never seen your portfolio's leases, their quirks, or common amendments
+- **Your downstream requirements** — what systems consume your abstract data (Yardi, MRI, custom reports) and what field formats they expect
 
 **Why this matters:** You're not teaching the AI what a lease is. You're teaching it **how your firm abstracts leases** — including which schedules matter, what they're called, and how to handle contradictions.
 
