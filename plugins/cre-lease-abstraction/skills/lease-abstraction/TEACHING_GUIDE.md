@@ -333,10 +333,13 @@ They'll tell you the obvious ones:
 
 **Jurisdictional constraints matter:**
 
-- Some jurisdictions **prohibit** certain cost recoveries (e.g., capital improvements cannot be passed to tenants in some provinces)
-- Some jurisdictions **require** certain provisions (e.g., HVAC maintenance is always landlord's responsibility)
-- Some provisions can be **contracted in/out of** (e.g., indemnification clauses may be voidable in some states)
-- Case law may **override** lease language (e.g., implied warranties of habitability)
+| Jurisdiction | Constraint Type | Example |
+|--------------|-----------------|---------|
+| **Ontario (Residential)** | Statutory requirement | All residential leases must be **gross leases** using the provincial template; tenants automatically entitled to month-to-month after expiry |
+| **Ontario (Commercial)** | Contractual default | Net leases permitted; **overhold/holding over must be explicitly contracted in** — no default right |
+| **Japan (Commercial)** | Statutory right | Commercial tenants have **statutory termination rights** that cannot be contracted away — lease may say one thing, statute overrides |
+| **Various U.S. states** | Prohibited recovery | Capital improvements cannot be passed to tenants (e.g., roof replacement in some states) |
+| **Various jurisdictions** | Voidable provisions | Indemnification clauses, waiver of subrogation, or certain penalty provisions may be unenforceable |
 
 **Why this matters for DDD design:** You cannot design a field like `operatingCosts.recoverable` as a simple boolean. You need:
 - `whoPerformedWork`: "Landlord" | "Tenant" | "ThirdParty"
@@ -345,6 +348,12 @@ They'll tell you the obvious ones:
 - `recoverability`: "FullyRecoverable" | "PartiallyRecoverable" | "NonRecoverable"
 - `jurisdictionalConstraint`: string (cite applicable statute or case law)
 - `contractualOverride`: boolean (whether lease contracts around default rule)
+
+**Why this matters for extraction:** The skill must:
+- Know which jurisdiction's law applies (governing law clause)
+- Flag provisions that contradict statutory requirements (e.g., Ontario residential net lease = void)
+- Distinguish between contracted-in rights vs. statutory defaults (e.g., overhold in Ontario commercial)
+- Extract statutory rights even if not mentioned in the lease (e.g., Japan termination rights)
 
 **This becomes your AutoFail conditions.** Each confusion above should trigger a validation rule:
 - "If fixturing period is extracted, verify it's marked as outside the lease term"
