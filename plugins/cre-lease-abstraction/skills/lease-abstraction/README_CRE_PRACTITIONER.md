@@ -84,6 +84,114 @@ You could paste your lease into a chatbot and get a summary in 30 seconds. So wh
 
 ---
 
+## Why a Domain Data Dictionary (DDD) Is Required
+
+You might wonder: why not let the AI extract and define terms based on what it sees in each lease? The answer is **data consistency and consolidation**.
+
+### The Problem: Every Lease Defines Terms Differently
+
+Leases are legal documents, not database schemas. Each one defines its own terminology:
+
+| Lease A | Lease B | Lease C | What They All Mean |
+|---------|---------|---------|-------------------|
+| `Net Rentable Area` | `Net Leasable Area` | `Rentable Square Footage` | The same thing: tenant's rentable space |
+| `Base Rent` | `Minimum Rent` | `Contract Rent` | The same thing: guaranteed rent payment |
+| `Operating Costs` | `CAM Charges` | `Common Area Expenses` | The same thing: shared building costs |
+
+**If the AI followed each lease's definitions:**
+- Lease A → extracts `net_rentable_area` = 100,000 sf
+- Lease B → extracts `net_leasable_area` = 100,000 sf  
+- Lease C → extracts `rentable_square_footage` = 100,000 sf
+
+**Result:** Three different field names for the same concept. Your database now has three separate columns that can't be queried together. You can't run a report like "total rentable area across my portfolio" because the fields don't match.
+
+### The DDD Solution: Standardized Field Names
+
+The Domain Data Dictionary defines **258 canonical field names** that every lease maps to, regardless of what the lease itself calls them:
+
+| Lease Term | Maps to DDD Field |
+|------------|-------------------|
+| `Net Rentable Area` | `premises.area.rentableAreaSqFt` |
+| `Net Leasable Area` | `premises.area.rentableAreaSqFt` |
+| `Rentable Square Footage` | `premises.area.rentableAreaSqFt` |
+
+**Result:** All three leases populate the same field. You can now query, compare, and aggregate across your entire portfolio.
+
+---
+
+### Measurement Standards Matter: The BOMA Example
+
+A CRE practitioner knows that **area measurements depend on the standard used**. This isn't just semantics — it affects the actual numbers:
+
+| Building | Area | Measurement Standard |
+|----------|------|---------------------|
+| Building A | 100,000 sf | BOMA 1996 |
+| Building B | 100,000 sf | BOMA 2010 |
+| Building C | 100,000 sf | BOMA 2017 |
+
+**Can you add these together and say you have 300,000 sf?** No — because:
+
+- **BOMA 1996** measures rentable area one way (includes certain common areas, excludes others)
+- **BOMA 2010** changed how multi-tenant floors are measured
+- **BOMA 2017** introduced new distinctions for mixed-use buildings
+
+**The same physical space** might measure as:
+- 100,000 sf under BOMA 1996
+- 99,000 sf under BOMA 2010
+- 101,000 sf under BOMA 2017
+
+**All three are correct** — they're just using different measurement rules.
+
+### Why This Matters for Data Consolidation
+
+If you're a measurement firm or portfolio manager:
+
+❌ **Wrong:** Adding 100,000 sf (BOMA 1996) + 100,000 sf (BOMA 2010) = 200,000 sf total
+
+✅ **Right:** Keeping them separate with the standard as a qualifier:
+- 100,000 sf (BOMA 1996)
+- 100,000 sf (BOMA 2010)
+
+The DDD captures the **measurement standard as metadata** alongside the area value:
+
+```json
+{
+  "premises": {
+    "area": {
+      "rentableAreaSqFt": 100000,
+      "measurementStandard": "ANSI/BOMA Z65.1-1996"
+    }
+  }
+}
+```
+
+This ensures:
+- You know **which standard** was used for each lease
+- You can **filter or group** by measurement standard when aggregating
+- You don't accidentally **mix incompatible measurements**
+
+---
+
+### The Bottom Line: Why the DDD Exists
+
+| Without DDD | With DDD |
+|-------------|----------|
+| Every lease uses its own terminology | All leases map to 258 canonical fields |
+| Same concept → different field names | Same concept → same field name |
+| Can't query across leases | Portfolio-wide queries work |
+| Measurement standards lost | Standards captured as metadata |
+| Data consolidation is manual and error-prone | Data consolidation is automatic and reliable |
+
+**Analogy:** The DDD is like a universal translator. Every lease "speaks" its own legal language, but the DDD translates everything into a common dialect that your database, reports, and analysis tools can understand.
+
+**For CRE Practitioners:** This means you can:
+- Compare rent per square foot across leases without manual reconciliation
+- Run portfolio reports that aggregate correctly
+- Filter by measurement standard when precision matters
+- Import data into lease management systems without field mapping headaches
+
+---
+
 ## How to Use It
 
 ```
