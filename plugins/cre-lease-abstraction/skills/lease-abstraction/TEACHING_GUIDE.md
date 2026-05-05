@@ -314,17 +314,44 @@ They'll tell you the obvious ones:
 | **Free rent at commencement vs. zero rent during fixturing period** | Both might be "3 months" — but fixturing is *outside* the lease term, free rent is *inside* — affects commencement date, expiry date, and rent commencement |
 | **Assignment vs. subletting vs. change of control** | Assignment transfers the lease, subletting creates a new tenant-landlord relationship, change of control triggers consent rights — different legal consequences |
 | **Who does the work vs. who pays for it** | Landlord may do the work, but payment source varies: (1) recoverable operating cost = landlord does work, pool of tenants pay; (2) direct chargeback = landlord does work, single tenant pays; (3) landlord obligation = landlord does work, landlord pays |
+| **Tenant doing landlord's work (base building)** | Government tenants or security-sensitive tenants may be required to perform base building work themselves due to security clearances or cost control — reverses the traditional "landlord does work, tenant reimburses" model |
 | **Tenant chargebacks vs. recoverable operating costs** | Chargeback is to a specific tenant for specific costs, recoverable operating costs are shared across a cost pool — different calculation bases |
 | **Operating costs vs. capital costs** | Operating costs are typically recoverable, capital costs may or may not be — and each has recoverable and non-recoverable subcategories |
 | **Recoverable vs. non-recoverable costs (within both operating and capital)** | Affects what the tenant actually pays — misclassification changes the financial obligation |
 
-**Why these matter:** These aren't typos or omissions. These are **conceptual confusions** — the abstractor saw the right words but applied the wrong label. This is more dangerous than a missing field because the output *looks* correct but is substantively wrong.
+**Designing the DDD requires thinking through all combinations/permutations:**
+
+| Dimension | Options | Combinations |
+|-----------|---------|--------------|
+| **Who does the work?** | Landlord, Tenant, Third-party contractor | 3 options |
+| **Who pays?** | Landlord, Single tenant, Pool of tenants | 3 options |
+| **Cost type?** | Operating, Capital | 2 options |
+| **Recoverability?** | Fully recoverable, Partially recoverable, Non-recoverable | 3 options |
+| **Jurisdiction?** | Varies by province/state, federal statutes | N options |
+
+**Total permutations:** 3 × 3 × 2 × 3 × N = potentially hundreds of valid combinations depending on jurisdiction.
+
+**Jurisdictional constraints matter:**
+
+- Some jurisdictions **prohibit** certain cost recoveries (e.g., capital improvements cannot be passed to tenants in some provinces)
+- Some jurisdictions **require** certain provisions (e.g., HVAC maintenance is always landlord's responsibility)
+- Some provisions can be **contracted in/out of** (e.g., indemnification clauses may be voidable in some states)
+- Case law may **override** lease language (e.g., implied warranties of habitability)
+
+**Why this matters for DDD design:** You cannot design a field like `operatingCosts.recoverable` as a simple boolean. You need:
+- `whoPerformedWork`: "Landlord" | "Tenant" | "ThirdParty"
+- `whoPays`: "Landlord" | "SingleTenant" | "TenantPool"
+- `costType`: "Operating" | "Capital"
+- `recoverability`: "FullyRecoverable" | "PartiallyRecoverable" | "NonRecoverable"
+- `jurisdictionalConstraint`: string (cite applicable statute or case law)
+- `contractualOverride`: boolean (whether lease contracts around default rule)
 
 **This becomes your AutoFail conditions.** Each confusion above should trigger a validation rule:
 - "If fixturing period is extracted, verify it's marked as outside the lease term"
 - "If free rent is extracted, verify it's distinguished from fixturing"
 - "If assignment clause is found, verify subletting clause is extracted separately"
 - "If operating costs are extracted, verify capital costs are not included"
+- "If tenant is listed as performing base building work, verify security clause or cost-control provision exists"
 
 ### Step 4: Iterate on the Prompt Together
 
