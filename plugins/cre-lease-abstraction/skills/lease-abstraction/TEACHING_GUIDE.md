@@ -313,6 +313,7 @@ They'll tell you the obvious ones:
 | **Net free rent vs. gross free rent** | Net excludes operating costs, gross includes them — different financial impact over the same period |
 | **Free rent at commencement vs. zero rent during fixturing period** | Both might be "3 months" — but fixturing is *outside* the lease term, free rent is *inside* — affects commencement date, expiry date, and rent commencement |
 | **Assignment vs. subletting vs. change of control** | Assignment transfers the lease, subletting creates a new tenant-landlord relationship, change of control triggers consent rights — different legal consequences |
+| **Who does the work vs. who pays for it** | Landlord may do the work, but payment source varies: (1) recoverable operating cost = landlord does work, pool of tenants pay; (2) direct chargeback = landlord does work, single tenant pays; (3) landlord obligation = landlord does work, landlord pays |
 | **Tenant chargebacks vs. recoverable operating costs** | Chargeback is to a specific tenant for specific costs, recoverable operating costs are shared across a cost pool — different calculation bases |
 | **Operating costs vs. capital costs** | Operating costs are typically recoverable, capital costs may or may not be — and each has recoverable and non-recoverable subcategories |
 | **Recoverable vs. non-recoverable costs (within both operating and capital)** | Affects what the tenant actually pays — misclassification changes the financial obligation |
